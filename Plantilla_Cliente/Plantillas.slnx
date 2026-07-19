@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="Plantilla_Admin/Plantilla_Admin.csproj" />
   <Project Path="Plantilla_Cliente/Plantilla_Cliente.csproj" />
 </Solution>

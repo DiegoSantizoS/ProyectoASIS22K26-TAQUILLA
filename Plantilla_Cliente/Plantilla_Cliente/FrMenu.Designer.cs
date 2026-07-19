@@ -33,7 +33,7 @@
             textBox1 = new TextBox();
             Lupa = new PictureBox();
             Pnl_Menú = new Panel();
-            panel3 = new Panel();
+            Pnl_Peliculas = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             Pnl_Filtros2 = new TableLayoutPanel();
@@ -49,7 +49,7 @@
             Pnl_Cines.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Lupa).BeginInit();
             Pnl_Menú.SuspendLayout();
-            panel3.SuspendLayout();
+            Pnl_Peliculas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             Pnl_Filtros2.SuspendLayout();
@@ -94,7 +94,7 @@
             // Pnl_Menú
             // 
             Pnl_Menú.BackColor = Color.FromArgb(28, 17, 69);
-            Pnl_Menú.Controls.Add(panel3);
+            Pnl_Menú.Controls.Add(Pnl_Peliculas);
             Pnl_Menú.Controls.Add(panel2);
             Pnl_Menú.Controls.Add(panel1);
             Pnl_Menú.Controls.Add(Pnl_Cines);
@@ -106,13 +106,13 @@
             Pnl_Menú.TabIndex = 0;
             Pnl_Menú.Paint += Pnl_Menú_Paint;
             // 
-            // panel3
+            // Pnl_Peliculas
             // 
-            panel3.Controls.Add(pictureBox1);
-            panel3.Location = new Point(3, 185);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1225, 573);
-            panel3.TabIndex = 3;
+            Pnl_Peliculas.Controls.Add(pictureBox1);
+            Pnl_Peliculas.Location = new Point(3, 185);
+            Pnl_Peliculas.Name = "Pnl_Peliculas";
+            Pnl_Peliculas.Size = new Size(1225, 573);
+            Pnl_Peliculas.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -225,25 +225,25 @@
             // 
             // comboBox1
             // 
-            comboBox1.Dock = DockStyle.Fill;
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             comboBox1.DrawMode = DrawMode.OwnerDrawFixed;
             comboBox1.FormattingEnabled = true;
-            comboBox1.ItemHeight = 30;
+            comboBox1.ItemHeight = 38;
             comboBox1.Location = new Point(3, 3);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(327, 36);
+            comboBox1.Size = new Size(327, 44);
             comboBox1.TabIndex = 2;
             comboBox1.Text = "Seleccionar Ciudad";
             // 
             // comboBox2
             // 
-            comboBox2.Dock = DockStyle.Fill;
+            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             comboBox2.DrawMode = DrawMode.OwnerDrawFixed;
             comboBox2.FormattingEnabled = true;
-            comboBox2.ItemHeight = 30;
+            comboBox2.ItemHeight = 38;
             comboBox2.Location = new Point(336, 3);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(327, 36);
+            comboBox2.Size = new Size(327, 44);
             comboBox2.TabIndex = 3;
             comboBox2.Text = "Seleccionar Cine";
             // 
@@ -281,7 +281,7 @@
             Pnl_Cines.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Lupa).EndInit();
             Pnl_Menú.ResumeLayout(false);
-            panel3.ResumeLayout(false);
+            Pnl_Peliculas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             Pnl_Filtros2.ResumeLayout(false);
@@ -308,7 +308,7 @@
         private RadioButton radioButton1;
         private RadioButton radioButton2;
         private RadioButton radioButton3;
-        private Panel panel3;
+        private Panel Pnl_Peliculas;
         private PictureBox pictureBox1;
     }
 }
