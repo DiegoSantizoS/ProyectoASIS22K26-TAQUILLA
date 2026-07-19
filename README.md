@@ -6,5 +6,3 @@ Grupo #3
 - Pedro José Gómez Villalobos — 0901-23-4868
 - Diana Mishel Loeiza Ramírez — 9959-23-3457
 - José Pablo Cano Cóbar — 0901-23-1727
-- Prueba
-- Prueba 2 
