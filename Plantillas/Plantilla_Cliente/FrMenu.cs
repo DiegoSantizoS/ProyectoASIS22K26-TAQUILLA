@@ -1,5 +1,7 @@
 using System.Drawing.Drawing2D;
 
+//Carlos Andres Arriaza Lara 0901-23-13862
+//Creación de prototipo de interfaz para menu de cliente
 namespace Plantilla_Cliente
 {
     public partial class FrMenu : Form
