@@ -1,8 +1,8 @@
 namespace Plantilla_Cliente
 {
-    public partial class Form1 : Form
+    public partial class FrMenu : Form
     {
-        public Form1()
+        public FrMenu()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Plantilla_Cliente
 {
-    partial class Form1
+    partial class FrMenu
     {
         /// <summary>
         ///  Required designer variable.
