@@ -40,5 +40,17 @@ namespace Plantilla_Admin
             reportes reportes = new reportes();
             funcargarpagina(reportes);
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            usuarios usuarios = new usuarios();
+            funcargarpagina(usuarios);
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ayuda ayuda = new ayuda();
+            funcargarpagina(ayuda);
+        }
     }
 }

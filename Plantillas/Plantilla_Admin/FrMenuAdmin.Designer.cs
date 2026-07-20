@@ -66,12 +66,14 @@
             usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             usuariosToolStripMenuItem.Size = new Size(79, 24);
             usuariosToolStripMenuItem.Text = "Usuarios";
+            usuariosToolStripMenuItem.Click += usuariosToolStripMenuItem_Click;
             // 
             // ayudaToolStripMenuItem
             // 
             ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             ayudaToolStripMenuItem.Size = new Size(65, 24);
             ayudaToolStripMenuItem.Text = "Ayuda";
+            ayudaToolStripMenuItem.Click += ayudaToolStripMenuItem_Click;
             // 
             // pnlMenuAdmin
             // 
