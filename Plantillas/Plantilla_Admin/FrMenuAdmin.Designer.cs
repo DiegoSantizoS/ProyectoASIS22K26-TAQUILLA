@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             menuStrip1 = new MenuStrip();
+            homeToolStripMenuItem = new ToolStripMenuItem();
             carteleraToolStripMenuItem = new ToolStripMenuItem();
+            funcionesToolStripMenuItem = new ToolStripMenuItem();
+            salasToolStripMenuItem = new ToolStripMenuItem();
+            promocionesToolStripMenuItem = new ToolStripMenuItem();
             reportesToolStripMenuItem = new ToolStripMenuItem();
             usuariosToolStripMenuItem = new ToolStripMenuItem();
             ayudaToolStripMenuItem = new ToolStripMenuItem();
@@ -40,12 +44,19 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { carteleraToolStripMenuItem, reportesToolStripMenuItem, usuariosToolStripMenuItem, ayudaToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { homeToolStripMenuItem, carteleraToolStripMenuItem, funcionesToolStripMenuItem, salasToolStripMenuItem, promocionesToolStripMenuItem, reportesToolStripMenuItem, usuariosToolStripMenuItem, ayudaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
+            // 
+            // homeToolStripMenuItem
+            // 
+            homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            homeToolStripMenuItem.Size = new Size(61, 24);
+            homeToolStripMenuItem.Text = "LOGO";
+            homeToolStripMenuItem.Click += homeToolStripMenuItem_Click;
             // 
             // carteleraToolStripMenuItem
             // 
@@ -53,6 +64,27 @@
             carteleraToolStripMenuItem.Size = new Size(83, 24);
             carteleraToolStripMenuItem.Text = "Cartelera";
             carteleraToolStripMenuItem.Click += carteleraToolStripMenuItem_Click;
+            // 
+            // funcionesToolStripMenuItem
+            // 
+            funcionesToolStripMenuItem.Name = "funcionesToolStripMenuItem";
+            funcionesToolStripMenuItem.Size = new Size(88, 24);
+            funcionesToolStripMenuItem.Text = "Funciones";
+            funcionesToolStripMenuItem.Click += funcionesToolStripMenuItem_Click;
+            // 
+            // salasToolStripMenuItem
+            // 
+            salasToolStripMenuItem.Name = "salasToolStripMenuItem";
+            salasToolStripMenuItem.Size = new Size(62, 24);
+            salasToolStripMenuItem.Text = "Sedes";
+            salasToolStripMenuItem.Click += salasToolStripMenuItem_Click;
+            // 
+            // promocionesToolStripMenuItem
+            // 
+            promocionesToolStripMenuItem.Name = "promocionesToolStripMenuItem";
+            promocionesToolStripMenuItem.Size = new Size(109, 24);
+            promocionesToolStripMenuItem.Text = "Promociones";
+            promocionesToolStripMenuItem.Click += promocionesToolStripMenuItem_Click;
             // 
             // reportesToolStripMenuItem
             // 
@@ -108,5 +140,9 @@
         private ToolStripMenuItem usuariosToolStripMenuItem;
         private ToolStripMenuItem ayudaToolStripMenuItem;
         private Panel pnlMenuAdmin;
+        private ToolStripMenuItem funcionesToolStripMenuItem;
+        private ToolStripMenuItem salasToolStripMenuItem;
+        private ToolStripMenuItem promocionesToolStripMenuItem;
+        private ToolStripMenuItem homeToolStripMenuItem;
     }
 }

@@ -8,16 +8,11 @@ using System.Windows.Forms;
 
 namespace Plantilla_Admin
 {
-    public partial class usuarios : UserControl
+    public partial class sedes : UserControl
     {
-        public usuarios()
+        public sedes()
         {
             InitializeComponent();
-        }
-
-        private void pruebaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

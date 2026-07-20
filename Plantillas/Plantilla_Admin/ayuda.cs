@@ -14,5 +14,10 @@ namespace Plantilla_Admin
         {
             InitializeComponent();
         }
+
+        private void pruebaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -19,6 +19,7 @@ namespace Plantilla_Admin
         public FrMenuAdmin()
         {
             InitializeComponent();
+            funcargarpagina(new logo());
         }
 
         private void funcargarpagina(UserControl pagina)
@@ -51,6 +52,30 @@ namespace Plantilla_Admin
         {
             ayuda ayuda = new ayuda();
             funcargarpagina(ayuda);
+        }
+
+        private void salasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sedes sedes = new sedes();
+            funcargarpagina(sedes);
+        }
+
+        private void funcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            funciones funciones = new funciones();
+            funcargarpagina(funciones);
+        }
+
+        private void promocionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            promociones promociones = new promociones();
+            funcargarpagina(promociones);
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            logo logo = new logo();
+            funcargarpagina(logo);
         }
     }
 }
