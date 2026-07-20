@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* Diego Fernando Santizo Samayoa 0901-22-15950
+ * - Boton para ingresar al menu de administrador
+*/
+
+
+using Plantilla_Admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,9 +14,9 @@ using System.Windows.Forms;
 
 namespace Plantilla_Cliente
 {
-    public partial class FrLoginAdmin : Form
+    public partial class FrLogin : Form
     {
-        public FrLoginAdmin()
+        public FrLogin()
         {
             InitializeComponent();
         }
@@ -33,6 +39,14 @@ namespace Plantilla_Cliente
         private void Txt_usuario_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            FrMenuAdmin menu = new FrMenuAdmin();
+            menu.FormClosed += (s, args) => this.Close();   
+            this.Hide();
+            menu.Show();
         }
     }
 }

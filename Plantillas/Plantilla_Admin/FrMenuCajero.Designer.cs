@@ -1,6 +1,6 @@
 ﻿namespace Plantilla_Admin
 {
-    partial class FrMenuAdmin
+    partial class FrMenuCajero
     {
         /// <summary>
         /// Required designer variable.
@@ -30,42 +30,27 @@
         {
             menuStrip1 = new MenuStrip();
             carteleraToolStripMenuItem = new ToolStripMenuItem();
-            reportesToolStripMenuItem = new ToolStripMenuItem();
-            usuariosToolStripMenuItem = new ToolStripMenuItem();
             ayudaToolStripMenuItem = new ToolStripMenuItem();
-            pnlMenuAdmin = new Panel();
+            panel1 = new Panel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { carteleraToolStripMenuItem, reportesToolStripMenuItem, usuariosToolStripMenuItem, ayudaToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { carteleraToolStripMenuItem, ayudaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
+            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             // 
             // carteleraToolStripMenuItem
             // 
             carteleraToolStripMenuItem.Name = "carteleraToolStripMenuItem";
             carteleraToolStripMenuItem.Size = new Size(83, 24);
             carteleraToolStripMenuItem.Text = "Cartelera";
-            carteleraToolStripMenuItem.Click += carteleraToolStripMenuItem_Click;
-            // 
-            // reportesToolStripMenuItem
-            // 
-            reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            reportesToolStripMenuItem.Size = new Size(82, 24);
-            reportesToolStripMenuItem.Text = "Reportes";
-            reportesToolStripMenuItem.Click += reportesToolStripMenuItem_Click;
-            // 
-            // usuariosToolStripMenuItem
-            // 
-            usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            usuariosToolStripMenuItem.Size = new Size(79, 24);
-            usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // ayudaToolStripMenuItem
             // 
@@ -73,25 +58,25 @@
             ayudaToolStripMenuItem.Size = new Size(65, 24);
             ayudaToolStripMenuItem.Text = "Ayuda";
             // 
-            // pnlMenuAdmin
+            // panel1
             // 
-            pnlMenuAdmin.BackColor = SystemColors.MenuHighlight;
-            pnlMenuAdmin.Dock = DockStyle.Fill;
-            pnlMenuAdmin.Location = new Point(0, 28);
-            pnlMenuAdmin.Name = "pnlMenuAdmin";
-            pnlMenuAdmin.Size = new Size(800, 422);
-            pnlMenuAdmin.TabIndex = 1;
+            panel1.BackColor = SystemColors.MenuHighlight;
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 28);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 422);
+            panel1.TabIndex = 1;
             // 
-            // FrMenuAdmin
+            // FrMenuCajero
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(pnlMenuAdmin);
+            Controls.Add(panel1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "FrMenuAdmin";
-            Text = "FrMenuAdmin";
+            Name = "FrMenuCajero";
+            Text = "FrMenuCajero";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -102,9 +87,7 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem carteleraToolStripMenuItem;
-        private ToolStripMenuItem reportesToolStripMenuItem;
-        private ToolStripMenuItem usuariosToolStripMenuItem;
         private ToolStripMenuItem ayudaToolStripMenuItem;
-        private Panel pnlMenuAdmin;
+        private Panel panel1;
     }
 }
