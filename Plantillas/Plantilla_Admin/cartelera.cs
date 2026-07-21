@@ -13,6 +13,27 @@ namespace Plantilla_Admin
         public cartelera()
         {
             InitializeComponent();
+            funcargarpagina(new FrBuscarCartelera());
+        }
+
+        private void funcargarpagina(UserControl pagina)
+        {
+            foreach (Control c in panel1.Controls) c.Dispose();
+            panel1.Controls.Clear();
+            pagina.Dock = DockStyle.Fill;
+            panel1.Controls.Add(pagina);
+        }
+
+        private void aGREGARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrCartelera frCartelera = new FrCartelera();
+            funcargarpagina(frCartelera);
+        }
+
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrBuscarCartelera frBuscarCartelera = new FrBuscarCartelera();
+            funcargarpagina(frBuscarCartelera);
         }
     }
 }
