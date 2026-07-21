@@ -79,7 +79,6 @@ namespace Plantilla_Cliente
                 boton.Region = new Region(path);
             }
 
-            // Ajustes visuales recomendados para que se vea correctamente el borde redondeado
             boton.FlatStyle = FlatStyle.Flat;
             try
             {
@@ -95,10 +94,10 @@ namespace Plantilla_Cliente
                 : Color.FromArgb(255, 255, 255); // Color inactivo
         }
 
-        // Manejador requerido por el diseñador: evita CS1061 si el evento se ha asignado en el archivo Designer
+       
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            // Si no necesita pintura personalizada, dejar vacío. Si requiere lógica, implementarla aquí.
+            
         }
     }
 }
