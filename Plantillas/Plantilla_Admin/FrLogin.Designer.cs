@@ -1,6 +1,6 @@
 ﻿namespace Plantilla_Cliente
 {
-    partial class FrLoginAdmin
+    partial class FrLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -42,6 +42,7 @@
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.BackColor = SystemColors.GradientInactiveCaption;
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.998127F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75.00188F));
@@ -95,6 +96,7 @@
             textBox2.Location = new Point(164, 60);
             textBox2.MinimumSize = new Size(0, 25);
             textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
             textBox2.Size = new Size(264, 27);
             textBox2.TabIndex = 5;
             // 
@@ -121,6 +123,7 @@
             btnIngresar.TabIndex = 0;
             btnIngresar.Text = "Ingresar";
             btnIngresar.UseVisualStyleBackColor = true;
+            btnIngresar.Click += btnIngresar_Click;
             // 
             // Txt_usuario
             // 
@@ -143,7 +146,7 @@
             textBox1.Size = new Size(264, 27);
             textBox1.TabIndex = 3;
             // 
-            // FrLoginAdmin
+            // FrLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -152,7 +155,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximumSize = new Size(600, 200);
             MinimumSize = new Size(600, 200);
-            Name = "FrLoginAdmin";
+            Name = "FrLogin";
             Text = "FrLoginAdmin";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
