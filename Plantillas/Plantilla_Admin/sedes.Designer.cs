@@ -35,14 +35,13 @@
             eliminarSedeToolStripMenuItem = new ToolStripMenuItem();
             buscarSalaToolStripMenuItem = new ToolStripMenuItem();
             agregarToolStripMenuItem = new ToolStripMenuItem();
-            eliminarSalaToolStripMenuItem = new ToolStripMenuItem();
             actualizarSalaToolStripMenuItem = new ToolStripMenuItem();
+            eliminarSalaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.BackColor = Color.FromArgb(255, 192, 192);
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { pruebaToolStripMenuItem, pruebaToolStripMenuItem1, actualizarSedeToolStripMenuItem, eliminarSedeToolStripMenuItem, buscarSalaToolStripMenuItem, agregarToolStripMenuItem, actualizarSalaToolStripMenuItem, eliminarSalaToolStripMenuItem });
@@ -55,31 +54,31 @@
             // pruebaToolStripMenuItem
             // 
             pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
-            pruebaToolStripMenuItem.Size = new Size(143, 24);
+            pruebaToolStripMenuItem.Size = new Size(119, 24);
             pruebaToolStripMenuItem.Text = "Buscar Sede";
             // 
             // pruebaToolStripMenuItem1
             // 
             pruebaToolStripMenuItem1.Name = "pruebaToolStripMenuItem1";
-            pruebaToolStripMenuItem1.Size = new Size(143, 24);
+            pruebaToolStripMenuItem1.Size = new Size(119, 24);
             pruebaToolStripMenuItem1.Text = "Agregar Sede";
             // 
             // actualizarSedeToolStripMenuItem
             // 
             actualizarSedeToolStripMenuItem.Name = "actualizarSedeToolStripMenuItem";
-            actualizarSedeToolStripMenuItem.Size = new Size(143, 24);
+            actualizarSedeToolStripMenuItem.Size = new Size(119, 24);
             actualizarSedeToolStripMenuItem.Text = "Actualizar Sede";
             // 
             // eliminarSedeToolStripMenuItem
             // 
             eliminarSedeToolStripMenuItem.Name = "eliminarSedeToolStripMenuItem";
-            eliminarSedeToolStripMenuItem.Size = new Size(143, 24);
+            eliminarSedeToolStripMenuItem.Size = new Size(119, 24);
             eliminarSedeToolStripMenuItem.Text = "Eliminar Sede";
             // 
             // buscarSalaToolStripMenuItem
             // 
             buscarSalaToolStripMenuItem.Name = "buscarSalaToolStripMenuItem";
-            buscarSalaToolStripMenuItem.Size = new Size(143, 24);
+            buscarSalaToolStripMenuItem.Size = new Size(119, 24);
             buscarSalaToolStripMenuItem.Text = "Buscar Sala ";
             // 
             // agregarToolStripMenuItem
@@ -88,23 +87,23 @@
             agregarToolStripMenuItem.Size = new Size(119, 24);
             agregarToolStripMenuItem.Text = "Agregar Sala";
             // 
-            // eliminarSalaToolStripMenuItem
-            // 
-            eliminarSalaToolStripMenuItem.Name = "eliminarSalaToolStripMenuItem";
-            eliminarSalaToolStripMenuItem.Size = new Size(119, 24);
-            eliminarSalaToolStripMenuItem.Text = "Eliminar Sala";
-            // 
             // actualizarSalaToolStripMenuItem
             // 
             actualizarSalaToolStripMenuItem.Name = "actualizarSalaToolStripMenuItem";
             actualizarSalaToolStripMenuItem.Size = new Size(119, 24);
             actualizarSalaToolStripMenuItem.Text = "Actualizar Sala";
             // 
+            // eliminarSalaToolStripMenuItem
+            // 
+            eliminarSalaToolStripMenuItem.Name = "eliminarSalaToolStripMenuItem";
+            eliminarSalaToolStripMenuItem.Size = new Size(119, 24);
+            eliminarSalaToolStripMenuItem.Text = "Eliminar Sala";
+            // 
             // sedes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Red;
+            BackColor = SystemColors.ActiveCaption;
             Controls.Add(menuStrip1);
             Name = "sedes";
             Size = new Size(757, 418);

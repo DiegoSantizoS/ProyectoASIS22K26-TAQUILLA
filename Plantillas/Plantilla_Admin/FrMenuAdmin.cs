@@ -1,8 +1,5 @@
-﻿/* Diego Fernando Santizo Samayoa 0901-22-15950
- * - Funcion para cargar diferentes paginas segun la pestanha seleccionada usando
- *   un panel como contenedor (funcargarpagina)
- * 
-*/
+﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 19/07/2026 */
 
 using System;
 using System.Collections.Generic;
@@ -79,3 +76,6 @@ namespace Plantilla_Admin
         }
     }
 }
+
+/* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 20/07/2026 */

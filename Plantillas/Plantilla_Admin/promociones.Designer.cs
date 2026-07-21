@@ -38,45 +38,44 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.BackColor = Color.FromArgb(255, 192, 255);
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { verUsuariosToolStripMenuItem, pruebaToolStripMenuItem, pruebaToolStripMenuItem1, eliminarUsuarioToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(156, 400);
+            menuStrip1.Size = new Size(171, 400);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
             // verUsuariosToolStripMenuItem
             // 
             verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            verUsuariosToolStripMenuItem.Size = new Size(143, 24);
-            verUsuariosToolStripMenuItem.Text = "Buscar Usuario";
+            verUsuariosToolStripMenuItem.Size = new Size(158, 24);
+            verUsuariosToolStripMenuItem.Text = "Buscar Promoción";
             // 
             // pruebaToolStripMenuItem
             // 
             pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
-            pruebaToolStripMenuItem.Size = new Size(143, 24);
-            pruebaToolStripMenuItem.Text = "Nuevo Usuario";
+            pruebaToolStripMenuItem.Size = new Size(158, 24);
+            pruebaToolStripMenuItem.Text = "Nueva Promoción";
             // 
             // pruebaToolStripMenuItem1
             // 
             pruebaToolStripMenuItem1.Name = "pruebaToolStripMenuItem1";
-            pruebaToolStripMenuItem1.Size = new Size(143, 24);
-            pruebaToolStripMenuItem1.Text = "Actualizar Usuario";
+            pruebaToolStripMenuItem1.Size = new Size(158, 24);
+            pruebaToolStripMenuItem1.Text = "Actualizar Promoción";
             // 
             // eliminarUsuarioToolStripMenuItem
             // 
             eliminarUsuarioToolStripMenuItem.Name = "eliminarUsuarioToolStripMenuItem";
-            eliminarUsuarioToolStripMenuItem.Size = new Size(143, 24);
-            eliminarUsuarioToolStripMenuItem.Text = "Eliminar Usuario";
+            eliminarUsuarioToolStripMenuItem.Size = new Size(158, 24);
+            eliminarUsuarioToolStripMenuItem.Text = "Eliminar Promoción";
             // 
             // promociones
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Fuchsia;
+            BackColor = SystemColors.ActiveCaption;
             Controls.Add(menuStrip1);
             Name = "promociones";
             Size = new Size(844, 400);

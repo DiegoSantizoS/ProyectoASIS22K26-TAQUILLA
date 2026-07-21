@@ -36,7 +36,6 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.BackColor = Color.FromArgb(192, 255, 192);
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { pruebaToolStripMenuItem, pruebaToolStripMenuItem1 });
@@ -62,7 +61,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Lime;
+            BackColor = SystemColors.ActiveCaption;
             Controls.Add(menuStrip1);
             Name = "reportes";
             Size = new Size(765, 375);

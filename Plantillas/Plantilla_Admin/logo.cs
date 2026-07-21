@@ -14,5 +14,10 @@ namespace Plantilla_Admin
         {
             InitializeComponent();
         }
+
+        private void tableLayoutPanel_Ayuda_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

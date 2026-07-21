@@ -29,16 +29,15 @@
         private void InitializeComponent()
         {
             menuStrip1 = new MenuStrip();
+            verUsuariosToolStripMenuItem = new ToolStripMenuItem();
             pruebaToolStripMenuItem = new ToolStripMenuItem();
             pruebaToolStripMenuItem1 = new ToolStripMenuItem();
-            verUsuariosToolStripMenuItem = new ToolStripMenuItem();
             eliminarUsuarioToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.BackColor = Color.FromArgb(192, 255, 255);
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { verUsuariosToolStripMenuItem, pruebaToolStripMenuItem, pruebaToolStripMenuItem1, eliminarUsuarioToolStripMenuItem });
@@ -47,6 +46,12 @@
             menuStrip1.Size = new Size(149, 360);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
+            // 
+            // verUsuariosToolStripMenuItem
+            // 
+            verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
+            verUsuariosToolStripMenuItem.Size = new Size(143, 24);
+            verUsuariosToolStripMenuItem.Text = "Buscar Usuario";
             // 
             // pruebaToolStripMenuItem
             // 
@@ -58,26 +63,20 @@
             // pruebaToolStripMenuItem1
             // 
             pruebaToolStripMenuItem1.Name = "pruebaToolStripMenuItem1";
-            pruebaToolStripMenuItem1.Size = new Size(136, 24);
+            pruebaToolStripMenuItem1.Size = new Size(143, 24);
             pruebaToolStripMenuItem1.Text = "Actualizar Usuario";
-            // 
-            // verUsuariosToolStripMenuItem
-            // 
-            verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            verUsuariosToolStripMenuItem.Size = new Size(136, 24);
-            verUsuariosToolStripMenuItem.Text = "Buscar Usuario";
             // 
             // eliminarUsuarioToolStripMenuItem
             // 
             eliminarUsuarioToolStripMenuItem.Name = "eliminarUsuarioToolStripMenuItem";
-            eliminarUsuarioToolStripMenuItem.Size = new Size(136, 24);
+            eliminarUsuarioToolStripMenuItem.Size = new Size(143, 24);
             eliminarUsuarioToolStripMenuItem.Text = "Eliminar Usuario";
             // 
             // usuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Cyan;
+            BackColor = SystemColors.ActiveCaption;
             Controls.Add(menuStrip1);
             Name = "usuarios";
             Size = new Size(621, 360);

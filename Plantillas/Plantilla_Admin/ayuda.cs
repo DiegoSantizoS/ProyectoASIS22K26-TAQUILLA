@@ -19,5 +19,10 @@ namespace Plantilla_Admin
         {
 
         }
+
+        private void pREGUNTASFRECUENTESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
