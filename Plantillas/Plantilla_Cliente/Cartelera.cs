@@ -24,7 +24,7 @@ namespace Plantilla_Cliente
         private void RedondearPanel(Panel panel, int radio)
         {
             GraphicsPath path = new GraphicsPath();
-
+            ///miguel contreras jacinto 
             path.AddArc(0, 0, radio, radio, 180, 90);
             path.AddArc(panel.Width - radio, 0, radio, radio, 270, 90);
             path.AddArc(panel.Width - radio, panel.Height - radio, radio, radio, 0, 90);
