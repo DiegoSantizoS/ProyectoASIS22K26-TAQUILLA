@@ -1,6 +1,5 @@
-﻿/* Diego Fernando Santizo Samayoa 0901-22-15950
- * - Boton para ingresar al menu de administrador
-*/
+﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 22/07/2026 */
 
 
 using Plantilla_Admin;

@@ -26,8 +26,8 @@ namespace Plantilla_Admin
 
         private void aGREGARToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrCartelera frCartelera = new FrCartelera();
-            funcargarpagina(frCartelera);
+            FrCuMantenimientoCartelera frCuMantenimientoCartelera = new FrCuMantenimientoCartelera();
+            funcargarpagina(frCuMantenimientoCartelera);
         }
 
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
