@@ -37,26 +37,27 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.AutoSize = false;
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { buscarToolStripMenuItem, aGREGARToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(95, 394);
+            menuStrip1.Size = new Size(150, 394);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // buscarToolStripMenuItem
             // 
             buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            buscarToolStripMenuItem.Size = new Size(82, 24);
+            buscarToolStripMenuItem.Size = new Size(143, 24);
             buscarToolStripMenuItem.Text = "BUSCAR";
             buscarToolStripMenuItem.Click += buscarToolStripMenuItem_Click;
             // 
             // aGREGARToolStripMenuItem
             // 
             aGREGARToolStripMenuItem.Name = "aGREGARToolStripMenuItem";
-            aGREGARToolStripMenuItem.Size = new Size(82, 24);
+            aGREGARToolStripMenuItem.Size = new Size(143, 24);
             aGREGARToolStripMenuItem.Text = "AGREGAR";
             aGREGARToolStripMenuItem.Click += aGREGARToolStripMenuItem_Click;
             // 
@@ -64,9 +65,9 @@
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(95, 0);
+            panel1.Location = new Point(150, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(762, 394);
+            panel1.Size = new Size(707, 394);
             panel1.TabIndex = 1;
             // 
             // cartelera
@@ -81,7 +82,6 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

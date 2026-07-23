@@ -47,7 +47,7 @@
             menuStrip_MenuAdmin.Items.AddRange(new ToolStripItem[] { toolStripMenuItem_landing, toolStripMenuItem_cartelera, toolStripMenuItem_funciones, toolStripMenuItem_sedes, toolStripMenuItem_promociones, toolStripMenuItem_reportes, toolStripMenuItem_usuarios, toolStripMenuItem_ayuda });
             menuStrip_MenuAdmin.Location = new Point(0, 0);
             menuStrip_MenuAdmin.Name = "menuStrip_MenuAdmin";
-            menuStrip_MenuAdmin.Size = new Size(800, 28);
+            menuStrip_MenuAdmin.Size = new Size(1200, 28);
             menuStrip_MenuAdmin.TabIndex = 0;
             menuStrip_MenuAdmin.Text = "menuStrip1";
             // 
@@ -111,18 +111,20 @@
             // 
             pnlMenuAdmin.Dock = DockStyle.Fill;
             pnlMenuAdmin.Location = new Point(0, 28);
+            pnlMenuAdmin.Margin = new Padding(0);
             pnlMenuAdmin.Name = "pnlMenuAdmin";
-            pnlMenuAdmin.Size = new Size(800, 422);
+            pnlMenuAdmin.Size = new Size(1200, 700);
             pnlMenuAdmin.TabIndex = 1;
             // 
             // FrMenuAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1200, 728);
             Controls.Add(pnlMenuAdmin);
             Controls.Add(menuStrip_MenuAdmin);
             MainMenuStrip = menuStrip_MenuAdmin;
+            MinimumSize = new Size(1218, 775);
             Name = "FrMenuAdmin";
             Text = "FrMenuAdmin";
             menuStrip_MenuAdmin.ResumeLayout(false);
