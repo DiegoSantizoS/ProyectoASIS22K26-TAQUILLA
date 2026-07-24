@@ -61,7 +61,7 @@
             // 
             Txt_logo.AutoSize = true;
             Txt_logo.Dock = DockStyle.Fill;
-            Txt_logo.Image = Plantilla_Admin.Properties.Resources.images1;
+            Txt_logo.Image = Plantilla_Admin.Properties.Resources.images;
             Txt_logo.Location = new Point(3, 0);
             Txt_logo.Name = "Txt_logo";
             Txt_logo.Size = new Size(139, 153);
