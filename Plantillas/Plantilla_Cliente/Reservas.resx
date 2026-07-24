@@ -117,37 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABGdBTUEAALGPC/xhBQAAAf9JREFUaEPt
-        mS9PBTEQxEcikUgkEolE4sCBAwcOCRKHRCKRSD4CEolE8hGQSMgk16SZbF/uuOu/Y3/JhoS3dGde27tt
-        ARzHcRxn1ewAOAVwD+Bp+HkJYFcTe+YCwM/I+AZwrgP0wpVhaErw77vhyzDwl+CMN82WITqOFwCHALaH
-        fP48GPaz5sYR8psiZZazxIfVGDhGanU0Z1oFMk40aSRHxliMZrBmZe6MWCumiT3NWVRhc80GuBV0bL7m
-        qpJbkLW8q1FKDJdyXONME0qhQsY+jaeiS7vaXi4xu4GStZLEAl71w4Xh+FUNs2OKBfAUlBMeKuJ6fH4U
-        5VoE7GvCwuxJPdYvyp0IYKOQE21EWL8oPLjHAngIyAlXUFzvWBNyQ4OxgNwHd93DXOLFiQW864cL8yb1
-        qhALyC2iZK0kekrKtY91/+Z+5yfRfZzrm9caud8IG1ExvHpdkhujRlV0uTHYhS2BNfZSZ+1ZfBjC5pq2
-        zD5qUk1UHONBk0Zya4zFaO4/FCowxNhG35pVjW5MMz6HhxDbQnZK/CLYE/P3mrspmjM91UAqno3bjhDN
-        mdbj3JTgFU5sqBvThKK0D04F+/HUvVhXpmMonHuXpx++uqZ0Td2anoObdtMrxk276RWTMl3lsq8UbtpN
-        rxg1nfvevAmC6X9hNpA6fTmO4zhOy/wCAj6dUrofDJ0AAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="Imagen.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Nombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Generos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Idioma.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Duracion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Reservar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

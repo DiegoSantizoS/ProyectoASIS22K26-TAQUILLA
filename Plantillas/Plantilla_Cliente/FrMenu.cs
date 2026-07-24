@@ -22,10 +22,18 @@ namespace Plantilla_Cliente
         {
 
         }
+        private void Cartelera_CambiaraReserva(object sender, EventArgs e)
+        {
+            Reservas reservas = new Reservas();
+            funcargarpagina(reservas);
+        }
 
         private void carteleraToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Cartelera cartelera = new Cartelera();
+
+            cartelera.CambiaraReserva += Cartelera_CambiaraReserva;
+
             funcargarpagina(cartelera);
         }
     }
