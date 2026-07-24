@@ -78,7 +78,7 @@
             button2 = new Button();
             button3 = new Button();
             label12 = new Label();
-            panel1 = new Panel();
+            Pnl_panelEstatico = new Panel();
             openFileDialog1 = new OpenFileDialog();
             tableLayoutPanel_Main.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -98,7 +98,7 @@
             tableLayoutPanel12.SuspendLayout();
             tableLayoutPanel13.SuspendLayout();
             tableLayoutPanel14.SuspendLayout();
-            panel1.SuspendLayout();
+            Pnl_panelEstatico.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel_Main
@@ -730,14 +730,14 @@
             label12.Text = "CARTELERA";
             label12.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // Pnl_panelEstatico
             // 
-            panel1.Controls.Add(tableLayoutPanel_Main);
-            panel1.Location = new Point(0, 0);
-            panel1.MinimumSize = new Size(1050, 700);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1050, 700);
-            panel1.TabIndex = 0;
+            Pnl_panelEstatico.Controls.Add(tableLayoutPanel_Main);
+            Pnl_panelEstatico.Location = new Point(0, 0);
+            Pnl_panelEstatico.MinimumSize = new Size(1050, 700);
+            Pnl_panelEstatico.Name = "Pnl_panelEstatico";
+            Pnl_panelEstatico.Size = new Size(1050, 700);
+            Pnl_panelEstatico.TabIndex = 0;
             // 
             // openFileDialog1
             // 
@@ -747,7 +747,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel1);
+            Controls.Add(Pnl_panelEstatico);
             Name = "FrCuMantenimientoCartelera";
             Size = new Size(1050, 700);
             tableLayoutPanel_Main.ResumeLayout(false);
@@ -780,14 +780,14 @@
             tableLayoutPanel13.ResumeLayout(false);
             tableLayoutPanel13.PerformLayout();
             tableLayoutPanel14.ResumeLayout(false);
-            panel1.ResumeLayout(false);
+            Pnl_panelEstatico.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private TableLayoutPanel tableLayoutPanel_Main;
-        private Panel panel1;
+        private Panel Pnl_panelEstatico;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel3;
         private TableLayoutPanel tableLayoutPanel6;
