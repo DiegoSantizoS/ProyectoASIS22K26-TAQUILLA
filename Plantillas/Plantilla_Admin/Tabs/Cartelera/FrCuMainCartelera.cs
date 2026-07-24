@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace Plantilla_Admin
 {
-    public partial class cartelera : UserControl
+    public partial class FrCuMainCartelera : UserControl
     {
-        public cartelera()
+        public FrCuMainCartelera()
         {
             InitializeComponent();
-            funcargarpagina(new FrBuscarCartelera());
+            funcargarpagina(new FrCuBuscarCartelera1());
         }
 
         private void funcargarpagina(UserControl pagina)
@@ -32,7 +32,7 @@ namespace Plantilla_Admin
 
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrBuscarCartelera frBuscarCartelera = new FrBuscarCartelera();
+            FrCuBuscarCartelera1 frBuscarCartelera = new FrCuBuscarCartelera1();
             funcargarpagina(frBuscarCartelera);
         }
     }

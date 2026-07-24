@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FrLogin.cs" />
+    <Compile Update="FormulariosPrincipales\FrLogin.cs" />
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

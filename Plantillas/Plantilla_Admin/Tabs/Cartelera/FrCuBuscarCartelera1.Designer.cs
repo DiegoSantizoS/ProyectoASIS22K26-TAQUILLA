@@ -1,6 +1,6 @@
 ﻿namespace Plantilla_Admin
 {
-    partial class FrBuscarCartelera
+    partial class FrCuBuscarCartelera1
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -406,12 +406,12 @@
             label6.Text = "VER CARTELERA";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // FrBuscarCartelera
+            // FrCuBuscarCartelera1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
-            Name = "FrBuscarCartelera";
+            Name = "FrCuBuscarCartelera1";
             Size = new Size(886, 508);
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Dgv_Cartelera).EndInit();
