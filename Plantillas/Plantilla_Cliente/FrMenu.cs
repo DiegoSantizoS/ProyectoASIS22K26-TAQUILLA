@@ -36,6 +36,12 @@ namespace Plantilla_Cliente
 
             funcargarpagina(cartelera);
         }
+
+        private void reservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reservas reservas = new Reservas();
+            funcargarpagina(reservas);
+        }
     }
 }
 

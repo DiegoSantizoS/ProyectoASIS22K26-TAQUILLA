@@ -8,16 +8,11 @@ using System.Windows.Forms;
 
 namespace Plantilla_Cliente
 {
-    public partial class Reservas : UserControl
+    public partial class Butacas : UserControl
     {
-        public Reservas()
+        public Butacas()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

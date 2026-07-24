@@ -171,6 +171,7 @@
             // Btn_2DFilter
             // 
             Btn_2DFilter.BackColor = Color.White;
+            Btn_2DFilter.Cursor = Cursors.Hand;
             Btn_2DFilter.Dock = DockStyle.Fill;
             Btn_2DFilter.Location = new Point(3, 3);
             Btn_2DFilter.Name = "Btn_2DFilter";
@@ -183,6 +184,7 @@
             // Btn_3DFilter
             // 
             Btn_3DFilter.BackColor = Color.White;
+            Btn_3DFilter.Cursor = Cursors.Hand;
             Btn_3DFilter.Dock = DockStyle.Fill;
             Btn_3DFilter.Location = new Point(449, 3);
             Btn_3DFilter.Name = "Btn_3DFilter";
@@ -195,6 +197,7 @@
             // Btn_4DXFilter
             // 
             Btn_4DXFilter.BackColor = Color.White;
+            Btn_4DXFilter.Cursor = Cursors.Hand;
             Btn_4DXFilter.Dock = DockStyle.Fill;
             Btn_4DXFilter.Location = new Point(895, 3);
             Btn_4DXFilter.Name = "Btn_4DXFilter";
@@ -207,6 +210,7 @@
             // Btn_IMAXFilter
             // 
             Btn_IMAXFilter.BackColor = Color.White;
+            Btn_IMAXFilter.Cursor = Cursors.Hand;
             Btn_IMAXFilter.Dock = DockStyle.Fill;
             Btn_IMAXFilter.Location = new Point(1341, 3);
             Btn_IMAXFilter.Name = "Btn_IMAXFilter";
@@ -257,6 +261,7 @@
             Dgv_Cartelera.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Dgv_Cartelera.Columns.AddRange(new DataGridViewColumn[] { Imagen, Nombre, Generos, Idioma, Duracion, Reservar });
             Pnl_Buscador.SetColumnSpan(Dgv_Cartelera, 2);
+            Dgv_Cartelera.Cursor = Cursors.Hand;
             Dgv_Cartelera.Dock = DockStyle.Fill;
             Dgv_Cartelera.Location = new Point(3, 255);
             Dgv_Cartelera.Name = "Dgv_Cartelera";
