@@ -76,6 +76,7 @@
             reservasToolStripMenuItem.Name = "reservasToolStripMenuItem";
             reservasToolStripMenuItem.Size = new Size(80, 24);
             reservasToolStripMenuItem.Text = "Reservas";
+            reservasToolStripMenuItem.Click += reservasToolStripMenuItem_Click;
             // 
             // Pnl_Menu
             // 

@@ -28,6 +28,12 @@ namespace Plantilla_Cliente
             Cartelera cartelera = new Cartelera();
             funcargarpagina(cartelera);
         }
+
+        private void reservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reservas reservas = new Reservas();
+            funcargarpagina(reservas);
+        }
     }
 }
 
