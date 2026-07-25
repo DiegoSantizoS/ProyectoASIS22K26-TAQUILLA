@@ -349,13 +349,11 @@
         private TableLayoutPanel Pnl_Filtros1;
         private ComboBox CB_Ciudad;
         private ComboBox comboBox2;
-        private Button Btn_4DFilter;
         private TableLayoutPanel Pnl_Filtros2;
         private Button Btn_4DXFilter;
         private Button Btn_3DFilter;
         private Button Btn_IMAXFilter;
         private Button Btn_2DFilter;
-        private Button Btn_3DFitler;
         private TableLayoutPanel tableLayoutPanel1;
         private PictureBox pictureBox1;
         private TextBox textBox1;
