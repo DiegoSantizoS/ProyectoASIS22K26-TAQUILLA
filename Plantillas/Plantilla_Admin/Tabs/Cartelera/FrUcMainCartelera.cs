@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Plantilla_Admin
 {
-    public partial class FrCuMainCartelera : UserControl
+    public partial class FrUcMainCartelera : UserControl
     {
-        public FrCuMainCartelera()
+        public FrUcMainCartelera()
         {
             InitializeComponent();
             funcargarpagina(new FrCuBuscarCartelera1());
@@ -26,7 +26,7 @@ namespace Plantilla_Admin
 
         private void aGREGARToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrCuMantenimientoCartelera frCuMantenimientoCartelera = new FrCuMantenimientoCartelera();
+            FrUcMantenimientoCartelera frCuMantenimientoCartelera = new FrUcMantenimientoCartelera();
             funcargarpagina(frCuMantenimientoCartelera);
         }
 

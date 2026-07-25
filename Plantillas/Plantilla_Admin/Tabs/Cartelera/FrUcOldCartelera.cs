@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Plantilla_Admin
 {
-    public partial class FrCuOldCartelera : UserControl
+    public partial class FrUcOldCartelera : UserControl
     {
-        public FrCuOldCartelera()
+        public FrUcOldCartelera()
         {
             InitializeComponent();
         }
