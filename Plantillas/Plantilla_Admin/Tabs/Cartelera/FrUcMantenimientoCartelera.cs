@@ -22,7 +22,7 @@ namespace Plantilla_Admin
             string input = Txt_trailer.Text.Trim();
 
             input = input.Split("v=")[1].Split("&")[0];
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.LoadAsync($"https://img.youtube.com/vi/{input}/hqdefault.jpg");
         }
 

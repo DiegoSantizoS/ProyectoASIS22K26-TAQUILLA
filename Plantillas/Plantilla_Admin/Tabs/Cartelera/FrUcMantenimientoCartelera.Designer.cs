@@ -957,8 +957,8 @@
             // 
             // textBox4
             // 
-            textBox4.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBox4.Location = new Point(103, 11);
+            textBox4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBox4.Location = new Point(103, 3);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(287, 27);
             textBox4.TabIndex = 2;
@@ -973,7 +973,7 @@
             label7.Size = new Size(94, 47);
             label7.TabIndex = 0;
             label7.Text = "Costo";
-            label7.TextAlign = ContentAlignment.MiddleRight;
+            label7.TextAlign = ContentAlignment.TopRight;
             // 
             // tableLayoutPanel8
             // 
@@ -988,15 +988,17 @@
             tableLayoutPanel8.RowCount = 1;
             Tlp_formulario.SetRowSpan(tableLayoutPanel8, 4);
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel8.Size = new Size(394, 200);
             tableLayoutPanel8.TabIndex = 7;
             // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(103, 3);
+            pictureBox1.Location = new Point(100, 0);
+            pictureBox1.Margin = new Padding(0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(288, 194);
+            pictureBox1.Size = new Size(294, 200);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -1020,8 +1022,8 @@
             // 
             // textBox5
             // 
-            textBox5.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBox5.Location = new Point(103, 11);
+            textBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBox5.Location = new Point(103, 3);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(287, 27);
             textBox5.TabIndex = 2;
@@ -1036,7 +1038,7 @@
             label5.Size = new Size(94, 47);
             label5.TabIndex = 0;
             label5.Text = "Duración";
-            label5.TextAlign = ContentAlignment.MiddleRight;
+            label5.TextAlign = ContentAlignment.TopRight;
             // 
             // tableLayoutPanel5
             // 
@@ -1065,13 +1067,13 @@
             label4.Size = new Size(94, 47);
             label4.TabIndex = 0;
             label4.Text = "Estado";
-            label4.TextAlign = ContentAlignment.MiddleRight;
+            label4.TextAlign = ContentAlignment.TopRight;
             // 
             // comboBox3
             // 
-            comboBox3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(103, 11);
+            comboBox3.Location = new Point(103, 3);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(287, 28);
             comboBox3.TabIndex = 1;
@@ -1094,8 +1096,8 @@
             // 
             // Txt_titulo
             // 
-            Txt_titulo.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            Txt_titulo.Location = new Point(103, 11);
+            Txt_titulo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            Txt_titulo.Location = new Point(103, 3);
             Txt_titulo.Name = "Txt_titulo";
             Txt_titulo.Size = new Size(287, 27);
             Txt_titulo.TabIndex = 3;
@@ -1110,7 +1112,7 @@
             label3.Size = new Size(94, 47);
             label3.TabIndex = 0;
             label3.Text = "Titulo";
-            label3.TextAlign = ContentAlignment.MiddleRight;
+            label3.TextAlign = ContentAlignment.TopRight;
             // 
             // tableLayoutPanel3
             // 
@@ -1142,9 +1144,9 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(103, 11);
+            dateTimePicker1.Location = new Point(103, 3);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(287, 27);
             dateTimePicker1.TabIndex = 1;
@@ -1318,12 +1320,12 @@
             label10.Size = new Size(94, 47);
             label10.TabIndex = 0;
             label10.Text = "Director";
-            label10.TextAlign = ContentAlignment.MiddleRight;
+            label10.TextAlign = ContentAlignment.TopRight;
             // 
             // textBox2
             // 
-            textBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBox2.Location = new Point(103, 11);
+            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBox2.Location = new Point(103, 3);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(287, 27);
             textBox2.TabIndex = 1;
@@ -1354,13 +1356,13 @@
             label11.Size = new Size(94, 47);
             label11.TabIndex = 0;
             label11.Text = "Clasificación";
-            label11.TextAlign = ContentAlignment.MiddleRight;
+            label11.TextAlign = ContentAlignment.TopRight;
             // 
             // comboBox9
             // 
-            comboBox9.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBox9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox9.FormattingEnabled = true;
-            comboBox9.Location = new Point(103, 11);
+            comboBox9.Location = new Point(103, 3);
             comboBox9.Name = "comboBox9";
             comboBox9.Size = new Size(287, 28);
             comboBox9.TabIndex = 1;
