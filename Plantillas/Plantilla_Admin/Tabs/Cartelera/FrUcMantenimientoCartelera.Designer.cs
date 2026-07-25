@@ -69,7 +69,7 @@
             tableLayoutPanel7 = new TableLayoutPanel();
             label6 = new Label();
             Txt_trailer = new TextBox();
-            button1 = new Button();
+            Btn_cargar = new Button();
             tableLayoutPanel12 = new TableLayoutPanel();
             label10 = new Label();
             textBox2 = new TextBox();
@@ -1253,13 +1253,14 @@
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
             tableLayoutPanel7.Controls.Add(label6, 0, 0);
             tableLayoutPanel7.Controls.Add(Txt_trailer, 1, 0);
-            tableLayoutPanel7.Controls.Add(button1, 2, 0);
+            tableLayoutPanel7.Controls.Add(Btn_cargar, 2, 0);
+            tableLayoutPanel7.Dock = DockStyle.Fill;
             tableLayoutPanel7.Location = new Point(393, 150);
             tableLayoutPanel7.Margin = new Padding(0);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
             tableLayoutPanel7.RowCount = 1;
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel7.Size = new Size(367, 50);
+            tableLayoutPanel7.Size = new Size(394, 50);
             tableLayoutPanel7.TabIndex = 6;
             // 
             // label6
@@ -1279,20 +1280,20 @@
             Txt_trailer.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             Txt_trailer.Location = new Point(103, 11);
             Txt_trailer.Name = "Txt_trailer";
-            Txt_trailer.Size = new Size(161, 27);
+            Txt_trailer.Size = new Size(188, 27);
             Txt_trailer.TabIndex = 1;
             // 
-            // button1
+            // Btn_cargar
             // 
-            button1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            button1.Location = new Point(267, 10);
-            button1.Margin = new Padding(0);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 29);
-            button1.TabIndex = 2;
-            button1.Text = "Cargar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            Btn_cargar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Btn_cargar.Location = new Point(294, 10);
+            Btn_cargar.Margin = new Padding(0);
+            Btn_cargar.Name = "Btn_cargar";
+            Btn_cargar.Size = new Size(100, 29);
+            Btn_cargar.TabIndex = 2;
+            Btn_cargar.Text = "CARGAR";
+            Btn_cargar.UseVisualStyleBackColor = true;
+            Btn_cargar.Click += button1_Click;
             // 
             // tableLayoutPanel12
             // 
@@ -1515,7 +1516,7 @@
         private TableLayoutPanel tableLayoutPanel13;
         private Label label11;
         private ComboBox comboBox9;
-        private Button button1;
+        private Button Btn_cargar;
         private OpenFileDialog openFileDialog1;
         private TableLayoutPanel Tlp_grupoDescripcion;
         private Label Tx_descripcion;
