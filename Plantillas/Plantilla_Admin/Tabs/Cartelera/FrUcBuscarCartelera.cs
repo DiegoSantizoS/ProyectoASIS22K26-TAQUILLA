@@ -8,14 +8,14 @@ using System.Windows.Forms;
 
 namespace Plantilla_Admin
 {
-    public partial class FrCartelera : UserControl
+    public partial class FrCuBuscarCartelera1 : UserControl
     {
-        public FrCartelera()
+        public FrCuBuscarCartelera1()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

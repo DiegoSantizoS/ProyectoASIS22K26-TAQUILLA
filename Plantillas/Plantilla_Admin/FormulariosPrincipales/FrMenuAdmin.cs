@@ -29,7 +29,7 @@ namespace Plantilla_Admin
 
         private void carteleraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cartelera cartelera = new cartelera();
+            FrUcMainCartelera cartelera = new FrUcMainCartelera();
             funcargarpagina(cartelera);
         }
 
