@@ -62,7 +62,7 @@
             button9 = new Button();
             button10 = new Button();
             Lbl_Horarios = new Label();
-            button21 = new Button();
+            Btn_Continuar = new Button();
             label6 = new Label();
             TlP_Reservas.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
@@ -83,7 +83,7 @@
             TlP_Reservas.Controls.Add(comboBox1, 1, 1);
             TlP_Reservas.Controls.Add(flowLayoutPanel1, 1, 2);
             TlP_Reservas.Controls.Add(Lbl_Horarios, 0, 3);
-            TlP_Reservas.Controls.Add(button21, 1, 4);
+            TlP_Reservas.Controls.Add(Btn_Continuar, 1, 4);
             TlP_Reservas.Controls.Add(label6, 0, 2);
             TlP_Reservas.Dock = DockStyle.Fill;
             TlP_Reservas.Location = new Point(0, 0);
@@ -467,15 +467,16 @@
             Lbl_Horarios.Text = "Horarios disponibles";
             Lbl_Horarios.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button21
+            // Btn_Continuar
             // 
-            button21.Dock = DockStyle.Fill;
-            button21.Location = new Point(127, 370);
-            button21.Name = "button21";
-            button21.Size = new Size(1264, 43);
-            button21.TabIndex = 11;
-            button21.Text = "Continuar";
-            button21.UseVisualStyleBackColor = true;
+            Btn_Continuar.Dock = DockStyle.Fill;
+            Btn_Continuar.Location = new Point(127, 370);
+            Btn_Continuar.Name = "Btn_Continuar";
+            Btn_Continuar.Size = new Size(1264, 43);
+            Btn_Continuar.TabIndex = 11;
+            Btn_Continuar.Text = "Continuar";
+            Btn_Continuar.UseVisualStyleBackColor = true;
+            Btn_Continuar.Click += Btn_Continuar_Click;
             // 
             // label6
             // 
@@ -541,7 +542,7 @@
         private Button button9;
         private Button button10;
         private Label Lbl_Horarios;
-        private Button button21;
+        private Button Btn_Continuar;
         private Label label6;
     }
 }

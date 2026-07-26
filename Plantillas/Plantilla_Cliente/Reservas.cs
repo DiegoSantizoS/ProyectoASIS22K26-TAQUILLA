@@ -21,5 +21,15 @@ namespace Plantilla_Cliente
 
         }
 
+        private void Btn_Continuar_Click(object sender, EventArgs e)
+        {
+            using (Butacas butacas = new Butacas())
+            {
+                if(butacas.ShowDialog() == DialogResult.OK)
+                {
+                    // Handle the case where the user selects seats
+                }
+            }
+        }
     }
 }
