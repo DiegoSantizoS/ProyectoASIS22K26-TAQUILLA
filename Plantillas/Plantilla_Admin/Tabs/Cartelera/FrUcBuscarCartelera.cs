@@ -19,5 +19,10 @@ namespace Plantilla_Admin
         {
 
         }
+
+        private void Dgv_genero_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

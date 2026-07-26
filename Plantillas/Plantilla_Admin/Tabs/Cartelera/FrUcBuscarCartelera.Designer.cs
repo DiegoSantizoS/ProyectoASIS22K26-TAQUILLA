@@ -39,8 +39,6 @@
             Tlp_formulario = new TableLayoutPanel();
             Tlp_dgvFormato = new TableLayoutPanel();
             Dgv_formato = new DataGridView();
-            Dgvc_nombre = new DataGridViewTextBoxColumn();
-            Dgvb_borrar = new DataGridViewButtonColumn();
             Tlp_grupoFormato = new TableLayoutPanel();
             cb_formato = new ComboBox();
             Tx_formato = new Label();
@@ -49,7 +47,7 @@
             Cb_genero = new ComboBox();
             Tx_Genero = new Label();
             Btn_agregarGenero = new Button();
-            button3 = new Button();
+            Btn_refrescar = new Button();
             Tlp_grupoNombre = new TableLayoutPanel();
             label2 = new Label();
             textBox2 = new TextBox();
@@ -58,11 +56,13 @@
             Txt_id = new TextBox();
             Tlp_dgvGenero = new TableLayoutPanel();
             Dgv_genero = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            Borrar = new DataGridViewButtonColumn();
-            button2 = new Button();
-            button1 = new Button();
+            Btn_eliminar = new Button();
+            Btn_actualizar = new Button();
             label6 = new Label();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            Dgvb_generoQuitar = new DataGridViewButtonColumn();
+            Dgvc_nombre = new DataGridViewTextBoxColumn();
+            Dgvb_formatoQuitar = new DataGridViewButtonColumn();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Dgv_Cartelera).BeginInit();
             Tlp_formularioTitulo.SuspendLayout();
@@ -167,12 +167,12 @@
             Tlp_formulario.Controls.Add(Tlp_dgvFormato, 1, 2);
             Tlp_formulario.Controls.Add(Tlp_grupoFormato, 1, 1);
             Tlp_formulario.Controls.Add(Tlp_grupoGenero, 0, 1);
-            Tlp_formulario.Controls.Add(button3, 2, 0);
+            Tlp_formulario.Controls.Add(Btn_refrescar, 2, 0);
             Tlp_formulario.Controls.Add(Tlp_grupoNombre, 0, 0);
             Tlp_formulario.Controls.Add(Tlp_grupoID, 1, 0);
             Tlp_formulario.Controls.Add(Tlp_dgvGenero, 0, 2);
-            Tlp_formulario.Controls.Add(button2, 2, 3);
-            Tlp_formulario.Controls.Add(button1, 2, 2);
+            Tlp_formulario.Controls.Add(Btn_eliminar, 2, 3);
+            Tlp_formulario.Controls.Add(Btn_actualizar, 2, 2);
             Tlp_formulario.Dock = DockStyle.Fill;
             Tlp_formulario.Location = new Point(0, 75);
             Tlp_formulario.Margin = new Padding(0);
@@ -206,7 +206,7 @@
             // 
             Dgv_formato.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Dgv_formato.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Dgv_formato.Columns.AddRange(new DataGridViewColumn[] { Dgvc_nombre, Dgvb_borrar });
+            Dgv_formato.Columns.AddRange(new DataGridViewColumn[] { Dgvc_nombre, Dgvb_formatoQuitar });
             Dgv_formato.Dock = DockStyle.Fill;
             Dgv_formato.Location = new Point(80, 0);
             Dgv_formato.Margin = new Padding(0);
@@ -214,19 +214,6 @@
             Dgv_formato.RowHeadersWidth = 51;
             Dgv_formato.Size = new Size(365, 155);
             Dgv_formato.TabIndex = 16;
-            // 
-            // Dgvc_nombre
-            // 
-            Dgvc_nombre.FillWeight = 200F;
-            Dgvc_nombre.HeaderText = "Nombre";
-            Dgvc_nombre.MinimumWidth = 6;
-            Dgvc_nombre.Name = "Dgvc_nombre";
-            // 
-            // Dgvb_borrar
-            // 
-            Dgvb_borrar.HeaderText = "Borrar";
-            Dgvb_borrar.MinimumWidth = 6;
-            Dgvb_borrar.Name = "Dgvb_borrar";
             // 
             // Tlp_grupoFormato
             // 
@@ -328,15 +315,15 @@
             Btn_agregarGenero.Text = "Agregar";
             Btn_agregarGenero.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // Btn_refrescar
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            button3.Location = new Point(913, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(114, 44);
-            button3.TabIndex = 2;
-            button3.Text = "REFRESCAR";
-            button3.UseVisualStyleBackColor = true;
+            Btn_refrescar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            Btn_refrescar.Location = new Point(913, 3);
+            Btn_refrescar.Name = "Btn_refrescar";
+            Btn_refrescar.Size = new Size(114, 44);
+            Btn_refrescar.TabIndex = 2;
+            Btn_refrescar.Text = "REFRESCAR";
+            Btn_refrescar.UseVisualStyleBackColor = true;
             // 
             // Tlp_grupoNombre
             // 
@@ -428,7 +415,7 @@
             // 
             Dgv_genero.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Dgv_genero.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Dgv_genero.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Borrar });
+            Dgv_genero.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Dgvb_generoQuitar });
             Dgv_genero.Dock = DockStyle.Fill;
             Dgv_genero.Location = new Point(80, 0);
             Dgv_genero.Margin = new Padding(0);
@@ -436,39 +423,27 @@
             Dgv_genero.RowHeadersWidth = 51;
             Dgv_genero.Size = new Size(365, 155);
             Dgv_genero.TabIndex = 16;
+            Dgv_genero.CellContentClick += Dgv_genero_CellContentClick;
             // 
-            // dataGridViewTextBoxColumn1
+            // Btn_eliminar
             // 
-            dataGridViewTextBoxColumn1.FillWeight = 200F;
-            dataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            Btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            Btn_eliminar.Location = new Point(913, 153);
+            Btn_eliminar.Name = "Btn_eliminar";
+            Btn_eliminar.Size = new Size(114, 44);
+            Btn_eliminar.TabIndex = 1;
+            Btn_eliminar.Text = "ELIMINAR";
+            Btn_eliminar.UseVisualStyleBackColor = true;
             // 
-            // Borrar
+            // Btn_actualizar
             // 
-            Borrar.HeaderText = "Borrar";
-            Borrar.MinimumWidth = 6;
-            Borrar.Name = "Borrar";
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            button2.Location = new Point(913, 153);
-            button2.Name = "button2";
-            button2.Size = new Size(114, 44);
-            button2.TabIndex = 1;
-            button2.Text = "ELIMINAR";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.Location = new Point(913, 103);
-            button1.Name = "button1";
-            button1.Size = new Size(114, 44);
-            button1.TabIndex = 0;
-            button1.Text = "ACTUALIZAR";
-            button1.UseVisualStyleBackColor = true;
+            Btn_actualizar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            Btn_actualizar.Location = new Point(913, 103);
+            Btn_actualizar.Name = "Btn_actualizar";
+            Btn_actualizar.Size = new Size(114, 44);
+            Btn_actualizar.TabIndex = 0;
+            Btn_actualizar.Text = "ACTUALIZAR";
+            Btn_actualizar.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -481,6 +456,32 @@
             label6.TabIndex = 1;
             label6.Text = "BUSCAR CARTELERA";
             label6.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.FillWeight = 200F;
+            dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Dgvb_generoQuitar
+            // 
+            Dgvb_generoQuitar.HeaderText = "Quitar";
+            Dgvb_generoQuitar.MinimumWidth = 6;
+            Dgvb_generoQuitar.Name = "Dgvb_generoQuitar";
+            // 
+            // Dgvc_nombre
+            // 
+            Dgvc_nombre.FillWeight = 200F;
+            Dgvc_nombre.HeaderText = "Nombre";
+            Dgvc_nombre.MinimumWidth = 6;
+            Dgvc_nombre.Name = "Dgvc_nombre";
+            // 
+            // Dgvb_formatoQuitar
+            // 
+            Dgvb_formatoQuitar.HeaderText = "Quitar";
+            Dgvb_formatoQuitar.MinimumWidth = 6;
+            Dgvb_formatoQuitar.Name = "Dgvb_formatoQuitar";
             // 
             // FrCuBuscarCartelera1
             // 
@@ -527,9 +528,9 @@
         private Label label2;
         private TextBox textBox2;
         private Label label6;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button Btn_refrescar;
+        private Button Btn_eliminar;
+        private Button Btn_actualizar;
         private TableLayoutPanel Tlp_grupoGenero;
         private ComboBox Cb_genero;
         private Label Tx_Genero;
@@ -540,11 +541,11 @@
         private Button Btn_insertarFormato;
         private TableLayoutPanel Tlp_dgvGenero;
         private DataGridView Dgv_genero;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewButtonColumn Borrar;
         private TableLayoutPanel Tlp_dgvFormato;
         private DataGridView Dgv_formato;
         private DataGridViewTextBoxColumn Dgvc_nombre;
-        private DataGridViewButtonColumn Dgvb_borrar;
+        private DataGridViewButtonColumn Dgvb_formatoQuitar;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewButtonColumn Dgvb_generoQuitar;
     }
 }
