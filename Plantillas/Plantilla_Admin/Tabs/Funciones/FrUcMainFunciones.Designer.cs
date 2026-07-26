@@ -1,6 +1,6 @@
 ﻿namespace Plantilla_Admin
 {
-    partial class funciones
+    partial class FrUcMainFunciones
     {
         /// <summary> 
         /// Variable del diseñador necesaria.

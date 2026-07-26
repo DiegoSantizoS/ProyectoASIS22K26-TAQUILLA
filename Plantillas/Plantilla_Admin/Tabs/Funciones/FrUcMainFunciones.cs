@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Plantilla_Admin
 {
-    public partial class funciones : UserControl
+    public partial class FrUcMainFunciones : UserControl
     {
-        public funciones()
+        public FrUcMainFunciones()
         {
             InitializeComponent();
         }

@@ -84,5 +84,10 @@ namespace Plantilla_Cliente
                 ButacasSeleccionadas.Remove(codigo);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

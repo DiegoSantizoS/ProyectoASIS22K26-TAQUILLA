@@ -39,6 +39,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Tabs\Funciones\FrUcMainFunciones.cs">
+      <CopyToOutputDirectory>r</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -46,10 +49,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Tabs\Funciones\" />
   </ItemGroup>
 
 </Project>

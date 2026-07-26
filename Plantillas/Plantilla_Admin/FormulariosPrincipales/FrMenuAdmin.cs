@@ -59,7 +59,7 @@ namespace Plantilla_Admin
 
         private void funcionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            funciones funciones = new funciones();
+            FrUcMainFunciones funciones = new FrUcMainFunciones();
             funcargarpagina(funciones);
         }
 
