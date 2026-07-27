@@ -17,6 +17,7 @@ namespace Plantilla_Cliente
         Boolean is4DFilterActive = false;
         Boolean isIMAXFilterActive = false;
         public event EventHandler CambiaraReserva;
+
         public Cartelera()
         {
             InitializeComponent();
@@ -140,5 +141,6 @@ namespace Plantilla_Cliente
         {
             CambiaraReserva?.Invoke(this, EventArgs.Empty);
         }
+
     }
 }

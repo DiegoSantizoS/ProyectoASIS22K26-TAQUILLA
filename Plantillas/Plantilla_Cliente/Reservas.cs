@@ -15,9 +15,21 @@ namespace Plantilla_Cliente
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+        private void TlP_Reservas_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Btn_Continuar_Click(object sender, EventArgs e)
+        {
+            using (Butacas butacas = new Butacas())
+            {
+                if(butacas.ShowDialog() == DialogResult.OK)
+                {
+                    
+                }
+            }
         }
     }
 }

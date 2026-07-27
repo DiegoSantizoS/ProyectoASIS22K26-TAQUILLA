@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             Pnl_MenuLayout = new TableLayoutPanel();
-            MSOpciones = new MenuStrip();
-            carteleraToolStripMenuItem = new ToolStripMenuItem();
-            reservasToolStripMenuItem = new ToolStripMenuItem();
+            Ms_Opciones = new MenuStrip();
+            Tsmi_Cartelera = new ToolStripMenuItem();
+            Tsmi_Reservas = new ToolStripMenuItem();
             Pnl_Menu = new Panel();
             Pnl_MenuLayout.SuspendLayout();
-            MSOpciones.SuspendLayout();
+            Ms_Opciones.SuspendLayout();
             SuspendLayout();
             // 
             // Pnl_MenuLayout
@@ -42,7 +42,7 @@
             Pnl_MenuLayout.BackColor = SystemColors.ControlDark;
             Pnl_MenuLayout.ColumnCount = 1;
             Pnl_MenuLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            Pnl_MenuLayout.Controls.Add(MSOpciones, 0, 0);
+            Pnl_MenuLayout.Controls.Add(Ms_Opciones, 0, 0);
             Pnl_MenuLayout.Controls.Add(Pnl_Menu, 0, 1);
             Pnl_MenuLayout.Dock = DockStyle.Fill;
             Pnl_MenuLayout.Location = new Point(0, 0);
@@ -54,29 +54,29 @@
             Pnl_MenuLayout.TabIndex = 0;
             Pnl_MenuLayout.Paint += tableLayoutPanel1_Paint;
             // 
-            // MSOpciones
+            // Ms_Opciones
             // 
-            MSOpciones.ImageScalingSize = new Size(20, 20);
-            MSOpciones.Items.AddRange(new ToolStripItem[] { carteleraToolStripMenuItem, reservasToolStripMenuItem });
-            MSOpciones.Location = new Point(0, 0);
-            MSOpciones.Name = "MSOpciones";
-            MSOpciones.Size = new Size(1240, 28);
-            MSOpciones.TabIndex = 1;
-            MSOpciones.Text = "menuStrip1";
+            Ms_Opciones.ImageScalingSize = new Size(20, 20);
+            Ms_Opciones.Items.AddRange(new ToolStripItem[] { Tsmi_Cartelera, Tsmi_Reservas });
+            Ms_Opciones.Location = new Point(0, 0);
+            Ms_Opciones.Name = "Ms_Opciones";
+            Ms_Opciones.Size = new Size(1240, 28);
+            Ms_Opciones.TabIndex = 1;
+            Ms_Opciones.Text = "menuStrip1";
             // 
-            // carteleraToolStripMenuItem
+            // Tsmi_Cartelera
             // 
-            carteleraToolStripMenuItem.Name = "carteleraToolStripMenuItem";
-            carteleraToolStripMenuItem.Size = new Size(83, 24);
-            carteleraToolStripMenuItem.Text = "Cartelera";
-            carteleraToolStripMenuItem.Click += carteleraToolStripMenuItem_Click_1;
+            Tsmi_Cartelera.Name = "Tsmi_Cartelera";
+            Tsmi_Cartelera.Size = new Size(83, 24);
+            Tsmi_Cartelera.Text = "Cartelera";
+            Tsmi_Cartelera.Click += carteleraToolStripMenuItem_Click_1;
             // 
-            // reservasToolStripMenuItem
+            // Tsmi_Reservas
             // 
-            reservasToolStripMenuItem.Name = "reservasToolStripMenuItem";
-            reservasToolStripMenuItem.Size = new Size(80, 24);
-            reservasToolStripMenuItem.Text = "Reservas";
-            reservasToolStripMenuItem.Click += reservasToolStripMenuItem_Click;
+            Tsmi_Reservas.Name = "Tsmi_Reservas";
+            Tsmi_Reservas.Size = new Size(80, 24);
+            Tsmi_Reservas.Text = "Reservas";
+            Tsmi_Reservas.Click += reservasToolStripMenuItem_Click;
             // 
             // Pnl_Menu
             // 
@@ -97,17 +97,17 @@
             Text = "Menú principal";
             Pnl_MenuLayout.ResumeLayout(false);
             Pnl_MenuLayout.PerformLayout();
-            MSOpciones.ResumeLayout(false);
-            MSOpciones.PerformLayout();
+            Ms_Opciones.ResumeLayout(false);
+            Ms_Opciones.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private TableLayoutPanel Pnl_MenuLayout;
-        private MenuStrip MSOpciones;
-        private ToolStripMenuItem carteleraToolStripMenuItem;
-        private ToolStripMenuItem reservasToolStripMenuItem;
+        private MenuStrip Ms_Opciones;
+        private ToolStripMenuItem Tsmi_Cartelera;
+        private ToolStripMenuItem Tsmi_Reservas;
         private Panel Pnl_Menu;
     }
 }
