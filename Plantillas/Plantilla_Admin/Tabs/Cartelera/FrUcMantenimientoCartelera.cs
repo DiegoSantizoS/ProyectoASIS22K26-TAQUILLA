@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
@@ -38,6 +39,20 @@ namespace Plantilla_Admin
                 FileName = "https://www.youtube.com/watch?v=" + input,
                 UseShellExecute = true
             });
+        }
+
+        private void Btn_cambiarImagen_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog upload = new OpenFileDialog())
+            {
+                upload.Filter = "Imágenes |*.png;*.jpg;*.jpeg";
+                upload.Title = "Selecciona una imagen";
+                upload.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                if (upload.ShowDialog() != DialogResult.OK)
+                    return;
+                string filePath = upload.FileName;
+                pictureBox2.Image = Image.FromFile(filePath);
+            }
         }
     }
 }

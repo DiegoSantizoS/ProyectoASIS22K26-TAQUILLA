@@ -10,7 +10,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using conec;
+
 
 
 namespace Plantilla_Cliente
@@ -20,7 +20,7 @@ namespace Plantilla_Cliente
         public FrLogin()
         {
             InitializeComponent();
-            Class1 conece = new Class1();
+
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)

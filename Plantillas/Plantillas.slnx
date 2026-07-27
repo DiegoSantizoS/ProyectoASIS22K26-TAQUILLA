@@ -1,5 +1,4 @@
 <Solution>
-  <Project Path="conec/conec.csproj" Id="271c6cc9-d3ac-49c1-909d-6dca8abc95eb" />
   <Project Path="Plantilla_Admin/Plantilla_Admin.csproj" />
   <Project Path="Plantilla_Cliente/Plantilla_Cliente.csproj" />
 </Solution>

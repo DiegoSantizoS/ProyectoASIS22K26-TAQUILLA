@@ -31,6 +31,7 @@
             menuStrip1 = new MenuStrip();
             verUsuariosToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            toolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -38,7 +39,7 @@
             // 
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { verUsuariosToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { verUsuariosToolStripMenuItem, toolStripMenuItem1 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(162, 396);
@@ -60,6 +61,13 @@
             panel1.Size = new Size(631, 396);
             panel1.TabIndex = 3;
             // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(149, 24);
+            toolStripMenuItem1.Text = "SALA";
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
+            // 
             // FrUcMainFunciones
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -80,5 +88,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem verUsuariosToolStripMenuItem;
         private Panel panel1;
+        private ToolStripMenuItem toolStripMenuItem1;
     }
 }

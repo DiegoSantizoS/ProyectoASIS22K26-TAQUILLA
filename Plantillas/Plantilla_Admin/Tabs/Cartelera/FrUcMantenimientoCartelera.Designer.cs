@@ -1438,6 +1438,7 @@
             Btn_cambiarImagen.TabIndex = 6;
             Btn_cambiarImagen.Text = "NUEVA IMAGEN";
             Btn_cambiarImagen.UseVisualStyleBackColor = true;
+            Btn_cambiarImagen.Click += Btn_cambiarImagen_Click;
             // 
             // Btn_agregarNuevaCartelera
             // 

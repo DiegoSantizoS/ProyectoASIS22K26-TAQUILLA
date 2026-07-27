@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Plantilla_Admin.Tabs.Sala;
 
 namespace Plantilla_Admin
 {
@@ -28,6 +29,12 @@ namespace Plantilla_Admin
         {
             FrUcMantenimientoFuncion FrUcMantenimientoFuncion1 = new FrUcMantenimientoFuncion();
             funcargarpagina(FrUcMantenimientoFuncion1);
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrUcBuscarSala FrUcBuscarSala1 = new FrUcBuscarSala();
+            funcargarpagina(FrUcBuscarSala1);
         }
     }
 }
