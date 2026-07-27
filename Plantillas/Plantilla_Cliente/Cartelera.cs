@@ -1,194 +1,194 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Text;
-using System.Windows.Forms;
+﻿    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Diagnostics.Eventing.Reader;
+    using System.Drawing;
+    using System.Drawing.Drawing2D;
+    using System.Text;
+    using System.Windows.Forms;
 
-namespace Plantilla_Cliente
-{
-    public partial class Cartelera : UserControl
+    namespace Plantilla_Cliente
     {
-        Boolean is2DFilterActive = false;
-        Boolean is3DFilterActive = false;
-        Boolean is4DFilterActive = false;
-        Boolean isIMAXFilterActive = false;
-        Boolean isSubFilterActive = false;
-        Boolean isDubFilterActive = false;
-
-        public event Action<int> CambiaraReserva;
-
-        public Cartelera()
+        public partial class Cartelera : UserControl
         {
-            InitializeComponent();
-        }
-        private void Cartelera_Load(object sender, EventArgs e)
-        {
-            RedondearTablePanel(Pnl_Buscador, 20);
-            RedondearBoton(Btn_2DFilter, 20);
-            RedondearBoton(Btn_3DFilter, 20);
-            RedondearBoton(Btn_4DXFilter, 20);
-            RedondearBoton(Btn_IMAXFilter, 20);
-        }
-        private void RedondearPanel(Panel panel, int radio)
-        {
-            GraphicsPath path = new GraphicsPath();
+            Boolean is2DFilterActive = false;
+            Boolean is3DFilterActive = false;
+            Boolean is4DFilterActive = false;
+            Boolean isIMAXFilterActive = false;
+            Boolean isSubFilterActive = false;
+            Boolean isDubFilterActive = false;
 
-            path.AddArc(0, 0, radio, radio, 180, 90);
-            path.AddArc(panel.Width - radio, 0, radio, radio, 270, 90);
-            path.AddArc(panel.Width - radio, panel.Height - radio, radio, radio, 0, 90);
-            path.AddArc(0, panel.Height - radio, radio, radio, 90, 90);
+            public event Action<int> CambiaraReserva;
 
-            path.CloseFigure();
-
-            panel.Region = new Region(path);
-        }
-        private void RedondearTablePanel(System.Windows.Forms.TableLayoutPanel panel, int radio)
-        {
-            if (panel == null) return;
-
-            int w = panel.Width;
-            int h = panel.Height;
-            if (w <= 0 || h <= 0) return;
-
-            int r = Math.Max(0, Math.Min(radio, Math.Min(w, h)));
-
-            if (r == 0)
+            public Cartelera()
             {
-                panel.Region?.Dispose();
-                panel.Region = null;
-                return;
+                InitializeComponent();
             }
-
-            using (var path = new System.Drawing.Drawing2D.GraphicsPath())
+            private void Cartelera_Load(object sender, EventArgs e)
             {
-                path.AddArc(0, 0, r, r, 180, 90);
-                path.AddArc(w - r, 0, r, r, 270, 90);
-                path.AddArc(w - r, h - r, r, r, 0, 90);
-                path.AddArc(0, h - r, r, r, 90, 90);
+                RedondearTablePanel(Pnl_Buscador, 20);
+                RedondearBoton(Btn_2DFilter, 20);
+                RedondearBoton(Btn_3DFilter, 20);
+                RedondearBoton(Btn_4DXFilter, 20);
+                RedondearBoton(Btn_IMAXFilter, 20);
+            }
+            private void RedondearPanel(Panel panel, int radio)
+            {
+                GraphicsPath path = new GraphicsPath();
+
+                path.AddArc(0, 0, radio, radio, 180, 90);
+                path.AddArc(panel.Width - radio, 0, radio, radio, 270, 90);
+                path.AddArc(panel.Width - radio, panel.Height - radio, radio, radio, 0, 90);
+                path.AddArc(0, panel.Height - radio, radio, radio, 90, 90);
+
                 path.CloseFigure();
 
-                var old = panel.Region;
-                panel.Region = new System.Drawing.Region(path);
-                old?.Dispose();
+                panel.Region = new Region(path);
             }
-        }
-        private void RedondearBoton(Button boton, int radio)
-        {
-            using (GraphicsPath path = new GraphicsPath())
+            private void RedondearTablePanel(System.Windows.Forms.TableLayoutPanel panel, int radio)
             {
-                int w = boton.Width;
-                int h = boton.Height;
-                int r = Math.Min(radio, Math.Min(w, h));
-                path.AddArc(0, 0, r, r, 180, 90);
-                path.AddArc(w - r, 0, r, r, 270, 90);
-                path.AddArc(w - r, h - r, r, r, 0, 90);
-                path.AddArc(0, h - r, r, r, 90, 90);
-                path.CloseFigure();
-                boton.Region = new Region(path);
+                if (panel == null) return;
+
+                int w = panel.Width;
+                int h = panel.Height;
+                if (w <= 0 || h <= 0) return;
+
+                int r = Math.Max(0, Math.Min(radio, Math.Min(w, h)));
+
+                if (r == 0)
+                {
+                    panel.Region?.Dispose();
+                    panel.Region = null;
+                    return;
+                }
+
+                using (var path = new System.Drawing.Drawing2D.GraphicsPath())
+                {
+                    path.AddArc(0, 0, r, r, 180, 90);
+                    path.AddArc(w - r, 0, r, r, 270, 90);
+                    path.AddArc(w - r, h - r, r, r, 0, 90);
+                    path.AddArc(0, h - r, r, r, 90, 90);
+                    path.CloseFigure();
+
+                    var old = panel.Region;
+                    panel.Region = new System.Drawing.Region(path);
+                    old?.Dispose();
+                }
+            }
+            private void RedondearBoton(Button boton, int radio)
+            {
+                using (GraphicsPath path = new GraphicsPath())
+                {
+                    int w = boton.Width;
+                    int h = boton.Height;
+                    int r = Math.Min(radio, Math.Min(w, h));
+                    path.AddArc(0, 0, r, r, 180, 90);
+                    path.AddArc(w - r, 0, r, r, 270, 90);
+                    path.AddArc(w - r, h - r, r, r, 0, 90);
+                    path.AddArc(0, h - r, r, r, 90, 90);
+                    path.CloseFigure();
+                    boton.Region = new Region(path);
+                }
+
+                boton.FlatStyle = FlatStyle.Flat;
+                try
+                {
+                    boton.FlatAppearance.BorderSize = 0;
+                }
+                catch { MessageBox.Show("Error al redondear el botón.", "Error"); }
+            }
+            private void Btn_2DFilter_Click(object sender, EventArgs e)
+            {
+                is2DFilterActive = !is2DFilterActive;
+                Btn_2DFilter.BackColor = is2DFilterActive
+                    ? Color.FromArgb(68, 75, 245) // Color activo
+                    : Color.FromArgb(255, 255, 255); // Color inactivo
             }
 
-            boton.FlatStyle = FlatStyle.Flat;
-            try
+
+            private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
             {
-                boton.FlatAppearance.BorderSize = 0;
+                RedondearTablePanel(Pnl_Buscador, 20);
+                RedondearBoton(Btn_3DFilter, 20);
+                RedondearBoton(Btn_2DFilter, 20);
+                RedondearBoton(Btn_4DXFilter, 20);
+                RedondearBoton(Btn_IMAXFilter, 20);
+                RedondearBoton(Btn_SubFilter, 20);
+                RedondearBoton(Btn_DobFilter, 20);
             }
-            catch { MessageBox.Show("Error al redondear el botón.", "Error"); }
-        }
-        private void Btn_2DFilter_Click(object sender, EventArgs e)
-        {
-            is2DFilterActive = !is2DFilterActive;
-            Btn_2DFilter.BackColor = is2DFilterActive
-                ? Color.FromArgb(68, 75, 245) // Color activo
-                : Color.FromArgb(255, 255, 255); // Color inactivo
-        }
 
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            RedondearTablePanel(Pnl_Buscador, 20);
-            RedondearBoton(Btn_3DFilter, 20);
-            RedondearBoton(Btn_2DFilter, 20);
-            RedondearBoton(Btn_4DXFilter, 20);
-            RedondearBoton(Btn_IMAXFilter, 20);
-            RedondearBoton(Btn_SubFilter, 20);
-            RedondearBoton(Btn_DobFilter, 20);
-        }
-
-        private void Btn_3DFilter_Click(object sender, EventArgs e)
-        {
-            is3DFilterActive = !is3DFilterActive;
-            Btn_3DFilter.BackColor = is3DFilterActive
-                ? Color.FromArgb(68, 75, 245) // Color activo
-                : Color.FromArgb(255, 255, 255); // Color inactivo
-        }
-
-        private void Btn_4DXFilter_Click(object sender, EventArgs e)
-        {
-            is4DFilterActive = !is4DFilterActive;
-            Btn_4DXFilter.BackColor = is4DFilterActive
-                ? Color.FromArgb(68, 75, 245) // Color activo
-                : Color.FromArgb(255, 255, 255); // Color inactivo
-        }
-
-        private void Btn_IMAXFilter_Click(object sender, EventArgs e)
-        {
-            isIMAXFilterActive = !isIMAXFilterActive;
-            Btn_IMAXFilter.BackColor = isIMAXFilterActive
-                ? Color.FromArgb(68, 75, 245) // Color activo
-                : Color.FromArgb(255, 255, 255); // Color inactivo
-        }
-        private void Btn_SubFilter_Click(object sender, EventArgs e)
-        {
-            if (isSubFilterActive)
+            private void Btn_3DFilter_Click(object sender, EventArgs e)
             {
-                // Desactivar subtitulada
-                isSubFilterActive = false;
-                Btn_SubFilter.BackColor = Color.White;
+                is3DFilterActive = !is3DFilterActive;
+                Btn_3DFilter.BackColor = is3DFilterActive
+                    ? Color.FromArgb(68, 75, 245) // Color activo
+                    : Color.FromArgb(255, 255, 255); // Color inactivo
             }
-            else
-            {
-                // Activar subtitulada y desactivar doblada
-                isSubFilterActive = true;
-                isDubFilterActive = false;
 
-                Btn_SubFilter.BackColor = Color.FromArgb(68, 75, 245);
-                Btn_DobFilter.BackColor = Color.White;
+            private void Btn_4DXFilter_Click(object sender, EventArgs e)
+            {
+                is4DFilterActive = !is4DFilterActive;
+                Btn_4DXFilter.BackColor = is4DFilterActive
+                    ? Color.FromArgb(68, 75, 245) // Color activo
+                    : Color.FromArgb(255, 255, 255); // Color inactivo
             }
-            //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
-        }
-        private void Btn_DobFilter_Click(object sender, EventArgs e)
-        {
-            if (isDubFilterActive)
+
+            private void Btn_IMAXFilter_Click(object sender, EventArgs e)
             {
-                isDubFilterActive = false;
-                Btn_DobFilter.BackColor = Color.White;
+                isIMAXFilterActive = !isIMAXFilterActive;
+                Btn_IMAXFilter.BackColor = isIMAXFilterActive
+                    ? Color.FromArgb(68, 75, 245) // Color activo
+                    : Color.FromArgb(255, 255, 255); // Color inactivo
             }
-            else
+            private void Btn_SubFilter_Click(object sender, EventArgs e)
             {
-                isDubFilterActive = true;
-                isSubFilterActive = false;
+                if (isSubFilterActive)
+                {
+                    // Desactivar subtitulada
+                    isSubFilterActive = false;
+                    Btn_SubFilter.BackColor = Color.White;
+                }
+                else
+                {
+                    // Activar subtitulada y desactivar doblada
+                    isSubFilterActive = true;
+                    isDubFilterActive = false;
 
-                Btn_DobFilter.BackColor = Color.FromArgb(68, 75, 245);
-                Btn_SubFilter.BackColor = Color.White;
+                    Btn_SubFilter.BackColor = Color.FromArgb(68, 75, 245);
+                    Btn_DobFilter.BackColor = Color.White;
+                }
+                //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
             }
-            //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
-        }
-        private void Dgv_Cartelera_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-                return;
-
-            if (e.ColumnIndex == Dgv_Cartelera.Columns["Reservar"].Index)
+            private void Btn_DobFilter_Click(object sender, EventArgs e)
             {
-                int idPelicula = Convert.ToInt32(
-                    Dgv_Cartelera.Rows[e.RowIndex].Cells["IdPelicula"].Value);
+                if (isDubFilterActive)
+                {
+                    isDubFilterActive = false;
+                    Btn_DobFilter.BackColor = Color.White;
+                }
+                else
+                {
+                    isDubFilterActive = true;
+                    isSubFilterActive = false;
 
-                CambiaraReserva?.Invoke(idPelicula);
+                    Btn_DobFilter.BackColor = Color.FromArgb(68, 75, 245);
+                    Btn_SubFilter.BackColor = Color.White;
+                }
+                //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
+            }
+            private void Dgv_Cartelera_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            {
+                if (e.RowIndex < 0)
+                    return;
+
+                if (e.ColumnIndex == Dgv_Cartelera.Columns["Reservar"].Index)
+                {
+                    /*int idPelicula = Convert.ToInt32(
+                        Dgv_Cartelera.Rows[e.RowIndex].Cells["IdPelicula"].Value);*/
+
+                    CambiaraReserva?.Invoke(10);
+                }
             }
         }
     }
-}

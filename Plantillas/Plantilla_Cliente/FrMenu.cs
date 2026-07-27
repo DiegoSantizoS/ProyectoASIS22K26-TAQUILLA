@@ -1,47 +1,49 @@
-using System.Drawing.Drawing2D;
+    using System.Drawing.Drawing2D;
 
-//Carlos Andres Arriaza Lara 0901-23-13862
-//Creación de prototipo de interfaz para menu de cliente
-namespace Plantilla_Cliente
-{
-    public partial class FrMenu : Form
+    //Carlos Andres Arriaza Lara 0901-23-13862
+    //Creación de prototipo de interfaz para menu de cliente
+    namespace Plantilla_Cliente
     {
-        public FrMenu()
+        public partial class FrMenu : Form
         {
-            InitializeComponent();
+            public FrMenu()
+            {
+                InitializeComponent();
+            }
+            /* Inicio de Codigo de Carlos Andres Arriaza Lara en la fecha de: 27/07/2026 */
+            private void funcargarpagina(UserControl pagina)
+            {
+                Pnl_Menu.Controls.Clear();
+
+                pagina.Dock = DockStyle.Fill;
+                Pnl_Menu.Controls.Add(pagina);
+            }
+
+            private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+            {
+
+            }
+            private void Cartelera_CambiaraReserva(int idPelicula)
+            {
+                Reservas reservas = new Reservas(idPelicula);
+                funcargarpagina(reservas);
+            }
+
+            private void carteleraToolStripMenuItem_Click_1(object? sender, EventArgs e)
+            {
+                Cartelera cartelera = new Cartelera();
+
+                cartelera.CambiaraReserva += Cartelera_CambiaraReserva;
+
+                funcargarpagina(cartelera);
+            }
+
+            private void reservasToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                Reservas reservas = new Reservas();
+                funcargarpagina(reservas);
+            }
         }
-        private void funcargarpagina(UserControl pagina)
-        {
-            Pnl_Menu.Controls.Clear();
-
-            pagina.Dock = DockStyle.Fill;
-            Pnl_Menu.Controls.Add(pagina);
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void Cartelera_CambiaraReserva(object? sender, EventArgs e)
-        {
-            Reservas reservas = new Reservas(IdPelicula);
-            funcargarpagina(reservas);
-        }
-
-        private void carteleraToolStripMenuItem_Click_1(object? sender, EventArgs e)
-        {
-            Cartelera cartelera = new Cartelera();
-
-            cartelera.CambiaraReserva += Cartelera_CambiaraReserva;
-
-            funcargarpagina(cartelera);
-        }
-
-        private void reservasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Reservas reservas = new Reservas(0);
-            funcargarpagina(reservas);
-        }
+        /* Final de Codigo de Carlos Andres Arriaza Lara en la fecha de: 27/07/2026 */
     }
-}
 

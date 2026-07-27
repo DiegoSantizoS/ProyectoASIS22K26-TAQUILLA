@@ -10,15 +10,22 @@ namespace Plantilla_Cliente
 {
     public partial class Reservas : UserControl
     {
-        public Reservas(int IdPelicula)
+        private int idPelicula;
+        public Reservas()
         {
             InitializeComponent();
         }
+        public Reservas(int idPelicula)
+        {
+            InitializeComponent();
+            //CargarInformacion(idPelicula);
+            this.idPelicula = idPelicula;
+            MessageBox.Show($"ID recibido: {this.idPelicula}");
+        } 
 
-
+        
         private void TlP_Reservas_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void Btn_Continuar_Click(object sender, EventArgs e)
