@@ -27,7 +27,7 @@ namespace Plantilla_Cliente
             {
                 if(butacas.ShowDialog() == DialogResult.OK)
                 {
-                    // Handle the case where the user selects seats
+                    
                 }
             }
         }

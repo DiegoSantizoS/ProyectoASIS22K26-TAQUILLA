@@ -25,12 +25,11 @@ namespace Plantilla_Cliente
 
         private void Butacas_Load(object sender, EventArgs e)
         {
-            CrearButacas();
+            CrearButacas(7);
         }
-        private void CrearButacas(/*int filas, int columnas*/)
+        private void CrearButacas(int filas)
         {
-            int filas = 6;
-            int columnas = 7;
+            int columnas = 10;
             //Limpiar el TableLayoutPanel antes de agregar nuevos botones y también limpiar las filas y columnas existentes
             Tlp_butacaselector.Controls.Clear();
             Tlp_butacaselector.ColumnStyles.Clear();
@@ -82,6 +81,21 @@ namespace Plantilla_Cliente
             {
                 btn.BackColor = Color.Green;
                 ButacasSeleccionadas.Remove(codigo);
+            }
+        }
+
+        private void Btn_Confirmacion_Click(object sender, EventArgs e)
+        {
+            
+            if (string.Join(", ", ButacasSeleccionadas) == "")
+            {
+                MessageBox.Show("Seleccione al menos una butaca", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("¿Está seguro que desea reservar " + ButacasSeleccionadas.Count +
+                    " butacas?" + "\n Butacas seleccionadas: " + string.Join(", ", ButacasSeleccionadas),
+                    "Confirmación de reserva", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
         }
     }

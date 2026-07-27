@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cartelera));
             Pnl_Buscador = new TableLayoutPanel();
             Pnl_Filtros1 = new TableLayoutPanel();
-            CB_Ciudad = new ComboBox();
-            comboBox1 = new ComboBox();
-            button1 = new Button();
+            Cbo_Ciudad = new ComboBox();
+            Cbo_Cine = new ComboBox();
+            Btn_Cargar_Cartelera = new Button();
             label1 = new Label();
             Pnl_Filtros2 = new TableLayoutPanel();
             Btn_2DFilter = new Button();
@@ -91,9 +91,9 @@
             Pnl_Filtros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
             Pnl_Filtros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             Pnl_Filtros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            Pnl_Filtros1.Controls.Add(CB_Ciudad, 0, 0);
-            Pnl_Filtros1.Controls.Add(comboBox1, 1, 0);
-            Pnl_Filtros1.Controls.Add(button1, 2, 0);
+            Pnl_Filtros1.Controls.Add(Cbo_Ciudad, 0, 0);
+            Pnl_Filtros1.Controls.Add(Cbo_Cine, 1, 0);
+            Pnl_Filtros1.Controls.Add(Btn_Cargar_Cartelera, 2, 0);
             Pnl_Filtros1.Dock = DockStyle.Fill;
             Pnl_Filtros1.Location = new Point(375, 113);
             Pnl_Filtros1.Name = "Pnl_Filtros1";
@@ -102,39 +102,40 @@
             Pnl_Filtros1.Size = new Size(1787, 56);
             Pnl_Filtros1.TabIndex = 6;
             // 
-            // CB_Ciudad
+            // Cbo_Ciudad
             // 
-            CB_Ciudad.Dock = DockStyle.Fill;
-            CB_Ciudad.DrawMode = DrawMode.OwnerDrawFixed;
-            CB_Ciudad.FormattingEnabled = true;
-            CB_Ciudad.ItemHeight = 50;
-            CB_Ciudad.Location = new Point(3, 3);
-            CB_Ciudad.Name = "CB_Ciudad";
-            CB_Ciudad.Size = new Size(589, 56);
-            CB_Ciudad.TabIndex = 2;
-            CB_Ciudad.Text = "Seleccionar Ciudad";
+            Cbo_Ciudad.Dock = DockStyle.Fill;
+            Cbo_Ciudad.DrawMode = DrawMode.OwnerDrawFixed;
+            Cbo_Ciudad.FormattingEnabled = true;
+            Cbo_Ciudad.ItemHeight = 50;
+            Cbo_Ciudad.Location = new Point(3, 3);
+            Cbo_Ciudad.Name = "Cbo_Ciudad";
+            Cbo_Ciudad.Size = new Size(589, 56);
+            Cbo_Ciudad.TabIndex = 2;
+            Cbo_Ciudad.Text = "Seleccionar Ciudad";
             // 
-            // comboBox1
+            // Cbo_Cine
             // 
-            comboBox1.Dock = DockStyle.Fill;
-            comboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.ItemHeight = 50;
-            comboBox1.Location = new Point(598, 3);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(589, 56);
-            comboBox1.TabIndex = 3;
-            comboBox1.Text = "Seleccionar Cine";
+            Cbo_Cine.Dock = DockStyle.Fill;
+            Cbo_Cine.DrawMode = DrawMode.OwnerDrawFixed;
+            Cbo_Cine.FormattingEnabled = true;
+            Cbo_Cine.ItemHeight = 50;
+            Cbo_Cine.Location = new Point(598, 3);
+            Cbo_Cine.Name = "Cbo_Cine";
+            Cbo_Cine.Size = new Size(589, 56);
+            Cbo_Cine.TabIndex = 3;
+            Cbo_Cine.Text = "Seleccionar Cine";
             // 
-            // button1
+            // Btn_Cargar_Cartelera
             // 
-            button1.Dock = DockStyle.Fill;
-            button1.Location = new Point(1193, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(591, 50);
-            button1.TabIndex = 4;
-            button1.Text = "Consultar cartelera";
-            button1.UseVisualStyleBackColor = true;
+            Btn_Cargar_Cartelera.Cursor = Cursors.Hand;
+            Btn_Cargar_Cartelera.Dock = DockStyle.Fill;
+            Btn_Cargar_Cartelera.Location = new Point(1193, 3);
+            Btn_Cargar_Cartelera.Name = "Btn_Cargar_Cartelera";
+            Btn_Cargar_Cartelera.Size = new Size(591, 50);
+            Btn_Cargar_Cartelera.TabIndex = 4;
+            Btn_Cargar_Cartelera.Text = "Consultar cartelera";
+            Btn_Cargar_Cartelera.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -347,7 +348,7 @@
         private TableLayoutPanel Pnl_Buscador;
         private Label label1;
         private TableLayoutPanel Pnl_Filtros1;
-        private ComboBox CB_Ciudad;
+        private ComboBox Cbo_Ciudad;
         private ComboBox comboBox2;
         private TableLayoutPanel Pnl_Filtros2;
         private Button Btn_4DXFilter;
@@ -364,7 +365,7 @@
         private DataGridViewTextBoxColumn Idioma;
         private DataGridViewTextBoxColumn Duracion;
         private DataGridViewButtonColumn Reservar;
-        private ComboBox comboBox1;
-        private Button button1;
+        private ComboBox Cbo_Cine;
+        private Button Btn_Cargar_Cartelera;
     }
 }
