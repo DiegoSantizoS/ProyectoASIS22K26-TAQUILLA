@@ -276,7 +276,7 @@
             Tx_tab.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Tx_tab.AutoSize = true;
             Tx_tab.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Tx_tab.Location = new Point(0, 10);
+            Tx_tab.Location = new Point(14, 16);
             Tx_tab.Name = "Tx_tab";
             Tx_tab.Size = new Size(117, 46);
             Tx_tab.TabIndex = 7;
