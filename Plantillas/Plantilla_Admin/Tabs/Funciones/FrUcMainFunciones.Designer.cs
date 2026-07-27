@@ -30,9 +30,6 @@
         {
             menuStrip1 = new MenuStrip();
             verUsuariosToolStripMenuItem = new ToolStripMenuItem();
-            pruebaToolStripMenuItem = new ToolStripMenuItem();
-            pruebaToolStripMenuItem1 = new ToolStripMenuItem();
-            eliminarUsuarioToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -41,7 +38,7 @@
             // 
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { verUsuariosToolStripMenuItem, pruebaToolStripMenuItem, pruebaToolStripMenuItem1, eliminarUsuarioToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { verUsuariosToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(162, 396);
@@ -54,24 +51,6 @@
             verUsuariosToolStripMenuItem.Size = new Size(149, 24);
             verUsuariosToolStripMenuItem.Text = "AGREGAR FUNCIÓN";
             verUsuariosToolStripMenuItem.Click += verUsuariosToolStripMenuItem_Click;
-            // 
-            // pruebaToolStripMenuItem
-            // 
-            pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
-            pruebaToolStripMenuItem.Size = new Size(149, 24);
-            pruebaToolStripMenuItem.Text = "Nueva Función";
-            // 
-            // pruebaToolStripMenuItem1
-            // 
-            pruebaToolStripMenuItem1.Name = "pruebaToolStripMenuItem1";
-            pruebaToolStripMenuItem1.Size = new Size(149, 24);
-            pruebaToolStripMenuItem1.Text = "Actualizar Función";
-            // 
-            // eliminarUsuarioToolStripMenuItem
-            // 
-            eliminarUsuarioToolStripMenuItem.Name = "eliminarUsuarioToolStripMenuItem";
-            eliminarUsuarioToolStripMenuItem.Size = new Size(149, 24);
-            eliminarUsuarioToolStripMenuItem.Text = "Eliminar Función";
             // 
             // panel1
             // 
@@ -100,9 +79,6 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem verUsuariosToolStripMenuItem;
-        private ToolStripMenuItem pruebaToolStripMenuItem;
-        private ToolStripMenuItem pruebaToolStripMenuItem1;
-        private ToolStripMenuItem eliminarUsuarioToolStripMenuItem;
         private Panel panel1;
     }
 }
