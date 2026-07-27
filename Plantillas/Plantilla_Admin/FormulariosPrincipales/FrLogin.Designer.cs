@@ -2,6 +2,7 @@
 {
     partial class FrLogin
     {
+        /// José Pablo Cano Cóbar 
         /// <summary>
         /// Required designer variable.
         /// </summary>
