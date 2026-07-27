@@ -44,13 +44,8 @@
             pictureBox1 = new PictureBox();
             textBox1 = new TextBox();
             Dgv_Cartelera = new DataGridView();
-            Imagen = new DataGridViewImageColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Generos = new DataGridViewTextBoxColumn();
-            Idioma = new DataGridViewTextBoxColumn();
-            Duracion = new DataGridViewTextBoxColumn();
-            Reservar = new DataGridViewButtonColumn();
             comboBox2 = new ComboBox();
+            Reservar = new DataGridViewButtonColumn();
             Pnl_Buscador.SuspendLayout();
             Pnl_Filtros1.SuspendLayout();
             Pnl_Filtros2.SuspendLayout();
@@ -260,7 +255,7 @@
             // 
             Dgv_Cartelera.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Dgv_Cartelera.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Dgv_Cartelera.Columns.AddRange(new DataGridViewColumn[] { Imagen, Nombre, Generos, Idioma, Duracion, Reservar });
+            Dgv_Cartelera.Columns.AddRange(new DataGridViewColumn[] { Reservar });
             Pnl_Buscador.SetColumnSpan(Dgv_Cartelera, 2);
             Dgv_Cartelera.Cursor = Cursors.Hand;
             Dgv_Cartelera.Dock = DockStyle.Fill;
@@ -270,48 +265,6 @@
             Dgv_Cartelera.Size = new Size(2159, 710);
             Dgv_Cartelera.TabIndex = 9;
             Dgv_Cartelera.CellContentClick += Dgv_Cartelera_CellContentClick;
-            // 
-            // Imagen
-            // 
-            Imagen.HeaderText = "Imágen";
-            Imagen.MinimumWidth = 6;
-            Imagen.Name = "Imagen";
-            Imagen.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Nombre";
-            Nombre.MinimumWidth = 6;
-            Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
-            // 
-            // Generos
-            // 
-            Generos.HeaderText = "Generos";
-            Generos.MinimumWidth = 6;
-            Generos.Name = "Generos";
-            Generos.ReadOnly = true;
-            // 
-            // Idioma
-            // 
-            Idioma.HeaderText = "Idioma";
-            Idioma.MinimumWidth = 6;
-            Idioma.Name = "Idioma";
-            Idioma.ReadOnly = true;
-            // 
-            // Duracion
-            // 
-            Duracion.HeaderText = "Duración";
-            Duracion.MinimumWidth = 6;
-            Duracion.Name = "Duracion";
-            Duracion.ReadOnly = true;
-            // 
-            // Reservar
-            // 
-            Reservar.HeaderText = "Reservar";
-            Reservar.MinimumWidth = 6;
-            Reservar.Name = "Reservar";
-            Reservar.ReadOnly = true;
             // 
             // comboBox2
             // 
@@ -324,6 +277,13 @@
             comboBox2.Size = new Size(589, 44);
             comboBox2.TabIndex = 3;
             comboBox2.Text = "Seleccionar Cine";
+            // 
+            // Reservar
+            // 
+            Reservar.HeaderText = "Reservar";
+            Reservar.MinimumWidth = 6;
+            Reservar.Name = "Reservar";
+            Reservar.ReadOnly = true;
             // 
             // Cartelera
             // 
@@ -359,13 +319,8 @@
         private PictureBox pictureBox1;
         private TextBox textBox1;
         private DataGridView Dgv_Cartelera;
-        private DataGridViewImageColumn Imagen;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Generos;
-        private DataGridViewTextBoxColumn Idioma;
-        private DataGridViewTextBoxColumn Duracion;
-        private DataGridViewButtonColumn Reservar;
         private ComboBox Cbo_Cine;
         private Button Btn_Cargar_Cartelera;
+        private DataGridViewButtonColumn Reservar;
     }
 }
