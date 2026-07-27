@@ -24,7 +24,7 @@ namespace Plantilla_Cliente
         }
         private void Cartelera_CambiaraReserva(object? sender, EventArgs e)
         {
-            Reservas reservas = new Reservas();
+            Reservas reservas = new Reservas(IdPelicula);
             funcargarpagina(reservas);
         }
 
@@ -39,7 +39,7 @@ namespace Plantilla_Cliente
 
         private void reservasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reservas reservas = new Reservas();
+            Reservas reservas = new Reservas(0);
             funcargarpagina(reservas);
         }
     }

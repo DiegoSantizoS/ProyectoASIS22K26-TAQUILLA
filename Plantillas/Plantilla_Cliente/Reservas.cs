@@ -10,7 +10,7 @@ namespace Plantilla_Cliente
 {
     public partial class Reservas : UserControl
     {
-        public Reservas()
+        public Reservas(int IdPelicula)
         {
             InitializeComponent();
         }

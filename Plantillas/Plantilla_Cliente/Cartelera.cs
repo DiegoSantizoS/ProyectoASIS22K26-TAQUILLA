@@ -16,7 +16,10 @@ namespace Plantilla_Cliente
         Boolean is3DFilterActive = false;
         Boolean is4DFilterActive = false;
         Boolean isIMAXFilterActive = false;
-        public event EventHandler CambiaraReserva;
+        Boolean isSubFilterActive = false;
+        Boolean isDubFilterActive = false;
+
+        public event Action<int> CambiaraReserva;
 
         public Cartelera()
         {
@@ -25,8 +28,8 @@ namespace Plantilla_Cliente
         private void Cartelera_Load(object sender, EventArgs e)
         {
             RedondearTablePanel(Pnl_Buscador, 20);
-            RedondearBoton(Btn_3DFilter, 20);
             RedondearBoton(Btn_2DFilter, 20);
+            RedondearBoton(Btn_3DFilter, 20);
             RedondearBoton(Btn_4DXFilter, 20);
             RedondearBoton(Btn_IMAXFilter, 20);
         }
@@ -111,6 +114,8 @@ namespace Plantilla_Cliente
             RedondearBoton(Btn_2DFilter, 20);
             RedondearBoton(Btn_4DXFilter, 20);
             RedondearBoton(Btn_IMAXFilter, 20);
+            RedondearBoton(Btn_SubFilter, 20);
+            RedondearBoton(Btn_DobFilter, 20);
         }
 
         private void Btn_3DFilter_Click(object sender, EventArgs e)
@@ -136,11 +141,54 @@ namespace Plantilla_Cliente
                 ? Color.FromArgb(68, 75, 245) // Color activo
                 : Color.FromArgb(255, 255, 255); // Color inactivo
         }
+        private void Btn_SubFilter_Click(object sender, EventArgs e)
+        {
+            if (isSubFilterActive)
+            {
+                // Desactivar subtitulada
+                isSubFilterActive = false;
+                Btn_SubFilter.BackColor = Color.White;
+            }
+            else
+            {
+                // Activar subtitulada y desactivar doblada
+                isSubFilterActive = true;
+                isDubFilterActive = false;
 
+                Btn_SubFilter.BackColor = Color.FromArgb(68, 75, 245);
+                Btn_DobFilter.BackColor = Color.White;
+            }
+            //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
+        }
+        private void Btn_DobFilter_Click(object sender, EventArgs e)
+        {
+            if (isDubFilterActive)
+            {
+                isDubFilterActive = false;
+                Btn_DobFilter.BackColor = Color.White;
+            }
+            else
+            {
+                isDubFilterActive = true;
+                isSubFilterActive = false;
+
+                Btn_DobFilter.BackColor = Color.FromArgb(68, 75, 245);
+                Btn_SubFilter.BackColor = Color.White;
+            }
+            //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
+        }
         private void Dgv_Cartelera_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            CambiaraReserva?.Invoke(this, EventArgs.Empty);
-        }
+            if (e.RowIndex < 0)
+                return;
 
+            if (e.ColumnIndex == Dgv_Cartelera.Columns["Reservar"].Index)
+            {
+                int idPelicula = Convert.ToInt32(
+                    Dgv_Cartelera.Rows[e.RowIndex].Cells["IdPelicula"].Value);
+
+                CambiaraReserva?.Invoke(idPelicula);
+            }
+        }
     }
 }

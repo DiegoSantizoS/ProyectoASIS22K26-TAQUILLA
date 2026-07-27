@@ -58,9 +58,6 @@
             button15 = new Button();
             button16 = new Button();
             button17 = new Button();
-            button18 = new Button();
-            button19 = new Button();
-            button20 = new Button();
             Tx_Horarios = new Label();
             Tx_Funciones = new Label();
             Cbo_Cines = new ComboBox();
@@ -351,9 +348,6 @@
             Flp_Funciones.Controls.Add(button15);
             Flp_Funciones.Controls.Add(button16);
             Flp_Funciones.Controls.Add(button17);
-            Flp_Funciones.Controls.Add(button18);
-            Flp_Funciones.Controls.Add(button19);
-            Flp_Funciones.Controls.Add(button20);
             Flp_Funciones.Dock = DockStyle.Fill;
             Flp_Funciones.Location = new Point(129, 93);
             Flp_Funciones.Name = "Flp_Funciones";
@@ -430,36 +424,6 @@
             button17.TabIndex = 6;
             button17.Text = "Fecha 7";
             button17.UseVisualStyleBackColor = true;
-            // 
-            // button18
-            // 
-            button18.FlatStyle = FlatStyle.Flat;
-            button18.Location = new Point(605, 3);
-            button18.Name = "button18";
-            button18.Size = new Size(80, 60);
-            button18.TabIndex = 7;
-            button18.Text = "Fecha 8";
-            button18.UseVisualStyleBackColor = true;
-            // 
-            // button19
-            // 
-            button19.FlatStyle = FlatStyle.Flat;
-            button19.Location = new Point(691, 3);
-            button19.Name = "button19";
-            button19.Size = new Size(80, 60);
-            button19.TabIndex = 8;
-            button19.Text = "Fecha 9";
-            button19.UseVisualStyleBackColor = true;
-            // 
-            // button20
-            // 
-            button20.FlatStyle = FlatStyle.Flat;
-            button20.Location = new Point(777, 3);
-            button20.Name = "button20";
-            button20.Size = new Size(80, 60);
-            button20.TabIndex = 9;
-            button20.Text = "Fecha 10";
-            button20.UseVisualStyleBackColor = true;
             // 
             // Tx_Horarios
             // 
@@ -554,9 +518,6 @@
         private Button button15;
         private Button button16;
         private Button button17;
-        private Button button18;
-        private Button button19;
-        private Button button20;
         private Label Tx_Funciones;
         private ComboBox Cbo_Cines;
         private Button Btn_Continuar;
@@ -565,5 +526,7 @@
         private Label Tx_Duracion;
         private FlowLayoutPanel Flp_Horarios;
         private Label Tx_Horarios;
+        private Button Btn_DobFilter;
+        private Button Btn_SubFilter;
     }
 }
