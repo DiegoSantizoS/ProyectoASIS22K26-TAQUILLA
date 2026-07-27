@@ -15,6 +15,7 @@ namespace Plantilla_Admin.Tabs.Funciones
         public FrUcMantenimientoFuncion()
         {
             InitializeComponent();
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -23,6 +24,11 @@ namespace Plantilla_Admin.Tabs.Funciones
         }
 
         private void Tlp_formulario_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

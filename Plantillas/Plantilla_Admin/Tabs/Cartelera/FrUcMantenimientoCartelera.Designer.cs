@@ -72,7 +72,7 @@
             Tlp_thumbnail = new TableLayoutPanel();
             pictureBox1 = new PictureBox();
             Tlp_grupoFormato = new TableLayoutPanel();
-            cb_formato = new ComboBox();
+            Cb_formato = new ComboBox();
             Tx_formato = new Label();
             Btn_insertarFormato = new Button();
             Tlp_dgvFormato = new TableLayoutPanel();
@@ -80,8 +80,8 @@
             Dgvc_nombre = new DataGridViewTextBoxColumn();
             Dgvb_borrar = new DataGridViewButtonColumn();
             tableLayoutPanel14 = new TableLayoutPanel();
-            Txt_cambiarImagen = new Button();
-            button3 = new Button();
+            Btn_cambiarImagen = new Button();
+            Btn_agregarNuevaCartelera = new Button();
             pictureBox2 = new PictureBox();
             Tx_tab = new Label();
             Pnl_panelEstatico = new Panel();
@@ -1321,7 +1321,7 @@
             Tlp_grupoFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
             Tlp_grupoFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             Tlp_grupoFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            Tlp_grupoFormato.Controls.Add(cb_formato, 1, 0);
+            Tlp_grupoFormato.Controls.Add(Cb_formato, 1, 0);
             Tlp_grupoFormato.Controls.Add(Tx_formato, 0, 0);
             Tlp_grupoFormato.Controls.Add(Btn_insertarFormato, 2, 0);
             Tlp_grupoFormato.Dock = DockStyle.Fill;
@@ -1334,14 +1334,14 @@
             Tlp_grupoFormato.Size = new Size(394, 50);
             Tlp_grupoFormato.TabIndex = 18;
             // 
-            // cb_formato
+            // Cb_formato
             // 
-            cb_formato.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            cb_formato.FormattingEnabled = true;
-            cb_formato.Location = new Point(103, 11);
-            cb_formato.Name = "cb_formato";
-            cb_formato.Size = new Size(188, 28);
-            cb_formato.TabIndex = 3;
+            Cb_formato.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Cb_formato.FormattingEnabled = true;
+            Cb_formato.Location = new Point(103, 11);
+            Cb_formato.Name = "Cb_formato";
+            Cb_formato.Size = new Size(188, 28);
+            Cb_formato.TabIndex = 3;
             // 
             // Tx_formato
             // 
@@ -1413,8 +1413,8 @@
             // 
             tableLayoutPanel14.ColumnCount = 1;
             tableLayoutPanel14.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel14.Controls.Add(Txt_cambiarImagen, 0, 1);
-            tableLayoutPanel14.Controls.Add(button3, 0, 2);
+            tableLayoutPanel14.Controls.Add(Btn_cambiarImagen, 0, 1);
+            tableLayoutPanel14.Controls.Add(Btn_agregarNuevaCartelera, 0, 2);
             tableLayoutPanel14.Controls.Add(pictureBox2, 0, 0);
             tableLayoutPanel14.Dock = DockStyle.Fill;
             tableLayoutPanel14.Location = new Point(807, 75);
@@ -1428,31 +1428,32 @@
             tableLayoutPanel14.Size = new Size(223, 625);
             tableLayoutPanel14.TabIndex = 4;
             // 
-            // Txt_cambiarImagen
+            // Btn_cambiarImagen
             // 
-            Txt_cambiarImagen.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            Txt_cambiarImagen.Location = new Point(0, 410);
-            Txt_cambiarImagen.Margin = new Padding(0);
-            Txt_cambiarImagen.Name = "Txt_cambiarImagen";
-            Txt_cambiarImagen.Size = new Size(223, 29);
-            Txt_cambiarImagen.TabIndex = 6;
-            Txt_cambiarImagen.Text = "NUEVA IMAGEN";
-            Txt_cambiarImagen.UseVisualStyleBackColor = true;
+            Btn_cambiarImagen.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Btn_cambiarImagen.Location = new Point(0, 410);
+            Btn_cambiarImagen.Margin = new Padding(0);
+            Btn_cambiarImagen.Name = "Btn_cambiarImagen";
+            Btn_cambiarImagen.Size = new Size(223, 29);
+            Btn_cambiarImagen.TabIndex = 6;
+            Btn_cambiarImagen.Text = "NUEVA IMAGEN";
+            Btn_cambiarImagen.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // Btn_agregarNuevaCartelera
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            button3.Location = new Point(11, 500);
-            button3.Margin = new Padding(0, 50, 0, 50);
-            button3.Name = "button3";
-            button3.Size = new Size(200, 75);
-            button3.TabIndex = 4;
-            button3.Text = "AGREGAR NUEVA CARTELERA";
-            button3.UseVisualStyleBackColor = true;
+            Btn_agregarNuevaCartelera.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            Btn_agregarNuevaCartelera.Location = new Point(11, 500);
+            Btn_agregarNuevaCartelera.Margin = new Padding(0, 50, 0, 50);
+            Btn_agregarNuevaCartelera.Name = "Btn_agregarNuevaCartelera";
+            Btn_agregarNuevaCartelera.Size = new Size(200, 75);
+            Btn_agregarNuevaCartelera.TabIndex = 4;
+            Btn_agregarNuevaCartelera.Text = "AGREGAR NUEVA CARTELERA";
+            Btn_agregarNuevaCartelera.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox2.Image = Properties.Resources.EjemploCartelera;
             pictureBox2.Location = new Point(0, 3);
             pictureBox2.Margin = new Padding(0);
             pictureBox2.Name = "pictureBox2";
@@ -1571,7 +1572,7 @@
         private TableLayoutPanel Tlp_dgvGenero;
         private DataGridView Dgv_genero;
         private TableLayoutPanel tableLayoutPanel14;
-        private Button button3;
+        private Button Btn_agregarNuevaCartelera;
         private DateTimePicker dateTimePicker1;
         private TextBox Txt_director;
         private TextBox Txt_costo;
@@ -1584,13 +1585,13 @@
         private DataGridViewTextBoxColumn Dgvc_nombre;
         private DataGridViewButtonColumn Dgvb_borrar;
         private TableLayoutPanel Tlp_grupoFormato;
-        private ComboBox cb_formato;
+        private ComboBox Cb_formato;
         private Label Tx_formato;
         private Button Btn_insertarFormato;
         private TextBox Txt_titulo;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private Button Txt_cambiarImagen;
+        private Button Btn_cambiarImagen;
         private TableLayoutPanel Tlp_id;
         private TextBox Txt_id;
         private Label Tx_id;

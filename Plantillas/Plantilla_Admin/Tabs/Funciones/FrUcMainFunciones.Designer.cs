@@ -33,6 +33,7 @@
             pruebaToolStripMenuItem = new ToolStripMenuItem();
             pruebaToolStripMenuItem1 = new ToolStripMenuItem();
             eliminarUsuarioToolStripMenuItem = new ToolStripMenuItem();
+            panel1 = new Panel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -43,41 +44,51 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { verUsuariosToolStripMenuItem, pruebaToolStripMenuItem, pruebaToolStripMenuItem1, eliminarUsuarioToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(150, 396);
+            menuStrip1.Size = new Size(162, 396);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
             // verUsuariosToolStripMenuItem
             // 
             verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            verUsuariosToolStripMenuItem.Size = new Size(137, 24);
-            verUsuariosToolStripMenuItem.Text = "Buscar Función";
+            verUsuariosToolStripMenuItem.Size = new Size(149, 24);
+            verUsuariosToolStripMenuItem.Text = "AGREGAR FUNCIÓN";
+            verUsuariosToolStripMenuItem.Click += verUsuariosToolStripMenuItem_Click;
             // 
             // pruebaToolStripMenuItem
             // 
             pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
-            pruebaToolStripMenuItem.Size = new Size(137, 24);
+            pruebaToolStripMenuItem.Size = new Size(149, 24);
             pruebaToolStripMenuItem.Text = "Nueva Función";
             // 
             // pruebaToolStripMenuItem1
             // 
             pruebaToolStripMenuItem1.Name = "pruebaToolStripMenuItem1";
-            pruebaToolStripMenuItem1.Size = new Size(137, 24);
+            pruebaToolStripMenuItem1.Size = new Size(149, 24);
             pruebaToolStripMenuItem1.Text = "Actualizar Función";
             // 
             // eliminarUsuarioToolStripMenuItem
             // 
             eliminarUsuarioToolStripMenuItem.Name = "eliminarUsuarioToolStripMenuItem";
-            eliminarUsuarioToolStripMenuItem.Size = new Size(137, 24);
+            eliminarUsuarioToolStripMenuItem.Size = new Size(149, 24);
             eliminarUsuarioToolStripMenuItem.Text = "Eliminar Función";
             // 
-            // funciones
+            // panel1
+            // 
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(162, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(631, 396);
+            panel1.TabIndex = 3;
+            // 
+            // FrUcMainFunciones
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
+            Controls.Add(panel1);
             Controls.Add(menuStrip1);
-            Name = "funciones";
+            Name = "FrUcMainFunciones";
             Size = new Size(793, 396);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -92,5 +103,6 @@
         private ToolStripMenuItem pruebaToolStripMenuItem;
         private ToolStripMenuItem pruebaToolStripMenuItem1;
         private ToolStripMenuItem eliminarUsuarioToolStripMenuItem;
+        private Panel panel1;
     }
 }
