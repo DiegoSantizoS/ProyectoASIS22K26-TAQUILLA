@@ -1,4 +1,4 @@
-﻿namespace Plantilla_Admin.Tabs.Funcion
+﻿namespace Plantilla_Admin.Tabs.Funciones
 {
     partial class FrUcMantenimientoFuncion
     {
@@ -180,6 +180,7 @@
             // 
             // Tlp_tab
             // 
+            Tlp_tab.BackColor = SystemColors.Menu;
             Tlp_tab.ColumnCount = 1;
             Tlp_tab.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             Tlp_tab.Controls.Add(tableLayoutPanel1, 0, 2);
@@ -622,7 +623,7 @@
             // 
             Tlp_formulario.ColumnCount = 5;
             Tlp_formulario.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
-            Tlp_formulario.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 144F));
+            Tlp_formulario.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
             Tlp_formulario.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
             Tlp_formulario.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
             Tlp_formulario.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
@@ -642,12 +643,11 @@
             button3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             button3.Location = new Point(250, 11);
             button3.Margin = new Padding(0);
-            button3.MaximumSize = new Size(144, 27);
             button3.MinimumSize = new Size(144, 27);
             button3.Name = "button3";
-            button3.Size = new Size(144, 27);
+            button3.Size = new Size(200, 27);
             button3.TabIndex = 35;
-            button3.Text = "REFRESCAR";
+            button3.Text = "ACTUALIZAR TABLA";
             button3.UseVisualStyleBackColor = true;
             // 
             // Tlp_estreno
@@ -691,7 +691,6 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 192, 192);
             Controls.Add(tableLayoutPanel8);
             Margin = new Padding(0);
             MinimumSize = new Size(1050, 700);
