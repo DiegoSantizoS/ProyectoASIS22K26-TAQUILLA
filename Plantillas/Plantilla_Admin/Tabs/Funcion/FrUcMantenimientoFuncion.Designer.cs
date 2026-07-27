@@ -1,4 +1,4 @@
-﻿namespace Plantilla_Admin.Tabs.Funciones
+﻿namespace Plantilla_Admin.Tabs.Funcion
 {
     partial class FrUcMantenimientoFuncion
     {
