@@ -97,6 +97,17 @@ namespace Plantilla_Cliente
             Pnl_Filtros1.Size = new Size(1787, 52);
             Pnl_Filtros1.TabIndex = 6;
             // 
+            // Btn_Cargar_Cartelera
+            // 
+            Btn_Cargar_Cartelera.Cursor = Cursors.Hand;
+            Btn_Cargar_Cartelera.Dock = DockStyle.Fill;
+            Btn_Cargar_Cartelera.Location = new Point(1431, 3);
+            Btn_Cargar_Cartelera.Name = "Btn_Cargar_Cartelera";
+            Btn_Cargar_Cartelera.Size = new Size(353, 27);
+            Btn_Cargar_Cartelera.TabIndex = 5;
+            Btn_Cargar_Cartelera.Text = "Consultar cartelera";
+            Btn_Cargar_Cartelera.UseVisualStyleBackColor = true;
+            // 
             // Cbo_Ciudad
             // 
             Cbo_Ciudad.Dock = DockStyle.Fill;
@@ -122,6 +133,18 @@ namespace Plantilla_Cliente
             Cbo_Cine.TabIndex = 3;
             Cbo_Cine.ValueMember = "Seleccione Cine...";
             Cbo_Cine.SelectedIndexChanged += Cbo_Cine_SelectedIndexChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.White;
+            label2.Dock = DockStyle.Fill;
+            label2.Location = new Point(717, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(172, 33);
+            label2.TabIndex = 6;
+            label2.Text = "Cine";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Btn_Cargar_Cartelera
             // 
