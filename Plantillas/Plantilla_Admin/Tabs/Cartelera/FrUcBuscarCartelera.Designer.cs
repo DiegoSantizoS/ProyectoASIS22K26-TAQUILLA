@@ -28,53 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tableLayoutPanel1 = new TableLayoutPanel();
-            Dgv_Cartelera = new DataGridView();
+            Dgv_cartelera = new DataGridView();
             Tlp_formularioTitulo = new TableLayoutPanel();
             Tlp_formulario = new TableLayoutPanel();
-            Tlp_dgvFormato = new TableLayoutPanel();
-            Dgv_formato = new DataGridView();
-            Dgvc_nombre = new DataGridViewTextBoxColumn();
-            Dgvb_formatoQuitar = new DataGridViewButtonColumn();
-            Tlp_grupoFormato = new TableLayoutPanel();
-            Cb_formato = new ComboBox();
-            Tx_formato = new Label();
-            Btn_agregarFormato = new Button();
-            Tlp_grupoGenero = new TableLayoutPanel();
-            Cb_genero = new ComboBox();
-            Tx_Genero = new Label();
-            Btn_agregarGenero = new Button();
-            Btn_buscar = new Button();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            Cb_estado = new ComboBox();
+            Tx_estado = new Label();
             Tlp_grupoNombre = new TableLayoutPanel();
             label2 = new Label();
             Txt_nombre = new TextBox();
             Tlp_grupoID = new TableLayoutPanel();
             Tx_id = new Label();
             Txt_id = new TextBox();
-            Tlp_dgvGenero = new TableLayoutPanel();
-            Dgv_genero = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            Dgvb_generoQuitar = new DataGridViewButtonColumn();
             Btn_eliminar = new Button();
             Btn_actualizar = new Button();
             label6 = new Label();
-            id = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            formato = new DataGridViewTextBoxColumn();
-            genero = new DataGridViewTextBoxColumn();
-            estreno = new DataGridViewTextBoxColumn();
+            conexionBindingSource = new BindingSource(components);
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Dgv_Cartelera).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Dgv_cartelera).BeginInit();
             Tlp_formularioTitulo.SuspendLayout();
             Tlp_formulario.SuspendLayout();
-            Tlp_dgvFormato.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Dgv_formato).BeginInit();
-            Tlp_grupoFormato.SuspendLayout();
-            Tlp_grupoGenero.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             Tlp_grupoNombre.SuspendLayout();
             Tlp_grupoID.SuspendLayout();
-            Tlp_dgvGenero.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Dgv_genero).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)conexionBindingSource).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -82,30 +61,29 @@
             tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(Dgv_Cartelera, 0, 1);
+            tableLayoutPanel1.Controls.Add(Dgv_cartelera, 0, 1);
             tableLayoutPanel1.Controls.Add(Tlp_formularioTitulo, 0, 0);
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 350F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 300F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Size = new Size(1050, 700);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // Dgv_Cartelera
+            // Dgv_cartelera
             // 
-            Dgv_Cartelera.AllowUserToDeleteRows = false;
-            Dgv_Cartelera.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            Dgv_Cartelera.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Dgv_Cartelera.Columns.AddRange(new DataGridViewColumn[] { id, Nombre, formato, genero, estreno });
-            Dgv_Cartelera.Dock = DockStyle.Fill;
-            Dgv_Cartelera.Location = new Point(3, 353);
-            Dgv_Cartelera.Name = "Dgv_Cartelera";
-            Dgv_Cartelera.ReadOnly = true;
-            Dgv_Cartelera.RowHeadersWidth = 51;
-            Dgv_Cartelera.Size = new Size(1044, 344);
-            Dgv_Cartelera.TabIndex = 0;
-            Dgv_Cartelera.CellContentClick += dataGridView1_CellContentClick;
+            Dgv_cartelera.AllowUserToDeleteRows = false;
+            Dgv_cartelera.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Dgv_cartelera.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Dgv_cartelera.Dock = DockStyle.Fill;
+            Dgv_cartelera.Location = new Point(3, 303);
+            Dgv_cartelera.Name = "Dgv_cartelera";
+            Dgv_cartelera.ReadOnly = true;
+            Dgv_cartelera.RowHeadersWidth = 51;
+            Dgv_cartelera.Size = new Size(1044, 394);
+            Dgv_cartelera.TabIndex = 0;
+            Dgv_cartelera.CellClick += Dgv_cartelera_CellClick;
             // 
             // Tlp_formularioTitulo
             // 
@@ -120,7 +98,7 @@
             Tlp_formularioTitulo.RowCount = 2;
             Tlp_formularioTitulo.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
             Tlp_formularioTitulo.RowStyles.Add(new RowStyle(SizeType.Absolute, 125F));
-            Tlp_formularioTitulo.Size = new Size(1030, 330);
+            Tlp_formularioTitulo.Size = new Size(1030, 280);
             Tlp_formularioTitulo.TabIndex = 1;
             // 
             // Tlp_formulario
@@ -129,13 +107,9 @@
             Tlp_formulario.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             Tlp_formulario.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             Tlp_formulario.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
-            Tlp_formulario.Controls.Add(Tlp_dgvFormato, 1, 2);
-            Tlp_formulario.Controls.Add(Tlp_grupoFormato, 1, 1);
-            Tlp_formulario.Controls.Add(Tlp_grupoGenero, 0, 1);
-            Tlp_formulario.Controls.Add(Btn_buscar, 2, 0);
-            Tlp_formulario.Controls.Add(Tlp_grupoNombre, 0, 0);
-            Tlp_formulario.Controls.Add(Tlp_grupoID, 1, 0);
-            Tlp_formulario.Controls.Add(Tlp_dgvGenero, 0, 2);
+            Tlp_formulario.Controls.Add(tableLayoutPanel2, 0, 2);
+            Tlp_formulario.Controls.Add(Tlp_grupoNombre, 1, 0);
+            Tlp_formulario.Controls.Add(Tlp_grupoID, 0, 0);
             Tlp_formulario.Controls.Add(Btn_eliminar, 2, 3);
             Tlp_formulario.Controls.Add(Btn_actualizar, 2, 2);
             Tlp_formulario.Dock = DockStyle.Fill;
@@ -148,160 +122,46 @@
             Tlp_formulario.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             Tlp_formulario.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             Tlp_formulario.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            Tlp_formulario.Size = new Size(1030, 255);
+            Tlp_formulario.Size = new Size(1030, 205);
             Tlp_formulario.TabIndex = 0;
             // 
-            // Tlp_dgvFormato
+            // tableLayoutPanel2
             // 
-            Tlp_dgvFormato.ColumnCount = 2;
-            Tlp_dgvFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
-            Tlp_dgvFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            Tlp_dgvFormato.Controls.Add(Dgv_formato, 1, 0);
-            Tlp_dgvFormato.Dock = DockStyle.Fill;
-            Tlp_dgvFormato.Location = new Point(445, 100);
-            Tlp_dgvFormato.Margin = new Padding(0);
-            Tlp_dgvFormato.Name = "Tlp_dgvFormato";
-            Tlp_dgvFormato.RowCount = 1;
-            Tlp_formulario.SetRowSpan(Tlp_dgvFormato, 3);
-            Tlp_dgvFormato.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Tlp_dgvFormato.Size = new Size(445, 155);
-            Tlp_dgvFormato.TabIndex = 21;
+            tableLayoutPanel2.ColumnCount = 2;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.Controls.Add(Cb_estado, 1, 0);
+            tableLayoutPanel2.Controls.Add(Tx_estado, 0, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(0, 100);
+            tableLayoutPanel2.Margin = new Padding(0);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Size = new Size(445, 50);
+            tableLayoutPanel2.TabIndex = 20;
             // 
-            // Dgv_formato
+            // Cb_estado
             // 
-            Dgv_formato.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            Dgv_formato.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Dgv_formato.Columns.AddRange(new DataGridViewColumn[] { Dgvc_nombre, Dgvb_formatoQuitar });
-            Dgv_formato.Dock = DockStyle.Fill;
-            Dgv_formato.Location = new Point(80, 0);
-            Dgv_formato.Margin = new Padding(0);
-            Dgv_formato.Name = "Dgv_formato";
-            Dgv_formato.RowHeadersWidth = 51;
-            Dgv_formato.Size = new Size(365, 155);
-            Dgv_formato.TabIndex = 16;
+            Cb_estado.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Cb_estado.FormattingEnabled = true;
+            Cb_estado.Location = new Point(83, 11);
+            Cb_estado.Name = "Cb_estado";
+            Cb_estado.Size = new Size(359, 28);
+            Cb_estado.TabIndex = 3;
             // 
-            // Dgvc_nombre
+            // Tx_estado
             // 
-            Dgvc_nombre.FillWeight = 200F;
-            Dgvc_nombre.HeaderText = "Nombre";
-            Dgvc_nombre.MinimumWidth = 6;
-            Dgvc_nombre.Name = "Dgvc_nombre";
-            // 
-            // Dgvb_formatoQuitar
-            // 
-            Dgvb_formatoQuitar.HeaderText = "Quitar";
-            Dgvb_formatoQuitar.MinimumWidth = 6;
-            Dgvb_formatoQuitar.Name = "Dgvb_formatoQuitar";
-            // 
-            // Tlp_grupoFormato
-            // 
-            Tlp_grupoFormato.ColumnCount = 3;
-            Tlp_grupoFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
-            Tlp_grupoFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            Tlp_grupoFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            Tlp_grupoFormato.Controls.Add(Cb_formato, 1, 0);
-            Tlp_grupoFormato.Controls.Add(Tx_formato, 0, 0);
-            Tlp_grupoFormato.Controls.Add(Btn_agregarFormato, 2, 0);
-            Tlp_grupoFormato.Dock = DockStyle.Fill;
-            Tlp_grupoFormato.Location = new Point(445, 50);
-            Tlp_grupoFormato.Margin = new Padding(0);
-            Tlp_grupoFormato.Name = "Tlp_grupoFormato";
-            Tlp_grupoFormato.RowCount = 1;
-            Tlp_grupoFormato.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Tlp_grupoFormato.Size = new Size(445, 50);
-            Tlp_grupoFormato.TabIndex = 19;
-            // 
-            // Cb_formato
-            // 
-            Cb_formato.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            Cb_formato.FormattingEnabled = true;
-            Cb_formato.Location = new Point(83, 11);
-            Cb_formato.Name = "Cb_formato";
-            Cb_formato.Size = new Size(259, 28);
-            Cb_formato.TabIndex = 3;
-            // 
-            // Tx_formato
-            // 
-            Tx_formato.AutoSize = true;
-            Tx_formato.Dock = DockStyle.Fill;
-            Tx_formato.Location = new Point(3, 0);
-            Tx_formato.Margin = new Padding(3, 0, 3, 3);
-            Tx_formato.Name = "Tx_formato";
-            Tx_formato.Size = new Size(74, 47);
-            Tx_formato.TabIndex = 0;
-            Tx_formato.Text = "Formato";
-            Tx_formato.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // Btn_agregarFormato
-            // 
-            Btn_agregarFormato.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            Btn_agregarFormato.Location = new Point(345, 10);
-            Btn_agregarFormato.Margin = new Padding(0);
-            Btn_agregarFormato.Name = "Btn_agregarFormato";
-            Btn_agregarFormato.Size = new Size(100, 30);
-            Btn_agregarFormato.TabIndex = 2;
-            Btn_agregarFormato.Text = "Agregar";
-            Btn_agregarFormato.UseVisualStyleBackColor = true;
-            // 
-            // Tlp_grupoGenero
-            // 
-            Tlp_grupoGenero.ColumnCount = 3;
-            Tlp_grupoGenero.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
-            Tlp_grupoGenero.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            Tlp_grupoGenero.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            Tlp_grupoGenero.Controls.Add(Cb_genero, 1, 0);
-            Tlp_grupoGenero.Controls.Add(Tx_Genero, 0, 0);
-            Tlp_grupoGenero.Controls.Add(Btn_agregarGenero, 2, 0);
-            Tlp_grupoGenero.Dock = DockStyle.Fill;
-            Tlp_grupoGenero.Location = new Point(0, 50);
-            Tlp_grupoGenero.Margin = new Padding(0);
-            Tlp_grupoGenero.Name = "Tlp_grupoGenero";
-            Tlp_grupoGenero.RowCount = 1;
-            Tlp_grupoGenero.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Tlp_grupoGenero.Size = new Size(445, 50);
-            Tlp_grupoGenero.TabIndex = 16;
-            // 
-            // Cb_genero
-            // 
-            Cb_genero.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            Cb_genero.FormattingEnabled = true;
-            Cb_genero.Location = new Point(83, 11);
-            Cb_genero.Name = "Cb_genero";
-            Cb_genero.Size = new Size(259, 28);
-            Cb_genero.TabIndex = 3;
-            // 
-            // Tx_Genero
-            // 
-            Tx_Genero.AutoSize = true;
-            Tx_Genero.Dock = DockStyle.Fill;
-            Tx_Genero.Location = new Point(3, 0);
-            Tx_Genero.Margin = new Padding(3, 0, 3, 3);
-            Tx_Genero.Name = "Tx_Genero";
-            Tx_Genero.Size = new Size(74, 47);
-            Tx_Genero.TabIndex = 0;
-            Tx_Genero.Text = "Genero";
-            Tx_Genero.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // Btn_agregarGenero
-            // 
-            Btn_agregarGenero.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            Btn_agregarGenero.Location = new Point(345, 10);
-            Btn_agregarGenero.Margin = new Padding(0);
-            Btn_agregarGenero.Name = "Btn_agregarGenero";
-            Btn_agregarGenero.Size = new Size(100, 30);
-            Btn_agregarGenero.TabIndex = 2;
-            Btn_agregarGenero.Text = "Agregar";
-            Btn_agregarGenero.UseVisualStyleBackColor = true;
-            // 
-            // Btn_buscar
-            // 
-            Btn_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            Btn_buscar.Location = new Point(913, 3);
-            Btn_buscar.Name = "Btn_buscar";
-            Btn_buscar.Size = new Size(114, 44);
-            Btn_buscar.TabIndex = 2;
-            Btn_buscar.Text = "BUSCAR";
-            Btn_buscar.UseVisualStyleBackColor = true;
+            Tx_estado.AutoSize = true;
+            Tx_estado.Dock = DockStyle.Fill;
+            Tx_estado.Location = new Point(3, 0);
+            Tx_estado.Margin = new Padding(3, 0, 3, 3);
+            Tx_estado.Name = "Tx_estado";
+            Tx_estado.Size = new Size(74, 47);
+            Tx_estado.TabIndex = 0;
+            Tx_estado.Text = "Estado";
+            Tx_estado.TextAlign = ContentAlignment.MiddleRight;
             // 
             // Tlp_grupoNombre
             // 
@@ -311,7 +171,7 @@
             Tlp_grupoNombre.Controls.Add(label2, 0, 0);
             Tlp_grupoNombre.Controls.Add(Txt_nombre, 1, 0);
             Tlp_grupoNombre.Dock = DockStyle.Fill;
-            Tlp_grupoNombre.Location = new Point(0, 0);
+            Tlp_grupoNombre.Location = new Point(445, 0);
             Tlp_grupoNombre.Margin = new Padding(0);
             Tlp_grupoNombre.Name = "Tlp_grupoNombre";
             Tlp_grupoNombre.RowCount = 1;
@@ -346,7 +206,7 @@
             Tlp_grupoID.Controls.Add(Tx_id, 0, 0);
             Tlp_grupoID.Controls.Add(Txt_id, 1, 0);
             Tlp_grupoID.Dock = DockStyle.Fill;
-            Tlp_grupoID.Location = new Point(445, 0);
+            Tlp_grupoID.Location = new Point(0, 0);
             Tlp_grupoID.Margin = new Padding(0);
             Tlp_grupoID.Name = "Tlp_grupoID";
             Tlp_grupoID.RowCount = 1;
@@ -373,55 +233,12 @@
             Txt_id.Size = new Size(359, 27);
             Txt_id.TabIndex = 1;
             // 
-            // Tlp_dgvGenero
-            // 
-            Tlp_dgvGenero.ColumnCount = 2;
-            Tlp_dgvGenero.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
-            Tlp_dgvGenero.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            Tlp_dgvGenero.Controls.Add(Dgv_genero, 1, 0);
-            Tlp_dgvGenero.Dock = DockStyle.Fill;
-            Tlp_dgvGenero.Location = new Point(0, 100);
-            Tlp_dgvGenero.Margin = new Padding(0);
-            Tlp_dgvGenero.Name = "Tlp_dgvGenero";
-            Tlp_dgvGenero.RowCount = 1;
-            Tlp_formulario.SetRowSpan(Tlp_dgvGenero, 3);
-            Tlp_dgvGenero.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Tlp_dgvGenero.Size = new Size(445, 155);
-            Tlp_dgvGenero.TabIndex = 20;
-            // 
-            // Dgv_genero
-            // 
-            Dgv_genero.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            Dgv_genero.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Dgv_genero.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Dgvb_generoQuitar });
-            Dgv_genero.Dock = DockStyle.Fill;
-            Dgv_genero.Location = new Point(80, 0);
-            Dgv_genero.Margin = new Padding(0);
-            Dgv_genero.Name = "Dgv_genero";
-            Dgv_genero.RowHeadersWidth = 51;
-            Dgv_genero.Size = new Size(365, 155);
-            Dgv_genero.TabIndex = 16;
-            Dgv_genero.CellContentClick += Dgv_genero_CellContentClick;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.FillWeight = 200F;
-            dataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // Dgvb_generoQuitar
-            // 
-            Dgvb_generoQuitar.HeaderText = "Quitar";
-            Dgvb_generoQuitar.MinimumWidth = 6;
-            Dgvb_generoQuitar.Name = "Dgvb_generoQuitar";
-            // 
             // Btn_eliminar
             // 
             Btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             Btn_eliminar.Location = new Point(913, 153);
             Btn_eliminar.Name = "Btn_eliminar";
-            Btn_eliminar.Size = new Size(114, 44);
+            Btn_eliminar.Size = new Size(114, 49);
             Btn_eliminar.TabIndex = 1;
             Btn_eliminar.Text = "ELIMINAR";
             Btn_eliminar.UseVisualStyleBackColor = true;
@@ -435,6 +252,7 @@
             Btn_actualizar.TabIndex = 0;
             Btn_actualizar.Text = "ACTUALIZAR";
             Btn_actualizar.UseVisualStyleBackColor = true;
+            Btn_actualizar.Click += Btn_actualizar_Click;
             // 
             // label6
             // 
@@ -448,40 +266,9 @@
             label6.Text = "BUSCAR CARTELERA";
             label6.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // id
+            // conexionBindingSource
             // 
-            id.HeaderText = "ID";
-            id.MinimumWidth = 6;
-            id.Name = "id";
-            id.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Nombre";
-            Nombre.MinimumWidth = 6;
-            Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
-            // 
-            // formato
-            // 
-            formato.HeaderText = "Formato";
-            formato.MinimumWidth = 6;
-            formato.Name = "formato";
-            formato.ReadOnly = true;
-            // 
-            // genero
-            // 
-            genero.HeaderText = "Generos";
-            genero.MinimumWidth = 6;
-            genero.Name = "genero";
-            genero.ReadOnly = true;
-            // 
-            // estreno
-            // 
-            estreno.HeaderText = "Fecha de Estreno";
-            estreno.MinimumWidth = 6;
-            estreno.Name = "estreno";
-            estreno.ReadOnly = true;
+            conexionBindingSource.DataSource = typeof(clase_conexion.conexion);
             // 
             // FrCuBuscarCartelera1
             // 
@@ -491,29 +278,24 @@
             Name = "FrCuBuscarCartelera1";
             Size = new Size(1050, 700);
             tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)Dgv_Cartelera).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Dgv_cartelera).EndInit();
             Tlp_formularioTitulo.ResumeLayout(false);
             Tlp_formularioTitulo.PerformLayout();
             Tlp_formulario.ResumeLayout(false);
-            Tlp_dgvFormato.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)Dgv_formato).EndInit();
-            Tlp_grupoFormato.ResumeLayout(false);
-            Tlp_grupoFormato.PerformLayout();
-            Tlp_grupoGenero.ResumeLayout(false);
-            Tlp_grupoGenero.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
             Tlp_grupoNombre.ResumeLayout(false);
             Tlp_grupoNombre.PerformLayout();
             Tlp_grupoID.ResumeLayout(false);
             Tlp_grupoID.PerformLayout();
-            Tlp_dgvGenero.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)Dgv_genero).EndInit();
+            ((System.ComponentModel.ISupportInitialize)conexionBindingSource).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private DataGridView Dgv_Cartelera;
+        private DataGridView Dgv_cartelera;
         private TableLayoutPanel Tlp_formularioTitulo;
         private TableLayoutPanel Tlp_formulario;
         private TableLayoutPanel Tlp_grupoID;
@@ -523,29 +305,11 @@
         private Label label2;
         private TextBox Txt_nombre;
         private Label label6;
-        private Button Btn_buscar;
         private Button Btn_eliminar;
         private Button Btn_actualizar;
-        private TableLayoutPanel Tlp_grupoGenero;
-        private ComboBox Cb_genero;
-        private Label Tx_Genero;
-        private Button Btn_agregarGenero;
-        private TableLayoutPanel Tlp_grupoFormato;
-        private ComboBox Cb_formato;
-        private Label Tx_formato;
-        private Button Btn_agregarFormato;
-        private TableLayoutPanel Tlp_dgvGenero;
-        private DataGridView Dgv_genero;
-        private TableLayoutPanel Tlp_dgvFormato;
-        private DataGridView Dgv_formato;
-        private DataGridViewTextBoxColumn Dgvc_nombre;
-        private DataGridViewButtonColumn Dgvb_formatoQuitar;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewButtonColumn Dgvb_generoQuitar;
-        private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn formato;
-        private DataGridViewTextBoxColumn genero;
-        private DataGridViewTextBoxColumn estreno;
+        private BindingSource conexionBindingSource;
+        private TableLayoutPanel tableLayoutPanel2;
+        private ComboBox Cb_estado;
+        private Label Tx_estado;
     }
 }
