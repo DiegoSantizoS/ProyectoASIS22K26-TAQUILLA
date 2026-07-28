@@ -39,6 +39,7 @@ namespace Plantilla_Cliente
             {
                 if (butacas.ShowDialog() == DialogResult.OK)
                 {
+                    //Se accede a la lista de asientos del formulario Butacas y se guardaran para crear los boletos
                     List<int> asientos = butacas.ButacasSeleccionadas;
 
                     MessageBox.Show(string.Join(", ", asientos));
