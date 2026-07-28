@@ -29,6 +29,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Validaciones\Validaciones.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="FormulariosPrincipales\FrLogin.cs" />
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
