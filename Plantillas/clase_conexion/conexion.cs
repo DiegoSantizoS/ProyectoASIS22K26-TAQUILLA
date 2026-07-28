@@ -16,7 +16,7 @@ namespace clase_conexion
         private String server = "localhost";
         private String datebase = "taquillas_cine";
         private String user = "root";
-        private String password = "root";
+        private String password = "Root";
         private String pconexion;
         public conexion()
         {
@@ -51,6 +51,7 @@ namespace clase_conexion
 
                 string consulta = @"
             SELECT
+                p.id_pelicula AS IdPelicula,
                 p.titulo_pelicula AS Titulo,
                 p.duracion_pelicula AS Duracion,
                 p.clasificacion_pelicula AS Clasificacion,
@@ -70,10 +71,10 @@ namespace clase_conexion
                 return peliculas;
 
             }
-           
-            catch{ return peliculas; }
 
-        
+            catch { return peliculas; }
+
+
         }
 
         public DataTable mostrarciudades()
@@ -131,6 +132,7 @@ namespace clase_conexion
 
                 string consulta = @"
         SELECT
+            p.id_pelicula AS IdPelicula,
             p.titulo_pelicula AS Titulo,
             p.duracion_pelicula AS Duracion,
             p.clasificacion_pelicula AS Clasificacion,
@@ -169,9 +171,9 @@ namespace clase_conexion
 
                 return tabla;
             }
-            catch 
+            catch
             {
-              
+
                 return tabla;
             }
         }
@@ -179,7 +181,31 @@ namespace clase_conexion
 
         /* fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
      * fecha de: 27/07/2026 */
-    }
+    
+    public DataTable infopelicula(int idPelicula)
+        {
+            DataTable peliculas = new DataTable();
+
+            MySqlConnection con = GetConnection();
+
+            string consulta = @"SELECT 
+                        director_pelicula,
+                        duracion_pelicula,
+                        clasificacion_pelicula
+                        FROM PELICULA
+                        WHERE id_pelicula = @idPelicula";
+
+            MySqlCommand cmd = new MySqlCommand(consulta, con);
+
+            cmd.Parameters.AddWithValue("@idPelicula", idPelicula);
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+
+            adapter.Fill(peliculas);
+
+            return peliculas;
+        }
+    } 
 }
 /* Fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
  * fecha de: 26/07/2026 */
