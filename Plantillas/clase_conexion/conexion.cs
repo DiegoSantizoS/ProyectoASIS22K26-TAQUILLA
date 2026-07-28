@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 /* Inicio de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
  * fecha de: 26/07/2026 */
+/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 26/07/2026 */
 namespace clase_conexion
 {
     public class conexion
@@ -522,5 +524,8 @@ namespace clase_conexion
 
     }
 }
+/* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 27/07/2026 */
+
 /* Fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
  * fecha de: 26/07/2026 */

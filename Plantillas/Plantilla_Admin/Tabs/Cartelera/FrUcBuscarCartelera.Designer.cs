@@ -242,6 +242,7 @@
             Btn_eliminar.TabIndex = 1;
             Btn_eliminar.Text = "ELIMINAR";
             Btn_eliminar.UseVisualStyleBackColor = true;
+            Btn_eliminar.Click += Btn_eliminar_Click;
             // 
             // Btn_actualizar
             // 

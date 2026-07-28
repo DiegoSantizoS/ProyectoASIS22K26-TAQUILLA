@@ -54,6 +54,9 @@ namespace Plantilla_Admin
             IrAEditar?.Invoke(this, id);
         }
 
+        private void Btn_eliminar_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
