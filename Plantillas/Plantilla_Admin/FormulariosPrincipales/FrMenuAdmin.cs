@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using clase_conexion;
 
 namespace Plantilla_Admin
 {
@@ -29,7 +30,7 @@ namespace Plantilla_Admin
 
         private void carteleraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cartelera cartelera = new cartelera();
+            FrUcMainCartelera cartelera = new FrUcMainCartelera();
             funcargarpagina(cartelera);
         }
 

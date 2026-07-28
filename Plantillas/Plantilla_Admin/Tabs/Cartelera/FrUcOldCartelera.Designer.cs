@@ -1,6 +1,6 @@
 ﻿namespace Plantilla_Admin
 {
-    partial class FrCartelera
+    partial class FrUcOldCartelera
     {
         /// <summary> 
         /// Variable del diseñador necesaria.

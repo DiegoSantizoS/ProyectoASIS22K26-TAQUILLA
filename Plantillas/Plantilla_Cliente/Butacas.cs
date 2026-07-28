@@ -14,7 +14,10 @@ namespace Plantilla_Cliente
 {
     public partial class Butacas : Form
     {
-        public List<int> ButacasSeleccionadas { get; } = new();
+        public List<string> ButacasSeleccionadas = new();
+        /*{
+            get { return ButacasSeleccionadas; }
+        }*/
         public Butacas()
         {
             InitializeComponent();
@@ -50,14 +53,13 @@ namespace Plantilla_Cliente
             {
                 for (int columna = 0; columna < columnas; columna++)
                 {
-                    int numeroButaca = fila * columnas + columna + 1;
                     Button butaca = new Button();
                     butaca.Dock = DockStyle.Fill;
                     butaca.BackColor = Color.Green;
                     butaca.ForeColor = Color.White;
                     butaca.FlatStyle = FlatStyle.Flat;
-                    butaca.Tag = numeroButaca;
-                    butaca.Text = DecodificarAsiento(numeroButaca);
+                    butaca.Tag = $"{(char)('A' + fila)}{columna + 1}";
+                    butaca.Text = butaca.Tag.ToString();
                     butaca.Click += Btn_butaca_Click;
                     Tlp_butacaselector.Controls.Add(butaca, columna, fila);
 
@@ -68,57 +70,33 @@ namespace Plantilla_Cliente
         {
             Button btn = (Button)sender;
 
-            int numeroAsiento = (int)btn.Tag;
-
+            string codigo = btn.Tag.ToString();
 
             if (btn.BackColor == Color.Green)
             {
-                //añadir el asiento seleccionado a la lista
                 btn.BackColor = Color.DeepSkyBlue;
-                ButacasSeleccionadas.Add(numeroAsiento);
+                ButacasSeleccionadas.Add(codigo);
             }
             else
             {
-                //Eliminar el asiento seleccionado de la lista
                 btn.BackColor = Color.Green;
-                ButacasSeleccionadas.Remove(numeroAsiento);
+                ButacasSeleccionadas.Remove(codigo);
             }
         }
 
         private void Btn_Confirmacion_Click(object sender, EventArgs e)
         {
-            //Si no hay butacas seleccionadas, mostrar un mensaje de error y salir del método
-            if (ButacasSeleccionadas.Count == 0)
-            {
-                MessageBox.Show("Seleccione al menos una butaca",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-                return;
-            }
-
-            DialogResult respuesta = MessageBox.Show(
-                $"¿Está seguro que desea reservar {ButacasSeleccionadas.Count} butacas?\n\n" +
-                $"Butacas seleccionadas: {string.Join(", ", ButacasSeleccionadas)}",
-                "Confirmación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-            //Enviar contenido de la lista hacia afuera del formulario
-            if (respuesta == DialogResult.Yes)
-            {
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-        }
-        private string DecodificarAsiento(int NumeroAsiento)
-        {
-            int fila = (NumeroAsiento - 1) / 10;
-            int columna = (NumeroAsiento - 1) % 10 + 1;
-            char letra = (char)('A' + fila);
             
-            return $"{letra}{columna}";
+            if (string.Join(", ", ButacasSeleccionadas) == "")
+            {
+                MessageBox.Show("Seleccione al menos una butaca", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("¿Está seguro que desea reservar " + ButacasSeleccionadas.Count +
+                    " butacas?" + "\n Butacas seleccionadas: " + string.Join(", ", ButacasSeleccionadas),
+                    "Confirmación de reserva", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
         }
-        
     }
 }

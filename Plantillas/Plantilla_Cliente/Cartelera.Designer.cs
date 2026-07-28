@@ -1,7 +1,10 @@
-﻿namespace Plantilla_Cliente
+﻿
+namespace Plantilla_Cliente
+    
 {
     partial class Cartelera
     {
+       
         /// <summary> 
         /// Variable del diseñador necesaria.
         /// </summary>
@@ -30,11 +33,9 @@
         {
             Pnl_Buscador = new TableLayoutPanel();
             Pnl_Filtros1 = new TableLayoutPanel();
-            Btn_Cargar_Cartelera = new Button();
             Cbo_Ciudad = new ComboBox();
             Cbo_Cine = new ComboBox();
-            label2 = new Label();
-            label3 = new Label();
+            Btn_Cargar_Cartelera = new Button();
             label1 = new Label();
             Pnl_Filtros2 = new TableLayoutPanel();
             Btn_2DFilter = new Button();
@@ -81,17 +82,13 @@
             // Pnl_Filtros1
             // 
             Pnl_Filtros1.BackColor = Color.FromArgb(28, 17, 69);
-            Pnl_Filtros1.ColumnCount = 5;
-            Pnl_Filtros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
-            Pnl_Filtros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-            Pnl_Filtros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
-            Pnl_Filtros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-            Pnl_Filtros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            Pnl_Filtros1.Controls.Add(Btn_Cargar_Cartelera, 4, 0);
-            Pnl_Filtros1.Controls.Add(Cbo_Ciudad, 1, 0);
-            Pnl_Filtros1.Controls.Add(Cbo_Cine, 3, 0);
-            Pnl_Filtros1.Controls.Add(label2, 2, 0);
-            Pnl_Filtros1.Controls.Add(label3, 0, 0);
+            Pnl_Filtros1.ColumnCount = 3;
+            Pnl_Filtros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
+            Pnl_Filtros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            Pnl_Filtros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            Pnl_Filtros1.Controls.Add(Cbo_Ciudad, 0, 0);
+            Pnl_Filtros1.Controls.Add(Cbo_Cine, 1, 0);
+            Pnl_Filtros1.Controls.Add(Btn_Cargar_Cartelera, 2, 0);
             Pnl_Filtros1.Dock = DockStyle.Fill;
             Pnl_Filtros1.Location = new Point(375, 3);
             Pnl_Filtros1.Name = "Pnl_Filtros1";
@@ -100,65 +97,39 @@
             Pnl_Filtros1.Size = new Size(1787, 51);
             Pnl_Filtros1.TabIndex = 6;
             // 
+            // Cbo_Ciudad
+            // 
+            Cbo_Ciudad.Dock = DockStyle.Fill;
+            Cbo_Ciudad.FormattingEnabled = true;
+            Cbo_Ciudad.ItemHeight = 20;
+            Cbo_Ciudad.Location = new Point(3, 3);
+            Cbo_Ciudad.Name = "Cbo_Ciudad";
+            Cbo_Ciudad.Size = new Size(589, 28);
+            Cbo_Ciudad.TabIndex = 2;
+            Cbo_Ciudad.Text = "Seleccionar Ciudad";
+            // 
+            // Cbo_Cine
+            // 
+            Cbo_Cine.Dock = DockStyle.Fill;
+            Cbo_Cine.DrawMode = DrawMode.OwnerDrawFixed;
+            Cbo_Cine.FormattingEnabled = true;
+            Cbo_Cine.ItemHeight = 50;
+            Cbo_Cine.Location = new Point(598, 3);
+            Cbo_Cine.Name = "Cbo_Cine";
+            Cbo_Cine.Size = new Size(589, 56);
+            Cbo_Cine.TabIndex = 3;
+            Cbo_Cine.Text = "Seleccionar Cine";
+            // 
             // Btn_Cargar_Cartelera
             // 
             Btn_Cargar_Cartelera.Cursor = Cursors.Hand;
             Btn_Cargar_Cartelera.Dock = DockStyle.Fill;
-            Btn_Cargar_Cartelera.Location = new Point(1431, 3);
+            Btn_Cargar_Cartelera.Location = new Point(1193, 3);
             Btn_Cargar_Cartelera.Name = "Btn_Cargar_Cartelera";
-            Btn_Cargar_Cartelera.Size = new Size(353, 45);
+            Btn_Cargar_Cartelera.Size = new Size(591, 45);
             Btn_Cargar_Cartelera.TabIndex = 5;
             Btn_Cargar_Cartelera.Text = "Consultar cartelera";
             Btn_Cargar_Cartelera.UseVisualStyleBackColor = true;
-            // 
-            // Cbo_Ciudad
-            // 
-            Cbo_Ciudad.Dock = DockStyle.Fill;
-            Cbo_Ciudad.DropDownStyle = ComboBoxStyle.DropDownList;
-            Cbo_Ciudad.FormattingEnabled = true;
-            Cbo_Ciudad.ItemHeight = 20;
-            Cbo_Ciudad.Items.AddRange(new object[] { "Seleccione una ciudad" });
-            Cbo_Ciudad.Location = new Point(181, 3);
-            Cbo_Ciudad.Name = "Cbo_Ciudad";
-            Cbo_Ciudad.Size = new Size(530, 28);
-            Cbo_Ciudad.TabIndex = 2;
-            // 
-            // Cbo_Cine
-            // 
-            Cbo_Cine.DisplayMember = "Seleccione Cine...";
-            Cbo_Cine.Dock = DockStyle.Fill;
-            Cbo_Cine.DropDownStyle = ComboBoxStyle.DropDownList;
-            Cbo_Cine.FormattingEnabled = true;
-            Cbo_Cine.ItemHeight = 20;
-            Cbo_Cine.Location = new Point(895, 3);
-            Cbo_Cine.Name = "Cbo_Cine";
-            Cbo_Cine.Size = new Size(530, 28);
-            Cbo_Cine.TabIndex = 3;
-            Cbo_Cine.ValueMember = "Seleccione Cine...";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.White;
-            label2.Dock = DockStyle.Fill;
-            label2.Location = new Point(717, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(172, 51);
-            label2.TabIndex = 6;
-            label2.Text = "Cine";
-            label2.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.White;
-            label3.Dock = DockStyle.Fill;
-            label3.Location = new Point(3, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(172, 51);
-            label3.TabIndex = 7;
-            label3.Text = "Ciudad";
-            label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -330,7 +301,6 @@
             Load += Cartelera_Load;
             Pnl_Buscador.ResumeLayout(false);
             Pnl_Filtros1.ResumeLayout(false);
-            Pnl_Filtros1.PerformLayout();
             Pnl_Filtros2.ResumeLayout(false);
             Pnl_Filtros2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Tb_Hora).EndInit();
@@ -351,12 +321,12 @@
         private Button Btn_2DFilter;
         private DataGridView Dgv_Cartelera;
         private ComboBox Cbo_Cine;
+        private Button Btn_Cargar_Cartelera;
         private DataGridViewButtonColumn Reservar;
         private Button Btn_DobFilter;
         private Button Btn_SubFilter;
         private TrackBar Tb_Hora;
         private ComboBox Cbo_Ciudad;
-        private Button Btn_Cargar_Cartelera;
         private Label label2;
         private Label label3;
     }

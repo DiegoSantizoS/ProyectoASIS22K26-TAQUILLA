@@ -10,12 +10,7 @@ namespace Plantilla_Cliente
 {
     public partial class Reservas : UserControl
     {
-        public int idPelicula;
-        public int id_funcion;
-        public int numero_boleto;
-        public int id_venta;
-        public string estado_boleto = "";
-        public List<int> asientoseleccionado = new List<int>();
+        private int idPelicula;
         public Reservas()
         {
             InitializeComponent();
@@ -26,9 +21,9 @@ namespace Plantilla_Cliente
             //CargarInformacion(idPelicula);
             this.idPelicula = idPelicula;
             MessageBox.Show($"ID recibido: {this.idPelicula}");
-        }
+        } 
 
-
+        
         private void TlP_Reservas_Paint(object sender, PaintEventArgs e)
         {
         }
@@ -37,7 +32,7 @@ namespace Plantilla_Cliente
         {
             using (Butacas butacas = new Butacas())
             {
-                if (butacas.ShowDialog() == DialogResult.OK)
+                if(butacas.ShowDialog() == DialogResult.OK)
                 {
                     //Se accede a la lista de asientos del formulario Butacas y se guardaran para crear los boletos
                     List<int> asientos = butacas.ButacasSeleccionadas;
@@ -46,6 +41,5 @@ namespace Plantilla_Cliente
                 }
             }
         }
-
     }
 }
