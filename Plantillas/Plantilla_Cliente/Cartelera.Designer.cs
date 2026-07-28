@@ -1,7 +1,10 @@
-﻿namespace Plantilla_Cliente
+﻿
+namespace Plantilla_Cliente
+    
 {
     partial class Cartelera
     {
+       
         /// <summary> 
         /// Variable del diseñador necesaria.
         /// </summary>
@@ -44,8 +47,8 @@
             pictureBox1 = new PictureBox();
             textBox1 = new TextBox();
             Dgv_Cartelera = new DataGridView();
-            comboBox2 = new ComboBox();
             Reservar = new DataGridViewButtonColumn();
+            comboBox2 = new ComboBox();
             Pnl_Buscador.SuspendLayout();
             Pnl_Filtros1.SuspendLayout();
             Pnl_Filtros2.SuspendLayout();
@@ -266,6 +269,13 @@
             Dgv_Cartelera.TabIndex = 9;
             Dgv_Cartelera.CellContentClick += Dgv_Cartelera_CellContentClick;
             // 
+            // Reservar
+            // 
+            Reservar.HeaderText = "Reservar";
+            Reservar.MinimumWidth = 6;
+            Reservar.Name = "Reservar";
+            Reservar.ReadOnly = true;
+            // 
             // comboBox2
             // 
             comboBox2.Dock = DockStyle.Fill;
@@ -277,13 +287,6 @@
             comboBox2.Size = new Size(589, 44);
             comboBox2.TabIndex = 3;
             comboBox2.Text = "Seleccionar Cine";
-            // 
-            // Reservar
-            // 
-            Reservar.HeaderText = "Reservar";
-            Reservar.MinimumWidth = 6;
-            Reservar.Name = "Reservar";
-            Reservar.ReadOnly = true;
             // 
             // Cartelera
             // 
