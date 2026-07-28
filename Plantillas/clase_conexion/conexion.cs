@@ -67,7 +67,28 @@ namespace clase_conexion
 
         
         }
+
+        public DataTable mostrarciudades()
+        {
+            DataTable ciudades = new DataTable();
+
+            MySqlConnection con = GetConnection();
+
+            string consulta = @"SELECT 
+                    id_ciudad,
+                    nombre_ciudad
+                    FROM CIUDAD 
+                    ORDER BY nombre_ciudad";
+
+            MySqlCommand cmd = new MySqlCommand(consulta, con);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(ciudades);
+
+            return ciudades;
+        }
     }
+
+
 }
 /* Fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
  * fecha de: 26/07/2026 */

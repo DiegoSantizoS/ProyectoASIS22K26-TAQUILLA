@@ -31,7 +31,6 @@ namespace Plantilla_Cliente
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cartelera));
             Pnl_Buscador = new TableLayoutPanel();
             Pnl_Filtros1 = new TableLayoutPanel();
             Cbo_Ciudad = new ComboBox();
@@ -43,17 +42,16 @@ namespace Plantilla_Cliente
             Btn_3DFilter = new Button();
             Btn_4DXFilter = new Button();
             Btn_IMAXFilter = new Button();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
+            Btn_DobFilter = new Button();
+            Btn_SubFilter = new Button();
+            Tb_Hora = new TrackBar();
             Dgv_Cartelera = new DataGridView();
             Reservar = new DataGridViewButtonColumn();
             comboBox2 = new ComboBox();
             Pnl_Buscador.SuspendLayout();
             Pnl_Filtros1.SuspendLayout();
             Pnl_Filtros2.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Tb_Hora).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Dgv_Cartelera).BeginInit();
             SuspendLayout();
             // 
@@ -63,17 +61,16 @@ namespace Plantilla_Cliente
             Pnl_Buscador.ColumnCount = 2;
             Pnl_Buscador.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.1888237F));
             Pnl_Buscador.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 82.81118F));
-            Pnl_Buscador.Controls.Add(Pnl_Filtros1, 1, 1);
+            Pnl_Buscador.Controls.Add(Pnl_Filtros1, 1, 0);
             Pnl_Buscador.Controls.Add(label1, 0, 0);
-            Pnl_Buscador.Controls.Add(Pnl_Filtros2, 1, 2);
-            Pnl_Buscador.Controls.Add(tableLayoutPanel1, 1, 0);
+            Pnl_Buscador.Controls.Add(Pnl_Filtros2, 1, 1);
             Pnl_Buscador.Controls.Add(Dgv_Cartelera, 0, 3);
             Pnl_Buscador.Dock = DockStyle.Fill;
             Pnl_Buscador.Location = new Point(0, 0);
             Pnl_Buscador.Name = "Pnl_Buscador";
             Pnl_Buscador.RowCount = 4;
-            Pnl_Buscador.RowStyles.Add(new RowStyle(SizeType.Percent, 11.3899612F));
-            Pnl_Buscador.RowStyles.Add(new RowStyle(SizeType.Percent, 6.50826454F));
+            Pnl_Buscador.RowStyles.Add(new RowStyle(SizeType.Percent, 7.3347106F));
+            Pnl_Buscador.RowStyles.Add(new RowStyle(SizeType.Percent, 10.3305788F));
             Pnl_Buscador.RowStyles.Add(new RowStyle(SizeType.Percent, 8.367768F));
             Pnl_Buscador.RowStyles.Add(new RowStyle(SizeType.Percent, 73.86364F));
             Pnl_Buscador.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
@@ -93,22 +90,21 @@ namespace Plantilla_Cliente
             Pnl_Filtros1.Controls.Add(Cbo_Cine, 1, 0);
             Pnl_Filtros1.Controls.Add(Btn_Cargar_Cartelera, 2, 0);
             Pnl_Filtros1.Dock = DockStyle.Fill;
-            Pnl_Filtros1.Location = new Point(375, 113);
+            Pnl_Filtros1.Location = new Point(375, 3);
             Pnl_Filtros1.Name = "Pnl_Filtros1";
             Pnl_Filtros1.RowCount = 1;
             Pnl_Filtros1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Pnl_Filtros1.Size = new Size(1787, 56);
+            Pnl_Filtros1.Size = new Size(1787, 65);
             Pnl_Filtros1.TabIndex = 6;
             // 
             // Cbo_Ciudad
             // 
             Cbo_Ciudad.Dock = DockStyle.Fill;
-            Cbo_Ciudad.DrawMode = DrawMode.OwnerDrawFixed;
             Cbo_Ciudad.FormattingEnabled = true;
-            Cbo_Ciudad.ItemHeight = 50;
+            Cbo_Ciudad.ItemHeight = 20;
             Cbo_Ciudad.Location = new Point(3, 3);
             Cbo_Ciudad.Name = "Cbo_Ciudad";
-            Cbo_Ciudad.Size = new Size(589, 56);
+            Cbo_Ciudad.Size = new Size(589, 28);
             Cbo_Ciudad.TabIndex = 2;
             Cbo_Ciudad.Text = "Seleccionar Ciudad";
             // 
@@ -130,10 +126,11 @@ namespace Plantilla_Cliente
             Btn_Cargar_Cartelera.Dock = DockStyle.Fill;
             Btn_Cargar_Cartelera.Location = new Point(1193, 3);
             Btn_Cargar_Cartelera.Name = "Btn_Cargar_Cartelera";
-            Btn_Cargar_Cartelera.Size = new Size(591, 50);
+            Btn_Cargar_Cartelera.Size = new Size(591, 59);
             Btn_Cargar_Cartelera.TabIndex = 4;
             Btn_Cargar_Cartelera.Text = "Consultar cartelera";
             Btn_Cargar_Cartelera.UseVisualStyleBackColor = true;
+            Btn_Cargar_Cartelera.Click += Btn_Cargar_Cartelera_Click;
             // 
             // label1
             // 
@@ -159,12 +156,18 @@ namespace Plantilla_Cliente
             Pnl_Filtros2.Controls.Add(Btn_3DFilter, 1, 0);
             Pnl_Filtros2.Controls.Add(Btn_4DXFilter, 2, 0);
             Pnl_Filtros2.Controls.Add(Btn_IMAXFilter, 3, 0);
+            Pnl_Filtros2.Controls.Add(Btn_DobFilter, 0, 1);
+            Pnl_Filtros2.Controls.Add(Btn_SubFilter, 1, 1);
+            Pnl_Filtros2.Controls.Add(Tb_Hora, 2, 1);
             Pnl_Filtros2.Dock = DockStyle.Fill;
-            Pnl_Filtros2.Location = new Point(375, 175);
+            Pnl_Filtros2.Location = new Point(375, 74);
             Pnl_Filtros2.Name = "Pnl_Filtros2";
-            Pnl_Filtros2.RowCount = 1;
-            Pnl_Filtros2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Pnl_Filtros2.Size = new Size(1787, 74);
+            Pnl_Filtros2.RowCount = 2;
+            Pnl_Buscador.SetRowSpan(Pnl_Filtros2, 2);
+            Pnl_Filtros2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            Pnl_Filtros2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            Pnl_Filtros2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Pnl_Filtros2.Size = new Size(1787, 175);
             Pnl_Filtros2.TabIndex = 7;
             // 
             // Btn_2DFilter
@@ -174,7 +177,7 @@ namespace Plantilla_Cliente
             Btn_2DFilter.Dock = DockStyle.Fill;
             Btn_2DFilter.Location = new Point(3, 3);
             Btn_2DFilter.Name = "Btn_2DFilter";
-            Btn_2DFilter.Size = new Size(440, 68);
+            Btn_2DFilter.Size = new Size(440, 81);
             Btn_2DFilter.TabIndex = 0;
             Btn_2DFilter.Text = "2D";
             Btn_2DFilter.UseVisualStyleBackColor = false;
@@ -187,7 +190,7 @@ namespace Plantilla_Cliente
             Btn_3DFilter.Dock = DockStyle.Fill;
             Btn_3DFilter.Location = new Point(449, 3);
             Btn_3DFilter.Name = "Btn_3DFilter";
-            Btn_3DFilter.Size = new Size(440, 68);
+            Btn_3DFilter.Size = new Size(440, 81);
             Btn_3DFilter.TabIndex = 1;
             Btn_3DFilter.Text = "3D";
             Btn_3DFilter.UseVisualStyleBackColor = false;
@@ -200,7 +203,7 @@ namespace Plantilla_Cliente
             Btn_4DXFilter.Dock = DockStyle.Fill;
             Btn_4DXFilter.Location = new Point(895, 3);
             Btn_4DXFilter.Name = "Btn_4DXFilter";
-            Btn_4DXFilter.Size = new Size(440, 68);
+            Btn_4DXFilter.Size = new Size(440, 81);
             Btn_4DXFilter.TabIndex = 2;
             Btn_4DXFilter.Text = "4DX";
             Btn_4DXFilter.UseVisualStyleBackColor = false;
@@ -213,46 +216,46 @@ namespace Plantilla_Cliente
             Btn_IMAXFilter.Dock = DockStyle.Fill;
             Btn_IMAXFilter.Location = new Point(1341, 3);
             Btn_IMAXFilter.Name = "Btn_IMAXFilter";
-            Btn_IMAXFilter.Size = new Size(443, 68);
+            Btn_IMAXFilter.Size = new Size(443, 81);
             Btn_IMAXFilter.TabIndex = 3;
             Btn_IMAXFilter.Text = "IMAX";
             Btn_IMAXFilter.UseVisualStyleBackColor = false;
             Btn_IMAXFilter.Click += Btn_IMAXFilter_Click;
             // 
-            // tableLayoutPanel1
+            // Btn_DobFilter
             // 
-            tableLayoutPanel1.BackColor = Color.FromArgb(224, 224, 224);
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7.0907197F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 92.90928F));
-            tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
-            tableLayoutPanel1.Controls.Add(textBox1, 1, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(375, 3);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1787, 104);
-            tableLayoutPanel1.TabIndex = 8;
+            Btn_DobFilter.BackColor = Color.White;
+            Btn_DobFilter.Dock = DockStyle.Fill;
+            Btn_DobFilter.Location = new Point(3, 90);
+            Btn_DobFilter.Name = "Btn_DobFilter";
+            Btn_DobFilter.Size = new Size(440, 82);
+            Btn_DobFilter.TabIndex = 4;
+            Btn_DobFilter.Text = "Doblado";
+            Btn_DobFilter.UseVisualStyleBackColor = false;
+            Btn_DobFilter.Click += Btn_DobFilter_Click;
             // 
-            // pictureBox1
+            // Btn_SubFilter
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 98);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            Btn_SubFilter.BackColor = Color.White;
+            Btn_SubFilter.Dock = DockStyle.Fill;
+            Btn_SubFilter.Location = new Point(449, 90);
+            Btn_SubFilter.Name = "Btn_SubFilter";
+            Btn_SubFilter.Size = new Size(440, 82);
+            Btn_SubFilter.TabIndex = 5;
+            Btn_SubFilter.Text = "Subtitulado";
+            Btn_SubFilter.UseVisualStyleBackColor = false;
+            Btn_SubFilter.Click += Btn_SubFilter_Click;
             // 
-            // textBox1
+            // Tb_Hora
             // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(129, 3);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(1655, 98);
-            textBox1.TabIndex = 1;
+            Pnl_Filtros2.SetColumnSpan(Tb_Hora, 2);
+            Tb_Hora.Dock = DockStyle.Fill;
+            Tb_Hora.LargeChange = 1;
+            Tb_Hora.Location = new Point(895, 90);
+            Tb_Hora.Maximum = 12;
+            Tb_Hora.Name = "Tb_Hora";
+            Tb_Hora.Size = new Size(889, 82);
+            Tb_Hora.TabIndex = 6;
             // 
             // Dgv_Cartelera
             // 
@@ -275,6 +278,7 @@ namespace Plantilla_Cliente
             Reservar.MinimumWidth = 6;
             Reservar.Name = "Reservar";
             Reservar.ReadOnly = true;
+            Reservar.Text = "Reservar";
             // 
             // comboBox2
             // 
@@ -299,9 +303,8 @@ namespace Plantilla_Cliente
             Pnl_Buscador.ResumeLayout(false);
             Pnl_Filtros1.ResumeLayout(false);
             Pnl_Filtros2.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Pnl_Filtros2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Tb_Hora).EndInit();
             ((System.ComponentModel.ISupportInitialize)Dgv_Cartelera).EndInit();
             ResumeLayout(false);
         }
@@ -311,19 +314,19 @@ namespace Plantilla_Cliente
         private TableLayoutPanel Pnl_Buscador;
         private Label label1;
         private TableLayoutPanel Pnl_Filtros1;
-        private ComboBox Cbo_Ciudad;
         private ComboBox comboBox2;
         private TableLayoutPanel Pnl_Filtros2;
         private Button Btn_4DXFilter;
         private Button Btn_3DFilter;
         private Button Btn_IMAXFilter;
         private Button Btn_2DFilter;
-        private TableLayoutPanel tableLayoutPanel1;
-        private PictureBox pictureBox1;
-        private TextBox textBox1;
         private DataGridView Dgv_Cartelera;
         private ComboBox Cbo_Cine;
         private Button Btn_Cargar_Cartelera;
         private DataGridViewButtonColumn Reservar;
+        private Button Btn_DobFilter;
+        private Button Btn_SubFilter;
+        private TrackBar Tb_Hora;
+        private ComboBox Cbo_Ciudad;
     }
 }

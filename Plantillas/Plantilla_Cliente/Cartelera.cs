@@ -1,53 +1,67 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Text;
-using System.Windows.Forms;
-using clase_conexion;
+﻿    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Diagnostics.Eventing.Reader;
+    using System.Drawing;
+    using System.Drawing.Drawing2D;
+    using System.Text;
+    using System.Windows.Forms;
+using clase_conexion;    
 
-namespace Plantilla_Cliente
-{
+    namespace Plantilla_Cliente
+    {
     public partial class Cartelera : UserControl
     {
         Boolean is2DFilterActive = false;
         Boolean is3DFilterActive = false;
         Boolean is4DFilterActive = false;
         Boolean isIMAXFilterActive = false;
-        public event EventHandler CambiaraReserva;
+        Boolean isSubFilterActive = false;
+        Boolean isDubFilterActive = false;
         private conexion gconexion;
 
-        /* Inicio de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
- * fecha de: 26/07/2026 */
+        public event Action<int> CambiaraReserva;
+
         public Cartelera()
         {
             InitializeComponent();
             gconexion = new conexion();
-            cargar();
+            CargarGeneros();
+            Cbo_Ciudad.ForeColor = Color.Black;
+            Cbo_Ciudad.BackColor = Color.White;
         }
 
-        private void cargar()
+        private void CargarGeneros()
         {
-            Dgv_Cartelera.DataSource = gconexion.mostrarpelicula();
+            DataTable dtCiudades = gconexion.mostrarciudades();
+
+            Cbo_Ciudad.DataSource = null;
+
+            Cbo_Ciudad.DisplayMember = "nombre_ciudad";
+            Cbo_Ciudad.ValueMember = "id_ciudad";
+
+            Cbo_Ciudad.DataSource = dtCiudades;
+
+            Cbo_Ciudad.SelectedIndex = 0;
+
+            MessageBox.Show(Cbo_Ciudad.Text);
+
         }
 
-        /* Fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
-* fecha de: 26/07/2026 */
+
         private void Cartelera_Load(object sender, EventArgs e)
         {
             RedondearTablePanel(Pnl_Buscador, 20);
-            RedondearBoton(Btn_3DFilter, 20);
             RedondearBoton(Btn_2DFilter, 20);
+            RedondearBoton(Btn_3DFilter, 20);
             RedondearBoton(Btn_4DXFilter, 20);
             RedondearBoton(Btn_IMAXFilter, 20);
         }
         private void RedondearPanel(Panel panel, int radio)
         {
             GraphicsPath path = new GraphicsPath();
-            ///miguel contreras jacinto 
+
             path.AddArc(0, 0, radio, radio, 180, 90);
             path.AddArc(panel.Width - radio, 0, radio, radio, 270, 90);
             path.AddArc(panel.Width - radio, panel.Height - radio, radio, radio, 0, 90);
@@ -125,6 +139,8 @@ namespace Plantilla_Cliente
             RedondearBoton(Btn_2DFilter, 20);
             RedondearBoton(Btn_4DXFilter, 20);
             RedondearBoton(Btn_IMAXFilter, 20);
+            RedondearBoton(Btn_SubFilter, 20);
+            RedondearBoton(Btn_DobFilter, 20);
         }
 
         private void Btn_3DFilter_Click(object sender, EventArgs e)
@@ -150,11 +166,59 @@ namespace Plantilla_Cliente
                 ? Color.FromArgb(68, 75, 245) // Color activo
                 : Color.FromArgb(255, 255, 255); // Color inactivo
         }
+        private void Btn_SubFilter_Click(object sender, EventArgs e)
+        {
+            if (isSubFilterActive)
+            {
+                // Desactivar subtitulada
+                isSubFilterActive = false;
+                Btn_SubFilter.BackColor = Color.White;
+            }
+            else
+            {
+                // Activar subtitulada y desactivar doblada
+                isSubFilterActive = true;
+                isDubFilterActive = false;
 
+                Btn_SubFilter.BackColor = Color.FromArgb(68, 75, 245);
+                Btn_DobFilter.BackColor = Color.White;
+            }
+            //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
+        }
+        private void Btn_DobFilter_Click(object sender, EventArgs e)
+        {
+            if (isDubFilterActive)
+            {
+                isDubFilterActive = false;
+                Btn_DobFilter.BackColor = Color.White;
+            }
+            else
+            {
+                isDubFilterActive = true;
+                isSubFilterActive = false;
+
+                Btn_DobFilter.BackColor = Color.FromArgb(68, 75, 245);
+                Btn_SubFilter.BackColor = Color.White;
+            }
+            //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
+        }
         private void Dgv_Cartelera_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            CambiaraReserva?.Invoke(this, EventArgs.Empty);
+            if (e.RowIndex < 0)
+                return;
+
+            if (e.ColumnIndex == Dgv_Cartelera.Columns["Reservar"].Index)
+            {
+                /*int idPelicula = Convert.ToInt32(
+                    Dgv_Cartelera.Rows[e.RowIndex].Cells["IdPelicula"].Value);*/
+
+                CambiaraReserva?.Invoke(10);
+            }
         }
 
+        private void Btn_Cargar_Cartelera_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
