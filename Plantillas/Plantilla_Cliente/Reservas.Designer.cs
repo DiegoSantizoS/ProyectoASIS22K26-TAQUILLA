@@ -41,15 +41,6 @@
             Tlp_Eleccion_Funciones = new TableLayoutPanel();
             Flp_Horarios = new FlowLayoutPanel();
             button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
-            button10 = new Button();
             Flp_Funciones = new FlowLayoutPanel();
             button11 = new Button();
             button12 = new Button();
@@ -222,15 +213,6 @@
             // 
             Flp_Horarios.BackColor = Color.White;
             Flp_Horarios.Controls.Add(button1);
-            Flp_Horarios.Controls.Add(button2);
-            Flp_Horarios.Controls.Add(button3);
-            Flp_Horarios.Controls.Add(button4);
-            Flp_Horarios.Controls.Add(button5);
-            Flp_Horarios.Controls.Add(button6);
-            Flp_Horarios.Controls.Add(button7);
-            Flp_Horarios.Controls.Add(button8);
-            Flp_Horarios.Controls.Add(button9);
-            Flp_Horarios.Controls.Add(button10);
             Flp_Horarios.Dock = DockStyle.Fill;
             Flp_Horarios.Location = new Point(129, 183);
             Flp_Horarios.Name = "Flp_Horarios";
@@ -243,100 +225,10 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(3, 3);
             button1.Name = "button1";
-            button1.Size = new Size(80, 60);
+            button1.Size = new Size(80, 0);
             button1.TabIndex = 0;
             button1.Text = "Fecha 1";
             button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(89, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(80, 60);
-            button2.TabIndex = 1;
-            button2.Text = "Fecha 2";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(175, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(80, 60);
-            button3.TabIndex = 2;
-            button3.Text = "Fecha 3";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Location = new Point(261, 3);
-            button4.Name = "button4";
-            button4.Size = new Size(80, 60);
-            button4.TabIndex = 3;
-            button4.Text = "Fecha 4";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Location = new Point(347, 3);
-            button5.Name = "button5";
-            button5.Size = new Size(80, 60);
-            button5.TabIndex = 4;
-            button5.Text = "Fecha 5";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Location = new Point(433, 3);
-            button6.Name = "button6";
-            button6.Size = new Size(80, 60);
-            button6.TabIndex = 5;
-            button6.Text = "Fecha 6";
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Location = new Point(519, 3);
-            button7.Name = "button7";
-            button7.Size = new Size(80, 60);
-            button7.TabIndex = 6;
-            button7.Text = "Fecha 7";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Location = new Point(605, 3);
-            button8.Name = "button8";
-            button8.Size = new Size(80, 60);
-            button8.TabIndex = 7;
-            button8.Text = "Fecha 8";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Location = new Point(691, 3);
-            button9.Name = "button9";
-            button9.Size = new Size(80, 60);
-            button9.TabIndex = 8;
-            button9.Text = "Fecha 9";
-            button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Location = new Point(777, 3);
-            button10.Name = "button10";
-            button10.Size = new Size(80, 60);
-            button10.TabIndex = 9;
-            button10.Text = "Fecha 10";
-            button10.UseVisualStyleBackColor = true;
             // 
             // Flp_Funciones
             // 
@@ -501,15 +393,6 @@
         private PictureBox Pic_Pelicula;
         private TableLayoutPanel Tlp_Eleccion_Funciones;
         private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private Button button8;
-        private Button button9;
-        private Button button10;
         private FlowLayoutPanel Flp_Funciones;
         private Button button11;
         private Button button12;

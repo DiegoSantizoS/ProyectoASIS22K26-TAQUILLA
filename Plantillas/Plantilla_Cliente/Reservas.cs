@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
-using clase_conexion;
 
 namespace Plantilla_Cliente
 {
     public partial class Reservas : UserControl
     {
-        private conexion gconexion;
+        private Conexion gconexion;
         // Película seleccionada
         private int idPelicula;
 
@@ -21,6 +20,10 @@ namespace Plantilla_Cliente
         // Asientos seleccionados
         public List<int> asientosSeleccionados = new List<int>();
 
+        // Botones para mostrar la fecha y hora seleccionadas
+        private Button btnFechaSeleccionada = null;
+        private Button btnHoraSeleccionada = null;
+
         public Reservas()
         {
             InitializeComponent();
@@ -29,13 +32,14 @@ namespace Plantilla_Cliente
         public Reservas(int idPelicula)
         {
             InitializeComponent();
-            gconexion = new conexion();
+            gconexion = new Conexion();
             this.idPelicula = idPelicula;
 
             // Prueba para verificar que el ID se recibió correctamente
             MessageBox.Show($"ID recibido: {this.idPelicula}");
             cargarinfopelicula(this.idPelicula);
-
+            cargarfunciones(this.idPelicula);
+            
             // Más adelante:
             // CargarInformacionPelicula();
         }
@@ -87,5 +91,100 @@ namespace Plantilla_Cliente
             Tx_Duracion.Text = pelicula.Rows[0]["duracion_pelicula"].ToString();
             Tx_Restriccion.Text = pelicula.Rows[0]["clasificacion_pelicula"].ToString();
         }
+        private void cargarfunciones(int idPelicula)
+        {
+            Flp_Funciones.Controls.Clear();
+
+            DataTable funciones = gconexion.cargarfunciones(idPelicula);
+            HashSet<DateTime> fechas = new HashSet<DateTime>();
+            foreach (DataRow fila in funciones.Rows)
+            {
+                DateTime fecha = Convert.ToDateTime(fila["fecha_funcion"]);
+
+                if (fechas.Contains(fecha))
+                    continue;
+
+                fechas.Add(fecha);
+
+                Button btn = new Button();
+
+                btn.AutoSize = true;
+                btn.Height = 40;
+                btn.Margin = new Padding(5);
+
+                btn.Text = fecha.ToString("dd/MM");
+                btn.Tag = fecha;
+
+                btn.BackColor = Color.White;
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 1;
+
+                btn.Click += BtnFecha_Click;
+
+                Flp_Funciones.Controls.Add(btn);
+            }
+        }
+        private void CargarHorarios(DateTime fechaSeleccionada)
+        {
+            Flp_Horarios.Controls.Clear();
+            DataTable funciones = gconexion.cargarfunciones(idPelicula);
+            foreach (DataRow fila in funciones.Rows)
+            {
+                DateTime fechaFuncion = Convert.ToDateTime(fila["fecha_funcion"]);
+
+                if (fechaFuncion.Date != fechaSeleccionada.Date)
+                    continue;
+
+                Button btn = new Button();
+
+                btn.AutoSize = true;
+                btn.Height = 40;
+                btn.Margin = new Padding(5);
+
+                btn.Text = fila["hora_funcion"].ToString();
+
+                btn.Tag = Convert.ToInt32(fila["id_funcion"]);
+
+                btn.BackColor = Color.White;
+                btn.ForeColor = Color.Black;
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 1;
+
+                btn.Click += BtnHorario_Click;
+
+                Flp_Horarios.Controls.Add(btn);
+            }
+        }
+        private void BtnFecha_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (btnFechaSeleccionada != null)
+                btnFechaSeleccionada.BackColor = Color.White;
+
+            btn.BackColor = Color.FromArgb(68, 75, 245);
+            btn.ForeColor = Color.White;
+
+            btnFechaSeleccionada = btn;
+
+            DateTime fecha = (DateTime)btn.Tag;
+
+            CargarHorarios(fecha);
+        }
+        private void BtnHorario_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (btnHoraSeleccionada != null)
+                btnHoraSeleccionada.BackColor = Color.White;
+
+            btn.BackColor = Color.FromArgb(68, 75, 245);
+            btn.ForeColor = Color.White;
+
+            btnHoraSeleccionada = btn;
+
+            id_funcion = (int)btn.Tag;
+        }
+
     }
 }

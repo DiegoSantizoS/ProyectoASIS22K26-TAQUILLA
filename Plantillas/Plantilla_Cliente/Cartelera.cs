@@ -163,6 +163,7 @@ namespace Plantilla_Cliente
             Btn_2DFilter.BackColor = is2DFilterActive
                 ? Color.FromArgb(68, 75, 245) // Color activo
                 : Color.FromArgb(255, 255, 255); // Color inactivo
+            filtros();
         }
 
 
@@ -183,6 +184,7 @@ namespace Plantilla_Cliente
             Btn_3DFilter.BackColor = is3DFilterActive
                 ? Color.FromArgb(68, 75, 245) // Color activo
                 : Color.FromArgb(255, 255, 255); // Color inactivo
+            filtros();
         }
 
         private void Btn_4DXFilter_Click(object sender, EventArgs e)
@@ -191,6 +193,7 @@ namespace Plantilla_Cliente
             Btn_4DXFilter.BackColor = is4DFilterActive
                 ? Color.FromArgb(68, 75, 245) // Color activo
                 : Color.FromArgb(255, 255, 255); // Color inactivo
+            filtros();
         }
 
         private void Btn_IMAXFilter_Click(object sender, EventArgs e)
@@ -199,6 +202,7 @@ namespace Plantilla_Cliente
             Btn_IMAXFilter.BackColor = isIMAXFilterActive
                 ? Color.FromArgb(68, 75, 245) // Color activo
                 : Color.FromArgb(255, 255, 255); // Color inactivo
+            filtros();
         }
         private void Btn_SubFilter_Click(object sender, EventArgs e)
         {
@@ -217,6 +221,7 @@ namespace Plantilla_Cliente
                 Btn_SubFilter.BackColor = Color.FromArgb(68, 75, 245);
                 Btn_DobFilter.BackColor = Color.White;
             }
+            filtros();
             //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
         }
         private void Btn_DobFilter_Click(object sender, EventArgs e)
@@ -234,6 +239,7 @@ namespace Plantilla_Cliente
                 Btn_DobFilter.BackColor = Color.FromArgb(68, 75, 245);
                 Btn_SubFilter.BackColor = Color.White;
             }
+            filtros();
             //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
         }
         private void Dgv_Cartelera_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -171,6 +171,7 @@ namespace Plantilla_Cliente
                 return tabla;
             }
         }
+        /*Inicio de código de Carlos Andres Arriaza Lara 0901-23-13862 el 27/07/2026*/
         public DataTable infopelicula(int idPelicula)
         {
             DataTable peliculas = new DataTable();
@@ -193,6 +194,24 @@ namespace Plantilla_Cliente
             adapter.Fill(peliculas);
 
             return peliculas;
+        }
+        /*Fin de código de Carlos Andres Arriaza Lara 0901-23-13862 el 27/07/2026*/
+        /*Inicio de código de Carlos Andres Arriaza Lara 0901-23-13862 el 28/07/2026*/
+        public DataTable cargarfunciones(int idPelicula)
+        {
+            DataTable funciones = new DataTable();
+            MySqlConnection con = GetConnection();
+            string consulta = @"SELECT 
+                        f.id_funcion,
+                        TIME_FORMAT(f.hora_funcion, '%H:%i') AS hora_funcion,
+                        f.fecha_funcion
+                        FROM FUNCION f
+                        WHERE f.id_pelicula = @idPelicula";
+            MySqlCommand cmd = new MySqlCommand(consulta, con);
+            cmd.Parameters.AddWithValue("@idPelicula", idPelicula);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(funciones);
+            return funciones;
         }
     }
 }
