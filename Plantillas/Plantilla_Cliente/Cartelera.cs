@@ -7,26 +7,26 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
-using clase_conexion;
+
 
 namespace Plantilla_Cliente
 {
     public partial class Cartelera : UserControl
     {
+        private Conexion gconexion;
         Boolean is2DFilterActive = false;
         Boolean is3DFilterActive = false;
         Boolean is4DFilterActive = false;
         Boolean isIMAXFilterActive = false;
         Boolean isSubFilterActive = false;
         Boolean isDubFilterActive = false;
-        private conexion gconexion;
 
         public event Action<int> CambiaraReserva;
 
         public Cartelera()
         {
             InitializeComponent();
-            gconexion = new conexion();
+            gconexion = new Conexion();
             Cargarciudad();
             CargarCines();
             CargarPeliculas();
@@ -80,6 +80,7 @@ namespace Plantilla_Cliente
             DataTable peliculas = gconexion.mostrarpelicula();
 
             Dgv_Cartelera.DataSource = peliculas;
+            Dgv_Cartelera.Columns["IdPelicula"].Visible = false;
         }
         /* fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
  * fecha de: 27/07/2026 */

@@ -133,18 +133,7 @@ namespace Plantilla_Cliente
             Cbo_Cine.TabIndex = 3;
             Cbo_Cine.ValueMember = "Seleccione Cine...";
             Cbo_Cine.SelectedIndexChanged += Cbo_Cine_SelectedIndexChanged;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.White;
-            label2.Dock = DockStyle.Fill;
-            label2.Location = new Point(717, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(172, 33);
-            label2.TabIndex = 6;
-            label2.Text = "Cine";
-            label2.TextAlign = ContentAlignment.MiddleLeft;
+           
             // 
             // Btn_Cargar_Cartelera
             // 
@@ -354,7 +343,5 @@ namespace Plantilla_Cliente
         private Button Btn_SubFilter;
         private TrackBar Tb_Hora;
         private ComboBox Cbo_Ciudad;
-        private Label label2;
-        private Label label3;
     }
 }
