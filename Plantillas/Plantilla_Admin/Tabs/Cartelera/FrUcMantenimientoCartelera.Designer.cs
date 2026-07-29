@@ -832,6 +832,7 @@
             // Txt_id
             // 
             Txt_id.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            Txt_id.Enabled = false;
             Txt_id.Location = new Point(103, 3);
             Txt_id.Name = "Txt_id";
             Txt_id.Size = new Size(287, 27);
@@ -841,10 +842,10 @@
             // 
             Tx_id.AutoSize = true;
             Tx_id.Dock = DockStyle.Fill;
-            Tx_id.Location = new Point(3, 0);
-            Tx_id.Margin = new Padding(3, 0, 3, 3);
+            Tx_id.Location = new Point(3, 3);
+            Tx_id.Margin = new Padding(3);
             Tx_id.Name = "Tx_id";
-            Tx_id.Size = new Size(94, 47);
+            Tx_id.Size = new Size(94, 44);
             Tx_id.TabIndex = 0;
             Tx_id.Text = "ID";
             Tx_id.TextAlign = ContentAlignment.TopRight;
@@ -918,6 +919,7 @@
             // 
             Cb_estado.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             Cb_estado.FormattingEnabled = true;
+            Cb_estado.Items.AddRange(new object[] { "cartelera", "proximamente" });
             Cb_estado.Location = new Point(103, 3);
             Cb_estado.Name = "Cb_estado";
             Cb_estado.Size = new Size(287, 28);
@@ -1064,6 +1066,7 @@
             // 
             Cb_clasificacion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             Cb_clasificacion.FormattingEnabled = true;
+            Cb_clasificacion.Items.AddRange(new object[] { "A", "B", "PG", "PG-13", "R", "NC-17" });
             Cb_clasificacion.Location = new Point(103, 3);
             Cb_clasificacion.Name = "Cb_clasificacion";
             Cb_clasificacion.Size = new Size(287, 28);
@@ -1156,6 +1159,7 @@
             Btn_agregarGenero.TabIndex = 2;
             Btn_agregarGenero.Text = "AGREGAR";
             Btn_agregarGenero.UseVisualStyleBackColor = true;
+            Btn_agregarGenero.Click += Btn_agregarGenero_Click;
             // 
             // Tlp_dgvGenero
             // 
@@ -1186,6 +1190,7 @@
             Dgv_genero.RowHeadersWidth = 51;
             Dgv_genero.Size = new Size(293, 155);
             Dgv_genero.TabIndex = 16;
+            Dgv_genero.CellContentClick += Dgv_genero_CellContentClick;
             // 
             // Nombre
             // 
@@ -1230,7 +1235,8 @@
             // 
             Tx_descripcion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Tx_descripcion.AutoSize = true;
-            Tx_descripcion.Location = new Point(10, 0);
+            Tx_descripcion.Location = new Point(10, 3);
+            Tx_descripcion.Margin = new Padding(3, 3, 3, 0);
             Tx_descripcion.Name = "Tx_descripcion";
             Tx_descripcion.Size = new Size(87, 20);
             Tx_descripcion.TabIndex = 0;
@@ -1450,6 +1456,7 @@
             Btn_agregarNuevaCartelera.TabIndex = 4;
             Btn_agregarNuevaCartelera.Text = "AGREGAR NUEVA CARTELERA";
             Btn_agregarNuevaCartelera.UseVisualStyleBackColor = true;
+            Btn_agregarNuevaCartelera.Click += Btn_agregarNuevaCartelera_Click;
             // 
             // pictureBox2
             // 

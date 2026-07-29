@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            id = new DataGridViewTextBoxColumn();
-            pelicula = new DataGridViewImageColumn();
-            formato = new DataGridViewTextBoxColumn();
-            numero_sala = new DataGridViewTextBoxColumn();
-            tipo_sala = new DataGridViewTextBoxColumn();
-            precio = new DataGridViewTextBoxColumn();
-            hora = new DataGridViewTextBoxColumn();
             tableLayoutPanel8 = new TableLayoutPanel();
             pnl_estatico = new Panel();
             Tlp_tab = new TableLayoutPanel();
@@ -98,7 +91,6 @@
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, pelicula, formato, numero_sala, tipo_sala, precio, hora });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 475);
             dataGridView1.Margin = new Padding(0);
@@ -107,48 +99,6 @@
             dataGridView1.Size = new Size(1050, 225);
             dataGridView1.TabIndex = 10;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // id
-            // 
-            id.HeaderText = "ID";
-            id.MinimumWidth = 6;
-            id.Name = "id";
-            // 
-            // pelicula
-            // 
-            pelicula.HeaderText = "Película";
-            pelicula.MinimumWidth = 6;
-            pelicula.Name = "pelicula";
-            // 
-            // formato
-            // 
-            formato.HeaderText = "Formato";
-            formato.MinimumWidth = 6;
-            formato.Name = "formato";
-            // 
-            // numero_sala
-            // 
-            numero_sala.HeaderText = "Sala";
-            numero_sala.MinimumWidth = 6;
-            numero_sala.Name = "numero_sala";
-            // 
-            // tipo_sala
-            // 
-            tipo_sala.HeaderText = "Tipo de Sala";
-            tipo_sala.MinimumWidth = 6;
-            tipo_sala.Name = "tipo_sala";
-            // 
-            // precio
-            // 
-            precio.HeaderText = "Precio";
-            precio.MinimumWidth = 6;
-            precio.Name = "precio";
-            // 
-            // hora
-            // 
-            hora.HeaderText = "Hora";
-            hora.MinimumWidth = 6;
-            hora.Name = "hora";
             // 
             // tableLayoutPanel8
             // 
@@ -595,6 +545,7 @@
             button1.TabIndex = 33;
             button1.Text = "AGREGAR / ACTUALIZAR";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -606,6 +557,7 @@
             button2.TabIndex = 34;
             button2.Text = "ELIMINAR";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Tx_tab
             // 
@@ -649,6 +601,7 @@
             button3.TabIndex = 35;
             button3.Text = "ACTUALIZAR TABLA";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // Tlp_estreno
             // 
@@ -725,13 +678,6 @@
 
         #endregion
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn id;
-        private DataGridViewImageColumn pelicula;
-        private DataGridViewTextBoxColumn formato;
-        private DataGridViewTextBoxColumn numero_sala;
-        private DataGridViewTextBoxColumn tipo_sala;
-        private DataGridViewTextBoxColumn precio;
-        private DataGridViewTextBoxColumn hora;
         private TableLayoutPanel tableLayoutPanel8;
         private Panel pnl_estatico;
         private TableLayoutPanel Tlp_tab;

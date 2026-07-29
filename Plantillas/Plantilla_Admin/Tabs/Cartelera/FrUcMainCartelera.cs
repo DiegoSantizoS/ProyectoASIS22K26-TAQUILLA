@@ -10,6 +10,7 @@ namespace Plantilla_Admin
 {
     public partial class FrUcMainCartelera : UserControl
     {
+        private int idPelicula;
         public FrUcMainCartelera()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace Plantilla_Admin
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrCuBuscarCartelera1 frBuscarCartelera = new FrCuBuscarCartelera1();
+            frBuscarCartelera.IrAEditar += (s, id) => funcargarpagina(new FrUcMantenimientoCartelera(id));
             funcargarpagina(frBuscarCartelera);
         }
     }

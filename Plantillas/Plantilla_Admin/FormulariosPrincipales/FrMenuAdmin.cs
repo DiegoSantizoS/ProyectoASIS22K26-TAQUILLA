@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using clase_conexion;
 
 namespace Plantilla_Admin
 {

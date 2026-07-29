@@ -30,6 +30,12 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
+            Tlp_grupoGenero = new TableLayoutPanel();
+            Cb_ciudad = new ComboBox();
+            Tx_ciudad = new Label();
+            Tlp_grupoFormato = new TableLayoutPanel();
+            Cb_cine = new ComboBox();
+            Tx_cine = new Label();
             Btn_eliminar = new Button();
             Btn_agregar = new Button();
             Btn_agregarNuevaCartelera = new Button();
@@ -47,9 +53,10 @@
             Tx_id = new Label();
             Tx_tab = new Label();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
+            Tlp_grupoGenero.SuspendLayout();
+            Tlp_grupoFormato.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             Tlp_estado.SuspendLayout();
@@ -76,6 +83,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(Tlp_grupoGenero);
+            panel1.Controls.Add(Tlp_grupoFormato);
             panel1.Controls.Add(Btn_eliminar);
             panel1.Controls.Add(Btn_agregar);
             panel1.Controls.Add(Btn_agregarNuevaCartelera);
@@ -91,27 +100,101 @@
             panel1.Size = new Size(1050, 300);
             panel1.TabIndex = 0;
             // 
+            // Tlp_grupoGenero
+            // 
+            Tlp_grupoGenero.ColumnCount = 2;
+            Tlp_grupoGenero.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_grupoGenero.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_grupoGenero.Controls.Add(Cb_ciudad, 1, 0);
+            Tlp_grupoGenero.Controls.Add(Tx_ciudad, 0, 0);
+            Tlp_grupoGenero.Location = new Point(404, 182);
+            Tlp_grupoGenero.Margin = new Padding(0);
+            Tlp_grupoGenero.Name = "Tlp_grupoGenero";
+            Tlp_grupoGenero.RowCount = 1;
+            Tlp_grupoGenero.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_grupoGenero.Size = new Size(390, 50);
+            Tlp_grupoGenero.TabIndex = 30;
+            // 
+            // Cb_ciudad
+            // 
+            Cb_ciudad.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Cb_ciudad.FormattingEnabled = true;
+            Cb_ciudad.Location = new Point(103, 11);
+            Cb_ciudad.Name = "Cb_ciudad";
+            Cb_ciudad.Size = new Size(284, 28);
+            Cb_ciudad.TabIndex = 3;
+            // 
+            // Tx_ciudad
+            // 
+            Tx_ciudad.AutoSize = true;
+            Tx_ciudad.Dock = DockStyle.Fill;
+            Tx_ciudad.Location = new Point(3, 0);
+            Tx_ciudad.Margin = new Padding(3, 0, 3, 3);
+            Tx_ciudad.Name = "Tx_ciudad";
+            Tx_ciudad.Size = new Size(94, 47);
+            Tx_ciudad.TabIndex = 0;
+            Tx_ciudad.Text = "Ciudad";
+            Tx_ciudad.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // Tlp_grupoFormato
+            // 
+            Tlp_grupoFormato.ColumnCount = 2;
+            Tlp_grupoFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_grupoFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_grupoFormato.Controls.Add(Cb_cine, 1, 0);
+            Tlp_grupoFormato.Controls.Add(Tx_cine, 0, 0);
+            Tlp_grupoFormato.Location = new Point(11, 182);
+            Tlp_grupoFormato.Margin = new Padding(0);
+            Tlp_grupoFormato.Name = "Tlp_grupoFormato";
+            Tlp_grupoFormato.RowCount = 1;
+            Tlp_grupoFormato.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_grupoFormato.Size = new Size(393, 50);
+            Tlp_grupoFormato.TabIndex = 29;
+            // 
+            // Cb_cine
+            // 
+            Cb_cine.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Cb_cine.FormattingEnabled = true;
+            Cb_cine.Location = new Point(103, 11);
+            Cb_cine.Name = "Cb_cine";
+            Cb_cine.Size = new Size(287, 28);
+            Cb_cine.TabIndex = 3;
+            // 
+            // Tx_cine
+            // 
+            Tx_cine.AutoSize = true;
+            Tx_cine.Dock = DockStyle.Fill;
+            Tx_cine.Location = new Point(3, 0);
+            Tx_cine.Margin = new Padding(3, 0, 3, 3);
+            Tx_cine.Name = "Tx_cine";
+            Tx_cine.Size = new Size(94, 47);
+            Tx_cine.TabIndex = 0;
+            Tx_cine.Text = "Cine";
+            Tx_cine.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // Btn_eliminar
             // 
             Btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            Btn_eliminar.Location = new Point(227, 200);
+            Btn_eliminar.Location = new Point(223, 241);
             Btn_eliminar.Margin = new Padding(0, 50, 0, 50);
             Btn_eliminar.Name = "Btn_eliminar";
             Btn_eliminar.Size = new Size(100, 50);
             Btn_eliminar.TabIndex = 28;
             Btn_eliminar.Text = "ELIMINAR";
             Btn_eliminar.UseVisualStyleBackColor = true;
+            Btn_eliminar.Click += Btn_eliminar_Click;
             // 
             // Btn_agregar
             // 
             Btn_agregar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            Btn_agregar.Location = new Point(114, 200);
+            Btn_agregar.Location = new Point(114, 241);
             Btn_agregar.Margin = new Padding(0, 50, 0, 50);
             Btn_agregar.Name = "Btn_agregar";
             Btn_agregar.Size = new Size(100, 50);
             Btn_agregar.TabIndex = 27;
             Btn_agregar.Text = "AGREGAR";
             Btn_agregar.UseVisualStyleBackColor = true;
+            Btn_agregar.Click += Btn_agregar_Click;
             // 
             // Btn_agregarNuevaCartelera
             // 
@@ -123,6 +206,7 @@
             Btn_agregarNuevaCartelera.TabIndex = 26;
             Btn_agregarNuevaCartelera.Text = "REFRESCAR";
             Btn_agregarNuevaCartelera.UseVisualStyleBackColor = true;
+            Btn_agregarNuevaCartelera.Click += Btn_agregarNuevaCartelera_Click;
             // 
             // tableLayoutPanel2
             // 
@@ -288,18 +372,12 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1 });
             dataGridView1.Location = new Point(0, 303);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1050, 397);
             dataGridView1.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Column1";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // FrUcBuscarSala
             // 
@@ -314,6 +392,10 @@
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            Tlp_grupoGenero.ResumeLayout(false);
+            Tlp_grupoGenero.PerformLayout();
+            Tlp_grupoFormato.ResumeLayout(false);
+            Tlp_grupoFormato.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
@@ -347,6 +429,11 @@
         private Button Btn_agregar;
         private Button Btn_agregarNuevaCartelera;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
+        private TableLayoutPanel Tlp_grupoFormato;
+        private ComboBox Cb_cine;
+        private Label Tx_cine;
+        private TableLayoutPanel Tlp_grupoGenero;
+        private ComboBox Cb_ciudad;
+        private Label Tx_ciudad;
     }
 }
