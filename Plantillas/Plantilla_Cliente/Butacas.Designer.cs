@@ -28,49 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tableLayoutPanel1 = new TableLayoutPanel();
-            button1 = new Button();
+            Tlp_Butacas = new TableLayoutPanel();
+            Btn_Confirmacion = new Button();
             Tlp_butacaselector = new TableLayoutPanel();
-            tableLayoutPanel1.SuspendLayout();
+            Tlp_Butacas.SuspendLayout();
             SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // Tlp_Butacas
             // 
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(button1, 0, 1);
-            tableLayoutPanel1.Controls.Add(Tlp_butacaselector, 0, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 81.8314F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.1686039F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(1288, 501);
-            tableLayoutPanel1.TabIndex = 0;
+            Tlp_Butacas.ColumnCount = 1;
+            Tlp_Butacas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            Tlp_Butacas.Controls.Add(Btn_Confirmacion, 0, 1);
+            Tlp_Butacas.Controls.Add(Tlp_butacaselector, 0, 0);
+            Tlp_Butacas.Dock = DockStyle.Fill;
+            Tlp_Butacas.Location = new Point(0, 0);
+            Tlp_Butacas.Name = "Tlp_Butacas";
+            Tlp_Butacas.RowCount = 2;
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Percent, 81.8314F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Percent, 18.1686039F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.Size = new Size(1288, 501);
+            Tlp_Butacas.TabIndex = 0;
             // 
-            // button1
+            // Btn_Confirmacion
             // 
-            button1.BackColor = SystemColors.Menu;
-            button1.Cursor = Cursors.Hand;
-            button1.Dock = DockStyle.Fill;
-            button1.Location = new Point(3, 412);
-            button1.Name = "button1";
-            button1.Size = new Size(1282, 86);
-            button1.TabIndex = 1;
-            button1.Text = "Continuar";
-            button1.UseVisualStyleBackColor = false;
+            Btn_Confirmacion.BackColor = SystemColors.Menu;
+            Btn_Confirmacion.Cursor = Cursors.Hand;
+            Btn_Confirmacion.Dock = DockStyle.Fill;
+            Btn_Confirmacion.Location = new Point(3, 412);
+            Btn_Confirmacion.Name = "Btn_Confirmacion";
+            Btn_Confirmacion.Size = new Size(1282, 86);
+            Btn_Confirmacion.TabIndex = 1;
+            Btn_Confirmacion.Text = "Continuar";
+            Btn_Confirmacion.UseVisualStyleBackColor = false;
+            Btn_Confirmacion.Click += Btn_Confirmacion_Click;
             // 
             // Tlp_butacaselector
             // 
@@ -91,18 +92,18 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1288, 501);
-            Controls.Add(tableLayoutPanel1);
+            Controls.Add(Tlp_Butacas);
             Name = "Butacas";
             Text = "Selector de butacas";
             Load += Butacas_Load;
-            tableLayoutPanel1.ResumeLayout(false);
+            Tlp_Butacas.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TableLayoutPanel tableLayoutPanel1;
-        private Button button1;
+        private TableLayoutPanel Tlp_Butacas;
+        private Button Btn_Confirmacion;
         private TableLayoutPanel Tlp_butacaselector;
     }
 }
