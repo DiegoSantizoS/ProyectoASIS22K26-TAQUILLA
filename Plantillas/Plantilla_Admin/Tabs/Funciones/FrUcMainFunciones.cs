@@ -1,4 +1,6 @@
-﻿using Plantilla_Admin.Tabs.Funciones;
+﻿using Plantilla_Admin.Tabs;
+using Plantilla_Admin.Tabs.Funciones;
+using Plantilla_Admin.Tabs.Sala;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,7 +8,6 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Plantilla_Admin.Tabs.Sala;
 
 namespace Plantilla_Admin
 {
@@ -35,6 +36,12 @@ namespace Plantilla_Admin
         {
             FrUcBuscarSala FrUcBuscarSala1 = new FrUcBuscarSala();
             funcargarpagina(FrUcBuscarSala1);
+        }
+
+        private void pRUEBAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrBorrador FrBorrador1 = new FrBorrador();
+            funcargarpagina(FrBorrador1);
         }
     }
 }
