@@ -21,8 +21,7 @@ namespace Plantilla_Cliente
         Boolean isSubFilterActive = false;
         Boolean isDubFilterActive = false;
 
-        public event Action<int> CambiaraReserva;
-
+        public event Action<int, int> CambiaraReserva;
         public Cartelera()
         {
             InitializeComponent();
@@ -251,8 +250,9 @@ namespace Plantilla_Cliente
             {
                 int idPelicula = Convert.ToInt32(
                     Dgv_Cartelera.Rows[e.RowIndex].Cells["IdPelicula"].Value);
-
-                CambiaraReserva?.Invoke(idPelicula);
+                int ciudad = Convert.ToInt32(Cbo_Cine.SelectedValue);
+                CambiaraReserva?.Invoke(idPelicula, ciudad);
+                
             }
         }
 
@@ -273,7 +273,8 @@ namespace Plantilla_Cliente
 
         public void filtros()
         {
-
+            int ciudad = 0; 
+            int cine = 0;
             if (Cbo_Ciudad.SelectedIndex == 0)
             {
                 MessageBox.Show("Seleccione una ciudad.");
@@ -317,10 +318,17 @@ namespace Plantilla_Cliente
                 MessageBox.Show("Seleccione un formato y un idioma.");
                 return;
             }
-
-            int ciudad = Convert.ToInt32(Cbo_Ciudad.SelectedValue);
-            int cine = Convert.ToInt32(Cbo_Cine.SelectedValue);
-
+            if (Cbo_Ciudad.SelectedIndex == 0)
+            {
+                MessageBox.Show("Seleccione una ciudad.");
+                return;
+            }
+            else
+            {
+                ciudad = Convert.ToInt32(Cbo_Ciudad.SelectedValue) - 1;
+                cine = Convert.ToInt32(Cbo_Cine.SelectedValue) - 1;
+                MessageBox.Show("Cine seleccionado:" + cine.ToString());
+            }
             Dgv_Cartelera.DataSource = gconexion.FiltrarCartelera(ciudad, cine, tipo);
 
         }

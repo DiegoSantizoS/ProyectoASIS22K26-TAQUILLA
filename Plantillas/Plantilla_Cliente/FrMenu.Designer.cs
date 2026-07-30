@@ -93,6 +93,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1240, 770);
             Controls.Add(Pnl_MenuLayout);
+            MinimumSize = new Size(1200, 700);
             Name = "FrMenu";
             Text = "Menú principal";
             Pnl_MenuLayout.ResumeLayout(false);

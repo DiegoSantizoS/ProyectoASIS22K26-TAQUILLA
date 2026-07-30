@@ -81,7 +81,7 @@ namespace Plantilla_Cliente
                     id_ciudad,
                     nombre_ciudad
                     FROM CIUDAD 
-                    ORDER BY nombre_ciudad";
+                    ORDER BY id_ciudad";
 
             MySqlCommand cmd = new MySqlCommand(consulta, con);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -91,19 +91,28 @@ namespace Plantilla_Cliente
         }
 
 
-        public DataTable mostrarcines(int idCiudad)
+        public DataTable mostrarcines(int? idCiudad)
         {
             DataTable cines = new DataTable();
 
             MySqlConnection con = GetConnection();
-
-            string consulta = @"SELECT 
+            string consulta = "";
+            if (idCiudad is not null) {
+                 consulta = @"SELECT 
                         id_cine,
                         nombre_cine
                         FROM CINE
                         WHERE id_ciudad = @idCiudad
-                        ORDER BY nombre_cine";
-
+                        ORDER BY id_cine";
+            }
+            else
+            {
+                 consulta = @"SELECT 
+                        id_cine,
+                        nombre_cine
+                        FROM CINE
+                        ORDER BY id_icne";
+            }
             MySqlCommand cmd = new MySqlCommand(consulta, con);
 
             cmd.Parameters.AddWithValue("@idCiudad", idCiudad);
@@ -197,7 +206,7 @@ namespace Plantilla_Cliente
         }
         /*Fin de código de Carlos Andres Arriaza Lara 0901-23-13862 el 27/07/2026*/
         /*Inicio de código de Carlos Andres Arriaza Lara 0901-23-13862 el 28/07/2026*/
-        public DataTable cargarfunciones(int idPelicula)
+        public DataTable cargarfunciones(int idPelicula, int idCine)
         {
             DataTable funciones = new DataTable();
             MySqlConnection con = GetConnection();
@@ -206,13 +215,23 @@ namespace Plantilla_Cliente
                         TIME_FORMAT(f.hora_funcion, '%H:%i') AS hora_funcion,
                         f.fecha_funcion
                         FROM FUNCION f
-                        WHERE f.id_pelicula = @idPelicula";
+                        inner join sala s ON f.id_sala = s.id_sala
+                        inner join cine c ON s.id_cine = c.id_cine
+                        WHERE f.id_pelicula = @idPelicula and c.id_cine = @idCine";
             MySqlCommand cmd = new MySqlCommand(consulta, con);
             cmd.Parameters.AddWithValue("@idPelicula", idPelicula);
+            cmd.Parameters.AddWithValue("@idCine", idCine);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             adapter.Fill(funciones);
             return funciones;
         }
+        /*Fin de código de Carlos Andres Arriaza Lara 0901-23-13862 el 28/07/2026*/
+        /*Inicio de código de Carlos Andres Arriaza Lara 0901-23-13862 el 29/07/2026*/
+        /*public DataTable insertarboleto(int idFuncion, int numero_boleto, )
+        {
+            
+        }*/
+        /*Fin de código de Carlos Andres Arriaza Lara 0901-23-13862 el 29/07/2026*/
     }
 }
 

@@ -52,6 +52,7 @@
             Tx_Horarios = new Label();
             Tx_Funciones = new Label();
             Cbo_Cines = new ComboBox();
+            Tx_SeleccionCine = new Label();
             Btn_Continuar = new Button();
             TlP_Reservas.SuspendLayout();
             Tlp_Info.SuspendLayout();
@@ -77,10 +78,10 @@
             TlP_Reservas.Name = "TlP_Reservas";
             TlP_Reservas.RowCount = 3;
             TlP_Reservas.RowStyles.Add(new RowStyle(SizeType.Percent, 19.5034332F));
-            TlP_Reservas.RowStyles.Add(new RowStyle(SizeType.Percent, 42.3368759F));
-            TlP_Reservas.RowStyles.Add(new RowStyle(SizeType.Percent, 38.2397575F));
+            TlP_Reservas.RowStyles.Add(new RowStyle(SizeType.Percent, 27.010622F));
+            TlP_Reservas.RowStyles.Add(new RowStyle(SizeType.Percent, 53.56601F));
             TlP_Reservas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlP_Reservas.Size = new Size(1394, 659);
+            TlP_Reservas.Size = new Size(1394, 700);
             TlP_Reservas.TabIndex = 0;
             TlP_Reservas.Paint += TlP_Reservas_Paint;
             // 
@@ -102,7 +103,7 @@
             Tlp_Info.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             Tlp_Info.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             Tlp_Info.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            Tlp_Info.Size = new Size(1156, 122);
+            Tlp_Info.Size = new Size(1156, 130);
             Tlp_Info.TabIndex = 4;
             // 
             // Tx_DirectorHead
@@ -112,7 +113,7 @@
             Tx_DirectorHead.Dock = DockStyle.Fill;
             Tx_DirectorHead.Location = new Point(3, 0);
             Tx_DirectorHead.Name = "Tx_DirectorHead";
-            Tx_DirectorHead.Size = new Size(121, 40);
+            Tx_DirectorHead.Size = new Size(121, 43);
             Tx_DirectorHead.TabIndex = 0;
             Tx_DirectorHead.Text = "Director";
             Tx_DirectorHead.TextAlign = ContentAlignment.MiddleLeft;
@@ -122,9 +123,9 @@
             Tx_DuracionHead.AutoSize = true;
             Tx_DuracionHead.BackColor = Color.White;
             Tx_DuracionHead.Dock = DockStyle.Fill;
-            Tx_DuracionHead.Location = new Point(3, 40);
+            Tx_DuracionHead.Location = new Point(3, 43);
             Tx_DuracionHead.Name = "Tx_DuracionHead";
-            Tx_DuracionHead.Size = new Size(121, 40);
+            Tx_DuracionHead.Size = new Size(121, 43);
             Tx_DuracionHead.TabIndex = 1;
             Tx_DuracionHead.Text = "Duración";
             Tx_DuracionHead.TextAlign = ContentAlignment.MiddleLeft;
@@ -134,9 +135,9 @@
             Tx_RestriccionHead.AutoSize = true;
             Tx_RestriccionHead.BackColor = Color.White;
             Tx_RestriccionHead.Dock = DockStyle.Fill;
-            Tx_RestriccionHead.Location = new Point(3, 80);
+            Tx_RestriccionHead.Location = new Point(3, 86);
             Tx_RestriccionHead.Name = "Tx_RestriccionHead";
-            Tx_RestriccionHead.Size = new Size(121, 42);
+            Tx_RestriccionHead.Size = new Size(121, 44);
             Tx_RestriccionHead.TabIndex = 2;
             Tx_RestriccionHead.Text = "Restricción";
             Tx_RestriccionHead.TextAlign = ContentAlignment.MiddleLeft;
@@ -148,7 +149,7 @@
             Tx_Director.Dock = DockStyle.Fill;
             Tx_Director.Location = new Point(130, 0);
             Tx_Director.Name = "Tx_Director";
-            Tx_Director.Size = new Size(1023, 40);
+            Tx_Director.Size = new Size(1023, 43);
             Tx_Director.TabIndex = 3;
             Tx_Director.Text = "XXX";
             // 
@@ -157,9 +158,9 @@
             Tx_Duracion.AutoSize = true;
             Tx_Duracion.BackColor = Color.White;
             Tx_Duracion.Dock = DockStyle.Fill;
-            Tx_Duracion.Location = new Point(130, 40);
+            Tx_Duracion.Location = new Point(130, 43);
             Tx_Duracion.Name = "Tx_Duracion";
-            Tx_Duracion.Size = new Size(1023, 40);
+            Tx_Duracion.Size = new Size(1023, 43);
             Tx_Duracion.TabIndex = 4;
             Tx_Duracion.Text = "XXX";
             // 
@@ -168,9 +169,9 @@
             Tx_Restriccion.AutoSize = true;
             Tx_Restriccion.BackColor = Color.White;
             Tx_Restriccion.Dock = DockStyle.Fill;
-            Tx_Restriccion.Location = new Point(130, 80);
+            Tx_Restriccion.Location = new Point(130, 86);
             Tx_Restriccion.Name = "Tx_Restriccion";
-            Tx_Restriccion.Size = new Size(1023, 42);
+            Tx_Restriccion.Size = new Size(1023, 44);
             Tx_Restriccion.TabIndex = 5;
             Tx_Restriccion.Text = "XXX";
             // 
@@ -183,7 +184,7 @@
             Pic_Pelicula.Location = new Point(3, 3);
             Pic_Pelicula.Name = "Pic_Pelicula";
             TlP_Reservas.SetRowSpan(Pic_Pelicula, 2);
-            Pic_Pelicula.Size = new Size(226, 400);
+            Pic_Pelicula.Size = new Size(226, 318);
             Pic_Pelicula.SizeMode = PictureBoxSizeMode.CenterImage;
             Pic_Pelicula.TabIndex = 0;
             Pic_Pelicula.TabStop = false;
@@ -198,15 +199,16 @@
             Tlp_Eleccion_Funciones.Controls.Add(Flp_Funciones, 1, 1);
             Tlp_Eleccion_Funciones.Controls.Add(Tx_Horarios, 0, 2);
             Tlp_Eleccion_Funciones.Controls.Add(Tx_Funciones, 0, 1);
-            Tlp_Eleccion_Funciones.Controls.Add(Cbo_Cines, 0, 0);
+            Tlp_Eleccion_Funciones.Controls.Add(Cbo_Cines, 1, 0);
+            Tlp_Eleccion_Funciones.Controls.Add(Tx_SeleccionCine, 0, 0);
             Tlp_Eleccion_Funciones.Dock = DockStyle.Fill;
-            Tlp_Eleccion_Funciones.Location = new Point(235, 131);
+            Tlp_Eleccion_Funciones.Location = new Point(235, 139);
             Tlp_Eleccion_Funciones.Name = "Tlp_Eleccion_Funciones";
             Tlp_Eleccion_Funciones.RowCount = 3;
-            Tlp_Eleccion_Funciones.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            Tlp_Eleccion_Funciones.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            Tlp_Eleccion_Funciones.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            Tlp_Eleccion_Funciones.Size = new Size(1156, 272);
+            Tlp_Eleccion_Funciones.RowStyles.Add(new RowStyle(SizeType.Percent, 23.8970585F));
+            Tlp_Eleccion_Funciones.RowStyles.Add(new RowStyle(SizeType.Percent, 38.55422F));
+            Tlp_Eleccion_Funciones.RowStyles.Add(new RowStyle(SizeType.Percent, 37.95181F));
+            Tlp_Eleccion_Funciones.Size = new Size(1156, 182);
             Tlp_Eleccion_Funciones.TabIndex = 13;
             // 
             // Flp_Horarios
@@ -214,18 +216,18 @@
             Flp_Horarios.BackColor = Color.White;
             Flp_Horarios.Controls.Add(button1);
             Flp_Horarios.Dock = DockStyle.Fill;
-            Flp_Horarios.Location = new Point(129, 183);
+            Flp_Horarios.Location = new Point(129, 115);
             Flp_Horarios.Name = "Flp_Horarios";
-            Flp_Horarios.Size = new Size(1024, 86);
+            Flp_Horarios.Size = new Size(1024, 64);
             Flp_Horarios.TabIndex = 17;
             // 
             // button1
             // 
-            button1.Dock = DockStyle.Fill;
+            button1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(3, 3);
             button1.Name = "button1";
-            button1.Size = new Size(80, 0);
+            button1.Size = new Size(80, 61);
             button1.TabIndex = 0;
             button1.Text = "Fecha 1";
             button1.UseVisualStyleBackColor = true;
@@ -241,9 +243,9 @@
             Flp_Funciones.Controls.Add(button16);
             Flp_Funciones.Controls.Add(button17);
             Flp_Funciones.Dock = DockStyle.Fill;
-            Flp_Funciones.Location = new Point(129, 93);
+            Flp_Funciones.Location = new Point(129, 46);
             Flp_Funciones.Name = "Flp_Funciones";
-            Flp_Funciones.Size = new Size(1024, 84);
+            Flp_Funciones.Size = new Size(1024, 63);
             Flp_Funciones.TabIndex = 16;
             // 
             // button11
@@ -322,9 +324,9 @@
             Tx_Horarios.AutoSize = true;
             Tx_Horarios.BackColor = Color.White;
             Tx_Horarios.Dock = DockStyle.Fill;
-            Tx_Horarios.Location = new Point(3, 180);
+            Tx_Horarios.Location = new Point(3, 112);
             Tx_Horarios.Name = "Tx_Horarios";
-            Tx_Horarios.Size = new Size(120, 92);
+            Tx_Horarios.Size = new Size(120, 70);
             Tx_Horarios.TabIndex = 15;
             Tx_Horarios.Text = "Horarios disponibles";
             Tx_Horarios.TextAlign = ContentAlignment.MiddleCenter;
@@ -334,30 +336,41 @@
             Tx_Funciones.AutoSize = true;
             Tx_Funciones.BackColor = Color.White;
             Tx_Funciones.Dock = DockStyle.Fill;
-            Tx_Funciones.Location = new Point(3, 90);
+            Tx_Funciones.Location = new Point(3, 43);
             Tx_Funciones.Name = "Tx_Funciones";
-            Tx_Funciones.Size = new Size(120, 90);
+            Tx_Funciones.Size = new Size(120, 69);
             Tx_Funciones.TabIndex = 13;
             Tx_Funciones.Text = "Funciones disponibles";
             Tx_Funciones.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Cbo_Cines
             // 
-            Tlp_Eleccion_Funciones.SetColumnSpan(Cbo_Cines, 2);
             Cbo_Cines.Dock = DockStyle.Fill;
             Cbo_Cines.DrawMode = DrawMode.OwnerDrawFixed;
             Cbo_Cines.FormattingEnabled = true;
             Cbo_Cines.ItemHeight = 50;
-            Cbo_Cines.Location = new Point(3, 3);
+            Cbo_Cines.Location = new Point(129, 3);
             Cbo_Cines.Name = "Cbo_Cines";
-            Cbo_Cines.Size = new Size(1150, 56);
+            Cbo_Cines.Size = new Size(1024, 56);
             Cbo_Cines.TabIndex = 14;
             Cbo_Cines.Text = "Seleccione un cine...";
+            Cbo_Cines.SelectedIndexChanged += Cbo_Cines_SelectedIndexChanged;
+            // 
+            // Tx_SeleccionCine
+            // 
+            Tx_SeleccionCine.AutoSize = true;
+            Tx_SeleccionCine.Dock = DockStyle.Fill;
+            Tx_SeleccionCine.Location = new Point(3, 0);
+            Tx_SeleccionCine.Name = "Tx_SeleccionCine";
+            Tx_SeleccionCine.Size = new Size(120, 43);
+            Tx_SeleccionCine.TabIndex = 18;
+            Tx_SeleccionCine.Text = "Selección de cine";
+            Tx_SeleccionCine.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Btn_Continuar
             // 
             Btn_Continuar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            Btn_Continuar.Location = new Point(235, 409);
+            Btn_Continuar.Location = new Point(235, 327);
             Btn_Continuar.Name = "Btn_Continuar";
             Btn_Continuar.Size = new Size(1156, 60);
             Btn_Continuar.TabIndex = 14;
@@ -370,8 +383,9 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(TlP_Reservas);
+            MinimumSize = new Size(1000, 700);
             Name = "Reservas";
-            Size = new Size(1394, 659);
+            Size = new Size(1394, 700);
             TlP_Reservas.ResumeLayout(false);
             Tlp_Info.ResumeLayout(false);
             Tlp_Info.PerformLayout();
@@ -411,5 +425,6 @@
         private Label Tx_Horarios;
         private Button Btn_DobFilter;
         private Button Btn_SubFilter;
+        private Label Tx_SeleccionCine;
     }
 }

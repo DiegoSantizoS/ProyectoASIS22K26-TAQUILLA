@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Runtime.InteropServices.Marshalling;
 using System.Windows.Forms;
+using Org.BouncyCastle.Tls.Crypto.Impl.BC;
 
 namespace Plantilla_Cliente
 {
@@ -9,7 +11,9 @@ namespace Plantilla_Cliente
     {
         private Conexion gconexion;
         // Película seleccionada
+        private int idcine;
         private int idPelicula;
+        private int idciudad;
 
         // Datos de la reserva
         public int id_funcion;
@@ -29,26 +33,27 @@ namespace Plantilla_Cliente
             InitializeComponent();
         }
 
-        public Reservas(int idPelicula)
+        public Reservas(int idPelicula, int idciudad)
         {
             InitializeComponent();
             gconexion = new Conexion();
             this.idPelicula = idPelicula;
+            this.idciudad = idciudad;
 
             // Prueba para verificar que el ID se recibió correctamente
             MessageBox.Show($"ID recibido: {this.idPelicula}");
+            MessageBox.Show($"Ciudad recibida: {this.idciudad}");
             cargarinfopelicula(this.idPelicula);
-            cargarfunciones(this.idPelicula);
+            cargarfunciones(this.idPelicula, this.idciudad);
+            CargarCines(this.idciudad);
             
-            // Más adelante:
-            // CargarInformacionPelicula();
         }
 
         private void TlP_Reservas_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
+        /*Inicio del código 0901-23-13862 Carlos Andres Arriaza Lara el 25/07/2026*/
         private void Btn_Continuar_Click(object sender, EventArgs e)
         {
             using (Butacas butacas = new Butacas())
@@ -69,6 +74,8 @@ namespace Plantilla_Cliente
                     MessageBox.Show(
                         "Asientos seleccionados:\n" +
                         string.Join(", ", asientosTexto));
+
+                    MessageBox.Show("Id_Funcion" + id_funcion.ToString());
                 }
             }
         }
@@ -82,7 +89,9 @@ namespace Plantilla_Cliente
 
             return $"{letraFila}{columna}";
         }
-        private void cargarinfopelicula(int idPelicula) {
+        /*Fin del código de 0901-23-13862 Carlos Andres Arriaza Lara el 25/07/2026*/
+        private void cargarinfopelicula(int idPelicula)
+        {
             String director = "";
             string duracion = "";
             string restriccion = "";
@@ -91,11 +100,12 @@ namespace Plantilla_Cliente
             Tx_Duracion.Text = pelicula.Rows[0]["duracion_pelicula"].ToString();
             Tx_Restriccion.Text = pelicula.Rows[0]["clasificacion_pelicula"].ToString();
         }
-        private void cargarfunciones(int idPelicula)
+        private void cargarfunciones(int idPelicula, int idciudad)
         {
             Flp_Funciones.Controls.Clear();
-
-            DataTable funciones = gconexion.cargarfunciones(idPelicula);
+            MessageBox.Show($"Película: {idPelicula}\nCiudad: {idciudad}");
+            DataTable funciones = gconexion.cargarfunciones(idPelicula, idciudad);
+            MessageBox.Show($"Filas: {funciones.Rows.Count}");
             HashSet<DateTime> fechas = new HashSet<DateTime>();
             foreach (DataRow fila in funciones.Rows)
             {
@@ -111,7 +121,7 @@ namespace Plantilla_Cliente
                 btn.AutoSize = true;
                 btn.Height = 40;
                 btn.Margin = new Padding(5);
-
+                btn.Dock = DockStyle.Fill;
                 btn.Text = fecha.ToString("dd/MM");
                 btn.Tag = fecha;
 
@@ -126,8 +136,11 @@ namespace Plantilla_Cliente
         }
         private void CargarHorarios(DateTime fechaSeleccionada)
         {
+            MessageBox.Show("IdCiudad:" + idciudad.ToString());
             Flp_Horarios.Controls.Clear();
-            DataTable funciones = gconexion.cargarfunciones(idPelicula);
+            MessageBox.Show($"Película: {idPelicula}\nCiudad: {idciudad}");
+            DataTable funciones = gconexion.cargarfunciones(idPelicula, idciudad);
+            MessageBox.Show($"Filas: {funciones.Rows.Count}");
             foreach (DataRow fila in funciones.Rows)
             {
                 DateTime fechaFuncion = Convert.ToDateTime(fila["fecha_funcion"]);
@@ -144,7 +157,7 @@ namespace Plantilla_Cliente
                 btn.Text = fila["hora_funcion"].ToString();
 
                 btn.Tag = Convert.ToInt32(fila["id_funcion"]);
-
+                btn.Dock = DockStyle.Fill;
                 btn.BackColor = Color.White;
                 btn.ForeColor = Color.Black;
                 btn.FlatStyle = FlatStyle.Flat;
@@ -186,5 +199,23 @@ namespace Plantilla_Cliente
             id_funcion = (int)btn.Tag;
         }
 
+        private void Cbo_Cines_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idcine = Cbo_Cines.SelectedIndex;
+
+        }
+        private void CargarCines(int ciudad)
+        {
+
+           DataTable dtCines = gconexion.mostrarcines(ciudad);
+
+           Cbo_Cines.DataSource = null;
+
+           Cbo_Cines.DisplayMember = "nombre_cine";
+           Cbo_Cines.ValueMember = "id_cine";
+
+           Cbo_Cines.DataSource = dtCines;
+            MessageBox.Show($"Cines cargados: {dtCines.Rows.Count}");
+        }
     }
 }

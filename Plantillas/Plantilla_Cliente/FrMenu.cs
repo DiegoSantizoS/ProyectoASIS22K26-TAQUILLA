@@ -23,9 +23,9 @@
             {
 
             }
-            private void Cartelera_CambiaraReserva(int idPelicula)
+            private void Cartelera_CambiaraReserva(int idPelicula, int idCiudad)
             {
-                Reservas reservas = new Reservas(idPelicula);
+                Reservas reservas = new Reservas(idPelicula, idCiudad);
                 funcargarpagina(reservas);
             }
 
