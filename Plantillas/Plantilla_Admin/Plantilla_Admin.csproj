@@ -29,8 +29,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Krypton.Toolkit" Version="105.26.7.201" />
+    <PackageReference Include="ReaLTaiizor" Version="3.8.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\clase_conexion\clase_conexion.csproj" />
     <ProjectReference Include="..\Componentes\Componentes.csproj" />
+    <ProjectReference Include="..\Formularios_Admin\Formularios_Admin.csproj" />
   </ItemGroup>
 
   <ItemGroup>

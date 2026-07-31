@@ -47,7 +47,6 @@
             LbFormatos = new Componentes.CustomLabel();
             LbEstreno = new Componentes.CustomLabel();
             LbEstado = new Componentes.CustomLabel();
-            CbClasificacion = new Componentes.CustomComboBox();
             DpEstreno = new Componentes.CustomDatePicker();
             LbDescripcion = new Componentes.CustomLabel();
             RtbDescripcion = new Componentes.CustomRichTextBox();
@@ -58,7 +57,6 @@
             TbID = new Componentes.CustomIDTextBox();
             TbGeneros = new Componentes.CustomIDTextBox();
             TbFormatos = new Componentes.CustomIDTextBox();
-            CbEstado = new Componentes.CustomComboBox();
             TlpButtons = new TableLayoutPanel();
             BtnIngresar = new Componentes.CustomButton();
             BtnEliminar = new Componentes.CustomButton();
@@ -72,6 +70,8 @@
             CbFiltro = new Componentes.CustomComboBox();
             TbFiltro = new Componentes.CustomTextBox();
             DgvPelicula = new Componentes.CustomDataGridView();
+            customComboBox2 = new Componentes.CustomComboBox();
+            customComboBox3 = new Componentes.CustomComboBox();
             TlpDivFormAndDgv.SuspendLayout();
             TlpAux1.SuspendLayout();
             TlpAux2.SuspendLayout();
@@ -190,7 +190,6 @@
             TlpForm.Controls.Add(LbFormatos, 0, 5);
             TlpForm.Controls.Add(LbEstreno, 2, 5);
             TlpForm.Controls.Add(LbEstado, 2, 4);
-            TlpForm.Controls.Add(CbClasificacion, 1, 3);
             TlpForm.Controls.Add(DpEstreno, 3, 5);
             TlpForm.Controls.Add(LbDescripcion, 2, 2);
             TlpForm.Controls.Add(RtbDescripcion, 3, 2);
@@ -201,7 +200,8 @@
             TlpForm.Controls.Add(TbID, 1, 0);
             TlpForm.Controls.Add(TbGeneros, 1, 4);
             TlpForm.Controls.Add(TbFormatos, 1, 5);
-            TlpForm.Controls.Add(CbEstado, 3, 4);
+            TlpForm.Controls.Add(customComboBox2, 1, 3);
+            TlpForm.Controls.Add(customComboBox3, 3, 4);
             TlpForm.Dock = DockStyle.Fill;
             TlpForm.Location = new Point(0, 0);
             TlpForm.Margin = new Padding(0);
@@ -367,23 +367,6 @@
             LbEstado.Text = "Estado";
             LbEstado.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // CbClasificacion
-            // 
-            CbClasificacion.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            CbClasificacion.BackColor = Color.FromArgb(55, 60, 72);
-            CbClasificacion.DropDownStyle = ComboBoxStyle.DropDownList;
-            CbClasificacion.FlatStyle = FlatStyle.Flat;
-            CbClasificacion.Font = new Font("Segoe UI", 9F);
-            CbClasificacion.ForeColor = Color.FromArgb(230, 230, 230);
-            CbClasificacion.FormattingEnabled = true;
-            CbClasificacion.ItemHeight = 20;
-            CbClasificacion.Location = new Point(135, 160);
-            CbClasificacion.Margin = new Padding(5);
-            CbClasificacion.MinimumSize = new Size(190, 0);
-            CbClasificacion.Name = "CbClasificacion";
-            CbClasificacion.Size = new Size(242, 28);
-            CbClasificacion.TabIndex = 41;
-            // 
             // DpEstreno
             // 
             DpEstreno.Anchor = AnchorStyles.Left | AnchorStyles.Right;
@@ -546,23 +529,6 @@
             TbFormatos.Size = new Size(242, 30);
             TbFormatos.TabIndex = 62;
             TbFormatos.TabStop = false;
-            // 
-            // CbEstado
-            // 
-            CbEstado.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            CbEstado.BackColor = Color.FromArgb(55, 60, 72);
-            CbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
-            CbEstado.FlatStyle = FlatStyle.Flat;
-            CbEstado.Font = new Font("Segoe UI", 9F);
-            CbEstado.ForeColor = Color.FromArgb(230, 230, 230);
-            CbEstado.FormattingEnabled = true;
-            CbEstado.ItemHeight = 20;
-            CbEstado.Location = new Point(517, 210);
-            CbEstado.Margin = new Padding(5);
-            CbEstado.MinimumSize = new Size(190, 0);
-            CbEstado.Name = "CbEstado";
-            CbEstado.Size = new Size(243, 28);
-            CbEstado.TabIndex = 63;
             // 
             // TlpButtons
             // 
@@ -758,17 +724,22 @@
             // 
             CbFiltro.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             CbFiltro.BackColor = Color.FromArgb(55, 60, 72);
+            CbFiltro.BaseColor = Color.FromArgb(25, 27, 29);
+            CbFiltro.BGColor = Color.FromArgb(45, 47, 49);
+            CbFiltro.DrawMode = DrawMode.OwnerDrawFixed;
             CbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
             CbFiltro.FlatStyle = FlatStyle.Flat;
             CbFiltro.Font = new Font("Segoe UI", 9F);
             CbFiltro.ForeColor = Color.FromArgb(230, 230, 230);
             CbFiltro.FormattingEnabled = true;
+            CbFiltro.HoverColor = Color.FromArgb(35, 168, 109);
+            CbFiltro.HoverFontColor = Color.White;
             CbFiltro.ItemHeight = 20;
-            CbFiltro.Location = new Point(5, 23);
+            CbFiltro.Location = new Point(5, 24);
             CbFiltro.Margin = new Padding(5);
             CbFiltro.MinimumSize = new Size(190, 0);
             CbFiltro.Name = "CbFiltro";
-            CbFiltro.Size = new Size(190, 28);
+            CbFiltro.Size = new Size(190, 26);
             CbFiltro.TabIndex = 6;
             // 
             // TbFiltro
@@ -836,6 +807,46 @@
             DgvPelicula.Size = new Size(1050, 175);
             DgvPelicula.TabIndex = 2;
             // 
+            // customComboBox2
+            // 
+            customComboBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customComboBox2.BaseColor = Color.FromArgb(25, 27, 29);
+            customComboBox2.BGColor = Color.FromArgb(45, 47, 49);
+            customComboBox2.DrawMode = DrawMode.OwnerDrawFixed;
+            customComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            customComboBox2.Font = new Font("Segoe UI", 9F);
+            customComboBox2.ForeColor = Color.White;
+            customComboBox2.FormattingEnabled = true;
+            customComboBox2.HoverColor = Color.FromArgb(35, 168, 109);
+            customComboBox2.HoverFontColor = Color.White;
+            customComboBox2.ItemHeight = 24;
+            customComboBox2.Location = new Point(135, 165);
+            customComboBox2.Margin = new Padding(5);
+            customComboBox2.MinimumSize = new Size(190, 0);
+            customComboBox2.Name = "customComboBox2";
+            customComboBox2.Size = new Size(242, 30);
+            customComboBox2.TabIndex = 64;
+            // 
+            // customComboBox3
+            // 
+            customComboBox3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customComboBox3.BaseColor = Color.FromArgb(25, 27, 29);
+            customComboBox3.BGColor = Color.FromArgb(45, 47, 49);
+            customComboBox3.DrawMode = DrawMode.OwnerDrawFixed;
+            customComboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
+            customComboBox3.Font = new Font("Segoe UI", 9F);
+            customComboBox3.ForeColor = Color.White;
+            customComboBox3.FormattingEnabled = true;
+            customComboBox3.HoverColor = Color.FromArgb(35, 168, 109);
+            customComboBox3.HoverFontColor = Color.White;
+            customComboBox3.ItemHeight = 24;
+            customComboBox3.Location = new Point(517, 215);
+            customComboBox3.Margin = new Padding(5);
+            customComboBox3.MinimumSize = new Size(190, 0);
+            customComboBox3.Name = "customComboBox3";
+            customComboBox3.Size = new Size(243, 30);
+            customComboBox3.TabIndex = 65;
+            // 
             // FrBorrador
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -888,7 +899,6 @@
         private TableLayoutPanel TlpFilter;
         private Componentes.CustomButton customButton6;
         private Componentes.CustomDataGridView DgvPelicula;
-        private Componentes.CustomComboBox CbClasificacion;
         private Componentes.CustomComboBox customComboBox4;
         private Componentes.CustomComboBox customComboBox1;
         private Componentes.CustomDatePicker DpEstreno;
@@ -906,6 +916,7 @@
         private Componentes.CustomIDTextBox TbID;
         private Componentes.CustomIDTextBox TbGeneros;
         private Componentes.CustomIDTextBox TbFormatos;
-        private Componentes.CustomComboBox CbEstado;
+        private Componentes.CustomComboBox customComboBox2;
+        private Componentes.CustomComboBox customComboBox3;
     }
 }

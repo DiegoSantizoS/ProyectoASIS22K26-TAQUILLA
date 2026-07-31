@@ -1,4 +1,5 @@
-﻿using Plantilla_Admin.Tabs;
+﻿using Formularios_Admin;
+using Plantilla_Admin.Tabs;
 using Plantilla_Admin.Tabs.Funciones;
 using Plantilla_Admin.Tabs.Sala;
 using System;
@@ -40,7 +41,7 @@ namespace Plantilla_Admin
 
         private void pRUEBAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrBorrador FrBorrador1 = new FrBorrador();
+            FrUcPeliculas FrBorrador1 = new FrUcPeliculas();
             funcargarpagina(FrBorrador1);
         }
     }
