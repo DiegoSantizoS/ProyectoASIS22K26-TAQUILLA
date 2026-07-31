@@ -20,6 +20,7 @@ namespace Componentes
             Cursor = Cursors.Hand;
             ItemHeight = 26;
             MinimumSize = new Size(190, 30);
+            MaximumSize = new Size(0, 30);
         }
     }
 }

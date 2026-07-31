@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Plantilla_Admin.Tabs
+namespace Formularios_Admin
 {
-    public partial class FrBorrador : UserControl
+    public partial class FrUcPeliculas : UserControl
     {
-        public FrBorrador()
+        public FrUcPeliculas()
         {
             InitializeComponent();
-        }
-
-        private void LbTrailer_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

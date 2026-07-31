@@ -1,6 +1,6 @@
-﻿namespace Plantilla_Admin.Tabs
+﻿namespace Formularios_Admin
 {
-    partial class FrBorrador
+    partial class FrUcPeliculas
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -98,7 +98,7 @@
             TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Absolute, 525F));
             TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpDivFormAndDgv.Size = new Size(1050, 700);
-            TlpDivFormAndDgv.TabIndex = 3;
+            TlpDivFormAndDgv.TabIndex = 4;
             // 
             // TlpAux1
             // 
@@ -275,7 +275,6 @@
             LbTrailer.TabIndex = 14;
             LbTrailer.Text = "Trailer";
             LbTrailer.TextAlign = ContentAlignment.MiddleRight;
-            LbTrailer.Click += LbTrailer_Click;
             // 
             // LbDuracion
             // 
@@ -672,6 +671,7 @@
             // 
             // TlpTitleLabel
             // 
+            TlpTitleLabel.BackColor = Color.Black;
             TlpTitleLabel.ColumnCount = 3;
             TlpTitleLabel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             TlpTitleLabel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 500F));
@@ -836,13 +836,13 @@
             DgvPelicula.Size = new Size(1050, 175);
             DgvPelicula.TabIndex = 2;
             // 
-            // FrBorrador
+            // FrUcPeliculas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.WindowText;
+            BackColor = SystemColors.ActiveCaptionText;
             Controls.Add(TlpDivFormAndDgv);
-            Name = "FrBorrador";
+            Name = "FrUcPeliculas";
             Size = new Size(1050, 700);
             TlpDivFormAndDgv.ResumeLayout(false);
             TlpAux1.ResumeLayout(false);
@@ -877,6 +877,18 @@
         private Componentes.CustomLabel LbFormatos;
         private Componentes.CustomLabel LbEstreno;
         private Componentes.CustomLabel LbEstado;
+        private Componentes.CustomComboBox CbClasificacion;
+        private Componentes.CustomDatePicker DpEstreno;
+        private Componentes.CustomLabel LbDescripcion;
+        private Componentes.CustomRichTextBox RtbDescripcion;
+        private Componentes.CustomTextBox TbTitulo;
+        private Componentes.CustomTextBox TbDuracion;
+        private Componentes.CustomTextBox TbDirector;
+        private Componentes.CustomTextBox TbTrailer;
+        private Componentes.CustomIDTextBox TbID;
+        private Componentes.CustomIDTextBox TbGeneros;
+        private Componentes.CustomIDTextBox TbFormatos;
+        private Componentes.CustomComboBox CbEstado;
         private TableLayoutPanel TlpButtons;
         private Componentes.CustomButton BtnIngresar;
         private Componentes.CustomButton BtnEliminar;
@@ -887,25 +899,8 @@
         private TableLayoutPanel TlpAux3;
         private TableLayoutPanel TlpFilter;
         private Componentes.CustomButton customButton6;
-        private Componentes.CustomDataGridView DgvPelicula;
-        private Componentes.CustomComboBox CbClasificacion;
-        private Componentes.CustomComboBox customComboBox4;
-        private Componentes.CustomComboBox customComboBox1;
-        private Componentes.CustomDatePicker DpEstreno;
-        private Componentes.CustomTextBox customTextBox2;
-        private Componentes.CustomTextBox customTextBox4;
-        private Componentes.CustomTextBox customTextBox5;
-        private Componentes.CustomLabel LbDescripcion;
         private Componentes.CustomComboBox CbFiltro;
         private Componentes.CustomTextBox TbFiltro;
-        private Componentes.CustomRichTextBox RtbDescripcion;
-        private Componentes.CustomTextBox TbTitulo;
-        private Componentes.CustomTextBox TbDuracion;
-        private Componentes.CustomTextBox TbDirector;
-        private Componentes.CustomTextBox TbTrailer;
-        private Componentes.CustomIDTextBox TbID;
-        private Componentes.CustomIDTextBox TbGeneros;
-        private Componentes.CustomIDTextBox TbFormatos;
-        private Componentes.CustomComboBox CbEstado;
+        private Componentes.CustomDataGridView DgvPelicula;
     }
 }

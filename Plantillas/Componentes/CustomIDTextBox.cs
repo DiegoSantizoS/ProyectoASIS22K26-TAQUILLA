@@ -50,6 +50,7 @@ namespace Componentes
             Margin = new Padding(5);
             Anchor = AnchorStyles.Left | AnchorStyles.Right;
             AutoSize = false;
+            MaximumSize = new Size(0, 30);
             MinimumSize = new Size(190, 30);
             Size = new Size(190, 30);
 
@@ -66,16 +67,16 @@ namespace Componentes
             switch (_state)
             {
                 case IDState.Valid:
-                    back = Color.FromArgb(39, 174, 96);
-                    fore = Color.White;
+                    back = Color.FromArgb(28, 30, 38);
+                    fore = Color.FromArgb(39, 174, 96);
                     break;
                 case IDState.Invalid:
-                    back = Color.FromArgb(192, 57, 43);
-                    fore = Color.White;
+                    back = Color.FromArgb(28, 30, 38);
+                    fore = Color.FromArgb(192, 57, 43);
                     break;
                 default:
-                    back = Color.FromArgb(45, 49, 60);
-                    fore = Color.FromArgb(160, 165, 175);
+                    back = Color.FromArgb(28, 30, 38);
+                    fore = Color.FromArgb(120, 125, 135);
                     break;
             }
 

@@ -40,6 +40,7 @@ namespace Componentes
             Anchor = AnchorStyles.Left | AnchorStyles.Right;
             MinimumSize = new Size(190, 30);
             Size = new Size(190, 30);
+            MaximumSize = new Size(0, 30);
             Text = "1200";
             Cursor = Cursors.Hand;
         }
