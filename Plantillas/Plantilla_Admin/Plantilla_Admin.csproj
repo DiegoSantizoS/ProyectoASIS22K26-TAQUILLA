@@ -30,6 +30,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\clase_conexion\clase_conexion.csproj" />
+    <ProjectReference Include="..\Componentes\Componentes.csproj" />
   </ItemGroup>
 
   <ItemGroup>
