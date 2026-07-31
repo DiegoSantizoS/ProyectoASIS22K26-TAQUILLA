@@ -30,8 +30,9 @@
         {
             menuStrip1 = new MenuStrip();
             verUsuariosToolStripMenuItem = new ToolStripMenuItem();
-            panel1 = new Panel();
             toolStripMenuItem1 = new ToolStripMenuItem();
+            panel1 = new Panel();
+            pRUEBAToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -39,7 +40,7 @@
             // 
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { verUsuariosToolStripMenuItem, toolStripMenuItem1 });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { verUsuariosToolStripMenuItem, toolStripMenuItem1, pRUEBAToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(162, 396);
@@ -53,6 +54,13 @@
             verUsuariosToolStripMenuItem.Text = "AGREGAR FUNCIÓN";
             verUsuariosToolStripMenuItem.Click += verUsuariosToolStripMenuItem_Click;
             // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(149, 24);
+            toolStripMenuItem1.Text = "SALA";
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
+            // 
             // panel1
             // 
             panel1.Dock = DockStyle.Fill;
@@ -61,12 +69,12 @@
             panel1.Size = new Size(631, 396);
             panel1.TabIndex = 3;
             // 
-            // toolStripMenuItem1
+            // pRUEBAToolStripMenuItem
             // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(149, 24);
-            toolStripMenuItem1.Text = "SALA";
-            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
+            pRUEBAToolStripMenuItem.Name = "pRUEBAToolStripMenuItem";
+            pRUEBAToolStripMenuItem.Size = new Size(149, 24);
+            pRUEBAToolStripMenuItem.Text = "PRUEBA";
+            pRUEBAToolStripMenuItem.Click += pRUEBAToolStripMenuItem_Click;
             // 
             // FrUcMainFunciones
             // 
@@ -89,5 +97,6 @@
         private ToolStripMenuItem verUsuariosToolStripMenuItem;
         private Panel panel1;
         private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem pRUEBAToolStripMenuItem;
     }
 }
