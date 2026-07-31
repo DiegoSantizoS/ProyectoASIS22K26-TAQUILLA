@@ -334,7 +334,7 @@ CREATE TABLE tbl_boleto (
     CONSTRAINT uq_boleto_funcion_asiento UNIQUE (id_funcion, numero_boleto)
 ) ENGINE=InnoDB;
 
-CREATE INDEX idx_boleto_funcion ON tbl_boleto(id_funcion);
+CREATE INDEX idx_boleto_funcion ON tbl_boleto(id_funcion); --index estandar
 
 -- =====================================================
 -- VISTA: boletos vendidos por función
