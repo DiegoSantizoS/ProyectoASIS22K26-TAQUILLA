@@ -48,7 +48,6 @@
             customLabel11 = new Componentes.CustomLabel();
             customLabel12 = new Componentes.CustomLabel();
             customLabel10 = new Componentes.CustomLabel();
-            customidTextBox1 = new Componentes.CustomIDTextBox();
             customTextBox1 = new Componentes.CustomTextBox();
             customComboBox3 = new Componentes.CustomComboBox();
             customRichTextBox1 = new Componentes.CustomRichTextBox();
@@ -59,6 +58,7 @@
             customTextBox4 = new Componentes.CustomTextBox();
             customTextBox5 = new Componentes.CustomTextBox();
             customLabel6 = new Componentes.CustomLabel();
+            customidTextBox1 = new Componentes.CustomIDTextBox();
             tableLayoutPanel7 = new TableLayoutPanel();
             customButton1 = new Componentes.CustomButton();
             customButton5 = new Componentes.CustomButton();
@@ -68,9 +68,9 @@
             customTitleLabel1 = new Componentes.CustomTitleLabel();
             tableLayoutPanel4 = new TableLayoutPanel();
             tableLayoutPanel8 = new TableLayoutPanel();
-            customTextBox8 = new Componentes.CustomTextBox();
-            customComboBox2 = new Componentes.CustomComboBox();
             customButton6 = new Componentes.CustomButton();
+            customComboBox2 = new Componentes.CustomComboBox();
+            customTextBox6 = new Componentes.CustomTextBox();
             customDataGridView1 = new Componentes.CustomDataGridView();
             Tlp_divFormAndDgv.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -191,7 +191,6 @@
             tableLayoutPanel6.Controls.Add(customLabel11, 0, 5);
             tableLayoutPanel6.Controls.Add(customLabel12, 2, 5);
             tableLayoutPanel6.Controls.Add(customLabel10, 2, 4);
-            tableLayoutPanel6.Controls.Add(customidTextBox1, 1, 0);
             tableLayoutPanel6.Controls.Add(customTextBox1, 1, 1);
             tableLayoutPanel6.Controls.Add(customComboBox3, 1, 3);
             tableLayoutPanel6.Controls.Add(customRichTextBox1, 3, 2);
@@ -202,6 +201,7 @@
             tableLayoutPanel6.Controls.Add(customTextBox4, 1, 5);
             tableLayoutPanel6.Controls.Add(customTextBox5, 3, 1);
             tableLayoutPanel6.Controls.Add(customLabel6, 2, 2);
+            tableLayoutPanel6.Controls.Add(customidTextBox1, 1, 0);
             tableLayoutPanel6.Dock = DockStyle.Fill;
             tableLayoutPanel6.Location = new Point(0, 0);
             tableLayoutPanel6.Margin = new Padding(0);
@@ -371,22 +371,6 @@
             customLabel10.Text = "Estado";
             customLabel10.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // customidTextBox1
-            // 
-            customidTextBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            customidTextBox1.BackColor = Color.FromArgb(45, 49, 60);
-            customidTextBox1.BorderStyle = BorderStyle.FixedSingle;
-            customidTextBox1.Font = new Font("Segoe UI", 10F);
-            customidTextBox1.ForeColor = Color.FromArgb(160, 165, 175);
-            customidTextBox1.Location = new Point(135, 10);
-            customidTextBox1.Margin = new Padding(5);
-            customidTextBox1.MinimumSize = new Size(190, 30);
-            customidTextBox1.Name = "customidTextBox1";
-            customidTextBox1.ReadOnly = true;
-            customidTextBox1.Size = new Size(242, 30);
-            customidTextBox1.TabIndex = 39;
-            customidTextBox1.TabStop = false;
-            // 
             // customTextBox1
             // 
             customTextBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
@@ -543,6 +527,22 @@
             customLabel6.TabIndex = 50;
             customLabel6.Text = "Descripción";
             customLabel6.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // customidTextBox1
+            // 
+            customidTextBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customidTextBox1.BackColor = Color.FromArgb(45, 49, 60);
+            customidTextBox1.BorderStyle = BorderStyle.FixedSingle;
+            customidTextBox1.Font = new Font("Segoe UI", 10F);
+            customidTextBox1.ForeColor = Color.FromArgb(160, 165, 175);
+            customidTextBox1.Location = new Point(135, 10);
+            customidTextBox1.Margin = new Padding(5);
+            customidTextBox1.MinimumSize = new Size(190, 30);
+            customidTextBox1.Name = "customidTextBox1";
+            customidTextBox1.ReadOnly = true;
+            customidTextBox1.Size = new Size(242, 30);
+            customidTextBox1.TabIndex = 51;
+            customidTextBox1.TabStop = false;
             // 
             // tableLayoutPanel7
             // 
@@ -702,9 +702,9 @@
             tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
             tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
             tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
-            tableLayoutPanel8.Controls.Add(customTextBox8, 1, 0);
-            tableLayoutPanel8.Controls.Add(customComboBox2, 0, 0);
             tableLayoutPanel8.Controls.Add(customButton6, 2, 0);
+            tableLayoutPanel8.Controls.Add(customComboBox2, 0, 0);
+            tableLayoutPanel8.Controls.Add(customTextBox6, 1, 0);
             tableLayoutPanel8.Dock = DockStyle.Fill;
             tableLayoutPanel8.Location = new Point(270, 0);
             tableLayoutPanel8.Margin = new Padding(0);
@@ -713,39 +713,6 @@
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel8.Size = new Size(510, 75);
             tableLayoutPanel8.TabIndex = 0;
-            // 
-            // customTextBox8
-            // 
-            customTextBox8.Anchor = AnchorStyles.None;
-            customTextBox8.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox8.BorderStyle = BorderStyle.FixedSingle;
-            customTextBox8.Font = new Font("Segoe UI", 10F);
-            customTextBox8.ForeColor = Color.FromArgb(230, 230, 230);
-            customTextBox8.Location = new Point(205, 22);
-            customTextBox8.Margin = new Padding(0);
-            customTextBox8.MaximumSize = new Size(190, 30);
-            customTextBox8.MinimumSize = new Size(190, 30);
-            customTextBox8.Name = "customTextBox8";
-            customTextBox8.Size = new Size(190, 30);
-            customTextBox8.TabIndex = 37;
-            // 
-            // customComboBox2
-            // 
-            customComboBox2.Anchor = AnchorStyles.None;
-            customComboBox2.BackColor = Color.FromArgb(55, 60, 72);
-            customComboBox2.DrawMode = DrawMode.OwnerDrawFixed;
-            customComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            customComboBox2.FlatStyle = FlatStyle.Flat;
-            customComboBox2.Font = new Font("Segoe UI", 9F);
-            customComboBox2.ForeColor = Color.FromArgb(230, 230, 230);
-            customComboBox2.FormattingEnabled = true;
-            customComboBox2.ItemHeight = 26;
-            customComboBox2.Location = new Point(5, 21);
-            customComboBox2.Margin = new Padding(5);
-            customComboBox2.MinimumSize = new Size(190, 0);
-            customComboBox2.Name = "customComboBox2";
-            customComboBox2.Size = new Size(190, 32);
-            customComboBox2.TabIndex = 29;
             // 
             // customButton6
             // 
@@ -767,6 +734,37 @@
             customButton6.TabIndex = 5;
             customButton6.Text = "Buscar";
             customButton6.UseVisualStyleBackColor = false;
+            // 
+            // customComboBox2
+            // 
+            customComboBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customComboBox2.BackColor = Color.FromArgb(55, 60, 72);
+            customComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            customComboBox2.FlatStyle = FlatStyle.Flat;
+            customComboBox2.Font = new Font("Segoe UI", 9F);
+            customComboBox2.ForeColor = Color.FromArgb(230, 230, 230);
+            customComboBox2.FormattingEnabled = true;
+            customComboBox2.ItemHeight = 20;
+            customComboBox2.Location = new Point(5, 23);
+            customComboBox2.Margin = new Padding(5);
+            customComboBox2.MinimumSize = new Size(190, 0);
+            customComboBox2.Name = "customComboBox2";
+            customComboBox2.Size = new Size(190, 28);
+            customComboBox2.TabIndex = 6;
+            // 
+            // customTextBox6
+            // 
+            customTextBox6.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customTextBox6.BackColor = Color.FromArgb(55, 60, 72);
+            customTextBox6.BorderStyle = BorderStyle.FixedSingle;
+            customTextBox6.Font = new Font("Segoe UI", 10F);
+            customTextBox6.ForeColor = Color.FromArgb(230, 230, 230);
+            customTextBox6.Location = new Point(205, 22);
+            customTextBox6.Margin = new Padding(5);
+            customTextBox6.MinimumSize = new Size(190, 30);
+            customTextBox6.Name = "customTextBox6";
+            customTextBox6.Size = new Size(190, 30);
+            customTextBox6.TabIndex = 7;
             // 
             // customDataGridView1
             // 
@@ -868,11 +866,8 @@
         private Componentes.CustomTitleLabel customTitleLabel1;
         private TableLayoutPanel tableLayoutPanel4;
         private TableLayoutPanel tableLayoutPanel8;
-        private Componentes.CustomTextBox customTextBox8;
-        private Componentes.CustomComboBox customComboBox2;
         private Componentes.CustomButton customButton6;
         private Componentes.CustomDataGridView customDataGridView1;
-        private Componentes.CustomIDTextBox customidTextBox1;
         private Componentes.CustomTextBox customTextBox1;
         private Componentes.CustomTextBox customTextBox3;
         private Componentes.CustomComboBox customComboBox3;
@@ -884,5 +879,8 @@
         private Componentes.CustomTextBox customTextBox4;
         private Componentes.CustomTextBox customTextBox5;
         private Componentes.CustomLabel customLabel6;
+        private Componentes.CustomComboBox customComboBox2;
+        private Componentes.CustomTextBox customTextBox6;
+        private Componentes.CustomIDTextBox customidTextBox1;
     }
 }
