@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -18,15 +19,15 @@ namespace Plantilla_Admin
         public FrMenuAdmin()
         {
             InitializeComponent();
-            funcargarpagina(new logo());
+            //funcargarpagina(new logo());
         }
 
         private void funcargarpagina(UserControl pagina)
         {
-            foreach (Control c in pnlMenuAdmin.Controls) c.Dispose();
-            pnlMenuAdmin.Controls.Clear();
+            foreach (Control c in panel1.Controls) c.Dispose();
+            panel1.Controls.Clear();
             pagina.Dock = DockStyle.Fill;
-            pnlMenuAdmin.Controls.Add(pagina);
+            panel1.Controls.Add(pagina);
         }
 
         private void carteleraToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,6 +76,48 @@ namespace Plantilla_Admin
         {
             logo logo = new logo();
             funcargarpagina(logo);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrMenuAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BtnFunciones_Click(object sender, EventArgs e)
+        {
+            funcargarpagina(new FrUcMainFunciones());
+        }
+
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+        private void PnlTop_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void BtnDashboard_Click(object sender, EventArgs e)
+        {
+            funcargarpagina(new FrUcMainFunciones());
         }
     }
 }

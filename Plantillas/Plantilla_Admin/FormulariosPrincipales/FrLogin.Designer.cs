@@ -162,7 +162,7 @@
             // 
             // PbLogo
             // 
-            PbLogo.BackgroundImage = Plantilla_Admin.Properties.Resources.logo;
+            PbLogo.BackgroundImage = Plantilla_Admin.Properties.Resources.images;
             PbLogo.BackgroundImageLayout = ImageLayout.Stretch;
             PbLogo.Dock = DockStyle.Fill;
             PbLogo.Location = new Point(0, 0);
