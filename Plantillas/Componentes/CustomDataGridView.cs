@@ -1,4 +1,6 @@
-﻿using System;
+﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 30/07/2026 */
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -64,3 +66,5 @@ namespace Componentes
         }
     }
 }
+/* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 31/07/2026 */

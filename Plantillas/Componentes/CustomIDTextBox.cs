@@ -1,4 +1,6 @@
-﻿using System;
+﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 30/07/2026 */
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -12,19 +14,10 @@ namespace Componentes
         Invalid
     }
 
-    public class CustomIDTextBox : UserControl
+    public class CustomIDTextBox : TextBox
     {
-        private readonly TextBox _input;
         private IDState _state = IDState.Normal;
         private bool _editable = false;
-
-        [Browsable(false)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public override string Text
-        {
-            get => _input.Text;
-            set => _input.Text = value;
-        }
 
         [DefaultValue(IDState.Normal)]
         public IDState State
@@ -44,61 +37,27 @@ namespace Componentes
             set
             {
                 _editable = value;
-                _input.ReadOnly = !_editable;
-                _input.TabStop = _editable;
-                _input.Cursor = _editable ? Cursors.IBeam : Cursors.Default;
+                ReadOnly = !_editable;
+                TabStop = _editable;
+                Cursor = _editable ? Cursors.IBeam : Cursors.Default;
             }
         }
 
         public CustomIDTextBox()
         {
-            Size = new Size(190, 30);
+            Font = new Font("Segoe UI", 10f);
+            BorderStyle = BorderStyle.FixedSingle;
+            Margin = new Padding(5);
+            Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            AutoSize = false;
             MinimumSize = new Size(190, 30);
-            Margin = new Padding(0);
-            Padding = new Padding(1);
-            Anchor = AnchorStyles.None;
-            BackColor = Color.FromArgb(45, 49, 60);
-            DoubleBuffered = true;
+            Size = new Size(190, 30);
 
-            _input = new TextBox
-            {
-                Dock = DockStyle.Fill,
-                BorderStyle = BorderStyle.None,
-                Font = new Font("Segoe UI", 10f),
-                ReadOnly = true,
-                TabStop = false,
-                Cursor = Cursors.Default
-            };
-            _input.Enter += Input_Enter;
-            _input.GotFocus += Input_GotFocus;
-            _input.MouseDown += Input_MouseDown;
+            ReadOnly = true;
+            TabStop = false;
+            Cursor = Cursors.Default;
 
-            Controls.Add(_input);
             ApplyState();
-        }
-
-        private void Input_Enter(object sender, EventArgs e)
-        {
-            if (!_editable)
-            {
-                HideCaret(_input.Handle);
-                Parent?.SelectNextControl(this, true, true, true, true);
-            }
-        }
-
-        private void Input_GotFocus(object sender, EventArgs e)
-        {
-            if (!_editable)
-                HideCaret(_input.Handle);
-        }
-
-        private void Input_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (!_editable)
-            {
-                HideCaret(_input.Handle);
-                Parent?.SelectNextControl(this, true, true, true, true);
-            }
         }
 
         private void ApplyState()
@@ -121,19 +80,26 @@ namespace Componentes
             }
 
             BackColor = back;
-            if (_input != null)
+            ForeColor = fore;
+        }
+
+        protected override void OnGotFocus(EventArgs e)
+        {
+            base.OnGotFocus(e);
+            if (!_editable)
             {
-                _input.BackColor = back;
-                _input.ForeColor = fore;
+                HideCaret(Handle);
+                Parent?.SelectNextControl(this, true, true, true, true);
             }
         }
 
-        protected override void OnPaint(PaintEventArgs e)
+        protected override void OnMouseDown(MouseEventArgs e)
         {
-            base.OnPaint(e);
-            using (var pen = new Pen(Color.FromArgb(90, 96, 110), 1))
+            base.OnMouseDown(e);
+            if (!_editable)
             {
-                e.Graphics.DrawRectangle(pen, 0, 0, Width - 1, Height - 1);
+                HideCaret(Handle);
+                Parent?.SelectNextControl(this, true, true, true, true);
             }
         }
 
@@ -141,3 +107,5 @@ namespace Componentes
         private static extern bool HideCaret(IntPtr hWnd);
     }
 }
+/* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 31/07/2026 */

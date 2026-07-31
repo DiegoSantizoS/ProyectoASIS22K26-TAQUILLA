@@ -1,7 +1,8 @@
-﻿using System;
+﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 30/07/2026 */
+using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace Componentes
@@ -20,6 +21,8 @@ namespace Componentes
     {
         private ButtonAction _action = ButtonAction.Ingresar;
 
+        [Category("Custom")]
+        [Description("Determines the button's color and intent.")]
         [DefaultValue(ButtonAction.Ingresar)]
         public ButtonAction Action
         {
@@ -31,6 +34,8 @@ namespace Componentes
             }
         }
 
+        [Category("Custom")]
+        [Description("Background color shown while the button is disabled.")]
         [DefaultValue(typeof(Color), "189, 195, 199")]
         public Color OffColor { get; set; } = Color.FromArgb(189, 195, 199);
 
@@ -38,15 +43,15 @@ namespace Componentes
         {
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderSize = 0;
+            UseVisualStyleBackColor = false;
             Font = new Font("Segoe UI", 10f, FontStyle.Bold);
-            ForeColor = Color.White;
-            Size = new Size(120, 40);
+            TextAlign = ContentAlignment.MiddleCenter;
             Cursor = Cursors.Hand;
             Margin = new Padding(0);
+            AutoSize = false;
             MinimumSize = new Size(100, 40);
             MaximumSize = new Size(100, 40);
             Size = new Size(100, 40);
-            AutoSize = false;
             ApplyStyle();
         }
 
@@ -64,18 +69,10 @@ namespace Componentes
         private void ApplyStyle()
         {
             Color baseColor = BaseColor;
-            BackColor = baseColor;
-            FlatAppearance.MouseOverBackColor = ControlPaint.Light(baseColor, 0.1f);
-            FlatAppearance.MouseDownBackColor = ControlPaint.Dark(baseColor, 0.1f);
-        }
-
-        protected override void OnEnabledChanged(EventArgs e)
-        {
-            base.OnEnabledChanged(e);
 
             if (Enabled)
             {
-                BackColor = BaseColor;
+                BackColor = baseColor;
                 ForeColor = Color.White;
                 Cursor = Cursors.Hand;
             }
@@ -85,6 +82,17 @@ namespace Componentes
                 ForeColor = Color.FromArgb(240, 240, 240);
                 Cursor = Cursors.Default;
             }
+
+            FlatAppearance.MouseOverBackColor = ControlPaint.Light(baseColor, 0.1f);
+            FlatAppearance.MouseDownBackColor = ControlPaint.Dark(baseColor, 0.1f);
+        }
+
+        protected override void OnEnabledChanged(EventArgs e)
+        {
+            base.OnEnabledChanged(e);
+            ApplyStyle();
         }
     }
 }
+/* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 31/07/2026 */

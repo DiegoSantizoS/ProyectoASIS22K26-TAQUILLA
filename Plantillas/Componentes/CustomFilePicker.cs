@@ -1,4 +1,6 @@
-﻿using System;
+﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 30/07/2026 */
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
@@ -6,10 +8,8 @@ using System.Windows.Forms;
 
 namespace Componentes
 {
-    public class CustomFilePicker : UserControl
+    public class CustomFilePicker : Button
     {
-        private readonly Label _display;
-        private readonly Panel _button;
         private string _filePath = "";
 
         [Browsable(false)]
@@ -20,10 +20,10 @@ namespace Componentes
             set
             {
                 _filePath = value ?? "";
-                _display.Text = string.IsNullOrEmpty(_filePath)
+                Text = string.IsNullOrEmpty(_filePath)
                     ? "Seleccionar imagen..."
                     : Path.GetFileName(_filePath);
-                _display.ForeColor = string.IsNullOrEmpty(_filePath)
+                ForeColor = string.IsNullOrEmpty(_filePath)
                     ? Color.FromArgb(160, 165, 175)
                     : Color.FromArgb(230, 230, 230);
             }
@@ -36,77 +36,26 @@ namespace Componentes
 
         public CustomFilePicker()
         {
-            Size = new Size(190, 30);
-            MinimumSize = new Size(190, 30);
-            MaximumSize = new Size(190, 30);
-            Margin = new Padding(5);
-            Padding = new Padding(1);
-            Anchor = AnchorStyles.None;
+            FlatStyle = FlatStyle.Flat;
+            FlatAppearance.BorderColor = Color.White;
+            FlatAppearance.BorderSize = 1;
+            TextAlign = ContentAlignment.MiddleLeft;
+            Font = new Font("Segoe UI", 8.5f);
             BackColor = Color.FromArgb(55, 60, 72);
-            DoubleBuffered = true;
-
-            _display = new Label
-            {
-                Dock = DockStyle.Fill,
-                TextAlign = ContentAlignment.MiddleLeft,
-                BackColor = Color.FromArgb(55, 60, 72),
-                ForeColor = Color.FromArgb(160, 165, 175),
-                Font = new Font("Segoe UI", 8.5f),
-                Padding = new Padding(8, 0, 0, 0),
-                Cursor = Cursors.Hand,
-                AutoEllipsis = true,
-                Text = "Seleccionar imagen..."
-            };
-            _display.Click += (s, e) => Browse();
-
-            _button = new Panel
-            {
-                Dock = DockStyle.Right,
-                Width = 26,
-                BackColor = Color.White,
-                Cursor = Cursors.Hand
-            };
-            _button.Paint += DrawFolderIcon;
-            _button.Click += (s, e) => Browse();
-
-            Controls.Add(_display);
-            Controls.Add(_button);
+            ForeColor = Color.FromArgb(160, 165, 175);
+            Padding = new Padding(8, 0, 0, 0);
+            Margin = new Padding(5);
+            Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Cursor = Cursors.Hand;
+            UseVisualStyleBackColor = false;
+            MinimumSize = new Size(190, 30);
+            Text = "Seleccionar imagen...";
         }
 
-        private void DrawFolderIcon(object sender, PaintEventArgs e)
+        protected override void OnClick(EventArgs e)
         {
-            var g = e.Graphics;
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            base.OnClick(e);
 
-            int w = _button.Width;
-            int h = _button.Height;
-            int fw = 14;
-            int fh = 11;
-            int x = (w - fw) / 2;
-            int y = (h - fh) / 2;
-
-            using (var body = new SolidBrush(Color.FromArgb(60, 65, 78)))
-            using (var pen = new Pen(Color.FromArgb(60, 65, 78), 1))
-            {
-                Rectangle tab = new Rectangle(x, y, 6, 3);
-                g.FillRectangle(body, tab);
-
-                Rectangle main = new Rectangle(x, y + 2, fw, fh - 2);
-                g.FillRectangle(body, main);
-            }
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            using (var pen = new Pen(Color.White, 1))
-            {
-                e.Graphics.DrawRectangle(pen, 0, 0, Width - 1, Height - 1);
-            }
-        }
-
-        private void Browse()
-        {
             using (var dialog = new OpenFileDialog())
             {
                 dialog.Filter = Filter;
@@ -121,3 +70,5 @@ namespace Componentes
         }
     }
 }
+/* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 31/07/2026 */

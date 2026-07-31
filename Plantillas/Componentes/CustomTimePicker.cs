@@ -1,4 +1,6 @@
-﻿using System;
+﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 30/07/2026 */
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -35,10 +37,13 @@ namespace Componentes
             TextAlign = HorizontalAlignment.Center;
             Margin = new Padding(5);
             Padding = new Padding(0);
-            Anchor = AnchorStyles.None;
+            Anchor = AnchorStyles.Left | AnchorStyles.Right;
             MinimumSize = new Size(190, 30);
             Size = new Size(190, 30);
             Text = "1200";
+            Cursor = Cursors.Hand;
         }
     }
 }
+/* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 31/07/2026 */
