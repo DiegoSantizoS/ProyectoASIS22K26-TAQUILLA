@@ -334,7 +334,7 @@ CREATE TABLE tbl_boleto (
     CONSTRAINT uq_boleto_funcion_asiento UNIQUE (id_funcion, numero_boleto)
 ) ENGINE=InnoDB;
 
-CREATE INDEX idx_boleto_funcion ON BOLETO(id_funcion);
+CREATE INDEX idx_boleto_funcion ON tbl_boleto(id_funcion); --index estandar
 
 -- =====================================================
 -- VISTA: boletos vendidos por función
@@ -391,3 +391,55 @@ VALUES (1, 'mishel', SHA2('123', 256));
 -- WHERE nombre_usuario = ? AND contrasena_usuario = SHA2(?, 256);
 
 ---------------------------------------------------------------------------
+CREATE TABLE permisos_usuario (
+    id_usuario INT PRIMARY KEY,
+    puede_mantenimiento TINYINT(1) DEFAULT 0,
+    puede_procesos TINYINT(1) DEFAULT 0,
+    puede_eliminar TINYINT(1) DEFAULT 0,
+    puede_registrar TINYINT(1) DEFAULT 0,
+    puede_modificar TINYINT(1) DEFAULT 0,
+    APL103 TINYINT(1) DEFAULT 0,
+    APL104 TINYINT(1) DEFAULT 0,
+    APL105 TINYINT(1) DEFAULT 0,
+    APL106 TINYINT(1) DEFAULT 0,
+    APL107 TINYINT(1) DEFAULT 0,
+    APL108 TINYINT(1) DEFAULT 0,
+    APL109 TINYINT(1) DEFAULT 0,
+    APL110 TINYINT(1) DEFAULT 0,
+    APL111 TINYINT(1) DEFAULT 0,
+    APL112 TINYINT(1) DEFAULT 0,
+    CONSTRAINT fk_permiso_usuario
+        FOREIGN KEY (id_usuario)
+        REFERENCES tbl_usuario(id_usuario)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+//CAMBIAR POR ID QUE ESTEN EN SU BASE
+INSERT INTO tbl_usuario (id_perfil, nombre_usuario, contrasena_usuario)
+VALUES (1,'mishel',SHA2('123',256));
+
+
+INSERT INTO permisos_usuario
+(id_usuario, puede_mantenimiento, puede_procesos,
+puede_eliminar, puede_registrar, puede_modificar,
+APL103,APL104,APL105,APL106,APL107,APL108,APL109,APL110,APL111,APL112)
+VALUES
+(1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0);
+
+CREATE TABLE bitacora (
+    id_bitacora INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    id_aplicacion INT NOT NULL,
+    fecha DATETIME NOT NULL,
+    ip VARCHAR(45),
+    accion VARCHAR(50),
+    nombre_pc VARCHAR(50),
+
+    CONSTRAINT fk_bitacora_usuario
+        FOREIGN KEY (id_usuario)
+        REFERENCES tbl_usuario(id_usuario)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
