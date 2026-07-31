@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Tlp_divFormAndDgv = new TableLayoutPanel();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel5 = new TableLayoutPanel();
             customButton2 = new Componentes.CustomButton();
             tableLayoutPanel6 = new TableLayoutPanel();
-            customTextBox7 = new Componentes.CustomTextBox();
+            customTextBox3 = new Componentes.CustomTextBox();
             customLabel1 = new Componentes.CustomLabel();
             customLabel2 = new Componentes.CustomLabel();
             customLabel3 = new Componentes.CustomLabel();
             customLabel4 = new Componentes.CustomLabel();
-            customTextBox2 = new Componentes.CustomTextBox();
             customLabel5 = new Componentes.CustomLabel();
-            customLabel6 = new Componentes.CustomLabel();
             customLabel7 = new Componentes.CustomLabel();
             customLabel9 = new Componentes.CustomLabel();
             customLabel11 = new Componentes.CustomLabel();
+            customLabel12 = new Componentes.CustomLabel();
+            customLabel10 = new Componentes.CustomLabel();
             customidTextBox1 = new Componentes.CustomIDTextBox();
             customTextBox1 = new Componentes.CustomTextBox();
-            customTextBox3 = new Componentes.CustomTextBox();
-            customTextBox4 = new Componentes.CustomTextBox();
-            customComboBox1 = new Componentes.CustomComboBox();
-            customTextBox5 = new Componentes.CustomTextBox();
-            customTextBox6 = new Componentes.CustomTextBox();
-            customLabel12 = new Componentes.CustomLabel();
-            customDatePicker1 = new Componentes.CustomDatePicker();
-            customLabel10 = new Componentes.CustomLabel();
+            customComboBox3 = new Componentes.CustomComboBox();
+            customRichTextBox1 = new Componentes.CustomRichTextBox();
             customComboBox4 = new Componentes.CustomComboBox();
+            customComboBox1 = new Componentes.CustomComboBox();
+            customDatePicker1 = new Componentes.CustomDatePicker();
+            customTextBox2 = new Componentes.CustomTextBox();
+            customTextBox4 = new Componentes.CustomTextBox();
+            customTextBox5 = new Componentes.CustomTextBox();
+            customLabel6 = new Componentes.CustomLabel();
             tableLayoutPanel7 = new TableLayoutPanel();
             customButton1 = new Componentes.CustomButton();
             customButton5 = new Componentes.CustomButton();
@@ -72,7 +72,6 @@
             customComboBox2 = new Componentes.CustomComboBox();
             customButton6 = new Componentes.CustomButton();
             customDataGridView1 = new Componentes.CustomDataGridView();
-            textBox1 = new TextBox();
             Tlp_divFormAndDgv.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -177,33 +176,32 @@
             // tableLayoutPanel6
             // 
             tableLayoutPanel6.ColumnCount = 4;
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
-            tableLayoutPanel6.Controls.Add(customTextBox7, 1, 5);
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33F));
+            tableLayoutPanel6.Controls.Add(customTextBox3, 1, 2);
             tableLayoutPanel6.Controls.Add(customLabel1, 0, 0);
             tableLayoutPanel6.Controls.Add(customLabel2, 2, 0);
             tableLayoutPanel6.Controls.Add(customLabel3, 0, 1);
             tableLayoutPanel6.Controls.Add(customLabel4, 2, 1);
-            tableLayoutPanel6.Controls.Add(customTextBox2, 3, 2);
             tableLayoutPanel6.Controls.Add(customLabel5, 0, 2);
-            tableLayoutPanel6.Controls.Add(customLabel6, 2, 2);
             tableLayoutPanel6.Controls.Add(customLabel7, 0, 3);
             tableLayoutPanel6.Controls.Add(customLabel9, 0, 4);
             tableLayoutPanel6.Controls.Add(customLabel11, 0, 5);
+            tableLayoutPanel6.Controls.Add(customLabel12, 2, 5);
+            tableLayoutPanel6.Controls.Add(customLabel10, 2, 4);
             tableLayoutPanel6.Controls.Add(customidTextBox1, 1, 0);
             tableLayoutPanel6.Controls.Add(customTextBox1, 1, 1);
-            tableLayoutPanel6.Controls.Add(customTextBox3, 1, 2);
-            tableLayoutPanel6.Controls.Add(customTextBox4, 3, 0);
-            tableLayoutPanel6.Controls.Add(customComboBox1, 1, 3);
-            tableLayoutPanel6.Controls.Add(customTextBox5, 3, 1);
-            tableLayoutPanel6.Controls.Add(customTextBox6, 1, 4);
-            tableLayoutPanel6.Controls.Add(customLabel12, 2, 5);
-            tableLayoutPanel6.Controls.Add(customDatePicker1, 3, 5);
-            tableLayoutPanel6.Controls.Add(customLabel10, 2, 4);
+            tableLayoutPanel6.Controls.Add(customComboBox3, 1, 3);
+            tableLayoutPanel6.Controls.Add(customRichTextBox1, 3, 2);
             tableLayoutPanel6.Controls.Add(customComboBox4, 3, 4);
-            tableLayoutPanel6.Controls.Add(textBox1, 3, 3);
+            tableLayoutPanel6.Controls.Add(customComboBox1, 3, 0);
+            tableLayoutPanel6.Controls.Add(customDatePicker1, 3, 5);
+            tableLayoutPanel6.Controls.Add(customTextBox2, 1, 4);
+            tableLayoutPanel6.Controls.Add(customTextBox4, 1, 5);
+            tableLayoutPanel6.Controls.Add(customTextBox5, 3, 1);
+            tableLayoutPanel6.Controls.Add(customLabel6, 2, 2);
             tableLayoutPanel6.Dock = DockStyle.Fill;
             tableLayoutPanel6.Location = new Point(0, 0);
             tableLayoutPanel6.Margin = new Padding(0);
@@ -218,30 +216,31 @@
             tableLayoutPanel6.Size = new Size(765, 300);
             tableLayoutPanel6.TabIndex = 0;
             // 
-            // customTextBox7
+            // customTextBox3
             // 
-            customTextBox7.Anchor = AnchorStyles.None;
-            customTextBox7.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox7.Location = new Point(152, 260);
-            customTextBox7.Margin = new Padding(0);
-            customTextBox7.MaximumSize = new Size(190, 30);
-            customTextBox7.MinimumSize = new Size(190, 30);
-            customTextBox7.Name = "customTextBox7";
-            customTextBox7.Padding = new Padding(1);
-            customTextBox7.PlaceholderText = "2D DOB, 2D SUB";
-            customTextBox7.Size = new Size(190, 30);
-            customTextBox7.TabIndex = 37;
+            customTextBox3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customTextBox3.BackColor = Color.FromArgb(55, 60, 72);
+            customTextBox3.BorderStyle = BorderStyle.FixedSingle;
+            customTextBox3.Font = new Font("Segoe UI", 10F);
+            customTextBox3.ForeColor = Color.FromArgb(160, 165, 175);
+            customTextBox3.Location = new Point(135, 110);
+            customTextBox3.Margin = new Padding(5);
+            customTextBox3.MinimumSize = new Size(190, 30);
+            customTextBox3.Name = "customTextBox3";
+            customTextBox3.PlaceholderText = "asd";
+            customTextBox3.Size = new Size(242, 30);
+            customTextBox3.TabIndex = 42;
             // 
             // customLabel1
             // 
             customLabel1.AutoSize = true;
+            customLabel1.Dock = DockStyle.Fill;
             customLabel1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             customLabel1.ForeColor = Color.FromArgb(220, 220, 220);
             customLabel1.Location = new Point(3, 0);
-            customLabel1.MinimumSize = new Size(125, 50);
             customLabel1.Name = "customLabel1";
             customLabel1.Padding = new Padding(0, 0, 8, 0);
-            customLabel1.Size = new Size(125, 50);
+            customLabel1.Size = new Size(124, 50);
             customLabel1.TabIndex = 11;
             customLabel1.Text = "ID Pelicula";
             customLabel1.TextAlign = ContentAlignment.MiddleRight;
@@ -249,13 +248,13 @@
             // customLabel2
             // 
             customLabel2.AutoSize = true;
+            customLabel2.Dock = DockStyle.Fill;
             customLabel2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             customLabel2.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel2.Location = new Point(384, 0);
-            customLabel2.MinimumSize = new Size(125, 50);
+            customLabel2.Location = new Point(385, 0);
             customLabel2.Name = "customLabel2";
             customLabel2.Padding = new Padding(0, 0, 8, 0);
-            customLabel2.Size = new Size(125, 50);
+            customLabel2.Size = new Size(124, 50);
             customLabel2.TabIndex = 12;
             customLabel2.Text = "Director";
             customLabel2.TextAlign = ContentAlignment.MiddleRight;
@@ -263,13 +262,13 @@
             // customLabel3
             // 
             customLabel3.AutoSize = true;
+            customLabel3.Dock = DockStyle.Fill;
             customLabel3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             customLabel3.ForeColor = Color.FromArgb(220, 220, 220);
             customLabel3.Location = new Point(3, 50);
-            customLabel3.MinimumSize = new Size(125, 50);
             customLabel3.Name = "customLabel3";
             customLabel3.Padding = new Padding(0, 0, 8, 0);
-            customLabel3.Size = new Size(125, 50);
+            customLabel3.Size = new Size(124, 50);
             customLabel3.TabIndex = 13;
             customLabel3.Text = "Titulo";
             customLabel3.TextAlign = ContentAlignment.MiddleRight;
@@ -277,69 +276,41 @@
             // customLabel4
             // 
             customLabel4.AutoSize = true;
+            customLabel4.Dock = DockStyle.Fill;
             customLabel4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             customLabel4.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel4.Location = new Point(384, 50);
-            customLabel4.MinimumSize = new Size(125, 50);
+            customLabel4.Location = new Point(385, 50);
             customLabel4.Name = "customLabel4";
             customLabel4.Padding = new Padding(0, 0, 8, 0);
-            customLabel4.Size = new Size(125, 50);
+            customLabel4.Size = new Size(124, 50);
             customLabel4.TabIndex = 14;
             customLabel4.Text = "Trailer";
             customLabel4.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // customTextBox2
-            // 
-            customTextBox2.Anchor = AnchorStyles.None;
-            customTextBox2.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox2.Location = new Point(535, 110);
-            customTextBox2.Margin = new Padding(0);
-            customTextBox2.MaximumSize = new Size(190, 30);
-            customTextBox2.MinimumSize = new Size(190, 30);
-            customTextBox2.Name = "customTextBox2";
-            customTextBox2.Padding = new Padding(1);
-            customTextBox2.PlaceholderText = "...";
-            customTextBox2.Size = new Size(190, 30);
-            customTextBox2.TabIndex = 34;
-            // 
             // customLabel5
             // 
             customLabel5.AutoSize = true;
+            customLabel5.Dock = DockStyle.Fill;
             customLabel5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             customLabel5.ForeColor = Color.FromArgb(220, 220, 220);
             customLabel5.Location = new Point(3, 100);
-            customLabel5.MinimumSize = new Size(125, 50);
             customLabel5.Name = "customLabel5";
             customLabel5.Padding = new Padding(0, 0, 8, 0);
-            customLabel5.Size = new Size(125, 50);
+            customLabel5.Size = new Size(124, 50);
             customLabel5.TabIndex = 15;
             customLabel5.Text = "Duración (mínutos)";
             customLabel5.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // customLabel6
-            // 
-            customLabel6.AutoSize = true;
-            customLabel6.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customLabel6.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel6.Location = new Point(384, 100);
-            customLabel6.MinimumSize = new Size(125, 50);
-            customLabel6.Name = "customLabel6";
-            customLabel6.Padding = new Padding(0, 0, 8, 0);
-            customLabel6.Size = new Size(125, 50);
-            customLabel6.TabIndex = 16;
-            customLabel6.Text = "Descripción";
-            customLabel6.TextAlign = ContentAlignment.MiddleRight;
-            // 
             // customLabel7
             // 
             customLabel7.AutoSize = true;
+            customLabel7.Dock = DockStyle.Fill;
             customLabel7.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             customLabel7.ForeColor = Color.FromArgb(220, 220, 220);
             customLabel7.Location = new Point(3, 150);
-            customLabel7.MinimumSize = new Size(125, 50);
             customLabel7.Name = "customLabel7";
             customLabel7.Padding = new Padding(0, 0, 8, 0);
-            customLabel7.Size = new Size(125, 50);
+            customLabel7.Size = new Size(124, 49);
             customLabel7.TabIndex = 17;
             customLabel7.Text = "Clasificación";
             customLabel7.TextAlign = ContentAlignment.MiddleRight;
@@ -347,13 +318,13 @@
             // customLabel9
             // 
             customLabel9.AutoSize = true;
+            customLabel9.Dock = DockStyle.Fill;
             customLabel9.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             customLabel9.ForeColor = Color.FromArgb(220, 220, 220);
             customLabel9.Location = new Point(3, 199);
-            customLabel9.MinimumSize = new Size(125, 50);
             customLabel9.Name = "customLabel9";
             customLabel9.Padding = new Padding(0, 0, 8, 0);
-            customLabel9.Size = new Size(125, 50);
+            customLabel9.Size = new Size(124, 51);
             customLabel9.TabIndex = 19;
             customLabel9.Text = "Generos";
             customLabel9.TextAlign = ContentAlignment.MiddleRight;
@@ -361,175 +332,217 @@
             // customLabel11
             // 
             customLabel11.AutoSize = true;
+            customLabel11.Dock = DockStyle.Fill;
             customLabel11.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             customLabel11.ForeColor = Color.FromArgb(220, 220, 220);
             customLabel11.Location = new Point(3, 250);
-            customLabel11.MinimumSize = new Size(125, 50);
             customLabel11.Name = "customLabel11";
             customLabel11.Padding = new Padding(0, 0, 8, 0);
-            customLabel11.Size = new Size(125, 50);
+            customLabel11.Size = new Size(124, 50);
             customLabel11.TabIndex = 21;
             customLabel11.Text = "Formatos";
             customLabel11.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // customidTextBox1
-            // 
-            customidTextBox1.Anchor = AnchorStyles.None;
-            customidTextBox1.BackColor = Color.FromArgb(45, 49, 60);
-            customidTextBox1.Location = new Point(152, 10);
-            customidTextBox1.Margin = new Padding(0);
-            customidTextBox1.MinimumSize = new Size(190, 30);
-            customidTextBox1.Name = "customidTextBox1";
-            customidTextBox1.Padding = new Padding(1);
-            customidTextBox1.Size = new Size(190, 30);
-            customidTextBox1.TabIndex = 23;
-            // 
-            // customTextBox1
-            // 
-            customTextBox1.Anchor = AnchorStyles.None;
-            customTextBox1.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox1.Location = new Point(152, 60);
-            customTextBox1.Margin = new Padding(0);
-            customTextBox1.MaximumSize = new Size(190, 30);
-            customTextBox1.MinimumSize = new Size(190, 30);
-            customTextBox1.Name = "customTextBox1";
-            customTextBox1.Padding = new Padding(1);
-            customTextBox1.PlaceholderText = "Ejemplo";
-            customTextBox1.Size = new Size(190, 30);
-            customTextBox1.TabIndex = 24;
-            // 
-            // customTextBox3
-            // 
-            customTextBox3.Anchor = AnchorStyles.None;
-            customTextBox3.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox3.Location = new Point(152, 110);
-            customTextBox3.Margin = new Padding(0);
-            customTextBox3.MaximumSize = new Size(190, 30);
-            customTextBox3.MinimumSize = new Size(190, 30);
-            customTextBox3.Name = "customTextBox3";
-            customTextBox3.Padding = new Padding(1);
-            customTextBox3.PlaceholderText = "120";
-            customTextBox3.Size = new Size(190, 30);
-            customTextBox3.TabIndex = 25;
-            // 
-            // customTextBox4
-            // 
-            customTextBox4.Anchor = AnchorStyles.None;
-            customTextBox4.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox4.Location = new Point(535, 10);
-            customTextBox4.Margin = new Padding(0);
-            customTextBox4.MaximumSize = new Size(190, 30);
-            customTextBox4.MinimumSize = new Size(190, 30);
-            customTextBox4.Name = "customTextBox4";
-            customTextBox4.Padding = new Padding(1);
-            customTextBox4.PlaceholderText = "Ejemplo";
-            customTextBox4.Size = new Size(190, 30);
-            customTextBox4.TabIndex = 26;
-            // 
-            // customComboBox1
-            // 
-            customComboBox1.Anchor = AnchorStyles.None;
-            customComboBox1.BackColor = Color.FromArgb(55, 60, 72);
-            customComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            customComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            customComboBox1.FlatStyle = FlatStyle.Flat;
-            customComboBox1.Font = new Font("Segoe UI", 9F);
-            customComboBox1.ForeColor = Color.FromArgb(230, 230, 230);
-            customComboBox1.FormattingEnabled = true;
-            customComboBox1.ItemHeight = 26;
-            customComboBox1.Location = new Point(152, 158);
-            customComboBox1.Margin = new Padding(5);
-            customComboBox1.MinimumSize = new Size(190, 0);
-            customComboBox1.Name = "customComboBox1";
-            customComboBox1.Size = new Size(190, 32);
-            customComboBox1.TabIndex = 28;
-            // 
-            // customTextBox5
-            // 
-            customTextBox5.Anchor = AnchorStyles.None;
-            customTextBox5.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox5.Location = new Point(535, 60);
-            customTextBox5.Margin = new Padding(0);
-            customTextBox5.MaximumSize = new Size(190, 30);
-            customTextBox5.MinimumSize = new Size(190, 30);
-            customTextBox5.Name = "customTextBox5";
-            customTextBox5.Padding = new Padding(1);
-            customTextBox5.PlaceholderText = "https://www.youtube.com/watch?v=1q8P71XzgQo";
-            customTextBox5.Size = new Size(190, 30);
-            customTextBox5.TabIndex = 27;
-            // 
-            // customTextBox6
-            // 
-            customTextBox6.Anchor = AnchorStyles.None;
-            customTextBox6.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox6.Location = new Point(152, 209);
-            customTextBox6.Margin = new Padding(0);
-            customTextBox6.MaximumSize = new Size(190, 30);
-            customTextBox6.MinimumSize = new Size(190, 30);
-            customTextBox6.Name = "customTextBox6";
-            customTextBox6.Padding = new Padding(1);
-            customTextBox6.PlaceholderText = "Comedia, Animada";
-            customTextBox6.Size = new Size(190, 30);
-            customTextBox6.TabIndex = 36;
-            // 
             // customLabel12
             // 
             customLabel12.AutoSize = true;
+            customLabel12.Dock = DockStyle.Fill;
             customLabel12.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             customLabel12.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel12.Location = new Point(384, 250);
-            customLabel12.MinimumSize = new Size(125, 50);
+            customLabel12.Location = new Point(385, 250);
             customLabel12.Name = "customLabel12";
             customLabel12.Padding = new Padding(0, 0, 8, 0);
-            customLabel12.Size = new Size(125, 50);
+            customLabel12.Size = new Size(124, 50);
             customLabel12.TabIndex = 22;
             customLabel12.Text = "Fecha de Estreno";
             customLabel12.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // customDatePicker1
-            // 
-            customDatePicker1.Anchor = AnchorStyles.None;
-            customDatePicker1.BackColor = Color.FromArgb(55, 60, 72);
-            customDatePicker1.Location = new Point(535, 260);
-            customDatePicker1.Margin = new Padding(5);
-            customDatePicker1.MaximumSize = new Size(190, 30);
-            customDatePicker1.MinimumSize = new Size(190, 30);
-            customDatePicker1.Name = "customDatePicker1";
-            customDatePicker1.Padding = new Padding(1);
-            customDatePicker1.Size = new Size(190, 30);
-            customDatePicker1.TabIndex = 33;
-            // 
             // customLabel10
             // 
             customLabel10.AutoSize = true;
+            customLabel10.Dock = DockStyle.Fill;
             customLabel10.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             customLabel10.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel10.Location = new Point(384, 199);
-            customLabel10.MinimumSize = new Size(125, 50);
+            customLabel10.Location = new Point(385, 199);
             customLabel10.Name = "customLabel10";
             customLabel10.Padding = new Padding(0, 0, 8, 0);
-            customLabel10.Size = new Size(125, 50);
+            customLabel10.Size = new Size(124, 51);
             customLabel10.TabIndex = 20;
             customLabel10.Text = "Estado";
             customLabel10.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // customidTextBox1
+            // 
+            customidTextBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customidTextBox1.BackColor = Color.FromArgb(45, 49, 60);
+            customidTextBox1.BorderStyle = BorderStyle.FixedSingle;
+            customidTextBox1.Font = new Font("Segoe UI", 10F);
+            customidTextBox1.ForeColor = Color.FromArgb(160, 165, 175);
+            customidTextBox1.Location = new Point(135, 10);
+            customidTextBox1.Margin = new Padding(5);
+            customidTextBox1.MinimumSize = new Size(190, 30);
+            customidTextBox1.Name = "customidTextBox1";
+            customidTextBox1.ReadOnly = true;
+            customidTextBox1.Size = new Size(242, 30);
+            customidTextBox1.TabIndex = 39;
+            customidTextBox1.TabStop = false;
+            // 
+            // customTextBox1
+            // 
+            customTextBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customTextBox1.BackColor = Color.FromArgb(55, 60, 72);
+            customTextBox1.BorderStyle = BorderStyle.FixedSingle;
+            customTextBox1.Font = new Font("Segoe UI", 10F);
+            customTextBox1.ForeColor = Color.FromArgb(160, 165, 175);
+            customTextBox1.Location = new Point(135, 60);
+            customTextBox1.Margin = new Padding(5);
+            customTextBox1.MinimumSize = new Size(190, 30);
+            customTextBox1.Name = "customTextBox1";
+            customTextBox1.PlaceholderText = "asd";
+            customTextBox1.Size = new Size(242, 30);
+            customTextBox1.TabIndex = 40;
+            // 
+            // customComboBox3
+            // 
+            customComboBox3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customComboBox3.BackColor = Color.FromArgb(55, 60, 72);
+            customComboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
+            customComboBox3.FlatStyle = FlatStyle.Flat;
+            customComboBox3.Font = new Font("Segoe UI", 9F);
+            customComboBox3.ForeColor = Color.FromArgb(230, 230, 230);
+            customComboBox3.FormattingEnabled = true;
+            customComboBox3.ItemHeight = 20;
+            customComboBox3.Location = new Point(135, 160);
+            customComboBox3.Margin = new Padding(5);
+            customComboBox3.MinimumSize = new Size(190, 0);
+            customComboBox3.Name = "customComboBox3";
+            customComboBox3.Size = new Size(242, 28);
+            customComboBox3.TabIndex = 41;
+            // 
+            // customRichTextBox1
+            // 
+            customRichTextBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            customRichTextBox1.BackColor = Color.FromArgb(55, 60, 72);
+            customRichTextBox1.BorderStyle = BorderStyle.FixedSingle;
+            customRichTextBox1.Font = new Font("Segoe UI", 10F);
+            customRichTextBox1.ForeColor = Color.FromArgb(230, 230, 230);
+            customRichTextBox1.Location = new Point(517, 105);
+            customRichTextBox1.Margin = new Padding(5);
+            customRichTextBox1.MinimumSize = new Size(190, 60);
+            customRichTextBox1.Name = "customRichTextBox1";
+            tableLayoutPanel6.SetRowSpan(customRichTextBox1, 2);
+            customRichTextBox1.Size = new Size(243, 89);
+            customRichTextBox1.TabIndex = 43;
+            customRichTextBox1.Text = "";
+            // 
             // customComboBox4
             // 
-            customComboBox4.Anchor = AnchorStyles.None;
+            customComboBox4.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             customComboBox4.BackColor = Color.FromArgb(55, 60, 72);
-            customComboBox4.DrawMode = DrawMode.OwnerDrawFixed;
             customComboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
             customComboBox4.FlatStyle = FlatStyle.Flat;
             customComboBox4.Font = new Font("Segoe UI", 9F);
             customComboBox4.ForeColor = Color.FromArgb(230, 230, 230);
             customComboBox4.FormattingEnabled = true;
-            customComboBox4.ItemHeight = 26;
-            customComboBox4.Location = new Point(535, 208);
+            customComboBox4.ItemHeight = 20;
+            customComboBox4.Location = new Point(517, 210);
             customComboBox4.Margin = new Padding(5);
             customComboBox4.MinimumSize = new Size(190, 0);
             customComboBox4.Name = "customComboBox4";
-            customComboBox4.Size = new Size(190, 32);
-            customComboBox4.TabIndex = 32;
+            customComboBox4.Size = new Size(243, 28);
+            customComboBox4.TabIndex = 44;
+            // 
+            // customComboBox1
+            // 
+            customComboBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customComboBox1.BackColor = Color.FromArgb(55, 60, 72);
+            customComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            customComboBox1.FlatStyle = FlatStyle.Flat;
+            customComboBox1.Font = new Font("Segoe UI", 9F);
+            customComboBox1.ForeColor = Color.FromArgb(230, 230, 230);
+            customComboBox1.FormattingEnabled = true;
+            customComboBox1.ItemHeight = 20;
+            customComboBox1.Location = new Point(517, 11);
+            customComboBox1.Margin = new Padding(5);
+            customComboBox1.MinimumSize = new Size(190, 0);
+            customComboBox1.Name = "customComboBox1";
+            customComboBox1.Size = new Size(243, 28);
+            customComboBox1.TabIndex = 45;
+            // 
+            // customDatePicker1
+            // 
+            customDatePicker1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customDatePicker1.CalendarForeColor = Color.FromArgb(230, 230, 230);
+            customDatePicker1.CalendarMonthBackground = Color.FromArgb(55, 60, 72);
+            customDatePicker1.CalendarTitleBackColor = Color.FromArgb(41, 128, 185);
+            customDatePicker1.CalendarTitleForeColor = Color.White;
+            customDatePicker1.CalendarTrailingForeColor = Color.FromArgb(150, 150, 150);
+            customDatePicker1.CustomFormat = "dd/MM/yyyy";
+            customDatePicker1.Font = new Font("Segoe UI", 9.5F);
+            customDatePicker1.Format = DateTimePickerFormat.Custom;
+            customDatePicker1.Location = new Point(517, 260);
+            customDatePicker1.Margin = new Padding(5);
+            customDatePicker1.MinimumSize = new Size(190, 30);
+            customDatePicker1.Name = "customDatePicker1";
+            customDatePicker1.Size = new Size(243, 30);
+            customDatePicker1.TabIndex = 46;
+            // 
+            // customTextBox2
+            // 
+            customTextBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customTextBox2.BackColor = Color.FromArgb(55, 60, 72);
+            customTextBox2.BorderStyle = BorderStyle.FixedSingle;
+            customTextBox2.Font = new Font("Segoe UI", 10F);
+            customTextBox2.ForeColor = Color.FromArgb(230, 230, 230);
+            customTextBox2.Location = new Point(135, 209);
+            customTextBox2.Margin = new Padding(5);
+            customTextBox2.MinimumSize = new Size(190, 30);
+            customTextBox2.Name = "customTextBox2";
+            customTextBox2.Size = new Size(242, 30);
+            customTextBox2.TabIndex = 47;
+            // 
+            // customTextBox4
+            // 
+            customTextBox4.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customTextBox4.BackColor = Color.FromArgb(55, 60, 72);
+            customTextBox4.BorderStyle = BorderStyle.FixedSingle;
+            customTextBox4.Font = new Font("Segoe UI", 10F);
+            customTextBox4.ForeColor = Color.FromArgb(230, 230, 230);
+            customTextBox4.Location = new Point(135, 260);
+            customTextBox4.Margin = new Padding(5);
+            customTextBox4.MinimumSize = new Size(190, 30);
+            customTextBox4.Name = "customTextBox4";
+            customTextBox4.Size = new Size(242, 30);
+            customTextBox4.TabIndex = 48;
+            // 
+            // customTextBox5
+            // 
+            customTextBox5.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customTextBox5.BackColor = Color.FromArgb(55, 60, 72);
+            customTextBox5.BorderStyle = BorderStyle.FixedSingle;
+            customTextBox5.Font = new Font("Segoe UI", 10F);
+            customTextBox5.ForeColor = Color.FromArgb(160, 165, 175);
+            customTextBox5.Location = new Point(517, 60);
+            customTextBox5.Margin = new Padding(5);
+            customTextBox5.MinimumSize = new Size(190, 30);
+            customTextBox5.Name = "customTextBox5";
+            customTextBox5.PlaceholderText = "https://www.youtube.com/watch?v=1q8P71XzgQo";
+            customTextBox5.Size = new Size(243, 30);
+            customTextBox5.TabIndex = 49;
+            // 
+            // customLabel6
+            // 
+            customLabel6.AutoSize = true;
+            customLabel6.Dock = DockStyle.Fill;
+            customLabel6.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            customLabel6.ForeColor = Color.FromArgb(220, 220, 220);
+            customLabel6.Location = new Point(385, 100);
+            customLabel6.Name = "customLabel6";
+            customLabel6.Padding = new Padding(0, 0, 8, 0);
+            customLabel6.Size = new Size(124, 50);
+            customLabel6.TabIndex = 50;
+            customLabel6.Text = "Descripción";
+            customLabel6.TextAlign = ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel7
             // 
@@ -705,12 +718,14 @@
             // 
             customTextBox8.Anchor = AnchorStyles.None;
             customTextBox8.BackColor = Color.FromArgb(55, 60, 72);
+            customTextBox8.BorderStyle = BorderStyle.FixedSingle;
+            customTextBox8.Font = new Font("Segoe UI", 10F);
+            customTextBox8.ForeColor = Color.FromArgb(230, 230, 230);
             customTextBox8.Location = new Point(205, 22);
             customTextBox8.Margin = new Padding(0);
             customTextBox8.MaximumSize = new Size(190, 30);
             customTextBox8.MinimumSize = new Size(190, 30);
             customTextBox8.Name = "customTextBox8";
-            customTextBox8.Padding = new Padding(1);
             customTextBox8.Size = new Size(190, 30);
             customTextBox8.TabIndex = 37;
             // 
@@ -758,35 +773,35 @@
             customDataGridView1.AllowUserToAddRows = false;
             customDataGridView1.AllowUserToResizeColumns = false;
             customDataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(50, 55, 66);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            customDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(50, 55, 66);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            customDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             customDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             customDataGridView1.BackgroundColor = Color.FromArgb(55, 60, 72);
             customDataGridView1.BorderStyle = BorderStyle.None;
             customDataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             customDataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.Padding = new Padding(8, 0, 0, 0);
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            customDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.Padding = new Padding(8, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            customDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             customDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(55, 60, 72);
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9.5F);
-            dataGridViewCellStyle9.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle9.Padding = new Padding(8, 0, 5, 0);
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle9.SelectionForeColor = Color.White;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
-            customDataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(55, 60, 72);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.5F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle3.Padding = new Padding(8, 0, 5, 0);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            customDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             customDataGridView1.Dock = DockStyle.Fill;
             customDataGridView1.EnableHeadersVisualStyles = false;
             customDataGridView1.Font = new Font("Segoe UI", 9.5F);
@@ -802,13 +817,6 @@
             customDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             customDataGridView1.Size = new Size(1050, 175);
             customDataGridView1.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(498, 153);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 38;
             // 
             // FrBorrador
             // 
@@ -841,28 +849,16 @@
         private TableLayoutPanel tableLayoutPanel5;
         private Componentes.CustomButton customButton2;
         private TableLayoutPanel tableLayoutPanel6;
-        private Componentes.CustomTextBox customTextBox7;
         private Componentes.CustomLabel customLabel1;
         private Componentes.CustomLabel customLabel2;
         private Componentes.CustomLabel customLabel3;
         private Componentes.CustomLabel customLabel4;
-        private Componentes.CustomTextBox customTextBox2;
         private Componentes.CustomLabel customLabel5;
-        private Componentes.CustomLabel customLabel6;
         private Componentes.CustomLabel customLabel7;
         private Componentes.CustomLabel customLabel9;
         private Componentes.CustomLabel customLabel11;
-        private Componentes.CustomIDTextBox customidTextBox1;
-        private Componentes.CustomTextBox customTextBox1;
-        private Componentes.CustomTextBox customTextBox3;
-        private Componentes.CustomTextBox customTextBox4;
-        private Componentes.CustomComboBox customComboBox1;
-        private Componentes.CustomTextBox customTextBox5;
-        private Componentes.CustomTextBox customTextBox6;
         private Componentes.CustomLabel customLabel12;
-        private Componentes.CustomDatePicker customDatePicker1;
         private Componentes.CustomLabel customLabel10;
-        private Componentes.CustomComboBox customComboBox4;
         private TableLayoutPanel tableLayoutPanel7;
         private Componentes.CustomButton customButton1;
         private Componentes.CustomButton customButton5;
@@ -876,6 +872,17 @@
         private Componentes.CustomComboBox customComboBox2;
         private Componentes.CustomButton customButton6;
         private Componentes.CustomDataGridView customDataGridView1;
-        private TextBox textBox1;
+        private Componentes.CustomIDTextBox customidTextBox1;
+        private Componentes.CustomTextBox customTextBox1;
+        private Componentes.CustomTextBox customTextBox3;
+        private Componentes.CustomComboBox customComboBox3;
+        private Componentes.CustomRichTextBox customRichTextBox1;
+        private Componentes.CustomComboBox customComboBox4;
+        private Componentes.CustomComboBox customComboBox1;
+        private Componentes.CustomDatePicker customDatePicker1;
+        private Componentes.CustomTextBox customTextBox2;
+        private Componentes.CustomTextBox customTextBox4;
+        private Componentes.CustomTextBox customTextBox5;
+        private Componentes.CustomLabel customLabel6;
     }
 }
