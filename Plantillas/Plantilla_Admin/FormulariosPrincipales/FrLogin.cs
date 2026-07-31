@@ -46,7 +46,15 @@ namespace Plantilla_Cliente
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             FrMenuAdmin menu = new FrMenuAdmin();
-            menu.FormClosed += (s, args) => this.Close();   
+            menu.FormClosed += (s, args) => this.Close();
+            this.Hide();
+            menu.Show();
+        }
+
+        private void BtnIngresar_Click_1(object sender, EventArgs e)
+        {
+            FrMenuAdmin menu = new FrMenuAdmin();
+            menu.FormClosed += (s, args) => this.Close();
             this.Hide();
             menu.Show();
         }

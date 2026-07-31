@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             TlpDivFormAndDgv = new TableLayoutPanel();
             TlpAux1 = new TableLayoutPanel();
             TlpAux2 = new TableLayoutPanel();
@@ -60,7 +60,7 @@
             TbFormatos = new Componentes.CustomIDTextBox();
             CbEstado = new Componentes.CustomComboBox();
             TlpButtons = new TableLayoutPanel();
-            BtnIngresar = new Componentes.CustomButton();
+            BtnAgregar = new Componentes.CustomButton();
             BtnEliminar = new Componentes.CustomButton();
             BtnCopiar = new Componentes.CustomButton();
             BtnActualizar = new Componentes.CustomButton();
@@ -122,7 +122,7 @@
             // 
             TlpAux2.ColumnCount = 3;
             TlpAux2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            TlpAux2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 875F));
+            TlpAux2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 873F));
             TlpAux2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             TlpAux2.Controls.Add(TlpFormWithButtons, 1, 0);
             TlpAux2.Dock = DockStyle.Fill;
@@ -143,13 +143,13 @@
             TlpFormWithButtons.Controls.Add(TlpForm, 0, 0);
             TlpFormWithButtons.Controls.Add(TlpButtons, 0, 1);
             TlpFormWithButtons.Dock = DockStyle.Fill;
-            TlpFormWithButtons.Location = new Point(87, 0);
+            TlpFormWithButtons.Location = new Point(88, 0);
             TlpFormWithButtons.Margin = new Padding(0);
             TlpFormWithButtons.Name = "TlpFormWithButtons";
             TlpFormWithButtons.RowCount = 2;
             TlpFormWithButtons.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpFormWithButtons.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
-            TlpFormWithButtons.Size = new Size(875, 375);
+            TlpFormWithButtons.Size = new Size(873, 375);
             TlpFormWithButtons.TabIndex = 0;
             // 
             // BtnLimpiar
@@ -163,7 +163,7 @@
             BtnLimpiar.FlatStyle = FlatStyle.Flat;
             BtnLimpiar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BtnLimpiar.ForeColor = Color.White;
-            BtnLimpiar.Location = new Point(775, 10);
+            BtnLimpiar.Location = new Point(773, 10);
             BtnLimpiar.Margin = new Padding(0, 10, 0, 0);
             BtnLimpiar.MaximumSize = new Size(100, 40);
             BtnLimpiar.MinimumSize = new Size(100, 40);
@@ -213,7 +213,7 @@
             TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 49F));
             TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 51F));
             TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            TlpForm.Size = new Size(765, 300);
+            TlpForm.Size = new Size(763, 300);
             TlpForm.TabIndex = 0;
             // 
             // LbID
@@ -226,7 +226,7 @@
             LbID.Margin = new Padding(3, 0, 0, 0);
             LbID.Name = "LbID";
             LbID.Padding = new Padding(0, 0, 2, 0);
-            LbID.Size = new Size(127, 50);
+            LbID.Size = new Size(126, 50);
             LbID.TabIndex = 11;
             LbID.Text = "ID Pelicula";
             LbID.TextAlign = ContentAlignment.MiddleRight;
@@ -237,11 +237,11 @@
             LbDirector.Dock = DockStyle.Fill;
             LbDirector.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbDirector.ForeColor = Color.FromArgb(220, 220, 220);
-            LbDirector.Location = new Point(385, 0);
+            LbDirector.Location = new Point(383, 0);
             LbDirector.Margin = new Padding(3, 0, 0, 0);
             LbDirector.Name = "LbDirector";
             LbDirector.Padding = new Padding(0, 0, 2, 0);
-            LbDirector.Size = new Size(127, 50);
+            LbDirector.Size = new Size(126, 50);
             LbDirector.TabIndex = 12;
             LbDirector.Text = "Director";
             LbDirector.TextAlign = ContentAlignment.MiddleRight;
@@ -256,7 +256,7 @@
             LbPelicula.Margin = new Padding(3, 0, 0, 0);
             LbPelicula.Name = "LbPelicula";
             LbPelicula.Padding = new Padding(0, 0, 2, 0);
-            LbPelicula.Size = new Size(127, 50);
+            LbPelicula.Size = new Size(126, 50);
             LbPelicula.TabIndex = 13;
             LbPelicula.Text = "Titulo";
             LbPelicula.TextAlign = ContentAlignment.MiddleRight;
@@ -267,11 +267,11 @@
             LbTrailer.Dock = DockStyle.Fill;
             LbTrailer.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbTrailer.ForeColor = Color.FromArgb(220, 220, 220);
-            LbTrailer.Location = new Point(385, 50);
+            LbTrailer.Location = new Point(383, 50);
             LbTrailer.Margin = new Padding(3, 0, 0, 0);
             LbTrailer.Name = "LbTrailer";
             LbTrailer.Padding = new Padding(0, 0, 2, 0);
-            LbTrailer.Size = new Size(127, 50);
+            LbTrailer.Size = new Size(126, 50);
             LbTrailer.TabIndex = 14;
             LbTrailer.Text = "Trailer";
             LbTrailer.TextAlign = ContentAlignment.MiddleRight;
@@ -286,7 +286,7 @@
             LbDuracion.Margin = new Padding(3, 0, 0, 0);
             LbDuracion.Name = "LbDuracion";
             LbDuracion.Padding = new Padding(0, 0, 2, 0);
-            LbDuracion.Size = new Size(127, 50);
+            LbDuracion.Size = new Size(126, 50);
             LbDuracion.TabIndex = 15;
             LbDuracion.Text = "Duración(min)";
             LbDuracion.TextAlign = ContentAlignment.MiddleRight;
@@ -301,7 +301,7 @@
             LbClasificacion.Margin = new Padding(3, 0, 0, 0);
             LbClasificacion.Name = "LbClasificacion";
             LbClasificacion.Padding = new Padding(0, 0, 2, 0);
-            LbClasificacion.Size = new Size(127, 49);
+            LbClasificacion.Size = new Size(126, 49);
             LbClasificacion.TabIndex = 17;
             LbClasificacion.Text = "Clasificación";
             LbClasificacion.TextAlign = ContentAlignment.MiddleRight;
@@ -316,7 +316,7 @@
             LbGeneros.Margin = new Padding(3, 0, 0, 0);
             LbGeneros.Name = "LbGeneros";
             LbGeneros.Padding = new Padding(0, 0, 2, 0);
-            LbGeneros.Size = new Size(127, 51);
+            LbGeneros.Size = new Size(126, 51);
             LbGeneros.TabIndex = 19;
             LbGeneros.Text = "Generos";
             LbGeneros.TextAlign = ContentAlignment.MiddleRight;
@@ -331,7 +331,7 @@
             LbFormatos.Margin = new Padding(3, 0, 0, 0);
             LbFormatos.Name = "LbFormatos";
             LbFormatos.Padding = new Padding(0, 0, 2, 0);
-            LbFormatos.Size = new Size(127, 50);
+            LbFormatos.Size = new Size(126, 50);
             LbFormatos.TabIndex = 21;
             LbFormatos.Text = "Formatos";
             LbFormatos.TextAlign = ContentAlignment.MiddleRight;
@@ -342,11 +342,11 @@
             LbEstreno.Dock = DockStyle.Fill;
             LbEstreno.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbEstreno.ForeColor = Color.FromArgb(220, 220, 220);
-            LbEstreno.Location = new Point(385, 250);
+            LbEstreno.Location = new Point(383, 250);
             LbEstreno.Margin = new Padding(3, 0, 0, 0);
             LbEstreno.Name = "LbEstreno";
             LbEstreno.Padding = new Padding(0, 0, 2, 0);
-            LbEstreno.Size = new Size(127, 50);
+            LbEstreno.Size = new Size(126, 50);
             LbEstreno.TabIndex = 22;
             LbEstreno.Text = "Fecha de Estreno";
             LbEstreno.TextAlign = ContentAlignment.MiddleRight;
@@ -357,11 +357,11 @@
             LbEstado.Dock = DockStyle.Fill;
             LbEstado.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbEstado.ForeColor = Color.FromArgb(220, 220, 220);
-            LbEstado.Location = new Point(385, 199);
+            LbEstado.Location = new Point(383, 199);
             LbEstado.Margin = new Padding(3, 0, 0, 0);
             LbEstado.Name = "LbEstado";
             LbEstado.Padding = new Padding(0, 0, 2, 0);
-            LbEstado.Size = new Size(127, 51);
+            LbEstado.Size = new Size(126, 51);
             LbEstado.TabIndex = 20;
             LbEstado.Text = "Estado";
             LbEstado.TextAlign = ContentAlignment.MiddleRight;
@@ -376,11 +376,11 @@
             CbClasificacion.ForeColor = Color.FromArgb(230, 230, 230);
             CbClasificacion.FormattingEnabled = true;
             CbClasificacion.ItemHeight = 20;
-            CbClasificacion.Location = new Point(135, 160);
+            CbClasificacion.Location = new Point(134, 160);
             CbClasificacion.Margin = new Padding(5);
             CbClasificacion.MinimumSize = new Size(190, 0);
             CbClasificacion.Name = "CbClasificacion";
-            CbClasificacion.Size = new Size(242, 28);
+            CbClasificacion.Size = new Size(241, 28);
             CbClasificacion.TabIndex = 41;
             // 
             // DpEstreno
@@ -394,12 +394,12 @@
             DpEstreno.CustomFormat = "dd/MM/yyyy";
             DpEstreno.Font = new Font("Segoe UI", 9.5F);
             DpEstreno.Format = DateTimePickerFormat.Custom;
-            DpEstreno.Location = new Point(517, 260);
+            DpEstreno.Location = new Point(514, 260);
             DpEstreno.Margin = new Padding(5);
             DpEstreno.MaximumSize = new Size(0, 30);
             DpEstreno.MinimumSize = new Size(190, 30);
             DpEstreno.Name = "DpEstreno";
-            DpEstreno.Size = new Size(243, 30);
+            DpEstreno.Size = new Size(244, 30);
             DpEstreno.TabIndex = 46;
             // 
             // LbDescripcion
@@ -408,11 +408,11 @@
             LbDescripcion.Dock = DockStyle.Fill;
             LbDescripcion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbDescripcion.ForeColor = Color.FromArgb(220, 220, 220);
-            LbDescripcion.Location = new Point(385, 100);
+            LbDescripcion.Location = new Point(383, 100);
             LbDescripcion.Margin = new Padding(3, 0, 0, 0);
             LbDescripcion.Name = "LbDescripcion";
             LbDescripcion.Padding = new Padding(0, 0, 2, 0);
-            LbDescripcion.Size = new Size(127, 50);
+            LbDescripcion.Size = new Size(126, 50);
             LbDescripcion.TabIndex = 50;
             LbDescripcion.Text = "Descripción";
             LbDescripcion.TextAlign = ContentAlignment.MiddleRight;
@@ -424,12 +424,12 @@
             RtbDescripcion.BorderStyle = BorderStyle.FixedSingle;
             RtbDescripcion.Font = new Font("Segoe UI", 10F);
             RtbDescripcion.ForeColor = Color.FromArgb(230, 230, 230);
-            RtbDescripcion.Location = new Point(517, 105);
+            RtbDescripcion.Location = new Point(514, 105);
             RtbDescripcion.Margin = new Padding(5);
             RtbDescripcion.MinimumSize = new Size(190, 60);
             RtbDescripcion.Name = "RtbDescripcion";
             TlpForm.SetRowSpan(RtbDescripcion, 2);
-            RtbDescripcion.Size = new Size(243, 89);
+            RtbDescripcion.Size = new Size(244, 89);
             RtbDescripcion.TabIndex = 52;
             RtbDescripcion.Text = "";
             // 
@@ -440,13 +440,13 @@
             TbTitulo.BorderStyle = BorderStyle.FixedSingle;
             TbTitulo.Font = new Font("Segoe UI", 10F);
             TbTitulo.ForeColor = Color.FromArgb(160, 165, 175);
-            TbTitulo.Location = new Point(135, 60);
+            TbTitulo.Location = new Point(134, 60);
             TbTitulo.Margin = new Padding(5);
             TbTitulo.MaximumSize = new Size(0, 30);
             TbTitulo.MinimumSize = new Size(190, 30);
             TbTitulo.Name = "TbTitulo";
             TbTitulo.PlaceholderText = "Evil Dead";
-            TbTitulo.Size = new Size(242, 30);
+            TbTitulo.Size = new Size(241, 30);
             TbTitulo.TabIndex = 53;
             // 
             // TbDuracion
@@ -456,13 +456,13 @@
             TbDuracion.BorderStyle = BorderStyle.FixedSingle;
             TbDuracion.Font = new Font("Segoe UI", 10F);
             TbDuracion.ForeColor = Color.FromArgb(160, 165, 175);
-            TbDuracion.Location = new Point(135, 110);
+            TbDuracion.Location = new Point(134, 110);
             TbDuracion.Margin = new Padding(5);
             TbDuracion.MaximumSize = new Size(0, 30);
             TbDuracion.MinimumSize = new Size(190, 30);
             TbDuracion.Name = "TbDuracion";
             TbDuracion.PlaceholderText = "120";
-            TbDuracion.Size = new Size(242, 30);
+            TbDuracion.Size = new Size(241, 30);
             TbDuracion.TabIndex = 54;
             // 
             // TbDirector
@@ -472,12 +472,12 @@
             TbDirector.BorderStyle = BorderStyle.FixedSingle;
             TbDirector.Font = new Font("Segoe UI", 10F);
             TbDirector.ForeColor = Color.FromArgb(230, 230, 230);
-            TbDirector.Location = new Point(517, 10);
+            TbDirector.Location = new Point(514, 10);
             TbDirector.Margin = new Padding(5);
             TbDirector.MaximumSize = new Size(0, 30);
             TbDirector.MinimumSize = new Size(190, 30);
             TbDirector.Name = "TbDirector";
-            TbDirector.Size = new Size(243, 30);
+            TbDirector.Size = new Size(244, 30);
             TbDirector.TabIndex = 57;
             // 
             // TbTrailer
@@ -487,12 +487,12 @@
             TbTrailer.BorderStyle = BorderStyle.FixedSingle;
             TbTrailer.Font = new Font("Segoe UI", 10F);
             TbTrailer.ForeColor = Color.FromArgb(230, 230, 230);
-            TbTrailer.Location = new Point(517, 60);
+            TbTrailer.Location = new Point(514, 60);
             TbTrailer.Margin = new Padding(5);
             TbTrailer.MaximumSize = new Size(0, 30);
             TbTrailer.MinimumSize = new Size(190, 30);
             TbTrailer.Name = "TbTrailer";
-            TbTrailer.Size = new Size(243, 30);
+            TbTrailer.Size = new Size(244, 30);
             TbTrailer.TabIndex = 59;
             // 
             // TbID
@@ -502,13 +502,13 @@
             TbID.BorderStyle = BorderStyle.FixedSingle;
             TbID.Font = new Font("Segoe UI", 10F);
             TbID.ForeColor = Color.FromArgb(120, 125, 135);
-            TbID.Location = new Point(135, 10);
+            TbID.Location = new Point(134, 10);
             TbID.Margin = new Padding(5);
             TbID.MaximumSize = new Size(0, 30);
             TbID.MinimumSize = new Size(190, 30);
             TbID.Name = "TbID";
             TbID.ReadOnly = true;
-            TbID.Size = new Size(242, 30);
+            TbID.Size = new Size(241, 30);
             TbID.TabIndex = 60;
             TbID.TabStop = false;
             // 
@@ -519,13 +519,13 @@
             TbGeneros.BorderStyle = BorderStyle.FixedSingle;
             TbGeneros.Font = new Font("Segoe UI", 10F);
             TbGeneros.ForeColor = Color.FromArgb(120, 125, 135);
-            TbGeneros.Location = new Point(135, 209);
+            TbGeneros.Location = new Point(134, 209);
             TbGeneros.Margin = new Padding(5);
             TbGeneros.MaximumSize = new Size(0, 30);
             TbGeneros.MinimumSize = new Size(190, 30);
             TbGeneros.Name = "TbGeneros";
             TbGeneros.ReadOnly = true;
-            TbGeneros.Size = new Size(242, 30);
+            TbGeneros.Size = new Size(241, 30);
             TbGeneros.TabIndex = 61;
             TbGeneros.TabStop = false;
             // 
@@ -536,13 +536,13 @@
             TbFormatos.BorderStyle = BorderStyle.FixedSingle;
             TbFormatos.Font = new Font("Segoe UI", 10F);
             TbFormatos.ForeColor = Color.FromArgb(120, 125, 135);
-            TbFormatos.Location = new Point(135, 260);
+            TbFormatos.Location = new Point(134, 260);
             TbFormatos.Margin = new Padding(5);
             TbFormatos.MaximumSize = new Size(0, 30);
             TbFormatos.MinimumSize = new Size(190, 30);
             TbFormatos.Name = "TbFormatos";
             TbFormatos.ReadOnly = true;
-            TbFormatos.Size = new Size(242, 30);
+            TbFormatos.Size = new Size(241, 30);
             TbFormatos.TabIndex = 62;
             TbFormatos.TabStop = false;
             // 
@@ -556,11 +556,11 @@
             CbEstado.ForeColor = Color.FromArgb(230, 230, 230);
             CbEstado.FormattingEnabled = true;
             CbEstado.ItemHeight = 20;
-            CbEstado.Location = new Point(517, 210);
+            CbEstado.Location = new Point(514, 210);
             CbEstado.Margin = new Padding(5);
             CbEstado.MinimumSize = new Size(190, 0);
             CbEstado.Name = "CbEstado";
-            CbEstado.Size = new Size(243, 28);
+            CbEstado.Size = new Size(244, 28);
             CbEstado.TabIndex = 63;
             // 
             // TlpButtons
@@ -573,7 +573,7 @@
             TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
             TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
             TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            TlpButtons.Controls.Add(BtnIngresar, 1, 0);
+            TlpButtons.Controls.Add(BtnAgregar, 1, 0);
             TlpButtons.Controls.Add(BtnEliminar, 4, 0);
             TlpButtons.Controls.Add(BtnCopiar, 2, 0);
             TlpButtons.Controls.Add(BtnActualizar, 3, 0);
@@ -583,28 +583,28 @@
             TlpButtons.Name = "TlpButtons";
             TlpButtons.RowCount = 1;
             TlpButtons.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TlpButtons.Size = new Size(875, 75);
+            TlpButtons.Size = new Size(873, 75);
             TlpButtons.TabIndex = 3;
             // 
-            // BtnIngresar
+            // BtnAgregar
             // 
-            BtnIngresar.Anchor = AnchorStyles.None;
-            BtnIngresar.BackColor = Color.FromArgb(41, 128, 185);
-            BtnIngresar.FlatAppearance.BorderSize = 0;
-            BtnIngresar.FlatAppearance.MouseDownBackColor = Color.FromArgb(24, 75, 109);
-            BtnIngresar.FlatAppearance.MouseOverBackColor = Color.FromArgb(44, 134, 194);
-            BtnIngresar.FlatStyle = FlatStyle.Flat;
-            BtnIngresar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            BtnIngresar.ForeColor = Color.White;
-            BtnIngresar.Location = new Point(222, 17);
-            BtnIngresar.Margin = new Padding(0);
-            BtnIngresar.MaximumSize = new Size(100, 40);
-            BtnIngresar.MinimumSize = new Size(100, 40);
-            BtnIngresar.Name = "BtnIngresar";
-            BtnIngresar.Size = new Size(100, 40);
-            BtnIngresar.TabIndex = 1;
-            BtnIngresar.Text = "Ingresar";
-            BtnIngresar.UseVisualStyleBackColor = false;
+            BtnAgregar.Anchor = AnchorStyles.None;
+            BtnAgregar.BackColor = Color.FromArgb(41, 128, 185);
+            BtnAgregar.FlatAppearance.BorderSize = 0;
+            BtnAgregar.FlatAppearance.MouseDownBackColor = Color.FromArgb(24, 75, 109);
+            BtnAgregar.FlatAppearance.MouseOverBackColor = Color.FromArgb(44, 134, 194);
+            BtnAgregar.FlatStyle = FlatStyle.Flat;
+            BtnAgregar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            BtnAgregar.ForeColor = Color.White;
+            BtnAgregar.Location = new Point(221, 17);
+            BtnAgregar.Margin = new Padding(0);
+            BtnAgregar.MaximumSize = new Size(100, 40);
+            BtnAgregar.MinimumSize = new Size(100, 40);
+            BtnAgregar.Name = "BtnAgregar";
+            BtnAgregar.Size = new Size(100, 40);
+            BtnAgregar.TabIndex = 1;
+            BtnAgregar.Text = "Agregar";
+            BtnAgregar.UseVisualStyleBackColor = false;
             // 
             // BtnEliminar
             // 
@@ -617,7 +617,7 @@
             BtnEliminar.FlatStyle = FlatStyle.Flat;
             BtnEliminar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BtnEliminar.ForeColor = Color.White;
-            BtnEliminar.Location = new Point(552, 17);
+            BtnEliminar.Location = new Point(551, 17);
             BtnEliminar.Margin = new Padding(0);
             BtnEliminar.MaximumSize = new Size(100, 40);
             BtnEliminar.MinimumSize = new Size(100, 40);
@@ -638,7 +638,7 @@
             BtnCopiar.FlatStyle = FlatStyle.Flat;
             BtnCopiar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BtnCopiar.ForeColor = Color.White;
-            BtnCopiar.Location = new Point(332, 17);
+            BtnCopiar.Location = new Point(331, 17);
             BtnCopiar.Margin = new Padding(0);
             BtnCopiar.MaximumSize = new Size(100, 40);
             BtnCopiar.MinimumSize = new Size(100, 40);
@@ -659,7 +659,7 @@
             BtnActualizar.FlatStyle = FlatStyle.Flat;
             BtnActualizar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BtnActualizar.ForeColor = Color.White;
-            BtnActualizar.Location = new Point(442, 17);
+            BtnActualizar.Location = new Point(441, 17);
             BtnActualizar.Margin = new Padding(0);
             BtnActualizar.MaximumSize = new Size(100, 40);
             BtnActualizar.MinimumSize = new Size(100, 40);
@@ -791,35 +791,35 @@
             DgvPelicula.AllowUserToAddRows = false;
             DgvPelicula.AllowUserToResizeColumns = false;
             DgvPelicula.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(50, 55, 66);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            DgvPelicula.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(50, 55, 66);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            DgvPelicula.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             DgvPelicula.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvPelicula.BackgroundColor = Color.FromArgb(55, 60, 72);
             DgvPelicula.BorderStyle = BorderStyle.None;
             DgvPelicula.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             DgvPelicula.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.Padding = new Padding(8, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            DgvPelicula.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.Padding = new Padding(8, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            DgvPelicula.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             DgvPelicula.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(55, 60, 72);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.5F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle3.Padding = new Padding(8, 0, 5, 0);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            DgvPelicula.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(55, 60, 72);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9.5F);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle6.Padding = new Padding(8, 0, 5, 0);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            DgvPelicula.DefaultCellStyle = dataGridViewCellStyle6;
             DgvPelicula.Dock = DockStyle.Fill;
             DgvPelicula.EnableHeadersVisualStyles = false;
             DgvPelicula.Font = new Font("Segoe UI", 9.5F);
@@ -890,7 +890,7 @@
         private Componentes.CustomIDTextBox TbFormatos;
         private Componentes.CustomComboBox CbEstado;
         private TableLayoutPanel TlpButtons;
-        private Componentes.CustomButton BtnIngresar;
+        private Componentes.CustomButton BtnAgregar;
         private Componentes.CustomButton BtnEliminar;
         private Componentes.CustomButton BtnCopiar;
         private Componentes.CustomButton BtnActualizar;
