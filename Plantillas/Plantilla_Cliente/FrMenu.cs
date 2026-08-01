@@ -10,7 +10,7 @@
             {
                 InitializeComponent();
             }
-            /* Inicio de Codigo de Carlos Andres Arriaza Lara en la fecha de: 27/07/2026 */
+            /* Inicio de Codigo de Carlos Andres Arriaza Lara en la fecha de: 20/07/2026 */
             private void funcargarpagina(UserControl pagina)
             {
                 Pnl_Menu.Controls.Clear();
@@ -23,9 +23,9 @@
             {
 
             }
-            private void Cartelera_CambiaraReserva(int idPelicula)
+            private void Cartelera_CambiaraReserva(int idPelicula, int idCiudad)
             {
-                Reservas reservas = new Reservas(idPelicula);
+                Reservas reservas = new Reservas(idPelicula, idCiudad);
                 funcargarpagina(reservas);
             }
 
@@ -44,6 +44,6 @@
                 funcargarpagina(reservas);
             }
         }
-        /* Final de Codigo de Carlos Andres Arriaza Lara en la fecha de: 27/07/2026 */
+        /* Final de Codigo de Carlos Andres Arriaza Lara en la fecha de: 20/07/2026 */
     }
 

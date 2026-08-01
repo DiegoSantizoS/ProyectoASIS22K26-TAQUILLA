@@ -1,33 +1,33 @@
-﻿    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Data;
-    using System.Diagnostics.Eventing.Reader;
-    using System.Drawing;
-    using System.Drawing.Drawing2D;
-    using System.Text;
-    using System.Windows.Forms;
-using clase_conexion;    
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics.Eventing.Reader;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Text;
+using System.Windows.Forms;
 
-    namespace Plantilla_Cliente
-    {
+
+namespace Plantilla_Cliente
+{
     public partial class Cartelera : UserControl
     {
+        private Con_Cliente gconexion;
         Boolean is2DFilterActive = false;
         Boolean is3DFilterActive = false;
         Boolean is4DFilterActive = false;
         Boolean isIMAXFilterActive = false;
         Boolean isSubFilterActive = false;
         Boolean isDubFilterActive = false;
-        private conexion gconexion;
 
-        public event Action<int> CambiaraReserva;
-
+        public event Action<int, int> CambiaraReserva;
         public Cartelera()
         {
             InitializeComponent();
-            gconexion = new conexion();
+            gconexion = new Con_Cliente();
             Cargarciudad();
+            CargarCines();
             CargarPeliculas();
             Cbo_Ciudad.ForeColor = Color.Black;
             Cbo_Ciudad.BackColor = Color.White;
@@ -79,6 +79,7 @@ using clase_conexion;
             DataTable peliculas = gconexion.mostrarpelicula();
 
             Dgv_Cartelera.DataSource = peliculas;
+            Dgv_Cartelera.Columns["IdPelicula"].Visible = false;
         }
         /* fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
  * fecha de: 27/07/2026 */
@@ -161,6 +162,7 @@ using clase_conexion;
             Btn_2DFilter.BackColor = is2DFilterActive
                 ? Color.FromArgb(68, 75, 245) // Color activo
                 : Color.FromArgb(255, 255, 255); // Color inactivo
+            filtros();
         }
 
 
@@ -181,6 +183,7 @@ using clase_conexion;
             Btn_3DFilter.BackColor = is3DFilterActive
                 ? Color.FromArgb(68, 75, 245) // Color activo
                 : Color.FromArgb(255, 255, 255); // Color inactivo
+            filtros();
         }
 
         private void Btn_4DXFilter_Click(object sender, EventArgs e)
@@ -189,6 +192,7 @@ using clase_conexion;
             Btn_4DXFilter.BackColor = is4DFilterActive
                 ? Color.FromArgb(68, 75, 245) // Color activo
                 : Color.FromArgb(255, 255, 255); // Color inactivo
+            filtros();
         }
 
         private void Btn_IMAXFilter_Click(object sender, EventArgs e)
@@ -197,6 +201,7 @@ using clase_conexion;
             Btn_IMAXFilter.BackColor = isIMAXFilterActive
                 ? Color.FromArgb(68, 75, 245) // Color activo
                 : Color.FromArgb(255, 255, 255); // Color inactivo
+            filtros();
         }
         private void Btn_SubFilter_Click(object sender, EventArgs e)
         {
@@ -215,6 +220,7 @@ using clase_conexion;
                 Btn_SubFilter.BackColor = Color.FromArgb(68, 75, 245);
                 Btn_DobFilter.BackColor = Color.White;
             }
+            filtros();
             //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
         }
         private void Btn_DobFilter_Click(object sender, EventArgs e)
@@ -232,6 +238,7 @@ using clase_conexion;
                 Btn_DobFilter.BackColor = Color.FromArgb(68, 75, 245);
                 Btn_SubFilter.BackColor = Color.White;
             }
+            filtros();
             //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
         }
         private void Dgv_Cartelera_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -241,10 +248,11 @@ using clase_conexion;
 
             if (e.ColumnIndex == Dgv_Cartelera.Columns["Reservar"].Index)
             {
-                /*int idPelicula = Convert.ToInt32(
-                    Dgv_Cartelera.Rows[e.RowIndex].Cells["IdPelicula"].Value);*/
-
-                CambiaraReserva?.Invoke(10);
+                int idPelicula = Convert.ToInt32(
+                    Dgv_Cartelera.Rows[e.RowIndex].Cells["IdPelicula"].Value);
+                int ciudad = Convert.ToInt32(Cbo_Cine.SelectedValue);
+                CambiaraReserva?.Invoke(/*idPelicula, ciudad*/2,1);
+                
             }
         }
 
@@ -260,12 +268,13 @@ using clase_conexion;
 
         private void Cbo_Cine_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            filtros();
         }
 
         public void filtros()
         {
-
+            int ciudad = 0; 
+            int cine = 0;
             if (Cbo_Ciudad.SelectedIndex == 0)
             {
                 MessageBox.Show("Seleccione una ciudad.");
@@ -309,15 +318,27 @@ using clase_conexion;
                 MessageBox.Show("Seleccione un formato y un idioma.");
                 return;
             }
-
-            int ciudad = Convert.ToInt32(Cbo_Ciudad.SelectedValue);
-            int cine = Convert.ToInt32(Cbo_Cine.SelectedValue);
-
+            if (Cbo_Ciudad.SelectedIndex == 0)
+            {
+                MessageBox.Show("Seleccione una ciudad.");
+                return;
+            }
+            else
+            {
+                ciudad = Convert.ToInt32(Cbo_Ciudad.SelectedValue) - 1;
+                cine = Convert.ToInt32(Cbo_Cine.SelectedValue) - 1;
+                MessageBox.Show("Cine seleccionado:" + cine.ToString());
+            }
             Dgv_Cartelera.DataSource = gconexion.FiltrarCartelera(ciudad, cine, tipo);
 
         }
 
         private void Btn_Cargar_Cartelera_Click_1(object sender, EventArgs e)
+        {
+            filtros();
+        }
+
+        private void Btn_Cargar_Cartelera_Click_2(object sender, EventArgs e)
         {
             filtros();
         }
