@@ -31,688 +31,673 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            Tlp_divFormAndDgv = new TableLayoutPanel();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            tableLayoutPanel5 = new TableLayoutPanel();
-            customButton2 = new Componentes.CustomButton();
-            tableLayoutPanel6 = new TableLayoutPanel();
-            customTextBox3 = new Componentes.CustomTextBox();
-            customLabel1 = new Componentes.CustomLabel();
-            customLabel2 = new Componentes.CustomLabel();
-            customLabel3 = new Componentes.CustomLabel();
-            customLabel4 = new Componentes.CustomLabel();
-            customLabel5 = new Componentes.CustomLabel();
-            customLabel7 = new Componentes.CustomLabel();
-            customLabel9 = new Componentes.CustomLabel();
-            customLabel11 = new Componentes.CustomLabel();
-            customLabel12 = new Componentes.CustomLabel();
-            customLabel10 = new Componentes.CustomLabel();
-            customTextBox1 = new Componentes.CustomTextBox();
-            customComboBox3 = new Componentes.CustomComboBox();
-            customRichTextBox1 = new Componentes.CustomRichTextBox();
-            customComboBox4 = new Componentes.CustomComboBox();
-            customComboBox1 = new Componentes.CustomComboBox();
-            customDatePicker1 = new Componentes.CustomDatePicker();
-            customTextBox2 = new Componentes.CustomTextBox();
-            customTextBox4 = new Componentes.CustomTextBox();
-            customTextBox5 = new Componentes.CustomTextBox();
-            customLabel6 = new Componentes.CustomLabel();
-            customidTextBox1 = new Componentes.CustomIDTextBox();
-            tableLayoutPanel7 = new TableLayoutPanel();
-            customButton1 = new Componentes.CustomButton();
-            customButton5 = new Componentes.CustomButton();
-            customButton4 = new Componentes.CustomButton();
-            customButton3 = new Componentes.CustomButton();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            customTitleLabel1 = new Componentes.CustomTitleLabel();
-            tableLayoutPanel4 = new TableLayoutPanel();
-            tableLayoutPanel8 = new TableLayoutPanel();
+            TlpDivFormAndDgv = new TableLayoutPanel();
+            TlpAux1 = new TableLayoutPanel();
+            TlpAux2 = new TableLayoutPanel();
+            TlpFormWithButtons = new TableLayoutPanel();
+            BtnLimpiar = new Componentes.CustomButton();
+            TlpForm = new TableLayoutPanel();
+            LbID = new Componentes.CustomLabel();
+            LbDirector = new Componentes.CustomLabel();
+            LbPelicula = new Componentes.CustomLabel();
+            LbTrailer = new Componentes.CustomLabel();
+            LbDuracion = new Componentes.CustomLabel();
+            LbClasificacion = new Componentes.CustomLabel();
+            LbGeneros = new Componentes.CustomLabel();
+            LbFormatos = new Componentes.CustomLabel();
+            LbEstreno = new Componentes.CustomLabel();
+            LbEstado = new Componentes.CustomLabel();
+            DpEstreno = new Componentes.CustomDatePicker();
+            LbDescripcion = new Componentes.CustomLabel();
+            RtbDescripcion = new Componentes.CustomRichTextBox();
+            TbTitulo = new Componentes.CustomTextBox();
+            TbDuracion = new Componentes.CustomTextBox();
+            TbDirector = new Componentes.CustomTextBox();
+            TbTrailer = new Componentes.CustomTextBox();
+            TbID = new Componentes.CustomIDTextBox();
+            TbGeneros = new Componentes.CustomIDTextBox();
+            TbFormatos = new Componentes.CustomIDTextBox();
+            TlpButtons = new TableLayoutPanel();
+            BtnIngresar = new Componentes.CustomButton();
+            BtnEliminar = new Componentes.CustomButton();
+            BtnCopiar = new Componentes.CustomButton();
+            BtnActualizar = new Componentes.CustomButton();
+            TlpTitleLabel = new TableLayoutPanel();
+            LbTitulo = new Componentes.CustomTitleLabel();
+            TlpAux3 = new TableLayoutPanel();
+            TlpFilter = new TableLayoutPanel();
             customButton6 = new Componentes.CustomButton();
+            CbFiltro = new Componentes.CustomComboBox();
+            TbFiltro = new Componentes.CustomTextBox();
+            DgvPelicula = new Componentes.CustomDataGridView();
             customComboBox2 = new Componentes.CustomComboBox();
-            customTextBox6 = new Componentes.CustomTextBox();
-            customDataGridView1 = new Componentes.CustomDataGridView();
-            Tlp_divFormAndDgv.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel5.SuspendLayout();
-            tableLayoutPanel6.SuspendLayout();
-            tableLayoutPanel7.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
-            tableLayoutPanel4.SuspendLayout();
-            tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)customDataGridView1).BeginInit();
+            customComboBox3 = new Componentes.CustomComboBox();
+            TlpDivFormAndDgv.SuspendLayout();
+            TlpAux1.SuspendLayout();
+            TlpAux2.SuspendLayout();
+            TlpFormWithButtons.SuspendLayout();
+            TlpForm.SuspendLayout();
+            TlpButtons.SuspendLayout();
+            TlpTitleLabel.SuspendLayout();
+            TlpAux3.SuspendLayout();
+            TlpFilter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DgvPelicula).BeginInit();
             SuspendLayout();
             // 
-            // Tlp_divFormAndDgv
-            // 
-            Tlp_divFormAndDgv.ColumnCount = 1;
-            Tlp_divFormAndDgv.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            Tlp_divFormAndDgv.Controls.Add(tableLayoutPanel1, 0, 0);
-            Tlp_divFormAndDgv.Controls.Add(customDataGridView1, 0, 1);
-            Tlp_divFormAndDgv.Dock = DockStyle.Fill;
-            Tlp_divFormAndDgv.Location = new Point(0, 0);
-            Tlp_divFormAndDgv.Margin = new Padding(0);
-            Tlp_divFormAndDgv.Name = "Tlp_divFormAndDgv";
-            Tlp_divFormAndDgv.RowCount = 2;
-            Tlp_divFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Absolute, 525F));
-            Tlp_divFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Tlp_divFormAndDgv.Size = new Size(1050, 700);
-            Tlp_divFormAndDgv.TabIndex = 3;
-            // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 1);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 0, 0);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel4, 0, 2);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Margin = new Padding(0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
-            tableLayoutPanel1.Size = new Size(1050, 525);
-            tableLayoutPanel1.TabIndex = 1;
-            // 
-            // tableLayoutPanel2
-            // 
-            tableLayoutPanel2.ColumnCount = 3;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 875F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Controls.Add(tableLayoutPanel5, 1, 0);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(0, 75);
-            tableLayoutPanel2.Margin = new Padding(0);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1050, 375);
-            tableLayoutPanel2.TabIndex = 0;
-            // 
-            // tableLayoutPanel5
-            // 
-            tableLayoutPanel5.ColumnCount = 2;
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
-            tableLayoutPanel5.Controls.Add(customButton2, 1, 0);
-            tableLayoutPanel5.Controls.Add(tableLayoutPanel6, 0, 0);
-            tableLayoutPanel5.Controls.Add(tableLayoutPanel7, 0, 1);
-            tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(87, 0);
-            tableLayoutPanel5.Margin = new Padding(0);
-            tableLayoutPanel5.Name = "tableLayoutPanel5";
-            tableLayoutPanel5.RowCount = 2;
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
-            tableLayoutPanel5.Size = new Size(875, 375);
-            tableLayoutPanel5.TabIndex = 0;
-            // 
-            // customButton2
-            // 
-            customButton2.Action = Componentes.ButtonAction.Limpiar;
-            customButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            customButton2.BackColor = Color.FromArgb(127, 140, 141);
-            customButton2.FlatAppearance.BorderSize = 0;
-            customButton2.FlatAppearance.MouseDownBackColor = Color.FromArgb(77, 84, 85);
-            customButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(133, 145, 146);
-            customButton2.FlatStyle = FlatStyle.Flat;
-            customButton2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customButton2.ForeColor = Color.White;
-            customButton2.Location = new Point(775, 10);
-            customButton2.Margin = new Padding(0, 10, 0, 0);
-            customButton2.MaximumSize = new Size(100, 40);
-            customButton2.MinimumSize = new Size(100, 40);
-            customButton2.Name = "customButton2";
-            customButton2.Size = new Size(100, 40);
-            customButton2.TabIndex = 2;
-            customButton2.Text = "Limpiar";
-            customButton2.UseVisualStyleBackColor = false;
-            // 
-            // tableLayoutPanel6
-            // 
-            tableLayoutPanel6.ColumnCount = 4;
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33F));
-            tableLayoutPanel6.Controls.Add(customTextBox3, 1, 2);
-            tableLayoutPanel6.Controls.Add(customLabel1, 0, 0);
-            tableLayoutPanel6.Controls.Add(customLabel2, 2, 0);
-            tableLayoutPanel6.Controls.Add(customLabel3, 0, 1);
-            tableLayoutPanel6.Controls.Add(customLabel4, 2, 1);
-            tableLayoutPanel6.Controls.Add(customLabel5, 0, 2);
-            tableLayoutPanel6.Controls.Add(customLabel7, 0, 3);
-            tableLayoutPanel6.Controls.Add(customLabel9, 0, 4);
-            tableLayoutPanel6.Controls.Add(customLabel11, 0, 5);
-            tableLayoutPanel6.Controls.Add(customLabel12, 2, 5);
-            tableLayoutPanel6.Controls.Add(customLabel10, 2, 4);
-            tableLayoutPanel6.Controls.Add(customTextBox1, 1, 1);
-            tableLayoutPanel6.Controls.Add(customComboBox3, 1, 3);
-            tableLayoutPanel6.Controls.Add(customRichTextBox1, 3, 2);
-            tableLayoutPanel6.Controls.Add(customComboBox4, 3, 4);
-            tableLayoutPanel6.Controls.Add(customComboBox1, 3, 0);
-            tableLayoutPanel6.Controls.Add(customDatePicker1, 3, 5);
-            tableLayoutPanel6.Controls.Add(customTextBox2, 1, 4);
-            tableLayoutPanel6.Controls.Add(customTextBox4, 1, 5);
-            tableLayoutPanel6.Controls.Add(customTextBox5, 3, 1);
-            tableLayoutPanel6.Controls.Add(customLabel6, 2, 2);
-            tableLayoutPanel6.Controls.Add(customidTextBox1, 1, 0);
-            tableLayoutPanel6.Dock = DockStyle.Fill;
-            tableLayoutPanel6.Location = new Point(0, 0);
-            tableLayoutPanel6.Margin = new Padding(0);
-            tableLayoutPanel6.Name = "tableLayoutPanel6";
-            tableLayoutPanel6.RowCount = 6;
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 49F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 51F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel6.Size = new Size(765, 300);
-            tableLayoutPanel6.TabIndex = 0;
-            // 
-            // customTextBox3
-            // 
-            customTextBox3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            customTextBox3.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox3.BorderStyle = BorderStyle.FixedSingle;
-            customTextBox3.Font = new Font("Segoe UI", 10F);
-            customTextBox3.ForeColor = Color.FromArgb(160, 165, 175);
-            customTextBox3.Location = new Point(135, 110);
-            customTextBox3.Margin = new Padding(5);
-            customTextBox3.MinimumSize = new Size(190, 30);
-            customTextBox3.Name = "customTextBox3";
-            customTextBox3.PlaceholderText = "asd";
-            customTextBox3.Size = new Size(242, 30);
-            customTextBox3.TabIndex = 42;
-            // 
-            // customLabel1
-            // 
-            customLabel1.AutoSize = true;
-            customLabel1.Dock = DockStyle.Fill;
-            customLabel1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customLabel1.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel1.Location = new Point(3, 0);
-            customLabel1.Name = "customLabel1";
-            customLabel1.Padding = new Padding(0, 0, 8, 0);
-            customLabel1.Size = new Size(124, 50);
-            customLabel1.TabIndex = 11;
-            customLabel1.Text = "ID Pelicula";
-            customLabel1.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // customLabel2
-            // 
-            customLabel2.AutoSize = true;
-            customLabel2.Dock = DockStyle.Fill;
-            customLabel2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customLabel2.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel2.Location = new Point(385, 0);
-            customLabel2.Name = "customLabel2";
-            customLabel2.Padding = new Padding(0, 0, 8, 0);
-            customLabel2.Size = new Size(124, 50);
-            customLabel2.TabIndex = 12;
-            customLabel2.Text = "Director";
-            customLabel2.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // customLabel3
-            // 
-            customLabel3.AutoSize = true;
-            customLabel3.Dock = DockStyle.Fill;
-            customLabel3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customLabel3.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel3.Location = new Point(3, 50);
-            customLabel3.Name = "customLabel3";
-            customLabel3.Padding = new Padding(0, 0, 8, 0);
-            customLabel3.Size = new Size(124, 50);
-            customLabel3.TabIndex = 13;
-            customLabel3.Text = "Titulo";
-            customLabel3.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // customLabel4
-            // 
-            customLabel4.AutoSize = true;
-            customLabel4.Dock = DockStyle.Fill;
-            customLabel4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customLabel4.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel4.Location = new Point(385, 50);
-            customLabel4.Name = "customLabel4";
-            customLabel4.Padding = new Padding(0, 0, 8, 0);
-            customLabel4.Size = new Size(124, 50);
-            customLabel4.TabIndex = 14;
-            customLabel4.Text = "Trailer";
-            customLabel4.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // customLabel5
-            // 
-            customLabel5.AutoSize = true;
-            customLabel5.Dock = DockStyle.Fill;
-            customLabel5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customLabel5.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel5.Location = new Point(3, 100);
-            customLabel5.Name = "customLabel5";
-            customLabel5.Padding = new Padding(0, 0, 8, 0);
-            customLabel5.Size = new Size(124, 50);
-            customLabel5.TabIndex = 15;
-            customLabel5.Text = "Duración (mínutos)";
-            customLabel5.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // customLabel7
-            // 
-            customLabel7.AutoSize = true;
-            customLabel7.Dock = DockStyle.Fill;
-            customLabel7.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customLabel7.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel7.Location = new Point(3, 150);
-            customLabel7.Name = "customLabel7";
-            customLabel7.Padding = new Padding(0, 0, 8, 0);
-            customLabel7.Size = new Size(124, 49);
-            customLabel7.TabIndex = 17;
-            customLabel7.Text = "Clasificación";
-            customLabel7.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // customLabel9
-            // 
-            customLabel9.AutoSize = true;
-            customLabel9.Dock = DockStyle.Fill;
-            customLabel9.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customLabel9.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel9.Location = new Point(3, 199);
-            customLabel9.Name = "customLabel9";
-            customLabel9.Padding = new Padding(0, 0, 8, 0);
-            customLabel9.Size = new Size(124, 51);
-            customLabel9.TabIndex = 19;
-            customLabel9.Text = "Generos";
-            customLabel9.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // customLabel11
-            // 
-            customLabel11.AutoSize = true;
-            customLabel11.Dock = DockStyle.Fill;
-            customLabel11.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customLabel11.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel11.Location = new Point(3, 250);
-            customLabel11.Name = "customLabel11";
-            customLabel11.Padding = new Padding(0, 0, 8, 0);
-            customLabel11.Size = new Size(124, 50);
-            customLabel11.TabIndex = 21;
-            customLabel11.Text = "Formatos";
-            customLabel11.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // customLabel12
-            // 
-            customLabel12.AutoSize = true;
-            customLabel12.Dock = DockStyle.Fill;
-            customLabel12.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customLabel12.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel12.Location = new Point(385, 250);
-            customLabel12.Name = "customLabel12";
-            customLabel12.Padding = new Padding(0, 0, 8, 0);
-            customLabel12.Size = new Size(124, 50);
-            customLabel12.TabIndex = 22;
-            customLabel12.Text = "Fecha de Estreno";
-            customLabel12.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // customLabel10
-            // 
-            customLabel10.AutoSize = true;
-            customLabel10.Dock = DockStyle.Fill;
-            customLabel10.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customLabel10.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel10.Location = new Point(385, 199);
-            customLabel10.Name = "customLabel10";
-            customLabel10.Padding = new Padding(0, 0, 8, 0);
-            customLabel10.Size = new Size(124, 51);
-            customLabel10.TabIndex = 20;
-            customLabel10.Text = "Estado";
-            customLabel10.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // customTextBox1
-            // 
-            customTextBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            customTextBox1.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox1.BorderStyle = BorderStyle.FixedSingle;
-            customTextBox1.Font = new Font("Segoe UI", 10F);
-            customTextBox1.ForeColor = Color.FromArgb(160, 165, 175);
-            customTextBox1.Location = new Point(135, 60);
-            customTextBox1.Margin = new Padding(5);
-            customTextBox1.MinimumSize = new Size(190, 30);
-            customTextBox1.Name = "customTextBox1";
-            customTextBox1.PlaceholderText = "asd";
-            customTextBox1.Size = new Size(242, 30);
-            customTextBox1.TabIndex = 40;
-            // 
-            // customComboBox3
-            // 
-            customComboBox3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            customComboBox3.BackColor = Color.FromArgb(55, 60, 72);
-            customComboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
-            customComboBox3.FlatStyle = FlatStyle.Flat;
-            customComboBox3.Font = new Font("Segoe UI", 9F);
-            customComboBox3.ForeColor = Color.FromArgb(230, 230, 230);
-            customComboBox3.FormattingEnabled = true;
-            customComboBox3.ItemHeight = 20;
-            customComboBox3.Location = new Point(135, 160);
-            customComboBox3.Margin = new Padding(5);
-            customComboBox3.MinimumSize = new Size(190, 0);
-            customComboBox3.Name = "customComboBox3";
-            customComboBox3.Size = new Size(242, 28);
-            customComboBox3.TabIndex = 41;
-            // 
-            // customRichTextBox1
-            // 
-            customRichTextBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            customRichTextBox1.BackColor = Color.FromArgb(55, 60, 72);
-            customRichTextBox1.BorderStyle = BorderStyle.FixedSingle;
-            customRichTextBox1.Font = new Font("Segoe UI", 10F);
-            customRichTextBox1.ForeColor = Color.FromArgb(230, 230, 230);
-            customRichTextBox1.Location = new Point(517, 105);
-            customRichTextBox1.Margin = new Padding(5);
-            customRichTextBox1.MinimumSize = new Size(190, 60);
-            customRichTextBox1.Name = "customRichTextBox1";
-            tableLayoutPanel6.SetRowSpan(customRichTextBox1, 2);
-            customRichTextBox1.Size = new Size(243, 89);
-            customRichTextBox1.TabIndex = 43;
-            customRichTextBox1.Text = "";
-            // 
-            // customComboBox4
-            // 
-            customComboBox4.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            customComboBox4.BackColor = Color.FromArgb(55, 60, 72);
-            customComboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
-            customComboBox4.FlatStyle = FlatStyle.Flat;
-            customComboBox4.Font = new Font("Segoe UI", 9F);
-            customComboBox4.ForeColor = Color.FromArgb(230, 230, 230);
-            customComboBox4.FormattingEnabled = true;
-            customComboBox4.ItemHeight = 20;
-            customComboBox4.Location = new Point(517, 210);
-            customComboBox4.Margin = new Padding(5);
-            customComboBox4.MinimumSize = new Size(190, 0);
-            customComboBox4.Name = "customComboBox4";
-            customComboBox4.Size = new Size(243, 28);
-            customComboBox4.TabIndex = 44;
-            // 
-            // customComboBox1
-            // 
-            customComboBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            customComboBox1.BackColor = Color.FromArgb(55, 60, 72);
-            customComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            customComboBox1.FlatStyle = FlatStyle.Flat;
-            customComboBox1.Font = new Font("Segoe UI", 9F);
-            customComboBox1.ForeColor = Color.FromArgb(230, 230, 230);
-            customComboBox1.FormattingEnabled = true;
-            customComboBox1.ItemHeight = 20;
-            customComboBox1.Location = new Point(517, 11);
-            customComboBox1.Margin = new Padding(5);
-            customComboBox1.MinimumSize = new Size(190, 0);
-            customComboBox1.Name = "customComboBox1";
-            customComboBox1.Size = new Size(243, 28);
-            customComboBox1.TabIndex = 45;
-            // 
-            // customDatePicker1
-            // 
-            customDatePicker1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            customDatePicker1.CalendarForeColor = Color.FromArgb(230, 230, 230);
-            customDatePicker1.CalendarMonthBackground = Color.FromArgb(55, 60, 72);
-            customDatePicker1.CalendarTitleBackColor = Color.FromArgb(41, 128, 185);
-            customDatePicker1.CalendarTitleForeColor = Color.White;
-            customDatePicker1.CalendarTrailingForeColor = Color.FromArgb(150, 150, 150);
-            customDatePicker1.CustomFormat = "dd/MM/yyyy";
-            customDatePicker1.Font = new Font("Segoe UI", 9.5F);
-            customDatePicker1.Format = DateTimePickerFormat.Custom;
-            customDatePicker1.Location = new Point(517, 260);
-            customDatePicker1.Margin = new Padding(5);
-            customDatePicker1.MinimumSize = new Size(190, 30);
-            customDatePicker1.Name = "customDatePicker1";
-            customDatePicker1.Size = new Size(243, 30);
-            customDatePicker1.TabIndex = 46;
-            // 
-            // customTextBox2
-            // 
-            customTextBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            customTextBox2.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox2.BorderStyle = BorderStyle.FixedSingle;
-            customTextBox2.Font = new Font("Segoe UI", 10F);
-            customTextBox2.ForeColor = Color.FromArgb(230, 230, 230);
-            customTextBox2.Location = new Point(135, 209);
-            customTextBox2.Margin = new Padding(5);
-            customTextBox2.MinimumSize = new Size(190, 30);
-            customTextBox2.Name = "customTextBox2";
-            customTextBox2.Size = new Size(242, 30);
-            customTextBox2.TabIndex = 47;
-            // 
-            // customTextBox4
-            // 
-            customTextBox4.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            customTextBox4.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox4.BorderStyle = BorderStyle.FixedSingle;
-            customTextBox4.Font = new Font("Segoe UI", 10F);
-            customTextBox4.ForeColor = Color.FromArgb(230, 230, 230);
-            customTextBox4.Location = new Point(135, 260);
-            customTextBox4.Margin = new Padding(5);
-            customTextBox4.MinimumSize = new Size(190, 30);
-            customTextBox4.Name = "customTextBox4";
-            customTextBox4.Size = new Size(242, 30);
-            customTextBox4.TabIndex = 48;
-            // 
-            // customTextBox5
-            // 
-            customTextBox5.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            customTextBox5.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox5.BorderStyle = BorderStyle.FixedSingle;
-            customTextBox5.Font = new Font("Segoe UI", 10F);
-            customTextBox5.ForeColor = Color.FromArgb(160, 165, 175);
-            customTextBox5.Location = new Point(517, 60);
-            customTextBox5.Margin = new Padding(5);
-            customTextBox5.MinimumSize = new Size(190, 30);
-            customTextBox5.Name = "customTextBox5";
-            customTextBox5.PlaceholderText = "https://www.youtube.com/watch?v=1q8P71XzgQo";
-            customTextBox5.Size = new Size(243, 30);
-            customTextBox5.TabIndex = 49;
-            // 
-            // customLabel6
-            // 
-            customLabel6.AutoSize = true;
-            customLabel6.Dock = DockStyle.Fill;
-            customLabel6.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customLabel6.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel6.Location = new Point(385, 100);
-            customLabel6.Name = "customLabel6";
-            customLabel6.Padding = new Padding(0, 0, 8, 0);
-            customLabel6.Size = new Size(124, 50);
-            customLabel6.TabIndex = 50;
-            customLabel6.Text = "Descripción";
-            customLabel6.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // customidTextBox1
-            // 
-            customidTextBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            customidTextBox1.BackColor = Color.FromArgb(45, 49, 60);
-            customidTextBox1.BorderStyle = BorderStyle.FixedSingle;
-            customidTextBox1.Font = new Font("Segoe UI", 10F);
-            customidTextBox1.ForeColor = Color.FromArgb(160, 165, 175);
-            customidTextBox1.Location = new Point(135, 10);
-            customidTextBox1.Margin = new Padding(5);
-            customidTextBox1.MinimumSize = new Size(190, 30);
-            customidTextBox1.Name = "customidTextBox1";
-            customidTextBox1.ReadOnly = true;
-            customidTextBox1.Size = new Size(242, 30);
-            customidTextBox1.TabIndex = 51;
-            customidTextBox1.TabStop = false;
-            // 
-            // tableLayoutPanel7
-            // 
-            tableLayoutPanel7.ColumnCount = 6;
-            tableLayoutPanel5.SetColumnSpan(tableLayoutPanel7, 2);
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel7.Controls.Add(customButton1, 1, 0);
-            tableLayoutPanel7.Controls.Add(customButton5, 4, 0);
-            tableLayoutPanel7.Controls.Add(customButton4, 2, 0);
-            tableLayoutPanel7.Controls.Add(customButton3, 3, 0);
-            tableLayoutPanel7.Dock = DockStyle.Fill;
-            tableLayoutPanel7.Location = new Point(0, 300);
-            tableLayoutPanel7.Margin = new Padding(0);
-            tableLayoutPanel7.Name = "tableLayoutPanel7";
-            tableLayoutPanel7.RowCount = 1;
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel7.Size = new Size(875, 75);
-            tableLayoutPanel7.TabIndex = 3;
-            // 
-            // customButton1
-            // 
-            customButton1.Anchor = AnchorStyles.None;
-            customButton1.BackColor = Color.FromArgb(41, 128, 185);
-            customButton1.Enabled = false;
-            customButton1.FlatAppearance.BorderSize = 0;
-            customButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(24, 75, 109);
-            customButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(44, 134, 194);
-            customButton1.FlatStyle = FlatStyle.Flat;
-            customButton1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customButton1.ForeColor = Color.White;
-            customButton1.Location = new Point(222, 17);
-            customButton1.Margin = new Padding(0);
-            customButton1.MaximumSize = new Size(100, 40);
-            customButton1.MinimumSize = new Size(100, 40);
-            customButton1.Name = "customButton1";
-            customButton1.Size = new Size(100, 40);
-            customButton1.TabIndex = 1;
-            customButton1.Text = "Ingresar";
-            customButton1.UseVisualStyleBackColor = false;
-            // 
-            // customButton5
-            // 
-            customButton5.Action = Componentes.ButtonAction.Eliminar;
-            customButton5.Anchor = AnchorStyles.None;
-            customButton5.BackColor = Color.FromArgb(192, 57, 43);
-            customButton5.FlatAppearance.BorderSize = 0;
-            customButton5.FlatAppearance.MouseDownBackColor = Color.FromArgb(116, 35, 27);
-            customButton5.FlatAppearance.MouseOverBackColor = Color.FromArgb(203, 62, 46);
-            customButton5.FlatStyle = FlatStyle.Flat;
-            customButton5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customButton5.ForeColor = Color.White;
-            customButton5.Location = new Point(552, 17);
-            customButton5.Margin = new Padding(0);
-            customButton5.MaximumSize = new Size(100, 40);
-            customButton5.MinimumSize = new Size(100, 40);
-            customButton5.Name = "customButton5";
-            customButton5.Size = new Size(100, 40);
-            customButton5.TabIndex = 4;
-            customButton5.Text = "Eliminar";
-            customButton5.UseVisualStyleBackColor = false;
-            // 
-            // customButton4
-            // 
-            customButton4.Action = Componentes.ButtonAction.Copiar;
-            customButton4.Anchor = AnchorStyles.None;
-            customButton4.BackColor = Color.FromArgb(26, 156, 156);
-            customButton4.FlatAppearance.BorderSize = 0;
-            customButton4.FlatAppearance.MouseDownBackColor = Color.FromArgb(16, 95, 95);
-            customButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(29, 169, 169);
-            customButton4.FlatStyle = FlatStyle.Flat;
-            customButton4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customButton4.ForeColor = Color.White;
-            customButton4.Location = new Point(332, 17);
-            customButton4.Margin = new Padding(0);
-            customButton4.MaximumSize = new Size(100, 40);
-            customButton4.MinimumSize = new Size(100, 40);
-            customButton4.Name = "customButton4";
-            customButton4.Size = new Size(100, 40);
-            customButton4.TabIndex = 3;
-            customButton4.Text = "Copiar";
-            customButton4.UseVisualStyleBackColor = false;
-            // 
-            // customButton3
-            // 
-            customButton3.Action = Componentes.ButtonAction.Actualizar;
-            customButton3.Anchor = AnchorStyles.None;
-            customButton3.BackColor = Color.FromArgb(214, 157, 15);
-            customButton3.FlatAppearance.BorderSize = 0;
-            customButton3.FlatAppearance.MouseDownBackColor = Color.FromArgb(130, 97, 9);
-            customButton3.FlatAppearance.MouseOverBackColor = Color.FromArgb(226, 169, 16);
-            customButton3.FlatStyle = FlatStyle.Flat;
-            customButton3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customButton3.ForeColor = Color.White;
-            customButton3.Location = new Point(442, 17);
-            customButton3.Margin = new Padding(0);
-            customButton3.MaximumSize = new Size(100, 40);
-            customButton3.MinimumSize = new Size(100, 40);
-            customButton3.Name = "customButton3";
-            customButton3.Size = new Size(100, 40);
-            customButton3.TabIndex = 2;
-            customButton3.Text = "Actualizar";
-            customButton3.UseVisualStyleBackColor = false;
-            // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.ColumnCount = 3;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 500F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.Controls.Add(customTitleLabel1, 1, 0);
-            tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(0, 0);
-            tableLayoutPanel3.Margin = new Padding(0);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(1050, 75);
-            tableLayoutPanel3.TabIndex = 1;
-            // 
-            // customTitleLabel1
-            // 
-            customTitleLabel1.AutoSize = true;
-            customTitleLabel1.Dock = DockStyle.Fill;
-            customTitleLabel1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            customTitleLabel1.ForeColor = Color.FromArgb(41, 128, 185);
-            customTitleLabel1.Location = new Point(278, 0);
-            customTitleLabel1.Name = "customTitleLabel1";
-            customTitleLabel1.Size = new Size(494, 75);
-            customTitleLabel1.TabIndex = 0;
-            customTitleLabel1.Text = "Películas";
-            customTitleLabel1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel4
-            // 
-            tableLayoutPanel4.ColumnCount = 3;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 510F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.Controls.Add(tableLayoutPanel8, 1, 0);
-            tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(0, 450);
-            tableLayoutPanel4.Margin = new Padding(0);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 1;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.Size = new Size(1050, 75);
-            tableLayoutPanel4.TabIndex = 2;
-            // 
-            // tableLayoutPanel8
-            // 
-            tableLayoutPanel8.ColumnCount = 3;
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
-            tableLayoutPanel8.Controls.Add(customButton6, 2, 0);
-            tableLayoutPanel8.Controls.Add(customComboBox2, 0, 0);
-            tableLayoutPanel8.Controls.Add(customTextBox6, 1, 0);
-            tableLayoutPanel8.Dock = DockStyle.Fill;
-            tableLayoutPanel8.Location = new Point(270, 0);
-            tableLayoutPanel8.Margin = new Padding(0);
-            tableLayoutPanel8.Name = "tableLayoutPanel8";
-            tableLayoutPanel8.RowCount = 1;
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel8.Size = new Size(510, 75);
-            tableLayoutPanel8.TabIndex = 0;
+            // TlpDivFormAndDgv
+            // 
+            TlpDivFormAndDgv.ColumnCount = 1;
+            TlpDivFormAndDgv.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            TlpDivFormAndDgv.Controls.Add(TlpAux1, 0, 0);
+            TlpDivFormAndDgv.Controls.Add(DgvPelicula, 0, 1);
+            TlpDivFormAndDgv.Dock = DockStyle.Fill;
+            TlpDivFormAndDgv.Location = new Point(0, 0);
+            TlpDivFormAndDgv.Margin = new Padding(0);
+            TlpDivFormAndDgv.Name = "TlpDivFormAndDgv";
+            TlpDivFormAndDgv.RowCount = 2;
+            TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Absolute, 525F));
+            TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            TlpDivFormAndDgv.Size = new Size(1050, 700);
+            TlpDivFormAndDgv.TabIndex = 3;
+            // 
+            // TlpAux1
+            // 
+            TlpAux1.ColumnCount = 1;
+            TlpAux1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            TlpAux1.Controls.Add(TlpAux2, 0, 1);
+            TlpAux1.Controls.Add(TlpTitleLabel, 0, 0);
+            TlpAux1.Controls.Add(TlpAux3, 0, 2);
+            TlpAux1.Dock = DockStyle.Fill;
+            TlpAux1.Location = new Point(0, 0);
+            TlpAux1.Margin = new Padding(0);
+            TlpAux1.Name = "TlpAux1";
+            TlpAux1.RowCount = 3;
+            TlpAux1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
+            TlpAux1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            TlpAux1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
+            TlpAux1.Size = new Size(1050, 525);
+            TlpAux1.TabIndex = 1;
+            // 
+            // TlpAux2
+            // 
+            TlpAux2.ColumnCount = 3;
+            TlpAux2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            TlpAux2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 875F));
+            TlpAux2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            TlpAux2.Controls.Add(TlpFormWithButtons, 1, 0);
+            TlpAux2.Dock = DockStyle.Fill;
+            TlpAux2.Location = new Point(0, 75);
+            TlpAux2.Margin = new Padding(0);
+            TlpAux2.Name = "TlpAux2";
+            TlpAux2.RowCount = 1;
+            TlpAux2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            TlpAux2.Size = new Size(1050, 375);
+            TlpAux2.TabIndex = 0;
+            // 
+            // TlpFormWithButtons
+            // 
+            TlpFormWithButtons.ColumnCount = 2;
+            TlpFormWithButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            TlpFormWithButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+            TlpFormWithButtons.Controls.Add(BtnLimpiar, 1, 0);
+            TlpFormWithButtons.Controls.Add(TlpForm, 0, 0);
+            TlpFormWithButtons.Controls.Add(TlpButtons, 0, 1);
+            TlpFormWithButtons.Dock = DockStyle.Fill;
+            TlpFormWithButtons.Location = new Point(87, 0);
+            TlpFormWithButtons.Margin = new Padding(0);
+            TlpFormWithButtons.Name = "TlpFormWithButtons";
+            TlpFormWithButtons.RowCount = 2;
+            TlpFormWithButtons.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            TlpFormWithButtons.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
+            TlpFormWithButtons.Size = new Size(875, 375);
+            TlpFormWithButtons.TabIndex = 0;
+            // 
+            // BtnLimpiar
+            // 
+            BtnLimpiar.Action = Componentes.ButtonAction.Limpiar;
+            BtnLimpiar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnLimpiar.BackColor = Color.FromArgb(127, 140, 141);
+            BtnLimpiar.FlatAppearance.BorderSize = 0;
+            BtnLimpiar.FlatAppearance.MouseDownBackColor = Color.FromArgb(77, 84, 85);
+            BtnLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(133, 145, 146);
+            BtnLimpiar.FlatStyle = FlatStyle.Flat;
+            BtnLimpiar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            BtnLimpiar.ForeColor = Color.White;
+            BtnLimpiar.Location = new Point(775, 10);
+            BtnLimpiar.Margin = new Padding(0, 10, 0, 0);
+            BtnLimpiar.MaximumSize = new Size(100, 40);
+            BtnLimpiar.MinimumSize = new Size(100, 40);
+            BtnLimpiar.Name = "BtnLimpiar";
+            BtnLimpiar.Size = new Size(100, 40);
+            BtnLimpiar.TabIndex = 2;
+            BtnLimpiar.Text = "Limpiar";
+            BtnLimpiar.UseVisualStyleBackColor = false;
+            // 
+            // TlpForm
+            // 
+            TlpForm.ColumnCount = 4;
+            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17F));
+            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33F));
+            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17F));
+            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33F));
+            TlpForm.Controls.Add(LbID, 0, 0);
+            TlpForm.Controls.Add(LbDirector, 2, 0);
+            TlpForm.Controls.Add(LbPelicula, 0, 1);
+            TlpForm.Controls.Add(LbTrailer, 2, 1);
+            TlpForm.Controls.Add(LbDuracion, 0, 2);
+            TlpForm.Controls.Add(LbClasificacion, 0, 3);
+            TlpForm.Controls.Add(LbGeneros, 0, 4);
+            TlpForm.Controls.Add(LbFormatos, 0, 5);
+            TlpForm.Controls.Add(LbEstreno, 2, 5);
+            TlpForm.Controls.Add(LbEstado, 2, 4);
+            TlpForm.Controls.Add(DpEstreno, 3, 5);
+            TlpForm.Controls.Add(LbDescripcion, 2, 2);
+            TlpForm.Controls.Add(RtbDescripcion, 3, 2);
+            TlpForm.Controls.Add(TbTitulo, 1, 1);
+            TlpForm.Controls.Add(TbDuracion, 1, 2);
+            TlpForm.Controls.Add(TbDirector, 3, 0);
+            TlpForm.Controls.Add(TbTrailer, 3, 1);
+            TlpForm.Controls.Add(TbID, 1, 0);
+            TlpForm.Controls.Add(TbGeneros, 1, 4);
+            TlpForm.Controls.Add(TbFormatos, 1, 5);
+            TlpForm.Controls.Add(customComboBox2, 1, 3);
+            TlpForm.Controls.Add(customComboBox3, 3, 4);
+            TlpForm.Dock = DockStyle.Fill;
+            TlpForm.Location = new Point(0, 0);
+            TlpForm.Margin = new Padding(0);
+            TlpForm.Name = "TlpForm";
+            TlpForm.RowCount = 6;
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 49F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 51F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            TlpForm.Size = new Size(765, 300);
+            TlpForm.TabIndex = 0;
+            // 
+            // LbID
+            // 
+            LbID.AutoSize = true;
+            LbID.Dock = DockStyle.Fill;
+            LbID.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbID.ForeColor = Color.FromArgb(220, 220, 220);
+            LbID.Location = new Point(3, 0);
+            LbID.Margin = new Padding(3, 0, 0, 0);
+            LbID.Name = "LbID";
+            LbID.Padding = new Padding(0, 0, 2, 0);
+            LbID.Size = new Size(127, 50);
+            LbID.TabIndex = 11;
+            LbID.Text = "ID Pelicula";
+            LbID.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // LbDirector
+            // 
+            LbDirector.AutoSize = true;
+            LbDirector.Dock = DockStyle.Fill;
+            LbDirector.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbDirector.ForeColor = Color.FromArgb(220, 220, 220);
+            LbDirector.Location = new Point(385, 0);
+            LbDirector.Margin = new Padding(3, 0, 0, 0);
+            LbDirector.Name = "LbDirector";
+            LbDirector.Padding = new Padding(0, 0, 2, 0);
+            LbDirector.Size = new Size(127, 50);
+            LbDirector.TabIndex = 12;
+            LbDirector.Text = "Director";
+            LbDirector.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // LbPelicula
+            // 
+            LbPelicula.AutoSize = true;
+            LbPelicula.Dock = DockStyle.Fill;
+            LbPelicula.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbPelicula.ForeColor = Color.FromArgb(220, 220, 220);
+            LbPelicula.Location = new Point(3, 50);
+            LbPelicula.Margin = new Padding(3, 0, 0, 0);
+            LbPelicula.Name = "LbPelicula";
+            LbPelicula.Padding = new Padding(0, 0, 2, 0);
+            LbPelicula.Size = new Size(127, 50);
+            LbPelicula.TabIndex = 13;
+            LbPelicula.Text = "Titulo";
+            LbPelicula.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // LbTrailer
+            // 
+            LbTrailer.AutoSize = true;
+            LbTrailer.Dock = DockStyle.Fill;
+            LbTrailer.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbTrailer.ForeColor = Color.FromArgb(220, 220, 220);
+            LbTrailer.Location = new Point(385, 50);
+            LbTrailer.Margin = new Padding(3, 0, 0, 0);
+            LbTrailer.Name = "LbTrailer";
+            LbTrailer.Padding = new Padding(0, 0, 2, 0);
+            LbTrailer.Size = new Size(127, 50);
+            LbTrailer.TabIndex = 14;
+            LbTrailer.Text = "Trailer";
+            LbTrailer.TextAlign = ContentAlignment.MiddleRight;
+            LbTrailer.Click += LbTrailer_Click;
+            // 
+            // LbDuracion
+            // 
+            LbDuracion.AutoSize = true;
+            LbDuracion.Dock = DockStyle.Fill;
+            LbDuracion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbDuracion.ForeColor = Color.FromArgb(220, 220, 220);
+            LbDuracion.Location = new Point(3, 100);
+            LbDuracion.Margin = new Padding(3, 0, 0, 0);
+            LbDuracion.Name = "LbDuracion";
+            LbDuracion.Padding = new Padding(0, 0, 2, 0);
+            LbDuracion.Size = new Size(127, 50);
+            LbDuracion.TabIndex = 15;
+            LbDuracion.Text = "Duración(min)";
+            LbDuracion.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // LbClasificacion
+            // 
+            LbClasificacion.AutoSize = true;
+            LbClasificacion.Dock = DockStyle.Fill;
+            LbClasificacion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbClasificacion.ForeColor = Color.FromArgb(220, 220, 220);
+            LbClasificacion.Location = new Point(3, 150);
+            LbClasificacion.Margin = new Padding(3, 0, 0, 0);
+            LbClasificacion.Name = "LbClasificacion";
+            LbClasificacion.Padding = new Padding(0, 0, 2, 0);
+            LbClasificacion.Size = new Size(127, 49);
+            LbClasificacion.TabIndex = 17;
+            LbClasificacion.Text = "Clasificación";
+            LbClasificacion.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // LbGeneros
+            // 
+            LbGeneros.AutoSize = true;
+            LbGeneros.Dock = DockStyle.Fill;
+            LbGeneros.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbGeneros.ForeColor = Color.FromArgb(220, 220, 220);
+            LbGeneros.Location = new Point(3, 199);
+            LbGeneros.Margin = new Padding(3, 0, 0, 0);
+            LbGeneros.Name = "LbGeneros";
+            LbGeneros.Padding = new Padding(0, 0, 2, 0);
+            LbGeneros.Size = new Size(127, 51);
+            LbGeneros.TabIndex = 19;
+            LbGeneros.Text = "Generos";
+            LbGeneros.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // LbFormatos
+            // 
+            LbFormatos.AutoSize = true;
+            LbFormatos.Dock = DockStyle.Fill;
+            LbFormatos.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbFormatos.ForeColor = Color.FromArgb(220, 220, 220);
+            LbFormatos.Location = new Point(3, 250);
+            LbFormatos.Margin = new Padding(3, 0, 0, 0);
+            LbFormatos.Name = "LbFormatos";
+            LbFormatos.Padding = new Padding(0, 0, 2, 0);
+            LbFormatos.Size = new Size(127, 50);
+            LbFormatos.TabIndex = 21;
+            LbFormatos.Text = "Formatos";
+            LbFormatos.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // LbEstreno
+            // 
+            LbEstreno.AutoSize = true;
+            LbEstreno.Dock = DockStyle.Fill;
+            LbEstreno.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbEstreno.ForeColor = Color.FromArgb(220, 220, 220);
+            LbEstreno.Location = new Point(385, 250);
+            LbEstreno.Margin = new Padding(3, 0, 0, 0);
+            LbEstreno.Name = "LbEstreno";
+            LbEstreno.Padding = new Padding(0, 0, 2, 0);
+            LbEstreno.Size = new Size(127, 50);
+            LbEstreno.TabIndex = 22;
+            LbEstreno.Text = "Fecha de Estreno";
+            LbEstreno.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // LbEstado
+            // 
+            LbEstado.AutoSize = true;
+            LbEstado.Dock = DockStyle.Fill;
+            LbEstado.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbEstado.ForeColor = Color.FromArgb(220, 220, 220);
+            LbEstado.Location = new Point(385, 199);
+            LbEstado.Margin = new Padding(3, 0, 0, 0);
+            LbEstado.Name = "LbEstado";
+            LbEstado.Padding = new Padding(0, 0, 2, 0);
+            LbEstado.Size = new Size(127, 51);
+            LbEstado.TabIndex = 20;
+            LbEstado.Text = "Estado";
+            LbEstado.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // DpEstreno
+            // 
+            DpEstreno.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            DpEstreno.CalendarForeColor = Color.FromArgb(230, 230, 230);
+            DpEstreno.CalendarMonthBackground = Color.FromArgb(55, 60, 72);
+            DpEstreno.CalendarTitleBackColor = Color.FromArgb(41, 128, 185);
+            DpEstreno.CalendarTitleForeColor = Color.White;
+            DpEstreno.CalendarTrailingForeColor = Color.FromArgb(150, 150, 150);
+            DpEstreno.CustomFormat = "dd/MM/yyyy";
+            DpEstreno.Font = new Font("Segoe UI", 9.5F);
+            DpEstreno.Format = DateTimePickerFormat.Custom;
+            DpEstreno.Location = new Point(517, 260);
+            DpEstreno.Margin = new Padding(5);
+            DpEstreno.MaximumSize = new Size(0, 30);
+            DpEstreno.MinimumSize = new Size(190, 30);
+            DpEstreno.Name = "DpEstreno";
+            DpEstreno.Size = new Size(243, 30);
+            DpEstreno.TabIndex = 46;
+            // 
+            // LbDescripcion
+            // 
+            LbDescripcion.AutoSize = true;
+            LbDescripcion.Dock = DockStyle.Fill;
+            LbDescripcion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbDescripcion.ForeColor = Color.FromArgb(220, 220, 220);
+            LbDescripcion.Location = new Point(385, 100);
+            LbDescripcion.Margin = new Padding(3, 0, 0, 0);
+            LbDescripcion.Name = "LbDescripcion";
+            LbDescripcion.Padding = new Padding(0, 0, 2, 0);
+            LbDescripcion.Size = new Size(127, 50);
+            LbDescripcion.TabIndex = 50;
+            LbDescripcion.Text = "Descripción";
+            LbDescripcion.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // RtbDescripcion
+            // 
+            RtbDescripcion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            RtbDescripcion.BackColor = Color.FromArgb(55, 60, 72);
+            RtbDescripcion.BorderStyle = BorderStyle.FixedSingle;
+            RtbDescripcion.Font = new Font("Segoe UI", 10F);
+            RtbDescripcion.ForeColor = Color.FromArgb(230, 230, 230);
+            RtbDescripcion.Location = new Point(517, 105);
+            RtbDescripcion.Margin = new Padding(5);
+            RtbDescripcion.MinimumSize = new Size(190, 60);
+            RtbDescripcion.Name = "RtbDescripcion";
+            TlpForm.SetRowSpan(RtbDescripcion, 2);
+            RtbDescripcion.Size = new Size(243, 89);
+            RtbDescripcion.TabIndex = 52;
+            RtbDescripcion.Text = "";
+            // 
+            // TbTitulo
+            // 
+            TbTitulo.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TbTitulo.BackColor = Color.FromArgb(55, 60, 72);
+            TbTitulo.BorderStyle = BorderStyle.FixedSingle;
+            TbTitulo.Font = new Font("Segoe UI", 10F);
+            TbTitulo.ForeColor = Color.FromArgb(160, 165, 175);
+            TbTitulo.Location = new Point(135, 60);
+            TbTitulo.Margin = new Padding(5);
+            TbTitulo.MaximumSize = new Size(0, 30);
+            TbTitulo.MinimumSize = new Size(190, 30);
+            TbTitulo.Name = "TbTitulo";
+            TbTitulo.PlaceholderText = "Evil Dead";
+            TbTitulo.Size = new Size(242, 30);
+            TbTitulo.TabIndex = 53;
+            // 
+            // TbDuracion
+            // 
+            TbDuracion.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TbDuracion.BackColor = Color.FromArgb(55, 60, 72);
+            TbDuracion.BorderStyle = BorderStyle.FixedSingle;
+            TbDuracion.Font = new Font("Segoe UI", 10F);
+            TbDuracion.ForeColor = Color.FromArgb(160, 165, 175);
+            TbDuracion.Location = new Point(135, 110);
+            TbDuracion.Margin = new Padding(5);
+            TbDuracion.MaximumSize = new Size(0, 30);
+            TbDuracion.MinimumSize = new Size(190, 30);
+            TbDuracion.Name = "TbDuracion";
+            TbDuracion.PlaceholderText = "120";
+            TbDuracion.Size = new Size(242, 30);
+            TbDuracion.TabIndex = 54;
+            // 
+            // TbDirector
+            // 
+            TbDirector.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TbDirector.BackColor = Color.FromArgb(55, 60, 72);
+            TbDirector.BorderStyle = BorderStyle.FixedSingle;
+            TbDirector.Font = new Font("Segoe UI", 10F);
+            TbDirector.ForeColor = Color.FromArgb(230, 230, 230);
+            TbDirector.Location = new Point(517, 10);
+            TbDirector.Margin = new Padding(5);
+            TbDirector.MaximumSize = new Size(0, 30);
+            TbDirector.MinimumSize = new Size(190, 30);
+            TbDirector.Name = "TbDirector";
+            TbDirector.Size = new Size(243, 30);
+            TbDirector.TabIndex = 57;
+            // 
+            // TbTrailer
+            // 
+            TbTrailer.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TbTrailer.BackColor = Color.FromArgb(55, 60, 72);
+            TbTrailer.BorderStyle = BorderStyle.FixedSingle;
+            TbTrailer.Font = new Font("Segoe UI", 10F);
+            TbTrailer.ForeColor = Color.FromArgb(230, 230, 230);
+            TbTrailer.Location = new Point(517, 60);
+            TbTrailer.Margin = new Padding(5);
+            TbTrailer.MaximumSize = new Size(0, 30);
+            TbTrailer.MinimumSize = new Size(190, 30);
+            TbTrailer.Name = "TbTrailer";
+            TbTrailer.Size = new Size(243, 30);
+            TbTrailer.TabIndex = 59;
+            // 
+            // TbID
+            // 
+            TbID.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TbID.BackColor = Color.FromArgb(28, 30, 38);
+            TbID.BorderStyle = BorderStyle.FixedSingle;
+            TbID.Font = new Font("Segoe UI", 10F);
+            TbID.ForeColor = Color.FromArgb(120, 125, 135);
+            TbID.Location = new Point(135, 10);
+            TbID.Margin = new Padding(5);
+            TbID.MaximumSize = new Size(0, 30);
+            TbID.MinimumSize = new Size(190, 30);
+            TbID.Name = "TbID";
+            TbID.ReadOnly = true;
+            TbID.Size = new Size(242, 30);
+            TbID.TabIndex = 60;
+            TbID.TabStop = false;
+            // 
+            // TbGeneros
+            // 
+            TbGeneros.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TbGeneros.BackColor = Color.FromArgb(28, 30, 38);
+            TbGeneros.BorderStyle = BorderStyle.FixedSingle;
+            TbGeneros.Font = new Font("Segoe UI", 10F);
+            TbGeneros.ForeColor = Color.FromArgb(120, 125, 135);
+            TbGeneros.Location = new Point(135, 209);
+            TbGeneros.Margin = new Padding(5);
+            TbGeneros.MaximumSize = new Size(0, 30);
+            TbGeneros.MinimumSize = new Size(190, 30);
+            TbGeneros.Name = "TbGeneros";
+            TbGeneros.ReadOnly = true;
+            TbGeneros.Size = new Size(242, 30);
+            TbGeneros.TabIndex = 61;
+            TbGeneros.TabStop = false;
+            // 
+            // TbFormatos
+            // 
+            TbFormatos.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TbFormatos.BackColor = Color.FromArgb(28, 30, 38);
+            TbFormatos.BorderStyle = BorderStyle.FixedSingle;
+            TbFormatos.Font = new Font("Segoe UI", 10F);
+            TbFormatos.ForeColor = Color.FromArgb(120, 125, 135);
+            TbFormatos.Location = new Point(135, 260);
+            TbFormatos.Margin = new Padding(5);
+            TbFormatos.MaximumSize = new Size(0, 30);
+            TbFormatos.MinimumSize = new Size(190, 30);
+            TbFormatos.Name = "TbFormatos";
+            TbFormatos.ReadOnly = true;
+            TbFormatos.Size = new Size(242, 30);
+            TbFormatos.TabIndex = 62;
+            TbFormatos.TabStop = false;
+            // 
+            // TlpButtons
+            // 
+            TlpButtons.ColumnCount = 6;
+            TlpFormWithButtons.SetColumnSpan(TlpButtons, 2);
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            TlpButtons.Controls.Add(BtnIngresar, 1, 0);
+            TlpButtons.Controls.Add(BtnEliminar, 4, 0);
+            TlpButtons.Controls.Add(BtnCopiar, 2, 0);
+            TlpButtons.Controls.Add(BtnActualizar, 3, 0);
+            TlpButtons.Dock = DockStyle.Fill;
+            TlpButtons.Location = new Point(0, 300);
+            TlpButtons.Margin = new Padding(0);
+            TlpButtons.Name = "TlpButtons";
+            TlpButtons.RowCount = 1;
+            TlpButtons.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            TlpButtons.Size = new Size(875, 75);
+            TlpButtons.TabIndex = 3;
+            // 
+            // BtnIngresar
+            // 
+            BtnIngresar.Anchor = AnchorStyles.None;
+            BtnIngresar.BackColor = Color.FromArgb(41, 128, 185);
+            BtnIngresar.FlatAppearance.BorderSize = 0;
+            BtnIngresar.FlatAppearance.MouseDownBackColor = Color.FromArgb(24, 75, 109);
+            BtnIngresar.FlatAppearance.MouseOverBackColor = Color.FromArgb(44, 134, 194);
+            BtnIngresar.FlatStyle = FlatStyle.Flat;
+            BtnIngresar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            BtnIngresar.ForeColor = Color.White;
+            BtnIngresar.Location = new Point(222, 17);
+            BtnIngresar.Margin = new Padding(0);
+            BtnIngresar.MaximumSize = new Size(100, 40);
+            BtnIngresar.MinimumSize = new Size(100, 40);
+            BtnIngresar.Name = "BtnIngresar";
+            BtnIngresar.Size = new Size(100, 40);
+            BtnIngresar.TabIndex = 1;
+            BtnIngresar.Text = "Ingresar";
+            BtnIngresar.UseVisualStyleBackColor = false;
+            // 
+            // BtnEliminar
+            // 
+            BtnEliminar.Action = Componentes.ButtonAction.Eliminar;
+            BtnEliminar.Anchor = AnchorStyles.None;
+            BtnEliminar.BackColor = Color.FromArgb(192, 57, 43);
+            BtnEliminar.FlatAppearance.BorderSize = 0;
+            BtnEliminar.FlatAppearance.MouseDownBackColor = Color.FromArgb(116, 35, 27);
+            BtnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(203, 62, 46);
+            BtnEliminar.FlatStyle = FlatStyle.Flat;
+            BtnEliminar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            BtnEliminar.ForeColor = Color.White;
+            BtnEliminar.Location = new Point(552, 17);
+            BtnEliminar.Margin = new Padding(0);
+            BtnEliminar.MaximumSize = new Size(100, 40);
+            BtnEliminar.MinimumSize = new Size(100, 40);
+            BtnEliminar.Name = "BtnEliminar";
+            BtnEliminar.Size = new Size(100, 40);
+            BtnEliminar.TabIndex = 4;
+            BtnEliminar.Text = "Eliminar";
+            BtnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // BtnCopiar
+            // 
+            BtnCopiar.Action = Componentes.ButtonAction.Copiar;
+            BtnCopiar.Anchor = AnchorStyles.None;
+            BtnCopiar.BackColor = Color.FromArgb(26, 156, 156);
+            BtnCopiar.FlatAppearance.BorderSize = 0;
+            BtnCopiar.FlatAppearance.MouseDownBackColor = Color.FromArgb(16, 95, 95);
+            BtnCopiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(29, 169, 169);
+            BtnCopiar.FlatStyle = FlatStyle.Flat;
+            BtnCopiar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            BtnCopiar.ForeColor = Color.White;
+            BtnCopiar.Location = new Point(332, 17);
+            BtnCopiar.Margin = new Padding(0);
+            BtnCopiar.MaximumSize = new Size(100, 40);
+            BtnCopiar.MinimumSize = new Size(100, 40);
+            BtnCopiar.Name = "BtnCopiar";
+            BtnCopiar.Size = new Size(100, 40);
+            BtnCopiar.TabIndex = 3;
+            BtnCopiar.Text = "Copiar";
+            BtnCopiar.UseVisualStyleBackColor = false;
+            // 
+            // BtnActualizar
+            // 
+            BtnActualizar.Action = Componentes.ButtonAction.Actualizar;
+            BtnActualizar.Anchor = AnchorStyles.None;
+            BtnActualizar.BackColor = Color.FromArgb(214, 157, 15);
+            BtnActualizar.FlatAppearance.BorderSize = 0;
+            BtnActualizar.FlatAppearance.MouseDownBackColor = Color.FromArgb(130, 97, 9);
+            BtnActualizar.FlatAppearance.MouseOverBackColor = Color.FromArgb(226, 169, 16);
+            BtnActualizar.FlatStyle = FlatStyle.Flat;
+            BtnActualizar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            BtnActualizar.ForeColor = Color.White;
+            BtnActualizar.Location = new Point(442, 17);
+            BtnActualizar.Margin = new Padding(0);
+            BtnActualizar.MaximumSize = new Size(100, 40);
+            BtnActualizar.MinimumSize = new Size(100, 40);
+            BtnActualizar.Name = "BtnActualizar";
+            BtnActualizar.Size = new Size(100, 40);
+            BtnActualizar.TabIndex = 2;
+            BtnActualizar.Text = "Actualizar";
+            BtnActualizar.UseVisualStyleBackColor = false;
+            // 
+            // TlpTitleLabel
+            // 
+            TlpTitleLabel.ColumnCount = 3;
+            TlpTitleLabel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            TlpTitleLabel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 500F));
+            TlpTitleLabel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            TlpTitleLabel.Controls.Add(LbTitulo, 1, 0);
+            TlpTitleLabel.Dock = DockStyle.Fill;
+            TlpTitleLabel.Location = new Point(0, 0);
+            TlpTitleLabel.Margin = new Padding(0);
+            TlpTitleLabel.Name = "TlpTitleLabel";
+            TlpTitleLabel.RowCount = 1;
+            TlpTitleLabel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            TlpTitleLabel.Size = new Size(1050, 75);
+            TlpTitleLabel.TabIndex = 1;
+            // 
+            // LbTitulo
+            // 
+            LbTitulo.AutoSize = true;
+            LbTitulo.Dock = DockStyle.Fill;
+            LbTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            LbTitulo.ForeColor = Color.FromArgb(41, 128, 185);
+            LbTitulo.Location = new Point(278, 0);
+            LbTitulo.Name = "LbTitulo";
+            LbTitulo.Size = new Size(494, 75);
+            LbTitulo.TabIndex = 0;
+            LbTitulo.Text = "PELÍCULAS";
+            LbTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // TlpAux3
+            // 
+            TlpAux3.ColumnCount = 3;
+            TlpAux3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            TlpAux3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 510F));
+            TlpAux3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            TlpAux3.Controls.Add(TlpFilter, 1, 0);
+            TlpAux3.Dock = DockStyle.Fill;
+            TlpAux3.Location = new Point(0, 450);
+            TlpAux3.Margin = new Padding(0);
+            TlpAux3.Name = "TlpAux3";
+            TlpAux3.RowCount = 1;
+            TlpAux3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            TlpAux3.Size = new Size(1050, 75);
+            TlpAux3.TabIndex = 2;
+            // 
+            // TlpFilter
+            // 
+            TlpFilter.ColumnCount = 3;
+            TlpFilter.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
+            TlpFilter.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
+            TlpFilter.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+            TlpFilter.Controls.Add(customButton6, 2, 0);
+            TlpFilter.Controls.Add(CbFiltro, 0, 0);
+            TlpFilter.Controls.Add(TbFiltro, 1, 0);
+            TlpFilter.Dock = DockStyle.Fill;
+            TlpFilter.Location = new Point(270, 0);
+            TlpFilter.Margin = new Padding(0);
+            TlpFilter.Name = "TlpFilter";
+            TlpFilter.RowCount = 1;
+            TlpFilter.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            TlpFilter.Size = new Size(510, 75);
+            TlpFilter.TabIndex = 0;
             // 
             // customButton6
             // 
@@ -735,52 +720,58 @@
             customButton6.Text = "Buscar";
             customButton6.UseVisualStyleBackColor = false;
             // 
-            // customComboBox2
+            // CbFiltro
             // 
-            customComboBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            customComboBox2.BackColor = Color.FromArgb(55, 60, 72);
-            customComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            customComboBox2.FlatStyle = FlatStyle.Flat;
-            customComboBox2.Font = new Font("Segoe UI", 9F);
-            customComboBox2.ForeColor = Color.FromArgb(230, 230, 230);
-            customComboBox2.FormattingEnabled = true;
-            customComboBox2.ItemHeight = 20;
-            customComboBox2.Location = new Point(5, 23);
-            customComboBox2.Margin = new Padding(5);
-            customComboBox2.MinimumSize = new Size(190, 0);
-            customComboBox2.Name = "customComboBox2";
-            customComboBox2.Size = new Size(190, 28);
-            customComboBox2.TabIndex = 6;
+            CbFiltro.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            CbFiltro.BackColor = Color.FromArgb(55, 60, 72);
+            CbFiltro.BaseColor = Color.FromArgb(25, 27, 29);
+            CbFiltro.BGColor = Color.FromArgb(45, 47, 49);
+            CbFiltro.DrawMode = DrawMode.OwnerDrawFixed;
+            CbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
+            CbFiltro.FlatStyle = FlatStyle.Flat;
+            CbFiltro.Font = new Font("Segoe UI", 9F);
+            CbFiltro.ForeColor = Color.FromArgb(230, 230, 230);
+            CbFiltro.FormattingEnabled = true;
+            CbFiltro.HoverColor = Color.FromArgb(35, 168, 109);
+            CbFiltro.HoverFontColor = Color.White;
+            CbFiltro.ItemHeight = 20;
+            CbFiltro.Location = new Point(5, 24);
+            CbFiltro.Margin = new Padding(5);
+            CbFiltro.MinimumSize = new Size(190, 0);
+            CbFiltro.Name = "CbFiltro";
+            CbFiltro.Size = new Size(190, 26);
+            CbFiltro.TabIndex = 6;
             // 
-            // customTextBox6
+            // TbFiltro
             // 
-            customTextBox6.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            customTextBox6.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox6.BorderStyle = BorderStyle.FixedSingle;
-            customTextBox6.Font = new Font("Segoe UI", 10F);
-            customTextBox6.ForeColor = Color.FromArgb(230, 230, 230);
-            customTextBox6.Location = new Point(205, 22);
-            customTextBox6.Margin = new Padding(5);
-            customTextBox6.MinimumSize = new Size(190, 30);
-            customTextBox6.Name = "customTextBox6";
-            customTextBox6.Size = new Size(190, 30);
-            customTextBox6.TabIndex = 7;
+            TbFiltro.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TbFiltro.BackColor = Color.FromArgb(55, 60, 72);
+            TbFiltro.BorderStyle = BorderStyle.FixedSingle;
+            TbFiltro.Font = new Font("Segoe UI", 10F);
+            TbFiltro.ForeColor = Color.FromArgb(230, 230, 230);
+            TbFiltro.Location = new Point(205, 22);
+            TbFiltro.Margin = new Padding(5);
+            TbFiltro.MaximumSize = new Size(0, 30);
+            TbFiltro.MinimumSize = new Size(190, 30);
+            TbFiltro.Name = "TbFiltro";
+            TbFiltro.Size = new Size(190, 30);
+            TbFiltro.TabIndex = 7;
             // 
-            // customDataGridView1
+            // DgvPelicula
             // 
-            customDataGridView1.AllowUserToAddRows = false;
-            customDataGridView1.AllowUserToResizeColumns = false;
-            customDataGridView1.AllowUserToResizeRows = false;
+            DgvPelicula.AllowUserToAddRows = false;
+            DgvPelicula.AllowUserToResizeColumns = false;
+            DgvPelicula.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(50, 55, 66);
             dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 230, 230);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(41, 128, 185);
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            customDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            customDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            customDataGridView1.BackgroundColor = Color.FromArgb(55, 60, 72);
-            customDataGridView1.BorderStyle = BorderStyle.None;
-            customDataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            customDataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            DgvPelicula.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DgvPelicula.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvPelicula.BackgroundColor = Color.FromArgb(55, 60, 72);
+            DgvPelicula.BorderStyle = BorderStyle.None;
+            DgvPelicula.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            DgvPelicula.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(41, 128, 185);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
@@ -789,8 +780,8 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(41, 128, 185);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            customDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            customDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvPelicula.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DgvPelicula.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(55, 60, 72);
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.5F);
@@ -799,88 +790,133 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(41, 128, 185);
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            customDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            customDataGridView1.Dock = DockStyle.Fill;
-            customDataGridView1.EnableHeadersVisualStyles = false;
-            customDataGridView1.Font = new Font("Segoe UI", 9.5F);
-            customDataGridView1.GridColor = Color.FromArgb(70, 76, 90);
-            customDataGridView1.Location = new Point(0, 525);
-            customDataGridView1.Margin = new Padding(0);
-            customDataGridView1.MultiSelect = false;
-            customDataGridView1.Name = "customDataGridView1";
-            customDataGridView1.ReadOnly = true;
-            customDataGridView1.RowHeadersVisible = false;
-            customDataGridView1.RowHeadersWidth = 51;
-            customDataGridView1.RowTemplate.Height = 36;
-            customDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            customDataGridView1.Size = new Size(1050, 175);
-            customDataGridView1.TabIndex = 2;
+            DgvPelicula.DefaultCellStyle = dataGridViewCellStyle3;
+            DgvPelicula.Dock = DockStyle.Fill;
+            DgvPelicula.EnableHeadersVisualStyles = false;
+            DgvPelicula.Font = new Font("Segoe UI", 9.5F);
+            DgvPelicula.GridColor = Color.FromArgb(70, 76, 90);
+            DgvPelicula.Location = new Point(0, 525);
+            DgvPelicula.Margin = new Padding(0);
+            DgvPelicula.MultiSelect = false;
+            DgvPelicula.Name = "DgvPelicula";
+            DgvPelicula.ReadOnly = true;
+            DgvPelicula.RowHeadersVisible = false;
+            DgvPelicula.RowHeadersWidth = 51;
+            DgvPelicula.RowTemplate.Height = 36;
+            DgvPelicula.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DgvPelicula.Size = new Size(1050, 175);
+            DgvPelicula.TabIndex = 2;
+            // 
+            // customComboBox2
+            // 
+            customComboBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customComboBox2.BaseColor = Color.FromArgb(25, 27, 29);
+            customComboBox2.BGColor = Color.FromArgb(45, 47, 49);
+            customComboBox2.DrawMode = DrawMode.OwnerDrawFixed;
+            customComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            customComboBox2.Font = new Font("Segoe UI", 9F);
+            customComboBox2.ForeColor = Color.White;
+            customComboBox2.FormattingEnabled = true;
+            customComboBox2.HoverColor = Color.FromArgb(35, 168, 109);
+            customComboBox2.HoverFontColor = Color.White;
+            customComboBox2.ItemHeight = 24;
+            customComboBox2.Location = new Point(135, 165);
+            customComboBox2.Margin = new Padding(5);
+            customComboBox2.MinimumSize = new Size(190, 0);
+            customComboBox2.Name = "customComboBox2";
+            customComboBox2.Size = new Size(242, 30);
+            customComboBox2.TabIndex = 64;
+            // 
+            // customComboBox3
+            // 
+            customComboBox3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customComboBox3.BaseColor = Color.FromArgb(25, 27, 29);
+            customComboBox3.BGColor = Color.FromArgb(45, 47, 49);
+            customComboBox3.DrawMode = DrawMode.OwnerDrawFixed;
+            customComboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
+            customComboBox3.Font = new Font("Segoe UI", 9F);
+            customComboBox3.ForeColor = Color.White;
+            customComboBox3.FormattingEnabled = true;
+            customComboBox3.HoverColor = Color.FromArgb(35, 168, 109);
+            customComboBox3.HoverFontColor = Color.White;
+            customComboBox3.ItemHeight = 24;
+            customComboBox3.Location = new Point(517, 215);
+            customComboBox3.Margin = new Padding(5);
+            customComboBox3.MinimumSize = new Size(190, 0);
+            customComboBox3.Name = "customComboBox3";
+            customComboBox3.Size = new Size(243, 30);
+            customComboBox3.TabIndex = 65;
             // 
             // FrBorrador
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.WindowText;
-            Controls.Add(Tlp_divFormAndDgv);
+            Controls.Add(TlpDivFormAndDgv);
             Name = "FrBorrador";
             Size = new Size(1050, 700);
-            Tlp_divFormAndDgv.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel5.ResumeLayout(false);
-            tableLayoutPanel6.ResumeLayout(false);
-            tableLayoutPanel6.PerformLayout();
-            tableLayoutPanel7.ResumeLayout(false);
-            tableLayoutPanel3.ResumeLayout(false);
-            tableLayoutPanel3.PerformLayout();
-            tableLayoutPanel4.ResumeLayout(false);
-            tableLayoutPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)customDataGridView1).EndInit();
+            TlpDivFormAndDgv.ResumeLayout(false);
+            TlpAux1.ResumeLayout(false);
+            TlpAux2.ResumeLayout(false);
+            TlpFormWithButtons.ResumeLayout(false);
+            TlpForm.ResumeLayout(false);
+            TlpForm.PerformLayout();
+            TlpButtons.ResumeLayout(false);
+            TlpTitleLabel.ResumeLayout(false);
+            TlpTitleLabel.PerformLayout();
+            TlpAux3.ResumeLayout(false);
+            TlpFilter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)DgvPelicula).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TableLayoutPanel Tlp_divFormAndDgv;
-        private TableLayoutPanel tableLayoutPanel1;
-        private TableLayoutPanel tableLayoutPanel2;
-        private TableLayoutPanel tableLayoutPanel5;
-        private Componentes.CustomButton customButton2;
-        private TableLayoutPanel tableLayoutPanel6;
-        private Componentes.CustomLabel customLabel1;
-        private Componentes.CustomLabel customLabel2;
-        private Componentes.CustomLabel customLabel3;
-        private Componentes.CustomLabel customLabel4;
-        private Componentes.CustomLabel customLabel5;
-        private Componentes.CustomLabel customLabel7;
-        private Componentes.CustomLabel customLabel9;
-        private Componentes.CustomLabel customLabel11;
-        private Componentes.CustomLabel customLabel12;
-        private Componentes.CustomLabel customLabel10;
-        private TableLayoutPanel tableLayoutPanel7;
-        private Componentes.CustomButton customButton1;
-        private Componentes.CustomButton customButton5;
-        private Componentes.CustomButton customButton4;
-        private Componentes.CustomButton customButton3;
-        private TableLayoutPanel tableLayoutPanel3;
-        private Componentes.CustomTitleLabel customTitleLabel1;
-        private TableLayoutPanel tableLayoutPanel4;
-        private TableLayoutPanel tableLayoutPanel8;
+        private TableLayoutPanel TlpDivFormAndDgv;
+        private TableLayoutPanel TlpAux1;
+        private TableLayoutPanel TlpAux2;
+        private TableLayoutPanel TlpFormWithButtons;
+        private Componentes.CustomButton BtnLimpiar;
+        private TableLayoutPanel TlpForm;
+        private Componentes.CustomLabel LbID;
+        private Componentes.CustomLabel LbDirector;
+        private Componentes.CustomLabel LbPelicula;
+        private Componentes.CustomLabel LbTrailer;
+        private Componentes.CustomLabel LbDuracion;
+        private Componentes.CustomLabel LbClasificacion;
+        private Componentes.CustomLabel LbGeneros;
+        private Componentes.CustomLabel LbFormatos;
+        private Componentes.CustomLabel LbEstreno;
+        private Componentes.CustomLabel LbEstado;
+        private TableLayoutPanel TlpButtons;
+        private Componentes.CustomButton BtnIngresar;
+        private Componentes.CustomButton BtnEliminar;
+        private Componentes.CustomButton BtnCopiar;
+        private Componentes.CustomButton BtnActualizar;
+        private TableLayoutPanel TlpTitleLabel;
+        private Componentes.CustomTitleLabel LbTitulo;
+        private TableLayoutPanel TlpAux3;
+        private TableLayoutPanel TlpFilter;
         private Componentes.CustomButton customButton6;
-        private Componentes.CustomDataGridView customDataGridView1;
-        private Componentes.CustomTextBox customTextBox1;
-        private Componentes.CustomTextBox customTextBox3;
-        private Componentes.CustomComboBox customComboBox3;
-        private Componentes.CustomRichTextBox customRichTextBox1;
+        private Componentes.CustomDataGridView DgvPelicula;
         private Componentes.CustomComboBox customComboBox4;
         private Componentes.CustomComboBox customComboBox1;
-        private Componentes.CustomDatePicker customDatePicker1;
+        private Componentes.CustomDatePicker DpEstreno;
         private Componentes.CustomTextBox customTextBox2;
         private Componentes.CustomTextBox customTextBox4;
         private Componentes.CustomTextBox customTextBox5;
-        private Componentes.CustomLabel customLabel6;
+        private Componentes.CustomLabel LbDescripcion;
+        private Componentes.CustomComboBox CbFiltro;
+        private Componentes.CustomTextBox TbFiltro;
+        private Componentes.CustomRichTextBox RtbDescripcion;
+        private Componentes.CustomTextBox TbTitulo;
+        private Componentes.CustomTextBox TbDuracion;
+        private Componentes.CustomTextBox TbDirector;
+        private Componentes.CustomTextBox TbTrailer;
+        private Componentes.CustomIDTextBox TbID;
+        private Componentes.CustomIDTextBox TbGeneros;
+        private Componentes.CustomIDTextBox TbFormatos;
         private Componentes.CustomComboBox customComboBox2;
-        private Componentes.CustomTextBox customTextBox6;
-        private Componentes.CustomIDTextBox customidTextBox1;
+        private Componentes.CustomComboBox customComboBox3;
     }
 }

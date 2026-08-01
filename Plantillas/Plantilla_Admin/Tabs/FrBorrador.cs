@@ -17,5 +17,9 @@ namespace Plantilla_Admin.Tabs
             InitializeComponent();
         }
 
+        private void LbTrailer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

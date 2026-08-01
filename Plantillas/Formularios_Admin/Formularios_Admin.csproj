@@ -7,4 +7,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="krypton.toolkit" Version="105.26.7.201" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Componentes\Componentes.csproj" />
+    <ProjectReference Include="..\Con_Admin\Con_Admin.csproj" />
+  </ItemGroup>
+
 </Project>

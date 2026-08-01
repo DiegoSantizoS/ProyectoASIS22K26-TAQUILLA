@@ -16,6 +16,7 @@ namespace Componentes
             Margin = new Padding(5);
             Anchor = AnchorStyles.Left | AnchorStyles.Right;
             MinimumSize = new Size(190, 30);
+            MaximumSize = new Size(0, 30);
 
             CalendarForeColor = Color.FromArgb(230, 230, 230);
             CalendarMonthBackground = Color.FromArgb(55, 60, 72);

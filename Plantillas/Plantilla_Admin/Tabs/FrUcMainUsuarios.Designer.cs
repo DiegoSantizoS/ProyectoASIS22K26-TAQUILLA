@@ -1,6 +1,6 @@
 ﻿namespace Plantilla_Admin
 {
-    partial class usuarios
+    partial class FrUcMainUsuarios
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             menuStrip1 = new MenuStrip();
-            verUsuariosToolStripMenuItem = new ToolStripMenuItem();
-            pruebaToolStripMenuItem = new ToolStripMenuItem();
-            pruebaToolStripMenuItem1 = new ToolStripMenuItem();
-            eliminarUsuarioToolStripMenuItem = new ToolStripMenuItem();
+            TsmUsuarios = new ToolStripMenuItem();
+            TsmPerfiles = new ToolStripMenuItem();
+            TsmAsignarPermisos = new ToolStripMenuItem();
+            panel1 = new Panel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -40,45 +40,50 @@
             // 
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { verUsuariosToolStripMenuItem, pruebaToolStripMenuItem, pruebaToolStripMenuItem1, eliminarUsuarioToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { TsmUsuarios, TsmPerfiles, TsmAsignarPermisos });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(149, 360);
+            menuStrip1.Size = new Size(156, 360);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
-            // verUsuariosToolStripMenuItem
+            // TsmUsuarios
             // 
-            verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            verUsuariosToolStripMenuItem.Size = new Size(143, 24);
-            verUsuariosToolStripMenuItem.Text = "Buscar Usuario";
+            TsmUsuarios.Name = "TsmUsuarios";
+            TsmUsuarios.Size = new Size(143, 24);
+            TsmUsuarios.Text = "Usuarios";
+            TsmUsuarios.Click += TsmUsuarios_Click;
             // 
-            // pruebaToolStripMenuItem
+            // TsmPerfiles
             // 
-            pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
-            pruebaToolStripMenuItem.Size = new Size(143, 24);
-            pruebaToolStripMenuItem.Text = "Nuevo Usuario";
-            pruebaToolStripMenuItem.Click += pruebaToolStripMenuItem_Click;
+            TsmPerfiles.Name = "TsmPerfiles";
+            TsmPerfiles.Size = new Size(143, 24);
+            TsmPerfiles.Text = "Perfiles";
+            TsmPerfiles.Click += pruebaToolStripMenuItem_Click;
             // 
-            // pruebaToolStripMenuItem1
+            // TsmAsignarPermisos
             // 
-            pruebaToolStripMenuItem1.Name = "pruebaToolStripMenuItem1";
-            pruebaToolStripMenuItem1.Size = new Size(143, 24);
-            pruebaToolStripMenuItem1.Text = "Actualizar Usuario";
+            TsmAsignarPermisos.Name = "TsmAsignarPermisos";
+            TsmAsignarPermisos.Size = new Size(143, 24);
+            TsmAsignarPermisos.Text = "Asignar Permisos";
+            TsmAsignarPermisos.Click += TsmAsignarPermisos_Click;
             // 
-            // eliminarUsuarioToolStripMenuItem
+            // panel1
             // 
-            eliminarUsuarioToolStripMenuItem.Name = "eliminarUsuarioToolStripMenuItem";
-            eliminarUsuarioToolStripMenuItem.Size = new Size(143, 24);
-            eliminarUsuarioToolStripMenuItem.Text = "Eliminar Usuario";
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(156, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(465, 360);
+            panel1.TabIndex = 2;
             // 
-            // usuarios
+            // FrUcMainUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
+            Controls.Add(panel1);
             Controls.Add(menuStrip1);
-            Name = "usuarios";
+            Name = "FrUcMainUsuarios";
             Size = new Size(621, 360);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -89,9 +94,9 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem pruebaToolStripMenuItem;
-        private ToolStripMenuItem pruebaToolStripMenuItem1;
-        private ToolStripMenuItem verUsuariosToolStripMenuItem;
-        private ToolStripMenuItem eliminarUsuarioToolStripMenuItem;
+        private ToolStripMenuItem TsmPerfiles;
+        private ToolStripMenuItem TsmAsignarPermisos;
+        private ToolStripMenuItem TsmUsuarios;
+        private Panel panel1;
     }
 }
