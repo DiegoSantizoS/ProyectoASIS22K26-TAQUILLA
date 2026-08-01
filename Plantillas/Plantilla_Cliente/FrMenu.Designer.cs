@@ -33,6 +33,7 @@
             Tsmi_Cartelera = new ToolStripMenuItem();
             Tsmi_Reservas = new ToolStripMenuItem();
             Pnl_Menu = new Panel();
+            helpProvider1 = new HelpProvider();
             Pnl_MenuLayout.SuspendLayout();
             Ms_Opciones.SuspendLayout();
             SuspendLayout();
@@ -110,5 +111,6 @@
         private ToolStripMenuItem Tsmi_Cartelera;
         private ToolStripMenuItem Tsmi_Reservas;
         private Panel Pnl_Menu;
+        private HelpProvider helpProvider1;
     }
 }

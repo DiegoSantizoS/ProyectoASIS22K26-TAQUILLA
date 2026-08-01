@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace Plantilla_Cliente
 {
-    internal class Conexion
+    internal class Con_Cliente
     {
-        private MySqlConnection connecion;
+        private MySqlConnection Conexion;
         private String server = "localhost";
         private String datebase = "taquillas_cine";
         private String user = "root";
         private String password = "Root";
         private String pconexion;
-        public Conexion()
+        public Con_Cliente()
         {
             pconexion = "Server=" + server +
                ";Database=" + datebase +
@@ -28,13 +28,13 @@ namespace Plantilla_Cliente
 
         public MySqlConnection GetConnection()
         {
-            if (connecion == null)
+            if (Conexion == null)
             {
-                connecion = new MySqlConnection(pconexion);
-                connecion.Open();
+                Conexion = new MySqlConnection(pconexion);
+                Conexion.Open();
 
             }
-            return connecion;
+            return Conexion;
         }
         public DataTable mostrarpelicula()
         {
@@ -227,11 +227,41 @@ namespace Plantilla_Cliente
         }
         /*Fin de código de Carlos Andres Arriaza Lara 0901-23-13862 el 28/07/2026*/
         /*Inicio de código de Carlos Andres Arriaza Lara 0901-23-13862 el 29/07/2026*/
-        /*public DataTable insertarboleto(int idFuncion, int numero_boleto, )
+        public int SiguienteIdBoleto()
         {
-            
-        }*/
+            MySqlConnection con = GetConnection();
+
+            string consulta = @"SELECT AUTO_INCREMENT
+                FROM information_schema.TABLES
+                WHERE TABLE_SCHEMA = 'taquillas_cine'
+                  AND TABLE_NAME = 'boleto'";
+
+            MySqlCommand cmd = new MySqlCommand(consulta, con);
+            object resultado = cmd.ExecuteScalar();
+
+            return (resultado != null && resultado != DBNull.Value)
+                   ? Convert.ToInt32(resultado) + 1
+                   : 1;
+        }
+        public int SiguienteIdVenta()
+        {
+            MySqlConnection con = GetConnection();
+
+            string consulta = @"SELECT AUTO_INCREMENT
+                FROM information_schema.TABLES
+                WHERE TABLE_SCHEMA = 'taquillas_cine'
+                  AND TABLE_NAME = 'venta'";
+
+            MySqlCommand cmd = new MySqlCommand(consulta, con);
+            object resultado = cmd.ExecuteScalar();
+
+            return (resultado != null && resultado != DBNull.Value)
+                   ? Convert.ToInt32(resultado) + 1
+                   : 1;
+        }
+
         /*Fin de código de Carlos Andres Arriaza Lara 0901-23-13862 el 29/07/2026*/
+
     }
 }
 

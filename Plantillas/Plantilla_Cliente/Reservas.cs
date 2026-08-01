@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Data;
 using System.Runtime.InteropServices.Marshalling;
 using System.Windows.Forms;
-using Org.BouncyCastle.Tls.Crypto.Impl.BC;
+
 
 namespace Plantilla_Cliente
 {
     public partial class Reservas : UserControl
     {
-        private Conexion gconexion;
+        private Con_Cliente gconexion;
+
         // Película seleccionada
-        private int idcine;
-        private int idPelicula;
-        private int idciudad;
+        public int idcine;
+        public int idPelicula;
+        public int idciudad;
 
         // Datos de la reserva
         public int id_funcion;
@@ -23,6 +24,9 @@ namespace Plantilla_Cliente
 
         // Asientos seleccionados
         public List<int> asientosSeleccionados = new List<int>();
+
+        //Lista de boletos Generados
+        public List<Boleto> boletosGenerados = new List<Boleto>();
 
         // Botones para mostrar la fecha y hora seleccionadas
         private Button btnFechaSeleccionada = null;
@@ -36,7 +40,7 @@ namespace Plantilla_Cliente
         public Reservas(int idPelicula, int idciudad)
         {
             InitializeComponent();
-            gconexion = new Conexion();
+            gconexion = new Con_Cliente();
             this.idPelicula = idPelicula;
             this.idciudad = idciudad;
 
@@ -46,7 +50,8 @@ namespace Plantilla_Cliente
             cargarinfopelicula(this.idPelicula);
             cargarfunciones(this.idPelicula, this.idciudad);
             CargarCines(this.idciudad);
-            
+            Flp_Horarios.Controls.Clear();
+
         }
 
         private void TlP_Reservas_Paint(object sender, PaintEventArgs e)
@@ -76,6 +81,7 @@ namespace Plantilla_Cliente
                         string.Join(", ", asientosTexto));
 
                     MessageBox.Show("Id_Funcion" + id_funcion.ToString());
+                    GuardarButacas();
                 }
             }
         }
@@ -201,21 +207,37 @@ namespace Plantilla_Cliente
 
         private void Cbo_Cines_SelectedIndexChanged(object sender, EventArgs e)
         {
-            idcine = Cbo_Cines.SelectedIndex;
+           idcine = Cbo_Cines.SelectedIndex + 1;
+            cargarfunciones(idPelicula, idcine);
 
         }
+
         private void CargarCines(int ciudad)
         {
 
-           DataTable dtCines = gconexion.mostrarcines(ciudad);
+            DataTable dtCines = gconexion.mostrarcines(ciudad);
 
-           Cbo_Cines.DataSource = null;
+            Cbo_Cines.DataSource = null;
 
-           Cbo_Cines.DisplayMember = "nombre_cine";
-           Cbo_Cines.ValueMember = "id_cine";
+            Cbo_Cines.DisplayMember = "nombre_cine";
+            Cbo_Cines.ValueMember = "id_cine";
 
-           Cbo_Cines.DataSource = dtCines;
-            MessageBox.Show($"Cines cargados: {dtCines.Rows.Count}");
+            Cbo_Cines.DataSource = dtCines;
+            //MessageBox.Show($"Cines cargados: {dtCines.Rows.Count}");
+        }
+        private void GuardarButacas()
+        {
+            int idVenta = gconexion.SiguienteIdVenta();
+            int ultimoIdBoleto = gconexion.SiguienteIdBoleto();
+
+            foreach (int asiento in asientosSeleccionados)
+            {
+                int idBoleto = ultimoIdBoleto++;
+
+                boletosGenerados.Add(
+                    new Boleto(idBoleto, id_funcion, asiento, idVenta, "Reservado"));
+                MessageBox.Show($"Boleto generado: IdBoleto={idBoleto}, IdFuncion={id_funcion}, Asiento={asiento}, IdVenta={idVenta}, Estado=Reservado");
+            }
         }
     }
 }

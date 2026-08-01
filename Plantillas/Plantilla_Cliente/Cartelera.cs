@@ -13,7 +13,7 @@ namespace Plantilla_Cliente
 {
     public partial class Cartelera : UserControl
     {
-        private Conexion gconexion;
+        private Con_Cliente gconexion;
         Boolean is2DFilterActive = false;
         Boolean is3DFilterActive = false;
         Boolean is4DFilterActive = false;
@@ -25,7 +25,7 @@ namespace Plantilla_Cliente
         public Cartelera()
         {
             InitializeComponent();
-            gconexion = new Conexion();
+            gconexion = new Con_Cliente();
             Cargarciudad();
             CargarCines();
             CargarPeliculas();
@@ -251,7 +251,7 @@ namespace Plantilla_Cliente
                 int idPelicula = Convert.ToInt32(
                     Dgv_Cartelera.Rows[e.RowIndex].Cells["IdPelicula"].Value);
                 int ciudad = Convert.ToInt32(Cbo_Cine.SelectedValue);
-                CambiaraReserva?.Invoke(idPelicula, ciudad);
+                CambiaraReserva?.Invoke(/*idPelicula, ciudad*/2,1);
                 
             }
         }

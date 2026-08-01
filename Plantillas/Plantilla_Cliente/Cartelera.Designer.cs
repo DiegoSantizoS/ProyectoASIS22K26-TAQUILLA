@@ -268,6 +268,7 @@ namespace Plantilla_Cliente
             Reservar.Name = "Reservar";
             Reservar.ReadOnly = true;
             Reservar.Text = "Reservar";
+            Reservar.UseColumnTextForButtonValue = true;
             // 
             // comboBox2
             // 
@@ -311,9 +312,9 @@ namespace Plantilla_Cliente
         private DataGridView Dgv_Cartelera;
         private ComboBox Cbo_Cine;
         private Button Btn_Cargar_Cartelera;
-        private DataGridViewButtonColumn Reservar;
         private Button Btn_DobFilter;
         private Button Btn_SubFilter;
         private ComboBox Cbo_Ciudad;
+        private DataGridViewButtonColumn Reservar;
     }
 }
