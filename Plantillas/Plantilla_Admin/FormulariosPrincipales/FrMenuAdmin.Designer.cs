@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             PnlTop = new Panel();
+            BtnSalir = new ReaLTaiizor.Controls.SpaceButton();
             BtnAyuda = new ReaLTaiizor.Controls.SpaceButton();
             BtnReportes = new ReaLTaiizor.Controls.SpaceButton();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
@@ -37,7 +38,6 @@
             BtnFunciones = new ReaLTaiizor.Controls.SpaceButton();
             BtnDashboard = new ReaLTaiizor.Controls.SpaceButton();
             panel1 = new Panel();
-            BtnSalir = new ReaLTaiizor.Controls.SpaceButton();
             PnlTop.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,6 +60,24 @@
             PnlTop.TabIndex = 0;
             PnlTop.Paint += panel1_Paint;
             PnlTop.MouseMove += PnlTop_MouseMove;
+            // 
+            // BtnSalir
+            // 
+            BtnSalir.BackColor = Color.Transparent;
+            BtnSalir.Cursor = Cursors.Hand;
+            BtnSalir.Customization = "Kioq/zIyMv8yMjL/Kioq/y8vL/8nJyf//v7+/yMjI/8qKir/";
+            BtnSalir.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BtnSalir.Image = Properties.Resources.cinema2;
+            BtnSalir.Location = new Point(900, 0);
+            BtnSalir.Margin = new Padding(0);
+            BtnSalir.Name = "BtnSalir";
+            BtnSalir.NoRounding = false;
+            BtnSalir.Size = new Size(150, 31);
+            BtnSalir.TabIndex = 14;
+            BtnSalir.Text = "SALIR";
+            BtnSalir.TextAlignment = HorizontalAlignment.Center;
+            BtnSalir.Transparent = true;
+            BtnSalir.Click += BtnSalir_Click;
             // 
             // BtnAyuda
             // 
@@ -135,6 +153,7 @@
             BtnUsuarios.Text = "USUARIOS";
             BtnUsuarios.TextAlignment = HorizontalAlignment.Center;
             BtnUsuarios.Transparent = true;
+            BtnUsuarios.Click += BtnUsuarios_Click;
             // 
             // BtnVentas
             // 
@@ -196,23 +215,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1200, 669);
             panel1.TabIndex = 1;
-            // 
-            // BtnSalir
-            // 
-            BtnSalir.BackColor = Color.Transparent;
-            BtnSalir.Cursor = Cursors.Hand;
-            BtnSalir.Customization = "Kioq/zIyMv8yMjL/Kioq/y8vL/8nJyf//v7+/yMjI/8qKir/";
-            BtnSalir.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnSalir.Image = Properties.Resources.cinema2;
-            BtnSalir.Location = new Point(900, 0);
-            BtnSalir.Margin = new Padding(0);
-            BtnSalir.Name = "BtnSalir";
-            BtnSalir.NoRounding = false;
-            BtnSalir.Size = new Size(150, 31);
-            BtnSalir.TabIndex = 14;
-            BtnSalir.Text = "AYUDA";
-            BtnSalir.TextAlignment = HorizontalAlignment.Center;
-            BtnSalir.Transparent = true;
             // 
             // FrMenuAdmin
             // 

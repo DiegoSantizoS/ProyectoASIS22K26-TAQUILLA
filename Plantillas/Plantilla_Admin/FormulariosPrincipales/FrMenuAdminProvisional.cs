@@ -28,7 +28,7 @@ namespace Plantilla_Admin.FormulariosPrincipales
 
         private void usuarios_Click(object sender, EventArgs e)
         {
-            funcargarpagina(new usuarios());
+            funcargarpagina(new FrUcMainUsuarios());
         }
 
         private void logo_Click(object sender, EventArgs e)

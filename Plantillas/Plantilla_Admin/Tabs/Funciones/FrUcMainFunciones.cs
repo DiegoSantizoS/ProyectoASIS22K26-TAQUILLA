@@ -17,6 +17,7 @@ namespace Plantilla_Admin
         public FrUcMainFunciones()
         {
             InitializeComponent();
+            funcargarpagina(new FrUcPeliculas());
         }
 
         private void funcargarpagina(UserControl pagina)

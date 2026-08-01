@@ -2,7 +2,9 @@
  * fecha de: 19/07/2026 */
 
 using clase_conexion;
+using Formularios_Admin;
 using Plantilla_Admin.Tabs;
+using Plantilla_Cliente;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,7 +46,7 @@ namespace Plantilla_Admin
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            usuarios usuarios = new usuarios();
+            FrUcMainUsuarios usuarios = new FrUcMainUsuarios();
             funcargarpagina(usuarios);
         }
 
@@ -118,6 +120,19 @@ namespace Plantilla_Admin
         private void BtnDashboard_Click(object sender, EventArgs e)
         {
             funcargarpagina(new FrUcMainFunciones());
+        }
+
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            funcargarpagina(new FrUcMainUsuarios());
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            FrLogin login = new FrLogin();
+            login.FormClosed += (s, args) => this.Close();
+            this.Hide();
+            login.Show();
         }
     }
 }
