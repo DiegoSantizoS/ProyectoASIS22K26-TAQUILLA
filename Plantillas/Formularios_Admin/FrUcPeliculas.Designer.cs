@@ -113,9 +113,9 @@
             TlpDivFormAndDgv.Margin = new Padding(0);
             TlpDivFormAndDgv.Name = "TlpDivFormAndDgv";
             TlpDivFormAndDgv.RowCount = 2;
-            TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Absolute, 725F));
+            TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Absolute, 544F));
             TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TlpDivFormAndDgv.Size = new Size(1050, 750);
+            TlpDivFormAndDgv.Size = new Size(919, 562);
             TlpDivFormAndDgv.TabIndex = 4;
             // 
             // TlpAux1
@@ -130,44 +130,44 @@
             TlpAux1.Margin = new Padding(0);
             TlpAux1.Name = "TlpAux1";
             TlpAux1.RowCount = 3;
-            TlpAux1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
+            TlpAux1.RowStyles.Add(new RowStyle(SizeType.Absolute, 56F));
             TlpAux1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TlpAux1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
-            TlpAux1.Size = new Size(1050, 725);
+            TlpAux1.RowStyles.Add(new RowStyle(SizeType.Absolute, 56F));
+            TlpAux1.Size = new Size(919, 544);
             TlpAux1.TabIndex = 1;
             // 
             // TlpAux2
             // 
             TlpAux2.ColumnCount = 3;
             TlpAux2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            TlpAux2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 900F));
+            TlpAux2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 788F));
             TlpAux2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             TlpAux2.Controls.Add(TlpFormWithButtons, 1, 0);
             TlpAux2.Dock = DockStyle.Fill;
-            TlpAux2.Location = new Point(0, 75);
+            TlpAux2.Location = new Point(0, 56);
             TlpAux2.Margin = new Padding(0);
             TlpAux2.Name = "TlpAux2";
             TlpAux2.RowCount = 1;
             TlpAux2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TlpAux2.Size = new Size(1050, 575);
+            TlpAux2.Size = new Size(919, 432);
             TlpAux2.TabIndex = 0;
             // 
             // TlpFormWithButtons
             // 
             TlpFormWithButtons.ColumnCount = 2;
             TlpFormWithButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            TlpFormWithButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+            TlpFormWithButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 96F));
             TlpFormWithButtons.Controls.Add(BtnLimpiar, 1, 0);
             TlpFormWithButtons.Controls.Add(TlpForm, 0, 0);
             TlpFormWithButtons.Controls.Add(TlpButtons, 0, 1);
             TlpFormWithButtons.Dock = DockStyle.Fill;
-            TlpFormWithButtons.Location = new Point(75, 0);
+            TlpFormWithButtons.Location = new Point(65, 0);
             TlpFormWithButtons.Margin = new Padding(0);
             TlpFormWithButtons.Name = "TlpFormWithButtons";
             TlpFormWithButtons.RowCount = 2;
             TlpFormWithButtons.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TlpFormWithButtons.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
-            TlpFormWithButtons.Size = new Size(900, 575);
+            TlpFormWithButtons.RowStyles.Add(new RowStyle(SizeType.Absolute, 56F));
+            TlpFormWithButtons.Size = new Size(788, 432);
             TlpFormWithButtons.TabIndex = 0;
             // 
             // BtnLimpiar
@@ -181,12 +181,12 @@
             BtnLimpiar.FlatStyle = FlatStyle.Flat;
             BtnLimpiar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BtnLimpiar.ForeColor = Color.White;
-            BtnLimpiar.Location = new Point(800, 10);
-            BtnLimpiar.Margin = new Padding(0, 10, 0, 0);
-            BtnLimpiar.MaximumSize = new Size(100, 40);
-            BtnLimpiar.MinimumSize = new Size(100, 40);
+            BtnLimpiar.Location = new Point(700, 8);
+            BtnLimpiar.Margin = new Padding(0, 8, 0, 0);
+            BtnLimpiar.MaximumSize = new Size(88, 30);
+            BtnLimpiar.MinimumSize = new Size(88, 30);
             BtnLimpiar.Name = "BtnLimpiar";
-            BtnLimpiar.Size = new Size(100, 40);
+            BtnLimpiar.Size = new Size(88, 30);
             BtnLimpiar.TabIndex = 2;
             BtnLimpiar.Text = "Limpiar";
             BtnLimpiar.UseVisualStyleBackColor = false;
@@ -225,19 +225,19 @@
             TlpForm.Margin = new Padding(0);
             TlpForm.Name = "TlpForm";
             TlpForm.RowCount = 12;
-            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            TlpForm.Size = new Size(790, 500);
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            TlpForm.Size = new Size(692, 376);
             TlpForm.TabIndex = 0;
             // 
             // TbDescripcion
@@ -247,14 +247,14 @@
             TbDescripcion.BorderStyle = BorderStyle.FixedSingle;
             TbDescripcion.Font = new Font("Segoe UI", 10F);
             TbDescripcion.ForeColor = Color.FromArgb(230, 230, 230);
-            TbDescripcion.Location = new Point(533, 110);
-            TbDescripcion.Margin = new Padding(5);
-            TbDescripcion.MaximumSize = new Size(0, 30);
-            TbDescripcion.MinimumSize = new Size(190, 80);
+            TbDescripcion.Location = new Point(466, 84);
+            TbDescripcion.Margin = new Padding(4, 4, 4, 4);
+            TbDescripcion.MaximumSize = new Size(2, 23);
+            TbDescripcion.MinimumSize = new Size(166, 60);
             TbDescripcion.Multiline = true;
             TbDescripcion.Name = "TbDescripcion";
             TlpForm.SetRowSpan(TbDescripcion, 2);
-            TbDescripcion.Size = new Size(252, 80);
+            TbDescripcion.Size = new Size(166, 60);
             TbDescripcion.TabIndex = 66;
             // 
             // LbID
@@ -267,7 +267,7 @@
             LbID.Margin = new Padding(3, 0, 0, 0);
             LbID.Name = "LbID";
             LbID.Padding = new Padding(0, 0, 2, 0);
-            LbID.Size = new Size(131, 50);
+            LbID.Size = new Size(114, 38);
             LbID.TabIndex = 11;
             LbID.Text = "ID Pelicula";
             LbID.TextAlign = ContentAlignment.MiddleRight;
@@ -278,11 +278,11 @@
             LbDirector.Dock = DockStyle.Fill;
             LbDirector.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbDirector.ForeColor = Color.FromArgb(220, 220, 220);
-            LbDirector.Location = new Point(397, 0);
+            LbDirector.Location = new Point(348, 0);
             LbDirector.Margin = new Padding(3, 0, 0, 0);
             LbDirector.Name = "LbDirector";
             LbDirector.Padding = new Padding(0, 0, 2, 0);
-            LbDirector.Size = new Size(131, 50);
+            LbDirector.Size = new Size(114, 38);
             LbDirector.TabIndex = 12;
             LbDirector.Text = "Director";
             LbDirector.TextAlign = ContentAlignment.MiddleRight;
@@ -293,11 +293,11 @@
             LbPelicula.Dock = DockStyle.Fill;
             LbPelicula.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbPelicula.ForeColor = Color.FromArgb(220, 220, 220);
-            LbPelicula.Location = new Point(3, 50);
+            LbPelicula.Location = new Point(3, 38);
             LbPelicula.Margin = new Padding(3, 0, 0, 0);
             LbPelicula.Name = "LbPelicula";
             LbPelicula.Padding = new Padding(0, 0, 2, 0);
-            LbPelicula.Size = new Size(131, 50);
+            LbPelicula.Size = new Size(114, 38);
             LbPelicula.TabIndex = 13;
             LbPelicula.Text = "Titulo";
             LbPelicula.TextAlign = ContentAlignment.MiddleRight;
@@ -308,11 +308,11 @@
             LbTrailer.Dock = DockStyle.Fill;
             LbTrailer.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbTrailer.ForeColor = Color.FromArgb(220, 220, 220);
-            LbTrailer.Location = new Point(397, 50);
+            LbTrailer.Location = new Point(348, 38);
             LbTrailer.Margin = new Padding(3, 0, 0, 0);
             LbTrailer.Name = "LbTrailer";
             LbTrailer.Padding = new Padding(0, 0, 2, 0);
-            LbTrailer.Size = new Size(131, 50);
+            LbTrailer.Size = new Size(114, 38);
             LbTrailer.TabIndex = 14;
             LbTrailer.Text = "Trailer";
             LbTrailer.TextAlign = ContentAlignment.MiddleRight;
@@ -323,11 +323,11 @@
             LbDuracion.Dock = DockStyle.Fill;
             LbDuracion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbDuracion.ForeColor = Color.FromArgb(220, 220, 220);
-            LbDuracion.Location = new Point(3, 100);
+            LbDuracion.Location = new Point(3, 76);
             LbDuracion.Margin = new Padding(3, 0, 0, 0);
             LbDuracion.Name = "LbDuracion";
             LbDuracion.Padding = new Padding(0, 0, 2, 0);
-            LbDuracion.Size = new Size(131, 50);
+            LbDuracion.Size = new Size(114, 38);
             LbDuracion.TabIndex = 15;
             LbDuracion.Text = "Duración(min)";
             LbDuracion.TextAlign = ContentAlignment.MiddleRight;
@@ -338,11 +338,11 @@
             LbClasificacion.Dock = DockStyle.Fill;
             LbClasificacion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbClasificacion.ForeColor = Color.FromArgb(220, 220, 220);
-            LbClasificacion.Location = new Point(3, 200);
+            LbClasificacion.Location = new Point(3, 152);
             LbClasificacion.Margin = new Padding(3, 0, 0, 0);
             LbClasificacion.Name = "LbClasificacion";
             LbClasificacion.Padding = new Padding(0, 0, 2, 0);
-            LbClasificacion.Size = new Size(131, 50);
+            LbClasificacion.Size = new Size(114, 38);
             LbClasificacion.TabIndex = 17;
             LbClasificacion.Text = "Clasificación";
             LbClasificacion.TextAlign = ContentAlignment.MiddleRight;
@@ -353,11 +353,11 @@
             LbGeneros.Dock = DockStyle.Fill;
             LbGeneros.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbGeneros.ForeColor = Color.FromArgb(220, 220, 220);
-            LbGeneros.Location = new Point(397, 250);
+            LbGeneros.Location = new Point(348, 190);
             LbGeneros.Margin = new Padding(3, 0, 0, 0);
             LbGeneros.Name = "LbGeneros";
             LbGeneros.Padding = new Padding(0, 0, 2, 0);
-            LbGeneros.Size = new Size(131, 50);
+            LbGeneros.Size = new Size(114, 38);
             LbGeneros.TabIndex = 19;
             LbGeneros.Text = "Generos";
             LbGeneros.TextAlign = ContentAlignment.MiddleRight;
@@ -368,11 +368,11 @@
             LbFormatos.Dock = DockStyle.Fill;
             LbFormatos.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbFormatos.ForeColor = Color.FromArgb(220, 220, 220);
-            LbFormatos.Location = new Point(3, 250);
+            LbFormatos.Location = new Point(3, 190);
             LbFormatos.Margin = new Padding(3, 0, 0, 0);
             LbFormatos.Name = "LbFormatos";
             LbFormatos.Padding = new Padding(0, 0, 2, 0);
-            LbFormatos.Size = new Size(131, 50);
+            LbFormatos.Size = new Size(114, 38);
             LbFormatos.TabIndex = 21;
             LbFormatos.Text = "Formatos";
             LbFormatos.TextAlign = ContentAlignment.MiddleRight;
@@ -383,11 +383,11 @@
             LbEstreno.Dock = DockStyle.Fill;
             LbEstreno.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbEstreno.ForeColor = Color.FromArgb(220, 220, 220);
-            LbEstreno.Location = new Point(3, 150);
+            LbEstreno.Location = new Point(3, 114);
             LbEstreno.Margin = new Padding(3, 0, 0, 0);
             LbEstreno.Name = "LbEstreno";
             LbEstreno.Padding = new Padding(0, 0, 2, 0);
-            LbEstreno.Size = new Size(131, 50);
+            LbEstreno.Size = new Size(114, 38);
             LbEstreno.TabIndex = 22;
             LbEstreno.Text = "Fecha de Estreno";
             LbEstreno.TextAlign = ContentAlignment.MiddleRight;
@@ -398,11 +398,11 @@
             LbEstado.Dock = DockStyle.Fill;
             LbEstado.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbEstado.ForeColor = Color.FromArgb(220, 220, 220);
-            LbEstado.Location = new Point(397, 200);
+            LbEstado.Location = new Point(348, 152);
             LbEstado.Margin = new Padding(3, 0, 0, 0);
             LbEstado.Name = "LbEstado";
             LbEstado.Padding = new Padding(0, 0, 2, 0);
-            LbEstado.Size = new Size(131, 50);
+            LbEstado.Size = new Size(114, 38);
             LbEstado.TabIndex = 20;
             LbEstado.Text = "Estado";
             LbEstado.TextAlign = ContentAlignment.MiddleRight;
@@ -413,11 +413,11 @@
             LbDescripcion.Dock = DockStyle.Fill;
             LbDescripcion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbDescripcion.ForeColor = Color.FromArgb(220, 220, 220);
-            LbDescripcion.Location = new Point(397, 100);
+            LbDescripcion.Location = new Point(348, 76);
             LbDescripcion.Margin = new Padding(3, 0, 0, 0);
             LbDescripcion.Name = "LbDescripcion";
             LbDescripcion.Padding = new Padding(0, 0, 2, 0);
-            LbDescripcion.Size = new Size(131, 50);
+            LbDescripcion.Size = new Size(114, 38);
             LbDescripcion.TabIndex = 50;
             LbDescripcion.Text = "Descripción";
             LbDescripcion.TextAlign = ContentAlignment.MiddleRight;
@@ -429,13 +429,13 @@
             TbTitulo.BorderStyle = BorderStyle.FixedSingle;
             TbTitulo.Font = new Font("Segoe UI", 10F);
             TbTitulo.ForeColor = Color.FromArgb(160, 165, 175);
-            TbTitulo.Location = new Point(139, 60);
-            TbTitulo.Margin = new Padding(5);
-            TbTitulo.MaximumSize = new Size(0, 30);
-            TbTitulo.MinimumSize = new Size(190, 30);
+            TbTitulo.Location = new Point(121, 45);
+            TbTitulo.Margin = new Padding(4, 4, 4, 4);
+            TbTitulo.MaximumSize = new Size(2, 23);
+            TbTitulo.MinimumSize = new Size(166, 23);
             TbTitulo.Name = "TbTitulo";
             TbTitulo.PlaceholderText = "Evil Dead";
-            TbTitulo.Size = new Size(250, 30);
+            TbTitulo.Size = new Size(166, 23);
             TbTitulo.TabIndex = 53;
             // 
             // TbDuracion
@@ -445,13 +445,13 @@
             TbDuracion.BorderStyle = BorderStyle.FixedSingle;
             TbDuracion.Font = new Font("Segoe UI", 10F);
             TbDuracion.ForeColor = Color.FromArgb(160, 165, 175);
-            TbDuracion.Location = new Point(139, 110);
-            TbDuracion.Margin = new Padding(5);
-            TbDuracion.MaximumSize = new Size(0, 30);
-            TbDuracion.MinimumSize = new Size(190, 30);
+            TbDuracion.Location = new Point(121, 83);
+            TbDuracion.Margin = new Padding(4, 4, 4, 4);
+            TbDuracion.MaximumSize = new Size(2, 23);
+            TbDuracion.MinimumSize = new Size(166, 23);
             TbDuracion.Name = "TbDuracion";
             TbDuracion.PlaceholderText = "120";
-            TbDuracion.Size = new Size(250, 30);
+            TbDuracion.Size = new Size(166, 23);
             TbDuracion.TabIndex = 54;
             // 
             // TbDirector
@@ -461,13 +461,13 @@
             TbDirector.BorderStyle = BorderStyle.FixedSingle;
             TbDirector.Font = new Font("Segoe UI", 10F);
             TbDirector.ForeColor = Color.FromArgb(160, 165, 175);
-            TbDirector.Location = new Point(533, 10);
-            TbDirector.Margin = new Padding(5);
-            TbDirector.MaximumSize = new Size(0, 30);
-            TbDirector.MinimumSize = new Size(190, 30);
+            TbDirector.Location = new Point(466, 7);
+            TbDirector.Margin = new Padding(4, 4, 4, 4);
+            TbDirector.MaximumSize = new Size(2, 23);
+            TbDirector.MinimumSize = new Size(166, 23);
             TbDirector.Name = "TbDirector";
             TbDirector.PlaceholderText = "Diego Santizo";
-            TbDirector.Size = new Size(252, 30);
+            TbDirector.Size = new Size(166, 23);
             TbDirector.TabIndex = 57;
             // 
             // TbTrailer
@@ -477,13 +477,13 @@
             TbTrailer.BorderStyle = BorderStyle.FixedSingle;
             TbTrailer.Font = new Font("Segoe UI", 10F);
             TbTrailer.ForeColor = Color.FromArgb(160, 165, 175);
-            TbTrailer.Location = new Point(533, 60);
-            TbTrailer.Margin = new Padding(5);
-            TbTrailer.MaximumSize = new Size(0, 30);
-            TbTrailer.MinimumSize = new Size(190, 30);
+            TbTrailer.Location = new Point(466, 45);
+            TbTrailer.Margin = new Padding(4, 4, 4, 4);
+            TbTrailer.MaximumSize = new Size(2, 23);
+            TbTrailer.MinimumSize = new Size(166, 23);
             TbTrailer.Name = "TbTrailer";
             TbTrailer.PlaceholderText = "https://www.youtube.com/watch?v=YH4Oo7HW9TM";
-            TbTrailer.Size = new Size(252, 30);
+            TbTrailer.Size = new Size(166, 23);
             TbTrailer.TabIndex = 59;
             // 
             // TbID
@@ -493,13 +493,13 @@
             TbID.BorderStyle = BorderStyle.FixedSingle;
             TbID.Font = new Font("Segoe UI", 10F);
             TbID.ForeColor = Color.FromArgb(120, 125, 135);
-            TbID.Location = new Point(139, 10);
-            TbID.Margin = new Padding(5);
-            TbID.MaximumSize = new Size(0, 30);
-            TbID.MinimumSize = new Size(190, 30);
+            TbID.Location = new Point(121, 7);
+            TbID.Margin = new Padding(4, 4, 4, 4);
+            TbID.MaximumSize = new Size(2, 23);
+            TbID.MinimumSize = new Size(166, 23);
             TbID.Name = "TbID";
             TbID.ReadOnly = true;
-            TbID.Size = new Size(250, 30);
+            TbID.Size = new Size(166, 23);
             TbID.TabIndex = 60;
             TbID.TabStop = false;
             // 
@@ -518,31 +518,33 @@
             CbEstado.HoverColor = Color.FromArgb(35, 168, 109);
             CbEstado.HoverFontColor = Color.White;
             CbEstado.ItemHeight = 20;
-            CbEstado.Location = new Point(533, 212);
-            CbEstado.Margin = new Padding(5);
-            CbEstado.MinimumSize = new Size(190, 0);
+            CbEstado.Location = new Point(466, 162);
+            CbEstado.Margin = new Padding(4, 4, 4, 4);
+            CbEstado.MinimumSize = new Size(167, 0);
             CbEstado.Name = "CbEstado";
-            CbEstado.Size = new Size(252, 26);
+            CbEstado.Size = new Size(222, 26);
             CbEstado.TabIndex = 63;
             // 
             // ListBoxFormatos
             // 
             ListBoxFormatos.Items.AddRange(new object[] { "fsdf", "sdfsd", "fsdf", "sdf", "sdf", "s\t\t\t" });
-            ListBoxFormatos.Location = new Point(137, 253);
+            ListBoxFormatos.Location = new Point(120, 192);
+            ListBoxFormatos.Margin = new Padding(3, 2, 3, 2);
             ListBoxFormatos.Name = "ListBoxFormatos";
             TlpForm.SetRowSpan(ListBoxFormatos, 5);
             ListBoxFormatos.SelectionMode = SelectionMode.MultiSimple;
-            ListBoxFormatos.Size = new Size(250, 230);
+            ListBoxFormatos.Size = new Size(219, 172);
             ListBoxFormatos.TabIndex = 67;
             // 
             // ListBoxGeneros
             // 
             ListBoxGeneros.Items.AddRange(new object[] { "fsdf", "sdfsd", "fsdf", "sdf", "sdf", "s\t\t\t" });
-            ListBoxGeneros.Location = new Point(531, 253);
+            ListBoxGeneros.Location = new Point(465, 192);
+            ListBoxGeneros.Margin = new Padding(3, 2, 3, 2);
             ListBoxGeneros.Name = "ListBoxGeneros";
             TlpForm.SetRowSpan(ListBoxGeneros, 5);
             ListBoxGeneros.SelectionMode = SelectionMode.MultiSimple;
-            ListBoxGeneros.Size = new Size(250, 230);
+            ListBoxGeneros.Size = new Size(219, 172);
             ListBoxGeneros.TabIndex = 5;
             ListBoxGeneros.SelectedIndexChanged += kryptonListBox1_SelectedIndexChanged;
             // 
@@ -551,11 +553,11 @@
             DatePickerEstreno.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             DatePickerEstreno.Cursor = Cursors.Hand;
             DatePickerEstreno.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-            DatePickerEstreno.Location = new Point(139, 160);
-            DatePickerEstreno.Margin = new Padding(5);
-            DatePickerEstreno.MinimumSize = new Size(0, 30);
+            DatePickerEstreno.Location = new Point(121, 118);
+            DatePickerEstreno.Margin = new Padding(4, 4, 4, 4);
+            DatePickerEstreno.MinimumSize = new Size(0, 29);
             DatePickerEstreno.Name = "DatePickerEstreno";
-            DatePickerEstreno.Size = new Size(250, 30);
+            DatePickerEstreno.Size = new Size(220, 30);
             DatePickerEstreno.TabIndex = 65;
             // 
             // CbClasificacion
@@ -573,11 +575,11 @@
             CbClasificacion.HoverColor = Color.FromArgb(35, 168, 109);
             CbClasificacion.HoverFontColor = Color.White;
             CbClasificacion.ItemHeight = 20;
-            CbClasificacion.Location = new Point(139, 212);
-            CbClasificacion.Margin = new Padding(5);
-            CbClasificacion.MinimumSize = new Size(190, 0);
+            CbClasificacion.Location = new Point(121, 162);
+            CbClasificacion.Margin = new Padding(4, 4, 4, 4);
+            CbClasificacion.MinimumSize = new Size(167, 0);
             CbClasificacion.Name = "CbClasificacion";
-            CbClasificacion.Size = new Size(250, 26);
+            CbClasificacion.Size = new Size(220, 26);
             CbClasificacion.TabIndex = 41;
             // 
             // TlpButtons
@@ -585,22 +587,22 @@
             TlpButtons.ColumnCount = 6;
             TlpFormWithButtons.SetColumnSpan(TlpButtons, 2);
             TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
-            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
-            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
-            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 96F));
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 96F));
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 96F));
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 96F));
             TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             TlpButtons.Controls.Add(BtnAgregar, 1, 0);
             TlpButtons.Controls.Add(BtnEliminar, 4, 0);
             TlpButtons.Controls.Add(BtnCopiar, 2, 0);
             TlpButtons.Controls.Add(BtnActualizar, 3, 0);
             TlpButtons.Dock = DockStyle.Fill;
-            TlpButtons.Location = new Point(0, 500);
+            TlpButtons.Location = new Point(0, 376);
             TlpButtons.Margin = new Padding(0);
             TlpButtons.Name = "TlpButtons";
             TlpButtons.RowCount = 1;
             TlpButtons.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TlpButtons.Size = new Size(900, 75);
+            TlpButtons.Size = new Size(788, 56);
             TlpButtons.TabIndex = 3;
             // 
             // BtnAgregar
@@ -613,12 +615,12 @@
             BtnAgregar.FlatStyle = FlatStyle.Flat;
             BtnAgregar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BtnAgregar.ForeColor = Color.White;
-            BtnAgregar.Location = new Point(235, 17);
+            BtnAgregar.Location = new Point(206, 13);
             BtnAgregar.Margin = new Padding(0);
-            BtnAgregar.MaximumSize = new Size(100, 40);
-            BtnAgregar.MinimumSize = new Size(100, 40);
+            BtnAgregar.MaximumSize = new Size(88, 30);
+            BtnAgregar.MinimumSize = new Size(88, 30);
             BtnAgregar.Name = "BtnAgregar";
-            BtnAgregar.Size = new Size(100, 40);
+            BtnAgregar.Size = new Size(88, 30);
             BtnAgregar.TabIndex = 1;
             BtnAgregar.Text = "Agregar";
             BtnAgregar.UseVisualStyleBackColor = false;
@@ -634,12 +636,12 @@
             BtnEliminar.FlatStyle = FlatStyle.Flat;
             BtnEliminar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BtnEliminar.ForeColor = Color.White;
-            BtnEliminar.Location = new Point(565, 17);
+            BtnEliminar.Location = new Point(494, 13);
             BtnEliminar.Margin = new Padding(0);
-            BtnEliminar.MaximumSize = new Size(100, 40);
-            BtnEliminar.MinimumSize = new Size(100, 40);
+            BtnEliminar.MaximumSize = new Size(88, 30);
+            BtnEliminar.MinimumSize = new Size(88, 30);
             BtnEliminar.Name = "BtnEliminar";
-            BtnEliminar.Size = new Size(100, 40);
+            BtnEliminar.Size = new Size(88, 30);
             BtnEliminar.TabIndex = 4;
             BtnEliminar.Text = "Eliminar";
             BtnEliminar.UseVisualStyleBackColor = false;
@@ -655,12 +657,12 @@
             BtnCopiar.FlatStyle = FlatStyle.Flat;
             BtnCopiar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BtnCopiar.ForeColor = Color.White;
-            BtnCopiar.Location = new Point(345, 17);
+            BtnCopiar.Location = new Point(302, 13);
             BtnCopiar.Margin = new Padding(0);
-            BtnCopiar.MaximumSize = new Size(100, 40);
-            BtnCopiar.MinimumSize = new Size(100, 40);
+            BtnCopiar.MaximumSize = new Size(88, 30);
+            BtnCopiar.MinimumSize = new Size(88, 30);
             BtnCopiar.Name = "BtnCopiar";
-            BtnCopiar.Size = new Size(100, 40);
+            BtnCopiar.Size = new Size(88, 30);
             BtnCopiar.TabIndex = 3;
             BtnCopiar.Text = "Copiar";
             BtnCopiar.UseVisualStyleBackColor = false;
@@ -676,12 +678,12 @@
             BtnActualizar.FlatStyle = FlatStyle.Flat;
             BtnActualizar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BtnActualizar.ForeColor = Color.White;
-            BtnActualizar.Location = new Point(455, 17);
+            BtnActualizar.Location = new Point(398, 13);
             BtnActualizar.Margin = new Padding(0);
-            BtnActualizar.MaximumSize = new Size(100, 40);
-            BtnActualizar.MinimumSize = new Size(100, 40);
+            BtnActualizar.MaximumSize = new Size(88, 30);
+            BtnActualizar.MinimumSize = new Size(88, 30);
             BtnActualizar.Name = "BtnActualizar";
-            BtnActualizar.Size = new Size(100, 40);
+            BtnActualizar.Size = new Size(88, 30);
             BtnActualizar.TabIndex = 2;
             BtnActualizar.Text = "Actualizar";
             BtnActualizar.UseVisualStyleBackColor = false;
@@ -691,7 +693,7 @@
             TlpTitleLabel.BackColor = Color.Black;
             TlpTitleLabel.ColumnCount = 3;
             TlpTitleLabel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            TlpTitleLabel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 500F));
+            TlpTitleLabel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 438F));
             TlpTitleLabel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             TlpTitleLabel.Controls.Add(LbTitulo, 1, 0);
             TlpTitleLabel.Dock = DockStyle.Fill;
@@ -700,7 +702,7 @@
             TlpTitleLabel.Name = "TlpTitleLabel";
             TlpTitleLabel.RowCount = 1;
             TlpTitleLabel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TlpTitleLabel.Size = new Size(1050, 75);
+            TlpTitleLabel.Size = new Size(919, 56);
             TlpTitleLabel.TabIndex = 1;
             // 
             // LbTitulo
@@ -709,9 +711,9 @@
             LbTitulo.Dock = DockStyle.Fill;
             LbTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             LbTitulo.ForeColor = Color.Crimson;
-            LbTitulo.Location = new Point(278, 0);
+            LbTitulo.Location = new Point(243, 0);
             LbTitulo.Name = "LbTitulo";
-            LbTitulo.Size = new Size(494, 75);
+            LbTitulo.Size = new Size(432, 56);
             LbTitulo.TabIndex = 0;
             LbTitulo.Text = "PELÍCULAS";
             LbTitulo.TextAlign = ContentAlignment.MiddleCenter;
@@ -720,34 +722,34 @@
             // 
             TlpAux3.ColumnCount = 3;
             TlpAux3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            TlpAux3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 510F));
+            TlpAux3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 446F));
             TlpAux3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             TlpAux3.Controls.Add(TlpFilter, 1, 0);
             TlpAux3.Dock = DockStyle.Fill;
-            TlpAux3.Location = new Point(0, 650);
+            TlpAux3.Location = new Point(0, 488);
             TlpAux3.Margin = new Padding(0);
             TlpAux3.Name = "TlpAux3";
             TlpAux3.RowCount = 1;
             TlpAux3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TlpAux3.Size = new Size(1050, 75);
+            TlpAux3.Size = new Size(919, 56);
             TlpAux3.TabIndex = 2;
             // 
             // TlpFilter
             // 
             TlpFilter.ColumnCount = 3;
-            TlpFilter.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
-            TlpFilter.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
-            TlpFilter.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+            TlpFilter.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 175F));
+            TlpFilter.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 175F));
+            TlpFilter.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 96F));
             TlpFilter.Controls.Add(BtnBuscar, 2, 0);
             TlpFilter.Controls.Add(CbFiltro, 0, 0);
             TlpFilter.Controls.Add(TbFiltro, 1, 0);
             TlpFilter.Dock = DockStyle.Fill;
-            TlpFilter.Location = new Point(270, 0);
+            TlpFilter.Location = new Point(236, 0);
             TlpFilter.Margin = new Padding(0);
             TlpFilter.Name = "TlpFilter";
             TlpFilter.RowCount = 1;
             TlpFilter.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TlpFilter.Size = new Size(510, 75);
+            TlpFilter.Size = new Size(446, 56);
             TlpFilter.TabIndex = 0;
             // 
             // BtnBuscar
@@ -761,12 +763,12 @@
             BtnBuscar.FlatStyle = FlatStyle.Flat;
             BtnBuscar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BtnBuscar.ForeColor = Color.White;
-            BtnBuscar.Location = new Point(405, 17);
+            BtnBuscar.Location = new Point(354, 13);
             BtnBuscar.Margin = new Padding(0);
-            BtnBuscar.MaximumSize = new Size(100, 40);
-            BtnBuscar.MinimumSize = new Size(100, 40);
+            BtnBuscar.MaximumSize = new Size(88, 30);
+            BtnBuscar.MinimumSize = new Size(88, 30);
             BtnBuscar.Name = "BtnBuscar";
-            BtnBuscar.Size = new Size(100, 40);
+            BtnBuscar.Size = new Size(88, 30);
             BtnBuscar.TabIndex = 5;
             BtnBuscar.Text = "Buscar";
             BtnBuscar.UseVisualStyleBackColor = false;
@@ -786,11 +788,11 @@
             CbFiltro.HoverColor = Color.FromArgb(35, 168, 109);
             CbFiltro.HoverFontColor = Color.White;
             CbFiltro.ItemHeight = 20;
-            CbFiltro.Location = new Point(5, 24);
-            CbFiltro.Margin = new Padding(5);
-            CbFiltro.MinimumSize = new Size(190, 0);
+            CbFiltro.Location = new Point(4, 15);
+            CbFiltro.Margin = new Padding(4, 4, 4, 4);
+            CbFiltro.MinimumSize = new Size(167, 0);
             CbFiltro.Name = "CbFiltro";
-            CbFiltro.Size = new Size(190, 26);
+            CbFiltro.Size = new Size(167, 26);
             CbFiltro.TabIndex = 6;
             // 
             // TbFiltro
@@ -800,12 +802,12 @@
             TbFiltro.BorderStyle = BorderStyle.FixedSingle;
             TbFiltro.Font = new Font("Segoe UI", 10F);
             TbFiltro.ForeColor = Color.FromArgb(230, 230, 230);
-            TbFiltro.Location = new Point(205, 22);
-            TbFiltro.Margin = new Padding(5);
-            TbFiltro.MaximumSize = new Size(0, 30);
-            TbFiltro.MinimumSize = new Size(190, 30);
+            TbFiltro.Location = new Point(179, 16);
+            TbFiltro.Margin = new Padding(4, 4, 4, 4);
+            TbFiltro.MaximumSize = new Size(2, 23);
+            TbFiltro.MinimumSize = new Size(166, 23);
             TbFiltro.Name = "TbFiltro";
-            TbFiltro.Size = new Size(190, 30);
+            TbFiltro.Size = new Size(166, 23);
             TbFiltro.TabIndex = 7;
             // 
             // DgvPelicula
@@ -846,7 +848,7 @@
             DgvPelicula.EnableHeadersVisualStyles = false;
             DgvPelicula.Font = new Font("Segoe UI", 9.5F);
             DgvPelicula.GridColor = Color.FromArgb(70, 76, 90);
-            DgvPelicula.Location = new Point(0, 725);
+            DgvPelicula.Location = new Point(0, 544);
             DgvPelicula.Margin = new Padding(0);
             DgvPelicula.MultiSelect = false;
             DgvPelicula.Name = "DgvPelicula";
@@ -855,7 +857,7 @@
             DgvPelicula.RowHeadersWidth = 51;
             DgvPelicula.RowTemplate.Height = 36;
             DgvPelicula.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DgvPelicula.Size = new Size(1050, 25);
+            DgvPelicula.Size = new Size(919, 18);
             DgvPelicula.TabIndex = 2;
             // 
             // materialCheckBox1
@@ -869,7 +871,7 @@
             materialCheckBox1.Name = "materialCheckBox1";
             materialCheckBox1.ReadOnly = false;
             materialCheckBox1.Ripple = true;
-            materialCheckBox1.Size = new Size(272, 46);
+            materialCheckBox1.Size = new Size(172, 37);
             materialCheckBox1.TabIndex = 0;
             materialCheckBox1.Text = "materialCheckBox1";
             materialCheckBox1.UseAccentColor = false;
@@ -886,7 +888,7 @@
             materialCheckBox2.Name = "materialCheckBox2";
             materialCheckBox2.ReadOnly = false;
             materialCheckBox2.Ripple = true;
-            materialCheckBox2.Size = new Size(272, 46);
+            materialCheckBox2.Size = new Size(172, 37);
             materialCheckBox2.TabIndex = 0;
             materialCheckBox2.Text = "materialCheckBox2";
             materialCheckBox2.UseAccentColor = false;
@@ -903,7 +905,7 @@
             materialCheckBox3.Name = "materialCheckBox3";
             materialCheckBox3.ReadOnly = false;
             materialCheckBox3.Ripple = true;
-            materialCheckBox3.Size = new Size(272, 46);
+            materialCheckBox3.Size = new Size(172, 37);
             materialCheckBox3.TabIndex = 0;
             materialCheckBox3.Text = "materialCheckBox3";
             materialCheckBox3.UseAccentColor = false;
@@ -920,7 +922,7 @@
             materialCheckBox4.Name = "materialCheckBox4";
             materialCheckBox4.ReadOnly = false;
             materialCheckBox4.Ripple = true;
-            materialCheckBox4.Size = new Size(236, 46);
+            materialCheckBox4.Size = new Size(154, 37);
             materialCheckBox4.TabIndex = 0;
             materialCheckBox4.Text = "sdfasdfasdfsadf";
             materialCheckBox4.UseAccentColor = false;
@@ -937,7 +939,7 @@
             materialCheckBox5.Name = "materialCheckBox5";
             materialCheckBox5.ReadOnly = false;
             materialCheckBox5.Ripple = true;
-            materialCheckBox5.Size = new Size(272, 46);
+            materialCheckBox5.Size = new Size(172, 37);
             materialCheckBox5.TabIndex = 0;
             materialCheckBox5.Text = "materialCheckBox5";
             materialCheckBox5.UseAccentColor = false;
@@ -954,7 +956,7 @@
             materialCheckBox6.Name = "materialCheckBox6";
             materialCheckBox6.ReadOnly = false;
             materialCheckBox6.Ripple = true;
-            materialCheckBox6.Size = new Size(272, 46);
+            materialCheckBox6.Size = new Size(172, 37);
             materialCheckBox6.TabIndex = 0;
             materialCheckBox6.Text = "materialCheckBox6";
             materialCheckBox6.UseAccentColor = false;
@@ -971,7 +973,7 @@
             materialCheckBox7.Name = "materialCheckBox7";
             materialCheckBox7.ReadOnly = false;
             materialCheckBox7.Ripple = true;
-            materialCheckBox7.Size = new Size(272, 46);
+            materialCheckBox7.Size = new Size(172, 37);
             materialCheckBox7.TabIndex = 0;
             materialCheckBox7.Text = "materialCheckBox7";
             materialCheckBox7.UseAccentColor = false;
@@ -988,7 +990,7 @@
             materialCheckBox8.Name = "materialCheckBox8";
             materialCheckBox8.ReadOnly = false;
             materialCheckBox8.Ripple = true;
-            materialCheckBox8.Size = new Size(272, 46);
+            materialCheckBox8.Size = new Size(172, 37);
             materialCheckBox8.TabIndex = 0;
             materialCheckBox8.Text = "materialCheckBox8";
             materialCheckBox8.UseAccentColor = false;
@@ -1005,7 +1007,7 @@
             materialCheckBox9.Name = "materialCheckBox9";
             materialCheckBox9.ReadOnly = false;
             materialCheckBox9.Ripple = true;
-            materialCheckBox9.Size = new Size(272, 46);
+            materialCheckBox9.Size = new Size(172, 37);
             materialCheckBox9.TabIndex = 0;
             materialCheckBox9.Text = "materialCheckBox9";
             materialCheckBox9.UseAccentColor = false;
@@ -1022,7 +1024,7 @@
             materialCheckBox10.Name = "materialCheckBox10";
             materialCheckBox10.ReadOnly = false;
             materialCheckBox10.Ripple = true;
-            materialCheckBox10.Size = new Size(286, 46);
+            materialCheckBox10.Size = new Size(181, 37);
             materialCheckBox10.TabIndex = 0;
             materialCheckBox10.Text = "materialCheckBox10";
             materialCheckBox10.UseAccentColor = false;
@@ -1039,7 +1041,7 @@
             materialCheckBox11.Name = "materialCheckBox11";
             materialCheckBox11.ReadOnly = false;
             materialCheckBox11.Ripple = true;
-            materialCheckBox11.Size = new Size(286, 46);
+            materialCheckBox11.Size = new Size(181, 37);
             materialCheckBox11.TabIndex = 0;
             materialCheckBox11.Text = "materialCheckBox11";
             materialCheckBox11.UseAccentColor = false;
@@ -1056,7 +1058,7 @@
             materialCheckBox12.Name = "materialCheckBox12";
             materialCheckBox12.ReadOnly = false;
             materialCheckBox12.Ripple = true;
-            materialCheckBox12.Size = new Size(286, 46);
+            materialCheckBox12.Size = new Size(181, 37);
             materialCheckBox12.TabIndex = 0;
             materialCheckBox12.Text = "materialCheckBox12";
             materialCheckBox12.UseAccentColor = false;
@@ -1073,7 +1075,7 @@
             materialCheckBox13.Name = "materialCheckBox13";
             materialCheckBox13.ReadOnly = false;
             materialCheckBox13.Ripple = true;
-            materialCheckBox13.Size = new Size(286, 46);
+            materialCheckBox13.Size = new Size(181, 37);
             materialCheckBox13.TabIndex = 0;
             materialCheckBox13.Text = "materialCheckBox13";
             materialCheckBox13.UseAccentColor = false;
@@ -1090,7 +1092,7 @@
             materialCheckBox14.Name = "materialCheckBox14";
             materialCheckBox14.ReadOnly = false;
             materialCheckBox14.Ripple = true;
-            materialCheckBox14.Size = new Size(286, 46);
+            materialCheckBox14.Size = new Size(181, 37);
             materialCheckBox14.TabIndex = 0;
             materialCheckBox14.Text = "materialCheckBox14";
             materialCheckBox14.UseAccentColor = false;
@@ -1107,7 +1109,7 @@
             materialCheckBox15.Name = "materialCheckBox15";
             materialCheckBox15.ReadOnly = false;
             materialCheckBox15.Ripple = true;
-            materialCheckBox15.Size = new Size(286, 46);
+            materialCheckBox15.Size = new Size(181, 37);
             materialCheckBox15.TabIndex = 0;
             materialCheckBox15.Text = "materialCheckBox15";
             materialCheckBox15.UseAccentColor = false;
@@ -1124,7 +1126,7 @@
             materialCheckBox16.Name = "materialCheckBox16";
             materialCheckBox16.ReadOnly = false;
             materialCheckBox16.Ripple = true;
-            materialCheckBox16.Size = new Size(286, 46);
+            materialCheckBox16.Size = new Size(181, 37);
             materialCheckBox16.TabIndex = 0;
             materialCheckBox16.Text = "materialCheckBox16";
             materialCheckBox16.UseAccentColor = false;
@@ -1141,7 +1143,7 @@
             materialCheckBox17.Name = "materialCheckBox17";
             materialCheckBox17.ReadOnly = false;
             materialCheckBox17.Ripple = true;
-            materialCheckBox17.Size = new Size(286, 46);
+            materialCheckBox17.Size = new Size(181, 37);
             materialCheckBox17.TabIndex = 0;
             materialCheckBox17.Text = "materialCheckBox17";
             materialCheckBox17.UseAccentColor = false;
@@ -1153,12 +1155,13 @@
             // 
             // FrUcPeliculas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             Controls.Add(TlpDivFormAndDgv);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrUcPeliculas";
-            Size = new Size(1050, 750);
+            Size = new Size(919, 562);
             TlpDivFormAndDgv.ResumeLayout(false);
             TlpAux1.ResumeLayout(false);
             TlpAux2.ResumeLayout(false);
