@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Runtime.InteropServices.Marshalling;
 using System.Windows.Forms;
-using clase_conexion;
 
 
 namespace Plantilla_Cliente
@@ -37,7 +36,6 @@ namespace Plantilla_Cliente
         public Reservas()
         {
             InitializeComponent();
-            gconexion = new conexion();
         }
 
         public Reservas(int idPelicula, int idciudad)
@@ -213,7 +211,7 @@ namespace Plantilla_Cliente
 
         private void Cbo_Cines_SelectedIndexChanged(object sender, EventArgs e)
         {
-           idcine = Cbo_Cines.SelectedIndex + 1;
+            idcine = Cbo_Cines.SelectedIndex + 1;
             cargarfunciones(idPelicula, idcine);
 
         }

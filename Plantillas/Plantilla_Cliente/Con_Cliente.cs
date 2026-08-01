@@ -15,7 +15,7 @@ namespace Plantilla_Cliente
         private String server = "localhost";
         private String datebase = "taquillas_cine";
         private String user = "root";
-        private String password = "Root";
+        private String password = "root";
         private String pconexion;
         public Con_Cliente()
         {
@@ -49,12 +49,14 @@ namespace Plantilla_Cliente
                 p.id_pelicula AS IdPelicula,
                 p.titulo_pelicula AS Titulo,
                 p.duracion_pelicula AS Duracion,
-                p.clasificacion_pelicula AS Clasificacion,
+                cl.nombre_clasificacion AS Clasificacion,
                 g.nombre_genero AS Genero,
                 p.fecha_estreno AS `Fecha de estreno`
-            FROM PELICULA p
-            LEFT JOIN GENERO g
+            FROM tbl_pelicula p
+            LEFT JOIN tbl_genero g
                 ON p.id_genero = g.id_genero
+            LEFT JOIN tbl_clasificacion cl
+                ON cl.id_clasificacion = p.id_clasificacion
             ORDER BY p.titulo_pelicula";
 
                 MySqlCommand cmd = new MySqlCommand(consulta, con);
@@ -80,7 +82,7 @@ namespace Plantilla_Cliente
             string consulta = @"SELECT 
                     id_ciudad,
                     nombre_ciudad
-                    FROM CIUDAD 
+                    FROM tbl_ciudad 
                     ORDER BY id_ciudad";
 
             MySqlCommand cmd = new MySqlCommand(consulta, con);
@@ -97,21 +99,22 @@ namespace Plantilla_Cliente
 
             MySqlConnection con = GetConnection();
             string consulta = "";
-            if (idCiudad is not null) {
-                 consulta = @"SELECT 
+            if (idCiudad is not null)
+            {
+                consulta = @"SELECT 
                         id_cine,
                         nombre_cine
-                        FROM CINE
+                        FROM tbl_cine
                         WHERE id_ciudad = @idCiudad
                         ORDER BY id_cine";
             }
             else
             {
-                 consulta = @"SELECT 
+                consulta = @"SELECT 
                         id_cine,
                         nombre_cine
-                        FROM CINE
-                        ORDER BY id_icne";
+                        FROM tbl_cine
+                        ORDER BY id_cine";
             }
             MySqlCommand cmd = new MySqlCommand(consulta, con);
 
@@ -134,26 +137,32 @@ namespace Plantilla_Cliente
                 MySqlConnection con = GetConnection();
 
                 string consulta = @"
-        SELECT
+        SELECT DISTINCT
             p.id_pelicula AS IdPelicula,
             p.titulo_pelicula AS Titulo,
             p.duracion_pelicula AS Duracion,
-            p.clasificacion_pelicula AS Clasificacion,
+            cl.nombre_clasificacion AS Clasificacion,
             g.nombre_genero AS Genero,
             p.fecha_estreno AS 'Fecha de Estreno'
-        FROM CARTELERA ca
+        FROM tbl_funcion f
 
-        INNER JOIN CINE c
-            ON ca.id_cine = c.id_cine
+        INNER JOIN tbl_sala s
+            ON f.id_sala = s.id_sala
 
-        INNER JOIN CIUDAD ci
+        INNER JOIN tbl_cine c
+            ON s.id_cine = c.id_cine
+
+        INNER JOIN tbl_ciudad ci
             ON c.id_ciudad = ci.id_ciudad
 
-        INNER JOIN PELICULA p
-            ON ca.id_pelicula = p.id_pelicula
+        INNER JOIN tbl_pelicula p
+            ON f.id_pelicula = p.id_pelicula
 
-        INNER JOIN GENERO g
+        INNER JOIN tbl_genero g
             ON p.id_genero = g.id_genero
+
+        LEFT JOIN tbl_clasificacion cl
+            ON cl.id_clasificacion = p.id_clasificacion
 
         WHERE
             ci.id_ciudad = @ciudad
@@ -188,11 +197,13 @@ namespace Plantilla_Cliente
             MySqlConnection con = GetConnection();
 
             string consulta = @"SELECT 
-                        director_pelicula,
-                        duracion_pelicula,
-                        clasificacion_pelicula
-                        FROM PELICULA
-                        WHERE id_pelicula = @idPelicula";
+                        p.director_pelicula,
+                        p.duracion_pelicula,
+                        cl.nombre_clasificacion AS clasificacion_pelicula
+                        FROM tbl_pelicula p
+                        LEFT JOIN tbl_clasificacion cl
+                            ON cl.id_clasificacion = p.id_clasificacion
+                        WHERE p.id_pelicula = @idPelicula";
 
             MySqlCommand cmd = new MySqlCommand(consulta, con);
 
@@ -214,9 +225,9 @@ namespace Plantilla_Cliente
                         f.id_funcion,
                         TIME_FORMAT(f.hora_funcion, '%H:%i') AS hora_funcion,
                         f.fecha_funcion
-                        FROM FUNCION f
-                        inner join sala s ON f.id_sala = s.id_sala
-                        inner join cine c ON s.id_cine = c.id_cine
+                        FROM tbl_funcion f
+                        inner join tbl_sala s ON f.id_sala = s.id_sala
+                        inner join tbl_cine c ON s.id_cine = c.id_cine
                         WHERE f.id_pelicula = @idPelicula and c.id_cine = @idCine";
             MySqlCommand cmd = new MySqlCommand(consulta, con);
             cmd.Parameters.AddWithValue("@idPelicula", idPelicula);
@@ -234,7 +245,7 @@ namespace Plantilla_Cliente
             string consulta = @"SELECT AUTO_INCREMENT
                 FROM information_schema.TABLES
                 WHERE TABLE_SCHEMA = 'taquillas_cine'
-                  AND TABLE_NAME = 'boleto'";
+                  AND TABLE_NAME = 'tbl_boleto'";
 
             MySqlCommand cmd = new MySqlCommand(consulta, con);
             object resultado = cmd.ExecuteScalar();
@@ -250,7 +261,7 @@ namespace Plantilla_Cliente
             string consulta = @"SELECT AUTO_INCREMENT
                 FROM information_schema.TABLES
                 WHERE TABLE_SCHEMA = 'taquillas_cine'
-                  AND TABLE_NAME = 'venta'";
+                  AND TABLE_NAME = 'tbl_venta'";
 
             MySqlCommand cmd = new MySqlCommand(consulta, con);
             object resultado = cmd.ExecuteScalar();
@@ -265,7 +276,7 @@ namespace Plantilla_Cliente
         public int ObtenerIdSala(int idFuncion)
         {
             MySqlConnection con = GetConnection();
-            string consulta = @"SELECT id_sala FROM FUNCION WHERE id_funcion = @idFuncion";
+            string consulta = @"SELECT id_sala FROM tbl_funcion WHERE id_funcion = @idFuncion";
             MySqlCommand cmd = new MySqlCommand(consulta, con);
             cmd.Parameters.AddWithValue("@idFuncion", idFuncion);
             object resultado = cmd.ExecuteScalar();
@@ -273,10 +284,10 @@ namespace Plantilla_Cliente
                 ? Convert.ToInt32(resultado)
                 : 0;
         }
-        public int ObtenerCapacidadSala(int idSala) 
-        { 
+        public int ObtenerCapacidadSala(int idSala)
+        {
             MySqlConnection con = GetConnection();
-            string consulta = @"SELECT capacidad_sala FROM SALA WHERE id_sala = @idSala";
+            string consulta = @"SELECT capacidad_sala FROM tbl_sala WHERE id_sala = @idSala";
             MySqlCommand cmd = new MySqlCommand(consulta, con);
             cmd.Parameters.AddWithValue("@idSala", idSala);
             object resultado = cmd.ExecuteScalar();
@@ -287,4 +298,3 @@ namespace Plantilla_Cliente
         /*Fin del código de Carlos Andres Arriaza Lara 0901-23-13862 el 31/07/2026*/
     }
 }
-
