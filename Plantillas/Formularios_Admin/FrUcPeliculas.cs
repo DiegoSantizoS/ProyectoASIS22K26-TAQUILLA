@@ -73,13 +73,13 @@ namespace Formularios_Admin
         private void CargarGrilla()
         {
             tablaPeliculas = api.Listar();
-            DgvPelicula.DataSource = tablaPeliculas;
+            DgvPeliculas.DataSource = tablaPeliculas;
             FormatearGrilla();
         }
 
         private void FormatearGrilla()
         {
-            if (DgvPelicula.Columns.Count == 0) return;
+            if (DgvPeliculas.Columns.Count == 0) return;
 
             Ocultar("id_clasificacion");
             Ocultar("id_genero");
@@ -100,14 +100,14 @@ namespace Formularios_Admin
 
         private void Ocultar(string columna)
         {
-            if (DgvPelicula.Columns.Contains(columna))
-                DgvPelicula.Columns[columna].Visible = false;
+            if (DgvPeliculas.Columns.Contains(columna))
+                DgvPeliculas.Columns[columna].Visible = false;
         }
 
         private void Encabezado(string columna, string texto)
         {
-            if (DgvPelicula.Columns.Contains(columna))
-                DgvPelicula.Columns[columna].HeaderText = texto;
+            if (DgvPeliculas.Columns.Contains(columna))
+                DgvPeliculas.Columns[columna].HeaderText = texto;
         }
 
         private void ModoAgregar()
@@ -328,14 +328,14 @@ namespace Formularios_Admin
 
         private void BtnCopiar_Click(object sender, EventArgs e)
         {
-            if (DgvPelicula.CurrentRow == null)
+            if (DgvPeliculas.CurrentRow == null)
             {
                 MessageBox.Show("Selecciona una película de la tabla primero.", "Copiar",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            CargarDesdeFila(DgvPelicula.CurrentRow);
+            CargarDesdeFila(DgvPeliculas.CurrentRow);
             ModoEdicion();
         }
 
@@ -361,7 +361,7 @@ namespace Formularios_Admin
                 ? DateTime.Today
                 : Convert.ToDateTime(row["fecha_estreno"]);
 
-            DgvPelicula.Focus();
+            DgvPeliculas.Focus();
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)

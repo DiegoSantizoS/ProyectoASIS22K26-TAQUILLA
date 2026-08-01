@@ -28,9 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            materialCheckBox1 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox2 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox3 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox4 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox5 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox6 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox7 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox8 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox9 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox10 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox11 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox12 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox13 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox14 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox15 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox16 = new ReaLTaiizor.Controls.MaterialCheckBox();
+            materialCheckBox17 = new ReaLTaiizor.Controls.MaterialCheckBox();
             TlpDivFormAndDgv = new TableLayoutPanel();
             TlpAux1 = new TableLayoutPanel();
             TlpAux2 = new TableLayoutPanel();
@@ -71,25 +88,7 @@
             BtnBuscar = new Componentes.CustomButton();
             CbFiltro = new Componentes.CustomComboBox();
             TbFiltro = new Componentes.CustomTextBox();
-            DgvPelicula = new Componentes.CustomDataGridView();
-            materialCheckBox1 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox2 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox3 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox4 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox5 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox6 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox7 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox8 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox9 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox10 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox11 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox12 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox13 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox14 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox15 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox16 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialCheckBox17 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            kryptonContextMenu1 = new Krypton.Toolkit.KryptonContextMenu();
+            DgvPeliculas = new Componentes.CustomDataGridView();
             TlpDivFormAndDgv.SuspendLayout();
             TlpAux1.SuspendLayout();
             TlpAux2.SuspendLayout();
@@ -99,15 +98,304 @@
             TlpTitleLabel.SuspendLayout();
             TlpAux3.SuspendLayout();
             TlpFilter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DgvPelicula).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DgvPeliculas).BeginInit();
             SuspendLayout();
+            // 
+            // materialCheckBox1
+            // 
+            materialCheckBox1.AutoSize = true;
+            materialCheckBox1.Depth = 0;
+            materialCheckBox1.Location = new Point(0, 0);
+            materialCheckBox1.Margin = new Padding(0);
+            materialCheckBox1.MouseLocation = new Point(-1, -1);
+            materialCheckBox1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox1.Name = "materialCheckBox1";
+            materialCheckBox1.ReadOnly = false;
+            materialCheckBox1.Ripple = true;
+            materialCheckBox1.Size = new Size(272, 46);
+            materialCheckBox1.TabIndex = 0;
+            materialCheckBox1.Text = "materialCheckBox1";
+            materialCheckBox1.UseAccentColor = false;
+            materialCheckBox1.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox2
+            // 
+            materialCheckBox2.AutoSize = true;
+            materialCheckBox2.Depth = 0;
+            materialCheckBox2.Location = new Point(0, 0);
+            materialCheckBox2.Margin = new Padding(0);
+            materialCheckBox2.MouseLocation = new Point(-1, -1);
+            materialCheckBox2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox2.Name = "materialCheckBox2";
+            materialCheckBox2.ReadOnly = false;
+            materialCheckBox2.Ripple = true;
+            materialCheckBox2.Size = new Size(272, 46);
+            materialCheckBox2.TabIndex = 0;
+            materialCheckBox2.Text = "materialCheckBox2";
+            materialCheckBox2.UseAccentColor = false;
+            materialCheckBox2.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox3
+            // 
+            materialCheckBox3.AutoSize = true;
+            materialCheckBox3.Depth = 0;
+            materialCheckBox3.Location = new Point(0, 0);
+            materialCheckBox3.Margin = new Padding(0);
+            materialCheckBox3.MouseLocation = new Point(-1, -1);
+            materialCheckBox3.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox3.Name = "materialCheckBox3";
+            materialCheckBox3.ReadOnly = false;
+            materialCheckBox3.Ripple = true;
+            materialCheckBox3.Size = new Size(272, 46);
+            materialCheckBox3.TabIndex = 0;
+            materialCheckBox3.Text = "materialCheckBox3";
+            materialCheckBox3.UseAccentColor = false;
+            materialCheckBox3.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox4
+            // 
+            materialCheckBox4.AutoSize = true;
+            materialCheckBox4.Depth = 0;
+            materialCheckBox4.Location = new Point(0, 0);
+            materialCheckBox4.Margin = new Padding(0);
+            materialCheckBox4.MouseLocation = new Point(-1, -1);
+            materialCheckBox4.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox4.Name = "materialCheckBox4";
+            materialCheckBox4.ReadOnly = false;
+            materialCheckBox4.Ripple = true;
+            materialCheckBox4.Size = new Size(236, 46);
+            materialCheckBox4.TabIndex = 0;
+            materialCheckBox4.Text = "sdfasdfasdfsadf";
+            materialCheckBox4.UseAccentColor = false;
+            materialCheckBox4.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox5
+            // 
+            materialCheckBox5.AutoSize = true;
+            materialCheckBox5.Depth = 0;
+            materialCheckBox5.Location = new Point(0, 0);
+            materialCheckBox5.Margin = new Padding(0);
+            materialCheckBox5.MouseLocation = new Point(-1, -1);
+            materialCheckBox5.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox5.Name = "materialCheckBox5";
+            materialCheckBox5.ReadOnly = false;
+            materialCheckBox5.Ripple = true;
+            materialCheckBox5.Size = new Size(272, 46);
+            materialCheckBox5.TabIndex = 0;
+            materialCheckBox5.Text = "materialCheckBox5";
+            materialCheckBox5.UseAccentColor = false;
+            materialCheckBox5.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox6
+            // 
+            materialCheckBox6.AutoSize = true;
+            materialCheckBox6.Depth = 0;
+            materialCheckBox6.Location = new Point(0, 0);
+            materialCheckBox6.Margin = new Padding(0);
+            materialCheckBox6.MouseLocation = new Point(-1, -1);
+            materialCheckBox6.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox6.Name = "materialCheckBox6";
+            materialCheckBox6.ReadOnly = false;
+            materialCheckBox6.Ripple = true;
+            materialCheckBox6.Size = new Size(272, 46);
+            materialCheckBox6.TabIndex = 0;
+            materialCheckBox6.Text = "materialCheckBox6";
+            materialCheckBox6.UseAccentColor = false;
+            materialCheckBox6.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox7
+            // 
+            materialCheckBox7.AutoSize = true;
+            materialCheckBox7.Depth = 0;
+            materialCheckBox7.Location = new Point(0, 0);
+            materialCheckBox7.Margin = new Padding(0);
+            materialCheckBox7.MouseLocation = new Point(-1, -1);
+            materialCheckBox7.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox7.Name = "materialCheckBox7";
+            materialCheckBox7.ReadOnly = false;
+            materialCheckBox7.Ripple = true;
+            materialCheckBox7.Size = new Size(272, 46);
+            materialCheckBox7.TabIndex = 0;
+            materialCheckBox7.Text = "materialCheckBox7";
+            materialCheckBox7.UseAccentColor = false;
+            materialCheckBox7.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox8
+            // 
+            materialCheckBox8.AutoSize = true;
+            materialCheckBox8.Depth = 0;
+            materialCheckBox8.Location = new Point(0, 0);
+            materialCheckBox8.Margin = new Padding(0);
+            materialCheckBox8.MouseLocation = new Point(-1, -1);
+            materialCheckBox8.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox8.Name = "materialCheckBox8";
+            materialCheckBox8.ReadOnly = false;
+            materialCheckBox8.Ripple = true;
+            materialCheckBox8.Size = new Size(272, 46);
+            materialCheckBox8.TabIndex = 0;
+            materialCheckBox8.Text = "materialCheckBox8";
+            materialCheckBox8.UseAccentColor = false;
+            materialCheckBox8.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox9
+            // 
+            materialCheckBox9.AutoSize = true;
+            materialCheckBox9.Depth = 0;
+            materialCheckBox9.Location = new Point(0, 0);
+            materialCheckBox9.Margin = new Padding(0);
+            materialCheckBox9.MouseLocation = new Point(-1, -1);
+            materialCheckBox9.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox9.Name = "materialCheckBox9";
+            materialCheckBox9.ReadOnly = false;
+            materialCheckBox9.Ripple = true;
+            materialCheckBox9.Size = new Size(272, 46);
+            materialCheckBox9.TabIndex = 0;
+            materialCheckBox9.Text = "materialCheckBox9";
+            materialCheckBox9.UseAccentColor = false;
+            materialCheckBox9.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox10
+            // 
+            materialCheckBox10.AutoSize = true;
+            materialCheckBox10.Depth = 0;
+            materialCheckBox10.Location = new Point(0, 0);
+            materialCheckBox10.Margin = new Padding(0);
+            materialCheckBox10.MouseLocation = new Point(-1, -1);
+            materialCheckBox10.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox10.Name = "materialCheckBox10";
+            materialCheckBox10.ReadOnly = false;
+            materialCheckBox10.Ripple = true;
+            materialCheckBox10.Size = new Size(286, 46);
+            materialCheckBox10.TabIndex = 0;
+            materialCheckBox10.Text = "materialCheckBox10";
+            materialCheckBox10.UseAccentColor = false;
+            materialCheckBox10.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox11
+            // 
+            materialCheckBox11.AutoSize = true;
+            materialCheckBox11.Depth = 0;
+            materialCheckBox11.Location = new Point(0, 0);
+            materialCheckBox11.Margin = new Padding(0);
+            materialCheckBox11.MouseLocation = new Point(-1, -1);
+            materialCheckBox11.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox11.Name = "materialCheckBox11";
+            materialCheckBox11.ReadOnly = false;
+            materialCheckBox11.Ripple = true;
+            materialCheckBox11.Size = new Size(286, 46);
+            materialCheckBox11.TabIndex = 0;
+            materialCheckBox11.Text = "materialCheckBox11";
+            materialCheckBox11.UseAccentColor = false;
+            materialCheckBox11.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox12
+            // 
+            materialCheckBox12.AutoSize = true;
+            materialCheckBox12.Depth = 0;
+            materialCheckBox12.Location = new Point(0, 0);
+            materialCheckBox12.Margin = new Padding(0);
+            materialCheckBox12.MouseLocation = new Point(-1, -1);
+            materialCheckBox12.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox12.Name = "materialCheckBox12";
+            materialCheckBox12.ReadOnly = false;
+            materialCheckBox12.Ripple = true;
+            materialCheckBox12.Size = new Size(286, 46);
+            materialCheckBox12.TabIndex = 0;
+            materialCheckBox12.Text = "materialCheckBox12";
+            materialCheckBox12.UseAccentColor = false;
+            materialCheckBox12.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox13
+            // 
+            materialCheckBox13.AutoSize = true;
+            materialCheckBox13.Depth = 0;
+            materialCheckBox13.Location = new Point(0, 0);
+            materialCheckBox13.Margin = new Padding(0);
+            materialCheckBox13.MouseLocation = new Point(-1, -1);
+            materialCheckBox13.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox13.Name = "materialCheckBox13";
+            materialCheckBox13.ReadOnly = false;
+            materialCheckBox13.Ripple = true;
+            materialCheckBox13.Size = new Size(286, 46);
+            materialCheckBox13.TabIndex = 0;
+            materialCheckBox13.Text = "materialCheckBox13";
+            materialCheckBox13.UseAccentColor = false;
+            materialCheckBox13.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox14
+            // 
+            materialCheckBox14.AutoSize = true;
+            materialCheckBox14.Depth = 0;
+            materialCheckBox14.Location = new Point(0, 0);
+            materialCheckBox14.Margin = new Padding(0);
+            materialCheckBox14.MouseLocation = new Point(-1, -1);
+            materialCheckBox14.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox14.Name = "materialCheckBox14";
+            materialCheckBox14.ReadOnly = false;
+            materialCheckBox14.Ripple = true;
+            materialCheckBox14.Size = new Size(286, 46);
+            materialCheckBox14.TabIndex = 0;
+            materialCheckBox14.Text = "materialCheckBox14";
+            materialCheckBox14.UseAccentColor = false;
+            materialCheckBox14.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox15
+            // 
+            materialCheckBox15.AutoSize = true;
+            materialCheckBox15.Depth = 0;
+            materialCheckBox15.Location = new Point(0, 0);
+            materialCheckBox15.Margin = new Padding(0);
+            materialCheckBox15.MouseLocation = new Point(-1, -1);
+            materialCheckBox15.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox15.Name = "materialCheckBox15";
+            materialCheckBox15.ReadOnly = false;
+            materialCheckBox15.Ripple = true;
+            materialCheckBox15.Size = new Size(286, 46);
+            materialCheckBox15.TabIndex = 0;
+            materialCheckBox15.Text = "materialCheckBox15";
+            materialCheckBox15.UseAccentColor = false;
+            materialCheckBox15.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox16
+            // 
+            materialCheckBox16.AutoSize = true;
+            materialCheckBox16.Depth = 0;
+            materialCheckBox16.Location = new Point(0, 0);
+            materialCheckBox16.Margin = new Padding(0);
+            materialCheckBox16.MouseLocation = new Point(-1, -1);
+            materialCheckBox16.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox16.Name = "materialCheckBox16";
+            materialCheckBox16.ReadOnly = false;
+            materialCheckBox16.Ripple = true;
+            materialCheckBox16.Size = new Size(286, 46);
+            materialCheckBox16.TabIndex = 0;
+            materialCheckBox16.Text = "materialCheckBox16";
+            materialCheckBox16.UseAccentColor = false;
+            materialCheckBox16.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckBox17
+            // 
+            materialCheckBox17.AutoSize = true;
+            materialCheckBox17.Depth = 0;
+            materialCheckBox17.Location = new Point(0, 0);
+            materialCheckBox17.Margin = new Padding(0);
+            materialCheckBox17.MouseLocation = new Point(-1, -1);
+            materialCheckBox17.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCheckBox17.Name = "materialCheckBox17";
+            materialCheckBox17.ReadOnly = false;
+            materialCheckBox17.Ripple = true;
+            materialCheckBox17.Size = new Size(286, 46);
+            materialCheckBox17.TabIndex = 0;
+            materialCheckBox17.Text = "materialCheckBox17";
+            materialCheckBox17.UseAccentColor = false;
+            materialCheckBox17.UseVisualStyleBackColor = true;
             // 
             // TlpDivFormAndDgv
             // 
             TlpDivFormAndDgv.ColumnCount = 1;
             TlpDivFormAndDgv.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             TlpDivFormAndDgv.Controls.Add(TlpAux1, 0, 0);
-            TlpDivFormAndDgv.Controls.Add(DgvPelicula, 0, 1);
+            TlpDivFormAndDgv.Controls.Add(DgvPeliculas, 0, 1);
             TlpDivFormAndDgv.Dock = DockStyle.Fill;
             TlpDivFormAndDgv.Location = new Point(0, 0);
             TlpDivFormAndDgv.Margin = new Padding(0);
@@ -116,7 +404,7 @@
             TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Absolute, 725F));
             TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpDivFormAndDgv.Size = new Size(1050, 750);
-            TlpDivFormAndDgv.TabIndex = 4;
+            TlpDivFormAndDgv.TabIndex = 7;
             // 
             // TlpAux1
             // 
@@ -544,7 +832,6 @@
             ListBoxGeneros.SelectionMode = SelectionMode.MultiSimple;
             ListBoxGeneros.Size = new Size(250, 230);
             ListBoxGeneros.TabIndex = 5;
-            ListBoxGeneros.SelectedIndexChanged += kryptonListBox1_SelectedIndexChanged;
             // 
             // DatePickerEstreno
             // 
@@ -808,348 +1095,55 @@
             TbFiltro.Size = new Size(190, 30);
             TbFiltro.TabIndex = 7;
             // 
-            // DgvPelicula
+            // DgvPeliculas
             // 
-            DgvPelicula.AllowUserToAddRows = false;
-            DgvPelicula.AllowUserToResizeColumns = false;
-            DgvPelicula.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(50, 55, 66);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            DgvPelicula.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            DgvPelicula.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgvPelicula.BackgroundColor = Color.FromArgb(55, 60, 72);
-            DgvPelicula.BorderStyle = BorderStyle.None;
-            DgvPelicula.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            DgvPelicula.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.Padding = new Padding(8, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            DgvPelicula.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            DgvPelicula.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(55, 60, 72);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.5F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle3.Padding = new Padding(8, 0, 5, 0);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            DgvPelicula.DefaultCellStyle = dataGridViewCellStyle3;
-            DgvPelicula.Dock = DockStyle.Fill;
-            DgvPelicula.EnableHeadersVisualStyles = false;
-            DgvPelicula.Font = new Font("Segoe UI", 9.5F);
-            DgvPelicula.GridColor = Color.FromArgb(70, 76, 90);
-            DgvPelicula.Location = new Point(0, 725);
-            DgvPelicula.Margin = new Padding(0);
-            DgvPelicula.MultiSelect = false;
-            DgvPelicula.Name = "DgvPelicula";
-            DgvPelicula.ReadOnly = true;
-            DgvPelicula.RowHeadersVisible = false;
-            DgvPelicula.RowHeadersWidth = 51;
-            DgvPelicula.RowTemplate.Height = 36;
-            DgvPelicula.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DgvPelicula.Size = new Size(1050, 25);
-            DgvPelicula.TabIndex = 2;
-            // 
-            // materialCheckBox1
-            // 
-            materialCheckBox1.AutoSize = true;
-            materialCheckBox1.Depth = 0;
-            materialCheckBox1.Location = new Point(0, 0);
-            materialCheckBox1.Margin = new Padding(0);
-            materialCheckBox1.MouseLocation = new Point(-1, -1);
-            materialCheckBox1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox1.Name = "materialCheckBox1";
-            materialCheckBox1.ReadOnly = false;
-            materialCheckBox1.Ripple = true;
-            materialCheckBox1.Size = new Size(272, 46);
-            materialCheckBox1.TabIndex = 0;
-            materialCheckBox1.Text = "materialCheckBox1";
-            materialCheckBox1.UseAccentColor = false;
-            materialCheckBox1.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox2
-            // 
-            materialCheckBox2.AutoSize = true;
-            materialCheckBox2.Depth = 0;
-            materialCheckBox2.Location = new Point(0, 0);
-            materialCheckBox2.Margin = new Padding(0);
-            materialCheckBox2.MouseLocation = new Point(-1, -1);
-            materialCheckBox2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox2.Name = "materialCheckBox2";
-            materialCheckBox2.ReadOnly = false;
-            materialCheckBox2.Ripple = true;
-            materialCheckBox2.Size = new Size(272, 46);
-            materialCheckBox2.TabIndex = 0;
-            materialCheckBox2.Text = "materialCheckBox2";
-            materialCheckBox2.UseAccentColor = false;
-            materialCheckBox2.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox3
-            // 
-            materialCheckBox3.AutoSize = true;
-            materialCheckBox3.Depth = 0;
-            materialCheckBox3.Location = new Point(0, 0);
-            materialCheckBox3.Margin = new Padding(0);
-            materialCheckBox3.MouseLocation = new Point(-1, -1);
-            materialCheckBox3.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox3.Name = "materialCheckBox3";
-            materialCheckBox3.ReadOnly = false;
-            materialCheckBox3.Ripple = true;
-            materialCheckBox3.Size = new Size(272, 46);
-            materialCheckBox3.TabIndex = 0;
-            materialCheckBox3.Text = "materialCheckBox3";
-            materialCheckBox3.UseAccentColor = false;
-            materialCheckBox3.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox4
-            // 
-            materialCheckBox4.AutoSize = true;
-            materialCheckBox4.Depth = 0;
-            materialCheckBox4.Location = new Point(0, 0);
-            materialCheckBox4.Margin = new Padding(0);
-            materialCheckBox4.MouseLocation = new Point(-1, -1);
-            materialCheckBox4.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox4.Name = "materialCheckBox4";
-            materialCheckBox4.ReadOnly = false;
-            materialCheckBox4.Ripple = true;
-            materialCheckBox4.Size = new Size(236, 46);
-            materialCheckBox4.TabIndex = 0;
-            materialCheckBox4.Text = "sdfasdfasdfsadf";
-            materialCheckBox4.UseAccentColor = false;
-            materialCheckBox4.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox5
-            // 
-            materialCheckBox5.AutoSize = true;
-            materialCheckBox5.Depth = 0;
-            materialCheckBox5.Location = new Point(0, 0);
-            materialCheckBox5.Margin = new Padding(0);
-            materialCheckBox5.MouseLocation = new Point(-1, -1);
-            materialCheckBox5.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox5.Name = "materialCheckBox5";
-            materialCheckBox5.ReadOnly = false;
-            materialCheckBox5.Ripple = true;
-            materialCheckBox5.Size = new Size(272, 46);
-            materialCheckBox5.TabIndex = 0;
-            materialCheckBox5.Text = "materialCheckBox5";
-            materialCheckBox5.UseAccentColor = false;
-            materialCheckBox5.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox6
-            // 
-            materialCheckBox6.AutoSize = true;
-            materialCheckBox6.Depth = 0;
-            materialCheckBox6.Location = new Point(0, 0);
-            materialCheckBox6.Margin = new Padding(0);
-            materialCheckBox6.MouseLocation = new Point(-1, -1);
-            materialCheckBox6.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox6.Name = "materialCheckBox6";
-            materialCheckBox6.ReadOnly = false;
-            materialCheckBox6.Ripple = true;
-            materialCheckBox6.Size = new Size(272, 46);
-            materialCheckBox6.TabIndex = 0;
-            materialCheckBox6.Text = "materialCheckBox6";
-            materialCheckBox6.UseAccentColor = false;
-            materialCheckBox6.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox7
-            // 
-            materialCheckBox7.AutoSize = true;
-            materialCheckBox7.Depth = 0;
-            materialCheckBox7.Location = new Point(0, 0);
-            materialCheckBox7.Margin = new Padding(0);
-            materialCheckBox7.MouseLocation = new Point(-1, -1);
-            materialCheckBox7.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox7.Name = "materialCheckBox7";
-            materialCheckBox7.ReadOnly = false;
-            materialCheckBox7.Ripple = true;
-            materialCheckBox7.Size = new Size(272, 46);
-            materialCheckBox7.TabIndex = 0;
-            materialCheckBox7.Text = "materialCheckBox7";
-            materialCheckBox7.UseAccentColor = false;
-            materialCheckBox7.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox8
-            // 
-            materialCheckBox8.AutoSize = true;
-            materialCheckBox8.Depth = 0;
-            materialCheckBox8.Location = new Point(0, 0);
-            materialCheckBox8.Margin = new Padding(0);
-            materialCheckBox8.MouseLocation = new Point(-1, -1);
-            materialCheckBox8.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox8.Name = "materialCheckBox8";
-            materialCheckBox8.ReadOnly = false;
-            materialCheckBox8.Ripple = true;
-            materialCheckBox8.Size = new Size(272, 46);
-            materialCheckBox8.TabIndex = 0;
-            materialCheckBox8.Text = "materialCheckBox8";
-            materialCheckBox8.UseAccentColor = false;
-            materialCheckBox8.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox9
-            // 
-            materialCheckBox9.AutoSize = true;
-            materialCheckBox9.Depth = 0;
-            materialCheckBox9.Location = new Point(0, 0);
-            materialCheckBox9.Margin = new Padding(0);
-            materialCheckBox9.MouseLocation = new Point(-1, -1);
-            materialCheckBox9.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox9.Name = "materialCheckBox9";
-            materialCheckBox9.ReadOnly = false;
-            materialCheckBox9.Ripple = true;
-            materialCheckBox9.Size = new Size(272, 46);
-            materialCheckBox9.TabIndex = 0;
-            materialCheckBox9.Text = "materialCheckBox9";
-            materialCheckBox9.UseAccentColor = false;
-            materialCheckBox9.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox10
-            // 
-            materialCheckBox10.AutoSize = true;
-            materialCheckBox10.Depth = 0;
-            materialCheckBox10.Location = new Point(0, 0);
-            materialCheckBox10.Margin = new Padding(0);
-            materialCheckBox10.MouseLocation = new Point(-1, -1);
-            materialCheckBox10.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox10.Name = "materialCheckBox10";
-            materialCheckBox10.ReadOnly = false;
-            materialCheckBox10.Ripple = true;
-            materialCheckBox10.Size = new Size(286, 46);
-            materialCheckBox10.TabIndex = 0;
-            materialCheckBox10.Text = "materialCheckBox10";
-            materialCheckBox10.UseAccentColor = false;
-            materialCheckBox10.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox11
-            // 
-            materialCheckBox11.AutoSize = true;
-            materialCheckBox11.Depth = 0;
-            materialCheckBox11.Location = new Point(0, 0);
-            materialCheckBox11.Margin = new Padding(0);
-            materialCheckBox11.MouseLocation = new Point(-1, -1);
-            materialCheckBox11.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox11.Name = "materialCheckBox11";
-            materialCheckBox11.ReadOnly = false;
-            materialCheckBox11.Ripple = true;
-            materialCheckBox11.Size = new Size(286, 46);
-            materialCheckBox11.TabIndex = 0;
-            materialCheckBox11.Text = "materialCheckBox11";
-            materialCheckBox11.UseAccentColor = false;
-            materialCheckBox11.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox12
-            // 
-            materialCheckBox12.AutoSize = true;
-            materialCheckBox12.Depth = 0;
-            materialCheckBox12.Location = new Point(0, 0);
-            materialCheckBox12.Margin = new Padding(0);
-            materialCheckBox12.MouseLocation = new Point(-1, -1);
-            materialCheckBox12.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox12.Name = "materialCheckBox12";
-            materialCheckBox12.ReadOnly = false;
-            materialCheckBox12.Ripple = true;
-            materialCheckBox12.Size = new Size(286, 46);
-            materialCheckBox12.TabIndex = 0;
-            materialCheckBox12.Text = "materialCheckBox12";
-            materialCheckBox12.UseAccentColor = false;
-            materialCheckBox12.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox13
-            // 
-            materialCheckBox13.AutoSize = true;
-            materialCheckBox13.Depth = 0;
-            materialCheckBox13.Location = new Point(0, 0);
-            materialCheckBox13.Margin = new Padding(0);
-            materialCheckBox13.MouseLocation = new Point(-1, -1);
-            materialCheckBox13.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox13.Name = "materialCheckBox13";
-            materialCheckBox13.ReadOnly = false;
-            materialCheckBox13.Ripple = true;
-            materialCheckBox13.Size = new Size(286, 46);
-            materialCheckBox13.TabIndex = 0;
-            materialCheckBox13.Text = "materialCheckBox13";
-            materialCheckBox13.UseAccentColor = false;
-            materialCheckBox13.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox14
-            // 
-            materialCheckBox14.AutoSize = true;
-            materialCheckBox14.Depth = 0;
-            materialCheckBox14.Location = new Point(0, 0);
-            materialCheckBox14.Margin = new Padding(0);
-            materialCheckBox14.MouseLocation = new Point(-1, -1);
-            materialCheckBox14.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox14.Name = "materialCheckBox14";
-            materialCheckBox14.ReadOnly = false;
-            materialCheckBox14.Ripple = true;
-            materialCheckBox14.Size = new Size(286, 46);
-            materialCheckBox14.TabIndex = 0;
-            materialCheckBox14.Text = "materialCheckBox14";
-            materialCheckBox14.UseAccentColor = false;
-            materialCheckBox14.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox15
-            // 
-            materialCheckBox15.AutoSize = true;
-            materialCheckBox15.Depth = 0;
-            materialCheckBox15.Location = new Point(0, 0);
-            materialCheckBox15.Margin = new Padding(0);
-            materialCheckBox15.MouseLocation = new Point(-1, -1);
-            materialCheckBox15.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox15.Name = "materialCheckBox15";
-            materialCheckBox15.ReadOnly = false;
-            materialCheckBox15.Ripple = true;
-            materialCheckBox15.Size = new Size(286, 46);
-            materialCheckBox15.TabIndex = 0;
-            materialCheckBox15.Text = "materialCheckBox15";
-            materialCheckBox15.UseAccentColor = false;
-            materialCheckBox15.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox16
-            // 
-            materialCheckBox16.AutoSize = true;
-            materialCheckBox16.Depth = 0;
-            materialCheckBox16.Location = new Point(0, 0);
-            materialCheckBox16.Margin = new Padding(0);
-            materialCheckBox16.MouseLocation = new Point(-1, -1);
-            materialCheckBox16.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox16.Name = "materialCheckBox16";
-            materialCheckBox16.ReadOnly = false;
-            materialCheckBox16.Ripple = true;
-            materialCheckBox16.Size = new Size(286, 46);
-            materialCheckBox16.TabIndex = 0;
-            materialCheckBox16.Text = "materialCheckBox16";
-            materialCheckBox16.UseAccentColor = false;
-            materialCheckBox16.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox17
-            // 
-            materialCheckBox17.AutoSize = true;
-            materialCheckBox17.Depth = 0;
-            materialCheckBox17.Location = new Point(0, 0);
-            materialCheckBox17.Margin = new Padding(0);
-            materialCheckBox17.MouseLocation = new Point(-1, -1);
-            materialCheckBox17.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCheckBox17.Name = "materialCheckBox17";
-            materialCheckBox17.ReadOnly = false;
-            materialCheckBox17.Ripple = true;
-            materialCheckBox17.Size = new Size(286, 46);
-            materialCheckBox17.TabIndex = 0;
-            materialCheckBox17.Text = "materialCheckBox17";
-            materialCheckBox17.UseAccentColor = false;
-            materialCheckBox17.UseVisualStyleBackColor = true;
-            // 
-            // kryptonContextMenu1
-            // 
-            kryptonContextMenu1.PaletteMode = Krypton.Toolkit.PaletteMode.MaterialDarkRipple;
+            DgvPeliculas.AllowUserToAddRows = false;
+            DgvPeliculas.AllowUserToResizeColumns = false;
+            DgvPeliculas.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(50, 55, 66);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            DgvPeliculas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            DgvPeliculas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvPeliculas.BackgroundColor = Color.FromArgb(55, 60, 72);
+            DgvPeliculas.BorderStyle = BorderStyle.None;
+            DgvPeliculas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            DgvPeliculas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.Padding = new Padding(8, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            DgvPeliculas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            DgvPeliculas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(55, 60, 72);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9.5F);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle6.Padding = new Padding(8, 0, 5, 0);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            DgvPeliculas.DefaultCellStyle = dataGridViewCellStyle6;
+            DgvPeliculas.Dock = DockStyle.Fill;
+            DgvPeliculas.EnableHeadersVisualStyles = false;
+            DgvPeliculas.Font = new Font("Segoe UI", 9.5F);
+            DgvPeliculas.GridColor = Color.FromArgb(70, 76, 90);
+            DgvPeliculas.Location = new Point(0, 725);
+            DgvPeliculas.Margin = new Padding(0);
+            DgvPeliculas.MultiSelect = false;
+            DgvPeliculas.Name = "DgvPeliculas";
+            DgvPeliculas.ReadOnly = true;
+            DgvPeliculas.RowHeadersVisible = false;
+            DgvPeliculas.RowHeadersWidth = 51;
+            DgvPeliculas.RowTemplate.Height = 36;
+            DgvPeliculas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DgvPeliculas.Size = new Size(1050, 25);
+            DgvPeliculas.TabIndex = 2;
             // 
             // FrUcPeliculas
             // 
@@ -1157,6 +1151,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             Controls.Add(TlpDivFormAndDgv);
+            Margin = new Padding(0);
             Name = "FrUcPeliculas";
             Size = new Size(1050, 750);
             TlpDivFormAndDgv.ResumeLayout(false);
@@ -1170,50 +1165,11 @@
             TlpTitleLabel.PerformLayout();
             TlpAux3.ResumeLayout(false);
             TlpFilter.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)DgvPelicula).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DgvPeliculas).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private TableLayoutPanel TlpDivFormAndDgv;
-        private TableLayoutPanel TlpAux1;
-        private TableLayoutPanel TlpAux2;
-        private TableLayoutPanel TlpFormWithButtons;
-        private Componentes.CustomButton BtnLimpiar;
-        private TableLayoutPanel TlpForm;
-        private Componentes.CustomLabel LbID;
-        private Componentes.CustomLabel LbDirector;
-        private Componentes.CustomLabel LbPelicula;
-        private Componentes.CustomLabel LbTrailer;
-        private Componentes.CustomLabel LbDuracion;
-        private Componentes.CustomLabel LbClasificacion;
-        private Componentes.CustomLabel LbGeneros;
-        private Componentes.CustomLabel LbFormatos;
-        private Componentes.CustomLabel LbEstreno;
-        private Componentes.CustomLabel LbEstado;
-        private Componentes.CustomComboBox CbClasificacion;
-        private Componentes.CustomLabel LbDescripcion;
-        private Componentes.CustomTextBox TbTitulo;
-        private Componentes.CustomTextBox TbDuracion;
-        private Componentes.CustomTextBox TbDirector;
-        private Componentes.CustomTextBox TbTrailer;
-        private Componentes.CustomIDTextBox TbID;
-        private Componentes.CustomComboBox CbEstado;
-        private TableLayoutPanel TlpButtons;
-        private Componentes.CustomButton BtnAgregar;
-        private Componentes.CustomButton BtnEliminar;
-        private Componentes.CustomButton BtnCopiar;
-        private Componentes.CustomButton BtnActualizar;
-        private TableLayoutPanel TlpTitleLabel;
-        private Componentes.CustomTitleLabel LbTitulo;
-        private TableLayoutPanel TlpAux3;
-        private TableLayoutPanel TlpFilter;
-        private Componentes.CustomButton BtnBuscar;
-        private Componentes.CustomComboBox CbFiltro;
-        private Componentes.CustomTextBox TbFiltro;
-        private Componentes.CustomDataGridView DgvPelicula;
-        private ReaLTaiizor.Controls.PoisonDateTime DatePickerEstreno;
         private ReaLTaiizor.Controls.MaterialCheckBox materialCheckBox1;
         private ReaLTaiizor.Controls.MaterialCheckBox materialCheckBox2;
         private ReaLTaiizor.Controls.MaterialCheckBox materialCheckBox3;
@@ -1231,9 +1187,46 @@
         private ReaLTaiizor.Controls.MaterialCheckBox materialCheckBox15;
         private ReaLTaiizor.Controls.MaterialCheckBox materialCheckBox16;
         private ReaLTaiizor.Controls.MaterialCheckBox materialCheckBox17;
+        private TableLayoutPanel TlpDivFormAndDgv;
+        private TableLayoutPanel TlpAux1;
+        private TableLayoutPanel TlpAux2;
+        private TableLayoutPanel TlpFormWithButtons;
+        private Componentes.CustomButton BtnLimpiar;
+        private TableLayoutPanel TlpForm;
         private Componentes.CustomTextBox TbDescripcion;
-        private Krypton.Toolkit.KryptonListBox ListBoxGeneros;
+        private Componentes.CustomLabel LbID;
+        private Componentes.CustomLabel LbDirector;
+        private Componentes.CustomLabel LbPelicula;
+        private Componentes.CustomLabel LbTrailer;
+        private Componentes.CustomLabel LbDuracion;
+        private Componentes.CustomLabel LbClasificacion;
+        private Componentes.CustomLabel LbGeneros;
+        private Componentes.CustomLabel LbFormatos;
+        private Componentes.CustomLabel LbEstreno;
+        private Componentes.CustomLabel LbEstado;
+        private Componentes.CustomLabel LbDescripcion;
+        private Componentes.CustomTextBox TbTitulo;
+        private Componentes.CustomTextBox TbDuracion;
+        private Componentes.CustomTextBox TbDirector;
+        private Componentes.CustomTextBox TbTrailer;
+        private Componentes.CustomIDTextBox TbID;
+        private Componentes.CustomComboBox CbEstado;
         private Krypton.Toolkit.KryptonListBox ListBoxFormatos;
-        private Krypton.Toolkit.KryptonContextMenu kryptonContextMenu1;
+        private Krypton.Toolkit.KryptonListBox ListBoxGeneros;
+        private ReaLTaiizor.Controls.PoisonDateTime DatePickerEstreno;
+        private Componentes.CustomComboBox CbClasificacion;
+        private TableLayoutPanel TlpButtons;
+        private Componentes.CustomButton BtnAgregar;
+        private Componentes.CustomButton BtnEliminar;
+        private Componentes.CustomButton BtnCopiar;
+        private Componentes.CustomButton BtnActualizar;
+        private TableLayoutPanel TlpTitleLabel;
+        private Componentes.CustomTitleLabel LbTitulo;
+        private TableLayoutPanel TlpAux3;
+        private TableLayoutPanel TlpFilter;
+        private Componentes.CustomButton BtnBuscar;
+        private Componentes.CustomComboBox CbFiltro;
+        private Componentes.CustomTextBox TbFiltro;
+        private Componentes.CustomDataGridView DgvPeliculas;
     }
 }
