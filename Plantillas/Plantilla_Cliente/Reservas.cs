@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Runtime.InteropServices.Marshalling;
 using System.Windows.Forms;
+using clase_conexion;
 
 
 namespace Plantilla_Cliente
@@ -36,6 +37,7 @@ namespace Plantilla_Cliente
         public Reservas()
         {
             InitializeComponent();
+            gconexion = new conexion();
         }
 
         public Reservas(int idPelicula, int idciudad)

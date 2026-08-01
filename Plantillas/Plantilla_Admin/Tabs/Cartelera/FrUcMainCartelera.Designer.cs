@@ -70,14 +70,14 @@
             panel1.Size = new Size(707, 394);
             panel1.TabIndex = 1;
             // 
-            // cartelera
+            // FrUcMainCartelera
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Yellow;
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
-            Name = "cartelera";
+            Name = "FrUcMainCartelera";
             Size = new Size(857, 394);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

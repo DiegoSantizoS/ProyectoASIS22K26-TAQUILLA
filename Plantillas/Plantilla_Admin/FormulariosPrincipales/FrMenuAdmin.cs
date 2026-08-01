@@ -1,6 +1,8 @@
 ﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
  * fecha de: 19/07/2026 */
 
+using clase_conexion;
+using Plantilla_Admin.Tabs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +10,6 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using clase_conexion;
 
 namespace Plantilla_Admin
 {
@@ -60,14 +61,14 @@ namespace Plantilla_Admin
 
         private void funcionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            funciones funciones = new funciones();
+            FrUcMainFunciones funciones = new FrUcMainFunciones();
             funcargarpagina(funciones);
         }
 
         private void promocionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            promociones promociones = new promociones();
-            funcargarpagina(promociones);
+            FrBorrador FrBorrador1 = new FrBorrador();
+            funcargarpagina(FrBorrador1);
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)

@@ -11,6 +11,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
+
+
 namespace Plantilla_Cliente
 {
     public partial class FrLogin : Form
@@ -18,6 +20,7 @@ namespace Plantilla_Cliente
         public FrLogin()
         {
             InitializeComponent();
+
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
