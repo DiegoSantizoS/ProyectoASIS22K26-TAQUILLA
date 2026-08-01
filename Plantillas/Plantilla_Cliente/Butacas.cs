@@ -9,16 +9,22 @@ namespace Plantilla_Cliente
     {
         // Lista de números de asiento seleccionados
         public List<int> ButacasSeleccionadas { get; } = new();
+        public int id_sala;
+        public int capacidad_sala;
+        private Con_Cliente gconexion;
 
-        public Butacas()
+        public Butacas(int idSala)
         {
             InitializeComponent();
+            gconexion = new Con_Cliente();
+            this.id_sala = idSala;
+            capacidad_sala = gconexion.ObtenerCapacidadSala(id_sala) / 10;
         }
 
         private void Butacas_Load(object sender, EventArgs e)
         {
-            // Prueba: 7 filas x 10 columnas
-            CrearButacas(7);
+
+            CrearButacas(capacidad_sala);
         }
 
         private void CrearButacas(int filas)

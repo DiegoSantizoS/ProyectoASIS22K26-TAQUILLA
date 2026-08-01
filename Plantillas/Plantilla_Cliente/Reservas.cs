@@ -21,6 +21,7 @@ namespace Plantilla_Cliente
         public int numero_boleto;
         public int id_venta;
         public string estado_boleto = "";
+        public int IdSala;
 
         // Asientos seleccionados
         public List<int> asientosSeleccionados = new List<int>();
@@ -61,7 +62,7 @@ namespace Plantilla_Cliente
         /*Inicio del código 0901-23-13862 Carlos Andres Arriaza Lara el 25/07/2026*/
         private void Btn_Continuar_Click(object sender, EventArgs e)
         {
-            using (Butacas butacas = new Butacas())
+            using (Butacas butacas = new Butacas(IdSala))
             {
                 if (butacas.ShowDialog() == DialogResult.OK)
                 {
@@ -170,7 +171,7 @@ namespace Plantilla_Cliente
                 btn.FlatAppearance.BorderSize = 1;
 
                 btn.Click += BtnHorario_Click;
-
+                MessageBox.Show($"Creando botón: {fila["hora_funcion"]}");
                 Flp_Horarios.Controls.Add(btn);
             }
         }
@@ -203,6 +204,9 @@ namespace Plantilla_Cliente
             btnHoraSeleccionada = btn;
 
             id_funcion = (int)btn.Tag;
+            MessageBox.Show($"Id función: {id_funcion}");
+            IdSala = gconexion.ObtenerIdSala(id_funcion);
+            MessageBox.Show($"Id_Funcion: {id_funcion}\nId_Sala: {IdSala}");
         }
 
         private void Cbo_Cines_SelectedIndexChanged(object sender, EventArgs e)

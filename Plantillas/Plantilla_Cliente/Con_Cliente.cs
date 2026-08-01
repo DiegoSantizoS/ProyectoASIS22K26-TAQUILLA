@@ -261,7 +261,30 @@ namespace Plantilla_Cliente
         }
 
         /*Fin de código de Carlos Andres Arriaza Lara 0901-23-13862 el 29/07/2026*/
-
+        /*Inicio del código de Carlos Andres Arriaza Lara 0901-23-13862 el 31/07/2026*/
+        public int ObtenerIdSala(int idFuncion)
+        {
+            MySqlConnection con = GetConnection();
+            string consulta = @"SELECT id_sala FROM FUNCION WHERE id_funcion = @idFuncion";
+            MySqlCommand cmd = new MySqlCommand(consulta, con);
+            cmd.Parameters.AddWithValue("@idFuncion", idFuncion);
+            object resultado = cmd.ExecuteScalar();
+            return (resultado != null && resultado != DBNull.Value)
+                ? Convert.ToInt32(resultado)
+                : 0;
+        }
+        public int ObtenerCapacidadSala(int idSala) 
+        { 
+            MySqlConnection con = GetConnection();
+            string consulta = @"SELECT capacidad_sala FROM SALA WHERE id_sala = @idSala";
+            MySqlCommand cmd = new MySqlCommand(consulta, con);
+            cmd.Parameters.AddWithValue("@idSala", idSala);
+            object resultado = cmd.ExecuteScalar();
+            return (resultado != null && resultado != DBNull.Value)
+                ? Convert.ToInt32(resultado)
+                : 0;
+        }
+        /*Fin del código de Carlos Andres Arriaza Lara 0901-23-13862 el 31/07/2026*/
     }
 }
 
