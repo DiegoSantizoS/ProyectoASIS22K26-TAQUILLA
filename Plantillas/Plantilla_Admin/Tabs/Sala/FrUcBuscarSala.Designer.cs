@@ -182,7 +182,6 @@
             Btn_eliminar.TabIndex = 28;
             Btn_eliminar.Text = "ELIMINAR";
             Btn_eliminar.UseVisualStyleBackColor = true;
-            Btn_eliminar.Click += Btn_eliminar_Click;
             // 
             // Btn_agregar
             // 
@@ -194,7 +193,6 @@
             Btn_agregar.TabIndex = 27;
             Btn_agregar.Text = "AGREGAR";
             Btn_agregar.UseVisualStyleBackColor = true;
-            Btn_agregar.Click += Btn_agregar_Click;
             // 
             // Btn_agregarNuevaCartelera
             // 
@@ -206,7 +204,6 @@
             Btn_agregarNuevaCartelera.TabIndex = 26;
             Btn_agregarNuevaCartelera.Text = "REFRESCAR";
             Btn_agregarNuevaCartelera.UseVisualStyleBackColor = true;
-            Btn_agregarNuevaCartelera.Click += Btn_agregarNuevaCartelera_Click;
             // 
             // tableLayoutPanel2
             // 
@@ -377,7 +374,6 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1050, 397);
             dataGridView1.TabIndex = 1;
-            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // FrUcBuscarSala
             // 

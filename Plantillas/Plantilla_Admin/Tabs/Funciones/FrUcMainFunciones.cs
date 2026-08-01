@@ -30,8 +30,8 @@ namespace Plantilla_Admin
 
         private void verUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrUcMantenimientoFuncion FrUcMantenimientoFuncion1 = new FrUcMantenimientoFuncion();
-            funcargarpagina(FrUcMantenimientoFuncion1);
+            //FrUcMantenimientoFuncion FrUcMantenimientoFuncion1 = new FrUcMantenimientoFuncion();
+          //  funcargarpagina(FrUcMantenimientoFuncion1);
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)

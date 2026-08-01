@@ -98,7 +98,6 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1050, 225);
             dataGridView1.TabIndex = 10;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // tableLayoutPanel8
             // 
@@ -499,7 +498,6 @@
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.Size = new Size(284, 244);
             dataGridView2.TabIndex = 31;
-            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
             // horas_funcion
             // 
@@ -545,7 +543,6 @@
             button1.TabIndex = 33;
             button1.Text = "AGREGAR / ACTUALIZAR";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -557,7 +554,6 @@
             button2.TabIndex = 34;
             button2.Text = "ELIMINAR";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // Tx_tab
             // 
@@ -601,7 +597,6 @@
             button3.TabIndex = 35;
             button3.Text = "ACTUALIZAR TABLA";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
             // 
             // Tlp_estreno
             // 

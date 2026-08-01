@@ -17,7 +17,7 @@ namespace Plantilla_Admin.Tabs.Sala
         private int idSala;
         public FrUcBuscarSala()
         {
-            InitializeComponent();
+            InitializeComponent();/*
             conexion conexion = new conexion();
 
             Cb_ciudad.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -48,8 +48,9 @@ namespace Plantilla_Admin.Tabs.Sala
 
             idSala = 0;
             Btn_agregar.Text = "AGREGAR";
+            */
         }
-
+        /*
         private void CargarCines()
         {
             if (Cb_ciudad.SelectedValue == null) return;
@@ -186,5 +187,5 @@ namespace Plantilla_Admin.Tabs.Sala
             int filas = capacidad / 10;
             if (comboBox2.Items.Contains(filas)) comboBox2.SelectedItem = filas;
         }
-    }
+    */}
 }

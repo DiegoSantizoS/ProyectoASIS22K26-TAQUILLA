@@ -19,7 +19,7 @@ namespace Plantilla_Admin.Tabs.Funciones
             InitializeComponent();
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
-
+        /*
         public FrUcMantenimientoFuncion()
         {
             InitializeComponent();
@@ -73,7 +73,7 @@ namespace Plantilla_Admin.Tabs.Funciones
             label10.Text = r["formato"] == DBNull.Value ? "-" : r["formato"].ToString();
             label12.Text = r["duracion_pelicula"].ToString();
         }
-
+        /*
         private void RefrescarHoras()
         {
             if (comboBox1.SelectedValue == null) return;
@@ -85,13 +85,13 @@ namespace Plantilla_Admin.Tabs.Funciones
             if (dataGridView2.Columns["horas_funcion"] != null)
                 dataGridView2.Columns["horas_funcion"].DataPropertyName = "Hora";
         }
-
+        
         private void CargarFunciones()
         {
             conexion conexion = new conexion();
             dataGridView1.DataSource = conexion.mostrarFunciones();
         }
-
+        
         private void CargarFuncion(int id)
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -196,6 +196,6 @@ namespace Plantilla_Admin.Tabs.Funciones
             {
                 MessageBox.Show("Error al eliminar: " + ex.Message);
             }
-        }
+        }*/
     }
 }
