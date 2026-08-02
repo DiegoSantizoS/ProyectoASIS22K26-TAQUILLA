@@ -367,25 +367,6 @@
             LbEstado.Text = "Estado";
             LbEstado.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // DpEstreno
-            // 
-            DpEstreno.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            DpEstreno.CalendarForeColor = Color.FromArgb(230, 230, 230);
-            DpEstreno.CalendarMonthBackground = Color.FromArgb(55, 60, 72);
-            DpEstreno.CalendarTitleBackColor = Color.FromArgb(41, 128, 185);
-            DpEstreno.CalendarTitleForeColor = Color.White;
-            DpEstreno.CalendarTrailingForeColor = Color.FromArgb(150, 150, 150);
-            DpEstreno.CustomFormat = "dd/MM/yyyy";
-            DpEstreno.Font = new Font("Segoe UI", 9.5F);
-            DpEstreno.Format = DateTimePickerFormat.Custom;
-            DpEstreno.Location = new Point(517, 260);
-            DpEstreno.Margin = new Padding(5);
-            DpEstreno.MaximumSize = new Size(0, 30);
-            DpEstreno.MinimumSize = new Size(190, 30);
-            DpEstreno.Name = "DpEstreno";
-            DpEstreno.Size = new Size(243, 30);
-            DpEstreno.TabIndex = 46;
-            // 
             // LbDescripcion
             // 
             LbDescripcion.AutoSize = true;

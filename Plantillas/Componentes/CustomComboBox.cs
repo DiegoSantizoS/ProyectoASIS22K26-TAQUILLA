@@ -12,13 +12,24 @@ namespace Componentes
     {
         public CustomComboBox()
         {
-            Font = new Font("Segoe UI", 9f);
-            ItemHeight = 24;
-            Margin = new Padding(5);
             Anchor = AnchorStyles.Left | AnchorStyles.Right;
             Cursor = Cursors.Hand;
+            DrawMode = DrawMode.OwnerDrawFixed;
+            DropDownStyle = ComboBoxStyle.DropDownList;
+            FlatStyle = FlatStyle.Flat;
+            Font = new Font("Segoe UI", 9.5F);
+            FormattingEnabled = true;
+            ItemHeight = 24;
+            Margin = new Padding(5);
             MinimumSize = new Size(190, 30);
             MaximumSize = new Size(0, 30);
+
+            BackColor = Color.FromArgb(55, 60, 72);
+            BaseColor = Color.FromArgb(40, 40, 40);
+            BGColor = Color.FromArgb(55, 60, 72);
+            ForeColor = Color.FromArgb(230, 230, 230);
+            HoverColor = Color.Crimson;
+            HoverFontColor = Color.White;
         }
     }
 }

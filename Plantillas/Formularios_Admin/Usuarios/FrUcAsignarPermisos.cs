@@ -8,7 +8,7 @@ using Con_Admin;
 
 namespace Formularios_Admin
 {
-    public partial class FrUcPermisos : UserControl
+    public partial class FrUcAsignarPermisos : UserControl
     {
         private readonly If_Permisos api = new If_Permisos();
         private DataTable tablaUsuarios;
@@ -28,7 +28,7 @@ namespace Formularios_Admin
             }
         }
 
-        public FrUcPermisos()
+        public FrUcAsignarPermisos()
         {
             InitializeComponent();
             PrepararInterfaz();
@@ -40,26 +40,8 @@ namespace Formularios_Admin
 
         private void PrepararInterfaz()
         {
-            LbID.Text = "ID Usuario";
-            LbNombreUsuario.Text = "Usuario";
-            LbTipos.Text = "Tipos";
-            LbAccion.Text = "Acciones";
+            LbPerfil.Text = "Usuario";
             LbAplicacion.Text = "Aplicaciones";
-
-            TbDirector.ReadOnly = true;
-
-            ListBoxTipos.Items.Clear();
-            ListBoxTipos.SelectionMode = SelectionMode.MultiSimple;
-            ListBoxTipos.Items.Add(new OpcionPermiso("puede_mantenimiento", "Mantenimiento"));
-            ListBoxTipos.Items.Add(new OpcionPermiso("puede_procesos", "Procesos"));
-            ListBoxTipos.ClearSelected();
-
-            ListBoxAccion.Items.Clear();
-            ListBoxAccion.SelectionMode = SelectionMode.MultiSimple;
-            ListBoxAccion.Items.Add(new OpcionPermiso("puede_eliminar", "Eliminar"));
-            ListBoxAccion.Items.Add(new OpcionPermiso("puede_registrar", "Registrar"));
-            ListBoxAccion.Items.Add(new OpcionPermiso("puede_modificar", "Modificar"));
-            ListBoxAccion.ClearSelected();
 
             ListBoxAplicacion.Items.Clear();
             ListBoxAplicacion.SelectionMode = SelectionMode.MultiSimple;
@@ -78,9 +60,7 @@ namespace Formularios_Admin
 
         private void WireEvents()
         {
-            BtnActualizar.Click += BtnGuardar_Click;
             BtnLimpiar.Click += BtnLimpiar_Click;
-            BtnSeleccionar.Click += BtnCopiar_Click;
             BtnBuscar.Click += BtnBuscar_Click;
         }
 
@@ -96,13 +76,13 @@ namespace Formularios_Admin
         private void CargarGrilla()
         {
             tablaUsuarios = api.ListarUsuarios();
-            DgvUsuarios.DataSource = tablaUsuarios;
+            DgvPerfiles.DataSource = tablaUsuarios;
             FormatearGrilla();
         }
 
         private void FormatearGrilla()
         {
-            if (DgvUsuarios.Columns.Count == 0) return;
+            if (DgvPerfiles.Columns.Count == 0) return;
 
             Encabezado("id_usuario", "ID");
             Encabezado("nombre_usuario", "Usuario");
@@ -111,25 +91,17 @@ namespace Formularios_Admin
 
         private void Encabezado(string columna, string texto)
         {
-            if (DgvUsuarios.Columns.Contains(columna))
-                DgvUsuarios.Columns[columna].HeaderText = texto;
+            if (DgvPerfiles.Columns.Contains(columna))
+                DgvPerfiles.Columns[columna].HeaderText = texto;
         }
 
         private void ModoInicial()
         {
-            TbID.Clear();
-            TbDirector.Clear();
-            ListBoxTipos.ClearSelected();
-            ListBoxAccion.ClearSelected();
             ListBoxAplicacion.ClearSelected();
-            BtnActualizar.Enabled = false;
-            BtnSeleccionar.Enabled = true;
         }
 
         private void ModoEdicion()
         {
-            BtnActualizar.Enabled = true;
-            BtnSeleccionar.Enabled = true;
         }
 
         private void PonerTexto(Componentes.CustomTextBox tb, string valor)
@@ -141,31 +113,6 @@ namespace Formularios_Admin
 
         private void BtnCopiar_Click(object sender, EventArgs e)
         {
-            if (DgvUsuarios.CurrentRow == null)
-            {
-                MessageBox.Show("Selecciona un usuario de la tabla primero.", "Copiar",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            var enlace = DgvUsuarios.CurrentRow.DataBoundItem as DataRowView;
-            if (enlace == null) return;
-
-            DataRow row = enlace.Row;
-            int id = Convert.ToInt32(row["id_usuario"]);
-
-            TbID.Text = id.ToString();
-            PonerTexto(TbDirector, row["nombre_usuario"].ToString());
-
-            DataTable permisos = api.ObtenerPermisos(id);
-            DataRow permRow = permisos.Rows.Count > 0 ? permisos.Rows[0] : null;
-
-            MarcarSeleccion(ListBoxTipos, permRow);
-            MarcarSeleccion(ListBoxAccion, permRow);
-            MarcarSeleccion(ListBoxAplicacion, permRow);
-
-            DgvUsuarios.Focus();
-            ModoEdicion();
         }
 
         private void MarcarSeleccion(Krypton.Toolkit.KryptonListBox lista, DataRow permisos)
@@ -199,31 +146,6 @@ namespace Formularios_Admin
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(TbID.Text, out int id) || id <= 0)
-            {
-                MessageBox.Show("Selecciona un usuario con Copiar antes de guardar.", "Guardar",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            var activas = new HashSet<string>();
-            AgregarSeleccion(ListBoxTipos, activas);
-            AgregarSeleccion(ListBoxAccion, activas);
-            AgregarSeleccion(ListBoxAplicacion, activas);
-
-            try
-            {
-                api.Guardar(id, activas);
-                MessageBox.Show("Permisos guardados correctamente.", "Éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CargarGrilla();
-                ModoInicial();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudieron guardar los permisos.\n\n" + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -264,6 +186,11 @@ namespace Formularios_Admin
         }
 
         private void BtnCopiar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TlpForm_Paint(object sender, PaintEventArgs e)
         {
 
         }

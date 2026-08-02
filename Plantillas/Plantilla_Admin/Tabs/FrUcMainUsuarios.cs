@@ -37,7 +37,7 @@ namespace Plantilla_Admin
 
         private void TsmAsignarPermisos_Click(object sender, EventArgs e)
         {
-            funcargarpagina(new Formularios_Admin.FrUcPermisos());
+            funcargarpagina(new Formularios_Admin.FrUcAsignarPermisos());
         }
     }
 }
