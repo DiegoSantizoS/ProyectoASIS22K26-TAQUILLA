@@ -3,21 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Plantilla_Admin
+namespace Componentes
 {
-    public partial class FrUcOldCartelera : UserControl
+    public partial class PlantillaFormularioAdmin : UserControl
     {
-        public FrUcOldCartelera()
+        public PlantillaFormularioAdmin()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

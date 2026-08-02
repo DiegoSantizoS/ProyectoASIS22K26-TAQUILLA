@@ -30,33 +30,29 @@
         {
             Tlp_main = new TableLayoutPanel();
             Tlp_formulario = new TableLayoutPanel();
-            Tlp_dgvFormato = new TableLayoutPanel();
-            Dgv_formato = new DataGridView();
-            Dgvc_nombre = new DataGridViewTextBoxColumn();
-            Dgvb_borrar = new DataGridViewButtonColumn();
-            Tlp_grupoFormato = new TableLayoutPanel();
-            cb_formato = new ComboBox();
-            Tx_formato = new Label();
-            Btn_insertarFormato = new Button();
-            Tlp_grupoDescripcion = new TableLayoutPanel();
-            Rtxt_descripcion = new RichTextBox();
-            Tx_descripcion = new Label();
-            tableLayoutPanel9 = new TableLayoutPanel();
-            textBox4 = new TextBox();
-            label7 = new Label();
-            tableLayoutPanel8 = new TableLayoutPanel();
-            pictureBox1 = new PictureBox();
-            tableLayoutPanel6 = new TableLayoutPanel();
-            textBox5 = new TextBox();
-            label5 = new Label();
-            tableLayoutPanel5 = new TableLayoutPanel();
-            label4 = new Label();
-            comboBox3 = new ComboBox();
-            tableLayoutPanel4 = new TableLayoutPanel();
+            Tlp_id = new TableLayoutPanel();
+            Txt_id = new TextBox();
+            Tx_id = new Label();
+            Tlp_titulo = new TableLayoutPanel();
             Txt_titulo = new TextBox();
-            label3 = new Label();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            label2 = new Label();
+            Tx_titulo = new Label();
+            Tlp_estado = new TableLayoutPanel();
+            Tx_Estado = new Label();
+            Cb_estado = new ComboBox();
+            Tlp_duracion = new TableLayoutPanel();
+            Txt_duracion = new TextBox();
+            Tx_duracion = new Label();
+            Tlp_costo = new TableLayoutPanel();
+            Txt_costo = new TextBox();
+            Tx_costo = new Label();
+            Tlp_director = new TableLayoutPanel();
+            Tx_director = new Label();
+            Txt_director = new TextBox();
+            Tlp_clasificacion = new TableLayoutPanel();
+            Tx_clasificacion = new Label();
+            Cb_clasificacion = new ComboBox();
+            Tlp_estreno = new TableLayoutPanel();
+            Tx_estreno = new Label();
             dateTimePicker1 = new DateTimePicker();
             Tlp_grupoGenero = new TableLayoutPanel();
             Cb_genero = new ComboBox();
@@ -66,42 +62,50 @@
             Dgv_genero = new DataGridView();
             Nombre = new DataGridViewTextBoxColumn();
             Borrar = new DataGridViewButtonColumn();
-            tableLayoutPanel7 = new TableLayoutPanel();
-            label6 = new Label();
+            Tlp_grupoDescripcion = new TableLayoutPanel();
+            Rtxt_descripcion = new RichTextBox();
+            Tx_descripcion = new Label();
+            Tlp_trailer = new TableLayoutPanel();
+            Tx_trailer = new Label();
             Txt_trailer = new TextBox();
             Btn_cargar = new Button();
-            tableLayoutPanel12 = new TableLayoutPanel();
-            label10 = new Label();
-            textBox2 = new TextBox();
-            tableLayoutPanel13 = new TableLayoutPanel();
-            label11 = new Label();
-            comboBox9 = new ComboBox();
+            Tlp_thumbnail = new TableLayoutPanel();
+            pictureBox1 = new PictureBox();
+            Tlp_grupoFormato = new TableLayoutPanel();
+            Cb_formato = new ComboBox();
+            Tx_formato = new Label();
+            Btn_insertarFormato = new Button();
+            Tlp_dgvFormato = new TableLayoutPanel();
+            Dgv_formato = new DataGridView();
+            Dgvc_nombre = new DataGridViewTextBoxColumn();
+            Dgvb_borrar = new DataGridViewButtonColumn();
             tableLayoutPanel14 = new TableLayoutPanel();
-            Txt_cambiarImagen = new Button();
-            button3 = new Button();
+            Btn_cambiarImagen = new Button();
+            Btn_agregarNuevaCartelera = new Button();
             pictureBox2 = new PictureBox();
-            label12 = new Label();
+            Tx_tab = new Label();
             Pnl_panelEstatico = new Panel();
             openFileDialog1 = new OpenFileDialog();
             Tlp_main.SuspendLayout();
             Tlp_formulario.SuspendLayout();
-            Tlp_dgvFormato.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Dgv_formato).BeginInit();
-            Tlp_grupoFormato.SuspendLayout();
-            Tlp_grupoDescripcion.SuspendLayout();
-            tableLayoutPanel9.SuspendLayout();
-            tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            tableLayoutPanel6.SuspendLayout();
-            tableLayoutPanel5.SuspendLayout();
-            tableLayoutPanel4.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
+            Tlp_id.SuspendLayout();
+            Tlp_titulo.SuspendLayout();
+            Tlp_estado.SuspendLayout();
+            Tlp_duracion.SuspendLayout();
+            Tlp_costo.SuspendLayout();
+            Tlp_director.SuspendLayout();
+            Tlp_clasificacion.SuspendLayout();
+            Tlp_estreno.SuspendLayout();
             Tlp_grupoGenero.SuspendLayout();
             Tlp_dgvGenero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Dgv_genero).BeginInit();
-            tableLayoutPanel7.SuspendLayout();
-            tableLayoutPanel12.SuspendLayout();
-            tableLayoutPanel13.SuspendLayout();
+            Tlp_grupoDescripcion.SuspendLayout();
+            Tlp_trailer.SuspendLayout();
+            Tlp_thumbnail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            Tlp_grupoFormato.SuspendLayout();
+            Tlp_dgvFormato.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Dgv_formato).BeginInit();
             tableLayoutPanel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             Pnl_panelEstatico.SuspendLayout();
@@ -114,7 +118,7 @@
             Tlp_main.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             Tlp_main.Controls.Add(Tlp_formulario, 0, 1);
             Tlp_main.Controls.Add(tableLayoutPanel14, 1, 1);
-            Tlp_main.Controls.Add(label12, 0, 0);
+            Tlp_main.Controls.Add(Tx_tab, 0, 0);
             Tlp_main.Dock = DockStyle.Fill;
             Tlp_main.Location = new Point(0, 0);
             Tlp_main.Margin = new Padding(3, 3, 20, 20);
@@ -130,20 +134,21 @@
             Tlp_formulario.ColumnCount = 2;
             Tlp_formulario.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             Tlp_formulario.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            Tlp_formulario.Controls.Add(Tlp_dgvFormato, 1, 9);
-            Tlp_formulario.Controls.Add(Tlp_grupoFormato, 1, 8);
-            Tlp_formulario.Controls.Add(Tlp_grupoDescripcion, 1, 0);
-            Tlp_formulario.Controls.Add(tableLayoutPanel9, 0, 3);
-            Tlp_formulario.Controls.Add(tableLayoutPanel8, 1, 4);
-            Tlp_formulario.Controls.Add(tableLayoutPanel6, 0, 2);
-            Tlp_formulario.Controls.Add(tableLayoutPanel5, 0, 1);
-            Tlp_formulario.Controls.Add(tableLayoutPanel4, 0, 0);
-            Tlp_formulario.Controls.Add(tableLayoutPanel3, 0, 6);
+            Tlp_formulario.Controls.Add(Tlp_id, 0, 0);
+            Tlp_formulario.Controls.Add(Tlp_titulo, 0, 1);
+            Tlp_formulario.Controls.Add(Tlp_estado, 0, 2);
+            Tlp_formulario.Controls.Add(Tlp_duracion, 0, 3);
+            Tlp_formulario.Controls.Add(Tlp_costo, 0, 4);
+            Tlp_formulario.Controls.Add(Tlp_director, 0, 5);
+            Tlp_formulario.Controls.Add(Tlp_clasificacion, 0, 6);
+            Tlp_formulario.Controls.Add(Tlp_estreno, 0, 7);
             Tlp_formulario.Controls.Add(Tlp_grupoGenero, 0, 8);
             Tlp_formulario.Controls.Add(Tlp_dgvGenero, 0, 9);
-            Tlp_formulario.Controls.Add(tableLayoutPanel7, 1, 3);
-            Tlp_formulario.Controls.Add(tableLayoutPanel12, 0, 4);
-            Tlp_formulario.Controls.Add(tableLayoutPanel13, 0, 5);
+            Tlp_formulario.Controls.Add(Tlp_grupoDescripcion, 1, 0);
+            Tlp_formulario.Controls.Add(Tlp_trailer, 1, 3);
+            Tlp_formulario.Controls.Add(Tlp_thumbnail, 1, 4);
+            Tlp_formulario.Controls.Add(Tlp_grupoFormato, 1, 8);
+            Tlp_formulario.Controls.Add(Tlp_dgvFormato, 1, 9);
             Tlp_formulario.Dock = DockStyle.Fill;
             Tlp_formulario.Location = new Point(0, 75);
             Tlp_formulario.Margin = new Padding(0, 0, 0, 20);
@@ -808,291 +813,58 @@
             Tlp_formulario.Size = new Size(787, 605);
             Tlp_formulario.TabIndex = 3;
             // 
-            // Tlp_dgvFormato
+            // Tlp_id
             // 
-            Tlp_dgvFormato.ColumnCount = 2;
-            Tlp_dgvFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            Tlp_dgvFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            Tlp_dgvFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            Tlp_dgvFormato.Controls.Add(Dgv_formato, 1, 0);
-            Tlp_dgvFormato.Dock = DockStyle.Fill;
-            Tlp_dgvFormato.Location = new Point(393, 450);
-            Tlp_dgvFormato.Margin = new Padding(0);
-            Tlp_dgvFormato.Name = "Tlp_dgvFormato";
-            Tlp_dgvFormato.RowCount = 1;
-            Tlp_formulario.SetRowSpan(Tlp_dgvFormato, 3);
-            Tlp_dgvFormato.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Tlp_dgvFormato.Size = new Size(394, 155);
-            Tlp_dgvFormato.TabIndex = 19;
+            Tlp_id.ColumnCount = 2;
+            Tlp_id.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_id.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_id.Controls.Add(Txt_id, 1, 0);
+            Tlp_id.Controls.Add(Tx_id, 0, 0);
+            Tlp_id.Dock = DockStyle.Fill;
+            Tlp_id.Location = new Point(0, 0);
+            Tlp_id.Margin = new Padding(0);
+            Tlp_id.Name = "Tlp_id";
+            Tlp_id.RowCount = 1;
+            Tlp_id.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_id.Size = new Size(393, 50);
+            Tlp_id.TabIndex = 20;
             // 
-            // Dgv_formato
+            // Txt_id
             // 
-            Dgv_formato.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            Dgv_formato.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Dgv_formato.Columns.AddRange(new DataGridViewColumn[] { Dgvc_nombre, Dgvb_borrar });
-            Dgv_formato.Dock = DockStyle.Fill;
-            Dgv_formato.Location = new Point(100, 0);
-            Dgv_formato.Margin = new Padding(0);
-            Dgv_formato.Name = "Dgv_formato";
-            Dgv_formato.RowHeadersWidth = 51;
-            Dgv_formato.Size = new Size(294, 155);
-            Dgv_formato.TabIndex = 16;
+            Txt_id.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            Txt_id.Enabled = false;
+            Txt_id.Location = new Point(103, 3);
+            Txt_id.Name = "Txt_id";
+            Txt_id.Size = new Size(287, 27);
+            Txt_id.TabIndex = 3;
             // 
-            // Dgvc_nombre
+            // Tx_id
             // 
-            Dgvc_nombre.FillWeight = 200F;
-            Dgvc_nombre.HeaderText = "Nombre";
-            Dgvc_nombre.MinimumWidth = 6;
-            Dgvc_nombre.Name = "Dgvc_nombre";
+            Tx_id.AutoSize = true;
+            Tx_id.Dock = DockStyle.Fill;
+            Tx_id.Location = new Point(3, 3);
+            Tx_id.Margin = new Padding(3);
+            Tx_id.Name = "Tx_id";
+            Tx_id.Size = new Size(94, 44);
+            Tx_id.TabIndex = 0;
+            Tx_id.Text = "ID";
+            Tx_id.TextAlign = ContentAlignment.TopRight;
             // 
-            // Dgvb_borrar
+            // Tlp_titulo
             // 
-            Dgvb_borrar.HeaderText = "Borrar";
-            Dgvb_borrar.MinimumWidth = 6;
-            Dgvb_borrar.Name = "Dgvb_borrar";
-            // 
-            // Tlp_grupoFormato
-            // 
-            Tlp_grupoFormato.ColumnCount = 3;
-            Tlp_grupoFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            Tlp_grupoFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            Tlp_grupoFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            Tlp_grupoFormato.Controls.Add(cb_formato, 1, 0);
-            Tlp_grupoFormato.Controls.Add(Tx_formato, 0, 0);
-            Tlp_grupoFormato.Controls.Add(Btn_insertarFormato, 2, 0);
-            Tlp_grupoFormato.Dock = DockStyle.Fill;
-            Tlp_grupoFormato.Location = new Point(393, 400);
-            Tlp_grupoFormato.Margin = new Padding(0);
-            Tlp_grupoFormato.Name = "Tlp_grupoFormato";
-            Tlp_grupoFormato.RowCount = 1;
-            Tlp_grupoFormato.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Tlp_grupoFormato.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            Tlp_grupoFormato.Size = new Size(394, 50);
-            Tlp_grupoFormato.TabIndex = 18;
-            // 
-            // cb_formato
-            // 
-            cb_formato.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            cb_formato.FormattingEnabled = true;
-            cb_formato.Location = new Point(103, 11);
-            cb_formato.Name = "cb_formato";
-            cb_formato.Size = new Size(188, 28);
-            cb_formato.TabIndex = 3;
-            // 
-            // Tx_formato
-            // 
-            Tx_formato.AutoSize = true;
-            Tx_formato.Dock = DockStyle.Fill;
-            Tx_formato.Location = new Point(3, 0);
-            Tx_formato.Margin = new Padding(3, 0, 3, 3);
-            Tx_formato.Name = "Tx_formato";
-            Tx_formato.Size = new Size(94, 47);
-            Tx_formato.TabIndex = 0;
-            Tx_formato.Text = "Formato";
-            Tx_formato.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // Btn_insertarFormato
-            // 
-            Btn_insertarFormato.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            Btn_insertarFormato.Location = new Point(294, 10);
-            Btn_insertarFormato.Margin = new Padding(0);
-            Btn_insertarFormato.Name = "Btn_insertarFormato";
-            Btn_insertarFormato.Size = new Size(100, 29);
-            Btn_insertarFormato.TabIndex = 2;
-            Btn_insertarFormato.Text = "AGREGAR";
-            Btn_insertarFormato.UseVisualStyleBackColor = true;
-            // 
-            // Tlp_grupoDescripcion
-            // 
-            Tlp_grupoDescripcion.ColumnCount = 2;
-            Tlp_grupoDescripcion.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            Tlp_grupoDescripcion.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            Tlp_grupoDescripcion.Controls.Add(Rtxt_descripcion, 1, 0);
-            Tlp_grupoDescripcion.Controls.Add(Tx_descripcion, 0, 0);
-            Tlp_grupoDescripcion.Dock = DockStyle.Fill;
-            Tlp_grupoDescripcion.Location = new Point(393, 0);
-            Tlp_grupoDescripcion.Margin = new Padding(0);
-            Tlp_grupoDescripcion.Name = "Tlp_grupoDescripcion";
-            Tlp_grupoDescripcion.RowCount = 1;
-            Tlp_formulario.SetRowSpan(Tlp_grupoDescripcion, 3);
-            Tlp_grupoDescripcion.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Tlp_grupoDescripcion.Size = new Size(394, 150);
-            Tlp_grupoDescripcion.TabIndex = 13;
-            // 
-            // Rtxt_descripcion
-            // 
-            Rtxt_descripcion.Dock = DockStyle.Fill;
-            Rtxt_descripcion.Location = new Point(103, 3);
-            Rtxt_descripcion.Name = "Rtxt_descripcion";
-            Rtxt_descripcion.Size = new Size(288, 144);
-            Rtxt_descripcion.TabIndex = 1;
-            Rtxt_descripcion.Text = "";
-            // 
-            // Tx_descripcion
-            // 
-            Tx_descripcion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            Tx_descripcion.AutoSize = true;
-            Tx_descripcion.Location = new Point(10, 0);
-            Tx_descripcion.Name = "Tx_descripcion";
-            Tx_descripcion.Size = new Size(87, 20);
-            Tx_descripcion.TabIndex = 0;
-            Tx_descripcion.Text = "Descripción";
-            Tx_descripcion.TextAlign = ContentAlignment.TopRight;
-            // 
-            // tableLayoutPanel9
-            // 
-            tableLayoutPanel9.ColumnCount = 2;
-            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel9.Controls.Add(textBox4, 1, 0);
-            tableLayoutPanel9.Controls.Add(label7, 0, 0);
-            tableLayoutPanel9.Dock = DockStyle.Fill;
-            tableLayoutPanel9.Location = new Point(0, 150);
-            tableLayoutPanel9.Margin = new Padding(0);
-            tableLayoutPanel9.Name = "tableLayoutPanel9";
-            tableLayoutPanel9.RowCount = 1;
-            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel9.Size = new Size(393, 50);
-            tableLayoutPanel9.TabIndex = 8;
-            // 
-            // textBox4
-            // 
-            textBox4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox4.Location = new Point(103, 3);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(287, 27);
-            textBox4.TabIndex = 2;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Dock = DockStyle.Fill;
-            label7.Location = new Point(3, 0);
-            label7.Margin = new Padding(3, 0, 3, 3);
-            label7.Name = "label7";
-            label7.Size = new Size(94, 47);
-            label7.TabIndex = 0;
-            label7.Text = "Costo";
-            label7.TextAlign = ContentAlignment.TopRight;
-            // 
-            // tableLayoutPanel8
-            // 
-            tableLayoutPanel8.ColumnCount = 2;
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel8.Controls.Add(pictureBox1, 1, 0);
-            tableLayoutPanel8.Dock = DockStyle.Fill;
-            tableLayoutPanel8.Location = new Point(393, 200);
-            tableLayoutPanel8.Margin = new Padding(0);
-            tableLayoutPanel8.Name = "tableLayoutPanel8";
-            tableLayoutPanel8.RowCount = 1;
-            Tlp_formulario.SetRowSpan(tableLayoutPanel8, 4);
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel8.Size = new Size(394, 200);
-            tableLayoutPanel8.TabIndex = 7;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(100, 0);
-            pictureBox1.Margin = new Padding(0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(294, 200);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
-            // 
-            // tableLayoutPanel6
-            // 
-            tableLayoutPanel6.ColumnCount = 2;
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel6.Controls.Add(textBox5, 1, 0);
-            tableLayoutPanel6.Controls.Add(label5, 0, 0);
-            tableLayoutPanel6.Dock = DockStyle.Fill;
-            tableLayoutPanel6.Location = new Point(0, 100);
-            tableLayoutPanel6.Margin = new Padding(0);
-            tableLayoutPanel6.Name = "tableLayoutPanel6";
-            tableLayoutPanel6.RowCount = 1;
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel6.Size = new Size(393, 50);
-            tableLayoutPanel6.TabIndex = 5;
-            // 
-            // textBox5
-            // 
-            textBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox5.Location = new Point(103, 3);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(287, 27);
-            textBox5.TabIndex = 2;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Dock = DockStyle.Fill;
-            label5.Location = new Point(3, 0);
-            label5.Margin = new Padding(3, 0, 3, 3);
-            label5.Name = "label5";
-            label5.Size = new Size(94, 47);
-            label5.TabIndex = 0;
-            label5.Text = "Duración";
-            label5.TextAlign = ContentAlignment.TopRight;
-            // 
-            // tableLayoutPanel5
-            // 
-            tableLayoutPanel5.ColumnCount = 2;
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel5.Controls.Add(label4, 0, 0);
-            tableLayoutPanel5.Controls.Add(comboBox3, 1, 0);
-            tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(0, 50);
-            tableLayoutPanel5.Margin = new Padding(0);
-            tableLayoutPanel5.Name = "tableLayoutPanel5";
-            tableLayoutPanel5.RowCount = 1;
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel5.Size = new Size(393, 50);
-            tableLayoutPanel5.TabIndex = 4;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Dock = DockStyle.Fill;
-            label4.ImageAlign = ContentAlignment.TopRight;
-            label4.Location = new Point(3, 0);
-            label4.Margin = new Padding(3, 0, 3, 3);
-            label4.Name = "label4";
-            label4.Size = new Size(94, 47);
-            label4.TabIndex = 0;
-            label4.Text = "Estado";
-            label4.TextAlign = ContentAlignment.TopRight;
-            // 
-            // comboBox3
-            // 
-            comboBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(103, 3);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(287, 28);
-            comboBox3.TabIndex = 1;
-            // 
-            // tableLayoutPanel4
-            // 
-            tableLayoutPanel4.ColumnCount = 2;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.Controls.Add(Txt_titulo, 1, 0);
-            tableLayoutPanel4.Controls.Add(label3, 0, 0);
-            tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(0, 0);
-            tableLayoutPanel4.Margin = new Padding(0);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 1;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.Size = new Size(393, 50);
-            tableLayoutPanel4.TabIndex = 3;
+            Tlp_titulo.ColumnCount = 2;
+            Tlp_titulo.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_titulo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_titulo.Controls.Add(Txt_titulo, 1, 0);
+            Tlp_titulo.Controls.Add(Tx_titulo, 0, 0);
+            Tlp_titulo.Dock = DockStyle.Fill;
+            Tlp_titulo.Location = new Point(0, 50);
+            Tlp_titulo.Margin = new Padding(0);
+            Tlp_titulo.Name = "Tlp_titulo";
+            Tlp_titulo.RowCount = 1;
+            Tlp_titulo.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_titulo.Size = new Size(393, 50);
+            Tlp_titulo.TabIndex = 3;
             // 
             // Txt_titulo
             // 
@@ -1102,45 +874,231 @@
             Txt_titulo.Size = new Size(287, 27);
             Txt_titulo.TabIndex = 3;
             // 
-            // label3
+            // Tx_titulo
             // 
-            label3.AutoSize = true;
-            label3.Dock = DockStyle.Fill;
-            label3.Location = new Point(3, 0);
-            label3.Margin = new Padding(3, 0, 3, 3);
-            label3.Name = "label3";
-            label3.Size = new Size(94, 47);
-            label3.TabIndex = 0;
-            label3.Text = "Titulo";
-            label3.TextAlign = ContentAlignment.TopRight;
+            Tx_titulo.AutoSize = true;
+            Tx_titulo.Dock = DockStyle.Fill;
+            Tx_titulo.Location = new Point(3, 0);
+            Tx_titulo.Margin = new Padding(3, 0, 3, 3);
+            Tx_titulo.Name = "Tx_titulo";
+            Tx_titulo.Size = new Size(94, 47);
+            Tx_titulo.TabIndex = 0;
+            Tx_titulo.Text = "Titulo";
+            Tx_titulo.TextAlign = ContentAlignment.TopRight;
             // 
-            // tableLayoutPanel3
+            // Tlp_estado
             // 
-            tableLayoutPanel3.ColumnCount = 2;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Controls.Add(label2, 0, 0);
-            tableLayoutPanel3.Controls.Add(dateTimePicker1, 1, 0);
-            tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(0, 300);
-            tableLayoutPanel3.Margin = new Padding(0);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(393, 50);
-            tableLayoutPanel3.TabIndex = 2;
+            Tlp_estado.ColumnCount = 2;
+            Tlp_estado.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_estado.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_estado.Controls.Add(Tx_Estado, 0, 0);
+            Tlp_estado.Controls.Add(Cb_estado, 1, 0);
+            Tlp_estado.Dock = DockStyle.Fill;
+            Tlp_estado.Location = new Point(0, 100);
+            Tlp_estado.Margin = new Padding(0);
+            Tlp_estado.Name = "Tlp_estado";
+            Tlp_estado.RowCount = 1;
+            Tlp_estado.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_estado.Size = new Size(393, 50);
+            Tlp_estado.TabIndex = 4;
             // 
-            // label2
+            // Tx_Estado
             // 
-            label2.AutoSize = true;
-            label2.Dock = DockStyle.Fill;
-            label2.Location = new Point(3, 0);
-            label2.Margin = new Padding(3, 0, 3, 3);
-            label2.Name = "label2";
-            label2.Size = new Size(94, 47);
-            label2.TabIndex = 0;
-            label2.Text = "Fecha de Estreno";
-            label2.TextAlign = ContentAlignment.TopRight;
+            Tx_Estado.AutoSize = true;
+            Tx_Estado.Dock = DockStyle.Fill;
+            Tx_Estado.ImageAlign = ContentAlignment.TopRight;
+            Tx_Estado.Location = new Point(3, 0);
+            Tx_Estado.Margin = new Padding(3, 0, 3, 3);
+            Tx_Estado.Name = "Tx_Estado";
+            Tx_Estado.Size = new Size(94, 47);
+            Tx_Estado.TabIndex = 0;
+            Tx_Estado.Text = "Estado";
+            Tx_Estado.TextAlign = ContentAlignment.TopRight;
+            // 
+            // Cb_estado
+            // 
+            Cb_estado.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            Cb_estado.FormattingEnabled = true;
+            Cb_estado.Items.AddRange(new object[] { "cartelera", "proximamente" });
+            Cb_estado.Location = new Point(103, 3);
+            Cb_estado.Name = "Cb_estado";
+            Cb_estado.Size = new Size(287, 28);
+            Cb_estado.TabIndex = 1;
+            // 
+            // Tlp_duracion
+            // 
+            Tlp_duracion.ColumnCount = 2;
+            Tlp_duracion.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_duracion.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_duracion.Controls.Add(Txt_duracion, 1, 0);
+            Tlp_duracion.Controls.Add(Tx_duracion, 0, 0);
+            Tlp_duracion.Dock = DockStyle.Fill;
+            Tlp_duracion.Location = new Point(0, 150);
+            Tlp_duracion.Margin = new Padding(0);
+            Tlp_duracion.Name = "Tlp_duracion";
+            Tlp_duracion.RowCount = 1;
+            Tlp_duracion.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_duracion.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_duracion.Size = new Size(393, 50);
+            Tlp_duracion.TabIndex = 5;
+            // 
+            // Txt_duracion
+            // 
+            Txt_duracion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            Txt_duracion.Location = new Point(103, 3);
+            Txt_duracion.Name = "Txt_duracion";
+            Txt_duracion.Size = new Size(287, 27);
+            Txt_duracion.TabIndex = 2;
+            // 
+            // Tx_duracion
+            // 
+            Tx_duracion.AutoSize = true;
+            Tx_duracion.Dock = DockStyle.Fill;
+            Tx_duracion.Location = new Point(3, 0);
+            Tx_duracion.Margin = new Padding(3, 0, 3, 3);
+            Tx_duracion.Name = "Tx_duracion";
+            Tx_duracion.Size = new Size(94, 47);
+            Tx_duracion.TabIndex = 0;
+            Tx_duracion.Text = "Duración";
+            Tx_duracion.TextAlign = ContentAlignment.TopRight;
+            // 
+            // Tlp_costo
+            // 
+            Tlp_costo.ColumnCount = 2;
+            Tlp_costo.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_costo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_costo.Controls.Add(Txt_costo, 1, 0);
+            Tlp_costo.Controls.Add(Tx_costo, 0, 0);
+            Tlp_costo.Dock = DockStyle.Fill;
+            Tlp_costo.Location = new Point(0, 200);
+            Tlp_costo.Margin = new Padding(0);
+            Tlp_costo.Name = "Tlp_costo";
+            Tlp_costo.RowCount = 1;
+            Tlp_costo.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_costo.Size = new Size(393, 50);
+            Tlp_costo.TabIndex = 8;
+            // 
+            // Txt_costo
+            // 
+            Txt_costo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            Txt_costo.Location = new Point(103, 3);
+            Txt_costo.Name = "Txt_costo";
+            Txt_costo.Size = new Size(287, 27);
+            Txt_costo.TabIndex = 2;
+            // 
+            // Tx_costo
+            // 
+            Tx_costo.AutoSize = true;
+            Tx_costo.Dock = DockStyle.Fill;
+            Tx_costo.Location = new Point(3, 0);
+            Tx_costo.Margin = new Padding(3, 0, 3, 3);
+            Tx_costo.Name = "Tx_costo";
+            Tx_costo.Size = new Size(94, 47);
+            Tx_costo.TabIndex = 0;
+            Tx_costo.Text = "Costo";
+            Tx_costo.TextAlign = ContentAlignment.TopRight;
+            // 
+            // Tlp_director
+            // 
+            Tlp_director.ColumnCount = 2;
+            Tlp_director.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_director.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_director.Controls.Add(Tx_director, 0, 0);
+            Tlp_director.Controls.Add(Txt_director, 1, 0);
+            Tlp_director.Dock = DockStyle.Fill;
+            Tlp_director.Location = new Point(0, 250);
+            Tlp_director.Margin = new Padding(0);
+            Tlp_director.Name = "Tlp_director";
+            Tlp_director.RowCount = 1;
+            Tlp_director.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_director.Size = new Size(393, 50);
+            Tlp_director.TabIndex = 11;
+            // 
+            // Tx_director
+            // 
+            Tx_director.AutoSize = true;
+            Tx_director.Dock = DockStyle.Fill;
+            Tx_director.Location = new Point(3, 0);
+            Tx_director.Margin = new Padding(3, 0, 3, 3);
+            Tx_director.Name = "Tx_director";
+            Tx_director.Size = new Size(94, 47);
+            Tx_director.TabIndex = 0;
+            Tx_director.Text = "Director";
+            Tx_director.TextAlign = ContentAlignment.TopRight;
+            // 
+            // Txt_director
+            // 
+            Txt_director.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            Txt_director.Location = new Point(103, 3);
+            Txt_director.Name = "Txt_director";
+            Txt_director.Size = new Size(287, 27);
+            Txt_director.TabIndex = 1;
+            // 
+            // Tlp_clasificacion
+            // 
+            Tlp_clasificacion.ColumnCount = 2;
+            Tlp_clasificacion.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_clasificacion.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_clasificacion.Controls.Add(Tx_clasificacion, 0, 0);
+            Tlp_clasificacion.Controls.Add(Cb_clasificacion, 1, 0);
+            Tlp_clasificacion.Dock = DockStyle.Fill;
+            Tlp_clasificacion.Location = new Point(0, 300);
+            Tlp_clasificacion.Margin = new Padding(0);
+            Tlp_clasificacion.Name = "Tlp_clasificacion";
+            Tlp_clasificacion.RowCount = 1;
+            Tlp_clasificacion.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_clasificacion.Size = new Size(393, 50);
+            Tlp_clasificacion.TabIndex = 12;
+            // 
+            // Tx_clasificacion
+            // 
+            Tx_clasificacion.AutoSize = true;
+            Tx_clasificacion.Dock = DockStyle.Fill;
+            Tx_clasificacion.Location = new Point(3, 0);
+            Tx_clasificacion.Margin = new Padding(3, 0, 3, 3);
+            Tx_clasificacion.Name = "Tx_clasificacion";
+            Tx_clasificacion.Size = new Size(94, 47);
+            Tx_clasificacion.TabIndex = 0;
+            Tx_clasificacion.Text = "Clasificación";
+            Tx_clasificacion.TextAlign = ContentAlignment.TopRight;
+            // 
+            // Cb_clasificacion
+            // 
+            Cb_clasificacion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            Cb_clasificacion.FormattingEnabled = true;
+            Cb_clasificacion.Items.AddRange(new object[] { "A", "B", "PG", "PG-13", "R", "NC-17" });
+            Cb_clasificacion.Location = new Point(103, 3);
+            Cb_clasificacion.Name = "Cb_clasificacion";
+            Cb_clasificacion.Size = new Size(287, 28);
+            Cb_clasificacion.TabIndex = 1;
+            // 
+            // Tlp_estreno
+            // 
+            Tlp_estreno.ColumnCount = 2;
+            Tlp_estreno.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_estreno.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_estreno.Controls.Add(Tx_estreno, 0, 0);
+            Tlp_estreno.Controls.Add(dateTimePicker1, 1, 0);
+            Tlp_estreno.Dock = DockStyle.Fill;
+            Tlp_estreno.Location = new Point(0, 350);
+            Tlp_estreno.Margin = new Padding(0);
+            Tlp_estreno.Name = "Tlp_estreno";
+            Tlp_estreno.RowCount = 1;
+            Tlp_estreno.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_estreno.Size = new Size(393, 50);
+            Tlp_estreno.TabIndex = 2;
+            // 
+            // Tx_estreno
+            // 
+            Tx_estreno.AutoSize = true;
+            Tx_estreno.Dock = DockStyle.Fill;
+            Tx_estreno.Location = new Point(3, 0);
+            Tx_estreno.Margin = new Padding(3, 0, 3, 3);
+            Tx_estreno.Name = "Tx_estreno";
+            Tx_estreno.Size = new Size(94, 47);
+            Tx_estreno.TabIndex = 0;
+            Tx_estreno.Text = "Fecha de Estreno";
+            Tx_estreno.TextAlign = ContentAlignment.TopRight;
             // 
             // dateTimePicker1
             // 
@@ -1201,6 +1159,7 @@
             Btn_agregarGenero.TabIndex = 2;
             Btn_agregarGenero.Text = "AGREGAR";
             Btn_agregarGenero.UseVisualStyleBackColor = true;
+            Btn_agregarGenero.Click += Btn_agregarGenero_Click;
             // 
             // Tlp_dgvGenero
             // 
@@ -1231,6 +1190,7 @@
             Dgv_genero.RowHeadersWidth = 51;
             Dgv_genero.Size = new Size(293, 155);
             Dgv_genero.TabIndex = 16;
+            Dgv_genero.CellContentClick += Dgv_genero_CellContentClick;
             // 
             // Nombre
             // 
@@ -1245,35 +1205,73 @@
             Borrar.MinimumWidth = 6;
             Borrar.Name = "Borrar";
             // 
-            // tableLayoutPanel7
+            // Tlp_grupoDescripcion
             // 
-            tableLayoutPanel7.ColumnCount = 3;
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel7.Controls.Add(label6, 0, 0);
-            tableLayoutPanel7.Controls.Add(Txt_trailer, 1, 0);
-            tableLayoutPanel7.Controls.Add(Btn_cargar, 2, 0);
-            tableLayoutPanel7.Dock = DockStyle.Fill;
-            tableLayoutPanel7.Location = new Point(393, 150);
-            tableLayoutPanel7.Margin = new Padding(0);
-            tableLayoutPanel7.Name = "tableLayoutPanel7";
-            tableLayoutPanel7.RowCount = 1;
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel7.Size = new Size(394, 50);
-            tableLayoutPanel7.TabIndex = 6;
+            Tlp_grupoDescripcion.ColumnCount = 2;
+            Tlp_grupoDescripcion.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_grupoDescripcion.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_grupoDescripcion.Controls.Add(Rtxt_descripcion, 1, 0);
+            Tlp_grupoDescripcion.Controls.Add(Tx_descripcion, 0, 0);
+            Tlp_grupoDescripcion.Dock = DockStyle.Fill;
+            Tlp_grupoDescripcion.Location = new Point(393, 0);
+            Tlp_grupoDescripcion.Margin = new Padding(0);
+            Tlp_grupoDescripcion.Name = "Tlp_grupoDescripcion";
+            Tlp_grupoDescripcion.RowCount = 1;
+            Tlp_formulario.SetRowSpan(Tlp_grupoDescripcion, 3);
+            Tlp_grupoDescripcion.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_grupoDescripcion.Size = new Size(394, 150);
+            Tlp_grupoDescripcion.TabIndex = 13;
             // 
-            // label6
+            // Rtxt_descripcion
             // 
-            label6.AutoSize = true;
-            label6.Dock = DockStyle.Fill;
-            label6.Location = new Point(3, 0);
-            label6.Margin = new Padding(3, 0, 3, 3);
-            label6.Name = "label6";
-            label6.Size = new Size(94, 47);
-            label6.TabIndex = 0;
-            label6.Text = "Trailer";
-            label6.TextAlign = ContentAlignment.MiddleRight;
+            Rtxt_descripcion.Dock = DockStyle.Fill;
+            Rtxt_descripcion.Location = new Point(103, 3);
+            Rtxt_descripcion.Name = "Rtxt_descripcion";
+            Rtxt_descripcion.Size = new Size(288, 144);
+            Rtxt_descripcion.TabIndex = 1;
+            Rtxt_descripcion.Text = "";
+            // 
+            // Tx_descripcion
+            // 
+            Tx_descripcion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Tx_descripcion.AutoSize = true;
+            Tx_descripcion.Location = new Point(10, 3);
+            Tx_descripcion.Margin = new Padding(3, 3, 3, 0);
+            Tx_descripcion.Name = "Tx_descripcion";
+            Tx_descripcion.Size = new Size(87, 20);
+            Tx_descripcion.TabIndex = 0;
+            Tx_descripcion.Text = "Descripción";
+            Tx_descripcion.TextAlign = ContentAlignment.TopRight;
+            // 
+            // Tlp_trailer
+            // 
+            Tlp_trailer.ColumnCount = 3;
+            Tlp_trailer.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_trailer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_trailer.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_trailer.Controls.Add(Tx_trailer, 0, 0);
+            Tlp_trailer.Controls.Add(Txt_trailer, 1, 0);
+            Tlp_trailer.Controls.Add(Btn_cargar, 2, 0);
+            Tlp_trailer.Dock = DockStyle.Fill;
+            Tlp_trailer.Location = new Point(393, 150);
+            Tlp_trailer.Margin = new Padding(0);
+            Tlp_trailer.Name = "Tlp_trailer";
+            Tlp_trailer.RowCount = 1;
+            Tlp_trailer.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_trailer.Size = new Size(394, 50);
+            Tlp_trailer.TabIndex = 6;
+            // 
+            // Tx_trailer
+            // 
+            Tx_trailer.AutoSize = true;
+            Tx_trailer.Dock = DockStyle.Fill;
+            Tx_trailer.Location = new Point(3, 0);
+            Tx_trailer.Margin = new Padding(3, 0, 3, 3);
+            Tx_trailer.Name = "Tx_trailer";
+            Tx_trailer.Size = new Size(94, 47);
+            Tx_trailer.TabIndex = 0;
+            Tx_trailer.Text = "Trailer";
+            Tx_trailer.TextAlign = ContentAlignment.MiddleRight;
             // 
             // Txt_trailer
             // 
@@ -1295,85 +1293,134 @@
             Btn_cargar.UseVisualStyleBackColor = true;
             Btn_cargar.Click += button1_Click;
             // 
-            // tableLayoutPanel12
+            // Tlp_thumbnail
             // 
-            tableLayoutPanel12.ColumnCount = 2;
-            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel12.Controls.Add(label10, 0, 0);
-            tableLayoutPanel12.Controls.Add(textBox2, 1, 0);
-            tableLayoutPanel12.Dock = DockStyle.Fill;
-            tableLayoutPanel12.Location = new Point(0, 200);
-            tableLayoutPanel12.Margin = new Padding(0);
-            tableLayoutPanel12.Name = "tableLayoutPanel12";
-            tableLayoutPanel12.RowCount = 1;
-            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel12.Size = new Size(393, 50);
-            tableLayoutPanel12.TabIndex = 11;
+            Tlp_thumbnail.ColumnCount = 2;
+            Tlp_thumbnail.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_thumbnail.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_thumbnail.Controls.Add(pictureBox1, 1, 0);
+            Tlp_thumbnail.Dock = DockStyle.Fill;
+            Tlp_thumbnail.Location = new Point(393, 200);
+            Tlp_thumbnail.Margin = new Padding(0);
+            Tlp_thumbnail.Name = "Tlp_thumbnail";
+            Tlp_thumbnail.RowCount = 1;
+            Tlp_formulario.SetRowSpan(Tlp_thumbnail, 4);
+            Tlp_thumbnail.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_thumbnail.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_thumbnail.Size = new Size(394, 200);
+            Tlp_thumbnail.TabIndex = 7;
             // 
-            // label10
+            // pictureBox1
             // 
-            label10.AutoSize = true;
-            label10.Dock = DockStyle.Fill;
-            label10.Location = new Point(3, 0);
-            label10.Margin = new Padding(3, 0, 3, 3);
-            label10.Name = "label10";
-            label10.Size = new Size(94, 47);
-            label10.TabIndex = 0;
-            label10.Text = "Director";
-            label10.TextAlign = ContentAlignment.TopRight;
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Location = new Point(100, 0);
+            pictureBox1.Margin = new Padding(0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(294, 200);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
-            // textBox2
+            // Tlp_grupoFormato
             // 
-            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox2.Location = new Point(103, 3);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(287, 27);
-            textBox2.TabIndex = 1;
+            Tlp_grupoFormato.ColumnCount = 3;
+            Tlp_grupoFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_grupoFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_grupoFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_grupoFormato.Controls.Add(Cb_formato, 1, 0);
+            Tlp_grupoFormato.Controls.Add(Tx_formato, 0, 0);
+            Tlp_grupoFormato.Controls.Add(Btn_insertarFormato, 2, 0);
+            Tlp_grupoFormato.Dock = DockStyle.Fill;
+            Tlp_grupoFormato.Location = new Point(393, 400);
+            Tlp_grupoFormato.Margin = new Padding(0);
+            Tlp_grupoFormato.Name = "Tlp_grupoFormato";
+            Tlp_grupoFormato.RowCount = 1;
+            Tlp_grupoFormato.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_grupoFormato.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_grupoFormato.Size = new Size(394, 50);
+            Tlp_grupoFormato.TabIndex = 18;
             // 
-            // tableLayoutPanel13
+            // Cb_formato
             // 
-            tableLayoutPanel13.ColumnCount = 2;
-            tableLayoutPanel13.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel13.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel13.Controls.Add(label11, 0, 0);
-            tableLayoutPanel13.Controls.Add(comboBox9, 1, 0);
-            tableLayoutPanel13.Dock = DockStyle.Fill;
-            tableLayoutPanel13.Location = new Point(0, 250);
-            tableLayoutPanel13.Margin = new Padding(0);
-            tableLayoutPanel13.Name = "tableLayoutPanel13";
-            tableLayoutPanel13.RowCount = 1;
-            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel13.Size = new Size(393, 50);
-            tableLayoutPanel13.TabIndex = 12;
+            Cb_formato.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Cb_formato.FormattingEnabled = true;
+            Cb_formato.Location = new Point(103, 11);
+            Cb_formato.Name = "Cb_formato";
+            Cb_formato.Size = new Size(188, 28);
+            Cb_formato.TabIndex = 3;
             // 
-            // label11
+            // Tx_formato
             // 
-            label11.AutoSize = true;
-            label11.Dock = DockStyle.Fill;
-            label11.Location = new Point(3, 0);
-            label11.Margin = new Padding(3, 0, 3, 3);
-            label11.Name = "label11";
-            label11.Size = new Size(94, 47);
-            label11.TabIndex = 0;
-            label11.Text = "Clasificación";
-            label11.TextAlign = ContentAlignment.TopRight;
+            Tx_formato.AutoSize = true;
+            Tx_formato.Dock = DockStyle.Fill;
+            Tx_formato.Location = new Point(3, 0);
+            Tx_formato.Margin = new Padding(3, 0, 3, 3);
+            Tx_formato.Name = "Tx_formato";
+            Tx_formato.Size = new Size(94, 47);
+            Tx_formato.TabIndex = 0;
+            Tx_formato.Text = "Formato";
+            Tx_formato.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // comboBox9
+            // Btn_insertarFormato
             // 
-            comboBox9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            comboBox9.FormattingEnabled = true;
-            comboBox9.Location = new Point(103, 3);
-            comboBox9.Name = "comboBox9";
-            comboBox9.Size = new Size(287, 28);
-            comboBox9.TabIndex = 1;
+            Btn_insertarFormato.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Btn_insertarFormato.Location = new Point(294, 10);
+            Btn_insertarFormato.Margin = new Padding(0);
+            Btn_insertarFormato.Name = "Btn_insertarFormato";
+            Btn_insertarFormato.Size = new Size(100, 29);
+            Btn_insertarFormato.TabIndex = 2;
+            Btn_insertarFormato.Text = "AGREGAR";
+            Btn_insertarFormato.UseVisualStyleBackColor = true;
+            // 
+            // Tlp_dgvFormato
+            // 
+            Tlp_dgvFormato.ColumnCount = 2;
+            Tlp_dgvFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            Tlp_dgvFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_dgvFormato.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            Tlp_dgvFormato.Controls.Add(Dgv_formato, 1, 0);
+            Tlp_dgvFormato.Dock = DockStyle.Fill;
+            Tlp_dgvFormato.Location = new Point(393, 450);
+            Tlp_dgvFormato.Margin = new Padding(0);
+            Tlp_dgvFormato.Name = "Tlp_dgvFormato";
+            Tlp_dgvFormato.RowCount = 1;
+            Tlp_formulario.SetRowSpan(Tlp_dgvFormato, 3);
+            Tlp_dgvFormato.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Tlp_dgvFormato.Size = new Size(394, 155);
+            Tlp_dgvFormato.TabIndex = 19;
+            // 
+            // Dgv_formato
+            // 
+            Dgv_formato.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Dgv_formato.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Dgv_formato.Columns.AddRange(new DataGridViewColumn[] { Dgvc_nombre, Dgvb_borrar });
+            Dgv_formato.Dock = DockStyle.Fill;
+            Dgv_formato.Location = new Point(100, 0);
+            Dgv_formato.Margin = new Padding(0);
+            Dgv_formato.Name = "Dgv_formato";
+            Dgv_formato.RowHeadersWidth = 51;
+            Dgv_formato.Size = new Size(294, 155);
+            Dgv_formato.TabIndex = 16;
+            // 
+            // Dgvc_nombre
+            // 
+            Dgvc_nombre.FillWeight = 200F;
+            Dgvc_nombre.HeaderText = "Nombre";
+            Dgvc_nombre.MinimumWidth = 6;
+            Dgvc_nombre.Name = "Dgvc_nombre";
+            // 
+            // Dgvb_borrar
+            // 
+            Dgvb_borrar.HeaderText = "Borrar";
+            Dgvb_borrar.MinimumWidth = 6;
+            Dgvb_borrar.Name = "Dgvb_borrar";
             // 
             // tableLayoutPanel14
             // 
             tableLayoutPanel14.ColumnCount = 1;
             tableLayoutPanel14.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel14.Controls.Add(Txt_cambiarImagen, 0, 1);
-            tableLayoutPanel14.Controls.Add(button3, 0, 2);
+            tableLayoutPanel14.Controls.Add(Btn_cambiarImagen, 0, 1);
+            tableLayoutPanel14.Controls.Add(Btn_agregarNuevaCartelera, 0, 2);
             tableLayoutPanel14.Controls.Add(pictureBox2, 0, 0);
             tableLayoutPanel14.Dock = DockStyle.Fill;
             tableLayoutPanel14.Location = new Point(807, 75);
@@ -1387,31 +1434,34 @@
             tableLayoutPanel14.Size = new Size(223, 625);
             tableLayoutPanel14.TabIndex = 4;
             // 
-            // Txt_cambiarImagen
+            // Btn_cambiarImagen
             // 
-            Txt_cambiarImagen.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            Txt_cambiarImagen.Location = new Point(0, 410);
-            Txt_cambiarImagen.Margin = new Padding(0);
-            Txt_cambiarImagen.Name = "Txt_cambiarImagen";
-            Txt_cambiarImagen.Size = new Size(223, 29);
-            Txt_cambiarImagen.TabIndex = 6;
-            Txt_cambiarImagen.Text = "NUEVA IMAGEN";
-            Txt_cambiarImagen.UseVisualStyleBackColor = true;
+            Btn_cambiarImagen.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Btn_cambiarImagen.Location = new Point(0, 410);
+            Btn_cambiarImagen.Margin = new Padding(0);
+            Btn_cambiarImagen.Name = "Btn_cambiarImagen";
+            Btn_cambiarImagen.Size = new Size(223, 29);
+            Btn_cambiarImagen.TabIndex = 6;
+            Btn_cambiarImagen.Text = "NUEVA IMAGEN";
+            Btn_cambiarImagen.UseVisualStyleBackColor = true;
+            Btn_cambiarImagen.Click += Btn_cambiarImagen_Click;
             // 
-            // button3
+            // Btn_agregarNuevaCartelera
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            button3.Location = new Point(11, 500);
-            button3.Margin = new Padding(0, 50, 0, 50);
-            button3.Name = "button3";
-            button3.Size = new Size(200, 75);
-            button3.TabIndex = 4;
-            button3.Text = "AGREGAR NUEVA CARTELERA";
-            button3.UseVisualStyleBackColor = true;
+            Btn_agregarNuevaCartelera.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            Btn_agregarNuevaCartelera.Location = new Point(11, 500);
+            Btn_agregarNuevaCartelera.Margin = new Padding(0, 50, 0, 50);
+            Btn_agregarNuevaCartelera.Name = "Btn_agregarNuevaCartelera";
+            Btn_agregarNuevaCartelera.Size = new Size(200, 75);
+            Btn_agregarNuevaCartelera.TabIndex = 4;
+            Btn_agregarNuevaCartelera.Text = "AGREGAR NUEVA CARTELERA";
+            Btn_agregarNuevaCartelera.UseVisualStyleBackColor = true;
+            Btn_agregarNuevaCartelera.Click += Btn_agregarNuevaCartelera_Click;
             // 
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox2.Image = Properties.Resources.EjemploCartelera;
             pictureBox2.Location = new Point(0, 3);
             pictureBox2.Margin = new Padding(0);
             pictureBox2.Name = "pictureBox2";
@@ -1420,18 +1470,18 @@
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
-            // label12
+            // Tx_tab
             // 
-            label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label12.AutoSize = true;
-            Tlp_main.SetColumnSpan(label12, 2);
-            label12.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(3, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(1044, 75);
-            label12.TabIndex = 6;
-            label12.Text = "AGREGAR / ACTUALIZAR CARTELERA";
-            label12.TextAlign = ContentAlignment.MiddleLeft;
+            Tx_tab.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Tx_tab.AutoSize = true;
+            Tlp_main.SetColumnSpan(Tx_tab, 2);
+            Tx_tab.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Tx_tab.Location = new Point(3, 0);
+            Tx_tab.Name = "Tx_tab";
+            Tx_tab.Size = new Size(1044, 75);
+            Tx_tab.TabIndex = 6;
+            Tx_tab.Text = "AGREGAR / ACTUALIZAR CARTELERA";
+            Tx_tab.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Pnl_panelEstatico
             // 
@@ -1457,34 +1507,36 @@
             Tlp_main.ResumeLayout(false);
             Tlp_main.PerformLayout();
             Tlp_formulario.ResumeLayout(false);
-            Tlp_dgvFormato.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)Dgv_formato).EndInit();
-            Tlp_grupoFormato.ResumeLayout(false);
-            Tlp_grupoFormato.PerformLayout();
-            Tlp_grupoDescripcion.ResumeLayout(false);
-            Tlp_grupoDescripcion.PerformLayout();
-            tableLayoutPanel9.ResumeLayout(false);
-            tableLayoutPanel9.PerformLayout();
-            tableLayoutPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            tableLayoutPanel6.ResumeLayout(false);
-            tableLayoutPanel6.PerformLayout();
-            tableLayoutPanel5.ResumeLayout(false);
-            tableLayoutPanel5.PerformLayout();
-            tableLayoutPanel4.ResumeLayout(false);
-            tableLayoutPanel4.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
-            tableLayoutPanel3.PerformLayout();
+            Tlp_id.ResumeLayout(false);
+            Tlp_id.PerformLayout();
+            Tlp_titulo.ResumeLayout(false);
+            Tlp_titulo.PerformLayout();
+            Tlp_estado.ResumeLayout(false);
+            Tlp_estado.PerformLayout();
+            Tlp_duracion.ResumeLayout(false);
+            Tlp_duracion.PerformLayout();
+            Tlp_costo.ResumeLayout(false);
+            Tlp_costo.PerformLayout();
+            Tlp_director.ResumeLayout(false);
+            Tlp_director.PerformLayout();
+            Tlp_clasificacion.ResumeLayout(false);
+            Tlp_clasificacion.PerformLayout();
+            Tlp_estreno.ResumeLayout(false);
+            Tlp_estreno.PerformLayout();
             Tlp_grupoGenero.ResumeLayout(false);
             Tlp_grupoGenero.PerformLayout();
             Tlp_dgvGenero.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Dgv_genero).EndInit();
-            tableLayoutPanel7.ResumeLayout(false);
-            tableLayoutPanel7.PerformLayout();
-            tableLayoutPanel12.ResumeLayout(false);
-            tableLayoutPanel12.PerformLayout();
-            tableLayoutPanel13.ResumeLayout(false);
-            tableLayoutPanel13.PerformLayout();
+            Tlp_grupoDescripcion.ResumeLayout(false);
+            Tlp_grupoDescripcion.PerformLayout();
+            Tlp_trailer.ResumeLayout(false);
+            Tlp_trailer.PerformLayout();
+            Tlp_thumbnail.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Tlp_grupoFormato.ResumeLayout(false);
+            Tlp_grupoFormato.PerformLayout();
+            Tlp_dgvFormato.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)Dgv_formato).EndInit();
             tableLayoutPanel14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             Pnl_panelEstatico.ResumeLayout(false);
@@ -1496,43 +1548,43 @@
         private TableLayoutPanel Tlp_main;
         private Panel Pnl_panelEstatico;
         private TableLayoutPanel Tlp_formulario;
-        private TableLayoutPanel tableLayoutPanel3;
-        private TableLayoutPanel tableLayoutPanel6;
-        private Label label5;
-        private TableLayoutPanel tableLayoutPanel5;
-        private Label label4;
-        private ComboBox comboBox3;
-        private TableLayoutPanel tableLayoutPanel4;
-        private Label label3;
-        private Label label2;
-        private TableLayoutPanel tableLayoutPanel7;
-        private Label label6;
-        private TableLayoutPanel tableLayoutPanel8;
+        private TableLayoutPanel Tlp_estreno;
+        private TableLayoutPanel Tlp_duracion;
+        private Label Tx_duracion;
+        private TableLayoutPanel Tlp_estado;
+        private Label Tx_Estado;
+        private ComboBox Cb_estado;
+        private TableLayoutPanel Tlp_titulo;
+        private Label Tx_titulo;
+        private Label Tx_estreno;
+        private TableLayoutPanel Tlp_trailer;
+        private Label Tx_trailer;
+        private TableLayoutPanel Tlp_thumbnail;
         private TextBox Txt_trailer;
-        private TableLayoutPanel tableLayoutPanel12;
-        private Label label10;
-        private TableLayoutPanel tableLayoutPanel9;
-        private Label label7;
-        private TableLayoutPanel tableLayoutPanel13;
-        private Label label11;
-        private ComboBox comboBox9;
+        private TableLayoutPanel Tlp_director;
+        private Label Tx_director;
+        private TableLayoutPanel Tlp_costo;
+        private Label Tx_costo;
+        private TableLayoutPanel Tlp_clasificacion;
+        private Label Tx_clasificacion;
+        private ComboBox Cb_clasificacion;
         private Button Btn_cargar;
         private OpenFileDialog openFileDialog1;
         private TableLayoutPanel Tlp_grupoDescripcion;
         private Label Tx_descripcion;
         private RichTextBox Rtxt_descripcion;
-        private Label label12;
+        private Label Tx_tab;
         private TableLayoutPanel Tlp_grupoGenero;
         private Label Tx_Genero;
         private Button Btn_agregarGenero;
         private TableLayoutPanel Tlp_dgvGenero;
         private DataGridView Dgv_genero;
         private TableLayoutPanel tableLayoutPanel14;
-        private Button button3;
+        private Button Btn_agregarNuevaCartelera;
         private DateTimePicker dateTimePicker1;
-        private TextBox textBox2;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox Txt_director;
+        private TextBox Txt_costo;
+        private TextBox Txt_duracion;
         private ComboBox Cb_genero;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewButtonColumn Borrar;
@@ -1541,12 +1593,15 @@
         private DataGridViewTextBoxColumn Dgvc_nombre;
         private DataGridViewButtonColumn Dgvb_borrar;
         private TableLayoutPanel Tlp_grupoFormato;
-        private ComboBox cb_formato;
+        private ComboBox Cb_formato;
         private Label Tx_formato;
         private Button Btn_insertarFormato;
         private TextBox Txt_titulo;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private Button Txt_cambiarImagen;
+        private Button Btn_cambiarImagen;
+        private TableLayoutPanel Tlp_id;
+        private TextBox Txt_id;
+        private Label Tx_id;
     }
 }

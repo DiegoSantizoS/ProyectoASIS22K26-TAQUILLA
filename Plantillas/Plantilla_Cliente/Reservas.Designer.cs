@@ -39,6 +39,7 @@
             Tx_Restriccion = new Label();
             Pic_Pelicula = new PictureBox();
             Tlp_Eleccion_Funciones = new TableLayoutPanel();
+            label1 = new Label();
             Flp_Horarios = new FlowLayoutPanel();
             button1 = new Button();
             Flp_Funciones = new FlowLayoutPanel();
@@ -151,7 +152,6 @@
             Tx_Director.Name = "Tx_Director";
             Tx_Director.Size = new Size(1023, 43);
             Tx_Director.TabIndex = 3;
-            Tx_Director.Text = "XXX";
             // 
             // Tx_Duracion
             // 
@@ -162,7 +162,6 @@
             Tx_Duracion.Name = "Tx_Duracion";
             Tx_Duracion.Size = new Size(1023, 43);
             Tx_Duracion.TabIndex = 4;
-            Tx_Duracion.Text = "XXX";
             // 
             // Tx_Restriccion
             // 
@@ -173,7 +172,7 @@
             Tx_Restriccion.Name = "Tx_Restriccion";
             Tx_Restriccion.Size = new Size(1023, 44);
             Tx_Restriccion.TabIndex = 5;
-            Tx_Restriccion.Text = "XXX";
+            Tx_Restriccion.Click += Tx_Restriccion_Click;
             // 
             // Pic_Pelicula
             // 
@@ -195,6 +194,7 @@
             Tlp_Eleccion_Funciones.ColumnCount = 2;
             Tlp_Eleccion_Funciones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.9482794F));
             Tlp_Eleccion_Funciones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 89.05172F));
+            Tlp_Eleccion_Funciones.Controls.Add(label1, 0, 0);
             Tlp_Eleccion_Funciones.Controls.Add(Flp_Horarios, 1, 2);
             Tlp_Eleccion_Funciones.Controls.Add(Flp_Funciones, 1, 1);
             Tlp_Eleccion_Funciones.Controls.Add(Tx_Horarios, 0, 2);
@@ -210,6 +210,18 @@
             Tlp_Eleccion_Funciones.RowStyles.Add(new RowStyle(SizeType.Percent, 37.95181F));
             Tlp_Eleccion_Funciones.Size = new Size(1156, 182);
             Tlp_Eleccion_Funciones.TabIndex = 13;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.White;
+            label1.Dock = DockStyle.Fill;
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(120, 84);
+            label1.TabIndex = 18;
+            label1.Text = "Selección de cine";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Flp_Horarios
             // 
@@ -347,6 +359,7 @@
             // 
             Cbo_Cines.Dock = DockStyle.Fill;
             Cbo_Cines.DrawMode = DrawMode.OwnerDrawFixed;
+            Cbo_Cines.DropDownStyle = ComboBoxStyle.DropDownList;
             Cbo_Cines.FormattingEnabled = true;
             Cbo_Cines.ItemHeight = 50;
             Cbo_Cines.Location = new Point(129, 3);
@@ -387,6 +400,7 @@
             Name = "Reservas";
             Size = new Size(1394, 700);
             TlP_Reservas.ResumeLayout(false);
+            TlP_Reservas.PerformLayout();
             Tlp_Info.ResumeLayout(false);
             Tlp_Info.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Pic_Pelicula).EndInit();

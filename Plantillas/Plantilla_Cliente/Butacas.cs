@@ -54,6 +54,7 @@ namespace Plantilla_Cliente
             {
                 for (int columna = 0; columna < columnas; columna++)
                 {
+                    int numeroButaca = fila * columnas + columna + 1;
                     Button butaca = new Button();
 
                     butaca.Dock = DockStyle.Fill;
@@ -97,11 +98,13 @@ namespace Plantilla_Cliente
 
             if (btn.BackColor == Color.Green)
             {
+                //añadir el asiento seleccionado a la lista
                 btn.BackColor = Color.DeepSkyBlue;
                 ButacasSeleccionadas.Add(numeroAsiento);
             }
             else
             {
+                //Eliminar el asiento seleccionado de la lista
                 btn.BackColor = Color.Green;
                 ButacasSeleccionadas.Remove(numeroAsiento);
             }
@@ -140,5 +143,14 @@ namespace Plantilla_Cliente
                 Close();
             }
         }
+        private string DecodificarAsiento(int NumeroAsiento)
+        {
+            int fila = (NumeroAsiento - 1) / 10;
+            int columna = (NumeroAsiento - 1) % 10 + 1;
+            char letra = (char)('A' + fila);
+            
+            return $"{letra}{columna}";
+        }
+        
     }
 }
