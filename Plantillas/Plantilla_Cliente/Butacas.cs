@@ -143,14 +143,6 @@ namespace Plantilla_Cliente
                 Close();
             }
         }
-        private string DecodificarAsiento(int NumeroAsiento)
-        {
-            int fila = (NumeroAsiento - 1) / 10;
-            int columna = (NumeroAsiento - 1) % 10 + 1;
-            char letra = (char)('A' + fila);
-            
-            return $"{letra}{columna}";
-        }
         
     }
 }

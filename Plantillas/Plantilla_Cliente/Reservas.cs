@@ -37,7 +37,7 @@ namespace Plantilla_Cliente
         public Reservas()
         {
             InitializeComponent();
-            gconexion = new conexion();
+            gconexion = new Con_Cliente();
         }
 
         public Reservas(int idPelicula, int idciudad)
