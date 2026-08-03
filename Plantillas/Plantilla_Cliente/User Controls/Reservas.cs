@@ -4,6 +4,7 @@ using System.Data;
 using System.Runtime.InteropServices.Marshalling;
 using System.Windows.Forms;
 using clase_conexion;
+using Plantilla_Cliente.Clases;
 
 
 namespace Plantilla_Cliente

@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
+using Plantilla_Cliente.Clases;
 
 
 namespace Plantilla_Cliente

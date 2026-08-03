@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Plantilla_Cliente
+namespace Plantilla_Cliente.Clases
 {
     internal class Con_Cliente
     {

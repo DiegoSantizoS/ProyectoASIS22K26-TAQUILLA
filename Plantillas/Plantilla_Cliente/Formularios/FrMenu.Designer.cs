@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrMenu));
             Pnl_MenuLayout = new TableLayoutPanel();
             Ms_Opciones = new MenuStrip();
             Tsmi_Cartelera = new ToolStripMenuItem();
@@ -94,6 +95,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1240, 770);
             Controls.Add(Pnl_MenuLayout);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(1200, 700);
             Name = "FrMenu";
             Text = "Menú principal";

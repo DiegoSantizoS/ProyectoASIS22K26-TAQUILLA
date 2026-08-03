@@ -31,12 +31,12 @@ namespace Plantilla_Cliente
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cartelera));
             Pnl_Buscador = new TableLayoutPanel();
             Pnl_Filtros1 = new TableLayoutPanel();
             Cbo_Ciudad = new ComboBox();
             Cbo_Cine = new ComboBox();
             Btn_Cargar_Cartelera = new Button();
-            label1 = new Label();
             Pnl_Filtros2 = new TableLayoutPanel();
             Btn_2DFilter = new Button();
             Btn_3DFilter = new Button();
@@ -46,11 +46,13 @@ namespace Plantilla_Cliente
             Btn_SubFilter = new Button();
             Dgv_Cartelera = new DataGridView();
             Reservar = new DataGridViewButtonColumn();
+            pictureBox1 = new PictureBox();
             comboBox2 = new ComboBox();
             Pnl_Buscador.SuspendLayout();
             Pnl_Filtros1.SuspendLayout();
             Pnl_Filtros2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Dgv_Cartelera).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // Pnl_Buscador
@@ -60,9 +62,9 @@ namespace Plantilla_Cliente
             Pnl_Buscador.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.1888237F));
             Pnl_Buscador.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 82.81118F));
             Pnl_Buscador.Controls.Add(Pnl_Filtros1, 1, 0);
-            Pnl_Buscador.Controls.Add(label1, 0, 0);
             Pnl_Buscador.Controls.Add(Pnl_Filtros2, 1, 1);
             Pnl_Buscador.Controls.Add(Dgv_Cartelera, 0, 3);
+            Pnl_Buscador.Controls.Add(pictureBox1, 0, 0);
             Pnl_Buscador.Dock = DockStyle.Fill;
             Pnl_Buscador.Location = new Point(0, 0);
             Pnl_Buscador.Name = "Pnl_Buscador";
@@ -132,18 +134,6 @@ namespace Plantilla_Cliente
             Btn_Cargar_Cartelera.Text = "Consultar cartelera";
             Btn_Cargar_Cartelera.UseVisualStyleBackColor = true;
             Btn_Cargar_Cartelera.Click += Btn_Cargar_Cartelera_Click_2;
-            // 
-            // label1
-            // 
-            label1.BackColor = Color.White;
-            label1.Dock = DockStyle.Fill;
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            Pnl_Buscador.SetRowSpan(label1, 3);
-            label1.Size = new Size(174, 149);
-            label1.TabIndex = 1;
-            label1.Text = "Logo aquí";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Pnl_Filtros2
             // 
@@ -270,6 +260,18 @@ namespace Plantilla_Cliente
             Reservar.Text = "Reservar";
             Reservar.UseColumnTextForButtonValue = true;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            Pnl_Buscador.SetRowSpan(pictureBox1, 3);
+            pictureBox1.Size = new Size(174, 143);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
+            // 
             // comboBox2
             // 
             comboBox2.Dock = DockStyle.Fill;
@@ -295,13 +297,13 @@ namespace Plantilla_Cliente
             Pnl_Filtros1.ResumeLayout(false);
             Pnl_Filtros2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Dgv_Cartelera).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private TableLayoutPanel Pnl_Buscador;
-        private Label label1;
         private TableLayoutPanel Pnl_Filtros1;
         private ComboBox comboBox2;
         private TableLayoutPanel Pnl_Filtros2;
@@ -316,5 +318,6 @@ namespace Plantilla_Cliente
         private Button Btn_SubFilter;
         private ComboBox Cbo_Ciudad;
         private DataGridViewButtonColumn Reservar;
+        private PictureBox pictureBox1;
     }
 }
