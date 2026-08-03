@@ -12,7 +12,7 @@ namespace Componentes
         {
             Format = DateTimePickerFormat.Custom;
             CustomFormat = "dd/MM/yyyy";
-            Font = new Font("Segoe UI", 9.5f);
+            Font = new Font("Segoe UI", 10.5f);
             Margin = new Padding(5);
             Anchor = AnchorStyles.Left | AnchorStyles.Right;
             MinimumSize = new Size(190, 30);
