@@ -16,8 +16,4 @@
     <ProjectReference Include="..\Con_Admin\Con_Admin.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Ventas\" />
-  </ItemGroup>
-
 </Project>
