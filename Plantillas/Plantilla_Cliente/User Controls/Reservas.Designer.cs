@@ -64,7 +64,7 @@
             // 
             // TlP_Reservas
             // 
-            TlP_Reservas.BackColor = Color.FromArgb(28, 17, 69);
+            TlP_Reservas.BackColor = Color.FromArgb(18, 18, 18);
             TlP_Reservas.ColumnCount = 3;
             TlP_Reservas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6427555F));
             TlP_Reservas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 0.0948061F));
@@ -109,8 +109,9 @@
             // Tx_DirectorHead
             // 
             Tx_DirectorHead.AutoSize = true;
-            Tx_DirectorHead.BackColor = Color.White;
+            Tx_DirectorHead.BackColor = Color.FromArgb(74, 18, 26);
             Tx_DirectorHead.Dock = DockStyle.Fill;
+            Tx_DirectorHead.ForeColor = Color.FromArgb(250, 248, 245);
             Tx_DirectorHead.Location = new Point(3, 0);
             Tx_DirectorHead.Name = "Tx_DirectorHead";
             Tx_DirectorHead.Size = new Size(121, 43);
@@ -121,8 +122,9 @@
             // Tx_DuracionHead
             // 
             Tx_DuracionHead.AutoSize = true;
-            Tx_DuracionHead.BackColor = Color.White;
+            Tx_DuracionHead.BackColor = Color.FromArgb(74, 18, 26);
             Tx_DuracionHead.Dock = DockStyle.Fill;
+            Tx_DuracionHead.ForeColor = Color.FromArgb(250, 248, 245);
             Tx_DuracionHead.Location = new Point(3, 43);
             Tx_DuracionHead.Name = "Tx_DuracionHead";
             Tx_DuracionHead.Size = new Size(121, 43);
@@ -133,8 +135,9 @@
             // Tx_RestriccionHead
             // 
             Tx_RestriccionHead.AutoSize = true;
-            Tx_RestriccionHead.BackColor = Color.White;
+            Tx_RestriccionHead.BackColor = Color.FromArgb(74, 18, 26);
             Tx_RestriccionHead.Dock = DockStyle.Fill;
+            Tx_RestriccionHead.ForeColor = Color.FromArgb(250, 248, 245);
             Tx_RestriccionHead.Location = new Point(3, 86);
             Tx_RestriccionHead.Name = "Tx_RestriccionHead";
             Tx_RestriccionHead.Size = new Size(121, 44);
@@ -145,35 +148,44 @@
             // Tx_Director
             // 
             Tx_Director.AutoSize = true;
-            Tx_Director.BackColor = Color.White;
+            Tx_Director.BackColor = Color.FromArgb(18, 18, 18);
             Tx_Director.Dock = DockStyle.Fill;
+            Tx_Director.FlatStyle = FlatStyle.Flat;
+            Tx_Director.ForeColor = Color.FromArgb(250, 248, 245);
             Tx_Director.Location = new Point(130, 0);
             Tx_Director.Name = "Tx_Director";
             Tx_Director.Size = new Size(1023, 43);
             Tx_Director.TabIndex = 3;
             Tx_Director.Text = "XXX";
+            Tx_Director.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Tx_Duracion
             // 
             Tx_Duracion.AutoSize = true;
-            Tx_Duracion.BackColor = Color.White;
+            Tx_Duracion.BackColor = Color.FromArgb(18, 18, 18);
             Tx_Duracion.Dock = DockStyle.Fill;
+            Tx_Duracion.FlatStyle = FlatStyle.Flat;
+            Tx_Duracion.ForeColor = Color.FromArgb(250, 248, 245);
             Tx_Duracion.Location = new Point(130, 43);
             Tx_Duracion.Name = "Tx_Duracion";
             Tx_Duracion.Size = new Size(1023, 43);
             Tx_Duracion.TabIndex = 4;
             Tx_Duracion.Text = "XXX";
+            Tx_Duracion.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Tx_Restriccion
             // 
             Tx_Restriccion.AutoSize = true;
-            Tx_Restriccion.BackColor = Color.White;
+            Tx_Restriccion.BackColor = Color.FromArgb(18, 18, 18);
             Tx_Restriccion.Dock = DockStyle.Fill;
+            Tx_Restriccion.FlatStyle = FlatStyle.Flat;
+            Tx_Restriccion.ForeColor = Color.FromArgb(250, 248, 245);
             Tx_Restriccion.Location = new Point(130, 86);
             Tx_Restriccion.Name = "Tx_Restriccion";
             Tx_Restriccion.Size = new Size(1023, 44);
             Tx_Restriccion.TabIndex = 5;
             Tx_Restriccion.Text = "XXX";
+            Tx_Restriccion.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Pic_Pelicula
             // 
@@ -213,9 +225,10 @@
             // 
             // Flp_Horarios
             // 
-            Flp_Horarios.BackColor = Color.White;
+            Flp_Horarios.BackColor = Color.FromArgb(18, 18, 18);
             Flp_Horarios.Controls.Add(button1);
             Flp_Horarios.Dock = DockStyle.Fill;
+            Flp_Horarios.ForeColor = Color.FromArgb(250, 248, 245);
             Flp_Horarios.Location = new Point(129, 115);
             Flp_Horarios.Name = "Flp_Horarios";
             Flp_Horarios.Size = new Size(1024, 64);
@@ -234,7 +247,7 @@
             // 
             // Flp_Funciones
             // 
-            Flp_Funciones.BackColor = Color.White;
+            Flp_Funciones.BackColor = Color.FromArgb(18, 18, 18);
             Flp_Funciones.Controls.Add(button11);
             Flp_Funciones.Controls.Add(button12);
             Flp_Funciones.Controls.Add(button13);
@@ -243,6 +256,7 @@
             Flp_Funciones.Controls.Add(button16);
             Flp_Funciones.Controls.Add(button17);
             Flp_Funciones.Dock = DockStyle.Fill;
+            Flp_Funciones.ForeColor = Color.FromArgb(250, 248, 245);
             Flp_Funciones.Location = new Point(129, 46);
             Flp_Funciones.Name = "Flp_Funciones";
             Flp_Funciones.Size = new Size(1024, 63);
@@ -322,8 +336,9 @@
             // Tx_Horarios
             // 
             Tx_Horarios.AutoSize = true;
-            Tx_Horarios.BackColor = Color.White;
+            Tx_Horarios.BackColor = Color.FromArgb(74, 18, 26);
             Tx_Horarios.Dock = DockStyle.Fill;
+            Tx_Horarios.ForeColor = Color.FromArgb(250, 248, 245);
             Tx_Horarios.Location = new Point(3, 112);
             Tx_Horarios.Name = "Tx_Horarios";
             Tx_Horarios.Size = new Size(120, 70);
@@ -334,8 +349,9 @@
             // Tx_Funciones
             // 
             Tx_Funciones.AutoSize = true;
-            Tx_Funciones.BackColor = Color.White;
+            Tx_Funciones.BackColor = Color.FromArgb(74, 18, 26);
             Tx_Funciones.Dock = DockStyle.Fill;
+            Tx_Funciones.ForeColor = Color.FromArgb(250, 248, 245);
             Tx_Funciones.Location = new Point(3, 43);
             Tx_Funciones.Name = "Tx_Funciones";
             Tx_Funciones.Size = new Size(120, 69);
@@ -359,7 +375,9 @@
             // Tx_SeleccionCine
             // 
             Tx_SeleccionCine.AutoSize = true;
+            Tx_SeleccionCine.BackColor = Color.FromArgb(74, 18, 26);
             Tx_SeleccionCine.Dock = DockStyle.Fill;
+            Tx_SeleccionCine.ForeColor = Color.FromArgb(250, 248, 245);
             Tx_SeleccionCine.Location = new Point(3, 0);
             Tx_SeleccionCine.Name = "Tx_SeleccionCine";
             Tx_SeleccionCine.Size = new Size(120, 43);

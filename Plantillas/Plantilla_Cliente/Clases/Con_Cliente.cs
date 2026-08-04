@@ -44,21 +44,8 @@ namespace Plantilla_Cliente.Clases
             {
                 MySqlConnection con = GetConnection();
 
-                string consulta = @"
-                    SELECT
-                    p.id_pelicula AS IdPelicula,
-                    p.titulo_pelicula AS Titulo,
-                    p.duracion_pelicula AS Duracion,
-                    c.nombre_clasificacion AS Clasificacion,
-                    g.nombre_genero AS Genero,
-                    p.fecha_estreno AS `Fecha de estreno`
-                FROM tbl_pelicula p
-                LEFT JOIN tbl_genero g
-                    ON p.id_genero = g.id_genero
-                    inner join tbl_clasificacion c on p.id_clasificacion = c.id_clasificacion
-                ORDER BY p.titulo_pelicula";
-
-                MySqlCommand cmd = new MySqlCommand(consulta, con);
+                MySqlCommand cmd = new MySqlCommand("sp_cartelera", con);
+                cmd.CommandType = CommandType.StoredProcedure;
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
 
@@ -127,7 +114,7 @@ namespace Plantilla_Cliente.Clases
         }
 
 
-        public DataTable FiltrarCartelera(int idCiudad, int idCine, int idTipo)
+        public DataTable FiltrarCartelera(int idCiudad, int idCine, int idTipo, int idioma)
         {
             DataTable tabla = new DataTable();
 
@@ -135,40 +122,14 @@ namespace Plantilla_Cliente.Clases
             {
                 MySqlConnection con = GetConnection();
 
-                string consulta = @"
-        SELECT
-            p.id_pelicula AS IdPelicula,
-            p.titulo_pelicula AS Titulo,
-            p.duracion_pelicula AS Duracion,
-            p.clasificacion_pelicula AS Clasificacion,
-            g.nombre_genero AS Genero,
-            p.fecha_estreno AS 'Fecha de Estreno'
-        FROM tbl_cartelera ca
+                MySqlCommand cmd = new MySqlCommand("sp_filtrar_cartelera", con);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-        INNER JOIN tbl_cine c
-            ON ca.id_cine = c.id_cine
 
-        INNER JOIN tbl_ciudad ci
-            ON c.id_ciudad = ci.id_ciudad
-
-        INNER JOIN tbl_pelicula p
-            ON ca.id_pelicula = p.id_pelicula
-
-        INNER JOIN tbl_genero g
-            ON p.id_genero = g.id_genero
-
-        WHERE
-            ci.id_ciudad = @ciudad
-            AND c.id_cine = @cine
-            AND p.id_tipo_pelicula = @tipo
-
-        ORDER BY p.titulo_pelicula;";
-
-                MySqlCommand cmd = new MySqlCommand(consulta, con);
-
-                cmd.Parameters.AddWithValue("@ciudad", idCiudad);
-                cmd.Parameters.AddWithValue("@cine", idCine);
-                cmd.Parameters.AddWithValue("@tipo", idTipo);
+                cmd.Parameters.AddWithValue("@p_ciudad", idCiudad);
+                cmd.Parameters.AddWithValue("@p_cine", idCine);
+                cmd.Parameters.AddWithValue("@p_tipo_funcion", idTipo);
+                cmd.Parameters.AddWithValue("@p_idioma", idioma);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
 
