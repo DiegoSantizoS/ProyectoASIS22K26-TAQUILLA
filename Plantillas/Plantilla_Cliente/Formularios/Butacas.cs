@@ -96,19 +96,26 @@ namespace Plantilla_Cliente
             Button btn = (Button)sender;
 
             int numeroAsiento = (int)btn.Tag;
-
-            if (btn.BackColor == Color.Green)
+            if (ButacasSeleccionadas.Count < 10)
             {
-                //añadir el asiento seleccionado a la lista
-                btn.BackColor = Color.DeepSkyBlue;
-                ButacasSeleccionadas.Add(numeroAsiento);
+                if (btn.BackColor == Color.Green)
+                {
+                    //añadir el asiento seleccionado a la lista
+                    btn.BackColor = Color.DeepSkyBlue;
+                    ButacasSeleccionadas.Add(numeroAsiento);
+                }
+                else
+                {
+                    //Eliminar el asiento seleccionado de la lista
+                    btn.BackColor = Color.Green;
+                    ButacasSeleccionadas.Remove(numeroAsiento);
+                }
             }
             else
             {
-                //Eliminar el asiento seleccionado de la lista
-                btn.BackColor = Color.Green;
-                ButacasSeleccionadas.Remove(numeroAsiento);
+                MessageBox.Show("Máximo de 10 butacas alcanzado.", "Límite alcanzado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
 
         private void Btn_Confirmacion_Click(object sender, EventArgs e)

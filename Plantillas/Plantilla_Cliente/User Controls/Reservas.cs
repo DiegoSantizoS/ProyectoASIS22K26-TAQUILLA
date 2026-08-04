@@ -5,6 +5,9 @@ using System.Runtime.InteropServices.Marshalling;
 using System.Windows.Forms;
 using clase_conexion;
 using Plantilla_Cliente.Clases;
+using System.Diagnostics;
+
+
 
 
 namespace Plantilla_Cliente
@@ -17,7 +20,7 @@ namespace Plantilla_Cliente
         public int idcine;
         public int idPelicula;
         public int idciudad;
-
+        public string Enlace;
         // Datos de la reserva
         public int id_funcion;
         public int numero_boleto;
@@ -39,7 +42,7 @@ namespace Plantilla_Cliente
         {
             InitializeComponent();
             gconexion = new Con_Cliente();
-           
+
         }
 
         public Reservas(int idPelicula, int idciudad)
@@ -52,10 +55,12 @@ namespace Plantilla_Cliente
             // Prueba para verificar que el ID se recibió correctamente
             /*MessageBox.Show($"ID recibido: {this.idPelicula}");
             MessageBox.Show($"Ciudad recibida: {this.idciudad}");*/
+            Enlace = gconexion.ObtenerEnlacePelicula(idPelicula);
             cargarinfopelicula(this.idPelicula);
             cargarfunciones(this.idPelicula, this.idciudad);
             CargarCines(this.idciudad);
             Flp_Horarios.Controls.Clear();
+            CargarMiniaturaTrailer(Enlace);
 
         }
 
@@ -67,6 +72,9 @@ namespace Plantilla_Cliente
             AplicarBordeLabel(Tx_DirectorHead, Color.FromArgb(18, 18, 18));
             AplicarBordeLabel(Tx_DuracionHead, Color.FromArgb(18, 18, 18));
             AplicarBordeLabel(Tx_RestriccionHead, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(Tx_SeleccionCine, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(Tx_Funciones, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(Tx_Horarios, Color.FromArgb(18, 18, 18));
         }
         /*Inicio del código 0901-23-13862 Carlos Andres Arriaza Lara el 25/07/2026*/
         private void Btn_Continuar_Click(object sender, EventArgs e)
@@ -115,6 +123,7 @@ namespace Plantilla_Cliente
             Tx_Director.Text = pelicula.Rows[0]["director_pelicula"].ToString();
             Tx_Duracion.Text = pelicula.Rows[0]["duracion_pelicula"].ToString();
             Tx_Restriccion.Text = pelicula.Rows[0]["clasificacion_pelicula"].ToString();
+
         }
         private void cargarfunciones(int idPelicula, int idciudad)
         {
@@ -190,7 +199,7 @@ namespace Plantilla_Cliente
             Button btn = (Button)sender;
             if (btnFechaSeleccionada != null)
             {
-                btnFechaSeleccionada.BackColor = Color.FromArgb(197,155,39);
+                btnFechaSeleccionada.BackColor = Color.FromArgb(197, 155, 39);
                 btnFechaSeleccionada.ForeColor = Color.FromArgb(250, 248, 245);
             }
             btn.BackColor = Color.FromArgb(112, 27, 40);
@@ -221,12 +230,12 @@ namespace Plantilla_Cliente
             id_funcion = (int)btn.Tag;
             //MessageBox.Show($"Id función: {id_funcion}");
             IdSala = gconexion.ObtenerIdSala(id_funcion);
-           // MessageBox.Show($"Id_Funcion: {id_funcion}\nId_Sala: {IdSala}");
+            // MessageBox.Show($"Id_Funcion: {id_funcion}\nId_Sala: {IdSala}");
         }
 
         private void Cbo_Cines_SelectedIndexChanged(object sender, EventArgs e)
         {
-           idcine = Cbo_Cines.SelectedIndex + 1;
+            idcine = Cbo_Cines.SelectedIndex + 1;
             cargarfunciones(idPelicula, idcine);
 
         }
@@ -273,5 +282,62 @@ namespace Plantilla_Cliente
                 }
             };
         }
+
+        private void PicTrailer_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = Enlace,
+                UseShellExecute = true
+            });
+        }
+        private void CargarMiniaturaTrailer(string enlaceYoutube)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(enlaceYoutube))
+                {
+                    PicTrailer.Image = null;
+                    return;
+                }
+
+                Uri uri = new Uri(enlaceYoutube);
+                string videoId = "";
+
+                if (uri.Host.Contains("youtu.be"))
+                {
+                    // Ejemplo: https://youtu.be/mY-XSIfhziE?si=xxxx
+                    videoId = uri.AbsolutePath.Trim('/');
+                }
+                else if (uri.Host.Contains("youtube.com"))
+                {
+                    // Ejemplo: https://www.youtube.com/watch?v=mY-XSIfhziE
+                    string query = uri.Query.TrimStart('?');
+
+                    foreach (string parametro in query.Split('&'))
+                    {
+                        if (parametro.StartsWith("v="))
+                        {
+                            videoId = parametro.Substring(2);
+                            break;
+                        }
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(videoId))
+                {
+                    PicTrailer.LoadAsync($"https://img.youtube.com/vi/{videoId}/hqdefault.jpg");
+                }
+                else
+                {
+                    PicTrailer.Image = null;
+                }
+            }
+            catch
+            {
+                PicTrailer.Image = null;
+            }
+        }
+
     }
 }
