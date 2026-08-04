@@ -36,12 +36,12 @@
             TbContra = new Componentes.CustomTextBox();
             TbUsuario = new Componentes.CustomTextBox();
             BtnIngresar = new Componentes.CustomButton();
-            kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
+            PicLogo = new Krypton.Toolkit.KryptonPictureBox();
             panel1 = new Panel();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             Tlp_main.SuspendLayout();
             Tlp_formulario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)kryptonPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PicLogo).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             Tlp_main.ColumnCount = 1;
             Tlp_main.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             Tlp_main.Controls.Add(Tlp_formulario, 0, 2);
-            Tlp_main.Controls.Add(kryptonPictureBox1, 0, 1);
+            Tlp_main.Controls.Add(PicLogo, 0, 1);
             Tlp_main.Controls.Add(panel1, 0, 0);
             Tlp_main.Dock = DockStyle.Fill;
             Tlp_main.Location = new Point(0, 0);
@@ -169,19 +169,19 @@
             BtnIngresar.UseVisualStyleBackColor = false;
             BtnIngresar.Click += BtnIngresar_Click;
             // 
-            // kryptonPictureBox1
+            // PicLogo
             // 
-            kryptonPictureBox1.Anchor = AnchorStyles.None;
-            kryptonPictureBox1.BackgroundImage = (Image)resources.GetObject("kryptonPictureBox1.BackgroundImage");
-            kryptonPictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            kryptonPictureBox1.Location = new Point(25, 31);
-            kryptonPictureBox1.Margin = new Padding(0);
-            kryptonPictureBox1.MaximumSize = new Size(250, 250);
-            kryptonPictureBox1.MinimumSize = new Size(250, 250);
-            kryptonPictureBox1.Name = "kryptonPictureBox1";
-            kryptonPictureBox1.Size = new Size(250, 250);
-            kryptonPictureBox1.TabIndex = 7;
-            kryptonPictureBox1.TabStop = false;
+            PicLogo.Anchor = AnchorStyles.None;
+            PicLogo.BackgroundImage = (Image)resources.GetObject("PicLogo.BackgroundImage");
+            PicLogo.BackgroundImageLayout = ImageLayout.Stretch;
+            PicLogo.Location = new Point(25, 31);
+            PicLogo.Margin = new Padding(0);
+            PicLogo.MaximumSize = new Size(250, 250);
+            PicLogo.MinimumSize = new Size(250, 250);
+            PicLogo.Name = "PicLogo";
+            PicLogo.Size = new Size(250, 250);
+            PicLogo.TabIndex = 7;
+            PicLogo.TabStop = false;
             // 
             // panel1
             // 
@@ -235,7 +235,7 @@
             Tlp_main.ResumeLayout(false);
             Tlp_formulario.ResumeLayout(false);
             Tlp_formulario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)kryptonPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PicLogo).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -246,7 +246,7 @@
         private Label Tx_logo;
         private Panel panel1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
-        private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox1;
+        private Krypton.Toolkit.KryptonPictureBox PicLogo;
         private TableLayoutPanel Tlp_formulario;
         private Componentes.CustomLabel LbUsuario;
         private Componentes.CustomLabel LbContra;

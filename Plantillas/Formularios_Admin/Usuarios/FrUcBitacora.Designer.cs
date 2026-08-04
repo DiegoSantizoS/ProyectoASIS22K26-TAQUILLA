@@ -45,8 +45,6 @@
             BtnBuscarNombreDePC = new Componentes.CustomButton();
             LbFecha = new Componentes.CustomLabel();
             DatePickerFecha = new Componentes.CustomDatePicker();
-            LbHora = new Componentes.CustomLabel();
-            TimePickerHora = new Componentes.CustomTimePicker();
             LbIP = new Componentes.CustomLabel();
             TbTotalDeVenta = new Componentes.CustomTextBox();
             customRichTextBox1 = new Componentes.CustomRichTextBox();
@@ -154,15 +152,13 @@
             TlpForm.Controls.Add(BtnBuscarNombreDePC, 5, 2);
             TlpForm.Controls.Add(LbFecha, 0, 0);
             TlpForm.Controls.Add(DatePickerFecha, 0, 1);
-            TlpForm.Controls.Add(LbHora, 2, 0);
-            TlpForm.Controls.Add(TimePickerHora, 2, 1);
-            TlpForm.Controls.Add(LbIP, 4, 0);
-            TlpForm.Controls.Add(TbTotalDeVenta, 4, 1);
             TlpForm.Controls.Add(customRichTextBox1, 0, 4);
             TlpForm.Controls.Add(customLabel1, 0, 2);
             TlpForm.Controls.Add(customTextBox1, 0, 3);
             TlpForm.Controls.Add(BtnBuscarPermiso, 3, 2);
             TlpForm.Controls.Add(BtnBuscarUsuario, 1, 2);
+            TlpForm.Controls.Add(LbIP, 2, 0);
+            TlpForm.Controls.Add(TbTotalDeVenta, 2, 1);
             TlpForm.Dock = DockStyle.Fill;
             TlpForm.Location = new Point(0, 0);
             TlpForm.Margin = new Padding(0);
@@ -331,43 +327,12 @@
             DatePickerFecha.StateCommon.Content.Color1 = Color.FromArgb(230, 230, 230);
             DatePickerFecha.TabIndex = 73;
             // 
-            // LbHora
-            // 
-            LbHora.AutoSize = true;
-            LbHora.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            LbHora.ForeColor = Color.FromArgb(220, 220, 220);
-            LbHora.Location = new Point(313, 0);
-            LbHora.Name = "LbHora";
-            LbHora.Padding = new Padding(0, 0, 2, 0);
-            LbHora.Size = new Size(51, 23);
-            LbHora.TabIndex = 71;
-            LbHora.Text = "Hora";
-            LbHora.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // TimePickerHora
-            // 
-            TimePickerHora.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            TimePickerHora.BackColor = Color.FromArgb(55, 60, 72);
-            TimePickerHora.BorderStyle = BorderStyle.FixedSingle;
-            TlpForm.SetColumnSpan(TimePickerHora, 2);
-            TimePickerHora.Font = new Font("Segoe UI", 11F);
-            TimePickerHora.ForeColor = Color.FromArgb(230, 230, 230);
-            TimePickerHora.Location = new Point(315, 25);
-            TimePickerHora.Margin = new Padding(5, 0, 5, 10);
-            TimePickerHora.Mask = "00:00";
-            TimePickerHora.MaximumSize = new Size(0, 30);
-            TimePickerHora.MinimumSize = new Size(190, 30);
-            TimePickerHora.Name = "TimePickerHora";
-            TimePickerHora.Size = new Size(300, 30);
-            TimePickerHora.TabIndex = 74;
-            TimePickerHora.Text = "1200";
-            // 
             // LbIP
             // 
             LbIP.AutoSize = true;
             LbIP.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbIP.ForeColor = Color.FromArgb(220, 220, 220);
-            LbIP.Location = new Point(623, 0);
+            LbIP.Location = new Point(313, 0);
             LbIP.Name = "LbIP";
             LbIP.Padding = new Padding(0, 0, 2, 0);
             LbIP.Size = new Size(46, 23);
@@ -383,7 +348,7 @@
             TlpForm.SetColumnSpan(TbTotalDeVenta, 2);
             TbTotalDeVenta.Font = new Font("Segoe UI", 10F);
             TbTotalDeVenta.ForeColor = Color.FromArgb(160, 165, 175);
-            TbTotalDeVenta.Location = new Point(625, 25);
+            TbTotalDeVenta.Location = new Point(315, 25);
             TbTotalDeVenta.Margin = new Padding(5, 0, 5, 10);
             TbTotalDeVenta.MaximumSize = new Size(0, 30);
             TbTotalDeVenta.MinimumSize = new Size(190, 30);
@@ -661,8 +626,6 @@
         private Componentes.CustomLabel LbID;
         private Componentes.CustomLabel LbFecha;
         private Componentes.CustomDatePicker DatePickerFecha;
-        private Componentes.CustomLabel LbHora;
-        private Componentes.CustomTimePicker TimePickerHora;
         private Componentes.CustomComboBox CbMetodoDePago;
         private Componentes.CustomLabel LbIP;
         private Componentes.CustomTextBox TbTotalDeVenta;

@@ -34,7 +34,7 @@
             PnlTop = new Panel();
             PnlMain = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            button1 = new Button();
+            BtnLogo = new Button();
             BtnSalir = new Button();
             BtnFunciones = new Button();
             BtnAyuda = new Button();
@@ -115,7 +115,7 @@
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Controls.Add(button1, 0, 0);
+            tableLayoutPanel2.Controls.Add(BtnLogo, 0, 0);
             tableLayoutPanel2.Controls.Add(BtnSalir, 0, 6);
             tableLayoutPanel2.Controls.Add(BtnFunciones, 0, 1);
             tableLayoutPanel2.Controls.Add(BtnAyuda, 0, 5);
@@ -138,20 +138,20 @@
             tableLayoutPanel2.Size = new Size(200, 700);
             tableLayoutPanel2.TabIndex = 7;
             // 
-            // button1
+            // BtnLogo
             // 
-            button1.BackColor = Color.FromArgb(244, 233, 216);
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.Cursor = Cursors.Hand;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(0, 0);
-            button1.Margin = new Padding(0);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 200);
-            button1.TabIndex = 2;
-            button1.UseVisualStyleBackColor = false;
+            BtnLogo.BackColor = Color.FromArgb(244, 233, 216);
+            BtnLogo.BackgroundImage = (Image)resources.GetObject("BtnLogo.BackgroundImage");
+            BtnLogo.BackgroundImageLayout = ImageLayout.Stretch;
+            BtnLogo.Cursor = Cursors.Hand;
+            BtnLogo.FlatStyle = FlatStyle.Popup;
+            BtnLogo.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnLogo.Location = new Point(0, 0);
+            BtnLogo.Margin = new Padding(0);
+            BtnLogo.Name = "BtnLogo";
+            BtnLogo.Size = new Size(200, 200);
+            BtnLogo.TabIndex = 2;
+            BtnLogo.UseVisualStyleBackColor = false;
             // 
             // BtnSalir
             // 
@@ -280,7 +280,7 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Button button1;
+        private Button BtnLogo;
         private Panel PnlTop;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private Button BtnFunciones;
