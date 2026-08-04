@@ -46,7 +46,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Tabs\Funciones\FrUcMainFunciones.cs">
+    <Compile Update="Tabs\FrUcMainFunciones.cs">
       <CopyToOutputDirectory>r</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>

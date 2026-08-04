@@ -28,7 +28,6 @@ namespace Formularios_Admin
             BtnAgregar.Click += BtnAgregar_Click;
             BtnActualizar.Click += BtnActualizar_Click;
             BtnEliminar.Click += BtnEliminar_Click;
-            BtnLimpiar.Click += BtnLimpiar_Click;
             BtnCopiar.Click += BtnCopiar_Click;
             BtnBuscar.Click += BtnBuscar_Click;
         }

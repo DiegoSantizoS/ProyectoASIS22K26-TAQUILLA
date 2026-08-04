@@ -1,6 +1,6 @@
-﻿namespace Forms_Admin.Funciones.Catalogs
+﻿namespace Plantilla_Admin.Tabs
 {
-    partial class FrUcTiposDeFuncion
+    partial class FrUcMainAyuda
     {
         /// <summary> 
         /// Variable del diseñador necesaria.

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Forms_Admin.Funciones.Catalogs
+namespace Plantilla_Admin.Tabs
 {
-    public partial class FrUcTiposDeFuncion : UserControl
+    public partial class FrUcMainAyuda : UserControl
     {
-        public FrUcTiposDeFuncion()
+        public FrUcMainAyuda()
         {
             InitializeComponent();
         }

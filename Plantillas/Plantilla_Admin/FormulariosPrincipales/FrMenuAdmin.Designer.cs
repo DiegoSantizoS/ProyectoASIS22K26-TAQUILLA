@@ -28,94 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            PnlTop = new Panel();
-            BtnSalir = new ReaLTaiizor.Controls.SpaceButton();
-            BtnAyuda = new ReaLTaiizor.Controls.SpaceButton();
-            BtnReportes = new ReaLTaiizor.Controls.SpaceButton();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
-            BtnUsuarios = new ReaLTaiizor.Controls.SpaceButton();
-            BtnVentas = new ReaLTaiizor.Controls.SpaceButton();
-            BtnFunciones = new ReaLTaiizor.Controls.SpaceButton();
-            BtnDashboard = new ReaLTaiizor.Controls.SpaceButton();
-            panel1 = new Panel();
-            PnlTop.SuspendLayout();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            PnlTop = new Panel();
+            tableLayoutSlider1 = new Componentes.TableLayoutSlider();
+            button1 = new Button();
+            crownButton1 = new ReaLTaiizor.Controls.CrownButton();
+            button3 = new Button();
+            tableLayoutPanel1.SuspendLayout();
+            tableLayoutSlider1.SuspendLayout();
             SuspendLayout();
-            // 
-            // PnlTop
-            // 
-            PnlTop.BackColor = Color.FromArgb(74, 21, 26);
-            PnlTop.Controls.Add(BtnSalir);
-            PnlTop.Controls.Add(BtnAyuda);
-            PnlTop.Controls.Add(BtnReportes);
-            PnlTop.Controls.Add(nightControlBox1);
-            PnlTop.Controls.Add(BtnUsuarios);
-            PnlTop.Controls.Add(BtnVentas);
-            PnlTop.Controls.Add(BtnFunciones);
-            PnlTop.Controls.Add(BtnDashboard);
-            PnlTop.Dock = DockStyle.Top;
-            PnlTop.Location = new Point(0, 0);
-            PnlTop.Margin = new Padding(0);
-            PnlTop.Name = "PnlTop";
-            PnlTop.Size = new Size(1200, 31);
-            PnlTop.TabIndex = 0;
-            PnlTop.Paint += panel1_Paint;
-            PnlTop.MouseMove += PnlTop_MouseMove;
-            // 
-            // BtnSalir
-            // 
-            BtnSalir.BackColor = Color.Transparent;
-            BtnSalir.Cursor = Cursors.Hand;
-            BtnSalir.Customization = "Kioq/zIyMv8yMjL/Kioq/y8vL/8nJyf//v7+/yMjI/8qKir/";
-            BtnSalir.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnSalir.Image = Properties.Resources.cinema2;
-            BtnSalir.Location = new Point(900, 0);
-            BtnSalir.Margin = new Padding(0);
-            BtnSalir.Name = "BtnSalir";
-            BtnSalir.NoRounding = false;
-            BtnSalir.Size = new Size(150, 31);
-            BtnSalir.TabIndex = 14;
-            BtnSalir.Text = "SALIR";
-            BtnSalir.TextAlignment = HorizontalAlignment.Center;
-            BtnSalir.Transparent = true;
-            BtnSalir.Click += BtnSalir_Click;
-            // 
-            // BtnAyuda
-            // 
-            BtnAyuda.BackColor = Color.Transparent;
-            BtnAyuda.Cursor = Cursors.Hand;
-            BtnAyuda.Customization = "Kioq/zIyMv8yMjL/Kioq/y8vL/8nJyf//v7+/yMjI/8qKir/";
-            BtnAyuda.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnAyuda.Image = Properties.Resources.cinema2;
-            BtnAyuda.Location = new Point(750, 0);
-            BtnAyuda.Margin = new Padding(0);
-            BtnAyuda.Name = "BtnAyuda";
-            BtnAyuda.NoRounding = false;
-            BtnAyuda.Size = new Size(150, 31);
-            BtnAyuda.TabIndex = 13;
-            BtnAyuda.Text = "AYUDA";
-            BtnAyuda.TextAlignment = HorizontalAlignment.Center;
-            BtnAyuda.Transparent = true;
-            // 
-            // BtnReportes
-            // 
-            BtnReportes.BackColor = Color.Transparent;
-            BtnReportes.Cursor = Cursors.Hand;
-            BtnReportes.Customization = "Kioq/zIyMv8yMjL/Kioq/y8vL/8nJyf//v7+/yMjI/8qKir/";
-            BtnReportes.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnReportes.Image = Properties.Resources.cinema2;
-            BtnReportes.Location = new Point(600, 0);
-            BtnReportes.Margin = new Padding(0);
-            BtnReportes.Name = "BtnReportes";
-            BtnReportes.NoRounding = false;
-            BtnReportes.Size = new Size(150, 31);
-            BtnReportes.TabIndex = 12;
-            BtnReportes.Text = "REPORTES";
-            BtnReportes.TextAlignment = HorizontalAlignment.Center;
-            BtnReportes.Transparent = true;
             // 
             // nightControlBox1
             // 
-            nightControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             nightControlBox1.BackColor = Color.Transparent;
             nightControlBox1.CloseHoverColor = Color.FromArgb(199, 80, 80);
             nightControlBox1.CloseHoverForeColor = Color.White;
@@ -123,12 +48,13 @@
             nightControlBox1.DefaultLocation = true;
             nightControlBox1.DisableMaximizeColor = Color.FromArgb(105, 105, 105);
             nightControlBox1.DisableMinimizeColor = Color.FromArgb(105, 105, 105);
+            nightControlBox1.Dock = DockStyle.Fill;
             nightControlBox1.EnableCloseColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMaximizeButton = true;
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(1061, 0);
+            nightControlBox1.Location = new Point(1064, 3);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -137,84 +63,85 @@
             nightControlBox1.Size = new Size(139, 31);
             nightControlBox1.TabIndex = 1;
             // 
-            // BtnUsuarios
+            // tableLayoutPanel1
             // 
-            BtnUsuarios.BackColor = Color.Transparent;
-            BtnUsuarios.Cursor = Cursors.Hand;
-            BtnUsuarios.Customization = "Kioq/zIyMv8yMjL/Kioq/y8vL/8nJyf//v7+/yMjI/8qKir/";
-            BtnUsuarios.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnUsuarios.Image = Properties.Resources.cinema2;
-            BtnUsuarios.Location = new Point(450, 0);
-            BtnUsuarios.Margin = new Padding(0);
-            BtnUsuarios.Name = "BtnUsuarios";
-            BtnUsuarios.NoRounding = false;
-            BtnUsuarios.Size = new Size(150, 31);
-            BtnUsuarios.TabIndex = 10;
-            BtnUsuarios.Text = "USUARIOS";
-            BtnUsuarios.TextAlignment = HorizontalAlignment.Center;
-            BtnUsuarios.Transparent = true;
-            BtnUsuarios.Click += BtnUsuarios_Click;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 139F));
+            tableLayoutPanel1.Controls.Add(nightControlBox1, 1, 0);
+            tableLayoutPanel1.Controls.Add(PnlTop, 0, 0);
+            tableLayoutPanel1.Controls.Add(tableLayoutSlider1, 0, 1);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(1200, 700);
+            tableLayoutPanel1.TabIndex = 1;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
-            // BtnVentas
+            // PnlTop
             // 
-            BtnVentas.BackColor = Color.Transparent;
-            BtnVentas.Cursor = Cursors.Hand;
-            BtnVentas.Customization = "Kioq/zIyMv8yMjL/Kioq/y8vL/8nJyf//v7+/yMjI/8qKir/";
-            BtnVentas.Font = new Font("Verdana", 10.2F);
-            BtnVentas.Image = Properties.Resources.cinema2;
-            BtnVentas.Location = new Point(300, 0);
-            BtnVentas.Margin = new Padding(0);
-            BtnVentas.Name = "BtnVentas";
-            BtnVentas.NoRounding = false;
-            BtnVentas.Size = new Size(150, 31);
-            BtnVentas.TabIndex = 11;
-            BtnVentas.Text = "VENTAS";
-            BtnVentas.TextAlignment = HorizontalAlignment.Center;
-            BtnVentas.Transparent = true;
+            PnlTop.Dock = DockStyle.Fill;
+            PnlTop.Location = new Point(0, 0);
+            PnlTop.Margin = new Padding(0);
+            PnlTop.Name = "PnlTop";
+            PnlTop.Size = new Size(1061, 35);
+            PnlTop.TabIndex = 2;
+            PnlTop.MouseMove += panel2_MouseMove_1;
             // 
-            // BtnFunciones
+            // tableLayoutSlider1
             // 
-            BtnFunciones.BackColor = Color.Transparent;
-            BtnFunciones.Cursor = Cursors.Hand;
-            BtnFunciones.Customization = "Kioq/zIyMv8yMjL/Kioq/y8vL/8nJyf//v7+/yMjI/8qKir/";
-            BtnFunciones.Font = new Font("Verdana", 10.2F);
-            BtnFunciones.Image = Properties.Resources.cinema2;
-            BtnFunciones.Location = new Point(150, 0);
-            BtnFunciones.Margin = new Padding(0);
-            BtnFunciones.Name = "BtnFunciones";
-            BtnFunciones.NoRounding = false;
-            BtnFunciones.Size = new Size(150, 31);
-            BtnFunciones.TabIndex = 9;
-            BtnFunciones.Text = "FUNCIONES";
-            BtnFunciones.TextAlignment = HorizontalAlignment.Center;
-            BtnFunciones.Transparent = true;
-            BtnFunciones.Click += BtnFunciones_Click;
+            tableLayoutSlider1.BackColor = SystemColors.GradientActiveCaption;
+            tableLayoutSlider1.Controls.Add(button1);
+            tableLayoutSlider1.Controls.Add(crownButton1);
+            tableLayoutSlider1.Dock = DockStyle.Left;
+            tableLayoutSlider1.Location = new Point(3, 38);
+            tableLayoutSlider1.Name = "tableLayoutSlider1";
+            tableLayoutSlider1.Size = new Size(147, 659);
+            tableLayoutSlider1.TabIndex = 3;
             // 
-            // BtnDashboard
+            // button1
             // 
-            BtnDashboard.BackColor = Color.Transparent;
-            BtnDashboard.Cursor = Cursors.Hand;
-            BtnDashboard.Customization = "Kioq/zIyMv8yMjL/Kioq/y8vL/8nJyf//v7+/yMjI/8qKir/";
-            BtnDashboard.Font = new Font("Verdana", 10.2F);
-            BtnDashboard.Image = Properties.Resources.cinema2;
-            BtnDashboard.Location = new Point(0, 0);
-            BtnDashboard.Margin = new Padding(0);
-            BtnDashboard.Name = "BtnDashboard";
-            BtnDashboard.NoRounding = false;
-            BtnDashboard.Size = new Size(150, 31);
-            BtnDashboard.TabIndex = 8;
-            BtnDashboard.Text = "DASHBOARD";
-            BtnDashboard.TextAlignment = HorizontalAlignment.Center;
-            BtnDashboard.Transparent = true;
-            BtnDashboard.Click += BtnDashboard_Click;
+            button1.BackgroundImage = Properties.Resources.logo1;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Cursor = Cursors.Hand;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(-3, 0);
+            button1.Margin = new Padding(0);
+            button1.Name = "button1";
+            button1.Size = new Size(150, 150);
+            button1.TabIndex = 1;
+            button1.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // crownButton1
             // 
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 31);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1200, 669);
-            panel1.TabIndex = 1;
+            crownButton1.Image = Properties.Resources.logo1;
+            crownButton1.Location = new Point(-3, 277);
+            crownButton1.Name = "crownButton1";
+            crownButton1.Padding = new Padding(5);
+            crownButton1.Size = new Size(170, 47);
+            crownButton1.TabIndex = 0;
+            crownButton1.Text = "crownButton1";
+            crownButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            // 
+            // button3
+            // 
+            button3.BackgroundImage = Properties.Resources.logo1;
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.Cursor = Cursors.Hand;
+            button3.FlatStyle = FlatStyle.Popup;
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.Location = new Point(-3, -3);
+            button3.Margin = new Padding(0);
+            button3.Name = "button3";
+            button3.Size = new Size(150, 150);
+            button3.TabIndex = 1;
+            button3.UseVisualStyleBackColor = true;
             // 
             // FrMenuAdmin
             // 
@@ -222,15 +149,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(1200, 700);
-            Controls.Add(panel1);
-            Controls.Add(PnlTop);
+            Controls.Add(tableLayoutPanel1);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
             MinimumSize = new Size(1200, 700);
             Name = "FrMenuAdmin";
             Text = "MENU";
-            Load += FrMenuAdmin_Load;
-            PnlTop.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutSlider1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -245,15 +171,12 @@
         private ToolStripMenuItem toolStripMenuItem_sedes;
         private ToolStripMenuItem toolStripMenuItem_promociones;
         private ToolStripMenuItem toolStripMenuItem_landing;
-        private Panel PnlTop;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
-        private ReaLTaiizor.Controls.SpaceButton BtnDashboard;
-        private ReaLTaiizor.Controls.SpaceButton BtnVentas;
-        private ReaLTaiizor.Controls.SpaceButton BtnFunciones;
-        private ReaLTaiizor.Controls.SpaceButton BtnAyuda;
-        private ReaLTaiizor.Controls.SpaceButton BtnReportes;
-        private ReaLTaiizor.Controls.SpaceButton BtnUsuarios;
-        private Panel panel1;
-        private ReaLTaiizor.Controls.SpaceButton BtnSalir;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Panel PnlTop;
+        private Componentes.TableLayoutSlider tableLayoutSlider1;
+        private ReaLTaiizor.Controls.CrownButton crownButton1;
+        private Button button1;
+        private Button button3;
     }
 }

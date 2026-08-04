@@ -76,13 +76,13 @@ namespace Formularios_Admin
         private void CargarGrilla()
         {
             tablaUsuarios = api.ListarUsuarios();
-            DgvPerfiles.DataSource = tablaUsuarios;
+            DgvAsignarPermisos.DataSource = tablaUsuarios;
             FormatearGrilla();
         }
 
         private void FormatearGrilla()
         {
-            if (DgvPerfiles.Columns.Count == 0) return;
+            if (DgvAsignarPermisos.Columns.Count == 0) return;
 
             Encabezado("id_usuario", "ID");
             Encabezado("nombre_usuario", "Usuario");
@@ -91,8 +91,8 @@ namespace Formularios_Admin
 
         private void Encabezado(string columna, string texto)
         {
-            if (DgvPerfiles.Columns.Contains(columna))
-                DgvPerfiles.Columns[columna].HeaderText = texto;
+            if (DgvAsignarPermisos.Columns.Contains(columna))
+                DgvAsignarPermisos.Columns[columna].HeaderText = texto;
         }
 
         private void ModoInicial()

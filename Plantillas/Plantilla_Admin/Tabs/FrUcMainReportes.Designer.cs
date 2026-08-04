@@ -1,6 +1,6 @@
-﻿namespace Forms_Admin.Usuarios.Catalogs
+﻿namespace Plantilla_Admin.Tabs
 {
-    partial class FrUcNombresDePc
+    partial class FrUcMainReportes
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            SuspendLayout();
+            // 
+            // FrUcMainReportes
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
+            Name = "FrUcMainReportes";
+            Size = new Size(1050, 700);
+            ResumeLayout(false);
         }
 
         #endregion

@@ -1,15 +1,17 @@
 ﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
  * fecha de: 30/07/2026 */
-using Forms_Admin.Usuarios;
-using Forms_Admin.Usuarios.Catalogs;
+using Forms_Admin;
+using Forms_Admin.Funciones;
+using Forms_Admin.Funciones.Catalogs;
 using Formularios_Admin;
+using Plantilla_Admin.Tabs;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace Plantilla_Admin
 {
-    public partial class FrUcMainUsuarios : UserControl
+    public partial class FrUcMainFunciones : UserControl
     {
         private Button _activeButton = null;
 
@@ -18,17 +20,17 @@ namespace Plantilla_Admin
         private static readonly Color ActiveBack = Color.FromArgb(178, 44, 48);
         private static readonly Color IdleFore = Color.FromArgb(220, 210, 210);
 
-        public FrUcMainUsuarios()
+        public FrUcMainFunciones()
         {
             InitializeComponent();
             WireNavButtons();
 
-            BtnUsuarios.PerformClick();
+            BtnPeliculas.PerformClick();
         }
 
         private void WireNavButtons()
         {
-            Button[] navButtons = { BtnUsuarios, BtnPerfiles, BtnBitacora, BtnAsignarPermisos };
+            Button[] navButtons = { BtnPeliculas, BtnFunciones, BtnPromocion, BtnSalas };
 
             foreach (Button b in navButtons)
             {
@@ -42,10 +44,10 @@ namespace Plantilla_Admin
                 b.MouseLeave += NavButton_MouseLeave;
             }
 
-            BtnUsuarios.Click += (s, e) => Navegar(BtnUsuarios, new FrUcUsuarios());
-            BtnPerfiles.Click += (s, e) => Navegar(BtnPerfiles, new FrUcPerfiles());
-            BtnBitacora.Click += (s, e) => Navegar(BtnBitacora, new FrUcBitacora());
-            BtnAsignarPermisos.Click += (s, e) => Navegar(BtnAsignarPermisos, new FrUcAsignarPermisos());
+            BtnPeliculas.Click += (s, e) => Navegar(BtnPeliculas, new FrUcPeliculas());
+            BtnFunciones.Click += (s, e) => Navegar(BtnFunciones, new FrUcFunciones());
+            BtnPromocion.Click += (s, e) => Navegar(BtnPromocion, new FrUcPromociones());
+            BtnSalas.Click += (s, e) => Navegar(BtnSalas, new FrUcSalas());
 
             CbCatalog.SelectedIndexChanged += CbCatalog_SelectedIndexChanged;
         }
@@ -117,14 +119,26 @@ namespace Plantilla_Admin
 
             switch (CbCatalog.SelectedItem?.ToString())
             {
-                case "Acciones":
-                    funcargarpagina(new FrUcAccionesDePermiso());
+                case "Cines":
+                    funcargarpagina(new FrUcCines());
                     break;
-                case "Aplicaciones":
-                    funcargarpagina(new FrUcAplicaciones());
+                case "Ciudades":
+                    funcargarpagina(new FrUcCiudades());
                     break;
-                case "Permisos":
-                    funcargarpagina(new FrUcPermisos());
+                case "Clasificaciones":
+                    funcargarpagina(new FrUcClasificaciones());
+                    break;
+                case "Estados De Película":
+                    funcargarpagina(new FrUcEstadosDePelicula());
+                    break;
+                case "Formatos De Película":
+                    funcargarpagina(new FrUcFormatosDePelicula());
+                    break;
+                case "Generos":
+                    funcargarpagina(new FrUcGeneros());
+                    break;
+                case "Tipos De Sala":
+                    funcargarpagina(new FrUcTiposDeSala());
                     break;
                 default:
                     break;
@@ -141,4 +155,4 @@ namespace Plantilla_Admin
     }
 }
 /* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
- * fecha de: 31/07/2026 */
+ * fecha de: 03/08/2026 */

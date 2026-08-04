@@ -28,75 +28,150 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
-            TsmUsuarios = new ToolStripMenuItem();
-            TsmPerfiles = new ToolStripMenuItem();
-            TsmAsignarPermisos = new ToolStripMenuItem();
-            panel1 = new Panel();
-            menuStrip1.SuspendLayout();
+            PnlMain = new Panel();
+            PnlTop = new Panel();
+            CbCatalog = new Krypton.Toolkit.KryptonComboBox();
+            BtnAsignarPermisos = new Button();
+            BtnBitacora = new Button();
+            BtnPerfiles = new Button();
+            BtnUsuarios = new Button();
+            PnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CbCatalog).BeginInit();
             SuspendLayout();
             // 
-            // menuStrip1
+            // PnlMain
             // 
-            menuStrip1.Dock = DockStyle.Left;
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { TsmUsuarios, TsmPerfiles, TsmAsignarPermisos });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(156, 360);
-            menuStrip1.TabIndex = 1;
-            menuStrip1.Text = "menuStrip1";
+            PnlMain.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            PnlMain.Location = new Point(0, 30);
+            PnlMain.Margin = new Padding(0);
+            PnlMain.Name = "PnlMain";
+            PnlMain.Size = new Size(1050, 670);
+            PnlMain.TabIndex = 2;
             // 
-            // TsmUsuarios
+            // PnlTop
             // 
-            TsmUsuarios.Name = "TsmUsuarios";
-            TsmUsuarios.Size = new Size(143, 24);
-            TsmUsuarios.Text = "Usuarios";
-            TsmUsuarios.Click += TsmUsuarios_Click;
+            PnlTop.BackColor = Color.Black;
+            PnlTop.BorderStyle = BorderStyle.FixedSingle;
+            PnlTop.Controls.Add(CbCatalog);
+            PnlTop.Controls.Add(BtnAsignarPermisos);
+            PnlTop.Controls.Add(BtnBitacora);
+            PnlTop.Controls.Add(BtnPerfiles);
+            PnlTop.Controls.Add(BtnUsuarios);
+            PnlTop.Dock = DockStyle.Top;
+            PnlTop.Location = new Point(0, 0);
+            PnlTop.Margin = new Padding(0);
+            PnlTop.Name = "PnlTop";
+            PnlTop.Size = new Size(1050, 35);
+            PnlTop.TabIndex = 0;
             // 
-            // TsmPerfiles
+            // CbCatalog
             // 
-            TsmPerfiles.Name = "TsmPerfiles";
-            TsmPerfiles.Size = new Size(143, 24);
-            TsmPerfiles.Text = "Perfiles";
-            TsmPerfiles.Click += pruebaToolStripMenuItem_Click;
+            CbCatalog.Dock = DockStyle.Right;
+            CbCatalog.DropDownHeight = 250;
+            CbCatalog.DropDownStyle = ComboBoxStyle.DropDownList;
+            CbCatalog.IntegralHeight = false;
+            CbCatalog.Items.AddRange(new object[] { "Acciones", "Aplicaciones", "Permisos" });
+            CbCatalog.Location = new Point(887, 0);
+            CbCatalog.Margin = new Padding(0);
+            CbCatalog.Name = "CbCatalog";
+            CbCatalog.PaletteMode = Krypton.Toolkit.PaletteMode.Microsoft365BlackDarkModeAlternate;
+            CbCatalog.Size = new Size(161, 33);
+            CbCatalog.StateCommon.ComboBox.Back.Color1 = Color.Black;
+            CbCatalog.StateCommon.ComboBox.Border.Width = 1;
+            CbCatalog.StateCommon.ComboBox.Content.Color1 = Color.FromArgb(220, 210, 210);
+            CbCatalog.StateCommon.ComboBox.Content.Font = new Font("Times New Roman", 13.8F);
+            CbCatalog.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            CbCatalog.TabIndex = 2;
             // 
-            // TsmAsignarPermisos
+            // BtnAsignarPermisos
             // 
-            TsmAsignarPermisos.Name = "TsmAsignarPermisos";
-            TsmAsignarPermisos.Size = new Size(143, 24);
-            TsmAsignarPermisos.Text = "Asignar Permisos";
-            TsmAsignarPermisos.Click += TsmAsignarPermisos_Click;
+            BtnAsignarPermisos.BackColor = Color.Black;
+            BtnAsignarPermisos.Cursor = Cursors.Hand;
+            BtnAsignarPermisos.Dock = DockStyle.Left;
+            BtnAsignarPermisos.FlatAppearance.BorderColor = Color.White;
+            BtnAsignarPermisos.FlatStyle = FlatStyle.Flat;
+            BtnAsignarPermisos.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BtnAsignarPermisos.ForeColor = Color.FromArgb(220, 210, 210);
+            BtnAsignarPermisos.Location = new Point(387, 0);
+            BtnAsignarPermisos.Margin = new Padding(0, 2, 0, 0);
+            BtnAsignarPermisos.Name = "BtnAsignarPermisos";
+            BtnAsignarPermisos.Size = new Size(129, 33);
+            BtnAsignarPermisos.TabIndex = 7;
+            BtnAsignarPermisos.Text = "Permisos";
+            BtnAsignarPermisos.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // BtnBitacora
             // 
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(156, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(465, 360);
-            panel1.TabIndex = 2;
+            BtnBitacora.BackColor = Color.Black;
+            BtnBitacora.Cursor = Cursors.Hand;
+            BtnBitacora.Dock = DockStyle.Left;
+            BtnBitacora.FlatAppearance.BorderColor = Color.White;
+            BtnBitacora.FlatStyle = FlatStyle.Flat;
+            BtnBitacora.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BtnBitacora.ForeColor = Color.FromArgb(220, 210, 210);
+            BtnBitacora.Location = new Point(258, 0);
+            BtnBitacora.Margin = new Padding(0, 2, 0, 0);
+            BtnBitacora.Name = "BtnBitacora";
+            BtnBitacora.Size = new Size(129, 33);
+            BtnBitacora.TabIndex = 6;
+            BtnBitacora.Text = "Bitácora";
+            BtnBitacora.UseVisualStyleBackColor = false;
+            // 
+            // BtnPerfiles
+            // 
+            BtnPerfiles.BackColor = Color.Black;
+            BtnPerfiles.Cursor = Cursors.Hand;
+            BtnPerfiles.Dock = DockStyle.Left;
+            BtnPerfiles.FlatAppearance.BorderColor = Color.White;
+            BtnPerfiles.FlatStyle = FlatStyle.Flat;
+            BtnPerfiles.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BtnPerfiles.ForeColor = Color.FromArgb(220, 210, 210);
+            BtnPerfiles.Location = new Point(129, 0);
+            BtnPerfiles.Margin = new Padding(0, 2, 0, 0);
+            BtnPerfiles.Name = "BtnPerfiles";
+            BtnPerfiles.Size = new Size(129, 33);
+            BtnPerfiles.TabIndex = 5;
+            BtnPerfiles.Text = "Perfiles";
+            BtnPerfiles.UseVisualStyleBackColor = false;
+            // 
+            // BtnUsuarios
+            // 
+            BtnUsuarios.BackColor = Color.Black;
+            BtnUsuarios.Cursor = Cursors.Hand;
+            BtnUsuarios.Dock = DockStyle.Left;
+            BtnUsuarios.FlatAppearance.BorderColor = Color.White;
+            BtnUsuarios.FlatStyle = FlatStyle.Flat;
+            BtnUsuarios.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BtnUsuarios.ForeColor = Color.FromArgb(220, 210, 210);
+            BtnUsuarios.Location = new Point(0, 0);
+            BtnUsuarios.Margin = new Padding(0, 2, 0, 0);
+            BtnUsuarios.Name = "BtnUsuarios";
+            BtnUsuarios.Size = new Size(129, 33);
+            BtnUsuarios.TabIndex = 4;
+            BtnUsuarios.Text = "Usuarios";
+            BtnUsuarios.UseVisualStyleBackColor = false;
             // 
             // FrUcMainUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
-            Controls.Add(panel1);
-            Controls.Add(menuStrip1);
+            BackColor = Color.Black;
+            Controls.Add(PnlTop);
+            Controls.Add(PnlMain);
             Name = "FrUcMainUsuarios";
-            Size = new Size(621, 360);
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            Size = new Size(1050, 700);
+            PnlTop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)CbCatalog).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem TsmPerfiles;
-        private ToolStripMenuItem TsmAsignarPermisos;
-        private ToolStripMenuItem TsmUsuarios;
-        private Panel panel1;
+        private Panel PnlMain;
+        private Panel PnlTop;
+        private Button BtnPerfiles;
+        private Button BtnUsuarios;
+        private Button BtnAsignarPermisos;
+        private Button BtnBitacora;
+        private Krypton.Toolkit.KryptonComboBox CbCatalog;
     }
 }

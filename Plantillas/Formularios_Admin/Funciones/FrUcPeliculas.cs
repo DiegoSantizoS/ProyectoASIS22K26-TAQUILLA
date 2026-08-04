@@ -1,6 +1,7 @@
 ﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la  
  * fecha de: 30/07/2026 */
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using Con_Admin;
@@ -44,14 +45,12 @@ namespace Formularios_Admin
             CbEstado.ValueMember = "Id";
             CbEstado.SelectedIndex = -1;
 
-            ListBoxGeneros.Items.Clear();
             ListBoxGeneros.DataSource = api.ListarGeneros();
             ListBoxGeneros.DisplayMember = "Nombre";
             ListBoxGeneros.ValueMember = "Id";
             ListBoxGeneros.ClearSelected();
 
-            ListBoxFormatos.Items.Clear();
-            ListBoxFormatos.DataSource = api.ListarTiposPelicula();
+            ListBoxFormatos.DataSource = api.ListarFormatos();
             ListBoxFormatos.DisplayMember = "Nombre";
             ListBoxFormatos.ValueMember = "Id";
             ListBoxFormatos.ClearSelected();
@@ -63,8 +62,6 @@ namespace Formularios_Admin
             CbFiltro.Items.Add("ID");
             CbFiltro.Items.Add("Título");
             CbFiltro.Items.Add("Director");
-            CbFiltro.Items.Add("Género");
-            CbFiltro.Items.Add("Formato");
             CbFiltro.Items.Add("Clasificación");
             CbFiltro.Items.Add("Estado");
             CbFiltro.SelectedIndex = 1;
@@ -82,19 +79,16 @@ namespace Formularios_Admin
             if (DgvPeliculas.Columns.Count == 0) return;
 
             Ocultar("id_clasificacion");
-            Ocultar("id_genero");
-            Ocultar("id_tipo_pelicula");
-            Ocultar("imagen_pelicula");
+            Ocultar("id_estado_pelicula");
             Ocultar("trailer_pelicula");
+            Ocultar("descripcion_pelicula");
 
             Encabezado("id_pelicula", "ID");
             Encabezado("titulo_pelicula", "Título");
             Encabezado("duracion_pelicula", "Duración");
             Encabezado("nombre_clasificacion", "Clasificación");
-            Encabezado("nombre_genero", "Género");
-            Encabezado("nombre_tipo_pelicula", "Formato");
+            Encabezado("nombre_estado_pelicula", "Estado");
             Encabezado("director_pelicula", "Director");
-            Encabezado("estado_pelicula", "Estado");
             Encabezado("fecha_estreno", "Estreno");
         }
 
@@ -158,6 +152,16 @@ namespace Formularios_Admin
             return IdDe(CbClasificacion.SelectedValue);
         }
 
+        private int LeerEstado()
+        {
+            return IdDe(CbEstado.SelectedValue) ?? 0;
+        }
+
+        private DateTime LeerEstreno()
+        {
+            return DatePickerEstreno.Value.Date;
+        }
+
         private void PonerTexto(Componentes.CustomTextBox tb, string valor)
         {
             tb.Focus();
@@ -165,53 +169,34 @@ namespace Formularios_Admin
             tb.ForeColor = System.Drawing.Color.FromArgb(230, 230, 230);
         }
 
-        private void SeleccionarEnLista(Krypton.Toolkit.KryptonListBox lista, object idValor)
+        private int[] LeerIds(Krypton.Toolkit.KryptonListBox lista)
+        {
+            var ids = new List<int>();
+            foreach (var item in lista.SelectedItems)
+            {
+                var drv = item as DataRowView;
+                if (drv != null && drv["Id"] != DBNull.Value)
+                    ids.Add(Convert.ToInt32(drv["Id"]));
+            }
+            return ids.ToArray();
+        }
+
+        private void SeleccionarVarios(Krypton.Toolkit.KryptonListBox lista, DataTable seleccion, string columnaId)
         {
             lista.ClearSelected();
-            if (idValor == null || idValor == DBNull.Value) return;
+            if (seleccion == null) return;
 
-            int objetivo = Convert.ToInt32(idValor);
+            var objetivo = new HashSet<int>();
+            foreach (DataRow r in seleccion.Rows)
+                if (r[columnaId] != DBNull.Value)
+                    objetivo.Add(Convert.ToInt32(r[columnaId]));
+
             for (int i = 0; i < lista.Items.Count; i++)
             {
                 var drv = lista.Items[i] as DataRowView;
-                if (drv == null) continue;
-                if (drv["Id"] != DBNull.Value && Convert.ToInt32(drv["Id"]) == objetivo)
-                {
+                if (drv != null && drv["Id"] != DBNull.Value && objetivo.Contains(Convert.ToInt32(drv["Id"])))
                     lista.SetSelected(i, true);
-                    break;
-                }
             }
-        }
-
-        private int? LeerIdLista(Krypton.Toolkit.KryptonListBox lista)
-        {
-            if (lista.SelectedItems.Count > 0)
-            {
-                var drv = lista.SelectedItems[0] as DataRowView;
-                if (drv != null && drv["Id"] != DBNull.Value)
-                    return Convert.ToInt32(drv["Id"]);
-            }
-            return IdDe(lista.SelectedValue);
-        }
-
-        private int? LeerGenero()
-        {
-            return LeerIdLista(ListBoxGeneros);
-        }
-
-        private int? LeerTipo()
-        {
-            return LeerIdLista(ListBoxFormatos);
-        }
-
-        private string LeerEstado()
-        {
-            return CbEstado.SelectedValue == null ? null : CbEstado.SelectedValue.ToString();
-        }
-
-        private DateTime LeerEstreno()
-        {
-            return DatePickerEstreno.Value.Date;
         }
 
         private static int? IdDe(object valor)
@@ -237,6 +222,13 @@ namespace Formularios_Admin
                 TbDuracion.Focus();
                 return false;
             }
+            if (LeerEstado() <= 0)
+            {
+                MessageBox.Show("Debes seleccionar un estado.", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CbEstado.Focus();
+                return false;
+            }
             return true;
         }
 
@@ -246,9 +238,9 @@ namespace Formularios_Admin
 
             try
             {
-                int nuevo = api.Insertar(LeerTitulo(), LeerDuracion(), LeerClasificacion(), LeerGenero(),
-                    LeerTipo(), TbDirector.Text.Trim(), TbTrailer.Text.Trim(), null,
-                    LeerEstado(), LeerEstreno());
+                int nuevo = api.Insertar(LeerTitulo(), LeerDuracion(), LeerClasificacion(), LeerEstado(),
+                    TbDirector.Text.Trim(), TbDescripcion.Text.Trim(), TbTrailer.Text.Trim(),
+                    LeerEstreno(), LeerIds(ListBoxGeneros), LeerIds(ListBoxFormatos));
 
                 MessageBox.Show("Película agregada correctamente. ID: " + nuevo, "Éxito",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -274,9 +266,9 @@ namespace Formularios_Admin
 
             try
             {
-                bool ok = api.Actualizar(id, LeerTitulo(), LeerDuracion(), LeerClasificacion(), LeerGenero(),
-                    LeerTipo(), TbDirector.Text.Trim(), TbTrailer.Text.Trim(), null,
-                    LeerEstado(), LeerEstreno());
+                bool ok = api.Actualizar(id, LeerTitulo(), LeerDuracion(), LeerClasificacion(), LeerEstado(),
+                    TbDirector.Text.Trim(), TbDescripcion.Text.Trim(), TbTrailer.Text.Trim(),
+                    LeerEstreno(), LeerIds(ListBoxGeneros), LeerIds(ListBoxFormatos));
 
                 MessageBox.Show(ok ? "Película actualizada correctamente." : "No se encontró la película.",
                     "Actualizar", MessageBoxButtons.OK,
@@ -345,17 +337,20 @@ namespace Formularios_Admin
             if (enlace == null) return;
 
             DataRow row = enlace.Row;
+            int id = Convert.ToInt32(row["id_pelicula"]);
 
-            TbID.Text = row["id_pelicula"].ToString();
+            TbID.Text = id.ToString();
             PonerTexto(TbTitulo, row["titulo_pelicula"].ToString());
             PonerTexto(TbDuracion, row["duracion_pelicula"].ToString());
             PonerTexto(TbDirector, row["director_pelicula"] == DBNull.Value ? "" : row["director_pelicula"].ToString());
             PonerTexto(TbTrailer, row["trailer_pelicula"] == DBNull.Value ? "" : row["trailer_pelicula"].ToString());
+            TbDescripcion.Text = row["descripcion_pelicula"] == DBNull.Value ? "" : row["descripcion_pelicula"].ToString();
 
             CbClasificacion.SelectedValue = row["id_clasificacion"] == DBNull.Value ? -1 : row["id_clasificacion"];
-            CbEstado.SelectedValue = row["estado_pelicula"] == DBNull.Value ? "" : row["estado_pelicula"].ToString();
-            SeleccionarEnLista(ListBoxGeneros, row["id_genero"]);
-            SeleccionarEnLista(ListBoxFormatos, row["id_tipo_pelicula"]);
+            CbEstado.SelectedValue = row["id_estado_pelicula"] == DBNull.Value ? -1 : row["id_estado_pelicula"];
+
+            SeleccionarVarios(ListBoxGeneros, api.ListarGenerosDePelicula(id), "id_genero");
+            SeleccionarVarios(ListBoxFormatos, api.ListarFormatosDePelicula(id), "id_formato_pelicula");
 
             DatePickerEstreno.Value = row["fecha_estreno"] == DBNull.Value
                 ? DateTime.Today
@@ -390,10 +385,8 @@ namespace Formularios_Admin
             {
                 case "ID": return "id_pelicula";
                 case "Director": return "director_pelicula";
-                case "Género": return "nombre_genero";
-                case "Formato": return "nombre_tipo_pelicula";
                 case "Clasificación": return "nombre_clasificacion";
-                case "Estado": return "estado_pelicula";
+                case "Estado": return "nombre_estado_pelicula";
                 default: return "titulo_pelicula";
             }
         }

@@ -3,21 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Plantilla_Admin
+namespace Plantilla_Admin.Tabs
 {
-    public partial class logo : UserControl
+    public partial class FrUcMainDashboard : UserControl
     {
-        public logo()
+        public FrUcMainDashboard()
         {
             InitializeComponent();
-        }
-
-        private void tableLayoutPanel_Ayuda_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

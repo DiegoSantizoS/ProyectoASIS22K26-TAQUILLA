@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             materialCheckBox1 = new ReaLTaiizor.Controls.MaterialCheckBox();
             materialCheckBox2 = new ReaLTaiizor.Controls.MaterialCheckBox();
             materialCheckBox3 = new ReaLTaiizor.Controls.MaterialCheckBox();
@@ -86,10 +86,10 @@
             LbTitulo = new Componentes.CustomTitleLabel();
             TlpAux3 = new TableLayoutPanel();
             TlpFilter = new TableLayoutPanel();
+            CbFiltro = new Componentes.CustomComboBox();
             BtnBuscar = new Componentes.CustomButton();
             TbFiltro = new Componentes.CustomTextBox();
             DgvPeliculas = new Componentes.CustomDataGridView();
-            CbFiltro = new Componentes.CustomComboBox();
             TlpDivFormAndDgv.SuspendLayout();
             TlpAux1.SuspendLayout();
             TlpAux2.SuspendLayout();
@@ -1082,6 +1082,28 @@
             TlpFilter.Size = new Size(510, 75);
             TlpFilter.TabIndex = 0;
             // 
+            // CbFiltro
+            // 
+            CbFiltro.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            CbFiltro.BackColor = Color.FromArgb(55, 60, 72);
+            CbFiltro.BaseColor = Color.FromArgb(40, 40, 40);
+            CbFiltro.BGColor = Color.FromArgb(55, 60, 72);
+            CbFiltro.DrawMode = DrawMode.OwnerDrawFixed;
+            CbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
+            CbFiltro.FlatStyle = FlatStyle.Flat;
+            CbFiltro.Font = new Font("Segoe UI", 9.5F);
+            CbFiltro.ForeColor = Color.FromArgb(230, 230, 230);
+            CbFiltro.FormattingEnabled = true;
+            CbFiltro.HoverColor = Color.Crimson;
+            CbFiltro.HoverFontColor = Color.White;
+            CbFiltro.ItemHeight = 24;
+            CbFiltro.Location = new Point(5, 22);
+            CbFiltro.Margin = new Padding(5);
+            CbFiltro.MinimumSize = new Size(190, 0);
+            CbFiltro.Name = "CbFiltro";
+            CbFiltro.Size = new Size(190, 30);
+            CbFiltro.TabIndex = 9;
+            // 
             // BtnBuscar
             // 
             BtnBuscar.Action = Componentes.ButtonAction.Buscar;
@@ -1123,39 +1145,39 @@
             DgvPeliculas.AllowUserToAddRows = false;
             DgvPeliculas.AllowUserToResizeColumns = false;
             DgvPeliculas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(50, 55, 66);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            DgvPeliculas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(42, 44, 49);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(178, 44, 48);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            DgvPeliculas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DgvPeliculas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgvPeliculas.BackgroundColor = Color.FromArgb(55, 60, 72);
+            DgvPeliculas.BackgroundColor = Color.FromArgb(37, 38, 43);
             DgvPeliculas.BorderStyle = BorderStyle.None;
             DgvPeliculas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             DgvPeliculas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.Padding = new Padding(8, 0, 0, 0);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            DgvPeliculas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 47, 52);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.Padding = new Padding(8, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(45, 47, 52);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DgvPeliculas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DgvPeliculas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(55, 60, 72);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9.5F);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle6.Padding = new Padding(8, 0, 5, 0);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            DgvPeliculas.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(37, 38, 43);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.5F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle3.Padding = new Padding(8, 0, 5, 0);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(178, 44, 48);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            DgvPeliculas.DefaultCellStyle = dataGridViewCellStyle3;
             DgvPeliculas.Dock = DockStyle.Fill;
             DgvPeliculas.EnableHeadersVisualStyles = false;
             DgvPeliculas.Font = new Font("Segoe UI", 9.5F);
-            DgvPeliculas.GridColor = Color.FromArgb(70, 76, 90);
+            DgvPeliculas.GridColor = Color.FromArgb(58, 60, 66);
             DgvPeliculas.Location = new Point(0, 600);
             DgvPeliculas.Margin = new Padding(0);
             DgvPeliculas.MultiSelect = false;
@@ -1167,28 +1189,6 @@
             DgvPeliculas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DgvPeliculas.Size = new Size(1050, 150);
             DgvPeliculas.TabIndex = 2;
-            // 
-            // CbFiltro
-            // 
-            CbFiltro.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            CbFiltro.BackColor = Color.FromArgb(55, 60, 72);
-            CbFiltro.BaseColor = Color.FromArgb(40, 40, 40);
-            CbFiltro.BGColor = Color.FromArgb(55, 60, 72);
-            CbFiltro.DrawMode = DrawMode.OwnerDrawFixed;
-            CbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
-            CbFiltro.FlatStyle = FlatStyle.Flat;
-            CbFiltro.Font = new Font("Segoe UI", 9.5F);
-            CbFiltro.ForeColor = Color.FromArgb(230, 230, 230);
-            CbFiltro.FormattingEnabled = true;
-            CbFiltro.HoverColor = Color.Crimson;
-            CbFiltro.HoverFontColor = Color.White;
-            CbFiltro.ItemHeight = 24;
-            CbFiltro.Location = new Point(5, 22);
-            CbFiltro.Margin = new Padding(5);
-            CbFiltro.MinimumSize = new Size(190, 0);
-            CbFiltro.Name = "CbFiltro";
-            CbFiltro.Size = new Size(190, 30);
-            CbFiltro.TabIndex = 9;
             // 
             // FrUcPeliculas
             // 
@@ -1265,7 +1265,6 @@
         private TableLayoutPanel TlpFilter;
         private Componentes.CustomButton BtnBuscar;
         private Componentes.CustomTextBox TbFiltro;
-        private Componentes.CustomDataGridView DgvPeliculas;
         private Componentes.CustomComboBox CbClasificacion;
         private Componentes.CustomComboBox CbEstado;
         private Componentes.CustomDatePicker DatePickerEstreno;
@@ -1275,5 +1274,6 @@
         private Componentes.CustomRichTextBox TbDescripcion;
         private Componentes.CustomButton BtnLimpiar;
         private Componentes.CustomComboBox CbFiltro;
+        private Componentes.CustomDataGridView DgvPeliculas;
     }
 }

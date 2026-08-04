@@ -28,18 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             TlpDivFormAndDgv = new TableLayoutPanel();
             TlpAux1 = new TableLayoutPanel();
             TlpAux2 = new TableLayoutPanel();
             TlpFormWithButtons = new TableLayoutPanel();
+            TlpButtons = new TableLayoutPanel();
+            BtnCopiar = new Componentes.CustomButton();
             TlpForm = new TableLayoutPanel();
+            BtnLimpiar = new Componentes.CustomButton();
             ListBoxAplicacion = new Componentes.CustomListBox();
             LbPerfil = new Componentes.CustomLabel();
             CbPerfil = new Componentes.CustomComboBox();
+            customLabel1 = new Componentes.CustomLabel();
+            CbPermiso = new Componentes.CustomComboBox();
+            BtnEliminar = new Componentes.CustomButton();
             LbAplicacion = new Componentes.CustomLabel();
+            BtnAgregar = new Componentes.CustomButton();
             TlpTitleLabel = new TableLayoutPanel();
             LbTitulo = new Componentes.CustomTitleLabel();
             TlpAux3 = new TableLayoutPanel();
@@ -47,26 +54,19 @@
             customButton1 = new Componentes.CustomButton();
             customTextBox1 = new Componentes.CustomTextBox();
             CbFiltro = new Componentes.CustomComboBox();
-            DgvPerfiles = new Componentes.CustomDataGridView();
             BtnBuscar = new Componentes.CustomButton();
             TbFiltro = new Componentes.CustomTextBox();
-            TlpButtons = new TableLayoutPanel();
-            BtnEliminar = new Componentes.CustomButton();
-            BtnLimpiar = new Componentes.CustomButton();
-            BtnAgregar = new Componentes.CustomButton();
-            customLabel1 = new Componentes.CustomLabel();
-            CbPermiso = new Componentes.CustomComboBox();
-            BtnCopiar = new Componentes.CustomButton();
+            DgvAsignarPermisos = new Componentes.CustomDataGridView();
             TlpDivFormAndDgv.SuspendLayout();
             TlpAux1.SuspendLayout();
             TlpAux2.SuspendLayout();
             TlpFormWithButtons.SuspendLayout();
+            TlpButtons.SuspendLayout();
             TlpForm.SuspendLayout();
             TlpTitleLabel.SuspendLayout();
             TlpAux3.SuspendLayout();
             TlpFilter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DgvPerfiles).BeginInit();
-            TlpButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DgvAsignarPermisos).BeginInit();
             SuspendLayout();
             // 
             // TlpDivFormAndDgv
@@ -74,7 +74,7 @@
             TlpDivFormAndDgv.ColumnCount = 1;
             TlpDivFormAndDgv.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             TlpDivFormAndDgv.Controls.Add(TlpAux1, 0, 0);
-            TlpDivFormAndDgv.Controls.Add(DgvPerfiles, 0, 1);
+            TlpDivFormAndDgv.Controls.Add(DgvAsignarPermisos, 0, 1);
             TlpDivFormAndDgv.Dock = DockStyle.Fill;
             TlpDivFormAndDgv.Location = new Point(0, 0);
             TlpDivFormAndDgv.Margin = new Padding(0);
@@ -136,6 +136,44 @@
             TlpFormWithButtons.Size = new Size(900, 375);
             TlpFormWithButtons.TabIndex = 0;
             // 
+            // TlpButtons
+            // 
+            TlpButtons.ColumnCount = 3;
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            TlpButtons.Controls.Add(BtnCopiar, 1, 0);
+            TlpButtons.Dock = DockStyle.Fill;
+            TlpButtons.Location = new Point(0, 300);
+            TlpButtons.Margin = new Padding(0);
+            TlpButtons.Name = "TlpButtons";
+            TlpButtons.RowCount = 1;
+            TlpButtons.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            TlpButtons.Size = new Size(900, 75);
+            TlpButtons.TabIndex = 4;
+            // 
+            // BtnCopiar
+            // 
+            BtnCopiar.Action = Componentes.ButtonAction.Copiar;
+            BtnCopiar.Anchor = AnchorStyles.None;
+            BtnCopiar.BackColor = Color.FromArgb(26, 156, 156);
+            BtnCopiar.FlatAppearance.BorderSize = 0;
+            BtnCopiar.FlatAppearance.MouseDownBackColor = Color.FromArgb(16, 95, 95);
+            BtnCopiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(29, 169, 169);
+            BtnCopiar.FlatStyle = FlatStyle.Flat;
+            BtnCopiar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            BtnCopiar.ForeColor = Color.White;
+            BtnCopiar.Location = new Point(400, 17);
+            BtnCopiar.Margin = new Padding(0);
+            BtnCopiar.MaximumSize = new Size(100, 40);
+            BtnCopiar.MinimumSize = new Size(100, 40);
+            BtnCopiar.Name = "BtnCopiar";
+            BtnCopiar.Size = new Size(100, 40);
+            BtnCopiar.TabIndex = 3;
+            BtnCopiar.Text = "Copiar";
+            BtnCopiar.UseVisualStyleBackColor = false;
+            // 
             // TlpForm
             // 
             TlpForm.ColumnCount = 4;
@@ -168,6 +206,27 @@
             TlpForm.Size = new Size(900, 300);
             TlpForm.TabIndex = 0;
             TlpForm.Paint += TlpForm_Paint;
+            // 
+            // BtnLimpiar
+            // 
+            BtnLimpiar.Action = Componentes.ButtonAction.Limpiar;
+            BtnLimpiar.Anchor = AnchorStyles.Top;
+            BtnLimpiar.BackColor = Color.FromArgb(22, 160, 133);
+            BtnLimpiar.FlatAppearance.BorderSize = 0;
+            BtnLimpiar.FlatAppearance.MouseDownBackColor = Color.FromArgb(14, 97, 80);
+            BtnLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(23, 174, 145);
+            BtnLimpiar.FlatStyle = FlatStyle.Flat;
+            BtnLimpiar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            BtnLimpiar.ForeColor = Color.White;
+            BtnLimpiar.Location = new Point(345, 25);
+            BtnLimpiar.Margin = new Padding(0);
+            BtnLimpiar.MaximumSize = new Size(100, 40);
+            BtnLimpiar.MinimumSize = new Size(100, 40);
+            BtnLimpiar.Name = "BtnLimpiar";
+            BtnLimpiar.Size = new Size(100, 40);
+            BtnLimpiar.TabIndex = 2;
+            BtnLimpiar.Text = "Limpiar";
+            BtnLimpiar.UseVisualStyleBackColor = false;
             // 
             // ListBoxAplicacion
             // 
@@ -232,6 +291,62 @@
             CbPerfil.Size = new Size(330, 30);
             CbPerfil.TabIndex = 73;
             // 
+            // customLabel1
+            // 
+            customLabel1.AutoSize = true;
+            customLabel1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            customLabel1.ForeColor = Color.FromArgb(220, 220, 220);
+            customLabel1.Location = new Point(3, 75);
+            customLabel1.Name = "customLabel1";
+            customLabel1.Padding = new Padding(0, 0, 2, 0);
+            customLabel1.Size = new Size(75, 23);
+            customLabel1.TabIndex = 74;
+            customLabel1.Text = "Permiso";
+            customLabel1.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // CbPermiso
+            // 
+            CbPermiso.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            CbPermiso.BackColor = Color.FromArgb(55, 60, 72);
+            CbPermiso.BaseColor = Color.FromArgb(40, 40, 40);
+            CbPermiso.BGColor = Color.FromArgb(55, 60, 72);
+            CbPermiso.DrawMode = DrawMode.OwnerDrawFixed;
+            CbPermiso.DropDownStyle = ComboBoxStyle.DropDownList;
+            CbPermiso.FlatStyle = FlatStyle.Flat;
+            CbPermiso.Font = new Font("Segoe UI", 9.5F);
+            CbPermiso.ForeColor = Color.FromArgb(230, 230, 230);
+            CbPermiso.FormattingEnabled = true;
+            CbPermiso.HoverColor = Color.Crimson;
+            CbPermiso.HoverFontColor = Color.White;
+            CbPermiso.ItemHeight = 24;
+            CbPermiso.Location = new Point(5, 100);
+            CbPermiso.Margin = new Padding(5, 0, 5, 10);
+            CbPermiso.MinimumSize = new Size(190, 0);
+            CbPermiso.Name = "CbPermiso";
+            CbPermiso.Size = new Size(330, 30);
+            CbPermiso.TabIndex = 75;
+            // 
+            // BtnEliminar
+            // 
+            BtnEliminar.Action = Componentes.ButtonAction.Eliminar;
+            BtnEliminar.Anchor = AnchorStyles.Top;
+            BtnEliminar.BackColor = Color.FromArgb(192, 57, 43);
+            BtnEliminar.FlatAppearance.BorderSize = 0;
+            BtnEliminar.FlatAppearance.MouseDownBackColor = Color.FromArgb(116, 35, 27);
+            BtnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(203, 62, 46);
+            BtnEliminar.FlatStyle = FlatStyle.Flat;
+            BtnEliminar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            BtnEliminar.ForeColor = Color.White;
+            BtnEliminar.Location = new Point(795, 25);
+            BtnEliminar.Margin = new Padding(0);
+            BtnEliminar.MaximumSize = new Size(100, 40);
+            BtnEliminar.MinimumSize = new Size(100, 40);
+            BtnEliminar.Name = "BtnEliminar";
+            BtnEliminar.Size = new Size(100, 40);
+            BtnEliminar.TabIndex = 4;
+            BtnEliminar.Text = "Eliminar";
+            BtnEliminar.UseVisualStyleBackColor = false;
+            // 
             // LbAplicacion
             // 
             LbAplicacion.AutoSize = true;
@@ -245,6 +360,26 @@
             LbAplicacion.TabIndex = 69;
             LbAplicacion.Text = "Aplicaciones";
             LbAplicacion.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // BtnAgregar
+            // 
+            BtnAgregar.Anchor = AnchorStyles.Top;
+            BtnAgregar.BackColor = Color.FromArgb(41, 128, 185);
+            BtnAgregar.FlatAppearance.BorderSize = 0;
+            BtnAgregar.FlatAppearance.MouseDownBackColor = Color.FromArgb(24, 75, 109);
+            BtnAgregar.FlatAppearance.MouseOverBackColor = Color.FromArgb(44, 134, 194);
+            BtnAgregar.FlatStyle = FlatStyle.Flat;
+            BtnAgregar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            BtnAgregar.ForeColor = Color.White;
+            BtnAgregar.Location = new Point(345, 100);
+            BtnAgregar.Margin = new Padding(0);
+            BtnAgregar.MaximumSize = new Size(100, 40);
+            BtnAgregar.MinimumSize = new Size(100, 40);
+            BtnAgregar.Name = "BtnAgregar";
+            BtnAgregar.Size = new Size(100, 40);
+            BtnAgregar.TabIndex = 5;
+            BtnAgregar.Text = "Agregar";
+            BtnAgregar.UseVisualStyleBackColor = false;
             // 
             // TlpTitleLabel
             // 
@@ -368,56 +503,6 @@
             CbFiltro.Size = new Size(190, 30);
             CbFiltro.TabIndex = 8;
             // 
-            // DgvPerfiles
-            // 
-            DgvPerfiles.AllowUserToAddRows = false;
-            DgvPerfiles.AllowUserToResizeColumns = false;
-            DgvPerfiles.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(50, 55, 66);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            DgvPerfiles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            DgvPerfiles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgvPerfiles.BackgroundColor = Color.FromArgb(55, 60, 72);
-            DgvPerfiles.BorderStyle = BorderStyle.None;
-            DgvPerfiles.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            DgvPerfiles.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.Padding = new Padding(8, 0, 0, 0);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            DgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            DgvPerfiles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(55, 60, 72);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9.5F);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle6.Padding = new Padding(8, 0, 5, 0);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            DgvPerfiles.DefaultCellStyle = dataGridViewCellStyle6;
-            DgvPerfiles.Dock = DockStyle.Fill;
-            DgvPerfiles.EnableHeadersVisualStyles = false;
-            DgvPerfiles.Font = new Font("Segoe UI", 9.5F);
-            DgvPerfiles.GridColor = Color.FromArgb(70, 76, 90);
-            DgvPerfiles.Location = new Point(0, 525);
-            DgvPerfiles.Margin = new Padding(0);
-            DgvPerfiles.MultiSelect = false;
-            DgvPerfiles.Name = "DgvPerfiles";
-            DgvPerfiles.ReadOnly = true;
-            DgvPerfiles.RowHeadersVisible = false;
-            DgvPerfiles.RowHeadersWidth = 51;
-            DgvPerfiles.RowTemplate.Height = 36;
-            DgvPerfiles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DgvPerfiles.Size = new Size(1050, 225);
-            DgvPerfiles.TabIndex = 2;
-            // 
             // BtnBuscar
             // 
             BtnBuscar.Action = Componentes.ButtonAction.Buscar;
@@ -454,162 +539,77 @@
             TbFiltro.Size = new Size(190, 30);
             TbFiltro.TabIndex = 7;
             // 
-            // TlpButtons
+            // DgvAsignarPermisos
             // 
-            TlpButtons.ColumnCount = 3;
-            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
-            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            TlpButtons.Controls.Add(BtnCopiar, 1, 0);
-            TlpButtons.Dock = DockStyle.Fill;
-            TlpButtons.Location = new Point(0, 300);
-            TlpButtons.Margin = new Padding(0);
-            TlpButtons.Name = "TlpButtons";
-            TlpButtons.RowCount = 1;
-            TlpButtons.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TlpButtons.Size = new Size(900, 75);
-            TlpButtons.TabIndex = 4;
+            DgvAsignarPermisos.AllowUserToAddRows = false;
+            DgvAsignarPermisos.AllowUserToResizeColumns = false;
+            DgvAsignarPermisos.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(42, 44, 49);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(178, 44, 48);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            DgvAsignarPermisos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DgvAsignarPermisos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvAsignarPermisos.BackgroundColor = Color.FromArgb(37, 38, 43);
+            DgvAsignarPermisos.BorderStyle = BorderStyle.None;
+            DgvAsignarPermisos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            DgvAsignarPermisos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 47, 52);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.Padding = new Padding(8, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(45, 47, 52);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DgvAsignarPermisos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DgvAsignarPermisos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(37, 38, 43);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.5F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle3.Padding = new Padding(8, 0, 5, 0);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(178, 44, 48);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            DgvAsignarPermisos.DefaultCellStyle = dataGridViewCellStyle3;
+            DgvAsignarPermisos.Dock = DockStyle.Fill;
+            DgvAsignarPermisos.EnableHeadersVisualStyles = false;
+            DgvAsignarPermisos.Font = new Font("Segoe UI", 9.5F);
+            DgvAsignarPermisos.GridColor = Color.FromArgb(58, 60, 66);
+            DgvAsignarPermisos.Location = new Point(0, 525);
+            DgvAsignarPermisos.Margin = new Padding(0);
+            DgvAsignarPermisos.MultiSelect = false;
+            DgvAsignarPermisos.Name = "DgvAsignarPermisos";
+            DgvAsignarPermisos.ReadOnly = true;
+            DgvAsignarPermisos.RowHeadersVisible = false;
+            DgvAsignarPermisos.RowHeadersWidth = 51;
+            DgvAsignarPermisos.RowTemplate.Height = 36;
+            DgvAsignarPermisos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DgvAsignarPermisos.Size = new Size(1050, 225);
+            DgvAsignarPermisos.TabIndex = 2;
             // 
-            // BtnEliminar
-            // 
-            BtnEliminar.Action = Componentes.ButtonAction.Eliminar;
-            BtnEliminar.Anchor = AnchorStyles.Top;
-            BtnEliminar.BackColor = Color.FromArgb(192, 57, 43);
-            BtnEliminar.FlatAppearance.BorderSize = 0;
-            BtnEliminar.FlatAppearance.MouseDownBackColor = Color.FromArgb(116, 35, 27);
-            BtnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(203, 62, 46);
-            BtnEliminar.FlatStyle = FlatStyle.Flat;
-            BtnEliminar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            BtnEliminar.ForeColor = Color.White;
-            BtnEliminar.Location = new Point(795, 25);
-            BtnEliminar.Margin = new Padding(0);
-            BtnEliminar.MaximumSize = new Size(100, 40);
-            BtnEliminar.MinimumSize = new Size(100, 40);
-            BtnEliminar.Name = "BtnEliminar";
-            BtnEliminar.Size = new Size(100, 40);
-            BtnEliminar.TabIndex = 4;
-            BtnEliminar.Text = "Eliminar";
-            BtnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // BtnLimpiar
-            // 
-            BtnLimpiar.Action = Componentes.ButtonAction.Limpiar;
-            BtnLimpiar.Anchor = AnchorStyles.Top;
-            BtnLimpiar.BackColor = Color.FromArgb(22, 160, 133);
-            BtnLimpiar.FlatAppearance.BorderSize = 0;
-            BtnLimpiar.FlatAppearance.MouseDownBackColor = Color.FromArgb(14, 97, 80);
-            BtnLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(23, 174, 145);
-            BtnLimpiar.FlatStyle = FlatStyle.Flat;
-            BtnLimpiar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            BtnLimpiar.ForeColor = Color.White;
-            BtnLimpiar.Location = new Point(345, 25);
-            BtnLimpiar.Margin = new Padding(0);
-            BtnLimpiar.MaximumSize = new Size(100, 40);
-            BtnLimpiar.MinimumSize = new Size(100, 40);
-            BtnLimpiar.Name = "BtnLimpiar";
-            BtnLimpiar.Size = new Size(100, 40);
-            BtnLimpiar.TabIndex = 2;
-            BtnLimpiar.Text = "Limpiar";
-            BtnLimpiar.UseVisualStyleBackColor = false;
-            // 
-            // BtnAgregar
-            // 
-            BtnAgregar.Anchor = AnchorStyles.Top;
-            BtnAgregar.BackColor = Color.FromArgb(41, 128, 185);
-            BtnAgregar.FlatAppearance.BorderSize = 0;
-            BtnAgregar.FlatAppearance.MouseDownBackColor = Color.FromArgb(24, 75, 109);
-            BtnAgregar.FlatAppearance.MouseOverBackColor = Color.FromArgb(44, 134, 194);
-            BtnAgregar.FlatStyle = FlatStyle.Flat;
-            BtnAgregar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            BtnAgregar.ForeColor = Color.White;
-            BtnAgregar.Location = new Point(345, 100);
-            BtnAgregar.Margin = new Padding(0);
-            BtnAgregar.MaximumSize = new Size(100, 40);
-            BtnAgregar.MinimumSize = new Size(100, 40);
-            BtnAgregar.Name = "BtnAgregar";
-            BtnAgregar.Size = new Size(100, 40);
-            BtnAgregar.TabIndex = 5;
-            BtnAgregar.Text = "Agregar";
-            BtnAgregar.UseVisualStyleBackColor = false;
-            // 
-            // customLabel1
-            // 
-            customLabel1.AutoSize = true;
-            customLabel1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customLabel1.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel1.Location = new Point(3, 75);
-            customLabel1.Name = "customLabel1";
-            customLabel1.Padding = new Padding(0, 0, 2, 0);
-            customLabel1.Size = new Size(75, 23);
-            customLabel1.TabIndex = 74;
-            customLabel1.Text = "Permiso";
-            customLabel1.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // CbPermiso
-            // 
-            CbPermiso.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            CbPermiso.BackColor = Color.FromArgb(55, 60, 72);
-            CbPermiso.BaseColor = Color.FromArgb(40, 40, 40);
-            CbPermiso.BGColor = Color.FromArgb(55, 60, 72);
-            CbPermiso.DrawMode = DrawMode.OwnerDrawFixed;
-            CbPermiso.DropDownStyle = ComboBoxStyle.DropDownList;
-            CbPermiso.FlatStyle = FlatStyle.Flat;
-            CbPermiso.Font = new Font("Segoe UI", 9.5F);
-            CbPermiso.ForeColor = Color.FromArgb(230, 230, 230);
-            CbPermiso.FormattingEnabled = true;
-            CbPermiso.HoverColor = Color.Crimson;
-            CbPermiso.HoverFontColor = Color.White;
-            CbPermiso.ItemHeight = 24;
-            CbPermiso.Location = new Point(5, 100);
-            CbPermiso.Margin = new Padding(5, 0, 5, 10);
-            CbPermiso.MinimumSize = new Size(190, 0);
-            CbPermiso.Name = "CbPermiso";
-            CbPermiso.Size = new Size(330, 30);
-            CbPermiso.TabIndex = 75;
-            // 
-            // BtnCopiar
-            // 
-            BtnCopiar.Action = Componentes.ButtonAction.Copiar;
-            BtnCopiar.Anchor = AnchorStyles.None;
-            BtnCopiar.BackColor = Color.FromArgb(26, 156, 156);
-            BtnCopiar.FlatAppearance.BorderSize = 0;
-            BtnCopiar.FlatAppearance.MouseDownBackColor = Color.FromArgb(16, 95, 95);
-            BtnCopiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(29, 169, 169);
-            BtnCopiar.FlatStyle = FlatStyle.Flat;
-            BtnCopiar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            BtnCopiar.ForeColor = Color.White;
-            BtnCopiar.Location = new Point(400, 17);
-            BtnCopiar.Margin = new Padding(0);
-            BtnCopiar.MaximumSize = new Size(100, 40);
-            BtnCopiar.MinimumSize = new Size(100, 40);
-            BtnCopiar.Name = "BtnCopiar";
-            BtnCopiar.Size = new Size(100, 40);
-            BtnCopiar.TabIndex = 3;
-            BtnCopiar.Text = "Copiar";
-            BtnCopiar.UseVisualStyleBackColor = false;
-            // 
-            // FrUcPermisos
+            // FrUcAsignarPermisos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             Controls.Add(TlpDivFormAndDgv);
             MinimumSize = new Size(1050, 750);
-            Name = "FrUcPermisos";
+            Name = "FrUcAsignarPermisos";
             Size = new Size(1050, 750);
             TlpDivFormAndDgv.ResumeLayout(false);
             TlpAux1.ResumeLayout(false);
             TlpAux2.ResumeLayout(false);
             TlpFormWithButtons.ResumeLayout(false);
+            TlpButtons.ResumeLayout(false);
             TlpForm.ResumeLayout(false);
             TlpForm.PerformLayout();
             TlpTitleLabel.ResumeLayout(false);
             TlpTitleLabel.PerformLayout();
             TlpAux3.ResumeLayout(false);
             TlpFilter.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)DgvPerfiles).EndInit();
-            TlpButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)DgvAsignarPermisos).EndInit();
             ResumeLayout(false);
         }
 
@@ -629,7 +629,6 @@
         private Componentes.CustomListBox ListBoxAplicacion;
         private Componentes.CustomComboBox CbPerfil;
         private Componentes.CustomTextBox TbFiltro;
-        private Componentes.CustomDataGridView DgvPerfiles;
         private Componentes.CustomLabel LbAplicacion;
         private TableLayoutPanel TlpFilter;
         private Componentes.CustomButton customButton1;
@@ -641,5 +640,6 @@
         private Componentes.CustomLabel customLabel1;
         private Componentes.CustomComboBox CbPermiso;
         private Componentes.CustomButton BtnCopiar;
+        private Componentes.CustomDataGridView DgvAsignarPermisos;
     }
 }

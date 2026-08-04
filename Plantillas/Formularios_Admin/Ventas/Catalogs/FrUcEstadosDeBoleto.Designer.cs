@@ -1,6 +1,6 @@
-﻿namespace Forms_Admin.Usuarios.Catalogs
+﻿namespace Forms_Admin.Ventas.Catalogs
 {
-    partial class FrUcAplicaciones
+    partial class FrUcEstadosDeBoleto
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -36,12 +36,10 @@
             TlpAux2 = new TableLayoutPanel();
             TlpFormWithButtons = new TableLayoutPanel();
             TlpForm = new TableLayoutPanel();
-            LbID = new Componentes.CustomLabel();
-            LbNombrePerfiles = new Componentes.CustomLabel();
-            TbID = new Componentes.CustomIDTextBox();
-            TbCodigo = new Componentes.CustomTextBox();
-            customLabel1 = new Componentes.CustomLabel();
+            LbNombre = new Componentes.CustomLabel();
             TbNombre = new Componentes.CustomTextBox();
+            LbID = new Componentes.CustomLabel();
+            TbID = new Componentes.CustomIDTextBox();
             TlpButtons = new TableLayoutPanel();
             BtnEliminar = new Componentes.CustomButton();
             BtnActualizar = new Componentes.CustomButton();
@@ -55,7 +53,7 @@
             BtnBuscar = new Componentes.CustomButton();
             TbFiltro = new Componentes.CustomTextBox();
             CbFiltro = new Componentes.CustomComboBox();
-            DgvAplicaciones = new Componentes.CustomDataGridView();
+            DgvEstadosDeBoleto = new Componentes.CustomDataGridView();
             TlpDivFormAndDgv.SuspendLayout();
             TlpAux1.SuspendLayout();
             TlpAux2.SuspendLayout();
@@ -65,7 +63,7 @@
             TlpTitleLabel.SuspendLayout();
             TlpAux3.SuspendLayout();
             TlpFilter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DgvAplicaciones).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DgvEstadosDeBoleto).BeginInit();
             SuspendLayout();
             // 
             // TlpDivFormAndDgv
@@ -73,7 +71,7 @@
             TlpDivFormAndDgv.ColumnCount = 1;
             TlpDivFormAndDgv.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             TlpDivFormAndDgv.Controls.Add(TlpAux1, 0, 0);
-            TlpDivFormAndDgv.Controls.Add(DgvAplicaciones, 0, 1);
+            TlpDivFormAndDgv.Controls.Add(DgvEstadosDeBoleto, 0, 1);
             TlpDivFormAndDgv.Dock = DockStyle.Fill;
             TlpDivFormAndDgv.Location = new Point(0, 0);
             TlpDivFormAndDgv.Margin = new Padding(0);
@@ -82,7 +80,7 @@
             TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Absolute, 300F));
             TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpDivFormAndDgv.Size = new Size(1050, 700);
-            TlpDivFormAndDgv.TabIndex = 9;
+            TlpDivFormAndDgv.TabIndex = 12;
             // 
             // TlpAux1
             // 
@@ -137,118 +135,87 @@
             // 
             // TlpForm
             // 
-            TlpForm.ColumnCount = 5;
-            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
-            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
-            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
-            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            TlpForm.ColumnCount = 4;
+            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            TlpForm.Controls.Add(LbNombre, 2, 0);
+            TlpForm.Controls.Add(TbNombre, 2, 1);
             TlpForm.Controls.Add(LbID, 1, 0);
-            TlpForm.Controls.Add(LbNombrePerfiles, 2, 0);
             TlpForm.Controls.Add(TbID, 1, 1);
-            TlpForm.Controls.Add(TbCodigo, 2, 1);
-            TlpForm.Controls.Add(customLabel1, 3, 0);
-            TlpForm.Controls.Add(TbNombre, 3, 1);
             TlpForm.Dock = DockStyle.Fill;
             TlpForm.Location = new Point(0, 0);
             TlpForm.Margin = new Padding(0);
             TlpForm.Name = "TlpForm";
-            TlpForm.RowCount = 2;
+            TlpForm.RowCount = 5;
             TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
             TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpForm.Size = new Size(900, 75);
             TlpForm.TabIndex = 0;
+            // 
+            // LbNombre
+            // 
+            LbNombre.AutoSize = true;
+            LbNombre.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbNombre.ForeColor = Color.FromArgb(220, 220, 220);
+            LbNombre.Location = new Point(453, 0);
+            LbNombre.Name = "LbNombre";
+            LbNombre.Padding = new Padding(0, 0, 2, 0);
+            LbNombre.Size = new Size(78, 23);
+            LbNombre.TabIndex = 61;
+            LbNombre.Text = "Nombre";
+            LbNombre.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // TbNombre
+            // 
+            TbNombre.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TbNombre.BackColor = Color.FromArgb(55, 60, 72);
+            TbNombre.BorderStyle = BorderStyle.FixedSingle;
+            TbNombre.Font = new Font("Segoe UI", 10F);
+            TbNombre.ForeColor = Color.FromArgb(160, 165, 175);
+            TbNombre.Location = new Point(455, 25);
+            TbNombre.Margin = new Padding(5, 0, 5, 10);
+            TbNombre.MaximumSize = new Size(0, 30);
+            TbNombre.MinimumSize = new Size(190, 30);
+            TbNombre.Name = "TbNombre";
+            TbNombre.PlaceholderText = "1";
+            TbNombre.Size = new Size(215, 30);
+            TbNombre.TabIndex = 66;
             // 
             // LbID
             // 
             LbID.AutoSize = true;
             LbID.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbID.ForeColor = Color.FromArgb(220, 220, 220);
-            LbID.Location = new Point(153, 0);
+            LbID.Location = new Point(228, 0);
             LbID.Margin = new Padding(3, 0, 0, 0);
             LbID.Name = "LbID";
             LbID.Padding = new Padding(0, 0, 2, 0);
-            LbID.Size = new Size(93, 23);
+            LbID.Size = new Size(172, 23);
             LbID.TabIndex = 11;
-            LbID.Text = "ID Perfiles";
+            LbID.Text = "ID Estado De Boleto";
             LbID.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // LbNombrePerfiles
-            // 
-            LbNombrePerfiles.AutoSize = true;
-            LbNombrePerfiles.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            LbNombrePerfiles.ForeColor = Color.FromArgb(220, 220, 220);
-            LbNombrePerfiles.Location = new Point(353, 0);
-            LbNombrePerfiles.Margin = new Padding(3, 0, 0, 0);
-            LbNombrePerfiles.Name = "LbNombrePerfiles";
-            LbNombrePerfiles.Padding = new Padding(0, 0, 2, 0);
-            LbNombrePerfiles.Size = new Size(70, 23);
-            LbNombrePerfiles.TabIndex = 12;
-            LbNombrePerfiles.Text = "Código";
-            LbNombrePerfiles.TextAlign = ContentAlignment.MiddleRight;
             // 
             // TbID
             // 
-            TbID.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TbID.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             TbID.BackColor = Color.FromArgb(28, 30, 38);
             TbID.BorderStyle = BorderStyle.FixedSingle;
             TbID.Font = new Font("Segoe UI", 10F);
             TbID.ForeColor = Color.FromArgb(120, 125, 135);
-            TbID.Location = new Point(155, 35);
-            TbID.Margin = new Padding(5);
+            TbID.Location = new Point(230, 25);
+            TbID.Margin = new Padding(5, 0, 5, 10);
             TbID.MaximumSize = new Size(0, 30);
             TbID.MinimumSize = new Size(190, 30);
             TbID.Name = "TbID";
             TbID.ReadOnly = true;
-            TbID.Size = new Size(190, 30);
+            TbID.Size = new Size(215, 30);
             TbID.TabIndex = 60;
             TbID.TabStop = false;
-            // 
-            // TbCodigo
-            // 
-            TbCodigo.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            TbCodigo.BackColor = Color.FromArgb(55, 60, 72);
-            TbCodigo.BorderStyle = BorderStyle.FixedSingle;
-            TbCodigo.Font = new Font("Segoe UI", 10F);
-            TbCodigo.ForeColor = Color.FromArgb(160, 165, 175);
-            TbCodigo.Location = new Point(355, 35);
-            TbCodigo.Margin = new Padding(5);
-            TbCodigo.MaximumSize = new Size(0, 30);
-            TbCodigo.MinimumSize = new Size(190, 30);
-            TbCodigo.Name = "TbCodigo";
-            TbCodigo.PlaceholderText = "Diego Santizo";
-            TbCodigo.Size = new Size(190, 30);
-            TbCodigo.TabIndex = 57;
-            // 
-            // customLabel1
-            // 
-            customLabel1.AutoSize = true;
-            customLabel1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customLabel1.ForeColor = Color.FromArgb(220, 220, 220);
-            customLabel1.Location = new Point(553, 0);
-            customLabel1.Margin = new Padding(3, 0, 0, 0);
-            customLabel1.Name = "customLabel1";
-            customLabel1.Padding = new Padding(0, 0, 2, 0);
-            customLabel1.Size = new Size(78, 23);
-            customLabel1.TabIndex = 61;
-            customLabel1.Text = "Nombre";
-            customLabel1.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // TbNombre
-            // 
-            TbNombre.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            TbNombre.BackColor = Color.FromArgb(55, 60, 72);
-            TbNombre.BorderStyle = BorderStyle.FixedSingle;
-            TbNombre.Font = new Font("Segoe UI", 10F);
-            TbNombre.ForeColor = Color.FromArgb(160, 165, 175);
-            TbNombre.Location = new Point(555, 35);
-            TbNombre.Margin = new Padding(5);
-            TbNombre.MaximumSize = new Size(0, 30);
-            TbNombre.MinimumSize = new Size(190, 30);
-            TbNombre.Name = "TbNombre";
-            TbNombre.PlaceholderText = "Diego Santizo";
-            TbNombre.Size = new Size(190, 30);
-            TbNombre.TabIndex = 62;
             // 
             // TlpButtons
             // 
@@ -405,7 +372,7 @@
             LbTitulo.Name = "LbTitulo";
             LbTitulo.Size = new Size(494, 75);
             LbTitulo.TabIndex = 0;
-            LbTitulo.Text = "APLICACIONES";
+            LbTitulo.Text = "ESTADOS DE BOLETO";
             LbTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // TlpAux3
@@ -500,21 +467,21 @@
             CbFiltro.Size = new Size(190, 30);
             CbFiltro.TabIndex = 8;
             // 
-            // DgvAplicaciones
+            // DgvEstadosDeBoleto
             // 
-            DgvAplicaciones.AllowUserToAddRows = false;
-            DgvAplicaciones.AllowUserToResizeColumns = false;
-            DgvAplicaciones.AllowUserToResizeRows = false;
+            DgvEstadosDeBoleto.AllowUserToAddRows = false;
+            DgvEstadosDeBoleto.AllowUserToResizeColumns = false;
+            DgvEstadosDeBoleto.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(42, 44, 49);
             dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 230, 230);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(178, 44, 48);
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            DgvAplicaciones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            DgvAplicaciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgvAplicaciones.BackgroundColor = Color.FromArgb(37, 38, 43);
-            DgvAplicaciones.BorderStyle = BorderStyle.None;
-            DgvAplicaciones.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            DgvAplicaciones.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            DgvEstadosDeBoleto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DgvEstadosDeBoleto.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvEstadosDeBoleto.BackgroundColor = Color.FromArgb(37, 38, 43);
+            DgvEstadosDeBoleto.BorderStyle = BorderStyle.None;
+            DgvEstadosDeBoleto.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            DgvEstadosDeBoleto.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 47, 52);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
@@ -523,8 +490,8 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(45, 47, 52);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            DgvAplicaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            DgvAplicaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvEstadosDeBoleto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DgvEstadosDeBoleto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(37, 38, 43);
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.5F);
@@ -533,30 +500,30 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(178, 44, 48);
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            DgvAplicaciones.DefaultCellStyle = dataGridViewCellStyle3;
-            DgvAplicaciones.Dock = DockStyle.Fill;
-            DgvAplicaciones.EnableHeadersVisualStyles = false;
-            DgvAplicaciones.Font = new Font("Segoe UI", 9.5F);
-            DgvAplicaciones.GridColor = Color.FromArgb(58, 60, 66);
-            DgvAplicaciones.Location = new Point(0, 300);
-            DgvAplicaciones.Margin = new Padding(0);
-            DgvAplicaciones.MultiSelect = false;
-            DgvAplicaciones.Name = "DgvAplicaciones";
-            DgvAplicaciones.ReadOnly = true;
-            DgvAplicaciones.RowHeadersVisible = false;
-            DgvAplicaciones.RowHeadersWidth = 51;
-            DgvAplicaciones.RowTemplate.Height = 36;
-            DgvAplicaciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DgvAplicaciones.Size = new Size(1050, 400);
-            DgvAplicaciones.TabIndex = 2;
+            DgvEstadosDeBoleto.DefaultCellStyle = dataGridViewCellStyle3;
+            DgvEstadosDeBoleto.Dock = DockStyle.Fill;
+            DgvEstadosDeBoleto.EnableHeadersVisualStyles = false;
+            DgvEstadosDeBoleto.Font = new Font("Segoe UI", 9.5F);
+            DgvEstadosDeBoleto.GridColor = Color.FromArgb(58, 60, 66);
+            DgvEstadosDeBoleto.Location = new Point(0, 300);
+            DgvEstadosDeBoleto.Margin = new Padding(0);
+            DgvEstadosDeBoleto.MultiSelect = false;
+            DgvEstadosDeBoleto.Name = "DgvEstadosDeBoleto";
+            DgvEstadosDeBoleto.ReadOnly = true;
+            DgvEstadosDeBoleto.RowHeadersVisible = false;
+            DgvEstadosDeBoleto.RowHeadersWidth = 51;
+            DgvEstadosDeBoleto.RowTemplate.Height = 36;
+            DgvEstadosDeBoleto.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DgvEstadosDeBoleto.Size = new Size(1050, 400);
+            DgvEstadosDeBoleto.TabIndex = 2;
             // 
-            // FrUcAplicaciones
+            // FrUcEstadosDeBoleto
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             Controls.Add(TlpDivFormAndDgv);
-            Name = "FrUcAplicaciones";
+            Name = "FrUcEstadosDeBoleto";
             Size = new Size(1050, 700);
             TlpDivFormAndDgv.ResumeLayout(false);
             TlpAux1.ResumeLayout(false);
@@ -569,7 +536,7 @@
             TlpTitleLabel.PerformLayout();
             TlpAux3.ResumeLayout(false);
             TlpFilter.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)DgvAplicaciones).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DgvEstadosDeBoleto).EndInit();
             ResumeLayout(false);
         }
 
@@ -580,12 +547,10 @@
         private TableLayoutPanel TlpAux2;
         private TableLayoutPanel TlpFormWithButtons;
         private TableLayoutPanel TlpForm;
-        private Componentes.CustomLabel LbID;
-        private Componentes.CustomLabel LbNombrePerfiles;
-        private Componentes.CustomIDTextBox TbID;
-        private Componentes.CustomTextBox TbCodigo;
-        private Componentes.CustomLabel customLabel1;
+        private Componentes.CustomLabel LbNombre;
         private Componentes.CustomTextBox TbNombre;
+        private Componentes.CustomLabel LbID;
+        private Componentes.CustomIDTextBox TbID;
         private TableLayoutPanel TlpButtons;
         private Componentes.CustomButton BtnEliminar;
         private Componentes.CustomButton BtnActualizar;
@@ -599,6 +564,6 @@
         private Componentes.CustomButton BtnBuscar;
         private Componentes.CustomTextBox TbFiltro;
         private Componentes.CustomComboBox CbFiltro;
-        private Componentes.CustomDataGridView DgvAplicaciones;
+        private Componentes.CustomDataGridView DgvEstadosDeBoleto;
     }
 }

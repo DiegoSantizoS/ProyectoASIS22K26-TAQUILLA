@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Plantilla_Admin.Tabs
+namespace Forms_Admin.Ventas.Catalogs
 {
-    public partial class FrBorrador : UserControl
+    public partial class FrUcEstadosDeBoleto : UserControl
     {
-        public FrBorrador()
+        public FrUcEstadosDeBoleto()
         {
             InitializeComponent();
-        }
-
-        private void LbTrailer_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             TlpDivFormAndDgv = new TableLayoutPanel();
             TlpAux1 = new TableLayoutPanel();
             TlpAux2 = new TableLayoutPanel();
@@ -38,14 +38,16 @@
             TlpForm = new TableLayoutPanel();
             TbID = new Componentes.CustomIDTextBox();
             LbID = new Componentes.CustomLabel();
-            LbPelicula = new Componentes.CustomLabel();
-            CbPelicula = new Componentes.CustomComboBox();
             LbFecha = new Componentes.CustomLabel();
             CbSala = new Componentes.CustomComboBox();
-            TbPrecioFuncion = new Componentes.CustomTextBox();
             LbSala = new Componentes.CustomLabel();
-            LbTipoDeFuncion = new Componentes.CustomLabel();
-            CbTipoDeFuncion = new Componentes.CustomComboBox();
+            LbHora = new Componentes.CustomLabel();
+            DatePickerFecha = new Componentes.CustomDatePicker();
+            TimePickerHora = new Componentes.CustomTimePicker();
+            LbPelicula = new Componentes.CustomLabel();
+            CbPelicula = new Componentes.CustomComboBox();
+            LbPrecioDeFuncion = new Componentes.CustomLabel();
+            TbPrecioFuncion = new Componentes.CustomTextBox();
             TlpButtons = new TableLayoutPanel();
             BtnEliminar = new Componentes.CustomButton();
             BtnActualizar = new Componentes.CustomButton();
@@ -60,10 +62,6 @@
             TbFiltro = new Componentes.CustomTextBox();
             CbFiltro = new Componentes.CustomComboBox();
             DgvFunciones = new Componentes.CustomDataGridView();
-            LbHora = new Componentes.CustomLabel();
-            LbPrecioDeFuncion = new Componentes.CustomLabel();
-            DatePickerFecha = new Componentes.CustomDatePicker();
-            TimePickerHora = new Componentes.CustomTimePicker();
             TlpDivFormAndDgv.SuspendLayout();
             TlpAux1.SuspendLayout();
             TlpAux2.SuspendLayout();
@@ -87,7 +85,7 @@
             TlpDivFormAndDgv.Margin = new Padding(0);
             TlpDivFormAndDgv.Name = "TlpDivFormAndDgv";
             TlpDivFormAndDgv.RowCount = 2;
-            TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Absolute, 475F));
+            TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Absolute, 375F));
             TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpDivFormAndDgv.Size = new Size(1050, 700);
             TlpDivFormAndDgv.TabIndex = 10;
@@ -107,7 +105,7 @@
             TlpAux1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
             TlpAux1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpAux1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
-            TlpAux1.Size = new Size(1050, 475);
+            TlpAux1.Size = new Size(1050, 375);
             TlpAux1.TabIndex = 1;
             // 
             // TlpAux2
@@ -123,7 +121,7 @@
             TlpAux2.Name = "TlpAux2";
             TlpAux2.RowCount = 1;
             TlpAux2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TlpAux2.Size = new Size(1050, 325);
+            TlpAux2.Size = new Size(1050, 225);
             TlpAux2.TabIndex = 0;
             // 
             // TlpFormWithButtons
@@ -140,41 +138,43 @@
             TlpFormWithButtons.RowCount = 2;
             TlpFormWithButtons.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpFormWithButtons.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
-            TlpFormWithButtons.Size = new Size(900, 325);
+            TlpFormWithButtons.Size = new Size(900, 225);
             TlpFormWithButtons.TabIndex = 0;
             // 
             // TlpForm
             // 
             TlpForm.ColumnCount = 3;
-            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
             TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             TlpForm.Controls.Add(TbID, 0, 1);
             TlpForm.Controls.Add(LbID, 0, 0);
-            TlpForm.Controls.Add(LbPelicula, 1, 0);
-            TlpForm.Controls.Add(CbPelicula, 1, 1);
             TlpForm.Controls.Add(LbFecha, 2, 0);
             TlpForm.Controls.Add(CbSala, 1, 3);
             TlpForm.Controls.Add(LbSala, 1, 2);
-            TlpForm.Controls.Add(LbTipoDeFuncion, 1, 4);
-            TlpForm.Controls.Add(CbTipoDeFuncion, 1, 5);
             TlpForm.Controls.Add(LbHora, 2, 2);
-            TlpForm.Controls.Add(LbPrecioDeFuncion, 2, 4);
-            TlpForm.Controls.Add(TbPrecioFuncion, 2, 5);
             TlpForm.Controls.Add(DatePickerFecha, 2, 1);
             TlpForm.Controls.Add(TimePickerHora, 2, 3);
+            TlpForm.Controls.Add(LbPelicula, 0, 2);
+            TlpForm.Controls.Add(CbPelicula, 0, 3);
+            TlpForm.Controls.Add(LbPrecioDeFuncion, 1, 0);
+            TlpForm.Controls.Add(TbPrecioFuncion, 1, 1);
             TlpForm.Dock = DockStyle.Fill;
             TlpForm.Location = new Point(0, 0);
             TlpForm.Margin = new Padding(0);
             TlpForm.Name = "TlpForm";
-            TlpForm.RowCount = 6;
+            TlpForm.RowCount = 10;
             TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
             TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
             TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
             TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            TlpForm.Size = new Size(900, 250);
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            TlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            TlpForm.Size = new Size(900, 150);
             TlpForm.TabIndex = 0;
             // 
             // TbID
@@ -207,42 +207,6 @@
             LbID.TabIndex = 11;
             LbID.Text = "ID Funcion";
             LbID.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // LbPelicula
-            // 
-            LbPelicula.AutoSize = true;
-            LbPelicula.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            LbPelicula.ForeColor = Color.FromArgb(220, 220, 220);
-            LbPelicula.Location = new Point(302, 0);
-            LbPelicula.Margin = new Padding(3, 0, 0, 0);
-            LbPelicula.Name = "LbPelicula";
-            LbPelicula.Padding = new Padding(0, 0, 2, 0);
-            LbPelicula.Size = new Size(72, 23);
-            LbPelicula.TabIndex = 12;
-            LbPelicula.Text = "Película";
-            LbPelicula.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // CbPelicula
-            // 
-            CbPelicula.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            CbPelicula.BackColor = Color.FromArgb(55, 60, 72);
-            CbPelicula.BaseColor = Color.FromArgb(40, 40, 40);
-            CbPelicula.BGColor = Color.FromArgb(55, 60, 72);
-            CbPelicula.DrawMode = DrawMode.OwnerDrawFixed;
-            CbPelicula.DropDownStyle = ComboBoxStyle.DropDownList;
-            CbPelicula.FlatStyle = FlatStyle.Flat;
-            CbPelicula.Font = new Font("Segoe UI", 9.5F);
-            CbPelicula.ForeColor = Color.FromArgb(230, 230, 230);
-            CbPelicula.FormattingEnabled = true;
-            CbPelicula.HoverColor = Color.Crimson;
-            CbPelicula.HoverFontColor = Color.White;
-            CbPelicula.ItemHeight = 24;
-            CbPelicula.Location = new Point(304, 25);
-            CbPelicula.Margin = new Padding(5, 0, 5, 10);
-            CbPelicula.MinimumSize = new Size(190, 0);
-            CbPelicula.Name = "CbPelicula";
-            CbPelicula.Size = new Size(290, 30);
-            CbPelicula.TabIndex = 63;
             // 
             // LbFecha
             // 
@@ -279,22 +243,6 @@
             CbSala.Size = new Size(290, 30);
             CbSala.TabIndex = 64;
             // 
-            // TbPrecioFuncion
-            // 
-            TbPrecioFuncion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            TbPrecioFuncion.BackColor = Color.FromArgb(55, 60, 72);
-            TbPrecioFuncion.BorderStyle = BorderStyle.FixedSingle;
-            TbPrecioFuncion.Font = new Font("Segoe UI", 10F);
-            TbPrecioFuncion.ForeColor = Color.FromArgb(160, 165, 175);
-            TbPrecioFuncion.Location = new Point(604, 175);
-            TbPrecioFuncion.Margin = new Padding(5, 0, 5, 10);
-            TbPrecioFuncion.MaximumSize = new Size(0, 30);
-            TbPrecioFuncion.MinimumSize = new Size(190, 30);
-            TbPrecioFuncion.Name = "TbPrecioFuncion";
-            TbPrecioFuncion.PlaceholderText = "1";
-            TbPrecioFuncion.Size = new Size(291, 30);
-            TbPrecioFuncion.TabIndex = 66;
-            // 
             // LbSala
             // 
             LbSala.AutoSize = true;
@@ -308,40 +256,123 @@
             LbSala.Text = "Sala";
             LbSala.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // LbTipoDeFuncion
+            // LbHora
             // 
-            LbTipoDeFuncion.AutoSize = true;
-            LbTipoDeFuncion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            LbTipoDeFuncion.ForeColor = Color.FromArgb(220, 220, 220);
-            LbTipoDeFuncion.Location = new Point(302, 150);
-            LbTipoDeFuncion.Name = "LbTipoDeFuncion";
-            LbTipoDeFuncion.Padding = new Padding(0, 0, 2, 0);
-            LbTipoDeFuncion.Size = new Size(159, 23);
-            LbTipoDeFuncion.TabIndex = 68;
-            LbTipoDeFuncion.Text = "Capacidad de Sala";
-            LbTipoDeFuncion.TextAlign = ContentAlignment.MiddleRight;
+            LbHora.AutoSize = true;
+            LbHora.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbHora.ForeColor = Color.FromArgb(220, 220, 220);
+            LbHora.Location = new Point(602, 75);
+            LbHora.Name = "LbHora";
+            LbHora.Padding = new Padding(0, 0, 2, 0);
+            LbHora.Size = new Size(51, 23);
+            LbHora.TabIndex = 71;
+            LbHora.Text = "Hora";
+            LbHora.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // CbTipoDeFuncion
+            // DatePickerFecha
             // 
-            CbTipoDeFuncion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            CbTipoDeFuncion.BackColor = Color.FromArgb(55, 60, 72);
-            CbTipoDeFuncion.BaseColor = Color.FromArgb(40, 40, 40);
-            CbTipoDeFuncion.BGColor = Color.FromArgb(55, 60, 72);
-            CbTipoDeFuncion.DrawMode = DrawMode.OwnerDrawFixed;
-            CbTipoDeFuncion.DropDownStyle = ComboBoxStyle.DropDownList;
-            CbTipoDeFuncion.FlatStyle = FlatStyle.Flat;
-            CbTipoDeFuncion.Font = new Font("Segoe UI", 9.5F);
-            CbTipoDeFuncion.ForeColor = Color.FromArgb(230, 230, 230);
-            CbTipoDeFuncion.FormattingEnabled = true;
-            CbTipoDeFuncion.HoverColor = Color.Crimson;
-            CbTipoDeFuncion.HoverFontColor = Color.White;
-            CbTipoDeFuncion.ItemHeight = 24;
-            CbTipoDeFuncion.Location = new Point(304, 175);
-            CbTipoDeFuncion.Margin = new Padding(5, 0, 5, 10);
-            CbTipoDeFuncion.MinimumSize = new Size(190, 0);
-            CbTipoDeFuncion.Name = "CbTipoDeFuncion";
-            CbTipoDeFuncion.Size = new Size(290, 30);
-            CbTipoDeFuncion.TabIndex = 69;
+            DatePickerFecha.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            DatePickerFecha.CustomFormat = "dd/MM/yyyy";
+            DatePickerFecha.Format = DateTimePickerFormat.Custom;
+            DatePickerFecha.Location = new Point(604, 25);
+            DatePickerFecha.Margin = new Padding(5, 0, 5, 10);
+            DatePickerFecha.MaximumSize = new Size(0, 30);
+            DatePickerFecha.MinimumSize = new Size(190, 30);
+            DatePickerFecha.Name = "DatePickerFecha";
+            DatePickerFecha.PaletteMode = Krypton.Toolkit.PaletteMode.Microsoft365BlackDarkModeAlternate;
+            DatePickerFecha.Size = new Size(291, 30);
+            DatePickerFecha.StateActive.Back.Color1 = Color.FromArgb(55, 60, 72);
+            DatePickerFecha.StateActive.Border.Color1 = Color.FromArgb(40, 40, 40);
+            DatePickerFecha.StateActive.Border.Color2 = Color.FromArgb(40, 40, 40);
+            DatePickerFecha.StateActive.Content.Color1 = Color.FromArgb(230, 230, 230);
+            DatePickerFecha.StateCommon.Back.Color1 = Color.FromArgb(55, 60, 72);
+            DatePickerFecha.StateCommon.Border.Color1 = Color.FromArgb(40, 40, 40);
+            DatePickerFecha.StateCommon.Border.Color2 = Color.FromArgb(40, 40, 40);
+            DatePickerFecha.StateCommon.Content.Color1 = Color.FromArgb(230, 230, 230);
+            DatePickerFecha.TabIndex = 73;
+            // 
+            // TimePickerHora
+            // 
+            TimePickerHora.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TimePickerHora.BackColor = Color.FromArgb(55, 60, 72);
+            TimePickerHora.BorderStyle = BorderStyle.FixedSingle;
+            TimePickerHora.Font = new Font("Segoe UI", 11F);
+            TimePickerHora.ForeColor = Color.FromArgb(230, 230, 230);
+            TimePickerHora.Location = new Point(604, 100);
+            TimePickerHora.Margin = new Padding(5, 0, 5, 10);
+            TimePickerHora.Mask = "00:00";
+            TimePickerHora.MaximumSize = new Size(0, 30);
+            TimePickerHora.MinimumSize = new Size(190, 30);
+            TimePickerHora.Name = "TimePickerHora";
+            TimePickerHora.Size = new Size(291, 30);
+            TimePickerHora.TabIndex = 74;
+            TimePickerHora.Text = "1200";
+            TimePickerHora.TextAlign = HorizontalAlignment.Center;
+            // 
+            // LbPelicula
+            // 
+            LbPelicula.AutoSize = true;
+            LbPelicula.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbPelicula.ForeColor = Color.FromArgb(220, 220, 220);
+            LbPelicula.Location = new Point(3, 75);
+            LbPelicula.Margin = new Padding(3, 0, 0, 0);
+            LbPelicula.Name = "LbPelicula";
+            LbPelicula.Padding = new Padding(0, 0, 2, 0);
+            LbPelicula.Size = new Size(72, 23);
+            LbPelicula.TabIndex = 12;
+            LbPelicula.Text = "Película";
+            LbPelicula.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // CbPelicula
+            // 
+            CbPelicula.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            CbPelicula.BackColor = Color.FromArgb(55, 60, 72);
+            CbPelicula.BaseColor = Color.FromArgb(40, 40, 40);
+            CbPelicula.BGColor = Color.FromArgb(55, 60, 72);
+            CbPelicula.DrawMode = DrawMode.OwnerDrawFixed;
+            CbPelicula.DropDownStyle = ComboBoxStyle.DropDownList;
+            CbPelicula.FlatStyle = FlatStyle.Flat;
+            CbPelicula.Font = new Font("Segoe UI", 9.5F);
+            CbPelicula.ForeColor = Color.FromArgb(230, 230, 230);
+            CbPelicula.FormattingEnabled = true;
+            CbPelicula.HoverColor = Color.Crimson;
+            CbPelicula.HoverFontColor = Color.White;
+            CbPelicula.ItemHeight = 24;
+            CbPelicula.Location = new Point(5, 100);
+            CbPelicula.Margin = new Padding(5, 0, 5, 10);
+            CbPelicula.MinimumSize = new Size(190, 0);
+            CbPelicula.Name = "CbPelicula";
+            CbPelicula.Size = new Size(289, 30);
+            CbPelicula.TabIndex = 63;
+            // 
+            // LbPrecioDeFuncion
+            // 
+            LbPrecioDeFuncion.AutoSize = true;
+            LbPrecioDeFuncion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbPrecioDeFuncion.ForeColor = Color.FromArgb(220, 220, 220);
+            LbPrecioDeFuncion.Location = new Point(302, 0);
+            LbPrecioDeFuncion.Name = "LbPrecioDeFuncion";
+            LbPrecioDeFuncion.Padding = new Padding(0, 0, 2, 0);
+            LbPrecioDeFuncion.Size = new Size(153, 23);
+            LbPrecioDeFuncion.TabIndex = 72;
+            LbPrecioDeFuncion.Text = "Precio de Función";
+            LbPrecioDeFuncion.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // TbPrecioFuncion
+            // 
+            TbPrecioFuncion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TbPrecioFuncion.BackColor = Color.FromArgb(55, 60, 72);
+            TbPrecioFuncion.BorderStyle = BorderStyle.FixedSingle;
+            TbPrecioFuncion.Font = new Font("Segoe UI", 10F);
+            TbPrecioFuncion.ForeColor = Color.FromArgb(160, 165, 175);
+            TbPrecioFuncion.Location = new Point(304, 25);
+            TbPrecioFuncion.Margin = new Padding(5, 0, 5, 10);
+            TbPrecioFuncion.MaximumSize = new Size(0, 30);
+            TbPrecioFuncion.MinimumSize = new Size(190, 30);
+            TbPrecioFuncion.Name = "TbPrecioFuncion";
+            TbPrecioFuncion.PlaceholderText = "1";
+            TbPrecioFuncion.Size = new Size(290, 30);
+            TbPrecioFuncion.TabIndex = 66;
             // 
             // TlpButtons
             // 
@@ -359,7 +390,7 @@
             TlpButtons.Controls.Add(BtnAgregar, 2, 0);
             TlpButtons.Controls.Add(BtnLimpiar, 1, 0);
             TlpButtons.Dock = DockStyle.Fill;
-            TlpButtons.Location = new Point(0, 250);
+            TlpButtons.Location = new Point(0, 150);
             TlpButtons.Margin = new Padding(0);
             TlpButtons.Name = "TlpButtons";
             TlpButtons.RowCount = 1;
@@ -509,7 +540,7 @@
             TlpAux3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             TlpAux3.Controls.Add(TlpFilter, 1, 0);
             TlpAux3.Dock = DockStyle.Fill;
-            TlpAux3.Location = new Point(0, 400);
+            TlpAux3.Location = new Point(0, 300);
             TlpAux3.Margin = new Padding(0);
             TlpAux3.Name = "TlpAux3";
             TlpAux3.RowCount = 1;
@@ -598,40 +629,40 @@
             DgvFunciones.AllowUserToAddRows = false;
             DgvFunciones.AllowUserToResizeColumns = false;
             DgvFunciones.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(50, 55, 66);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            DgvFunciones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(42, 44, 49);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(178, 44, 48);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            DgvFunciones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DgvFunciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgvFunciones.BackgroundColor = Color.FromArgb(55, 60, 72);
+            DgvFunciones.BackgroundColor = Color.FromArgb(37, 38, 43);
             DgvFunciones.BorderStyle = BorderStyle.None;
             DgvFunciones.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             DgvFunciones.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.Padding = new Padding(8, 0, 0, 0);
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            DgvFunciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 47, 52);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.Padding = new Padding(8, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(45, 47, 52);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DgvFunciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DgvFunciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(55, 60, 72);
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9.5F);
-            dataGridViewCellStyle9.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle9.Padding = new Padding(8, 0, 5, 0);
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle9.SelectionForeColor = Color.White;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
-            DgvFunciones.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(37, 38, 43);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.5F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle3.Padding = new Padding(8, 0, 5, 0);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(178, 44, 48);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            DgvFunciones.DefaultCellStyle = dataGridViewCellStyle3;
             DgvFunciones.Dock = DockStyle.Fill;
             DgvFunciones.EnableHeadersVisualStyles = false;
             DgvFunciones.Font = new Font("Segoe UI", 9.5F);
-            DgvFunciones.GridColor = Color.FromArgb(70, 76, 90);
-            DgvFunciones.Location = new Point(0, 475);
+            DgvFunciones.GridColor = Color.FromArgb(58, 60, 66);
+            DgvFunciones.Location = new Point(0, 375);
             DgvFunciones.Margin = new Padding(0);
             DgvFunciones.MultiSelect = false;
             DgvFunciones.Name = "DgvFunciones";
@@ -640,73 +671,8 @@
             DgvFunciones.RowHeadersWidth = 51;
             DgvFunciones.RowTemplate.Height = 36;
             DgvFunciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DgvFunciones.Size = new Size(1050, 225);
+            DgvFunciones.Size = new Size(1050, 325);
             DgvFunciones.TabIndex = 2;
-            // 
-            // LbHora
-            // 
-            LbHora.AutoSize = true;
-            LbHora.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            LbHora.ForeColor = Color.FromArgb(220, 220, 220);
-            LbHora.Location = new Point(602, 75);
-            LbHora.Name = "LbHora";
-            LbHora.Padding = new Padding(0, 0, 2, 0);
-            LbHora.Size = new Size(51, 23);
-            LbHora.TabIndex = 71;
-            LbHora.Text = "Hora";
-            LbHora.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // LbPrecioDeFuncion
-            // 
-            LbPrecioDeFuncion.AutoSize = true;
-            LbPrecioDeFuncion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            LbPrecioDeFuncion.ForeColor = Color.FromArgb(220, 220, 220);
-            LbPrecioDeFuncion.Location = new Point(602, 150);
-            LbPrecioDeFuncion.Name = "LbPrecioDeFuncion";
-            LbPrecioDeFuncion.Padding = new Padding(0, 0, 2, 0);
-            LbPrecioDeFuncion.Size = new Size(153, 23);
-            LbPrecioDeFuncion.TabIndex = 72;
-            LbPrecioDeFuncion.Text = "Precio de Función";
-            LbPrecioDeFuncion.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // DatePickerFecha
-            // 
-            DatePickerFecha.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            DatePickerFecha.CustomFormat = "dd/MM/yyyy";
-            DatePickerFecha.Format = DateTimePickerFormat.Custom;
-            DatePickerFecha.Location = new Point(604, 25);
-            DatePickerFecha.Margin = new Padding(5, 0, 5, 10);
-            DatePickerFecha.MaximumSize = new Size(0, 30);
-            DatePickerFecha.MinimumSize = new Size(190, 30);
-            DatePickerFecha.Name = "DatePickerFecha";
-            DatePickerFecha.PaletteMode = Krypton.Toolkit.PaletteMode.Microsoft365BlackDarkModeAlternate;
-            DatePickerFecha.Size = new Size(291, 30);
-            DatePickerFecha.StateActive.Back.Color1 = Color.FromArgb(55, 60, 72);
-            DatePickerFecha.StateActive.Border.Color1 = Color.FromArgb(40, 40, 40);
-            DatePickerFecha.StateActive.Border.Color2 = Color.FromArgb(40, 40, 40);
-            DatePickerFecha.StateActive.Content.Color1 = Color.FromArgb(230, 230, 230);
-            DatePickerFecha.StateCommon.Back.Color1 = Color.FromArgb(55, 60, 72);
-            DatePickerFecha.StateCommon.Border.Color1 = Color.FromArgb(40, 40, 40);
-            DatePickerFecha.StateCommon.Border.Color2 = Color.FromArgb(40, 40, 40);
-            DatePickerFecha.StateCommon.Content.Color1 = Color.FromArgb(230, 230, 230);
-            DatePickerFecha.TabIndex = 73;
-            // 
-            // TimePickerHora
-            // 
-            TimePickerHora.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            TimePickerHora.BackColor = Color.FromArgb(55, 60, 72);
-            TimePickerHora.BorderStyle = BorderStyle.FixedSingle;
-            TimePickerHora.Font = new Font("Segoe UI", 11F);
-            TimePickerHora.ForeColor = Color.FromArgb(230, 230, 230);
-            TimePickerHora.Location = new Point(604, 100);
-            TimePickerHora.Margin = new Padding(5, 0, 5, 10);
-            TimePickerHora.Mask = "00:00";
-            TimePickerHora.MaximumSize = new Size(0, 30);
-            TimePickerHora.MinimumSize = new Size(190, 30);
-            TimePickerHora.Name = "TimePickerHora";
-            TimePickerHora.Size = new Size(291, 30);
-            TimePickerHora.TabIndex = 74;
-            TimePickerHora.TextAlign = HorizontalAlignment.Center;
             // 
             // FrUcFunciones
             // 
@@ -746,8 +712,6 @@
         private Componentes.CustomComboBox CbSala;
         private Componentes.CustomTextBox TbPrecioFuncion;
         private Componentes.CustomLabel LbSala;
-        private Componentes.CustomLabel LbTipoDeFuncion;
-        private Componentes.CustomComboBox CbTipoDeFuncion;
         private TableLayoutPanel TlpButtons;
         private Componentes.CustomButton BtnEliminar;
         private Componentes.CustomButton BtnActualizar;
@@ -761,10 +725,10 @@
         private Componentes.CustomButton BtnBuscar;
         private Componentes.CustomTextBox TbFiltro;
         private Componentes.CustomComboBox CbFiltro;
-        private Componentes.CustomDataGridView DgvFunciones;
         private Componentes.CustomLabel LbHora;
         private Componentes.CustomLabel LbPrecioDeFuncion;
         private Componentes.CustomDatePicker DatePickerFecha;
         private Componentes.CustomTimePicker TimePickerHora;
+        private Componentes.CustomDataGridView DgvFunciones;
     }
 }

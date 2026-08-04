@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             TlpDivFormAndDgv = new TableLayoutPanel();
             TlpAux1 = new TableLayoutPanel();
             TlpAux2 = new TableLayoutPanel();
@@ -590,39 +590,39 @@
             DgvSalas.AllowUserToAddRows = false;
             DgvSalas.AllowUserToResizeColumns = false;
             DgvSalas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(50, 55, 66);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            DgvSalas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(42, 44, 49);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(178, 44, 48);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            DgvSalas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DgvSalas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgvSalas.BackgroundColor = Color.FromArgb(55, 60, 72);
+            DgvSalas.BackgroundColor = Color.FromArgb(37, 38, 43);
             DgvSalas.BorderStyle = BorderStyle.None;
             DgvSalas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             DgvSalas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.Padding = new Padding(8, 0, 0, 0);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            DgvSalas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 47, 52);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.Padding = new Padding(8, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(45, 47, 52);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DgvSalas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DgvSalas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(55, 60, 72);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9.5F);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle6.Padding = new Padding(8, 0, 5, 0);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(41, 128, 185);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            DgvSalas.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(37, 38, 43);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.5F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle3.Padding = new Padding(8, 0, 5, 0);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(178, 44, 48);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            DgvSalas.DefaultCellStyle = dataGridViewCellStyle3;
             DgvSalas.Dock = DockStyle.Fill;
             DgvSalas.EnableHeadersVisualStyles = false;
             DgvSalas.Font = new Font("Segoe UI", 9.5F);
-            DgvSalas.GridColor = Color.FromArgb(70, 76, 90);
+            DgvSalas.GridColor = Color.FromArgb(58, 60, 66);
             DgvSalas.Location = new Point(0, 375);
             DgvSalas.Margin = new Padding(0);
             DgvSalas.MultiSelect = false;
@@ -681,7 +681,6 @@
         private Componentes.CustomButton BtnBuscar;
         private Componentes.CustomTextBox TbFiltro;
         private Componentes.CustomComboBox CbFiltro;
-        private Componentes.CustomDataGridView DgvSalas;
         private Componentes.CustomComboBox CbTipoSala;
         private Componentes.CustomLabel customLabel1;
         private Componentes.CustomComboBox CbCine;
@@ -689,5 +688,6 @@
         private Componentes.CustomLabel LbCine;
         private Componentes.CustomLabel customLabel3;
         private Componentes.CustomComboBox CbCapacidadDeSala;
+        private Componentes.CustomDataGridView DgvSalas;
     }
 }

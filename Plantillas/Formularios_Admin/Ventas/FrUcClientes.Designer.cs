@@ -36,12 +36,15 @@
             TlpAux2 = new TableLayoutPanel();
             TlpFormWithButtons = new TableLayoutPanel();
             TlpForm = new TableLayoutPanel();
+            customTextBox2 = new Componentes.CustomTextBox();
+            TbNombre = new Componentes.CustomTextBox();
             TbID = new Componentes.CustomIDTextBox();
             LbID = new Componentes.CustomLabel();
             LbNombre = new Componentes.CustomLabel();
             LbApellido = new Componentes.CustomLabel();
             LbIdentificacion = new Componentes.CustomLabel();
             LbHora = new Componentes.CustomLabel();
+            customTextBox3 = new Componentes.CustomTextBox();
             TbIdentificacion = new Componentes.CustomTextBox();
             TlpButtons = new TableLayoutPanel();
             BtnEliminar = new Componentes.CustomButton();
@@ -57,9 +60,6 @@
             TbFiltro = new Componentes.CustomTextBox();
             CbFiltro = new Componentes.CustomComboBox();
             DgvClientes = new Componentes.CustomDataGridView();
-            TbNombre = new Componentes.CustomTextBox();
-            customTextBox2 = new Componentes.CustomTextBox();
-            customTextBox3 = new Componentes.CustomTextBox();
             TlpDivFormAndDgv.SuspendLayout();
             TlpAux1.SuspendLayout();
             TlpAux2.SuspendLayout();
@@ -173,6 +173,38 @@
             TlpForm.Size = new Size(900, 150);
             TlpForm.TabIndex = 0;
             // 
+            // customTextBox2
+            // 
+            customTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            customTextBox2.BackColor = Color.FromArgb(55, 60, 72);
+            customTextBox2.BorderStyle = BorderStyle.FixedSingle;
+            customTextBox2.Font = new Font("Segoe UI", 10F);
+            customTextBox2.ForeColor = Color.FromArgb(160, 165, 175);
+            customTextBox2.Location = new Point(604, 25);
+            customTextBox2.Margin = new Padding(5, 0, 5, 10);
+            customTextBox2.MaximumSize = new Size(0, 30);
+            customTextBox2.MinimumSize = new Size(190, 30);
+            customTextBox2.Name = "customTextBox2";
+            customTextBox2.PlaceholderText = "1";
+            customTextBox2.Size = new Size(291, 30);
+            customTextBox2.TabIndex = 73;
+            // 
+            // TbNombre
+            // 
+            TbNombre.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TbNombre.BackColor = Color.FromArgb(55, 60, 72);
+            TbNombre.BorderStyle = BorderStyle.FixedSingle;
+            TbNombre.Font = new Font("Segoe UI", 10F);
+            TbNombre.ForeColor = Color.FromArgb(160, 165, 175);
+            TbNombre.Location = new Point(304, 25);
+            TbNombre.Margin = new Padding(5, 0, 5, 10);
+            TbNombre.MaximumSize = new Size(0, 30);
+            TbNombre.MinimumSize = new Size(190, 30);
+            TbNombre.Name = "TbNombre";
+            TbNombre.PlaceholderText = "1";
+            TbNombre.Size = new Size(290, 30);
+            TbNombre.TabIndex = 72;
+            // 
             // TbID
             // 
             TbID.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -256,6 +288,22 @@
             LbHora.TabIndex = 71;
             LbHora.Text = "Correo";
             LbHora.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // customTextBox3
+            // 
+            customTextBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            customTextBox3.BackColor = Color.FromArgb(55, 60, 72);
+            customTextBox3.BorderStyle = BorderStyle.FixedSingle;
+            customTextBox3.Font = new Font("Segoe UI", 10F);
+            customTextBox3.ForeColor = Color.FromArgb(160, 165, 175);
+            customTextBox3.Location = new Point(604, 100);
+            customTextBox3.Margin = new Padding(5, 0, 5, 10);
+            customTextBox3.MaximumSize = new Size(0, 30);
+            customTextBox3.MinimumSize = new Size(190, 30);
+            customTextBox3.Name = "customTextBox3";
+            customTextBox3.PlaceholderText = "1";
+            customTextBox3.Size = new Size(291, 30);
+            customTextBox3.TabIndex = 74;
             // 
             // TbIdentificacion
             // 
@@ -528,39 +576,39 @@
             DgvClientes.AllowUserToAddRows = false;
             DgvClientes.AllowUserToResizeColumns = false;
             DgvClientes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(50, 55, 66);
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(42, 44, 49);
             dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(178, 44, 48);
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
             DgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgvClientes.BackgroundColor = Color.FromArgb(55, 60, 72);
+            DgvClientes.BackgroundColor = Color.FromArgb(37, 38, 43);
             DgvClientes.BorderStyle = BorderStyle.None;
             DgvClientes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             DgvClientes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 47, 52);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.Padding = new Padding(8, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(45, 47, 52);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             DgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(55, 60, 72);
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(37, 38, 43);
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.5F);
             dataGridViewCellStyle3.ForeColor = Color.FromArgb(230, 230, 230);
             dataGridViewCellStyle3.Padding = new Padding(8, 0, 5, 0);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(178, 44, 48);
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             DgvClientes.DefaultCellStyle = dataGridViewCellStyle3;
             DgvClientes.Dock = DockStyle.Fill;
             DgvClientes.EnableHeadersVisualStyles = false;
             DgvClientes.Font = new Font("Segoe UI", 9.5F);
-            DgvClientes.GridColor = Color.FromArgb(70, 76, 90);
+            DgvClientes.GridColor = Color.FromArgb(58, 60, 66);
             DgvClientes.Location = new Point(0, 375);
             DgvClientes.Margin = new Padding(0);
             DgvClientes.MultiSelect = false;
@@ -572,54 +620,6 @@
             DgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DgvClientes.Size = new Size(1050, 325);
             DgvClientes.TabIndex = 2;
-            // 
-            // TbNombre
-            // 
-            TbNombre.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            TbNombre.BackColor = Color.FromArgb(55, 60, 72);
-            TbNombre.BorderStyle = BorderStyle.FixedSingle;
-            TbNombre.Font = new Font("Segoe UI", 10F);
-            TbNombre.ForeColor = Color.FromArgb(160, 165, 175);
-            TbNombre.Location = new Point(304, 25);
-            TbNombre.Margin = new Padding(5, 0, 5, 10);
-            TbNombre.MaximumSize = new Size(0, 30);
-            TbNombre.MinimumSize = new Size(190, 30);
-            TbNombre.Name = "TbNombre";
-            TbNombre.PlaceholderText = "1";
-            TbNombre.Size = new Size(290, 30);
-            TbNombre.TabIndex = 72;
-            // 
-            // customTextBox2
-            // 
-            customTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            customTextBox2.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox2.BorderStyle = BorderStyle.FixedSingle;
-            customTextBox2.Font = new Font("Segoe UI", 10F);
-            customTextBox2.ForeColor = Color.FromArgb(160, 165, 175);
-            customTextBox2.Location = new Point(604, 25);
-            customTextBox2.Margin = new Padding(5, 0, 5, 10);
-            customTextBox2.MaximumSize = new Size(0, 30);
-            customTextBox2.MinimumSize = new Size(190, 30);
-            customTextBox2.Name = "customTextBox2";
-            customTextBox2.PlaceholderText = "1";
-            customTextBox2.Size = new Size(291, 30);
-            customTextBox2.TabIndex = 73;
-            // 
-            // customTextBox3
-            // 
-            customTextBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            customTextBox3.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBox3.BorderStyle = BorderStyle.FixedSingle;
-            customTextBox3.Font = new Font("Segoe UI", 10F);
-            customTextBox3.ForeColor = Color.FromArgb(160, 165, 175);
-            customTextBox3.Location = new Point(604, 100);
-            customTextBox3.Margin = new Padding(5, 0, 5, 10);
-            customTextBox3.MaximumSize = new Size(0, 30);
-            customTextBox3.MinimumSize = new Size(190, 30);
-            customTextBox3.Name = "customTextBox3";
-            customTextBox3.PlaceholderText = "1";
-            customTextBox3.Size = new Size(291, 30);
-            customTextBox3.TabIndex = 74;
             // 
             // FrUcClientes
             // 
@@ -671,9 +671,9 @@
         private Componentes.CustomButton BtnBuscar;
         private Componentes.CustomTextBox TbFiltro;
         private Componentes.CustomComboBox CbFiltro;
-        private Componentes.CustomDataGridView DgvClientes;
         private Componentes.CustomTextBox customTextBox2;
         private Componentes.CustomTextBox TbNombre;
         private Componentes.CustomTextBox customTextBox3;
+        private Componentes.CustomDataGridView DgvClientes;
     }
 }

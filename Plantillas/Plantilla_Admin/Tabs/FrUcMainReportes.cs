@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Forms_Admin.Usuarios.Catalogs
+namespace Plantilla_Admin.Tabs
 {
-    public partial class FrUcNombresDePc : UserControl
+    public partial class FrUcMainReportes : UserControl
     {
-        public FrUcNombresDePc()
+        public FrUcMainReportes()
         {
             InitializeComponent();
         }
