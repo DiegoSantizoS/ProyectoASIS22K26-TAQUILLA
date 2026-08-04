@@ -67,6 +67,9 @@ namespace Plantilla_Cliente
             AplicarBordeLabel(Tx_DirectorHead, Color.FromArgb(18, 18, 18));
             AplicarBordeLabel(Tx_DuracionHead, Color.FromArgb(18, 18, 18));
             AplicarBordeLabel(Tx_RestriccionHead, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(Tx_SeleccionCine, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(Tx_Funciones, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(Tx_Horarios, Color.FromArgb(18, 18, 18));
         }
         /*Inicio del código 0901-23-13862 Carlos Andres Arriaza Lara el 25/07/2026*/
         private void Btn_Continuar_Click(object sender, EventArgs e)

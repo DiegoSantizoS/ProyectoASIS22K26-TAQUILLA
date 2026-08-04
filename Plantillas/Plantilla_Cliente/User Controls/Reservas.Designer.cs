@@ -203,7 +203,7 @@
             // 
             // Tlp_Eleccion_Funciones
             // 
-            Tlp_Eleccion_Funciones.BackColor = Color.White;
+            Tlp_Eleccion_Funciones.BackColor = Color.FromArgb(18, 18, 18);
             Tlp_Eleccion_Funciones.ColumnCount = 2;
             Tlp_Eleccion_Funciones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.9482794F));
             Tlp_Eleccion_Funciones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 89.05172F));
@@ -344,7 +344,7 @@
             Tx_Horarios.Size = new Size(120, 70);
             Tx_Horarios.TabIndex = 15;
             Tx_Horarios.Text = "Horarios disponibles";
-            Tx_Horarios.TextAlign = ContentAlignment.MiddleCenter;
+            Tx_Horarios.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Tx_Funciones
             // 
@@ -357,7 +357,7 @@
             Tx_Funciones.Size = new Size(120, 69);
             Tx_Funciones.TabIndex = 13;
             Tx_Funciones.Text = "Funciones disponibles";
-            Tx_Funciones.TextAlign = ContentAlignment.MiddleCenter;
+            Tx_Funciones.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Cbo_Cines
             // 
@@ -383,17 +383,21 @@
             Tx_SeleccionCine.Size = new Size(120, 43);
             Tx_SeleccionCine.TabIndex = 18;
             Tx_SeleccionCine.Text = "Selección de cine";
-            Tx_SeleccionCine.TextAlign = ContentAlignment.MiddleCenter;
+            Tx_SeleccionCine.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Btn_Continuar
             // 
             Btn_Continuar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            Btn_Continuar.BackColor = Color.FromArgb(197, 155, 39);
+            Btn_Continuar.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
+            Btn_Continuar.FlatStyle = FlatStyle.Popup;
+            Btn_Continuar.ForeColor = Color.FromArgb(250, 248, 245);
             Btn_Continuar.Location = new Point(235, 327);
             Btn_Continuar.Name = "Btn_Continuar";
             Btn_Continuar.Size = new Size(1156, 60);
             Btn_Continuar.TabIndex = 14;
             Btn_Continuar.Text = "Continuar";
-            Btn_Continuar.UseVisualStyleBackColor = true;
+            Btn_Continuar.UseVisualStyleBackColor = false;
             Btn_Continuar.Click += Btn_Continuar_Click;
             // 
             // Reservas
