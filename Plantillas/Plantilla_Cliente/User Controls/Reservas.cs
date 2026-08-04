@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Runtime.InteropServices.Marshalling;
 using System.Windows.Forms;
+using clase_conexion;
+using Plantilla_Cliente.Clases;
 
 
 namespace Plantilla_Cliente
@@ -36,6 +38,8 @@ namespace Plantilla_Cliente
         public Reservas()
         {
             InitializeComponent();
+            gconexion = new Con_Cliente();
+           
         }
 
         public Reservas(int idPelicula, int idciudad)
@@ -46,8 +50,8 @@ namespace Plantilla_Cliente
             this.idciudad = idciudad;
 
             // Prueba para verificar que el ID se recibió correctamente
-            MessageBox.Show($"ID recibido: {this.idPelicula}");
-            MessageBox.Show($"Ciudad recibida: {this.idciudad}");
+            /*MessageBox.Show($"ID recibido: {this.idPelicula}");
+            MessageBox.Show($"Ciudad recibida: {this.idciudad}");*/
             cargarinfopelicula(this.idPelicula);
             cargarfunciones(this.idPelicula, this.idciudad);
             CargarCines(this.idciudad);
@@ -57,7 +61,15 @@ namespace Plantilla_Cliente
 
         private void TlP_Reservas_Paint(object sender, PaintEventArgs e)
         {
-
+            AplicarBordeLabel(Tx_Director, Color.FromArgb(112, 27, 40));
+            AplicarBordeLabel(Tx_Duracion, Color.FromArgb(112, 27, 40));
+            AplicarBordeLabel(Tx_Restriccion, Color.FromArgb(112, 27, 40));
+            AplicarBordeLabel(Tx_DirectorHead, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(Tx_DuracionHead, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(Tx_RestriccionHead, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(Tx_SeleccionCine, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(Tx_Funciones, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(Tx_Horarios, Color.FromArgb(18, 18, 18));
         }
         /*Inicio del código 0901-23-13862 Carlos Andres Arriaza Lara el 25/07/2026*/
         private void Btn_Continuar_Click(object sender, EventArgs e)
@@ -110,9 +122,9 @@ namespace Plantilla_Cliente
         private void cargarfunciones(int idPelicula, int idciudad)
         {
             Flp_Funciones.Controls.Clear();
-            MessageBox.Show($"Película: {idPelicula}\nCiudad: {idciudad}");
+            //MessageBox.Show($"Película: {idPelicula}\nCiudad: {idciudad}");
             DataTable funciones = gconexion.cargarfunciones(idPelicula, idciudad);
-            MessageBox.Show($"Filas: {funciones.Rows.Count}");
+            //MessageBox.Show($"Filas: {funciones.Rows.Count}");
             HashSet<DateTime> fechas = new HashSet<DateTime>();
             foreach (DataRow fila in funciones.Rows)
             {
@@ -132,8 +144,9 @@ namespace Plantilla_Cliente
                 btn.Text = fecha.ToString("dd/MM");
                 btn.Tag = fecha;
 
-                btn.BackColor = Color.White;
-                btn.FlatStyle = FlatStyle.Flat;
+                btn.BackColor = Color.FromArgb(197, 155, 39);
+                btn.ForeColor = Color.FromArgb(250, 248, 245);
+                btn.FlatStyle = FlatStyle.Popup;
                 btn.FlatAppearance.BorderSize = 1;
 
                 btn.Click += BtnFecha_Click;
@@ -143,11 +156,11 @@ namespace Plantilla_Cliente
         }
         private void CargarHorarios(DateTime fechaSeleccionada)
         {
-            MessageBox.Show("IdCiudad:" + idciudad.ToString());
+            //MessageBox.Show("IdCiudad:" + idciudad.ToString());
             Flp_Horarios.Controls.Clear();
-            MessageBox.Show($"Película: {idPelicula}\nCiudad: {idciudad}");
+            //MessageBox.Show($"Película: {idPelicula}\nCiudad: {idciudad}");
             DataTable funciones = gconexion.cargarfunciones(idPelicula, idciudad);
-            MessageBox.Show($"Filas: {funciones.Rows.Count}");
+            //MessageBox.Show($"Filas: {funciones.Rows.Count}");
             foreach (DataRow fila in funciones.Rows)
             {
                 DateTime fechaFuncion = Convert.ToDateTime(fila["fecha_funcion"]);
@@ -165,25 +178,26 @@ namespace Plantilla_Cliente
 
                 btn.Tag = Convert.ToInt32(fila["id_funcion"]);
                 btn.Dock = DockStyle.Fill;
-                btn.BackColor = Color.White;
-                btn.ForeColor = Color.Black;
-                btn.FlatStyle = FlatStyle.Flat;
+                btn.BackColor = Color.FromArgb(197, 155, 39);
+                btn.ForeColor = Color.FromArgb(250, 248, 245);
+                btn.FlatStyle = FlatStyle.Popup;
                 btn.FlatAppearance.BorderSize = 1;
 
                 btn.Click += BtnHorario_Click;
-                MessageBox.Show($"Creando botón: {fila["hora_funcion"]}");
+                //MessageBox.Show($"Creando botón: {fila["hora_funcion"]}");
                 Flp_Horarios.Controls.Add(btn);
             }
         }
         private void BtnFecha_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
             if (btnFechaSeleccionada != null)
-                btnFechaSeleccionada.BackColor = Color.White;
+            {
+                btnFechaSeleccionada.BackColor = Color.FromArgb(197,155,39);
+                btnFechaSeleccionada.ForeColor = Color.FromArgb(250, 248, 245);
+            }
+            btn.BackColor = Color.FromArgb(112, 27, 40);
 
-            btn.BackColor = Color.FromArgb(68, 75, 245);
-            btn.ForeColor = Color.White;
 
             btnFechaSeleccionada = btn;
 
@@ -196,22 +210,26 @@ namespace Plantilla_Cliente
             Button btn = (Button)sender;
 
             if (btnHoraSeleccionada != null)
-                btnHoraSeleccionada.BackColor = Color.White;
+            {
+                btnHoraSeleccionada.BackColor = Color.FromArgb(197, 155, 39);
+                btnHoraSeleccionada.ForeColor = Color.FromArgb(250, 248, 245);
+            }
 
-            btn.BackColor = Color.FromArgb(68, 75, 245);
+
+            btn.BackColor = Color.FromArgb(112, 27, 40);
             btn.ForeColor = Color.White;
 
             btnHoraSeleccionada = btn;
 
             id_funcion = (int)btn.Tag;
-            MessageBox.Show($"Id función: {id_funcion}");
+            //MessageBox.Show($"Id función: {id_funcion}");
             IdSala = gconexion.ObtenerIdSala(id_funcion);
-            MessageBox.Show($"Id_Funcion: {id_funcion}\nId_Sala: {IdSala}");
+           // MessageBox.Show($"Id_Funcion: {id_funcion}\nId_Sala: {IdSala}");
         }
 
         private void Cbo_Cines_SelectedIndexChanged(object sender, EventArgs e)
         {
-            idcine = Cbo_Cines.SelectedIndex + 1;
+           idcine = Cbo_Cines.SelectedIndex + 1;
             cargarfunciones(idPelicula, idcine);
 
         }
@@ -242,6 +260,21 @@ namespace Plantilla_Cliente
                     new Boleto(idBoleto, id_funcion, asiento, idVenta, "Reservado"));
                 MessageBox.Show($"Boleto generado: IdBoleto={idBoleto}, IdFuncion={id_funcion}, Asiento={asiento}, IdVenta={idVenta}, Estado=Reservado");
             }
+        }
+        private void AplicarBordeLabel(Label lbl, Color colorBorde)
+        {
+            lbl.Paint += (object sender, PaintEventArgs e) =>
+            {
+                using (Pen pen = new Pen(colorBorde, 2))
+                {
+                    e.Graphics.DrawRectangle(
+                        pen,
+                        0,
+                        0,
+                        lbl.Width - 1,
+                        lbl.Height - 1);
+                }
+            };
         }
     }
 }

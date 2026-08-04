@@ -405,13 +405,6 @@ namespace clase_conexion
         }
 
 
-        public DataTable obtenerPeliculaParaFuncion(int idPelicula)
-        {
-            DataTable dt = new DataTable();
-            MySqlConnection con = GetConnection();
-            return dt;
-        }
-
         /* fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
      * fecha de: 27/07/2026 */
     

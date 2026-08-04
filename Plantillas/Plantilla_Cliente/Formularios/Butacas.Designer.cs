@@ -62,9 +62,13 @@
             // 
             // Btn_Confirmacion
             // 
-            Btn_Confirmacion.BackColor = SystemColors.Menu;
+            Btn_Confirmacion.BackColor = Color.FromArgb(197, 155, 39);
             Btn_Confirmacion.Cursor = Cursors.Hand;
             Btn_Confirmacion.Dock = DockStyle.Fill;
+            Btn_Confirmacion.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
+            Btn_Confirmacion.FlatAppearance.MouseOverBackColor = Color.FromArgb(112, 27, 40);
+            Btn_Confirmacion.FlatStyle = FlatStyle.Popup;
+            Btn_Confirmacion.ForeColor = Color.FromArgb(250, 248, 245);
             Btn_Confirmacion.Location = new Point(3, 412);
             Btn_Confirmacion.Name = "Btn_Confirmacion";
             Btn_Confirmacion.Size = new Size(1282, 86);
@@ -75,6 +79,7 @@
             // 
             // Tlp_butacaselector
             // 
+            Tlp_butacaselector.BackColor = Color.FromArgb(18, 18, 18);
             Tlp_butacaselector.ColumnCount = 2;
             Tlp_butacaselector.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             Tlp_butacaselector.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));

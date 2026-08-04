@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Plantilla_Cliente.Clases;
 
 namespace Plantilla_Cliente
 {
@@ -143,6 +144,6 @@ namespace Plantilla_Cliente
                 Close();
             }
         }
-
+        
     }
 }
