@@ -28,87 +28,82 @@
         /// </summary>
         private void InitializeComponent()
         {
-            TlpButacas = new TableLayoutPanel();
-            BtnConfirmacion = new Button();
-            Tlpbutacaselector = new TableLayoutPanel();
-            TlpButacas.SuspendLayout();
+            Tlp_Butacas = new TableLayoutPanel();
+            Btn_Confirmacion = new Button();
+            Tlp_butacaselector = new TableLayoutPanel();
+            Tlp_Butacas.SuspendLayout();
             SuspendLayout();
             // 
-            // TlpButacas
+            // Tlp_Butacas
             // 
-            TlpButacas.ColumnCount = 1;
-            TlpButacas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            TlpButacas.Controls.Add(BtnConfirmacion, 0, 1);
-            TlpButacas.Controls.Add(Tlpbutacaselector, 0, 0);
-            TlpButacas.Dock = DockStyle.Fill;
-            TlpButacas.Location = new Point(0, 0);
-            TlpButacas.Name = "TlpButacas";
-            TlpButacas.RowCount = 2;
-            TlpButacas.RowStyles.Add(new RowStyle(SizeType.Percent, 81.8314F));
-            TlpButacas.RowStyles.Add(new RowStyle(SizeType.Percent, 18.1686039F));
-            TlpButacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlpButacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlpButacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlpButacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlpButacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlpButacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlpButacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlpButacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlpButacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlpButacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlpButacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlpButacas.Size = new Size(1288, 501);
-            TlpButacas.TabIndex = 0;
+            Tlp_Butacas.ColumnCount = 1;
+            Tlp_Butacas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            Tlp_Butacas.Controls.Add(Btn_Confirmacion, 0, 1);
+            Tlp_Butacas.Controls.Add(Tlp_butacaselector, 0, 0);
+            Tlp_Butacas.Dock = DockStyle.Fill;
+            Tlp_Butacas.Location = new Point(0, 0);
+            Tlp_Butacas.Name = "Tlp_Butacas";
+            Tlp_Butacas.RowCount = 2;
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Percent, 81.8314F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Percent, 18.1686039F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Tlp_Butacas.Size = new Size(1288, 501);
+            Tlp_Butacas.TabIndex = 0;
             // 
-            // BtnConfirmacion
+            // Btn_Confirmacion
             // 
-            BtnConfirmacion.BackColor = Color.FromArgb(197, 155, 39);
-            BtnConfirmacion.Cursor = Cursors.Hand;
-            BtnConfirmacion.Dock = DockStyle.Fill;
-            BtnConfirmacion.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
-            BtnConfirmacion.FlatAppearance.MouseOverBackColor = Color.FromArgb(112, 27, 40);
-            BtnConfirmacion.FlatStyle = FlatStyle.Popup;
-            BtnConfirmacion.ForeColor = Color.FromArgb(250, 248, 245);
-            BtnConfirmacion.Location = new Point(3, 412);
-            BtnConfirmacion.Name = "BtnConfirmacion";
-            BtnConfirmacion.Size = new Size(1282, 86);
-            BtnConfirmacion.TabIndex = 1;
-            BtnConfirmacion.Text = "Continuar";
-            BtnConfirmacion.UseVisualStyleBackColor = false;
-            BtnConfirmacion.Click += Btn_Confirmacion_Click;
+            Btn_Confirmacion.BackColor = SystemColors.Menu;
+            Btn_Confirmacion.Cursor = Cursors.Hand;
+            Btn_Confirmacion.Dock = DockStyle.Fill;
+            Btn_Confirmacion.Location = new Point(3, 412);
+            Btn_Confirmacion.Name = "Btn_Confirmacion";
+            Btn_Confirmacion.Size = new Size(1282, 86);
+            Btn_Confirmacion.TabIndex = 1;
+            Btn_Confirmacion.Text = "Continuar";
+            Btn_Confirmacion.UseVisualStyleBackColor = false;
+            Btn_Confirmacion.Click += Btn_Confirmacion_Click;
             // 
-            // Tlpbutacaselector
+            // Tlp_butacaselector
             // 
-            Tlpbutacaselector.BackColor = Color.FromArgb(18, 18, 18);
-            Tlpbutacaselector.ColumnCount = 2;
-            Tlpbutacaselector.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            Tlpbutacaselector.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            Tlpbutacaselector.Dock = DockStyle.Fill;
-            Tlpbutacaselector.Location = new Point(3, 3);
-            Tlpbutacaselector.Name = "Tlpbutacaselector";
-            Tlpbutacaselector.RowCount = 2;
-            Tlpbutacaselector.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            Tlpbutacaselector.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            Tlpbutacaselector.Size = new Size(1282, 403);
-            Tlpbutacaselector.TabIndex = 2;
+            Tlp_butacaselector.ColumnCount = 2;
+            Tlp_butacaselector.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            Tlp_butacaselector.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            Tlp_butacaselector.Dock = DockStyle.Fill;
+            Tlp_butacaselector.Location = new Point(3, 3);
+            Tlp_butacaselector.Name = "Tlp_butacaselector";
+            Tlp_butacaselector.RowCount = 2;
+            Tlp_butacaselector.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            Tlp_butacaselector.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            Tlp_butacaselector.Size = new Size(1282, 403);
+            Tlp_butacaselector.TabIndex = 2;
             // 
             // Butacas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1288, 501);
-            Controls.Add(TlpButacas);
+            Controls.Add(Tlp_Butacas);
             Name = "Butacas";
             Text = "Selector de butacas";
             Load += Butacas_Load;
-            TlpButacas.ResumeLayout(false);
+            Tlp_Butacas.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TableLayoutPanel TlpButacas;
-        private Button BtnConfirmacion;
-        private TableLayoutPanel Tlpbutacaselector;
+        private TableLayoutPanel Tlp_Butacas;
+        private Button Btn_Confirmacion;
+        private TableLayoutPanel Tlp_butacaselector;
     }
 }

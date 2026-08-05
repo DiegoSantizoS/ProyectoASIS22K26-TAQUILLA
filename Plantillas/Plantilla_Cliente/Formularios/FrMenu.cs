@@ -11,12 +11,12 @@ namespace Plantilla_Cliente
             InitializeComponent();
 
             Cartelera cartelera = new Cartelera();
-            cartelera.CambiaraReserva += Cartelera_CambiaraReserva;
+            cartelera.CambiaraReserva += CargarPanelReserva;
 
-            funcargarpagina(cartelera);
+            CargarPanel(cartelera);
         }
         /* Inicio de Codigo de Carlos Andres Arriaza Lara en la fecha de: 20/07/2026 */
-        private void funcargarpagina(UserControl pagina)
+        private void CargarPanel(UserControl pagina)
         {
             Pnl_Menu.Controls.Clear();
 
@@ -28,25 +28,16 @@ namespace Plantilla_Cliente
         {
 
         }
-        private void Cartelera_CambiaraReserva(int idPelicula, int idCiudad)
+        private void CargarPanelReserva(int idPelicula, int idCiudad)
         {
             Reservas reservas = new Reservas(idPelicula, idCiudad);
-            funcargarpagina(reservas);
-        }
-
-        private void carteleraToolStripMenuItem_Click_1(object? sender, EventArgs e)
-        {
-            Cartelera cartelera = new Cartelera();
-
-            cartelera.CambiaraReserva += Cartelera_CambiaraReserva;
-
-            funcargarpagina(cartelera);
+            CargarPanel(reservas);
         }
 
         private void reservasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Reservas reservas = new Reservas();
-            funcargarpagina(reservas);
+            CargarPanel(reservas);
         }
     }
     /* Final de Codigo de Carlos Andres Arriaza Lara en la fecha de: 20/07/2026 */

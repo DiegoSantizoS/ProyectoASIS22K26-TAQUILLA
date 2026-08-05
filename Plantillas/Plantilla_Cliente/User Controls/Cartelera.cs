@@ -78,7 +78,7 @@ namespace Plantilla_Cliente
         private void CargarPeliculas()
         {
             DataTable peliculas = gconexion.mostrarpelicula();
-            DgvCartelera.DataSource = gconexion.mostrarpelicula();
+            DgvCartelera.DataSource = peliculas;
             // Desactivar el redimensionamiento por el usuario
             DgvCartelera.AllowUserToResizeColumns = false;
             DgvCartelera.AllowUserToResizeRows = false;
@@ -94,7 +94,7 @@ namespace Plantilla_Cliente
                 // Establecer el color de la letra para las columnas generadas por el DataSource
                 column.DefaultCellStyle.ForeColor = Color.FromArgb(112, 27, 40);        
 
-                DgvCartelera.Columns["idPelicula"].Visible = false;
+                //DgvCartelera.Columns[2].Visible = false;
 
 
             }

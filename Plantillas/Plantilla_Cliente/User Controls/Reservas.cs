@@ -339,5 +339,9 @@ namespace Plantilla_Cliente
             }
         }
 
+        private void TxRestriccion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

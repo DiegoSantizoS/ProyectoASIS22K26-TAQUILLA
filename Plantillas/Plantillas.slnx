@@ -5,5 +5,4 @@
   <Project Path="Formularios_Admin/Forms_Admin.csproj" Id="fb3bb006-9d71-4455-8fe5-4c4f41a73a1b" />
   <Project Path="Plantilla_Admin/Plantilla_Admin.csproj" />
   <Project Path="Plantilla_Cliente/Plantilla_Cliente.csproj" />
-  <Project Path="Validaciones/Validaciones.csproj" Id="85372bcf-655c-46c5-8d16-1d21e0ac2570" />
 </Solution>
