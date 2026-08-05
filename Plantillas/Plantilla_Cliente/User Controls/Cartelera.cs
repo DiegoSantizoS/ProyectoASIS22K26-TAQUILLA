@@ -97,7 +97,6 @@ namespace Plantilla_Cliente
                 DgvCartelera.Columns["idPelicula"].Visible = false;
 
 
-
             }
         }
         /* fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la

@@ -12,9 +12,9 @@ namespace Componentes
             AutoSize = false;
             Font = new Font("Segoe UI", 10f, FontStyle.Bold);
             ForeColor = Color.FromArgb(220, 220, 220);
-            Padding = new Padding(0, 0, 8, 0);
+            Padding = new Padding(0, 0, 2, 0);
             Text = "Label";
-            Dock = DockStyle.Fill;
+            Dock = DockStyle.None;
             TextAlign = ContentAlignment.MiddleRight;
             //MinimumSize = new Size(125, 50);
             //MaximumSize = new Size(0, 0);

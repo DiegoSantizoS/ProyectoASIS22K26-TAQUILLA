@@ -175,28 +175,19 @@ namespace Plantilla_Cliente.Clases
         {
             DataTable funciones = new DataTable();
             MySqlConnection con = GetConnection();
-
-            string consulta = @"
-            SELECT 
-            f.id_funcion,
-            TIME_FORMAT(f.hora_funcion, '%H:%i') AS hora_funcion,
-            f.fecha_funcion
-            FROM tbl_funcion f
-            INNER JOIN tbl_sala s ON f.id_sala = s.id_sala
-            INNER JOIN tbl_cine c ON s.id_cine = c.id_cine
-            WHERE f.id_pelicula = @idPelicula
-            AND c.id_cine = @idCine
-            AND TIMESTAMP(f.fecha_funcion, f.hora_funcion) >= NOW()
-            AND TIMESTAMP(f.fecha_funcion, f.hora_funcion) < DATE_ADD(NOW(), INTERVAL 7 DAY)
-            ORDER BY f.fecha_funcion, f.hora_funcion;";
-
+            string consulta = @"SELECT 
+                        f.id_funcion,
+                        TIME_FORMAT(f.hora_funcion, '%H:%i') AS hora_funcion,
+                        f.fecha_funcion
+                        FROM tbl_funcion f
+                        inner join tbl_sala s ON f.id_sala = s.id_sala
+                        inner join tbl_cine c ON s.id_cine = c.id_cine
+                        WHERE f.id_pelicula = @idPelicula and c.id_cine = @idCine";
             MySqlCommand cmd = new MySqlCommand(consulta, con);
             cmd.Parameters.AddWithValue("@idPelicula", idPelicula);
             cmd.Parameters.AddWithValue("@idCine", idCine);
-
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             adapter.Fill(funciones);
-
             return funciones;
         }
         /*Fin de código de Carlos Andres Arriaza Lara 0901-23-13862 el 28/07/2026*/
@@ -259,20 +250,6 @@ namespace Plantilla_Cliente.Clases
                 : 0;
         }
         /*Fin del código de Carlos Andres Arriaza Lara 0901-23-13862 el 31/07/2026*/
-
-        /*Inicio del código de Carlos Andres Arriaza Lara 0901-23-13862 el 03/08/2026*/
-        public string ObtenerEnlacePelicula(int idPelicula)
-        {
-            MySqlConnection con = GetConnection();
-            string consulta = @"SELECT trailer_pelicula from tbl_pelicula WHERE id_pelicula = @idPelicula";
-            MySqlCommand cmd = new MySqlCommand(consulta, con);
-            cmd.Parameters.AddWithValue("@idPelicula", idPelicula);
-            object resultado = cmd.ExecuteScalar();
-            return (resultado != null && resultado != DBNull.Value)
-                ? Convert.ToString(resultado)
-                : string.Empty;
-        }
-        /*Fin del código de Carlos Andres Arriaza Lara 0901-23-13862 el 03/08/2026*/
     }
 }
 
