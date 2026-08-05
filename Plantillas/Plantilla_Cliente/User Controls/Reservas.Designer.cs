@@ -54,14 +54,12 @@
             Cbo_Cines = new ComboBox();
             Tx_SeleccionCine = new Label();
             Btn_Continuar = new Button();
-            PicTrailer = new PictureBox();
             TlP_Reservas.SuspendLayout();
             Tlp_Info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Pic_Pelicula).BeginInit();
             Tlp_Eleccion_Funciones.SuspendLayout();
             Flp_Horarios.SuspendLayout();
             Flp_Funciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)PicTrailer).BeginInit();
             SuspendLayout();
             // 
             // TlP_Reservas
@@ -75,7 +73,6 @@
             TlP_Reservas.Controls.Add(Pic_Pelicula, 0, 0);
             TlP_Reservas.Controls.Add(Tlp_Eleccion_Funciones, 2, 1);
             TlP_Reservas.Controls.Add(Btn_Continuar, 2, 2);
-            TlP_Reservas.Controls.Add(PicTrailer, 0, 2);
             TlP_Reservas.Dock = DockStyle.Fill;
             TlP_Reservas.Location = new Point(0, 0);
             TlP_Reservas.Name = "TlP_Reservas";
@@ -403,19 +400,6 @@
             Btn_Continuar.UseVisualStyleBackColor = false;
             Btn_Continuar.Click += Btn_Continuar_Click;
             // 
-            // PicTrailer
-            // 
-            PicTrailer.Cursor = Cursors.Hand;
-            PicTrailer.Dock = DockStyle.Fill;
-            PicTrailer.Image = (Image)resources.GetObject("PicTrailer.Image");
-            PicTrailer.Location = new Point(3, 327);
-            PicTrailer.Name = "PicTrailer";
-            PicTrailer.Size = new Size(225, 370);
-            PicTrailer.SizeMode = PictureBoxSizeMode.Zoom;
-            PicTrailer.TabIndex = 15;
-            PicTrailer.TabStop = false;
-            PicTrailer.Click += PicTrailer_Click;
-            // 
             // Reservas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -432,7 +416,6 @@
             Tlp_Eleccion_Funciones.PerformLayout();
             Flp_Horarios.ResumeLayout(false);
             Flp_Funciones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)PicTrailer).EndInit();
             ResumeLayout(false);
         }
 
@@ -465,6 +448,5 @@
         private Button Btn_DobFilter;
         private Button Btn_SubFilter;
         private Label Tx_SeleccionCine;
-        private PictureBox PicTrailer;
     }
 }
