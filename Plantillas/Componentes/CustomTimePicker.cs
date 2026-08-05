@@ -1,0 +1,50 @@
+﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 30/07/2026 */
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace Componentes
+{
+    public class CustomTimePicker : MaskedTextBox
+    {
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public TimeSpan Value
+        {
+            get
+            {
+                if (TimeSpan.TryParse(Text, out var t))
+                    return new TimeSpan(t.Hours, t.Minutes, 0);
+                return TimeSpan.Zero;
+            }
+            set => Text = $"{value.Hours:00}:{value.Minutes:00}";
+        }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public bool IsValid =>
+            TimeSpan.TryParse(Text, out var t) && t.Hours < 24 && t.Minutes < 60;
+
+        public CustomTimePicker()
+        {
+            Mask = "00:00";
+            BorderStyle = BorderStyle.FixedSingle;
+            BackColor = Color.FromArgb(55, 60, 72);
+            ForeColor = Color.FromArgb(230, 230, 230);
+            Font = new Font("Segoe UI", 11f);
+            TextAlign = HorizontalAlignment.Left;
+            Margin = new Padding(5);
+            Padding = new Padding(0);
+            Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            MinimumSize = new Size(190, 30);
+            Size = new Size(190, 30);
+            MaximumSize = new Size(0, 30);
+            Text = "1200";
+            Cursor = Cursors.Hand;
+        }
+    }
+}
+/* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 31/07/2026 */

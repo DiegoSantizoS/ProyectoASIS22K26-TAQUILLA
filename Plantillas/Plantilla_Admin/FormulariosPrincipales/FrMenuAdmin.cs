@@ -1,11 +1,16 @@
 ﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
  * fecha de: 19/07/2026 */
 
+using clase_conexion;
+using Formularios_Admin;
+using Plantilla_Admin.Tabs;
+using Plantilla_Cliente;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -16,63 +21,56 @@ namespace Plantilla_Admin
         public FrMenuAdmin()
         {
             InitializeComponent();
-            funcargarpagina(new logo());
+            //funcargarpagina(new logo());
         }
 
         private void funcargarpagina(UserControl pagina)
         {
-            foreach (Control c in pnlMenuAdmin.Controls) c.Dispose();
-            pnlMenuAdmin.Controls.Clear();
-            pagina.Dock = DockStyle.Fill;
-            pnlMenuAdmin.Controls.Add(pagina);
+            /* foreach (Control c in panel1.Controls) c.Dispose();
+             panel1.Controls.Clear();
+             pagina.Dock = DockStyle.Fill;
+             panel1.Controls.Add(pagina);
+         */
         }
 
-        private void carteleraToolStripMenuItem_Click(object sender, EventArgs e)
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void panel2_MouseMove_1(object sender, MouseEventArgs e)
         {
-            FrCuMainCartelera cartelera = new FrCuMainCartelera();
-            funcargarpagina(cartelera);
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
 
-        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void kryptonTableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            reportes reportes = new reportes();
-            funcargarpagina(reportes);
+
+
         }
 
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
-            usuarios usuarios = new usuarios();
-            funcargarpagina(usuarios);
+
         }
 
-        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tableLayoutSlider1_MouseEnter(object sender, EventArgs e)
         {
-            ayuda ayuda = new ayuda();
-            funcargarpagina(ayuda);
+            //base.OnMouseEnter(e);
+            //Open();
         }
 
-        private void salasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            sedes sedes = new sedes();
-            funcargarpagina(sedes);
-        }
 
-        private void funcionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            funciones funciones = new funciones();
-            funcargarpagina(funciones);
-        }
-
-        private void promocionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            promociones promociones = new promociones();
-            funcargarpagina(promociones);
-        }
-
-        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            logo logo = new logo();
-            funcargarpagina(logo);
         }
     }
 }
