@@ -30,8 +30,8 @@ namespace Plantilla_Cliente
             Cargarciudad();
             CargarCines();
             CargarPeliculas();
-            Cbo_Ciudad.ForeColor = Color.Black;
-            Cbo_Ciudad.BackColor = Color.White;
+            CboCiudad.ForeColor = Color.Black;
+            CboCiudad.BackColor = Color.White;
         }
         /* Inicio de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
  * fecha de: 27/07/2026 */
@@ -47,54 +47,54 @@ namespace Plantilla_Cliente
             // Colocarla al principio
             dtCiudades.Rows.InsertAt(fila, 0);
 
-            Cbo_Ciudad.DataSource = null;
+            CboCiudad.DataSource = null;
 
-            Cbo_Ciudad.DisplayMember = "nombre_ciudad";
-            Cbo_Ciudad.ValueMember = "id_ciudad";
+            CboCiudad.DisplayMember = "nombre_ciudad";
+            CboCiudad.ValueMember = "id_ciudad";
 
-            Cbo_Ciudad.DataSource = dtCiudades;
+            CboCiudad.DataSource = dtCiudades;
 
             // Mostrar la opción inicial
-            Cbo_Ciudad.SelectedIndex = 0;
+            CboCiudad.SelectedIndex = 0;
 
         }
         private void CargarCines()
         {
-            if (Cbo_Ciudad.SelectedValue == null)
+            if (CboCiudad.SelectedValue == null)
                 return;
 
-            int idCiudad = Convert.ToInt32(Cbo_Ciudad.SelectedValue);
+            int idCiudad = Convert.ToInt32(CboCiudad.SelectedValue);
 
             DataTable dtCines = gconexion.mostrarcines(idCiudad);
 
-            Cbo_Cine.DataSource = null;
+            CboCine.DataSource = null;
 
-            Cbo_Cine.DisplayMember = "nombre_cine";
-            Cbo_Cine.ValueMember = "id_cine";
+            CboCine.DisplayMember = "nombre_cine";
+            CboCine.ValueMember = "id_cine";
 
-            Cbo_Cine.DataSource = dtCines;
+            CboCine.DataSource = dtCines;
         }
 
         private void CargarPeliculas()
         {
             DataTable peliculas = gconexion.mostrarpelicula();
-            Dgv_Cartelera.DataSource = gconexion.mostrarpelicula();
+            DgvCartelera.DataSource = gconexion.mostrarpelicula();
             // Desactivar el redimensionamiento por el usuario
-            Dgv_Cartelera.AllowUserToResizeColumns = false;
-            Dgv_Cartelera.AllowUserToResizeRows = false;
+            DgvCartelera.AllowUserToResizeColumns = false;
+            DgvCartelera.AllowUserToResizeRows = false;
 
             // Ajustar automáticamente el ancho de las columnas
-            Dgv_Cartelera.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            DgvCartelera.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             // Si hay texto largo en una celda
-            Dgv_Cartelera.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            Dgv_Cartelera.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            foreach (DataGridViewColumn column in Dgv_Cartelera.Columns)
+            DgvCartelera.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            DgvCartelera.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            foreach (DataGridViewColumn column in DgvCartelera.Columns)
             {
                 column.Resizable = DataGridViewTriState.False;
                 // Establecer el color de la letra para las columnas generadas por el DataSource
                 column.DefaultCellStyle.ForeColor = Color.FromArgb(112, 27, 40);        
 
-                Dgv_Cartelera.Columns["idPelicula"].Visible = false;
+                DgvCartelera.Columns["idPelicula"].Visible = false;
 
 
 
@@ -104,11 +104,11 @@ namespace Plantilla_Cliente
  * fecha de: 27/07/2026 */
         private void Cartelera_Load(object sender, EventArgs e)
         {
-            RedondearTablePanel(Pnl_Buscador, 20);
-            RedondearBoton(Btn_2DFilter, 20);
-            RedondearBoton(Btn_3DFilter, 20);
-            RedondearBoton(Btn_4DXFilter, 20);
-            RedondearBoton(Btn_IMAXFilter, 20);
+            RedondearTablePanel(PnlBuscador, 20);
+            RedondearBoton(Btn2DFilter, 20);
+            RedondearBoton(Btn3DFilter, 20);
+            RedondearBoton(Btn4DXFilter, 20);
+            RedondearBoton(BtnIMAXFilter, 20);
         }
         private void RedondearTablePanel(System.Windows.Forms.TableLayoutPanel panel, int radio)
         {
@@ -167,17 +167,17 @@ namespace Plantilla_Cliente
             if (is2DFilterActive)
             {
                 is2DFilterActive = false;
-                Btn_2DFilter.BackColor = Color.FromArgb(197, 155, 39);
+                Btn2DFilter.BackColor = Color.FromArgb(197, 155, 39);
             }
             else
             {
                 is3DFilterActive = false;
                 is4DFilterActive = false;
                 isIMAXFilterActive = false;
-                Btn_2DFilter.BackColor = Color.FromArgb(112, 27, 40);
-                Btn_3DFilter.BackColor = Color.FromArgb(197, 155, 39);
-                Btn_4DXFilter.BackColor = Color.FromArgb(197, 155, 39);
-                Btn_IMAXFilter.BackColor = Color.FromArgb(197, 155, 39);
+                Btn2DFilter.BackColor = Color.FromArgb(112, 27, 40);
+                Btn3DFilter.BackColor = Color.FromArgb(197, 155, 39);
+                Btn4DXFilter.BackColor = Color.FromArgb(197, 155, 39);
+                BtnIMAXFilter.BackColor = Color.FromArgb(197, 155, 39);
             }
             filtros();
         }
@@ -185,13 +185,13 @@ namespace Plantilla_Cliente
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            RedondearTablePanel(Pnl_Buscador, 20);
-            RedondearBoton(Btn_3DFilter, 20);
-            RedondearBoton(Btn_2DFilter, 20);
-            RedondearBoton(Btn_4DXFilter, 20);
-            RedondearBoton(Btn_IMAXFilter, 20);
-            RedondearBoton(Btn_SubFilter, 20);
-            RedondearBoton(Btn_DobFilter, 20);
+            RedondearTablePanel(PnlBuscador, 20);
+            RedondearBoton(Btn3DFilter, 20);
+            RedondearBoton(Btn2DFilter, 20);
+            RedondearBoton(Btn4DXFilter, 20);
+            RedondearBoton(BtnIMAXFilter, 20);
+            RedondearBoton(BtnSubFilter, 20);
+            RedondearBoton(BtnDobFilter, 20);
         }
 
         private void Btn_3DFilter_Click(object sender, EventArgs e)
@@ -199,7 +199,7 @@ namespace Plantilla_Cliente
             if (is3DFilterActive)
             {
                 is3DFilterActive = false;
-                Btn_3DFilter.BackColor = Color.FromArgb(197, 155, 39);
+                Btn3DFilter.BackColor = Color.FromArgb(197, 155, 39);
 
             }
             else
@@ -208,10 +208,10 @@ namespace Plantilla_Cliente
                 is2DFilterActive = false;
                 is4DFilterActive = false;
                 isIMAXFilterActive = false;
-                Btn_3DFilter.BackColor = Color.FromArgb(112, 27, 40);
-                Btn_2DFilter.BackColor = Color.FromArgb(197, 155, 39);
-                Btn_4DXFilter.BackColor = Color.FromArgb(197, 155, 39);
-                Btn_IMAXFilter.BackColor = Color.FromArgb(197, 155, 39);
+                Btn3DFilter.BackColor = Color.FromArgb(112, 27, 40);
+                Btn2DFilter.BackColor = Color.FromArgb(197, 155, 39);
+                Btn4DXFilter.BackColor = Color.FromArgb(197, 155, 39);
+                BtnIMAXFilter.BackColor = Color.FromArgb(197, 155, 39);
             }
         }
 
@@ -220,7 +220,7 @@ namespace Plantilla_Cliente
             if (is4DFilterActive)
             {
                 is4DFilterActive = false;
-                Btn_4DXFilter.BackColor = Color.FromArgb(197, 155, 39);
+                Btn4DXFilter.BackColor = Color.FromArgb(197, 155, 39);
             }
             else
             {
@@ -228,10 +228,10 @@ namespace Plantilla_Cliente
                 is2DFilterActive = false;
                 is3DFilterActive = false;
                 isIMAXFilterActive = false;
-                Btn_4DXFilter.BackColor = Color.FromArgb(112, 27, 40);
-                Btn_2DFilter.BackColor = Color.FromArgb(197, 155, 39);
-                Btn_3DFilter.BackColor = Color.FromArgb(197, 155, 39);
-                Btn_IMAXFilter.BackColor = Color.FromArgb(197, 155, 39);
+                Btn4DXFilter.BackColor = Color.FromArgb(112, 27, 40);
+                Btn2DFilter.BackColor = Color.FromArgb(197, 155, 39);
+                Btn3DFilter.BackColor = Color.FromArgb(197, 155, 39);
+                BtnIMAXFilter.BackColor = Color.FromArgb(197, 155, 39);
 
             }
         }
@@ -241,7 +241,7 @@ namespace Plantilla_Cliente
             if (isIMAXFilterActive)
             {
                 isIMAXFilterActive = false;
-                Btn_IMAXFilter.BackColor = Color.White;
+                BtnIMAXFilter.BackColor = Color.White;
             }
             else
             {
@@ -249,10 +249,10 @@ namespace Plantilla_Cliente
                 is2DFilterActive = false;
                 is3DFilterActive = false;
                 is4DFilterActive = false;
-                Btn_IMAXFilter.BackColor = Color.FromArgb(112, 27, 40);
-                Btn_2DFilter.BackColor = Color.FromArgb(197, 155, 39);
-                Btn_3DFilter.BackColor = Color.FromArgb(197, 155, 39);
-                Btn_4DXFilter.BackColor = Color.FromArgb(197, 155, 39);
+                BtnIMAXFilter.BackColor = Color.FromArgb(112, 27, 40);
+                Btn2DFilter.BackColor = Color.FromArgb(197, 155, 39);
+                Btn3DFilter.BackColor = Color.FromArgb(197, 155, 39);
+                Btn4DXFilter.BackColor = Color.FromArgb(197, 155, 39);
             }
         }
         private void Btn_SubFilter_Click(object sender, EventArgs e)
@@ -261,7 +261,7 @@ namespace Plantilla_Cliente
             {
                 // Desactivar subtitulada
                 isSubFilterActive = false;
-                Btn_SubFilter.BackColor = Color.White;
+                BtnSubFilter.BackColor = Color.White;
             }
             else
             {
@@ -269,8 +269,8 @@ namespace Plantilla_Cliente
                 isSubFilterActive = true;
                 isDubFilterActive = false;
 
-                Btn_SubFilter.BackColor = Color.FromArgb(112, 27, 40);
-                Btn_DobFilter.BackColor = Color.FromArgb(197, 155, 39);
+                BtnSubFilter.BackColor = Color.FromArgb(112, 27, 40);
+                BtnDobFilter.BackColor = Color.FromArgb(197, 155, 39);
             }
             filtros();
             //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
@@ -280,15 +280,15 @@ namespace Plantilla_Cliente
             if (isDubFilterActive)
             {
                 isDubFilterActive = false;
-                Btn_DobFilter.BackColor = Color.White;
+                BtnDobFilter.BackColor = Color.White;
             }
             else
             {
                 isDubFilterActive = true;
                 isSubFilterActive = false;
 
-                Btn_DobFilter.BackColor = Color.FromArgb(112, 27, 40);
-                Btn_SubFilter.BackColor = Color.FromArgb(197, 155, 39);
+                BtnDobFilter.BackColor = Color.FromArgb(112, 27, 40);
+                BtnSubFilter.BackColor = Color.FromArgb(197, 155, 39);
             }
             filtros();
             //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
@@ -300,11 +300,11 @@ namespace Plantilla_Cliente
                
                 return;
             }
-            if (e.ColumnIndex == Dgv_Cartelera.Columns["Reservar"].Index)
+            if (e.ColumnIndex == DgvCartelera.Columns["Reservar"].Index)
             {
                 int idPelicula = Convert.ToInt32(
-                Dgv_Cartelera.Rows[e.RowIndex].Cells["idPelicula"].Value);
-                int ciudad = Convert.ToInt32(Cbo_Cine.SelectedValue);
+                DgvCartelera.Rows[e.RowIndex].Cells["idPelicula"].Value);
+                int ciudad = Convert.ToInt32(CboCine.SelectedValue);
                 CambiaraReserva?.Invoke(idPelicula, ciudad);
 
             }
@@ -327,14 +327,14 @@ namespace Plantilla_Cliente
 
         public void filtros()
         {
-            if (Cbo_Ciudad.SelectedIndex == 0)
+            if (CboCiudad.SelectedIndex == 0)
             {
                 MessageBox.Show("Seleccione una ciudad.");
                 return;
             }
 
-            int ciudad = Convert.ToInt32(Cbo_Ciudad.SelectedValue);
-            int cine = Convert.ToInt32(Cbo_Cine.SelectedValue);
+            int ciudad = Convert.ToInt32(CboCiudad.SelectedValue);
+            int cine = Convert.ToInt32(CboCine.SelectedValue);
             MessageBox.Show($"Ciudad: {ciudad}, Cine: {cine}");
 
             // Tipo de función
@@ -369,7 +369,7 @@ namespace Plantilla_Cliente
                 return;
             }
 
-            Dgv_Cartelera.DataSource = gconexion.FiltrarCartelera(ciudad, cine, tipoFuncion, idioma);
+            DgvCartelera.DataSource = gconexion.FiltrarCartelera(ciudad, cine, tipoFuncion, idioma);
         }
 
         private void Btn_Cargar_Cartelera_Click_1(object sender, EventArgs e)

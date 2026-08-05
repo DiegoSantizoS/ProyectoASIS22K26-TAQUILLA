@@ -32,22 +32,22 @@ namespace Plantilla_Cliente
         {
             int columnas = 10;
 
-            Tlp_butacaselector.Controls.Clear();
-            Tlp_butacaselector.ColumnStyles.Clear();
-            Tlp_butacaselector.RowStyles.Clear();
+            Tlpbutacaselector.Controls.Clear();
+            Tlpbutacaselector.ColumnStyles.Clear();
+            Tlpbutacaselector.RowStyles.Clear();
 
-            Tlp_butacaselector.RowCount = filas;
-            Tlp_butacaselector.ColumnCount = columnas;
+            Tlpbutacaselector.RowCount = filas;
+            Tlpbutacaselector.ColumnCount = columnas;
 
             for (int i = 0; i < columnas; i++)
             {
-                Tlp_butacaselector.ColumnStyles.Add(
+                Tlpbutacaselector.ColumnStyles.Add(
                     new ColumnStyle(SizeType.Percent, 100f / columnas));
             }
 
             for (int i = 0; i < filas; i++)
             {
-                Tlp_butacaselector.RowStyles.Add(
+                Tlpbutacaselector.RowStyles.Add(
                     new RowStyle(SizeType.Percent, 100f / filas));
             }
 
@@ -76,7 +76,7 @@ namespace Plantilla_Cliente
 
                     butaca.Click += Btn_butaca_Click;
 
-                    Tlp_butacaselector.Controls.Add(butaca, columna, fila);
+                    Tlpbutacaselector.Controls.Add(butaca, columna, fila);
                 }
             }
         }

@@ -17,7 +17,7 @@ namespace Plantilla_Cliente
         private Con_Cliente gconexion;
 
         // Película seleccionada
-        public int idcine;
+        public int IdCine;
         public int idPelicula;
         public int idciudad;
         public string Enlace;
@@ -59,22 +59,22 @@ namespace Plantilla_Cliente
             cargarinfopelicula(this.idPelicula);
             cargarfunciones(this.idPelicula, this.idciudad);
             CargarCines(this.idciudad);
-            Flp_Horarios.Controls.Clear();
+            FlpHorarios.Controls.Clear();
             CargarMiniaturaTrailer(Enlace);
 
         }
 
         private void TlP_Reservas_Paint(object sender, PaintEventArgs e)
         {
-            AplicarBordeLabel(Tx_Director, Color.FromArgb(112, 27, 40));
-            AplicarBordeLabel(Tx_Duracion, Color.FromArgb(112, 27, 40));
-            AplicarBordeLabel(Tx_Restriccion, Color.FromArgb(112, 27, 40));
-            AplicarBordeLabel(Tx_DirectorHead, Color.FromArgb(18, 18, 18));
-            AplicarBordeLabel(Tx_DuracionHead, Color.FromArgb(18, 18, 18));
-            AplicarBordeLabel(Tx_RestriccionHead, Color.FromArgb(18, 18, 18));
-            AplicarBordeLabel(Tx_SeleccionCine, Color.FromArgb(18, 18, 18));
-            AplicarBordeLabel(Tx_Funciones, Color.FromArgb(18, 18, 18));
-            AplicarBordeLabel(Tx_Horarios, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(TxDirector, Color.FromArgb(112, 27, 40));
+            AplicarBordeLabel(TxDuracion, Color.FromArgb(112, 27, 40));
+            AplicarBordeLabel(TxRestriccion, Color.FromArgb(112, 27, 40));
+            AplicarBordeLabel(TxDirectorHead, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(TxDuracionHead, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(TxRestriccionHead, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(TxSeleccionCine, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(TxFunciones, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(TxHorarios, Color.FromArgb(18, 18, 18));
         }
         /*Inicio del código 0901-23-13862 Carlos Andres Arriaza Lara el 25/07/2026*/
         private void Btn_Continuar_Click(object sender, EventArgs e)
@@ -120,14 +120,14 @@ namespace Plantilla_Cliente
             string duracion = "";
             string restriccion = "";
             DataTable pelicula = gconexion.infopelicula(idPelicula);
-            Tx_Director.Text = pelicula.Rows[0]["director_pelicula"].ToString();
-            Tx_Duracion.Text = pelicula.Rows[0]["duracion_pelicula"].ToString();
-            Tx_Restriccion.Text = pelicula.Rows[0]["clasificacion_pelicula"].ToString();
+            TxDirector.Text = pelicula.Rows[0]["director_pelicula"].ToString();
+            TxDuracion.Text = pelicula.Rows[0]["duracion_pelicula"].ToString();
+            TxRestriccion.Text = pelicula.Rows[0]["clasificacion_pelicula"].ToString();
 
         }
         private void cargarfunciones(int idPelicula, int idciudad)
         {
-            Flp_Funciones.Controls.Clear();
+            FlpFunciones.Controls.Clear();
             //MessageBox.Show($"Película: {idPelicula}\nCiudad: {idciudad}");
             DataTable funciones = gconexion.cargarfunciones(idPelicula, idciudad);
             //MessageBox.Show($"Filas: {funciones.Rows.Count}");
@@ -157,13 +157,13 @@ namespace Plantilla_Cliente
 
                 btn.Click += BtnFecha_Click;
 
-                Flp_Funciones.Controls.Add(btn);
+                FlpFunciones.Controls.Add(btn);
             }
         }
         private void CargarHorarios(DateTime fechaSeleccionada)
         {
             //MessageBox.Show("IdCiudad:" + idciudad.ToString());
-            Flp_Horarios.Controls.Clear();
+            FlpHorarios.Controls.Clear();
             //MessageBox.Show($"Película: {idPelicula}\nCiudad: {idciudad}");
             DataTable funciones = gconexion.cargarfunciones(idPelicula, idciudad);
             //MessageBox.Show($"Filas: {funciones.Rows.Count}");
@@ -191,7 +191,7 @@ namespace Plantilla_Cliente
 
                 btn.Click += BtnHorario_Click;
                 //MessageBox.Show($"Creando botón: {fila["hora_funcion"]}");
-                Flp_Horarios.Controls.Add(btn);
+                FlpHorarios.Controls.Add(btn);
             }
         }
         private void BtnFecha_Click(object sender, EventArgs e)
@@ -235,8 +235,8 @@ namespace Plantilla_Cliente
 
         private void Cbo_Cines_SelectedIndexChanged(object sender, EventArgs e)
         {
-            idcine = Cbo_Cines.SelectedIndex + 1;
-            cargarfunciones(idPelicula, idcine);
+            IdCine = CboCines.SelectedIndex + 1;
+            cargarfunciones(idPelicula, IdCine);
 
         }
 
@@ -245,12 +245,12 @@ namespace Plantilla_Cliente
 
             DataTable dtCines = gconexion.mostrarcines(ciudad);
 
-            Cbo_Cines.DataSource = null;
+            CboCines.DataSource = null;
 
-            Cbo_Cines.DisplayMember = "nombre_cine";
-            Cbo_Cines.ValueMember = "id_cine";
+            CboCines.DisplayMember = "nombre_cine";
+            CboCines.ValueMember = "id_cine";
 
-            Cbo_Cines.DataSource = dtCines;
+            CboCines.DataSource = dtCines;
             //MessageBox.Show($"Cines cargados: {dtCines.Rows.Count}");
         }
         private void GuardarButacas()
