@@ -1,4 +1,5 @@
 using Plantilla_Cliente;
+using Validaciones;
 
 namespace Plantilla_Admin
 {
@@ -13,6 +14,8 @@ namespace Plantilla_Admin
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            GestorErrores.RegistrarManejadorGlobal();
+
             Application.Run(new FrLogin());
 
         }

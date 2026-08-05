@@ -34,12 +34,13 @@ namespace Componentes
             BackColor = Color.FromArgb(55, 60, 72);
             ForeColor = Color.FromArgb(230, 230, 230);
             Font = new Font("Segoe UI", 11f);
-            TextAlign = HorizontalAlignment.Center;
+            TextAlign = HorizontalAlignment.Left;
             Margin = new Padding(5);
             Padding = new Padding(0);
             Anchor = AnchorStyles.Left | AnchorStyles.Right;
             MinimumSize = new Size(190, 30);
             Size = new Size(190, 30);
+            MaximumSize = new Size(0, 30);
             Text = "1200";
             Cursor = Cursors.Hand;
         }

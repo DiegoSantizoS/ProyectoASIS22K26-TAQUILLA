@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\clase_conexion\clase_conexion.csproj" />
+    <ProjectReference Include="..\Validaciones\Validaciones.csproj" />
   </ItemGroup>
 
   <ItemGroup>

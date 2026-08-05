@@ -51,6 +51,7 @@ namespace Componentes
             AutoSize = false;
             MinimumSize = new Size(190, 30);
             Size = new Size(190, 30);
+            MaximumSize = new Size(0, 30);
 
             UpdatePlaceholder();
         }

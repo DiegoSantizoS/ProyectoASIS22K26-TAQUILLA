@@ -50,6 +50,9 @@ namespace Componentes
             Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             MinimumSize = new Size(190, 60);
             Size = new Size(190, 90);
+            Dock = DockStyle.Fill;
+            Margin = new Padding(5, 10, 5, 10);
+            BorderStyle = BorderStyle.None;
 
             UpdatePlaceholder();
         }
