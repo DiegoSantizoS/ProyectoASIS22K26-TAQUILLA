@@ -305,7 +305,7 @@ namespace Plantilla_Cliente
                 int idPelicula = Convert.ToInt32(
                 Dgv_Cartelera.Rows[e.RowIndex].Cells["idPelicula"].Value);
                 int ciudad = Convert.ToInt32(Cbo_Cine.SelectedValue);
-                CambiaraReserva?.Invoke(idPelicula, ciudad);
+                CambiaraReserva?.Invoke(/*idPelicula, ciudad*/2, 1);
 
             }
         }
