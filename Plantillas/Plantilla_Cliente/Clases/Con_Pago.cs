@@ -1,6 +1,6 @@
 ﻿/* Inicio de código de José Pablo Cano Cóbar 
  * Carnet: 0901-23-1727
- * Fecha: 04/08/2026 */
+ * Fecha: 05/08/2026 */
 
 using MySql.Data.MySqlClient;
 
@@ -8,9 +8,13 @@ namespace Plantilla_Cliente
 {
 
     /// Acceso a datos del proceso de pago.
+
     public class Con_Pago
     {
         private const int ErrorEntradaDuplicada = 1062;
+
+        private const string EstadoBoletoVendido = "vendido";
+        private const string MetodoPagoTarjeta = "tarjeta";
 
         private readonly string _cadenaConexion;
 
@@ -44,20 +48,19 @@ namespace Plantilla_Cliente
                     f.hora_funcion,
                     f.precio_funcion,
                     p.titulo_pelicula,
-                    IFNULL(cl.nombre_clasificacion, '')  AS clasificacion,
+                    IFNULL(cl.nombre_clasificacion, '') AS clasificacion,
                     s.numero_sala,
                     ts.nombre_tipo_sala,
-                    tf.nombre_tipo_funcion,
                     c.nombre_cine,
                     ci.nombre_ciudad
                 FROM tbl_funcion f
-                INNER JOIN tbl_pelicula      p  ON p.id_pelicula      = f.id_pelicula
-                INNER JOIN tbl_sala          s  ON s.id_sala          = f.id_sala
-                INNER JOIN tbl_tipo_sala     ts ON ts.id_tipo_sala    = s.id_tipo_sala
-                INNER JOIN tbl_tipo_funcion  tf ON tf.id_tipo_funcion = f.id_tipo_funcion
-                INNER JOIN tbl_cine          c  ON c.id_cine          = s.id_cine
-                INNER JOIN tbl_ciudad        ci ON ci.id_ciudad       = c.id_ciudad
-                LEFT  JOIN tbl_clasificacion cl ON cl.id_clasificacion = p.id_clasificacion
+                INNER JOIN tbl_pelicula  p  ON p.id_pelicula   = f.id_pelicula
+                INNER JOIN tbl_sala      s  ON s.id_sala       = f.id_sala
+                INNER JOIN tbl_tipo_sala ts ON ts.id_tipo_sala = s.id_tipo_sala
+                INNER JOIN tbl_cine      c  ON c.id_cine       = s.id_cine
+                INNER JOIN tbl_ciudad    ci ON ci.id_ciudad    = c.id_ciudad
+                LEFT  JOIN tbl_clasificacion cl
+                        ON cl.id_clasificacion = p.id_clasificacion
                 WHERE f.id_funcion = @idFuncion";
 
             using MySqlConnection con = AbrirConexion();
@@ -78,7 +81,11 @@ namespace Plantilla_Cliente
                 Clasificacion = lector.GetString("clasificacion"),
                 NumeroSala = lector.GetInt32("numero_sala"),
                 TipoSala = lector.GetString("nombre_tipo_sala"),
-                TipoFuncion = lector.GetString("nombre_tipo_funcion"),
+
+                // El esquema ya no almacena un formato de proyeccion por funcion.
+                // Se deja vacio y la factura omite la linea correspondiente.
+                TipoFuncion = string.Empty,
+
                 NombreCine = lector.GetString("nombre_cine"),
                 NombreCiudad = lector.GetString("nombre_ciudad"),
             };
@@ -132,13 +139,30 @@ namespace Plantilla_Cliente
             {
                 int idCliente = ObtenerOCrearCliente(con, transaccion, cliente);
 
-                int? idMetodoPago = ObtenerIdMetodoPagoEnTransaccion(con, transaccion, "tarjeta");
+                int? idMetodoPago = ObtenerIdCatalogo(
+                    con, transaccion,
+                    "tbl_metodo_pago", "id_metodo_pago", "nombre_metodo_pago",
+                    MetodoPagoTarjeta);
+
+                int? idEstadoBoleto = ObtenerIdCatalogo(
+                    con, transaccion,
+                    "tbl_estado_boleto", "id_estado_boleto", "nombre_estado_boleto",
+                    EstadoBoletoVendido);
+
+                if (idEstadoBoleto is null)
+                {
+                    Revertir(transaccion);
+                    return ResultadoPago.ErrorDatos(
+                        "No se encontró el estado de boleto 'vendido' en el catálogo. " +
+                        "Verifique que la base de datos se haya creado completa.");
+                }
 
                 int idVenta = InsertarVenta(con, transaccion, idCliente, idMetodoPago, detalle);
 
                 foreach (int butaca in detalle.Butacas)
                 {
-                    InsertarBoleto(con, transaccion, detalle.IdFuncion, butaca, idVenta);
+                    InsertarBoleto(con, transaccion,
+                                   detalle.IdFuncion, butaca, idVenta, idEstadoBoleto.Value);
                 }
 
                 transaccion.Commit();
@@ -172,6 +196,23 @@ namespace Plantilla_Cliente
             catch { /* La transaccion pudo cerrarse por perdida de conexion. */ }
         }
 
+
+        private static int? ObtenerIdCatalogo(
+            MySqlConnection con, MySqlTransaction tr,
+            string tabla, string columnaId, string columnaNombre, string valor)
+        {
+            // Los nombres de tabla y columna son constantes internas de esta
+            // clase, nunca provienen de entrada del usuario.
+            string consulta =
+                $"SELECT {columnaId} FROM {tabla} WHERE {columnaNombre} = @valor LIMIT 1";
+
+            using MySqlCommand cmd = new(consulta, con, tr);
+            cmd.Parameters.AddWithValue("@valor", valor);
+
+            object? resultado = cmd.ExecuteScalar();
+            if (resultado is null or DBNull) return null;
+            return Convert.ToInt32(resultado);
+        }
 
         private static int ObtenerOCrearCliente(
             MySqlConnection con, MySqlTransaction tr, DatosCliente cliente)
@@ -211,24 +252,7 @@ namespace Plantilla_Cliente
 
             cmdInsertar.ExecuteNonQuery();
 
-
             return (int)cmdInsertar.LastInsertedId;
-        }
-
-        private static int? ObtenerIdMetodoPagoEnTransaccion(
-            MySqlConnection con, MySqlTransaction tr, string nombre)
-        {
-            const string consulta = @"
-                SELECT id_metodo_pago
-                FROM tbl_metodo_pago
-                WHERE nombre_metodo_pago = @nombre";
-
-            using MySqlCommand cmd = new(consulta, con, tr);
-            cmd.Parameters.AddWithValue("@nombre", nombre);
-
-            object? resultado = cmd.ExecuteScalar();
-            if (resultado is null or DBNull) return null;
-            return Convert.ToInt32(resultado);
         }
 
         private static int InsertarVenta(
@@ -261,18 +285,19 @@ namespace Plantilla_Cliente
 
         private static void InsertarBoleto(
             MySqlConnection con, MySqlTransaction tr,
-            int idFuncion, int numeroButaca, int idVenta)
+            int idFuncion, int numeroButaca, int idVenta, int idEstadoBoleto)
         {
             const string insercion = @"
                 INSERT INTO tbl_boleto
-                    (id_funcion, numero_boleto, id_venta, estado_boleto)
+                    (id_funcion, id_venta, id_estado_boleto, numero_boleto)
                 VALUES
-                    (@idFuncion, @numero, @idVenta, 'vendido')";
+                    (@idFuncion, @idVenta, @idEstadoBoleto, @numero)";
 
             using MySqlCommand cmd = new(insercion, con, tr);
             cmd.Parameters.AddWithValue("@idFuncion", idFuncion);
-            cmd.Parameters.AddWithValue("@numero", numeroButaca);
             cmd.Parameters.AddWithValue("@idVenta", idVenta);
+            cmd.Parameters.AddWithValue("@idEstadoBoleto", idEstadoBoleto);
+            cmd.Parameters.AddWithValue("@numero", numeroButaca);
 
             cmd.ExecuteNonQuery();
         }

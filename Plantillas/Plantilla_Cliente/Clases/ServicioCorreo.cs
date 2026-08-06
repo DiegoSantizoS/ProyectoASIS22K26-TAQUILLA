@@ -1,6 +1,6 @@
 ﻿/* Inicio de código de José Pablo Cano Cóbar 
  * Carnet: 0901-23-1727
- * Fecha: 04/08/2026 */
+ * Fecha: 05/08/2026 */
 
 using System.Net;
 using System.Net.Mail;
@@ -10,24 +10,7 @@ namespace Plantilla_Cliente
 {
 
     /// Construccion y envio por correo electronico de la factura de compra.
-    ///
-    /// Las credenciales del servidor SMTP NO estan escritas en el codigo. Se leen
-    /// del archivo correo.env ubicado junto al ejecutable, el cual se encuentra
-    /// excluido del control de versiones mediante .gitignore. De esta forma las
-    /// credenciales no quedan expuestas en el repositorio.
-    ///
-    /// Formato esperado del archivo correo.env:
-    ///
-    ///     servidor=smtp.gmail.com
-    ///     puerto=587
-    ///     usuario=cine.taquilla.grupo3@gmail.com
-    ///     clave=xxxxxxxxxxxxxxxx
-    ///     remitente=Cinema Guatemala
-    ///
-    /// En el caso de Gmail debe generarse una contrasena de aplicacion desde la
-    /// configuracion de seguridad de la cuenta. La contrasena ordinaria no
-    /// funciona para autenticacion SMTP.
-    /// </summary>
+
     public class ServicioCorreo
     {
         public string Servidor { get; set; } = "smtp.gmail.com";
@@ -186,7 +169,10 @@ namespace Plantilla_Cliente
                 sb.Append(Fila("Clasificación", Escapar(detalle.Clasificacion)));
             sb.Append(Fila("Cine", Escapar($"{detalle.NombreCine} — {detalle.NombreCiudad}")));
             sb.Append(Fila("Sala", $"Sala {detalle.NumeroSala} ({Escapar(detalle.TipoSala)})"));
-            sb.Append(Fila("Formato", Escapar(detalle.TipoFuncion)));
+            // El esquema vigente no almacena un formato de proyeccion por funcion,
+            // por lo que la linea se omite cuando el dato viene vacio.
+            if (!string.IsNullOrWhiteSpace(detalle.TipoFuncion))
+                sb.Append(Fila("Formato", Escapar(detalle.TipoFuncion)));
             sb.Append(Fila("Función", detalle.FuncionFormateada));
             sb.Append(Fila("Butacas", Escapar(detalle.ButacasFormateadas)));
             sb.Append(Fila("Cantidad de boletos", detalle.Butacas.Count.ToString()));
