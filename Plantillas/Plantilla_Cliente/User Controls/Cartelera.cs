@@ -105,7 +105,7 @@ namespace Plantilla_Cliente
             }
 
 
-           DgvCartelera.Columns[1].Visible = false;
+            DgvCartelera.Columns[1].Visible = false;
 
         }
         /* fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
@@ -301,6 +301,21 @@ namespace Plantilla_Cliente
         }
         private void Dgv_Cartelera_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (CboCiudad.SelectedIndex == 0)
+            {
+                MessageBox.Show("Seleccione una ciudad para continuar con la reserva.");
+                return;
+            }
+            if (!is2DFilterActive && !is3DFilterActive && !is4DFilterActive && !isIMAXFilterActive)
+            {
+                MessageBox.Show("Seleccione un formato para continuar con la reserva.");
+                return;
+            }
+            if(!isDubFilterActive && !isSubFilterActive)
+            {
+                MessageBox.Show("Seleccione un tipo de audio para continuar con la reserva.");
+                return;
+            }
             if (e.RowIndex < 0)
             {
 
@@ -308,6 +323,7 @@ namespace Plantilla_Cliente
             }
             if (e.ColumnIndex == DgvCartelera.Columns["Reservar"].Index)
             {
+
                 int idPelicula = Convert.ToInt32(
                 DgvCartelera.Rows[e.RowIndex].Cells["idPelicula"].Value);
                 int ciudad = Convert.ToInt32(CboCine.SelectedValue);
