@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using Con_Admin;
+using System.Diagnostics;
 
 namespace Formularios_Admin
 {
@@ -12,6 +13,7 @@ namespace Formularios_Admin
     {
         private readonly If_Peliculas api = new If_Peliculas();
         private DataTable tablaPeliculas;
+        private string urlYoutube = "";
 
         public FrUcPeliculas()
         {
@@ -397,9 +399,86 @@ namespace Formularios_Admin
             CargarGrilla();
             ModoAgregar();
         }
+        private string ObtenerVideoID(string url)
+        {
+            if (url.Contains("watch?v="))
+            {
+                string[] partes = url.Split(new string[] { "watch?v=" },
+                                            StringSplitOptions.None);
+
+                return partes[1].Split('&')[0];
+            }
+
+            if (url.Contains("youtu.be/"))
+            {
+                return url.Substring(url.LastIndexOf("/") + 1);
+            }
+
+            return "";
+        }
+        private void CargarMiniatura()
+        {
+            string id = ObtenerVideoID(TbTrailer.Text);
+
+            if (id == "")
+            {
+                MessageBox.Show("El enlace no es válido.");
+                return;
+            }
+
+            urlYoutube = TbTrailer.Text;
+
+            string imagen =
+                "https://img.youtube.com/vi/" + id + "/hqdefault.jpg";
+
+            PictureBoxTrailer.Load(imagen);
+        }
+
+
 
         private void kryptonListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void ListBoxFormatos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnLimpiar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAgregar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbTrailer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBoxTrailer_DragLeave(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = TbTrailer.Text.Trim(),
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TbTrailer_Leave(object sender, EventArgs e)
+        {
+            CargarMiniatura();
         }
     }
 }

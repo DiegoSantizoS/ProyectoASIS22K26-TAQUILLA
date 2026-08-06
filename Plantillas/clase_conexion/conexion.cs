@@ -13,10 +13,10 @@ namespace clase_conexion
     public class conexion
     {
         private MySqlConnection connecion;
-        private String server = "localhost";
+        private String server = "192.168.1.20";
         private String datebase = "taquillas_cine";
-        private String user = "root";
-        private String password = "root";
+        private String user = "root1";
+        private String password = "Root";
         private String pconexion;
         public conexion()
         {
@@ -33,6 +33,7 @@ namespace clase_conexion
             {
                 connecion = new MySqlConnection(pconexion);
                 connecion.Open();
+
 
             }
             return connecion;
@@ -404,6 +405,13 @@ namespace clase_conexion
             return dt;
         }
 
+
+        public DataTable obtenerPeliculaParaFuncion(int idPelicula)
+        {
+            DataTable dt = new DataTable();
+            MySqlConnection con = GetConnection();
+            return dt;
+        }
 
         /* fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
      * fecha de: 27/07/2026 */

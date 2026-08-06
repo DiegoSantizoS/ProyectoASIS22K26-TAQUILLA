@@ -672,8 +672,10 @@
             PictureBoxTrailer.Name = "PictureBoxTrailer";
             TlpForm.SetRowSpan(PictureBoxTrailer, 2);
             PictureBoxTrailer.Size = new Size(244, 55);
+            PictureBoxTrailer.SizeMode = PictureBoxSizeMode.StretchImage;
             PictureBoxTrailer.TabIndex = 77;
             PictureBoxTrailer.TabStop = false;
+            PictureBoxTrailer.DragLeave += PictureBoxTrailer_DragLeave;
             // 
             // ListBoxFormatos
             // 
@@ -682,6 +684,7 @@
             ListBoxFormatos.Margin = new Padding(5, 0, 5, 20);
             ListBoxFormatos.Name = "ListBoxFormatos";
             TlpForm.SetRowSpan(ListBoxFormatos, 7);
+            ListBoxFormatos.SelectionMode = SelectionMode.MultiSimple;
             ListBoxFormatos.Size = new Size(240, 255);
             ListBoxFormatos.StateCheckedNormal.Item.Back.Color1 = Color.Crimson;
             ListBoxFormatos.StateCheckedNormal.Item.Content.LongText.Color1 = Color.FromArgb(230, 230, 230);
@@ -699,6 +702,7 @@
             ListBoxFormatos.StateTracking.Item.Content.LongText.Color1 = Color.FromArgb(230, 230, 230);
             ListBoxFormatos.StateTracking.Item.Content.ShortText.Color1 = Color.FromArgb(230, 230, 230);
             ListBoxFormatos.TabIndex = 75;
+            ListBoxFormatos.SelectedIndexChanged += ListBoxFormatos_SelectedIndexChanged;
             // 
             // TbDescripcion
             // 
@@ -889,6 +893,8 @@
             TbTrailer.PlaceholderText = "https://www.youtube.com/watch?v=YH4Oo7HW9TM";
             TbTrailer.Size = new Size(240, 30);
             TbTrailer.TabIndex = 59;
+            TbTrailer.TextChanged += TbTrailer_TextChanged;
+            TbTrailer.Leave += TbTrailer_Leave;
             // 
             // TlpButtons
             // 
@@ -996,6 +1002,7 @@
             BtnAgregar.TabIndex = 1;
             BtnAgregar.Text = "Agregar";
             BtnAgregar.UseVisualStyleBackColor = false;
+            BtnAgregar.Click += BtnAgregar_Click_1;
             // 
             // BtnLimpiar
             // 
@@ -1017,6 +1024,7 @@
             BtnLimpiar.TabIndex = 5;
             BtnLimpiar.Text = "Limpiar";
             BtnLimpiar.UseVisualStyleBackColor = false;
+            BtnLimpiar.Click += BtnLimpiar_Click_1;
             // 
             // TlpTitleLabel
             // 
