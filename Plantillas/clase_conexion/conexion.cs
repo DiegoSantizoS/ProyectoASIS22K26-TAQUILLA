@@ -51,6 +51,7 @@ namespace clase_conexion
 
                 string consulta = @"
             SELECT
+                p.id_pelicula AS IdPelicula,
                 p.titulo_pelicula AS Titulo,
                 p.duracion_pelicula AS Duracion,
                 p.clasificacion_pelicula AS Clasificacion,
@@ -131,6 +132,7 @@ namespace clase_conexion
 
                 string consulta = @"
         SELECT
+            p.id_pelicula AS IdPelicula,
             p.titulo_pelicula AS Titulo,
             p.duracion_pelicula AS Duracion,
             p.clasificacion_pelicula AS Clasificacion,
@@ -407,263 +409,36 @@ namespace clase_conexion
         {
             DataTable dt = new DataTable();
             MySqlConnection con = GetConnection();
+            return dt;
+        }
+
+        /* fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
+     * fecha de: 27/07/2026 */
+    
+    public DataTable infopelicula(int idPelicula)
+        {
+            DataTable peliculas = new DataTable();
+
+            MySqlConnection con = GetConnection();
 
             string consulta = @"SELECT 
-                            p.id_pelicula,
-                            p.titulo_pelicula,
-                            p.duracion_pelicula,
-                            p.imagen_pelicula,
-                            tp.nombre_tipo_pelicula AS formato
-                        FROM PELICULA p
-                        LEFT JOIN TIPO_PELICULA tp ON tp.id_tipo_pelicula = p.id_tipo_pelicula
-                        WHERE p.id_pelicula = @id";
+                        director_pelicula,
+                        duracion_pelicula,
+                        clasificacion_pelicula
+                        FROM PELICULA
+                        WHERE id_pelicula = @idPelicula";
 
             MySqlCommand cmd = new MySqlCommand(consulta, con);
-            cmd.Parameters.AddWithValue("@id", idPelicula);
-            new MySqlDataAdapter(cmd).Fill(dt);
-            return dt;
-        }
 
-
-        public int tipoFuncionPorSala(int idSala)
-        {
-            MySqlConnection con = GetConnection();
-
-            string consulta = @"SELECT tf.id_tipo_funcion
-                        FROM SALA s
-                        JOIN TIPO_SALA ts   ON ts.id_tipo_sala = s.id_tipo_sala
-                        JOIN TIPO_FUNCION tf ON tf.nombre_tipo_funcion = 
-                             SUBSTRING_INDEX(ts.nombre_tipo_sala, '/', 1)
-                        WHERE s.id_sala = @idSala
-                        LIMIT 1";
-
-            MySqlCommand cmd = new MySqlCommand(consulta, con);
-            cmd.Parameters.AddWithValue("@idSala", idSala);
-            object r = cmd.ExecuteScalar();
-            return (r != null && r != DBNull.Value) ? Convert.ToInt32(r) : 1;
-        }
-
-        public int insertarFuncion(int idPelicula, int idSala, int idTipoFuncion,
-                                   DateTime fecha, TimeSpan hora, decimal precio)
-        {
-            MySqlConnection con = GetConnection();
-
-            string consulta = @"
-        INSERT INTO FUNCION
-            (id_pelicula, id_sala, id_tipo_funcion, fecha_funcion, hora_funcion, precio_funcion)
-        VALUES
-            (@idPelicula, @idSala, @idTipoFuncion, @fecha, @hora, @precio)";
-
-            MySqlCommand cmd = new MySqlCommand(consulta, con);
             cmd.Parameters.AddWithValue("@idPelicula", idPelicula);
-            cmd.Parameters.AddWithValue("@idSala", idSala);
-            cmd.Parameters.AddWithValue("@idTipoFuncion", idTipoFuncion);
-            cmd.Parameters.AddWithValue("@fecha", fecha.Date);
-            cmd.Parameters.AddWithValue("@hora", hora);
-            cmd.Parameters.AddWithValue("@precio", precio);
 
-            cmd.ExecuteNonQuery();
-            return (int)cmd.LastInsertedId;
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+
+            adapter.Fill(peliculas);
+
+            return peliculas;
         }
-
-
-        public void actualizarFuncion(int idFuncion, int idPelicula, int idSala, int idTipoFuncion,
-                                      DateTime fecha, TimeSpan hora, decimal precio)
-        {
-            MySqlConnection con = GetConnection();
-
-            string consulta = @"
-        UPDATE FUNCION SET
-            id_pelicula     = @idPelicula,
-            id_sala         = @idSala,
-            id_tipo_funcion = @idTipoFuncion,
-            fecha_funcion   = @fecha,
-            hora_funcion    = @hora,
-            precio_funcion  = @precio
-        WHERE id_funcion = @idFuncion";
-
-            MySqlCommand cmd = new MySqlCommand(consulta, con);
-            cmd.Parameters.AddWithValue("@idPelicula", idPelicula);
-            cmd.Parameters.AddWithValue("@idSala", idSala);
-            cmd.Parameters.AddWithValue("@idTipoFuncion", idTipoFuncion);
-            cmd.Parameters.AddWithValue("@fecha", fecha.Date);
-            cmd.Parameters.AddWithValue("@hora", hora);
-            cmd.Parameters.AddWithValue("@precio", precio);
-            cmd.Parameters.AddWithValue("@idFuncion", idFuncion);
-
-            cmd.ExecuteNonQuery();
-        }
-
-        public void eliminarFuncion(int idFuncion)
-        {
-            MySqlConnection con = GetConnection();
-
-            string consulta = "DELETE FROM FUNCION WHERE id_funcion = @id";
-            MySqlCommand cmd = new MySqlCommand(consulta, con);
-            cmd.Parameters.AddWithValue("@id", idFuncion);
-            cmd.ExecuteNonQuery();
-        }
-
-        public DataTable mostrarFunciones()
-        {
-            DataTable dt = new DataTable();
-            MySqlConnection con = GetConnection();
-
-            string consulta = @"
-        SELECT
-            f.id_funcion            AS ID,
-            p.titulo_pelicula       AS Pelicula,
-            tf.nombre_tipo_funcion  AS Formato,
-            s.numero_sala           AS Sala,
-            ts.nombre_tipo_sala     AS TipoSala,
-            f.precio_funcion        AS Precio,
-            f.fecha_funcion         AS Fecha,
-            f.hora_funcion          AS Hora
-        FROM FUNCION f
-        JOIN PELICULA p     ON p.id_pelicula = f.id_pelicula
-        JOIN SALA s         ON s.id_sala = f.id_sala
-        JOIN TIPO_SALA ts   ON ts.id_tipo_sala = s.id_tipo_sala
-        JOIN TIPO_FUNCION tf ON tf.id_tipo_funcion = f.id_tipo_funcion
-        ORDER BY f.fecha_funcion, f.hora_funcion";
-
-            MySqlCommand cmd = new MySqlCommand(consulta, con);
-            new MySqlDataAdapter(cmd).Fill(dt);
-            return dt;
-        }
-
-
-        public DataTable horasDeSala(int idSala, DateTime fecha)
-        {
-            DataTable dt = new DataTable();
-            MySqlConnection con = GetConnection();
-
-            string consulta = @"SELECT hora_funcion AS Hora
-                        FROM FUNCION
-                        WHERE id_sala = @idSala AND fecha_funcion = @fecha
-                        ORDER BY hora_funcion";
-
-            MySqlCommand cmd = new MySqlCommand(consulta, con);
-            cmd.Parameters.AddWithValue("@idSala", idSala);
-            cmd.Parameters.AddWithValue("@fecha", fecha.Date);
-            new MySqlDataAdapter(cmd).Fill(dt);
-            return dt;
-        }
-
-
-
-        // SALAS
-
-        public DataTable mostrarCiudades()
-        {
-            DataTable dt = new DataTable();
-            MySqlConnection con = GetConnection();
-            string q = "SELECT id_ciudad, nombre_ciudad FROM CIUDAD ORDER BY nombre_ciudad";
-            new MySqlDataAdapter(new MySqlCommand(q, con)).Fill(dt);
-            return dt;
-        }
-
-        public DataTable mostrarCinesPorCiudad(int idCiudad)
-        {
-            DataTable dt = new DataTable();
-            MySqlConnection con = GetConnection();
-            string q = @"SELECT id_cine, nombre_cine FROM CINE
-                 WHERE id_ciudad = @idCiudad ORDER BY nombre_cine";
-            MySqlCommand cmd = new MySqlCommand(q, con);
-            cmd.Parameters.AddWithValue("@idCiudad", idCiudad);
-            new MySqlDataAdapter(cmd).Fill(dt);
-            return dt;
-        }
-
-        public DataTable mostrarTiposSala()
-        {
-            DataTable dt = new DataTable();
-            MySqlConnection con = GetConnection();
-            string q = "SELECT id_tipo_sala, nombre_tipo_sala FROM TIPO_SALA ORDER BY id_tipo_sala";
-            new MySqlDataAdapter(new MySqlCommand(q, con)).Fill(dt);
-            return dt;
-        }
-
-        public DataTable mostrarSalas()
-        {
-            DataTable dt = new DataTable();
-            MySqlConnection con = GetConnection();
-            string q = @"
-        SELECT
-            s.id_sala        AS ID,
-            s.numero_sala    AS Numero,
-            s.capacidad_sala AS Capacidad,
-            ts.nombre_tipo_sala AS Tipo,
-            c.nombre_cine    AS Cine,
-            ci.nombre_ciudad AS Ciudad
-        FROM SALA s
-        JOIN TIPO_SALA ts ON ts.id_tipo_sala = s.id_tipo_sala
-        JOIN CINE c       ON c.id_cine = s.id_cine
-        JOIN CIUDAD ci    ON ci.id_ciudad = c.id_ciudad
-        ORDER BY ci.nombre_ciudad, c.nombre_cine, s.numero_sala";
-            new MySqlDataAdapter(new MySqlCommand(q, con)).Fill(dt);
-            return dt;
-        }
-
-        public int insertarSala(int numero, int capacidad, int idTipoSala, int idCine)
-        {
-            MySqlConnection con = GetConnection();
-            string q = @"INSERT INTO SALA (numero_sala, capacidad_sala, id_tipo_sala, id_cine)
-                 VALUES (@numero, @capacidad, @idTipoSala, @idCine)";
-            MySqlCommand cmd = new MySqlCommand(q, con);
-            cmd.Parameters.AddWithValue("@numero", numero);
-            cmd.Parameters.AddWithValue("@capacidad", capacidad);
-            cmd.Parameters.AddWithValue("@idTipoSala", idTipoSala);
-            cmd.Parameters.AddWithValue("@idCine", idCine);
-            cmd.ExecuteNonQuery();
-            return (int)cmd.LastInsertedId;
-        }
-
-        public void actualizarSala(int idSala, int numero, int capacidad, int idTipoSala, int idCine)
-        {
-            MySqlConnection con = GetConnection();
-            string q = @"UPDATE SALA SET
-                    numero_sala   = @numero,
-                    capacidad_sala= @capacidad,
-                    id_tipo_sala  = @idTipoSala,
-                    id_cine       = @idCine
-                 WHERE id_sala = @idSala";
-            MySqlCommand cmd = new MySqlCommand(q, con);
-            cmd.Parameters.AddWithValue("@numero", numero);
-            cmd.Parameters.AddWithValue("@capacidad", capacidad);
-            cmd.Parameters.AddWithValue("@idTipoSala", idTipoSala);
-            cmd.Parameters.AddWithValue("@idCine", idCine);
-            cmd.Parameters.AddWithValue("@idSala", idSala);
-            cmd.ExecuteNonQuery();
-        }
-
-        public void eliminarSala(int idSala)
-        {
-            MySqlConnection con = GetConnection();
-            string q = "DELETE FROM SALA WHERE id_sala = @id";
-            MySqlCommand cmd = new MySqlCommand(q, con);
-            cmd.Parameters.AddWithValue("@id", idSala);
-            cmd.ExecuteNonQuery();
-        }
-
-        public DataTable obtenerSala(int idSala)
-        {
-            DataTable dt = new DataTable();
-            MySqlConnection con = GetConnection();
-            string q = @"SELECT s.id_sala, s.numero_sala, s.capacidad_sala,
-                        s.id_tipo_sala, s.id_cine, c.id_ciudad
-                 FROM SALA s
-                 JOIN CINE c ON c.id_cine = s.id_cine
-                 WHERE s.id_sala = @id";
-            MySqlCommand cmd = new MySqlCommand(q, con);
-            cmd.Parameters.AddWithValue("@id", idSala);
-            new MySqlDataAdapter(cmd).Fill(dt);
-            return dt;
-
-
-            /* fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
-         * fecha de: 27/07/2026 */
-        }
-    }
+    } 
 }
 /* Fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
  * fecha de: 26/07/2026 */

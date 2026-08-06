@@ -49,6 +49,7 @@ namespace Componentes
             Cursor = Cursors.Hand;
             UseVisualStyleBackColor = false;
             MinimumSize = new Size(190, 30);
+            MaximumSize = new Size(0, 30);
             Text = "Seleccionar imagen...";
         }
 

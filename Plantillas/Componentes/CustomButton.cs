@@ -57,7 +57,7 @@ namespace Componentes
 
         private Color BaseColor => _action switch
         {
-            ButtonAction.Limpiar => Color.FromArgb(127, 140, 141),
+            ButtonAction.Limpiar => Color.FromArgb(22, 160, 133),
             ButtonAction.Ingresar => Color.FromArgb(41, 128, 185),
             ButtonAction.Copiar => Color.FromArgb(26, 156, 156),
             ButtonAction.Actualizar => Color.FromArgb(214, 157, 15),

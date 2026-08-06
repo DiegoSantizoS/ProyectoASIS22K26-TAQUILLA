@@ -28,109 +28,121 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip_MenuAdmin = new MenuStrip();
-            toolStripMenuItem_landing = new ToolStripMenuItem();
-            toolStripMenuItem_cartelera = new ToolStripMenuItem();
-            toolStripMenuItem_funciones = new ToolStripMenuItem();
-            toolStripMenuItem_sedes = new ToolStripMenuItem();
-            toolStripMenuItem_promociones = new ToolStripMenuItem();
-            toolStripMenuItem_reportes = new ToolStripMenuItem();
-            toolStripMenuItem_usuarios = new ToolStripMenuItem();
-            toolStripMenuItem_ayuda = new ToolStripMenuItem();
-            pnlMenuAdmin = new Panel();
-            menuStrip_MenuAdmin.SuspendLayout();
+            nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            PnlTop = new Panel();
+            button1 = new Button();
+            crownButton1 = new ReaLTaiizor.Controls.CrownButton();
+            button3 = new Button();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // menuStrip_MenuAdmin
+            // nightControlBox1
             // 
-            menuStrip_MenuAdmin.ImageScalingSize = new Size(20, 20);
-            menuStrip_MenuAdmin.Items.AddRange(new ToolStripItem[] { toolStripMenuItem_landing, toolStripMenuItem_cartelera, toolStripMenuItem_funciones, toolStripMenuItem_sedes, toolStripMenuItem_promociones, toolStripMenuItem_reportes, toolStripMenuItem_usuarios, toolStripMenuItem_ayuda });
-            menuStrip_MenuAdmin.Location = new Point(0, 0);
-            menuStrip_MenuAdmin.Name = "menuStrip_MenuAdmin";
-            menuStrip_MenuAdmin.Size = new Size(1200, 28);
-            menuStrip_MenuAdmin.TabIndex = 0;
-            menuStrip_MenuAdmin.Text = "menuStrip1";
+            nightControlBox1.BackColor = Color.Transparent;
+            nightControlBox1.CloseHoverColor = Color.FromArgb(199, 80, 80);
+            nightControlBox1.CloseHoverForeColor = Color.White;
+            nightControlBox1.Cursor = Cursors.Hand;
+            nightControlBox1.DefaultLocation = true;
+            nightControlBox1.DisableMaximizeColor = Color.FromArgb(105, 105, 105);
+            nightControlBox1.DisableMinimizeColor = Color.FromArgb(105, 105, 105);
+            nightControlBox1.Dock = DockStyle.Fill;
+            nightControlBox1.EnableCloseColor = Color.FromArgb(160, 160, 160);
+            nightControlBox1.EnableMaximizeButton = true;
+            nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
+            nightControlBox1.EnableMinimizeButton = true;
+            nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
+            nightControlBox1.Location = new Point(1064, 3);
+            nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
+            nightControlBox1.MaximizeHoverForeColor = Color.White;
+            nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
+            nightControlBox1.MinimizeHoverForeColor = Color.White;
+            nightControlBox1.Name = "nightControlBox1";
+            nightControlBox1.Size = new Size(139, 31);
+            nightControlBox1.TabIndex = 1;
             // 
-            // toolStripMenuItem_landing
+            // tableLayoutPanel1
             // 
-            toolStripMenuItem_landing.Name = "toolStripMenuItem_landing";
-            toolStripMenuItem_landing.Size = new Size(61, 24);
-            toolStripMenuItem_landing.Text = "LOGO";
-            toolStripMenuItem_landing.Click += homeToolStripMenuItem_Click;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 139F));
+            tableLayoutPanel1.Controls.Add(nightControlBox1, 1, 0);
+            tableLayoutPanel1.Controls.Add(PnlTop, 0, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(1200, 700);
+            tableLayoutPanel1.TabIndex = 1;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
-            // toolStripMenuItem_cartelera
+            // PnlTop
             // 
-            toolStripMenuItem_cartelera.Name = "toolStripMenuItem_cartelera";
-            toolStripMenuItem_cartelera.Size = new Size(83, 24);
-            toolStripMenuItem_cartelera.Text = "Cartelera";
-            toolStripMenuItem_cartelera.Click += carteleraToolStripMenuItem_Click;
+            PnlTop.Dock = DockStyle.Fill;
+            PnlTop.Location = new Point(0, 0);
+            PnlTop.Margin = new Padding(0);
+            PnlTop.Name = "PnlTop";
+            PnlTop.Size = new Size(1061, 35);
+            PnlTop.TabIndex = 2;
+            PnlTop.MouseMove += panel2_MouseMove_1;
             // 
-            // toolStripMenuItem_funciones
+            // button1
             // 
-            toolStripMenuItem_funciones.Name = "toolStripMenuItem_funciones";
-            toolStripMenuItem_funciones.Size = new Size(88, 24);
-            toolStripMenuItem_funciones.Text = "Funciones";
-            toolStripMenuItem_funciones.Click += funcionesToolStripMenuItem_Click;
+            button1.BackgroundImage = Properties.Resources.logo1;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Cursor = Cursors.Hand;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(-3, 0);
+            button1.Margin = new Padding(0);
+            button1.Name = "button1";
+            button1.Size = new Size(150, 150);
+            button1.TabIndex = 1;
+            button1.UseVisualStyleBackColor = true;
             // 
-            // toolStripMenuItem_sedes
+            // crownButton1
             // 
-            toolStripMenuItem_sedes.Name = "toolStripMenuItem_sedes";
-            toolStripMenuItem_sedes.Size = new Size(62, 24);
-            toolStripMenuItem_sedes.Text = "Sedes";
-            toolStripMenuItem_sedes.Click += salasToolStripMenuItem_Click;
+            crownButton1.Image = Properties.Resources.logo1;
+            crownButton1.Location = new Point(-3, 277);
+            crownButton1.Name = "crownButton1";
+            crownButton1.Padding = new Padding(5);
+            crownButton1.Size = new Size(170, 47);
+            crownButton1.TabIndex = 0;
+            crownButton1.Text = "crownButton1";
+            crownButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             // 
-            // toolStripMenuItem_promociones
+            // button3
             // 
-            toolStripMenuItem_promociones.Name = "toolStripMenuItem_promociones";
-            toolStripMenuItem_promociones.Size = new Size(109, 24);
-            toolStripMenuItem_promociones.Text = "Promociones";
-            toolStripMenuItem_promociones.Click += promocionesToolStripMenuItem_Click;
-            // 
-            // toolStripMenuItem_reportes
-            // 
-            toolStripMenuItem_reportes.Name = "toolStripMenuItem_reportes";
-            toolStripMenuItem_reportes.Size = new Size(82, 24);
-            toolStripMenuItem_reportes.Text = "Reportes";
-            toolStripMenuItem_reportes.Click += reportesToolStripMenuItem_Click;
-            // 
-            // toolStripMenuItem_usuarios
-            // 
-            toolStripMenuItem_usuarios.Name = "toolStripMenuItem_usuarios";
-            toolStripMenuItem_usuarios.Size = new Size(79, 24);
-            toolStripMenuItem_usuarios.Text = "Usuarios";
-            toolStripMenuItem_usuarios.Click += usuariosToolStripMenuItem_Click;
-            // 
-            // toolStripMenuItem_ayuda
-            // 
-            toolStripMenuItem_ayuda.Name = "toolStripMenuItem_ayuda";
-            toolStripMenuItem_ayuda.Size = new Size(65, 24);
-            toolStripMenuItem_ayuda.Text = "Ayuda";
-            toolStripMenuItem_ayuda.Click += ayudaToolStripMenuItem_Click;
-            // 
-            // pnlMenuAdmin
-            // 
-            pnlMenuAdmin.Dock = DockStyle.Fill;
-            pnlMenuAdmin.Location = new Point(0, 28);
-            pnlMenuAdmin.Margin = new Padding(0);
-            pnlMenuAdmin.Name = "pnlMenuAdmin";
-            pnlMenuAdmin.Size = new Size(1200, 700);
-            pnlMenuAdmin.TabIndex = 1;
+            button3.BackgroundImage = Properties.Resources.logo1;
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.Cursor = Cursors.Hand;
+            button3.FlatStyle = FlatStyle.Popup;
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.Location = new Point(-3, -3);
+            button3.Margin = new Padding(0);
+            button3.Name = "button3";
+            button3.Size = new Size(150, 150);
+            button3.TabIndex = 1;
+            button3.UseVisualStyleBackColor = true;
             // 
             // FrMenuAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1200, 728);
-            Controls.Add(pnlMenuAdmin);
-            Controls.Add(menuStrip_MenuAdmin);
-            MainMenuStrip = menuStrip_MenuAdmin;
-            MinimumSize = new Size(1218, 775);
+            BackColor = SystemColors.ActiveCaptionText;
+            ClientSize = new Size(1200, 700);
+            Controls.Add(tableLayoutPanel1);
+            ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.None;
+            MinimumSize = new Size(1200, 700);
             Name = "FrMenuAdmin";
-            Text = "FrMenuAdmin";
-            menuStrip_MenuAdmin.ResumeLayout(false);
-            menuStrip_MenuAdmin.PerformLayout();
+            Text = "MENU";
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -140,10 +152,16 @@
         private ToolStripMenuItem toolStripMenuItem_reportes;
         private ToolStripMenuItem toolStripMenuItem_usuarios;
         private ToolStripMenuItem toolStripMenuItem_ayuda;
-        private Panel pnlMenuAdmin;
         private ToolStripMenuItem toolStripMenuItem_funciones;
         private ToolStripMenuItem toolStripMenuItem_sedes;
         private ToolStripMenuItem toolStripMenuItem_promociones;
         private ToolStripMenuItem toolStripMenuItem_landing;
+        private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Panel PnlTop;
+        private Componentes.TableLayoutSlider tableLayoutSlider1;
+        private ReaLTaiizor.Controls.CrownButton crownButton1;
+        private Button button1;
+        private Button button3;
     }
 }

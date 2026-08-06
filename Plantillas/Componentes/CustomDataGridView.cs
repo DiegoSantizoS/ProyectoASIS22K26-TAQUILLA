@@ -9,22 +9,22 @@ namespace Componentes
 {
     public class CustomDataGridView : DataGridView
     {
-        [DefaultValue(typeof(Color), "41, 128, 185")]
-        public Color HeaderBackColor { get; set; } = Color.FromArgb(41, 128, 185);
+        [DefaultValue(typeof(Color), "45, 47, 52")]
+        public Color HeaderBackColor { get; set; } = Color.FromArgb(45, 47, 52);
 
         [DefaultValue(typeof(Color), "White")]
         public Color HeaderForeColor { get; set; } = Color.White;
 
-        [DefaultValue(typeof(Color), "50, 55, 66")]
-        public Color RowAlternateColor { get; set; } = Color.FromArgb(50, 55, 66);
+        [DefaultValue(typeof(Color), "42, 44, 49")]
+        public Color RowAlternateColor { get; set; } = Color.FromArgb(42, 44, 49);
 
         public CustomDataGridView()
         {
             Dock = DockStyle.Fill;
             Margin = new Padding(0);
             BorderStyle = BorderStyle.None;
-            BackgroundColor = Color.FromArgb(55, 60, 72);
-            GridColor = Color.FromArgb(70, 76, 90);
+            BackgroundColor = Color.FromArgb(37, 38, 43);
+            GridColor = Color.FromArgb(58, 60, 66);
             Font = new Font("Segoe UI", 9.5f);
             DoubleBuffered = true;
 
@@ -50,15 +50,15 @@ namespace Componentes
 
             RowTemplate.Height = 36;
 
-            DefaultCellStyle.BackColor = Color.FromArgb(55, 60, 72);
+            DefaultCellStyle.BackColor = Color.FromArgb(37, 38, 43);
             DefaultCellStyle.ForeColor = Color.FromArgb(230, 230, 230);
-            DefaultCellStyle.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 44, 48);
             DefaultCellStyle.SelectionForeColor = Color.White;
             DefaultCellStyle.Padding = new Padding(8, 0, 5, 0);
 
             AlternatingRowsDefaultCellStyle.BackColor = RowAlternateColor;
             AlternatingRowsDefaultCellStyle.ForeColor = Color.FromArgb(230, 230, 230);
-            AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 44, 48);
             AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.White;
 
             CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;

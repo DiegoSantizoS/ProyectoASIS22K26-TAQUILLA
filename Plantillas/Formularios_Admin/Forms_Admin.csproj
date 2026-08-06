@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+	  <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="krypton.toolkit" Version="105.26.7.201" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\clase_conexion\clase_conexion.csproj" />
+    <ProjectReference Include="..\Componentes\Componentes.csproj" />
+    <ProjectReference Include="..\Con_Admin\Con_Admin.csproj" />
+  </ItemGroup>
+
+</Project>
