@@ -45,13 +45,13 @@
             BtnBuscarNombreDePC = new Componentes.CustomButton();
             LbFecha = new Componentes.CustomLabel();
             DatePickerFecha = new Componentes.CustomDatePicker();
-            LbIP = new Componentes.CustomLabel();
-            TbTotalDeVenta = new Componentes.CustomTextBox();
             customRichTextBox1 = new Componentes.CustomRichTextBox();
             customLabel1 = new Componentes.CustomLabel();
             customTextBox1 = new Componentes.CustomTextBox();
             BtnBuscarPermiso = new Componentes.CustomButton();
             BtnBuscarUsuario = new Componentes.CustomButton();
+            LbIP = new Componentes.CustomLabel();
+            TbTotalDeVenta = new Componentes.CustomTextBox();
             TlpButtons = new TableLayoutPanel();
             BtnBuscar = new Componentes.CustomButton();
             BtnLimpiar = new Componentes.CustomButton();
@@ -327,36 +327,6 @@
             DatePickerFecha.StateCommon.Content.Color1 = Color.FromArgb(230, 230, 230);
             DatePickerFecha.TabIndex = 73;
             // 
-            // LbIP
-            // 
-            LbIP.AutoSize = true;
-            LbIP.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            LbIP.ForeColor = Color.FromArgb(220, 220, 220);
-            LbIP.Location = new Point(313, 0);
-            LbIP.Name = "LbIP";
-            LbIP.Padding = new Padding(0, 0, 2, 0);
-            LbIP.Size = new Size(46, 23);
-            LbIP.TabIndex = 72;
-            LbIP.Text = "IPv4";
-            LbIP.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // TbTotalDeVenta
-            // 
-            TbTotalDeVenta.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            TbTotalDeVenta.BackColor = Color.FromArgb(55, 60, 72);
-            TbTotalDeVenta.BorderStyle = BorderStyle.FixedSingle;
-            TlpForm.SetColumnSpan(TbTotalDeVenta, 2);
-            TbTotalDeVenta.Font = new Font("Segoe UI", 10F);
-            TbTotalDeVenta.ForeColor = Color.FromArgb(160, 165, 175);
-            TbTotalDeVenta.Location = new Point(315, 25);
-            TbTotalDeVenta.Margin = new Padding(5, 0, 5, 10);
-            TbTotalDeVenta.MaximumSize = new Size(0, 30);
-            TbTotalDeVenta.MinimumSize = new Size(190, 30);
-            TbTotalDeVenta.Name = "TbTotalDeVenta";
-            TbTotalDeVenta.PlaceholderText = "100";
-            TbTotalDeVenta.Size = new Size(300, 30);
-            TbTotalDeVenta.TabIndex = 66;
-            // 
             // customRichTextBox1
             // 
             customRichTextBox1.BackColor = Color.FromArgb(35, 40, 52);
@@ -447,6 +417,36 @@
             BtnBuscarUsuario.TabIndex = 88;
             BtnBuscarUsuario.Text = "Buscar";
             BtnBuscarUsuario.UseVisualStyleBackColor = false;
+            // 
+            // LbIP
+            // 
+            LbIP.AutoSize = true;
+            LbIP.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbIP.ForeColor = Color.FromArgb(220, 220, 220);
+            LbIP.Location = new Point(313, 0);
+            LbIP.Name = "LbIP";
+            LbIP.Padding = new Padding(0, 0, 2, 0);
+            LbIP.Size = new Size(46, 23);
+            LbIP.TabIndex = 72;
+            LbIP.Text = "IPv4";
+            LbIP.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // TbTotalDeVenta
+            // 
+            TbTotalDeVenta.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TbTotalDeVenta.BackColor = Color.FromArgb(55, 60, 72);
+            TbTotalDeVenta.BorderStyle = BorderStyle.FixedSingle;
+            TlpForm.SetColumnSpan(TbTotalDeVenta, 2);
+            TbTotalDeVenta.Font = new Font("Segoe UI", 10F);
+            TbTotalDeVenta.ForeColor = Color.FromArgb(160, 165, 175);
+            TbTotalDeVenta.Location = new Point(315, 25);
+            TbTotalDeVenta.Margin = new Padding(5, 0, 5, 10);
+            TbTotalDeVenta.MaximumSize = new Size(0, 30);
+            TbTotalDeVenta.MinimumSize = new Size(190, 30);
+            TbTotalDeVenta.Name = "TbTotalDeVenta";
+            TbTotalDeVenta.PlaceholderText = "100";
+            TbTotalDeVenta.Size = new Size(300, 30);
+            TbTotalDeVenta.TabIndex = 66;
             // 
             // TlpButtons
             // 
