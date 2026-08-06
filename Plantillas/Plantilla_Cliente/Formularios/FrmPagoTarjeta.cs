@@ -19,7 +19,7 @@ namespace Plantilla_Cliente.Formularios
         public FrmPagoTarjeta(decimal total)
         {
             InitializeComponent();
-            lblTotal.Text = "Total a Pagar: Q " + total.ToString("0.00");
+            lblTotal.Text = "Q " + total.ToString("0.00");
 
             if (picMarcaTarjeta != null) picMarcaTarjeta.Image = null;
 

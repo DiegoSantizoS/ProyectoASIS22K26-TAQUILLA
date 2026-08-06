@@ -58,7 +58,7 @@
             lblVuelto.Name = "lblVuelto";
             lblVuelto.Size = new Size(100, 23);
             lblVuelto.TabIndex = 1;
-            lblVuelto.Click += lblVuelto_Click;
+          //  lblVuelto.Click += lblVuelto_Click;
             // 
             // txtEfectivoRecibido
             // 
@@ -89,7 +89,7 @@
             label1.TabIndex = 4;
             label1.Text = "Total a Pagar";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
+         //   label1.Click += label1_Click;
             // 
             // label2
             // 

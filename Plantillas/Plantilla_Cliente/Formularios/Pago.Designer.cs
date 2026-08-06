@@ -53,7 +53,7 @@
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(121, 28);
             lblTotal.TabIndex = 1;
-            lblTotal.Click += label1_Click;
+//            lblTotal.Click += label1_Click;
             // 
             // btnConfirmar
             // 
@@ -88,7 +88,7 @@
             label2.TabIndex = 4;
             label2.Text = "Total";
             label2.TextAlign = ContentAlignment.MiddleCenter;
-            label2.Click += label2_Click;
+//            label2.Click += label2_Click;
             // 
             // Pago
             // 

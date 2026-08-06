@@ -120,7 +120,7 @@
             label2.TabIndex = 9;
             label2.Text = "No. Tarjeta";
             label2.TextAlign = ContentAlignment.MiddleCenter;
-            label2.Click += label2_Click;
+        //    label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -133,7 +133,7 @@
             label3.TabIndex = 10;
             label3.Text = "Fecha de Vencimiento";
             label3.TextAlign = ContentAlignment.MiddleCenter;
-            label3.Click += label3_Click;
+         //   label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -146,7 +146,7 @@
             label4.TabIndex = 11;
             label4.Text = "No. Seguridad";
             label4.TextAlign = ContentAlignment.MiddleCenter;
-            label4.Click += label4_Click;
+         //   label4.Click += label4_Click;
             // 
             // FrmPagoTarjeta
             // 
