@@ -20,7 +20,7 @@ namespace Plantilla_Cliente
 
         public Con_Pago()
         {
-            _cadenaConexion = "Server=localhost;Database=taquillas_cine;Uid=root;Pwd=root;";
+            _cadenaConexion = "Server=localhost;Database=taquillas_cine;Uid=root;Pwd=Root;";
         }
 
         public Con_Pago(string cadenaConexion)
