@@ -42,21 +42,21 @@ namespace Plantilla_Cliente.Clases
 
             try
             {
-                using (MySqlConnection con = GetConnection())
-                {
-                    using (MySqlCommand cmd = new MySqlCommand("sp_cartelera", con))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
+                MySqlConnection con = GetConnection();
 
-                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                        da.Fill(peliculas);
-                    }
-                }
+
+                MySqlCommand cmd = new MySqlCommand("sp_cartelera", con);
+
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(peliculas);
+
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                throw;
                 return peliculas;
             }
 
@@ -82,32 +82,18 @@ namespace Plantilla_Cliente.Clases
         }
 
 
-        public DataTable mostrarcines(int? idCiudad)
+        public DataTable mostrarcines(int? IdCiudad)
         {
             DataTable cines = new DataTable();
 
             MySqlConnection con = GetConnection();
-            string consulta = "";
-            if (idCiudad is not null)
-            {
-                consulta = @"SELECT 
-                        id_cine,
-                        nombre_cine
-                        FROM tbl_cine
-                        WHERE id_ciudad = @idCiudad
-                        ORDER BY id_cine";
-            }
-            else
-            {
-                consulta = @"SELECT 
-                        id_cine,
-                        nombre_cine
-                        FROM tbl_cine
-                        ORDER BY id_cine";
-            }
+            string consulta = @"SELECT id_cine, nombre_cine FROM tbl_cine
+                WHERE (@idCiudad IS NULL OR id_ciudad = @idCiudad) 
+                ORDER BY nombre_cine";
+
             MySqlCommand cmd = new MySqlCommand(consulta, con);
 
-            cmd.Parameters.AddWithValue("@idCiudad", idCiudad);
+            cmd.Parameters.AddWithValue("@idCiudad", IdCiudad);
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
 
@@ -117,65 +103,31 @@ namespace Plantilla_Cliente.Clases
         }
 
 
-        public DataTable FiltrarCartelera(int idCiudad, int idCine, int idTipo, int idioma)
+        public DataTable FiltrarCartelera(int IdCiudad, int IdCine, int? IdFormato)
         {
-            DataTable tabla = new DataTable();
+            DataTable Cartelera = new DataTable();
 
             try
             {
                 MySqlConnection con = GetConnection();
 
-                string consulta = @"
-        SELECT DISTINCT
-            p.id_pelicula AS IdPelicula,
-            p.titulo_pelicula AS Titulo,
-            p.duracion_pelicula AS Duracion,
-            cl.nombre_clasificacion AS Clasificacion,
-            g.nombre_genero AS Genero,
-            p.fecha_estreno AS 'Fecha de Estreno'
-        FROM tbl_funcion f
+                MySqlCommand cmd = new MySqlCommand("sp_filtrar_cartelera", con);
 
-        INNER JOIN tbl_sala s
-            ON f.id_sala = s.id_sala
-
-        INNER JOIN tbl_cine c
-            ON s.id_cine = c.id_cine
-
-        INNER JOIN tbl_ciudad ci
-            ON c.id_ciudad = ci.id_ciudad
-
-        INNER JOIN tbl_pelicula p
-            ON f.id_pelicula = p.id_pelicula
-
-        INNER JOIN tbl_genero g
-            ON p.id_genero = g.id_genero
-
-        LEFT JOIN tbl_clasificacion cl
-            ON cl.id_clasificacion = p.id_clasificacion
-
-        WHERE
-            ci.id_ciudad = @ciudad
-            AND c.id_cine = @cine
-            AND p.id_tipo_pelicula = @tipo
-
-        ORDER BY p.titulo_pelicula;";
-
-                MySqlCommand cmd = new MySqlCommand(consulta, con);
-
-                cmd.Parameters.AddWithValue("@ciudad", idCiudad);
-                cmd.Parameters.AddWithValue("@cine", idCine);
-                cmd.Parameters.AddWithValue("@tipo", idTipo);
+                cmd.Parameters.AddWithValue("@p_id_formato", IdFormato);
+                cmd.Parameters.AddWithValue("@p_id_ciudad", IdCiudad);
+                cmd.Parameters.AddWithValue("@p_id_cine", IdCine);
+                cmd.CommandType = CommandType.StoredProcedure;
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
 
-                adapter.Fill(tabla);
+                adapter.Fill(Cartelera);
 
-                return tabla;
+                return Cartelera;
             }
             catch
             {
 
-                return tabla;
+                return Cartelera;
             }
         }
         /*Inicio de código de Carlos Andres Arriaza Lara 0901-23-13862 el 27/07/2026*/
