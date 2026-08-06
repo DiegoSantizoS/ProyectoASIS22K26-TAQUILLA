@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
 using Plantilla_Cliente.Clases;
-
+using Plantillas.Carteleras;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Plantilla_Cliente
 {
@@ -21,6 +24,7 @@ namespace Plantilla_Cliente
         Boolean isIMAXFilterActive = false;
         Boolean isSubFilterActive = false;
         Boolean isDubFilterActive = false;
+        int? IdFormato = null;
 
         public event Action<int, int> CambiaraReserva;
         public Cartelera()
@@ -32,6 +36,11 @@ namespace Plantilla_Cliente
             CargarPeliculas();
             CboCiudad.ForeColor = Color.Black;
             CboCiudad.BackColor = Color.White;
+            DgvCartelera.DataError += (s, e) =>
+            {
+                MessageBox.Show($"DataError en fila {e.RowIndex}, columna {e.ColumnIndex}: {e.Exception?.Message}");
+                e.ThrowException = false; // evita que crashee, pero deja ver el mensaje
+            };
         }
         /* Inicio de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
  * fecha de: 27/07/2026 */
@@ -63,9 +72,9 @@ namespace Plantilla_Cliente
             if (CboCiudad.SelectedValue == null)
                 return;
 
-            int idCiudad = Convert.ToInt32(CboCiudad.SelectedValue);
+            int IdCiudad = Convert.ToInt32(CboCiudad.SelectedValue);
 
-            DataTable dtCines = gconexion.mostrarcines(idCiudad);
+            DataTable dtCines = gconexion.mostrarcines(IdCiudad);
 
             CboCine.DataSource = null;
 
@@ -78,26 +87,26 @@ namespace Plantilla_Cliente
         private void CargarPeliculas()
         {
             DataTable peliculas = gconexion.mostrarpelicula();
+
+            DgvCartelera.AutoGenerateColumns = true;
             DgvCartelera.DataSource = peliculas;
-            // Desactivar el redimensionamiento por el usuario
+
+
+            // Configuración general
             DgvCartelera.AllowUserToResizeColumns = false;
             DgvCartelera.AllowUserToResizeRows = false;
 
-            // Ajustar automáticamente el ancho de las columnas
-            DgvCartelera.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            // Si hay texto largo en una celda
-            DgvCartelera.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            DgvCartelera.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+
             foreach (DataGridViewColumn column in DgvCartelera.Columns)
             {
                 column.Resizable = DataGridViewTriState.False;
-                // Establecer el color de la letra para las columnas generadas por el DataSource
-                column.DefaultCellStyle.ForeColor = Color.FromArgb(112, 27, 40);        
-
-                //DgvCartelera.Columns[2].Visible = false;
-
-
+                column.DefaultCellStyle.ForeColor = Color.FromArgb(112, 27, 40);
             }
+
+
+           DgvCartelera.Columns[1].Visible = false;
+
         }
         /* fin de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
  * fecha de: 27/07/2026 */
@@ -170,6 +179,7 @@ namespace Plantilla_Cliente
             }
             else
             {
+                is2DFilterActive = true;
                 is3DFilterActive = false;
                 is4DFilterActive = false;
                 isIMAXFilterActive = false;
@@ -178,7 +188,6 @@ namespace Plantilla_Cliente
                 Btn4DXFilter.BackColor = Color.FromArgb(197, 155, 39);
                 BtnIMAXFilter.BackColor = Color.FromArgb(197, 155, 39);
             }
-            filtros();
         }
 
 
@@ -240,7 +249,7 @@ namespace Plantilla_Cliente
             if (isIMAXFilterActive)
             {
                 isIMAXFilterActive = false;
-                BtnIMAXFilter.BackColor = Color.White;
+                BtnIMAXFilter.BackColor = Color.FromArgb(197, 155, 39);
             }
             else
             {
@@ -260,7 +269,7 @@ namespace Plantilla_Cliente
             {
                 // Desactivar subtitulada
                 isSubFilterActive = false;
-                BtnSubFilter.BackColor = Color.White;
+                BtnSubFilter.BackColor = Color.FromArgb(197, 155, 39);
             }
             else
             {
@@ -271,7 +280,6 @@ namespace Plantilla_Cliente
                 BtnSubFilter.BackColor = Color.FromArgb(112, 27, 40);
                 BtnDobFilter.BackColor = Color.FromArgb(197, 155, 39);
             }
-            filtros();
             //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
         }
         private void Btn_DobFilter_Click(object sender, EventArgs e)
@@ -279,7 +287,7 @@ namespace Plantilla_Cliente
             if (isDubFilterActive)
             {
                 isDubFilterActive = false;
-                BtnDobFilter.BackColor = Color.White;
+                BtnDobFilter.BackColor = Color.FromArgb(197, 155, 39);
             }
             else
             {
@@ -288,15 +296,14 @@ namespace Plantilla_Cliente
 
                 BtnDobFilter.BackColor = Color.FromArgb(112, 27, 40);
                 BtnSubFilter.BackColor = Color.FromArgb(197, 155, 39);
+                //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
             }
-            filtros();
-            //System.Diagnostics.Debug.WriteLine($"Subtitulada: {isSubFilterActive}, Doblada: {isDubFilterActive}");
         }
         private void Dgv_Cartelera_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
             {
-               
+
                 return;
             }
             if (e.ColumnIndex == DgvCartelera.Columns["Reservar"].Index)
@@ -321,9 +328,8 @@ namespace Plantilla_Cliente
 
         private void Cbo_Cine_SelectedIndexChanged(object sender, EventArgs e)
         {
-            filtros();
         }
-
+        /*Inicio de código de Carlos Andres Arriaza Lara 0901-23-13862 el 5/08/2026*/
         public void filtros()
         {
             if (CboCiudad.SelectedIndex == 0)
@@ -332,54 +338,34 @@ namespace Plantilla_Cliente
                 return;
             }
 
-            int ciudad = Convert.ToInt32(CboCiudad.SelectedValue);
-            int cine = Convert.ToInt32(CboCine.SelectedValue);
-            MessageBox.Show($"Ciudad: {ciudad}, Cine: {cine}");
+            int IdCiudad = Convert.ToInt32(CboCiudad.SelectedValue);
+            int IdCine = Convert.ToInt32(CboCine.SelectedValue);
 
-            // Tipo de función
-            int tipoFuncion = 0;
+            //Formato de función
 
-            if (is2DFilterActive)
-                tipoFuncion = 1;
-            else if (is3DFilterActive)
-                tipoFuncion = 2;
-            else if (is4DFilterActive)
-                tipoFuncion = 3;
-            else if (isIMAXFilterActive)
-                tipoFuncion = 4;
+            if (is2DFilterActive == true && isSubFilterActive == true) IdFormato = 0;
+            else if (is2DFilterActive == true && isDubFilterActive == true) IdFormato = 1;
+            else if (is3DFilterActive == true && isSubFilterActive == true) IdFormato = 2;
+            else if (is3DFilterActive == true && isDubFilterActive == true) IdFormato = 3;
+            else if (is4DFilterActive == true && isSubFilterActive == true) IdFormato = 4;
+            else if (is4DFilterActive == true && isDubFilterActive == true) IdFormato = 5;
+            else if (isIMAXFilterActive == true && isSubFilterActive == true) IdFormato = 6;
+            else if (isIMAXFilterActive == true && isDubFilterActive == true) IdFormato = 7;
+            else IdFormato = null;
 
-            // Idioma
-            int idioma = 0;
-
-            if (isSubFilterActive)
-                idioma = 1;
-            else if (isDubFilterActive)
-                idioma = 2;
-
-            if (tipoFuncion == 0)
+            if (IdFormato == null)
             {
                 MessageBox.Show("Seleccione un formato.");
                 return;
             }
 
-            if (idioma == 0)
-            {
-                MessageBox.Show("Seleccione un idioma.");
-                return;
-            }
-
-            DgvCartelera.DataSource = gconexion.FiltrarCartelera(ciudad, cine, tipoFuncion, idioma);
+            DgvCartelera.DataSource = gconexion.FiltrarCartelera(IdCiudad, IdCine, IdFormato);
         }
+        /*Fin de código de Carlos Andres Arriaza Lara 0901-23-13862 el 5/08/2026*/
 
-        private void Btn_Cargar_Cartelera_Click_1(object sender, EventArgs e)
+        private void BtnCargarCartelera_Click(object sender, EventArgs e)
         {
             filtros();
         }
-
-        private void Btn_Cargar_Cartelera_Click_2(object sender, EventArgs e)
-        {
-            filtros();
-        }
-
     }
 }

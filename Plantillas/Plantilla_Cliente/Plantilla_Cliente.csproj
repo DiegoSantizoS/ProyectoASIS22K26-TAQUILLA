@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Carteleras\Carteleras.csproj" />
     <ProjectReference Include="..\clase_conexion\clase_conexion.csproj" />
   </ItemGroup>
 

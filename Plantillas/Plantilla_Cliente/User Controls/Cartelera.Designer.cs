@@ -47,7 +47,6 @@ namespace Plantilla_Cliente
             BtnDobFilter = new Button();
             BtnSubFilter = new Button();
             DgvCartelera = new DataGridView();
-            Imagen = new DataGridViewImageColumn();
             Reservar = new DataGridViewButtonColumn();
             PicLogo = new PictureBox();
             comboBox2 = new ComboBox();
@@ -136,7 +135,7 @@ namespace Plantilla_Cliente
             BtnCargarCartelera.TabIndex = 5;
             BtnCargarCartelera.Text = "Consultar cartelera";
             BtnCargarCartelera.UseVisualStyleBackColor = true;
-            BtnCargarCartelera.Click += Btn_Cargar_Cartelera_Click_2;
+            BtnCargarCartelera.Click += BtnCargarCartelera_Click;
             // 
             // PnlFiltros2
             // 
@@ -265,6 +264,7 @@ namespace Plantilla_Cliente
             // 
             // DgvCartelera
             // 
+            DgvCartelera.AllowUserToAddRows = false;
             DgvCartelera.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvCartelera.BackgroundColor = Color.FromArgb(18, 18, 18);
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -276,7 +276,7 @@ namespace Plantilla_Cliente
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             DgvCartelera.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             DgvCartelera.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvCartelera.Columns.AddRange(new DataGridViewColumn[] { Imagen, Reservar });
+            DgvCartelera.Columns.AddRange(new DataGridViewColumn[] { Reservar });
             PnlBuscador.SetColumnSpan(DgvCartelera, 2);
             DgvCartelera.Cursor = Cursors.Hand;
             DgvCartelera.Dock = DockStyle.Fill;
@@ -287,12 +287,6 @@ namespace Plantilla_Cliente
             DgvCartelera.Size = new Size(1047, 545);
             DgvCartelera.TabIndex = 9;
             DgvCartelera.CellContentClick += Dgv_Cartelera_CellContentClick;
-            // 
-            // Imagen
-            // 
-            Imagen.HeaderText = "Imagen";
-            Imagen.MinimumWidth = 6;
-            Imagen.Name = "Imagen";
             // 
             // Reservar
             // 
@@ -368,8 +362,6 @@ namespace Plantilla_Cliente
         private Button BtnSubFilter;
         private ComboBox CboCiudad;
         private PictureBox PicLogo;
-        private DataGridViewImageColumn Imagen;
         private DataGridViewButtonColumn Reservar;
-        
     }
 }

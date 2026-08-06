@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using clase_conexion;
 using Plantilla_Cliente.Clases;
 using System.Diagnostics;
+using Plantillas.Carteleras;
 
 
 
@@ -61,6 +62,7 @@ namespace Plantilla_Cliente
             CargarCines(this.idciudad);
             FlpHorarios.Controls.Clear();
             CargarMiniaturaTrailer(Enlace);
+            CargarPoster();
 
         }
 
@@ -342,6 +344,14 @@ namespace Plantilla_Cliente
         private void TxRestriccion_Click(object sender, EventArgs e)
         {
 
+        }
+        private void CargarPoster()
+        {
+
+            Carteleras carteleras = new Carteleras(idPelicula);
+            String url = carteleras.obtenerUrl();
+            PicPelicula.ImageLocation = url;
+            PicPelicula.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }

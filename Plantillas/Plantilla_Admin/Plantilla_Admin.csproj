@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Carteleras\Carteleras.csproj" />
     <ProjectReference Include="..\clase_conexion\clase_conexion.csproj" />
     <ProjectReference Include="..\Componentes\Componentes.csproj" />
   </ItemGroup>

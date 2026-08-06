@@ -1,4 +1,6 @@
 using System.Drawing.Drawing2D;
+using Plantillas.Carteleras;
+using System.Diagnostics;
 
 //Carlos Andres Arriaza Lara 0901-23-13862
 //Creación de prototipo de interfaz para menu de cliente
@@ -6,14 +8,16 @@ namespace Plantilla_Cliente
 {
     public partial class FrMenu : Form
     {
+        Carteleras cartelera = new Carteleras(1);
         public FrMenu()
         {
             InitializeComponent();
 
-            Cartelera cartelera = new Cartelera();
-            cartelera.CambiaraReserva += CargarPanelReserva;
+            Cartelera carteleraControl = new Cartelera();
+            carteleraControl.CambiaraReserva += CargarPanelReserva;
 
-            CargarPanel(cartelera);
+            CargarPanel(carteleraControl);
+
         }
         /* Inicio de Codigo de Carlos Andres Arriaza Lara en la fecha de: 20/07/2026 */
         private void CargarPanel(UserControl pagina)
@@ -39,7 +43,8 @@ namespace Plantilla_Cliente
             Reservas reservas = new Reservas();
             CargarPanel(reservas);
         }
+
+        /* Final de Codigo de Carlos Andres Arriaza Lara en la fecha de: 20/07/2026 */
     }
-    /* Final de Codigo de Carlos Andres Arriaza Lara en la fecha de: 20/07/2026 */
 }
 
