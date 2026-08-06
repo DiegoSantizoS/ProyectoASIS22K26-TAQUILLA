@@ -15,7 +15,7 @@ namespace Plantilla_Cliente.Clases
         private String server = "localhost";
         private String datebase = "taquillas_cine";
         private String user = "root";
-        private String password = "Root";
+        private String password = "root";
         private String pconexion;
         public Con_Cliente()
         {

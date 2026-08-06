@@ -16,7 +16,7 @@ namespace clase_conexion
         private String server = "localhost";
         private String datebase = "taquillas_cine";
         private String user = "root";
-        private String password = "Root";
+        private String password = "root";
         private String pconexion;
         public conexion()
         {
