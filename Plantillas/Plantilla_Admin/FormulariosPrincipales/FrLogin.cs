@@ -43,7 +43,7 @@ namespace Plantilla_Cliente
             };
         }
 
-        private DataRow? AutenticarYRegistrar()
+        private void BtnIngresar_Click_1(object sender, EventArgs e)
         {
             string usuario = TbUsuario.Text.Trim();
             string contrasena = TbContra.Text;
@@ -52,35 +52,30 @@ namespace Plantilla_Cliente
             {
                 MessageBox.Show("Ingresa usuario y contraseña.", "Login",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return null;
+                return;
             }
 
-            If_Login api = new If_Login();
-            DataTable dt = api.ObtenerUsuario(usuario, contrasena);
-
-            if (dt.Rows.Count == 0)
-            {
-                MessageBox.Show("Usuario o contraseña incorrectos.", "Login",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-
-            DataRow fila = dt.Rows[0];
-
-            string perfil = fila.Table.Columns.Contains("nombre_perfil")
-                            && fila["nombre_perfil"] != DBNull.Value
-                ? fila["nombre_perfil"].ToString()!
-                : "";
-
-            Sesion.Iniciar(usuario, perfil);
-            return fila;
-        }
-
-        private void BtnIngresar_Click_1(object sender, EventArgs e)
-        {
             try
             {
-                if (AutenticarYRegistrar() == null) return;
+                If_Login api = new If_Login();
+                DataTable dt = api.ObtenerUsuario(usuario, contrasena);
+
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos.", "Login",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string perfil = dt.Rows[0]["nombre_perfil"] == DBNull.Value
+                    ? "" : dt.Rows[0]["nombre_perfil"].ToString();
+
+                if (!perfil.Equals("admin", StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show("Acceso permitido solo a administradores.", "Login",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
                 IdUsuarioActual = Convert.ToInt32(dt.Rows[0]["id_usuario"]);
                 NombreUsuarioActual = dt.Rows[0]["nombre_usuario"].ToString();
@@ -130,9 +125,37 @@ namespace Plantilla_Cliente
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
+            string usuario = TbUsuario.Text.Trim();
+            string contrasena = TbContra.Text;
+
+            if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrEmpty(contrasena))
+            {
+                MessageBox.Show("Ingresa usuario y contraseña.", "Login",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
-                if (AutenticarYRegistrar() == null) return;
+                If_Login api = new If_Login();
+                DataTable dt = api.ObtenerUsuario(usuario, contrasena);
+
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos.", "Login",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string perfil = dt.Rows[0]["nombre_perfil"] == DBNull.Value
+                    ? "" : dt.Rows[0]["nombre_perfil"].ToString();
+
+                if (!perfil.Equals("admin", StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show("Acceso permitido solo a administradores.", "Login",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
                 IdUsuarioActual = Convert.ToInt32(dt.Rows[0]["id_usuario"]);
                 NombreUsuarioActual = dt.Rows[0]["nombre_usuario"].ToString();
