@@ -78,13 +78,14 @@
             TlP_Reservas.Controls.Add(PicTrailer, 0, 2);
             TlP_Reservas.Dock = DockStyle.Fill;
             TlP_Reservas.Location = new Point(0, 0);
+            TlP_Reservas.Margin = new Padding(3, 2, 3, 2);
             TlP_Reservas.Name = "TlP_Reservas";
             TlP_Reservas.RowCount = 3;
             TlP_Reservas.RowStyles.Add(new RowStyle(SizeType.Percent, 19.5034332F));
             TlP_Reservas.RowStyles.Add(new RowStyle(SizeType.Percent, 27.010622F));
             TlP_Reservas.RowStyles.Add(new RowStyle(SizeType.Percent, 53.56601F));
-            TlP_Reservas.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlP_Reservas.Size = new Size(1394, 700);
+            TlP_Reservas.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            TlP_Reservas.Size = new Size(1220, 525);
             TlP_Reservas.TabIndex = 0;
             TlP_Reservas.Paint += TlP_Reservas_Paint;
             // 
@@ -100,13 +101,14 @@
             Tlp_Info.Controls.Add(Tx_Duracion, 1, 1);
             Tlp_Info.Controls.Add(Tx_Restriccion, 1, 2);
             Tlp_Info.Dock = DockStyle.Fill;
-            Tlp_Info.Location = new Point(235, 3);
+            Tlp_Info.Location = new Point(206, 2);
+            Tlp_Info.Margin = new Padding(3, 2, 3, 2);
             Tlp_Info.Name = "Tlp_Info";
             Tlp_Info.RowCount = 3;
             Tlp_Info.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             Tlp_Info.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             Tlp_Info.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            Tlp_Info.Size = new Size(1156, 130);
+            Tlp_Info.Size = new Size(1011, 98);
             Tlp_Info.TabIndex = 4;
             // 
             // Tx_DirectorHead
@@ -117,7 +119,7 @@
             Tx_DirectorHead.ForeColor = Color.FromArgb(250, 248, 245);
             Tx_DirectorHead.Location = new Point(3, 0);
             Tx_DirectorHead.Name = "Tx_DirectorHead";
-            Tx_DirectorHead.Size = new Size(121, 43);
+            Tx_DirectorHead.Size = new Size(105, 32);
             Tx_DirectorHead.TabIndex = 0;
             Tx_DirectorHead.Text = "Director";
             Tx_DirectorHead.TextAlign = ContentAlignment.MiddleLeft;
@@ -128,9 +130,9 @@
             Tx_DuracionHead.BackColor = Color.FromArgb(74, 18, 26);
             Tx_DuracionHead.Dock = DockStyle.Fill;
             Tx_DuracionHead.ForeColor = Color.FromArgb(250, 248, 245);
-            Tx_DuracionHead.Location = new Point(3, 43);
+            Tx_DuracionHead.Location = new Point(3, 32);
             Tx_DuracionHead.Name = "Tx_DuracionHead";
-            Tx_DuracionHead.Size = new Size(121, 43);
+            Tx_DuracionHead.Size = new Size(105, 32);
             Tx_DuracionHead.TabIndex = 1;
             Tx_DuracionHead.Text = "Duración";
             Tx_DuracionHead.TextAlign = ContentAlignment.MiddleLeft;
@@ -141,9 +143,9 @@
             Tx_RestriccionHead.BackColor = Color.FromArgb(74, 18, 26);
             Tx_RestriccionHead.Dock = DockStyle.Fill;
             Tx_RestriccionHead.ForeColor = Color.FromArgb(250, 248, 245);
-            Tx_RestriccionHead.Location = new Point(3, 86);
+            Tx_RestriccionHead.Location = new Point(3, 64);
             Tx_RestriccionHead.Name = "Tx_RestriccionHead";
-            Tx_RestriccionHead.Size = new Size(121, 44);
+            Tx_RestriccionHead.Size = new Size(105, 34);
             Tx_RestriccionHead.TabIndex = 2;
             Tx_RestriccionHead.Text = "Restricción";
             Tx_RestriccionHead.TextAlign = ContentAlignment.MiddleLeft;
@@ -155,9 +157,9 @@
             Tx_Director.Dock = DockStyle.Fill;
             Tx_Director.FlatStyle = FlatStyle.Flat;
             Tx_Director.ForeColor = Color.FromArgb(250, 248, 245);
-            Tx_Director.Location = new Point(130, 0);
+            Tx_Director.Location = new Point(114, 0);
             Tx_Director.Name = "Tx_Director";
-            Tx_Director.Size = new Size(1023, 43);
+            Tx_Director.Size = new Size(894, 32);
             Tx_Director.TabIndex = 3;
             Tx_Director.Text = "XXX";
             Tx_Director.TextAlign = ContentAlignment.MiddleLeft;
@@ -169,9 +171,9 @@
             Tx_Duracion.Dock = DockStyle.Fill;
             Tx_Duracion.FlatStyle = FlatStyle.Flat;
             Tx_Duracion.ForeColor = Color.FromArgb(250, 248, 245);
-            Tx_Duracion.Location = new Point(130, 43);
+            Tx_Duracion.Location = new Point(114, 32);
             Tx_Duracion.Name = "Tx_Duracion";
-            Tx_Duracion.Size = new Size(1023, 43);
+            Tx_Duracion.Size = new Size(894, 32);
             Tx_Duracion.TabIndex = 4;
             Tx_Duracion.Text = "XXX";
             Tx_Duracion.TextAlign = ContentAlignment.MiddleLeft;
@@ -183,9 +185,9 @@
             Tx_Restriccion.Dock = DockStyle.Fill;
             Tx_Restriccion.FlatStyle = FlatStyle.Flat;
             Tx_Restriccion.ForeColor = Color.FromArgb(250, 248, 245);
-            Tx_Restriccion.Location = new Point(130, 86);
+            Tx_Restriccion.Location = new Point(114, 64);
             Tx_Restriccion.Name = "Tx_Restriccion";
-            Tx_Restriccion.Size = new Size(1023, 44);
+            Tx_Restriccion.Size = new Size(894, 34);
             Tx_Restriccion.TabIndex = 5;
             Tx_Restriccion.Text = "XXX";
             Tx_Restriccion.TextAlign = ContentAlignment.MiddleLeft;
@@ -196,10 +198,11 @@
             TlP_Reservas.SetColumnSpan(Pic_Pelicula, 2);
             Pic_Pelicula.Dock = DockStyle.Fill;
             Pic_Pelicula.Image = (Image)resources.GetObject("Pic_Pelicula.Image");
-            Pic_Pelicula.Location = new Point(3, 3);
+            Pic_Pelicula.Location = new Point(3, 2);
+            Pic_Pelicula.Margin = new Padding(3, 2, 3, 2);
             Pic_Pelicula.Name = "Pic_Pelicula";
             TlP_Reservas.SetRowSpan(Pic_Pelicula, 2);
-            Pic_Pelicula.Size = new Size(226, 318);
+            Pic_Pelicula.Size = new Size(197, 239);
             Pic_Pelicula.SizeMode = PictureBoxSizeMode.CenterImage;
             Pic_Pelicula.TabIndex = 0;
             Pic_Pelicula.TabStop = false;
@@ -217,13 +220,14 @@
             Tlp_Eleccion_Funciones.Controls.Add(Cbo_Cines, 1, 0);
             Tlp_Eleccion_Funciones.Controls.Add(Tx_SeleccionCine, 0, 0);
             Tlp_Eleccion_Funciones.Dock = DockStyle.Fill;
-            Tlp_Eleccion_Funciones.Location = new Point(235, 139);
+            Tlp_Eleccion_Funciones.Location = new Point(206, 104);
+            Tlp_Eleccion_Funciones.Margin = new Padding(3, 2, 3, 2);
             Tlp_Eleccion_Funciones.Name = "Tlp_Eleccion_Funciones";
             Tlp_Eleccion_Funciones.RowCount = 3;
             Tlp_Eleccion_Funciones.RowStyles.Add(new RowStyle(SizeType.Percent, 23.8970585F));
             Tlp_Eleccion_Funciones.RowStyles.Add(new RowStyle(SizeType.Percent, 38.55422F));
             Tlp_Eleccion_Funciones.RowStyles.Add(new RowStyle(SizeType.Percent, 37.95181F));
-            Tlp_Eleccion_Funciones.Size = new Size(1156, 182);
+            Tlp_Eleccion_Funciones.Size = new Size(1011, 137);
             Tlp_Eleccion_Funciones.TabIndex = 13;
             // 
             // Flp_Horarios
@@ -232,18 +236,20 @@
             Flp_Horarios.Controls.Add(button1);
             Flp_Horarios.Dock = DockStyle.Fill;
             Flp_Horarios.ForeColor = Color.FromArgb(250, 248, 245);
-            Flp_Horarios.Location = new Point(129, 115);
+            Flp_Horarios.Location = new Point(113, 86);
+            Flp_Horarios.Margin = new Padding(3, 2, 3, 2);
             Flp_Horarios.Name = "Flp_Horarios";
-            Flp_Horarios.Size = new Size(1024, 64);
+            Flp_Horarios.Size = new Size(895, 49);
             Flp_Horarios.TabIndex = 17;
             // 
             // button1
             // 
             button1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(3, 3);
+            button1.Location = new Point(3, 2);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(80, 61);
+            button1.Size = new Size(70, 46);
             button1.TabIndex = 0;
             button1.Text = "Fecha 1";
             button1.UseVisualStyleBackColor = true;
@@ -260,18 +266,20 @@
             Flp_Funciones.Controls.Add(button17);
             Flp_Funciones.Dock = DockStyle.Fill;
             Flp_Funciones.ForeColor = Color.FromArgb(250, 248, 245);
-            Flp_Funciones.Location = new Point(129, 46);
+            Flp_Funciones.Location = new Point(113, 34);
+            Flp_Funciones.Margin = new Padding(3, 2, 3, 2);
             Flp_Funciones.Name = "Flp_Funciones";
-            Flp_Funciones.Size = new Size(1024, 63);
+            Flp_Funciones.Size = new Size(895, 48);
             Flp_Funciones.TabIndex = 16;
             // 
             // button11
             // 
             button11.Dock = DockStyle.Fill;
             button11.FlatStyle = FlatStyle.Flat;
-            button11.Location = new Point(3, 3);
+            button11.Location = new Point(3, 2);
+            button11.Margin = new Padding(3, 2, 3, 2);
             button11.Name = "button11";
-            button11.Size = new Size(80, 60);
+            button11.Size = new Size(70, 45);
             button11.TabIndex = 0;
             button11.Text = "Fecha 1";
             button11.UseVisualStyleBackColor = true;
@@ -279,9 +287,10 @@
             // button12
             // 
             button12.FlatStyle = FlatStyle.Flat;
-            button12.Location = new Point(89, 3);
+            button12.Location = new Point(79, 2);
+            button12.Margin = new Padding(3, 2, 3, 2);
             button12.Name = "button12";
-            button12.Size = new Size(80, 60);
+            button12.Size = new Size(70, 45);
             button12.TabIndex = 1;
             button12.Text = "Fecha 2";
             button12.UseVisualStyleBackColor = true;
@@ -289,9 +298,10 @@
             // button13
             // 
             button13.FlatStyle = FlatStyle.Flat;
-            button13.Location = new Point(175, 3);
+            button13.Location = new Point(155, 2);
+            button13.Margin = new Padding(3, 2, 3, 2);
             button13.Name = "button13";
-            button13.Size = new Size(80, 60);
+            button13.Size = new Size(70, 45);
             button13.TabIndex = 2;
             button13.Text = "Fecha 3";
             button13.UseVisualStyleBackColor = true;
@@ -299,9 +309,10 @@
             // button14
             // 
             button14.FlatStyle = FlatStyle.Flat;
-            button14.Location = new Point(261, 3);
+            button14.Location = new Point(231, 2);
+            button14.Margin = new Padding(3, 2, 3, 2);
             button14.Name = "button14";
-            button14.Size = new Size(80, 60);
+            button14.Size = new Size(70, 45);
             button14.TabIndex = 3;
             button14.Text = "Fecha 4";
             button14.UseVisualStyleBackColor = true;
@@ -309,9 +320,10 @@
             // button15
             // 
             button15.FlatStyle = FlatStyle.Flat;
-            button15.Location = new Point(347, 3);
+            button15.Location = new Point(307, 2);
+            button15.Margin = new Padding(3, 2, 3, 2);
             button15.Name = "button15";
-            button15.Size = new Size(80, 60);
+            button15.Size = new Size(70, 45);
             button15.TabIndex = 4;
             button15.Text = "Fecha 5";
             button15.UseVisualStyleBackColor = true;
@@ -319,9 +331,10 @@
             // button16
             // 
             button16.FlatStyle = FlatStyle.Flat;
-            button16.Location = new Point(433, 3);
+            button16.Location = new Point(383, 2);
+            button16.Margin = new Padding(3, 2, 3, 2);
             button16.Name = "button16";
-            button16.Size = new Size(80, 60);
+            button16.Size = new Size(70, 45);
             button16.TabIndex = 5;
             button16.Text = "Fecha 6";
             button16.UseVisualStyleBackColor = true;
@@ -329,9 +342,10 @@
             // button17
             // 
             button17.FlatStyle = FlatStyle.Flat;
-            button17.Location = new Point(519, 3);
+            button17.Location = new Point(459, 2);
+            button17.Margin = new Padding(3, 2, 3, 2);
             button17.Name = "button17";
-            button17.Size = new Size(80, 60);
+            button17.Size = new Size(70, 45);
             button17.TabIndex = 6;
             button17.Text = "Fecha 7";
             button17.UseVisualStyleBackColor = true;
@@ -342,9 +356,9 @@
             Tx_Horarios.BackColor = Color.FromArgb(74, 18, 26);
             Tx_Horarios.Dock = DockStyle.Fill;
             Tx_Horarios.ForeColor = Color.FromArgb(250, 248, 245);
-            Tx_Horarios.Location = new Point(3, 112);
+            Tx_Horarios.Location = new Point(3, 84);
             Tx_Horarios.Name = "Tx_Horarios";
-            Tx_Horarios.Size = new Size(120, 70);
+            Tx_Horarios.Size = new Size(104, 53);
             Tx_Horarios.TabIndex = 15;
             Tx_Horarios.Text = "Horarios disponibles";
             Tx_Horarios.TextAlign = ContentAlignment.MiddleLeft;
@@ -355,9 +369,9 @@
             Tx_Funciones.BackColor = Color.FromArgb(74, 18, 26);
             Tx_Funciones.Dock = DockStyle.Fill;
             Tx_Funciones.ForeColor = Color.FromArgb(250, 248, 245);
-            Tx_Funciones.Location = new Point(3, 43);
+            Tx_Funciones.Location = new Point(3, 32);
             Tx_Funciones.Name = "Tx_Funciones";
-            Tx_Funciones.Size = new Size(120, 69);
+            Tx_Funciones.Size = new Size(104, 52);
             Tx_Funciones.TabIndex = 13;
             Tx_Funciones.Text = "Funciones disponibles";
             Tx_Funciones.TextAlign = ContentAlignment.MiddleLeft;
@@ -368,9 +382,10 @@
             Cbo_Cines.DrawMode = DrawMode.OwnerDrawFixed;
             Cbo_Cines.FormattingEnabled = true;
             Cbo_Cines.ItemHeight = 50;
-            Cbo_Cines.Location = new Point(129, 3);
+            Cbo_Cines.Location = new Point(113, 2);
+            Cbo_Cines.Margin = new Padding(3, 2, 3, 2);
             Cbo_Cines.Name = "Cbo_Cines";
-            Cbo_Cines.Size = new Size(1024, 56);
+            Cbo_Cines.Size = new Size(895, 56);
             Cbo_Cines.TabIndex = 14;
             Cbo_Cines.Text = "Seleccione un cine...";
             Cbo_Cines.SelectedIndexChanged += Cbo_Cines_SelectedIndexChanged;
@@ -383,7 +398,7 @@
             Tx_SeleccionCine.ForeColor = Color.FromArgb(250, 248, 245);
             Tx_SeleccionCine.Location = new Point(3, 0);
             Tx_SeleccionCine.Name = "Tx_SeleccionCine";
-            Tx_SeleccionCine.Size = new Size(120, 43);
+            Tx_SeleccionCine.Size = new Size(104, 32);
             Tx_SeleccionCine.TabIndex = 18;
             Tx_SeleccionCine.Text = "Selección de cine";
             Tx_SeleccionCine.TextAlign = ContentAlignment.MiddleLeft;
@@ -395,9 +410,10 @@
             Btn_Continuar.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
             Btn_Continuar.FlatStyle = FlatStyle.Popup;
             Btn_Continuar.ForeColor = Color.FromArgb(250, 248, 245);
-            Btn_Continuar.Location = new Point(235, 327);
+            Btn_Continuar.Location = new Point(206, 245);
+            Btn_Continuar.Margin = new Padding(3, 2, 3, 2);
             Btn_Continuar.Name = "Btn_Continuar";
-            Btn_Continuar.Size = new Size(1156, 60);
+            Btn_Continuar.Size = new Size(1011, 45);
             Btn_Continuar.TabIndex = 14;
             Btn_Continuar.Text = "Continuar";
             Btn_Continuar.UseVisualStyleBackColor = false;
@@ -408,9 +424,10 @@
             PicTrailer.Cursor = Cursors.Hand;
             PicTrailer.Dock = DockStyle.Fill;
             PicTrailer.Image = (Image)resources.GetObject("PicTrailer.Image");
-            PicTrailer.Location = new Point(3, 327);
+            PicTrailer.Location = new Point(3, 245);
+            PicTrailer.Margin = new Padding(3, 2, 3, 2);
             PicTrailer.Name = "PicTrailer";
-            PicTrailer.Size = new Size(225, 370);
+            PicTrailer.Size = new Size(196, 278);
             PicTrailer.SizeMode = PictureBoxSizeMode.Zoom;
             PicTrailer.TabIndex = 15;
             PicTrailer.TabStop = false;
@@ -418,12 +435,13 @@
             // 
             // Reservas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(TlP_Reservas);
-            MinimumSize = new Size(1000, 700);
+            Margin = new Padding(3, 2, 3, 2);
+            MinimumSize = new Size(875, 525);
             Name = "Reservas";
-            Size = new Size(1394, 700);
+            Size = new Size(1220, 525);
             TlP_Reservas.ResumeLayout(false);
             Tlp_Info.ResumeLayout(false);
             Tlp_Info.PerformLayout();

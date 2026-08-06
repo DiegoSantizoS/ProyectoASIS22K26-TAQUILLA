@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using clase_conexion;
 using Plantilla_Cliente.Clases;
 using System.Diagnostics;
-
+using Plantilla_Cliente.Formularios;
 
 
 
@@ -83,10 +83,8 @@ namespace Plantilla_Cliente
             {
                 if (butacas.ShowDialog() == DialogResult.OK)
                 {
-                    // Guardar los números de asiento
                     asientosSeleccionados = new List<int>(butacas.ButacasSeleccionadas);
 
-                    // Mostrar los asientos decodificados (solo para prueba)
                     List<string> asientosTexto = new List<string>();
 
                     foreach (int numero in asientosSeleccionados)
@@ -99,10 +97,65 @@ namespace Plantilla_Cliente
                         string.Join(", ", asientosTexto));
 
                     MessageBox.Show("Id_Funcion" + id_funcion.ToString());
-                    GuardarButacas();
+
+                    /*Inicio del código 0901-23-4868 Pedro José Gómez Villalobos el 5/08/2026*/
+                    if (asientosSeleccionados.Count > 0)
+                    {
+                        decimal precioPorBoleto = 45.00m;
+                        decimal totalCalculado = asientosSeleccionados.Count * precioPorBoleto;
+
+                        using (Pago formPago = new Pago(totalCalculado))
+                        {
+                            if (formPago.ShowDialog() == DialogResult.OK)
+                            {
+                                int metodoPagoSeleccionado = formPago.IdMetodoPagoSeleccionado;
+
+                                GuardarButacas(metodoPagoSeleccionado, totalCalculado);
+                            }
+                            else
+                            {
+                                MessageBox.Show("El pago fue cancelado.");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No seleccionó ningún asiento.");
+                    }
+                    
                 }
             }
         }
+        private void GuardarButacas(int metodoPago, decimal total)
+        {
+            int idVentaGenerado = gconexion.RegistrarVenta(metodoPago, asientosSeleccionados.Count, total);
+
+            if (idVentaGenerado > 0)
+            {
+                bool errorBoleto = false;
+
+                foreach (int asiento in asientosSeleccionados)
+                {
+                    bool resultadoBoleto = gconexion.RegistrarBoleto(id_funcion, idVentaGenerado, asiento);
+                    if (!resultadoBoleto)
+                    {
+                        errorBoleto = true;
+                        break;
+                    }
+                }
+
+                if (!errorBoleto)
+                {
+                    MessageBox.Show("¡Venta y boletos registrados con éxito en la base de datos!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    asientosSeleccionados.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se pudo registrar la venta principal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        /*Fin del código 0901-23-4868 Pedro José Gómez Villalobos el 5/08/2026*/
 
         private string DecodificarAsiento(int numeroAsiento)
         {
