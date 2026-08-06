@@ -196,7 +196,7 @@
             TbAsientoDecodificado.MaximumSize = new Size(0, 30);
             TbAsientoDecodificado.MinimumSize = new Size(95, 30);
             TbAsientoDecodificado.Name = "TbAsientoDecodificado";
-            TbAsientoDecodificado.PlaceholderText = "100";
+            TbAsientoDecodificado.PlaceholderText = "A10";
             TbAsientoDecodificado.Size = new Size(180, 30);
             TbAsientoDecodificado.TabIndex = 67;
             // 
@@ -246,7 +246,7 @@
             LbID.Padding = new Padding(0, 0, 2, 0);
             LbID.Size = new Size(87, 23);
             LbID.TabIndex = 11;
-            LbID.Text = "ID Ventas";
+            LbID.Text = "ID Boleto";
             LbID.TextAlign = ContentAlignment.MiddleRight;
             // 
             // LbEstado
@@ -430,7 +430,7 @@
             TbAsientoCodificado.MaximumSize = new Size(0, 30);
             TbAsientoCodificado.MinimumSize = new Size(95, 30);
             TbAsientoCodificado.Name = "TbAsientoCodificado";
-            TbAsientoCodificado.PlaceholderText = "100";
+            TbAsientoCodificado.PlaceholderText = "10";
             TbAsientoCodificado.Size = new Size(180, 30);
             TbAsientoCodificado.TabIndex = 66;
             // 

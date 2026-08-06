@@ -11,6 +11,7 @@ namespace Forms_Admin.Usuarios
         public FrUcBitacora()
         {
             InitializeComponent();
+            CargarBitacora();
         }
 
         private void FrUcBitacora_Load(object sender, EventArgs e)
