@@ -1,4 +1,6 @@
 using System.Drawing.Drawing2D;
+using Plantillas.Carteleras;
+using System.Diagnostics;
 
 //Carlos Andres Arriaza Lara 0901-23-13862
 //Creación de prototipo de interfaz para menu de cliente
@@ -6,17 +8,21 @@ namespace Plantilla_Cliente
 {
     public partial class FrMenu : Form
     {
+        Carteleras cartelera = new Carteleras(1);
         public FrMenu()
         {
             InitializeComponent();
 
-            Cartelera cartelera = new Cartelera();
-            cartelera.CambiaraReserva += Cartelera_CambiaraReserva;
+            Cartelera carteleraControl = new Cartelera();
+            carteleraControl.CambiaraReserva += CargarPanelReserva;
+            Reservas reservas = new Reservas();
+            reservas.CambiarCartelera += CargarPanelCartelera;
 
-            funcargarpagina(cartelera);
+            CargarPanel(carteleraControl);
+
         }
         /* Inicio de Codigo de Carlos Andres Arriaza Lara en la fecha de: 20/07/2026 */
-        private void funcargarpagina(UserControl pagina)
+        private void CargarPanel(UserControl pagina)
         {
             Pnl_Menu.Controls.Clear();
 
@@ -28,27 +34,27 @@ namespace Plantilla_Cliente
         {
 
         }
-        private void Cartelera_CambiaraReserva(int idPelicula, int idCiudad)
+        private void CargarPanelReserva(int idPelicula, int idCiudad)
         {
             Reservas reservas = new Reservas(idPelicula, idCiudad);
-            funcargarpagina(reservas);
+            reservas.CambiarCartelera += CargarPanelCartelera;
+            CargarPanel(reservas);
         }
-
-        private void carteleraToolStripMenuItem_Click_1(object? sender, EventArgs e)
+        private void CargarPanelCartelera()
         {
             Cartelera cartelera = new Cartelera();
+            cartelera.CambiaraReserva += CargarPanelReserva;
 
-            cartelera.CambiaraReserva += Cartelera_CambiaraReserva;
-
-            funcargarpagina(cartelera);
+            CargarPanel(cartelera);
         }
 
         private void reservasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Reservas reservas = new Reservas();
-            funcargarpagina(reservas);
+            CargarPanel(reservas);
         }
+
+        /* Final de Codigo de Carlos Andres Arriaza Lara en la fecha de: 20/07/2026 */
     }
-    /* Final de Codigo de Carlos Andres Arriaza Lara en la fecha de: 20/07/2026 */
 }
 

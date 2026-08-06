@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrMenu));
             Pnl_MenuLayout = new TableLayoutPanel();
             Pnl_Menu = new Panel();
+            helpProvider1 = new HelpProvider();
             Pnl_MenuLayout.SuspendLayout();
             SuspendLayout();
             // 
@@ -80,5 +81,6 @@
 
         private TableLayoutPanel Pnl_MenuLayout;
         private Panel Pnl_Menu;
+        private HelpProvider helpProvider1;
     }
 }

@@ -1,10 +1,15 @@
-﻿using System;
+﻿using clase_conexion;
+using Plantilla_Cliente.Clases;
+using Plantillas.Carteleras;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Runtime.InteropServices.Marshalling;
 using System.Windows.Forms;
-using clase_conexion;
-using Plantilla_Cliente.Clases;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+
 
 
 namespace Plantilla_Cliente
@@ -14,10 +19,10 @@ namespace Plantilla_Cliente
         private Con_Cliente gconexion;
 
         // Película seleccionada
-        public int idcine;
+        public int IdCine;
         public int idPelicula;
         public int idciudad;
-
+        public string Enlace;
         // Datos de la reserva
         public int id_funcion;
         public int numero_boleto;
@@ -34,12 +39,13 @@ namespace Plantilla_Cliente
         // Botones para mostrar la fecha y hora seleccionadas
         private Button btnFechaSeleccionada = null;
         private Button btnHoraSeleccionada = null;
+        public event Action? CambiarCartelera;
 
         public Reservas()
         {
             InitializeComponent();
             gconexion = new Con_Cliente();
-           
+
         }
 
         public Reservas(int idPelicula, int idciudad)
@@ -52,24 +58,27 @@ namespace Plantilla_Cliente
             // Prueba para verificar que el ID se recibió correctamente
             /*MessageBox.Show($"ID recibido: {this.idPelicula}");
             MessageBox.Show($"Ciudad recibida: {this.idciudad}");*/
+            Enlace = gconexion.ObtenerEnlacePelicula(idPelicula);
             cargarinfopelicula(this.idPelicula);
             cargarfunciones(this.idPelicula, this.idciudad);
             CargarCines(this.idciudad);
-            Flp_Horarios.Controls.Clear();
+            FlpHorarios.Controls.Clear();
+            CargarMiniaturaTrailer(Enlace);
+            CargarPoster();
 
         }
 
         private void TlP_Reservas_Paint(object sender, PaintEventArgs e)
         {
-            AplicarBordeLabel(Tx_Director, Color.FromArgb(112, 27, 40));
-            AplicarBordeLabel(Tx_Duracion, Color.FromArgb(112, 27, 40));
-            AplicarBordeLabel(Tx_Restriccion, Color.FromArgb(112, 27, 40));
-            AplicarBordeLabel(Tx_DirectorHead, Color.FromArgb(18, 18, 18));
-            AplicarBordeLabel(Tx_DuracionHead, Color.FromArgb(18, 18, 18));
-            AplicarBordeLabel(Tx_RestriccionHead, Color.FromArgb(18, 18, 18));
-            AplicarBordeLabel(Tx_SeleccionCine, Color.FromArgb(18, 18, 18));
-            AplicarBordeLabel(Tx_Funciones, Color.FromArgb(18, 18, 18));
-            AplicarBordeLabel(Tx_Horarios, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(TxDirector, Color.FromArgb(112, 27, 40));
+            AplicarBordeLabel(TxDuracion, Color.FromArgb(112, 27, 40));
+            AplicarBordeLabel(TxRestriccion, Color.FromArgb(112, 27, 40));
+            AplicarBordeLabel(TxDirectorHead, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(TxDuracionHead, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(TxRestriccionHead, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(TxSeleccionCine, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(TxFunciones, Color.FromArgb(18, 18, 18));
+            AplicarBordeLabel(TxHorarios, Color.FromArgb(18, 18, 18));
         }
         /*Inicio del código 0901-23-13862 Carlos Andres Arriaza Lara el 25/07/2026*/
         private void Btn_Continuar_Click(object sender, EventArgs e)
@@ -78,10 +87,8 @@ namespace Plantilla_Cliente
             {
                 if (butacas.ShowDialog() == DialogResult.OK)
                 {
-                    // Guardar los números de asiento
                     asientosSeleccionados = new List<int>(butacas.ButacasSeleccionadas);
 
-                    // Mostrar los asientos decodificados (solo para prueba)
                     List<string> asientosTexto = new List<string>();
 
                     foreach (int numero in asientosSeleccionados)
@@ -94,10 +101,65 @@ namespace Plantilla_Cliente
                         string.Join(", ", asientosTexto));
 
                     MessageBox.Show("Id_Funcion" + id_funcion.ToString());
-                    GuardarButacas();
+
+                    /*Inicio del código 0901-23-4868 Pedro José Gómez Villalobos el 5/08/2026*/
+                    if (asientosSeleccionados.Count > 0)
+                    {
+                        decimal precioPorBoleto = 45.00m;
+                        decimal totalCalculado = asientosSeleccionados.Count * precioPorBoleto;
+
+                        using (Pago formPago = new Pago(totalCalculado))
+                        {
+                            if (formPago.ShowDialog() == DialogResult.OK)
+                            {
+                                int metodoPagoSeleccionado = formPago.IdMetodoPagoSeleccionado;
+
+                                GuardarButacas(metodoPagoSeleccionado, totalCalculado);
+                            }
+                            else
+                            {
+                                MessageBox.Show("El pago fue cancelado.");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No seleccionó ningún asiento.");
+                    }
+
                 }
             }
         }
+        private void GuardarButacas(int metodoPago, decimal total)
+        {
+            int idVentaGenerado = gconexion.RegistrarVenta(metodoPago, asientosSeleccionados.Count, total);
+
+            if (idVentaGenerado > 0)
+            {
+                bool errorBoleto = false;
+
+                foreach (int asiento in asientosSeleccionados)
+                {
+                    bool resultadoBoleto = gconexion.RegistrarBoleto(id_funcion, idVentaGenerado, asiento);
+                    if (!resultadoBoleto)
+                    {
+                        errorBoleto = true;
+                        break;
+                    }
+                }
+
+                if (!errorBoleto)
+                {
+                    MessageBox.Show("¡Venta y boletos registrados con éxito en la base de datos!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    asientosSeleccionados.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se pudo registrar la venta principal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        /*Fin del código 0901-23-4868 Pedro José Gómez Villalobos el 5/08/2026*/
 
         private string DecodificarAsiento(int numeroAsiento)
         {
@@ -115,13 +177,14 @@ namespace Plantilla_Cliente
             string duracion = "";
             string restriccion = "";
             DataTable pelicula = gconexion.infopelicula(idPelicula);
-            Tx_Director.Text = pelicula.Rows[0]["director_pelicula"].ToString();
-            Tx_Duracion.Text = pelicula.Rows[0]["duracion_pelicula"].ToString();
-            Tx_Restriccion.Text = pelicula.Rows[0]["clasificacion_pelicula"].ToString();
+            TxDirector.Text = pelicula.Rows[0]["director_pelicula"].ToString();
+            TxDuracion.Text = pelicula.Rows[0]["duracion_pelicula"].ToString();
+            TxRestriccion.Text = pelicula.Rows[0]["clasificacion_pelicula"].ToString();
+
         }
         private void cargarfunciones(int idPelicula, int idciudad)
         {
-            Flp_Funciones.Controls.Clear();
+            FlpFunciones.Controls.Clear();
             //MessageBox.Show($"Película: {idPelicula}\nCiudad: {idciudad}");
             DataTable funciones = gconexion.cargarfunciones(idPelicula, idciudad);
             //MessageBox.Show($"Filas: {funciones.Rows.Count}");
@@ -151,13 +214,13 @@ namespace Plantilla_Cliente
 
                 btn.Click += BtnFecha_Click;
 
-                Flp_Funciones.Controls.Add(btn);
+                FlpFunciones.Controls.Add(btn);
             }
         }
         private void CargarHorarios(DateTime fechaSeleccionada)
         {
             //MessageBox.Show("IdCiudad:" + idciudad.ToString());
-            Flp_Horarios.Controls.Clear();
+            FlpHorarios.Controls.Clear();
             //MessageBox.Show($"Película: {idPelicula}\nCiudad: {idciudad}");
             DataTable funciones = gconexion.cargarfunciones(idPelicula, idciudad);
             //MessageBox.Show($"Filas: {funciones.Rows.Count}");
@@ -185,7 +248,7 @@ namespace Plantilla_Cliente
 
                 btn.Click += BtnHorario_Click;
                 //MessageBox.Show($"Creando botón: {fila["hora_funcion"]}");
-                Flp_Horarios.Controls.Add(btn);
+                FlpHorarios.Controls.Add(btn);
             }
         }
         private void BtnFecha_Click(object sender, EventArgs e)
@@ -193,7 +256,7 @@ namespace Plantilla_Cliente
             Button btn = (Button)sender;
             if (btnFechaSeleccionada != null)
             {
-                btnFechaSeleccionada.BackColor = Color.FromArgb(197,155,39);
+                btnFechaSeleccionada.BackColor = Color.FromArgb(197, 155, 39);
                 btnFechaSeleccionada.ForeColor = Color.FromArgb(250, 248, 245);
             }
             btn.BackColor = Color.FromArgb(112, 27, 40);
@@ -224,13 +287,13 @@ namespace Plantilla_Cliente
             id_funcion = (int)btn.Tag;
             //MessageBox.Show($"Id función: {id_funcion}");
             IdSala = gconexion.ObtenerIdSala(id_funcion);
-           // MessageBox.Show($"Id_Funcion: {id_funcion}\nId_Sala: {IdSala}");
+            // MessageBox.Show($"Id_Funcion: {id_funcion}\nId_Sala: {IdSala}");
         }
 
         private void Cbo_Cines_SelectedIndexChanged(object sender, EventArgs e)
         {
-           idcine = Cbo_Cines.SelectedIndex + 1;
-            cargarfunciones(idPelicula, idcine);
+            IdCine = CboCines.SelectedIndex + 1;
+            cargarfunciones(idPelicula, IdCine);
 
         }
 
@@ -239,12 +302,12 @@ namespace Plantilla_Cliente
 
             DataTable dtCines = gconexion.mostrarcines(ciudad);
 
-            Cbo_Cines.DataSource = null;
+            CboCines.DataSource = null;
 
-            Cbo_Cines.DisplayMember = "nombre_cine";
-            Cbo_Cines.ValueMember = "id_cine";
+            CboCines.DisplayMember = "nombre_cine";
+            CboCines.ValueMember = "id_cine";
 
-            Cbo_Cines.DataSource = dtCines;
+            CboCines.DataSource = dtCines;
             //MessageBox.Show($"Cines cargados: {dtCines.Rows.Count}");
         }
         private void GuardarButacas()
@@ -275,6 +338,89 @@ namespace Plantilla_Cliente
                         lbl.Height - 1);
                 }
             };
+        }
+
+        private void PicTrailer_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = Enlace,
+                UseShellExecute = true
+            });
+        }
+        private void CargarMiniaturaTrailer(string enlaceYoutube)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(enlaceYoutube))
+                {
+                    PicTrailer.Image = null;
+                    return;
+                }
+
+                Uri uri = new Uri(enlaceYoutube);
+                string videoId = "";
+
+                if (uri.Host.Contains("youtu.be"))
+                {
+                    // Ejemplo: https://youtu.be/mY-XSIfhziE?si=xxxx
+                    videoId = uri.AbsolutePath.Trim('/');
+                }
+                else if (uri.Host.Contains("youtube.com"))
+                {
+                    // Ejemplo: https://www.youtube.com/watch?v=mY-XSIfhziE
+                    string query = uri.Query.TrimStart('?');
+
+                    foreach (string parametro in query.Split('&'))
+                    {
+                        if (parametro.StartsWith("v="))
+                        {
+                            videoId = parametro.Substring(2);
+                            break;
+                        }
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(videoId))
+                {
+                    PicTrailer.LoadAsync($"https://img.youtube.com/vi/{videoId}/hqdefault.jpg");
+                }
+                else
+                {
+                    PicTrailer.Image = null;
+                }
+            }
+            catch
+            {
+                PicTrailer.Image = null;
+            }
+        }
+
+        private void TxRestriccion_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void CargarPoster()
+        {
+
+            Carteleras carteleras = new Carteleras(idPelicula);
+            String url = carteleras.obtenerUrl();
+            PicPelicula.ImageLocation = url;
+            PicPelicula.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        private void Btn_Cartelera_Click(object sender, EventArgs e)
+        {
+            CambiarCartelera?.Invoke();
+        }
+
+        private void PicTrailer_Click_1(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = Enlace,
+                UseShellExecute = true
+            });
         }
     }
 }

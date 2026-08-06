@@ -34,239 +34,239 @@ namespace Plantilla_Cliente
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cartelera));
-            Pnl_Buscador = new TableLayoutPanel();
-            Pnl_Filtros1 = new TableLayoutPanel();
-            Cbo_Ciudad = new ComboBox();
-            Cbo_Cine = new ComboBox();
-            Btn_Cargar_Cartelera = new Button();
-            Pnl_Filtros2 = new TableLayoutPanel();
-            Btn_2DFilter = new Button();
-            Btn_3DFilter = new Button();
-            Btn_4DXFilter = new Button();
-            Btn_IMAXFilter = new Button();
-            Btn_DobFilter = new Button();
-            Btn_SubFilter = new Button();
-            Dgv_Cartelera = new DataGridView();
-            Imagen = new DataGridViewImageColumn();
+            PnlBuscador = new TableLayoutPanel();
+            PnlFiltros1 = new TableLayoutPanel();
+            CboCiudad = new ComboBox();
+            CboCine = new ComboBox();
+            BtnCargarCartelera = new Button();
+            PnlFiltros2 = new TableLayoutPanel();
+            Btn2DFilter = new Button();
+            Btn3DFilter = new Button();
+            Btn4DXFilter = new Button();
+            BtnIMAXFilter = new Button();
+            BtnDobFilter = new Button();
+            BtnSubFilter = new Button();
+            DgvCartelera = new DataGridView();
             Reservar = new DataGridViewButtonColumn();
-            pictureBox1 = new PictureBox();
+            PicLogo = new PictureBox();
             comboBox2 = new ComboBox();
-            Pnl_Buscador.SuspendLayout();
-            Pnl_Filtros1.SuspendLayout();
-            Pnl_Filtros2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Dgv_Cartelera).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            PnlBuscador.SuspendLayout();
+            PnlFiltros1.SuspendLayout();
+            PnlFiltros2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DgvCartelera).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PicLogo).BeginInit();
             SuspendLayout();
             // 
-            // Pnl_Buscador
+            // PnlBuscador
             // 
-            Pnl_Buscador.BackColor = Color.FromArgb(20, 10, 12);
-            Pnl_Buscador.ColumnCount = 2;
-            Pnl_Buscador.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.1888237F));
-            Pnl_Buscador.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 82.81118F));
-            Pnl_Buscador.Controls.Add(Pnl_Filtros1, 1, 0);
-            Pnl_Buscador.Controls.Add(Pnl_Filtros2, 1, 1);
-            Pnl_Buscador.Controls.Add(Dgv_Cartelera, 0, 3);
-            Pnl_Buscador.Controls.Add(pictureBox1, 0, 0);
-            Pnl_Buscador.Dock = DockStyle.Fill;
-            Pnl_Buscador.Location = new Point(0, 0);
-            Pnl_Buscador.Name = "Pnl_Buscador";
-            Pnl_Buscador.RowCount = 4;
-            Pnl_Buscador.RowStyles.Add(new RowStyle(SizeType.Percent, 5.99173546F));
-            Pnl_Buscador.RowStyles.Add(new RowStyle(SizeType.Percent, 11.363636F));
-            Pnl_Buscador.RowStyles.Add(new RowStyle(SizeType.Percent, 4.235537F));
-            Pnl_Buscador.RowStyles.Add(new RowStyle(SizeType.Percent, 78.3057861F));
-            Pnl_Buscador.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            Pnl_Buscador.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            Pnl_Buscador.Size = new Size(1053, 700);
-            Pnl_Buscador.TabIndex = 0;
-            Pnl_Buscador.Paint += tableLayoutPanel1_Paint;
+            PnlBuscador.BackColor = Color.FromArgb(20, 10, 12);
+            PnlBuscador.ColumnCount = 2;
+            PnlBuscador.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.1888237F));
+            PnlBuscador.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 82.81118F));
+            PnlBuscador.Controls.Add(PnlFiltros1, 1, 0);
+            PnlBuscador.Controls.Add(PnlFiltros2, 1, 1);
+            PnlBuscador.Controls.Add(DgvCartelera, 0, 3);
+            PnlBuscador.Controls.Add(PicLogo, 0, 0);
+            PnlBuscador.Dock = DockStyle.Fill;
+            PnlBuscador.Location = new Point(0, 0);
+            PnlBuscador.Name = "PnlBuscador";
+            PnlBuscador.RowCount = 4;
+            PnlBuscador.RowStyles.Add(new RowStyle(SizeType.Percent, 5.99173546F));
+            PnlBuscador.RowStyles.Add(new RowStyle(SizeType.Percent, 11.363636F));
+            PnlBuscador.RowStyles.Add(new RowStyle(SizeType.Percent, 4.235537F));
+            PnlBuscador.RowStyles.Add(new RowStyle(SizeType.Percent, 78.3057861F));
+            PnlBuscador.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            PnlBuscador.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            PnlBuscador.Size = new Size(1053, 700);
+            PnlBuscador.TabIndex = 0;
+            PnlBuscador.Paint += tableLayoutPanel1_Paint;
             // 
-            // Pnl_Filtros1
+            // PnlFiltros1
             // 
-            Pnl_Filtros1.BackColor = Color.FromArgb(20, 10, 12);
-            Pnl_Filtros1.ColumnCount = 3;
-            Pnl_Filtros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
-            Pnl_Filtros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            Pnl_Filtros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            Pnl_Filtros1.Controls.Add(Cbo_Ciudad, 0, 0);
-            Pnl_Filtros1.Controls.Add(Cbo_Cine, 1, 0);
-            Pnl_Filtros1.Controls.Add(Btn_Cargar_Cartelera, 2, 0);
-            Pnl_Filtros1.Dock = DockStyle.Fill;
-            Pnl_Filtros1.Location = new Point(183, 3);
-            Pnl_Filtros1.Name = "Pnl_Filtros1";
-            Pnl_Filtros1.RowCount = 1;
-            Pnl_Filtros1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Pnl_Filtros1.Size = new Size(867, 35);
-            Pnl_Filtros1.TabIndex = 6;
+            PnlFiltros1.BackColor = Color.FromArgb(20, 10, 12);
+            PnlFiltros1.ColumnCount = 3;
+            PnlFiltros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
+            PnlFiltros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            PnlFiltros1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            PnlFiltros1.Controls.Add(CboCiudad, 0, 0);
+            PnlFiltros1.Controls.Add(CboCine, 1, 0);
+            PnlFiltros1.Controls.Add(BtnCargarCartelera, 2, 0);
+            PnlFiltros1.Dock = DockStyle.Fill;
+            PnlFiltros1.Location = new Point(183, 3);
+            PnlFiltros1.Name = "PnlFiltros1";
+            PnlFiltros1.RowCount = 1;
+            PnlFiltros1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            PnlFiltros1.Size = new Size(867, 35);
+            PnlFiltros1.TabIndex = 6;
             // 
-            // Cbo_Ciudad
+            // CboCiudad
             // 
-            Cbo_Ciudad.Dock = DockStyle.Fill;
-            Cbo_Ciudad.DropDownStyle = ComboBoxStyle.DropDownList;
-            Cbo_Ciudad.FormattingEnabled = true;
-            Cbo_Ciudad.ItemHeight = 20;
-            Cbo_Ciudad.Location = new Point(3, 3);
-            Cbo_Ciudad.Name = "Cbo_Ciudad";
-            Cbo_Ciudad.Size = new Size(282, 28);
-            Cbo_Ciudad.TabIndex = 2;
-            Cbo_Ciudad.SelectedIndexChanged += Cbo_Ciudad_SelectedIndexChanged;
+            CboCiudad.Dock = DockStyle.Fill;
+            CboCiudad.DropDownStyle = ComboBoxStyle.DropDownList;
+            CboCiudad.FormattingEnabled = true;
+            CboCiudad.ItemHeight = 20;
+            CboCiudad.Location = new Point(3, 3);
+            CboCiudad.Name = "CboCiudad";
+            CboCiudad.Size = new Size(282, 28);
+            CboCiudad.TabIndex = 2;
+            CboCiudad.SelectedIndexChanged += Cbo_Ciudad_SelectedIndexChanged;
             // 
-            // Cbo_Cine
+            // CboCine
             // 
-            Cbo_Cine.DisplayMember = "Seleccione Cine...";
-            Cbo_Cine.Dock = DockStyle.Fill;
-            Cbo_Cine.DropDownStyle = ComboBoxStyle.DropDownList;
-            Cbo_Cine.FormattingEnabled = true;
-            Cbo_Cine.ItemHeight = 20;
-            Cbo_Cine.Location = new Point(291, 3);
-            Cbo_Cine.Name = "Cbo_Cine";
-            Cbo_Cine.Size = new Size(283, 28);
-            Cbo_Cine.TabIndex = 3;
-            Cbo_Cine.ValueMember = "Seleccione Cine...";
-            Cbo_Cine.SelectedIndexChanged += Cbo_Cine_SelectedIndexChanged;
+            CboCine.DisplayMember = "Seleccione Cine...";
+            CboCine.Dock = DockStyle.Fill;
+            CboCine.DropDownStyle = ComboBoxStyle.DropDownList;
+            CboCine.FormattingEnabled = true;
+            CboCine.ItemHeight = 20;
+            CboCine.Location = new Point(291, 3);
+            CboCine.Name = "CboCine";
+            CboCine.Size = new Size(283, 28);
+            CboCine.TabIndex = 3;
+            CboCine.ValueMember = "Seleccione Cine...";
+            CboCine.SelectedIndexChanged += Cbo_Cine_SelectedIndexChanged;
             // 
-            // Btn_Cargar_Cartelera
+            // BtnCargarCartelera
             // 
-            Btn_Cargar_Cartelera.Cursor = Cursors.Hand;
-            Btn_Cargar_Cartelera.Dock = DockStyle.Fill;
-            Btn_Cargar_Cartelera.Location = new Point(580, 3);
-            Btn_Cargar_Cartelera.Name = "Btn_Cargar_Cartelera";
-            Btn_Cargar_Cartelera.Size = new Size(284, 29);
-            Btn_Cargar_Cartelera.TabIndex = 5;
-            Btn_Cargar_Cartelera.Text = "Consultar cartelera";
-            Btn_Cargar_Cartelera.UseVisualStyleBackColor = true;
-            Btn_Cargar_Cartelera.Click += Btn_Cargar_Cartelera_Click_2;
+            BtnCargarCartelera.Cursor = Cursors.Hand;
+            BtnCargarCartelera.Dock = DockStyle.Fill;
+            BtnCargarCartelera.Location = new Point(580, 3);
+            BtnCargarCartelera.Name = "BtnCargarCartelera";
+            BtnCargarCartelera.Size = new Size(284, 29);
+            BtnCargarCartelera.TabIndex = 5;
+            BtnCargarCartelera.Text = "Consultar cartelera";
+            BtnCargarCartelera.UseVisualStyleBackColor = true;
+            BtnCargarCartelera.Click += BtnCargarCartelera_Click;
             // 
-            // Pnl_Filtros2
+            // PnlFiltros2
             // 
-            Pnl_Filtros2.BackColor = Color.FromArgb(20, 10, 12);
-            Pnl_Filtros2.ColumnCount = 4;
-            Pnl_Filtros2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            Pnl_Filtros2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            Pnl_Filtros2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            Pnl_Filtros2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            Pnl_Filtros2.Controls.Add(Btn_2DFilter, 0, 0);
-            Pnl_Filtros2.Controls.Add(Btn_3DFilter, 1, 0);
-            Pnl_Filtros2.Controls.Add(Btn_4DXFilter, 2, 0);
-            Pnl_Filtros2.Controls.Add(Btn_IMAXFilter, 3, 0);
-            Pnl_Filtros2.Controls.Add(Btn_DobFilter, 0, 1);
-            Pnl_Filtros2.Controls.Add(Btn_SubFilter, 1, 1);
-            Pnl_Filtros2.Dock = DockStyle.Fill;
-            Pnl_Filtros2.Location = new Point(183, 44);
-            Pnl_Filtros2.Name = "Pnl_Filtros2";
-            Pnl_Filtros2.RowCount = 2;
-            Pnl_Buscador.SetRowSpan(Pnl_Filtros2, 2);
-            Pnl_Filtros2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            Pnl_Filtros2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            Pnl_Filtros2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            Pnl_Filtros2.Size = new Size(867, 102);
-            Pnl_Filtros2.TabIndex = 7;
+            PnlFiltros2.BackColor = Color.FromArgb(20, 10, 12);
+            PnlFiltros2.ColumnCount = 4;
+            PnlFiltros2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            PnlFiltros2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            PnlFiltros2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            PnlFiltros2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            PnlFiltros2.Controls.Add(Btn2DFilter, 0, 0);
+            PnlFiltros2.Controls.Add(Btn3DFilter, 1, 0);
+            PnlFiltros2.Controls.Add(Btn4DXFilter, 2, 0);
+            PnlFiltros2.Controls.Add(BtnIMAXFilter, 3, 0);
+            PnlFiltros2.Controls.Add(BtnDobFilter, 0, 1);
+            PnlFiltros2.Controls.Add(BtnSubFilter, 1, 1);
+            PnlFiltros2.Dock = DockStyle.Fill;
+            PnlFiltros2.Location = new Point(183, 44);
+            PnlFiltros2.Name = "PnlFiltros2";
+            PnlFiltros2.RowCount = 2;
+            PnlBuscador.SetRowSpan(PnlFiltros2, 2);
+            PnlFiltros2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            PnlFiltros2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            PnlFiltros2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            PnlFiltros2.Size = new Size(867, 102);
+            PnlFiltros2.TabIndex = 7;
             // 
-            // Btn_2DFilter
+            // Btn2DFilter
             // 
-            Btn_2DFilter.BackColor = Color.FromArgb(197, 155, 39);
-            Btn_2DFilter.Cursor = Cursors.Hand;
-            Btn_2DFilter.Dock = DockStyle.Fill;
-            Btn_2DFilter.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
-            Btn_2DFilter.FlatAppearance.MouseOverBackColor = Color.FromArgb(245, 239, 230);
-            Btn_2DFilter.FlatStyle = FlatStyle.Popup;
-            Btn_2DFilter.ForeColor = Color.FromArgb(250, 248, 245);
-            Btn_2DFilter.Location = new Point(3, 3);
-            Btn_2DFilter.Name = "Btn_2DFilter";
-            Btn_2DFilter.Size = new Size(210, 45);
-            Btn_2DFilter.TabIndex = 0;
-            Btn_2DFilter.Text = "2D";
-            Btn_2DFilter.UseVisualStyleBackColor = false;
-            Btn_2DFilter.Click += Btn_2DFilter_Click;
+            Btn2DFilter.BackColor = Color.FromArgb(197, 155, 39);
+            Btn2DFilter.Cursor = Cursors.Hand;
+            Btn2DFilter.Dock = DockStyle.Fill;
+            Btn2DFilter.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
+            Btn2DFilter.FlatAppearance.MouseOverBackColor = Color.FromArgb(245, 239, 230);
+            Btn2DFilter.FlatStyle = FlatStyle.Popup;
+            Btn2DFilter.ForeColor = Color.FromArgb(250, 248, 245);
+            Btn2DFilter.Location = new Point(3, 3);
+            Btn2DFilter.Name = "Btn2DFilter";
+            Btn2DFilter.Size = new Size(210, 45);
+            Btn2DFilter.TabIndex = 0;
+            Btn2DFilter.Text = "2D";
+            Btn2DFilter.UseVisualStyleBackColor = false;
+            Btn2DFilter.Click += Btn_2DFilter_Click;
             // 
-            // Btn_3DFilter
+            // Btn3DFilter
             // 
-            Btn_3DFilter.BackColor = Color.FromArgb(197, 155, 39);
-            Btn_3DFilter.Cursor = Cursors.Hand;
-            Btn_3DFilter.Dock = DockStyle.Fill;
-            Btn_3DFilter.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
-            Btn_3DFilter.FlatAppearance.MouseOverBackColor = Color.FromArgb(245, 239, 230);
-            Btn_3DFilter.FlatStyle = FlatStyle.Popup;
-            Btn_3DFilter.ForeColor = Color.FromArgb(250, 248, 245);
-            Btn_3DFilter.Location = new Point(219, 3);
-            Btn_3DFilter.Name = "Btn_3DFilter";
-            Btn_3DFilter.Size = new Size(210, 45);
-            Btn_3DFilter.TabIndex = 1;
-            Btn_3DFilter.Text = "3D";
-            Btn_3DFilter.UseVisualStyleBackColor = false;
-            Btn_3DFilter.Click += Btn_3DFilter_Click;
+            Btn3DFilter.BackColor = Color.FromArgb(197, 155, 39);
+            Btn3DFilter.Cursor = Cursors.Hand;
+            Btn3DFilter.Dock = DockStyle.Fill;
+            Btn3DFilter.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
+            Btn3DFilter.FlatAppearance.MouseOverBackColor = Color.FromArgb(245, 239, 230);
+            Btn3DFilter.FlatStyle = FlatStyle.Popup;
+            Btn3DFilter.ForeColor = Color.FromArgb(250, 248, 245);
+            Btn3DFilter.Location = new Point(219, 3);
+            Btn3DFilter.Name = "Btn3DFilter";
+            Btn3DFilter.Size = new Size(210, 45);
+            Btn3DFilter.TabIndex = 1;
+            Btn3DFilter.Text = "3D";
+            Btn3DFilter.UseVisualStyleBackColor = false;
+            Btn3DFilter.Click += Btn_3DFilter_Click;
             // 
-            // Btn_4DXFilter
+            // Btn4DXFilter
             // 
-            Btn_4DXFilter.BackColor = Color.FromArgb(197, 155, 39);
-            Btn_4DXFilter.Cursor = Cursors.Hand;
-            Btn_4DXFilter.Dock = DockStyle.Fill;
-            Btn_4DXFilter.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
-            Btn_4DXFilter.FlatAppearance.MouseOverBackColor = Color.FromArgb(245, 239, 230);
-            Btn_4DXFilter.FlatStyle = FlatStyle.Popup;
-            Btn_4DXFilter.ForeColor = Color.FromArgb(250, 248, 245);
-            Btn_4DXFilter.Location = new Point(435, 3);
-            Btn_4DXFilter.Name = "Btn_4DXFilter";
-            Btn_4DXFilter.Size = new Size(210, 45);
-            Btn_4DXFilter.TabIndex = 2;
-            Btn_4DXFilter.Text = "4DX";
-            Btn_4DXFilter.UseVisualStyleBackColor = false;
-            Btn_4DXFilter.Click += Btn_4DXFilter_Click;
+            Btn4DXFilter.BackColor = Color.FromArgb(197, 155, 39);
+            Btn4DXFilter.Cursor = Cursors.Hand;
+            Btn4DXFilter.Dock = DockStyle.Fill;
+            Btn4DXFilter.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
+            Btn4DXFilter.FlatAppearance.MouseOverBackColor = Color.FromArgb(245, 239, 230);
+            Btn4DXFilter.FlatStyle = FlatStyle.Popup;
+            Btn4DXFilter.ForeColor = Color.FromArgb(250, 248, 245);
+            Btn4DXFilter.Location = new Point(435, 3);
+            Btn4DXFilter.Name = "Btn4DXFilter";
+            Btn4DXFilter.Size = new Size(210, 45);
+            Btn4DXFilter.TabIndex = 2;
+            Btn4DXFilter.Text = "4DX";
+            Btn4DXFilter.UseVisualStyleBackColor = false;
+            Btn4DXFilter.Click += Btn_4DXFilter_Click;
             // 
-            // Btn_IMAXFilter
+            // BtnIMAXFilter
             // 
-            Btn_IMAXFilter.BackColor = Color.FromArgb(197, 155, 39);
-            Btn_IMAXFilter.Cursor = Cursors.Hand;
-            Btn_IMAXFilter.Dock = DockStyle.Fill;
-            Btn_IMAXFilter.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
-            Btn_IMAXFilter.FlatAppearance.MouseOverBackColor = Color.FromArgb(245, 239, 230);
-            Btn_IMAXFilter.FlatStyle = FlatStyle.Popup;
-            Btn_IMAXFilter.ForeColor = Color.FromArgb(250, 248, 245);
-            Btn_IMAXFilter.Location = new Point(651, 3);
-            Btn_IMAXFilter.Name = "Btn_IMAXFilter";
-            Btn_IMAXFilter.Size = new Size(213, 45);
-            Btn_IMAXFilter.TabIndex = 3;
-            Btn_IMAXFilter.Text = "IMAX";
-            Btn_IMAXFilter.UseVisualStyleBackColor = false;
-            Btn_IMAXFilter.Click += Btn_IMAXFilter_Click;
+            BtnIMAXFilter.BackColor = Color.FromArgb(197, 155, 39);
+            BtnIMAXFilter.Cursor = Cursors.Hand;
+            BtnIMAXFilter.Dock = DockStyle.Fill;
+            BtnIMAXFilter.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
+            BtnIMAXFilter.FlatAppearance.MouseOverBackColor = Color.FromArgb(245, 239, 230);
+            BtnIMAXFilter.FlatStyle = FlatStyle.Popup;
+            BtnIMAXFilter.ForeColor = Color.FromArgb(250, 248, 245);
+            BtnIMAXFilter.Location = new Point(651, 3);
+            BtnIMAXFilter.Name = "BtnIMAXFilter";
+            BtnIMAXFilter.Size = new Size(213, 45);
+            BtnIMAXFilter.TabIndex = 3;
+            BtnIMAXFilter.Text = "IMAX";
+            BtnIMAXFilter.UseVisualStyleBackColor = false;
+            BtnIMAXFilter.Click += Btn_IMAXFilter_Click;
             // 
-            // Btn_DobFilter
+            // BtnDobFilter
             // 
-            Btn_DobFilter.BackColor = Color.FromArgb(197, 155, 39);
-            Btn_DobFilter.Dock = DockStyle.Fill;
-            Btn_DobFilter.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
-            Btn_DobFilter.FlatAppearance.MouseOverBackColor = Color.FromArgb(245, 239, 230);
-            Btn_DobFilter.FlatStyle = FlatStyle.Popup;
-            Btn_DobFilter.ForeColor = Color.FromArgb(250, 248, 245);
-            Btn_DobFilter.Location = new Point(3, 54);
-            Btn_DobFilter.Name = "Btn_DobFilter";
-            Btn_DobFilter.Size = new Size(210, 45);
-            Btn_DobFilter.TabIndex = 4;
-            Btn_DobFilter.Text = "Doblado";
-            Btn_DobFilter.UseVisualStyleBackColor = false;
-            Btn_DobFilter.Click += Btn_DobFilter_Click;
+            BtnDobFilter.BackColor = Color.FromArgb(197, 155, 39);
+            BtnDobFilter.Dock = DockStyle.Fill;
+            BtnDobFilter.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
+            BtnDobFilter.FlatAppearance.MouseOverBackColor = Color.FromArgb(245, 239, 230);
+            BtnDobFilter.FlatStyle = FlatStyle.Popup;
+            BtnDobFilter.ForeColor = Color.FromArgb(250, 248, 245);
+            BtnDobFilter.Location = new Point(3, 54);
+            BtnDobFilter.Name = "BtnDobFilter";
+            BtnDobFilter.Size = new Size(210, 45);
+            BtnDobFilter.TabIndex = 4;
+            BtnDobFilter.Text = "Doblado";
+            BtnDobFilter.UseVisualStyleBackColor = false;
+            BtnDobFilter.Click += Btn_DobFilter_Click;
             // 
-            // Btn_SubFilter
+            // BtnSubFilter
             // 
-            Btn_SubFilter.BackColor = Color.FromArgb(197, 155, 39);
-            Btn_SubFilter.Dock = DockStyle.Fill;
-            Btn_SubFilter.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
-            Btn_SubFilter.FlatAppearance.MouseOverBackColor = Color.FromArgb(245, 239, 230);
-            Btn_SubFilter.FlatStyle = FlatStyle.Popup;
-            Btn_SubFilter.ForeColor = Color.FromArgb(250, 248, 245);
-            Btn_SubFilter.Location = new Point(219, 54);
-            Btn_SubFilter.Name = "Btn_SubFilter";
-            Btn_SubFilter.Size = new Size(210, 45);
-            Btn_SubFilter.TabIndex = 5;
-            Btn_SubFilter.Text = "Subtitulado";
-            Btn_SubFilter.UseVisualStyleBackColor = false;
-            Btn_SubFilter.Click += Btn_SubFilter_Click;
+            BtnSubFilter.BackColor = Color.FromArgb(197, 155, 39);
+            BtnSubFilter.Dock = DockStyle.Fill;
+            BtnSubFilter.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
+            BtnSubFilter.FlatAppearance.MouseOverBackColor = Color.FromArgb(245, 239, 230);
+            BtnSubFilter.FlatStyle = FlatStyle.Popup;
+            BtnSubFilter.ForeColor = Color.FromArgb(250, 248, 245);
+            BtnSubFilter.Location = new Point(219, 54);
+            BtnSubFilter.Name = "BtnSubFilter";
+            BtnSubFilter.Size = new Size(210, 45);
+            BtnSubFilter.TabIndex = 5;
+            BtnSubFilter.Text = "Subtitulado";
+            BtnSubFilter.UseVisualStyleBackColor = false;
+            BtnSubFilter.Click += Btn_SubFilter_Click;
             // 
-            // Dgv_Cartelera
+            // DgvCartelera
             // 
-            Dgv_Cartelera.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            Dgv_Cartelera.BackgroundColor = Color.FromArgb(18, 18, 18);
+            DgvCartelera.AllowUserToAddRows = false;
+            DgvCartelera.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvCartelera.BackgroundColor = Color.FromArgb(18, 18, 18);
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(74, 18, 26);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
@@ -274,25 +274,19 @@ namespace Plantilla_Cliente
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            Dgv_Cartelera.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            Dgv_Cartelera.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Dgv_Cartelera.Columns.AddRange(new DataGridViewColumn[] { Imagen, Reservar });
-            Pnl_Buscador.SetColumnSpan(Dgv_Cartelera, 2);
-            Dgv_Cartelera.Cursor = Cursors.Hand;
-            Dgv_Cartelera.Dock = DockStyle.Fill;
-            Dgv_Cartelera.EnableHeadersVisualStyles = false;
-            Dgv_Cartelera.Location = new Point(3, 152);
-            Dgv_Cartelera.Name = "Dgv_Cartelera";
-            Dgv_Cartelera.RowHeadersWidth = 51;
-            Dgv_Cartelera.Size = new Size(1047, 545);
-            Dgv_Cartelera.TabIndex = 9;
-            Dgv_Cartelera.CellContentClick += Dgv_Cartelera_CellContentClick;
-            // 
-            // Imagen
-            // 
-            Imagen.HeaderText = "Imagen";
-            Imagen.MinimumWidth = 6;
-            Imagen.Name = "Imagen";
+            DgvCartelera.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            DgvCartelera.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvCartelera.Columns.AddRange(new DataGridViewColumn[] { Reservar });
+            PnlBuscador.SetColumnSpan(DgvCartelera, 2);
+            DgvCartelera.Cursor = Cursors.Hand;
+            DgvCartelera.Dock = DockStyle.Fill;
+            DgvCartelera.EnableHeadersVisualStyles = false;
+            DgvCartelera.Location = new Point(3, 152);
+            DgvCartelera.Name = "DgvCartelera";
+            DgvCartelera.RowHeadersWidth = 51;
+            DgvCartelera.Size = new Size(1047, 545);
+            DgvCartelera.TabIndex = 9;
+            DgvCartelera.CellContentClick += Dgv_Cartelera_CellContentClick;
             // 
             // Reservar
             // 
@@ -310,17 +304,17 @@ namespace Plantilla_Cliente
             Reservar.Text = "Reservar";
             Reservar.UseColumnTextForButtonValue = true;
             // 
-            // pictureBox1
+            // PicLogo
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            Pnl_Buscador.SetRowSpan(pictureBox1, 3);
-            pictureBox1.Size = new Size(174, 143);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 10;
-            pictureBox1.TabStop = false;
+            PicLogo.Dock = DockStyle.Fill;
+            PicLogo.Image = (Image)resources.GetObject("PicLogo.Image");
+            PicLogo.Location = new Point(3, 3);
+            PicLogo.Name = "PicLogo";
+            PnlBuscador.SetRowSpan(PicLogo, 3);
+            PicLogo.Size = new Size(174, 143);
+            PicLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            PicLogo.TabIndex = 10;
+            PicLogo.TabStop = false;
             // 
             // comboBox2
             // 
@@ -338,37 +332,36 @@ namespace Plantilla_Cliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(Pnl_Buscador);
+            Controls.Add(PnlBuscador);
             MinimumSize = new Size(1000, 700);
             Name = "Cartelera";
             Size = new Size(1053, 700);
             Load += Cartelera_Load;
-            Pnl_Buscador.ResumeLayout(false);
-            Pnl_Filtros1.ResumeLayout(false);
-            Pnl_Filtros2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)Dgv_Cartelera).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            PnlBuscador.ResumeLayout(false);
+            PnlFiltros1.ResumeLayout(false);
+            PnlFiltros2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)DgvCartelera).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PicLogo).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TableLayoutPanel Pnl_Buscador;
-        private TableLayoutPanel Pnl_Filtros1;
+        private TableLayoutPanel PnlBuscador;
+        private TableLayoutPanel PnlFiltros1;
         private ComboBox comboBox2;
-        private TableLayoutPanel Pnl_Filtros2;
-        private Button Btn_4DXFilter;
-        private Button Btn_3DFilter;
-        private Button Btn_IMAXFilter;
-        private Button Btn_2DFilter;
-        private DataGridView Dgv_Cartelera;
-        private ComboBox Cbo_Cine;
-        private Button Btn_Cargar_Cartelera;
-        private Button Btn_DobFilter;
-        private Button Btn_SubFilter;
-        private ComboBox Cbo_Ciudad;
-        private PictureBox pictureBox1;
-        private DataGridViewImageColumn Imagen;
+        private TableLayoutPanel PnlFiltros2;
+        private Button Btn4DXFilter;
+        private Button Btn3DFilter;
+        private Button BtnIMAXFilter;
+        private Button Btn2DFilter;
+        private DataGridView DgvCartelera;
+        private ComboBox CboCine;
+        private Button BtnCargarCartelera;
+        private Button BtnDobFilter;
+        private Button BtnSubFilter;
+        private ComboBox CboCiudad;
+        private PictureBox PicLogo;
         private DataGridViewButtonColumn Reservar;
     }
 }

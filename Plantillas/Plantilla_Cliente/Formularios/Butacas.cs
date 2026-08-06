@@ -144,6 +144,6 @@ namespace Plantilla_Cliente
                 Close();
             }
         }
-        
+
     }
 }

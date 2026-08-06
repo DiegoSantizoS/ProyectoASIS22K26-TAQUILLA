@@ -44,20 +44,23 @@ namespace Plantilla_Cliente.Clases
             {
                 MySqlConnection con = GetConnection();
 
+
                 MySqlCommand cmd = new MySqlCommand("sp_cartelera", con);
+
+
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(peliculas);
 
-                adapter.Fill(peliculas);
-
-                return peliculas;
 
             }
+            catch (Exception ex)
+            {
+                return peliculas;
+            }
 
-            catch { return peliculas; }
-
-
+            return peliculas;
         }
         public DataTable mostrarciudades()
         {
@@ -79,32 +82,18 @@ namespace Plantilla_Cliente.Clases
         }
 
 
-        public DataTable mostrarcines(int? idCiudad)
+        public DataTable mostrarcines(int? IdCiudad)
         {
             DataTable cines = new DataTable();
 
             MySqlConnection con = GetConnection();
-            string consulta = "";
-            if (idCiudad is not null)
-            {
-                consulta = @"SELECT 
-                        id_cine,
-                        nombre_cine
-                        FROM tbl_cine
-                        WHERE id_ciudad = @idCiudad
-                        ORDER BY id_cine";
-            }
-            else
-            {
-                consulta = @"SELECT 
-                        id_cine,
-                        nombre_cine
-                        FROM tbl_cine
-                        ORDER BY id_icne";
-            }
+            string consulta = @"SELECT id_cine, nombre_cine FROM tbl_cine
+                WHERE (@idCiudad IS NULL OR id_ciudad = @idCiudad) 
+                ORDER BY nombre_cine";
+
             MySqlCommand cmd = new MySqlCommand(consulta, con);
 
-            cmd.Parameters.AddWithValue("@idCiudad", idCiudad);
+            cmd.Parameters.AddWithValue("@idCiudad", IdCiudad);
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
 
@@ -114,33 +103,31 @@ namespace Plantilla_Cliente.Clases
         }
 
 
-        public DataTable FiltrarCartelera(int idCiudad, int idCine, int idTipo, int idioma)
+        public DataTable FiltrarCartelera(int IdCiudad, int IdCine, int? IdFormato)
         {
-            DataTable tabla = new DataTable();
+            DataTable Cartelera = new DataTable();
 
             try
             {
                 MySqlConnection con = GetConnection();
 
                 MySqlCommand cmd = new MySqlCommand("sp_filtrar_cartelera", con);
+
+                cmd.Parameters.AddWithValue("@p_id_formato", IdFormato);
+                cmd.Parameters.AddWithValue("@p_id_ciudad", IdCiudad);
+                cmd.Parameters.AddWithValue("@p_id_cine", IdCine);
                 cmd.CommandType = CommandType.StoredProcedure;
-
-
-                cmd.Parameters.AddWithValue("@p_ciudad", idCiudad);
-                cmd.Parameters.AddWithValue("@p_cine", idCine);
-                cmd.Parameters.AddWithValue("@p_tipo_funcion", idTipo);
-                cmd.Parameters.AddWithValue("@p_idioma", idioma);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
 
-                adapter.Fill(tabla);
+                adapter.Fill(Cartelera);
 
-                return tabla;
+                return Cartelera;
             }
             catch
             {
 
-                return tabla;
+                return Cartelera;
             }
         }
         /*Inicio de código de Carlos Andres Arriaza Lara 0901-23-13862 el 27/07/2026*/
@@ -153,10 +140,10 @@ namespace Plantilla_Cliente.Clases
             string consulta = @"SELECT 
                         p.director_pelicula,
                         p.duracion_pelicula,
-                        c.nombre_clasificacion AS clasificacion_pelicula
+                        cl.nombre_clasificacion AS clasificacion_pelicula
                         FROM tbl_pelicula p
-                        inner join tbl_clasificacion c 
-                        on p.id_clasificacion = c.id_clasificacion
+                        LEFT JOIN tbl_clasificacion cl
+                            ON cl.id_clasificacion = p.id_clasificacion
                         WHERE p.id_pelicula = @idPelicula";
 
             MySqlCommand cmd = new MySqlCommand(consulta, con);
@@ -250,6 +237,81 @@ namespace Plantilla_Cliente.Clases
                 : 0;
         }
         /*Fin del código de Carlos Andres Arriaza Lara 0901-23-13862 el 31/07/2026*/
+        /*Inicio de código de Carlos Andres Arriaza Lara 0901-23-13862 el 3/08/2026*/
+        public string ObtenerEnlacePelicula(int idPelicula)
+        {
+            MySqlConnection con = GetConnection();
+            string consulta = @"SELECT trailer_pelicula FROM tbl_pelicula WHERE id_pelicula = @idPelicula";
+            MySqlCommand cmd = new MySqlCommand(consulta, con);
+            cmd.Parameters.AddWithValue("@idPelicula", idPelicula);
+            object resultado = cmd.ExecuteScalar();
+            return (resultado != null && resultado != DBNull.Value)
+                ? Convert.ToString(resultado)
+                : string.Empty;
+        }
+        /*Fin del código de Carlos Andres Arriaza Lara 0901-23-13862 el 3/08/2026*/
+
+        /*Inicio del código 0901-23-4868 Pedro José Gómez Villalobos el 5/08/2026*/
+
+        public DataTable ObtenerMetodosPago()
+        {
+            MySqlConnection con = GetConnection();
+            string query = "SELECT id_metodo_pago, UPPER(nombre_metodo_pago) as nombre_metodo_pago FROM tbl_metodo_pago";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        // Método para registrar la Venta en tbl_venta
+        public int RegistrarVenta(int idMetodoPago, int cantidadBoletos, decimal totalVenta)
+        {
+            try
+            {
+                MySqlConnection con = GetConnection();
+                string query = @"INSERT INTO tbl_venta (id_metodo_pago, cantidad_boletos_venta, total_venta, id_usuario) 
+                         VALUES (@metodoPago, @cantidad, @total, 1);
+                         SELECT LAST_INSERT_ID();";
+
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@metodoPago", idMetodoPago);
+                cmd.Parameters.AddWithValue("@cantidad", cantidadBoletos);
+                cmd.Parameters.AddWithValue("@total", totalVenta);
+
+                int idVentaGenerado = Convert.ToInt32(cmd.ExecuteScalar());
+                return idVentaGenerado;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar la venta: " + ex.Message);
+                return 0;
+            }
+        }
+
+        public bool RegistrarBoleto(int idFuncion, int idVenta, int numeroBoleto)
+        {
+            try
+            {
+                MySqlConnection con = GetConnection();
+                string query = @"INSERT INTO tbl_boleto (id_funcion, id_venta, id_estado_boleto, numero_boleto) 
+                         VALUES (@idFuncion, @idVenta, 1, @numeroBoleto);";
+
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@idFuncion", idFuncion);
+                cmd.Parameters.AddWithValue("@idVenta", idVenta);
+                cmd.Parameters.AddWithValue("@numeroBoleto", numeroBoleto);
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar el boleto: " + ex.Message);
+                return false;
+            }
+        }
+        /*Fin del código 0901-23-4868 Pedro José Gómez Villalobos el 5/08/2026*/
+
     }
 }
-
