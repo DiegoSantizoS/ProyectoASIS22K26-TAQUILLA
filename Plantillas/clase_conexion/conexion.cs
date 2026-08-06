@@ -13,9 +13,9 @@ namespace clase_conexion
     public class conexion
     {
         private MySqlConnection connecion;
-        private String server = "localhost";
+        private String server = "192.168.1.20";
         private String datebase = "taquillas_cine";
-        private String user = "root";
+        private String user = "root1";
         private String password = "Root";
         private String pconexion;
         public conexion()
@@ -33,6 +33,7 @@ namespace clase_conexion
             {
                 connecion = new MySqlConnection(pconexion);
                 connecion.Open();
+
 
             }
             return connecion;
