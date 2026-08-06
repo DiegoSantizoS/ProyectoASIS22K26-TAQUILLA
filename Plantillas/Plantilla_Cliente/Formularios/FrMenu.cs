@@ -15,6 +15,8 @@ namespace Plantilla_Cliente
 
             Cartelera carteleraControl = new Cartelera();
             carteleraControl.CambiaraReserva += CargarPanelReserva;
+            Reservas reservas = new Reservas();
+            reservas.CambiarCartelera += CargarPanelCartelera;
 
             CargarPanel(carteleraControl);
 
@@ -35,7 +37,13 @@ namespace Plantilla_Cliente
         private void CargarPanelReserva(int idPelicula, int idCiudad)
         {
             Reservas reservas = new Reservas(idPelicula, idCiudad);
+            reservas.CambiarCartelera += CargarPanelCartelera;
             CargarPanel(reservas);
+        }
+        private void CargarPanelCartelera()
+        {
+            Cartelera cartelera = new Cartelera();
+            CargarPanel(cartelera);
         }
 
         private void reservasToolStripMenuItem_Click(object sender, EventArgs e)

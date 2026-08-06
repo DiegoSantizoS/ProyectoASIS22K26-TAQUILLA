@@ -38,6 +38,7 @@ namespace Plantilla_Cliente
         // Botones para mostrar la fecha y hora seleccionadas
         private Button btnFechaSeleccionada = null;
         private Button btnHoraSeleccionada = null;
+        public event Action? CambiarCartelera;
 
         public Reservas()
         {
@@ -352,6 +353,11 @@ namespace Plantilla_Cliente
             String url = carteleras.obtenerUrl();
             PicPelicula.ImageLocation = url;
             PicPelicula.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        private void Btn_Cartelera_Click(object sender, EventArgs e)
+        {
+            CambiarCartelera?.Invoke();
         }
     }
 }

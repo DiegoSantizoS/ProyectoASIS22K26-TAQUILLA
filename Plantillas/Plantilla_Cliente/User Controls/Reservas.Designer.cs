@@ -55,6 +55,7 @@
             CboCines = new ComboBox();
             TxSeleccionCine = new Label();
             BtnContinuar = new Button();
+            Btn_Cartelera = new Button();
             TlpReservas.SuspendLayout();
             TlpInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PicTrailer).BeginInit();
@@ -75,6 +76,7 @@
             TlpReservas.Controls.Add(PicPelicula, 0, 0);
             TlpReservas.Controls.Add(TlpEleccionFunciones, 2, 1);
             TlpReservas.Controls.Add(BtnContinuar, 2, 2);
+            TlpReservas.Controls.Add(Btn_Cartelera, 0, 1);
             TlpReservas.Dock = DockStyle.Fill;
             TlpReservas.Location = new Point(0, 0);
             TlpReservas.Name = "TlpReservas";
@@ -428,6 +430,21 @@
             BtnContinuar.UseVisualStyleBackColor = false;
             BtnContinuar.Click += Btn_Continuar_Click;
             // 
+            // Btn_Cartelera
+            // 
+            Btn_Cartelera.BackColor = Color.FromArgb(197, 155, 39);
+            Btn_Cartelera.Dock = DockStyle.Fill;
+            Btn_Cartelera.FlatAppearance.MouseDownBackColor = Color.FromArgb(112, 27, 40);
+            Btn_Cartelera.FlatStyle = FlatStyle.Popup;
+            Btn_Cartelera.ForeColor = Color.FromArgb(250, 248, 245);
+            Btn_Cartelera.Location = new Point(3, 300);
+            Btn_Cartelera.Name = "Btn_Cartelera";
+            Btn_Cartelera.Size = new Size(225, 330);
+            Btn_Cartelera.TabIndex = 15;
+            Btn_Cartelera.Text = "Volver a Cartelera";
+            Btn_Cartelera.UseVisualStyleBackColor = false;
+            Btn_Cartelera.Click += Btn_Cartelera_Click;
+            // 
             // Reservas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -478,5 +495,6 @@
         private Button Btn_SubFilter;
         private Label TxSeleccionCine;
         private PictureBox PicTrailer;
+        private Button Btn_Cartelera;
     }
 }
