@@ -182,6 +182,7 @@
             PicLogo.Size = new Size(250, 250);
             PicLogo.TabIndex = 7;
             PicLogo.TabStop = false;
+            PicLogo.Click += PicLogo_Click;
             // 
             // panel1
             // 
