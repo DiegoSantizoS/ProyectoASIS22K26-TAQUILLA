@@ -126,6 +126,7 @@
             PicTrailer.SizeMode = PictureBoxSizeMode.StretchImage;
             PicTrailer.TabIndex = 16;
             PicTrailer.TabStop = false;
+            PicTrailer.Click += PicTrailer_Click_1;
             // 
             // TxDirectorHead
             // 

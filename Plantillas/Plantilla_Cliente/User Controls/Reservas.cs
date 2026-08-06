@@ -359,5 +359,14 @@ namespace Plantilla_Cliente
         {
             CambiarCartelera?.Invoke();
         }
+
+        private void PicTrailer_Click_1(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = Enlace,
+                UseShellExecute = true
+            });
+        }
     }
 }
