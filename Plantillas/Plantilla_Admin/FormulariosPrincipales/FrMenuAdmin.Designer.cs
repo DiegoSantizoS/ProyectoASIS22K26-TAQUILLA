@@ -31,12 +31,10 @@
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             PnlTop = new Panel();
-            tableLayoutSlider1 = new Componentes.TableLayoutSlider();
             button1 = new Button();
             crownButton1 = new ReaLTaiizor.Controls.CrownButton();
             button3 = new Button();
             tableLayoutPanel1.SuspendLayout();
-            tableLayoutSlider1.SuspendLayout();
             SuspendLayout();
             // 
             // nightControlBox1
@@ -70,7 +68,6 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 139F));
             tableLayoutPanel1.Controls.Add(nightControlBox1, 1, 0);
             tableLayoutPanel1.Controls.Add(PnlTop, 0, 0);
-            tableLayoutPanel1.Controls.Add(tableLayoutSlider1, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
             tableLayoutPanel1.Location = new Point(0, 0);
@@ -92,17 +89,6 @@
             PnlTop.Size = new Size(1061, 35);
             PnlTop.TabIndex = 2;
             PnlTop.MouseMove += panel2_MouseMove_1;
-            // 
-            // tableLayoutSlider1
-            // 
-            tableLayoutSlider1.BackColor = SystemColors.GradientActiveCaption;
-            tableLayoutSlider1.Controls.Add(button1);
-            tableLayoutSlider1.Controls.Add(crownButton1);
-            tableLayoutSlider1.Dock = DockStyle.Left;
-            tableLayoutSlider1.Location = new Point(3, 38);
-            tableLayoutSlider1.Name = "tableLayoutSlider1";
-            tableLayoutSlider1.Size = new Size(147, 659);
-            tableLayoutSlider1.TabIndex = 3;
             // 
             // button1
             // 
@@ -156,7 +142,6 @@
             Name = "FrMenuAdmin";
             Text = "MENU";
             tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutSlider1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
