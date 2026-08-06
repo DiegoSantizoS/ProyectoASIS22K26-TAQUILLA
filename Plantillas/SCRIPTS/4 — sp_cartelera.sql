@@ -1,0 +1,60 @@
+-- =====================================================================
+-- STORED PROCEDURE — Visualizar Cartelera
+-- =====================================================================
+
+USE taquillas_cine;
+
+DELIMITER $$
+
+CREATE PROCEDURE sp_cartelera()
+BEGIN
+    SELECT
+        p.id_pelicula AS idPelicula,
+        p.titulo_pelicula AS Titulo,
+        p.duracion_pelicula AS Duración,
+        c.nombre_clasificacion AS clasificacion,
+
+        GROUP_CONCAT(DISTINCT g.nombre_genero
+                     ORDER BY g.nombre_genero
+                     SEPARATOR ', ') AS Generos,
+
+        GROUP_CONCAT(DISTINCT fp.nombre_formato_pelicula
+                     ORDER BY fp.nombre_formato_pelicula
+                     SEPARATOR ', ') AS Formatos,
+                     p.trailer_pelicula AS Trailer
+
+    FROM tbl_pelicula p
+
+    INNER JOIN tbl_estado_pelicula ep
+        ON p.id_estado_pelicula = ep.id_estado_pelicula
+
+    LEFT JOIN tbl_clasificacion c
+        ON p.id_clasificacion = c.id_clasificacion
+
+    LEFT JOIN tbl_pelicula_genero pg
+        ON p.id_pelicula = pg.id_pelicula
+
+    LEFT JOIN tbl_genero g
+        ON pg.id_genero = g.id_genero
+
+    LEFT JOIN tbl_pelicula_formatopelicula pfp
+        ON p.id_pelicula = pfp.id_pelicula
+
+    LEFT JOIN tbl_formato_pelicula fp
+        ON pfp.id_formato_pelicula = fp.id_formato_pelicula
+
+    WHERE ep.id_estado_pelicula = 1
+
+    GROUP BY
+        p.id_pelicula,
+        p.titulo_pelicula,
+        p.descripcion_pelicula,
+        p.duracion_pelicula,
+        p.director_pelicula,
+        p.fecha_estreno,
+        c.nombre_clasificacion
+
+    ORDER BY p.titulo_pelicula;
+END$$
+
+DELIMITER ;
