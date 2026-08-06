@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Forms_Admin
+namespace Forms_Admin.Ventas
 {
-    public partial class FrUcCines : UserControl
+    public partial class FrUcVentas : UserControl
     {
-        public FrUcCines()
+        public FrUcVentas()
         {
             InitializeComponent();
         }
