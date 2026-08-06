@@ -34,12 +34,8 @@
             LbHora = new Componentes.CustomTitleLabel();
             LbBienvenida = new Componentes.CustomTitleLabel();
             tableLayoutPanel1 = new TableLayoutPanel();
+            RcbDetalles = new Componentes.CustomRichTextBox();
             RcbDatosImportantes = new Componentes.CustomRichTextBox();
-            tableLayoutPanel4 = new TableLayoutPanel();
-            BtnNecesitasAyuda = new ReaLTaiizor.Controls.HopeButton();
-            BtnAgregarFunciones = new ReaLTaiizor.Controls.HopeButton();
-            BtnVerCartelera = new ReaLTaiizor.Controls.HopeButton();
-            BtnVerReporte = new ReaLTaiizor.Controls.HopeButton();
             TlpCartelera = new TableLayoutPanel();
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -48,7 +44,6 @@
             TlpArquitectura.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel4.SuspendLayout();
             TlpCartelera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -68,7 +63,7 @@
             TlpArquitectura.Name = "TlpArquitectura";
             TlpArquitectura.RowCount = 3;
             TlpArquitectura.RowStyles.Add(new RowStyle(SizeType.Absolute, 70F));
-            TlpArquitectura.RowStyles.Add(new RowStyle(SizeType.Absolute, 300F));
+            TlpArquitectura.RowStyles.Add(new RowStyle(SizeType.Absolute, 250F));
             TlpArquitectura.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpArquitectura.Size = new Size(1050, 700);
             TlpArquitectura.TabIndex = 0;
@@ -134,18 +129,36 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 350F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 600F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 400F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 550F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Controls.Add(RcbDetalles, 1, 0);
             tableLayoutPanel1.Controls.Add(RcbDatosImportantes, 0, 0);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel4, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(3, 73);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1044, 294);
+            tableLayoutPanel1.Size = new Size(1044, 244);
             tableLayoutPanel1.TabIndex = 2;
+            // 
+            // RcbDetalles
+            // 
+            RcbDetalles.BackColor = Color.Black;
+            RcbDetalles.BorderStyle = BorderStyle.None;
+            RcbDetalles.Dock = DockStyle.Fill;
+            RcbDetalles.Font = new Font("Segoe UI", 10F);
+            RcbDetalles.ForeColor = Color.FromArgb(230, 230, 230);
+            RcbDetalles.Location = new Point(405, 10);
+            RcbDetalles.Margin = new Padding(5, 10, 5, 10);
+            RcbDetalles.MinimumSize = new Size(190, 60);
+            RcbDetalles.Name = "RcbDetalles";
+            RcbDetalles.ReadOnly = true;
+            RcbDetalles.ScrollBars = RichTextBoxScrollBars.None;
+            RcbDetalles.Size = new Size(540, 224);
+            RcbDetalles.TabIndex = 2;
+            RcbDetalles.Text = "";
             // 
             // RcbDatosImportantes
             // 
@@ -160,109 +173,9 @@
             RcbDatosImportantes.Name = "RcbDatosImportantes";
             RcbDatosImportantes.ReadOnly = true;
             RcbDatosImportantes.ScrollBars = RichTextBoxScrollBars.None;
-            RcbDatosImportantes.Size = new Size(340, 274);
+            RcbDatosImportantes.Size = new Size(390, 224);
             RcbDatosImportantes.TabIndex = 1;
             RcbDatosImportantes.Text = "";
-            // 
-            // tableLayoutPanel4
-            // 
-            tableLayoutPanel4.ColumnCount = 4;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel4.Controls.Add(BtnNecesitasAyuda, 3, 0);
-            tableLayoutPanel4.Controls.Add(BtnAgregarFunciones, 2, 0);
-            tableLayoutPanel4.Controls.Add(BtnVerCartelera, 0, 0);
-            tableLayoutPanel4.Controls.Add(BtnVerReporte, 1, 0);
-            tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(353, 3);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 1;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel4.Size = new Size(594, 288);
-            tableLayoutPanel4.TabIndex = 2;
-            // 
-            // BtnNecesitasAyuda
-            // 
-            BtnNecesitasAyuda.BorderColor = Color.LawnGreen;
-            BtnNecesitasAyuda.ButtonType = ReaLTaiizor.Util.HopeButtonType.Danger;
-            BtnNecesitasAyuda.DangerColor = Color.FromArgb(245, 108, 108);
-            BtnNecesitasAyuda.DefaultColor = Color.FromArgb(255, 255, 255);
-            BtnNecesitasAyuda.Dock = DockStyle.Fill;
-            BtnNecesitasAyuda.Font = new Font("Segoe UI", 12F);
-            BtnNecesitasAyuda.HoverTextColor = Color.FromArgb(48, 49, 51);
-            BtnNecesitasAyuda.InfoColor = Color.FromArgb(144, 147, 153);
-            BtnNecesitasAyuda.Location = new Point(447, 3);
-            BtnNecesitasAyuda.Name = "BtnNecesitasAyuda";
-            BtnNecesitasAyuda.PrimaryColor = Color.FromArgb(64, 158, 255);
-            BtnNecesitasAyuda.Size = new Size(144, 282);
-            BtnNecesitasAyuda.SuccessColor = Color.FromArgb(103, 194, 58);
-            BtnNecesitasAyuda.TabIndex = 5;
-            BtnNecesitasAyuda.Text = "¿NECESITAS AYUDA?";
-            BtnNecesitasAyuda.TextColor = Color.White;
-            BtnNecesitasAyuda.WarningColor = Color.FromArgb(230, 162, 60);
-            // 
-            // BtnAgregarFunciones
-            // 
-            BtnAgregarFunciones.BorderColor = Color.LawnGreen;
-            BtnAgregarFunciones.ButtonType = ReaLTaiizor.Util.HopeButtonType.Warning;
-            BtnAgregarFunciones.DangerColor = Color.FromArgb(245, 108, 108);
-            BtnAgregarFunciones.DefaultColor = Color.FromArgb(255, 255, 255);
-            BtnAgregarFunciones.Dock = DockStyle.Fill;
-            BtnAgregarFunciones.Font = new Font("Segoe UI", 12F);
-            BtnAgregarFunciones.HoverTextColor = Color.FromArgb(48, 49, 51);
-            BtnAgregarFunciones.InfoColor = Color.FromArgb(144, 147, 153);
-            BtnAgregarFunciones.Location = new Point(299, 3);
-            BtnAgregarFunciones.Name = "BtnAgregarFunciones";
-            BtnAgregarFunciones.PrimaryColor = Color.FromArgb(64, 158, 255);
-            BtnAgregarFunciones.Size = new Size(142, 282);
-            BtnAgregarFunciones.SuccessColor = Color.FromArgb(103, 194, 58);
-            BtnAgregarFunciones.TabIndex = 6;
-            BtnAgregarFunciones.Text = "AGREGAR FUNCIONES";
-            BtnAgregarFunciones.TextColor = Color.White;
-            BtnAgregarFunciones.WarningColor = Color.FromArgb(230, 162, 60);
-            // 
-            // BtnVerCartelera
-            // 
-            BtnVerCartelera.BorderColor = Color.LawnGreen;
-            BtnVerCartelera.ButtonType = ReaLTaiizor.Util.HopeButtonType.Warning;
-            BtnVerCartelera.DangerColor = Color.FromArgb(245, 108, 108);
-            BtnVerCartelera.DefaultColor = Color.FromArgb(255, 255, 255);
-            BtnVerCartelera.Dock = DockStyle.Fill;
-            BtnVerCartelera.Font = new Font("Segoe UI", 12F);
-            BtnVerCartelera.HoverTextColor = Color.FromArgb(48, 49, 51);
-            BtnVerCartelera.InfoColor = Color.FromArgb(144, 147, 153);
-            BtnVerCartelera.Location = new Point(3, 3);
-            BtnVerCartelera.Name = "BtnVerCartelera";
-            BtnVerCartelera.PrimaryColor = Color.FromArgb(64, 158, 255);
-            BtnVerCartelera.Size = new Size(142, 282);
-            BtnVerCartelera.SuccessColor = Color.FromArgb(103, 194, 58);
-            BtnVerCartelera.TabIndex = 3;
-            BtnVerCartelera.Text = "VER CARTELERA";
-            BtnVerCartelera.TextColor = Color.White;
-            BtnVerCartelera.WarningColor = Color.FromArgb(230, 162, 60);
-            // 
-            // BtnVerReporte
-            // 
-            BtnVerReporte.BorderColor = Color.LawnGreen;
-            BtnVerReporte.ButtonType = ReaLTaiizor.Util.HopeButtonType.Warning;
-            BtnVerReporte.DangerColor = Color.FromArgb(245, 108, 108);
-            BtnVerReporte.DefaultColor = Color.FromArgb(255, 255, 255);
-            BtnVerReporte.Dock = DockStyle.Fill;
-            BtnVerReporte.Font = new Font("Segoe UI", 12F);
-            BtnVerReporte.HoverTextColor = Color.FromArgb(48, 49, 51);
-            BtnVerReporte.InfoColor = Color.FromArgb(144, 147, 153);
-            BtnVerReporte.Location = new Point(151, 3);
-            BtnVerReporte.Name = "BtnVerReporte";
-            BtnVerReporte.PrimaryColor = Color.FromArgb(64, 158, 255);
-            BtnVerReporte.Size = new Size(142, 282);
-            BtnVerReporte.SuccessColor = Color.FromArgb(103, 194, 58);
-            BtnVerReporte.TabIndex = 4;
-            BtnVerReporte.Text = "VER REPORTES";
-            BtnVerReporte.TextColor = Color.White;
-            BtnVerReporte.WarningColor = Color.FromArgb(230, 162, 60);
             // 
             // TlpCartelera
             // 
@@ -276,13 +189,13 @@
             TlpCartelera.Controls.Add(pictureBox2, 1, 0);
             TlpCartelera.Controls.Add(pictureBox1, 0, 0);
             TlpCartelera.Dock = DockStyle.Fill;
-            TlpCartelera.Location = new Point(0, 370);
+            TlpCartelera.Location = new Point(0, 320);
             TlpCartelera.Margin = new Padding(0);
             TlpCartelera.Name = "TlpCartelera";
             TlpCartelera.RowCount = 1;
             TlpCartelera.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpCartelera.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlpCartelera.Size = new Size(1050, 330);
+            TlpCartelera.Size = new Size(1050, 380);
             TlpCartelera.TabIndex = 3;
             // 
             // pictureBox4
@@ -290,7 +203,7 @@
             pictureBox4.Dock = DockStyle.Fill;
             pictureBox4.Location = new Point(789, 3);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(258, 324);
+            pictureBox4.Size = new Size(258, 374);
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
             // 
@@ -299,7 +212,7 @@
             pictureBox3.Dock = DockStyle.Fill;
             pictureBox3.Location = new Point(527, 3);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(256, 324);
+            pictureBox3.Size = new Size(256, 374);
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             // 
@@ -308,7 +221,7 @@
             pictureBox2.Dock = DockStyle.Fill;
             pictureBox2.Location = new Point(265, 3);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(256, 324);
+            pictureBox2.Size = new Size(256, 374);
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
@@ -317,7 +230,7 @@
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(256, 324);
+            pictureBox1.Size = new Size(256, 374);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -333,7 +246,6 @@
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel4.ResumeLayout(false);
             TlpCartelera.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -349,17 +261,13 @@
         private Componentes.CustomTitleLabel LbBienvenida;
         private Componentes.CustomTitleLabel LbHora;
         private TableLayoutPanel tableLayoutPanel1;
-        private ReaLTaiizor.Controls.HopeButton BtnNecesitasAyuda;
-        private ReaLTaiizor.Controls.HopeButton BtnVerReporte;
-        private ReaLTaiizor.Controls.HopeButton BtnVerCartelera;
-        private ReaLTaiizor.Controls.HopeButton BtnAgregarFunciones;
         private Componentes.CustomRichTextBox RcbDatosImportantes;
         private TableLayoutPanel TlpCartelera;
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private TableLayoutPanel tableLayoutPanel4;
         private Componentes.CustomTitleLabel LbMensajeDeUsuario;
+        private Componentes.CustomRichTextBox RcbDetalles;
     }
 }

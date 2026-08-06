@@ -152,6 +152,7 @@ namespace Plantilla_Admin.FormulariosPrincipales
         private void BtnLogo_Click(object sender, EventArgs e)
         {
             funcargarpagina(new FrUcMainDashboard());
+            InactiveBtn(_activeButton);
         }
 
         private void TlpDescripcionUsuario_MouseMove(object sender, MouseEventArgs e)
