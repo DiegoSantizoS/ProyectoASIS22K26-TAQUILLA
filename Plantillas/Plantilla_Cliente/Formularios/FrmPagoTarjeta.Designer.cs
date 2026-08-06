@@ -84,7 +84,7 @@
             // 
             // txtFechaExpiracion
             // 
-            txtFechaExpiracion.Location = new Point(346, 159);
+            txtFechaExpiracion.Location = new Point(365, 157);
             txtFechaExpiracion.Margin = new Padding(3, 4, 3, 4);
             txtFechaExpiracion.Name = "txtFechaExpiracion";
             txtFechaExpiracion.PlaceholderText = "MM/AA";
