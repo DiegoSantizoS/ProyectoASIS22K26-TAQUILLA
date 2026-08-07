@@ -200,8 +200,8 @@ namespace Plantilla_Cliente
                 var conexion = new Conexion();
                 MySqlConnection cn = conexion.GetConnection();
 
-                string sql = @"INSERT INTO tbl_bitacora (id_usuario, id_permiso, id_nombre_pc, ip)
-                                VALUES (@idUsuario, @idPermiso, @idNombrePc, @ip)";
+                string sql = @"INSERT INTO tbl_bitacora (id_usuario, id_permiso, id_nombre_pc, ip_bitacora)
+                        VALUES (@idUsuario, @idPermiso, @idNombrePc, @ip)";
 
                 using (var cmd = new MySqlCommand(sql, cn))
                 {
