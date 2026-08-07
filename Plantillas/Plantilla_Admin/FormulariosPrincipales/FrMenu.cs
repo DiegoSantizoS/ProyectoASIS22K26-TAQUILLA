@@ -61,10 +61,13 @@ namespace Plantilla_Admin.FormulariosPrincipales
 
         private void InactiveBtn(Button btn)
         {
-            btn.FlatStyle = FlatStyle.Flat;
-            btn.FlatAppearance.BorderSize = 0;
-            btn.BackColor = Color.FromArgb(74, 21, 26);
-            btn.ForeColor = Color.FromArgb(220, 210, 210);
+            if (btn != null)
+            {
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0;
+                btn.BackColor = Color.FromArgb(74, 21, 26);
+                btn.ForeColor = Color.FromArgb(220, 210, 210);
+            }
         }
 
         private void SetActive(Button btn)
