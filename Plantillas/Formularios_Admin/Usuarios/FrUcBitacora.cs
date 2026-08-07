@@ -1,4 +1,12 @@
+<<<<<<< Updated upstream
 ﻿using clase_conexion;
+=======
+﻿
+//mishel loeiza
+
+using clase_conexion;
+using Con_Admin;
+>>>>>>> Stashed changes
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
