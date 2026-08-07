@@ -16,6 +16,7 @@
     <ProjectReference Include="..\clase_conexion\clase_conexion.csproj" />
     <ProjectReference Include="..\Componentes\Componentes.csproj" />
     <ProjectReference Include="..\Con_Admin\Con_Admin.csproj" />
+    <ProjectReference Include="..\Validaciones\Validaciones.csproj" />
   </ItemGroup>
 
   <ItemGroup>

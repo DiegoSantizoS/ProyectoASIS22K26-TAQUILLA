@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             TlpDivFormAndDgv = new TableLayoutPanel();
             TlpAux1 = new TableLayoutPanel();
             TlpAux2 = new TableLayoutPanel();
             TlpFormWithButtons = new TableLayoutPanel();
             TlpForm = new TableLayoutPanel();
-            customTextBoxestado = new Componentes.CustomTextBox();
+            ccb_tipopromocion = new Componentes.CustomComboBox();
             customLabel3 = new Componentes.CustomLabel();
             customLabel2 = new Componentes.CustomLabel();
             cpfinal = new Componentes.CustomDatePicker();
@@ -53,6 +53,7 @@
             LbPelicula = new Componentes.CustomLabel();
             ctb_descripcion = new Componentes.CustomTextBox();
             CbPelicula = new Componentes.CustomComboBox();
+            customTextBoxestado = new Componentes.CustomComboBox();
             TlpButtons = new TableLayoutPanel();
             BtnEliminar = new Componentes.CustomButton();
             BtnActualizar = new Componentes.CustomButton();
@@ -67,7 +68,6 @@
             TbFiltro = new Componentes.CustomTextBox();
             CbFiltro = new Componentes.CustomComboBox();
             DgvFunciones = new Componentes.CustomDataGridView();
-            ccb_tipopromocion = new Componentes.CustomComboBox();
             TlpDivFormAndDgv.SuspendLayout();
             TlpAux1.SuspendLayout();
             TlpAux2.SuspendLayout();
@@ -154,7 +154,6 @@
             TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             TlpForm.Controls.Add(ccb_tipopromocion, 1, 3);
-            TlpForm.Controls.Add(customTextBoxestado, 0, 5);
             TlpForm.Controls.Add(customLabel3, 2, 2);
             TlpForm.Controls.Add(customLabel2, 0, 4);
             TlpForm.Controls.Add(cpfinal, 2, 3);
@@ -171,6 +170,7 @@
             TlpForm.Controls.Add(LbPelicula, 0, 2);
             TlpForm.Controls.Add(ctb_descripcion, 0, 3);
             TlpForm.Controls.Add(CbPelicula, 1, 5);
+            TlpForm.Controls.Add(customTextBoxestado, 0, 5);
             TlpForm.Dock = DockStyle.Fill;
             TlpForm.Location = new Point(0, 0);
             TlpForm.Margin = new Padding(0);
@@ -187,21 +187,27 @@
             TlpForm.Size = new Size(900, 225);
             TlpForm.TabIndex = 0;
             // 
-            // customTextBoxestado
+            // ccb_tipopromocion
             // 
-            customTextBoxestado.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            customTextBoxestado.BackColor = Color.FromArgb(55, 60, 72);
-            customTextBoxestado.BorderStyle = BorderStyle.FixedSingle;
-            customTextBoxestado.Font = new Font("Segoe UI", 10F);
-            customTextBoxestado.ForeColor = Color.FromArgb(160, 165, 175);
-            customTextBoxestado.Location = new Point(5, 175);
-            customTextBoxestado.Margin = new Padding(5, 0, 5, 10);
-            customTextBoxestado.MaximumSize = new Size(0, 30);
-            customTextBoxestado.MinimumSize = new Size(190, 30);
-            customTextBoxestado.Name = "customTextBoxestado";
-            customTextBoxestado.PlaceholderText = "1";
-            customTextBoxestado.Size = new Size(289, 30);
-            customTextBoxestado.TabIndex = 82;
+            ccb_tipopromocion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            ccb_tipopromocion.BackColor = Color.FromArgb(55, 60, 72);
+            ccb_tipopromocion.BaseColor = Color.FromArgb(40, 40, 40);
+            ccb_tipopromocion.BGColor = Color.FromArgb(55, 60, 72);
+            ccb_tipopromocion.DrawMode = DrawMode.OwnerDrawFixed;
+            ccb_tipopromocion.DropDownStyle = ComboBoxStyle.DropDownList;
+            ccb_tipopromocion.FlatStyle = FlatStyle.Flat;
+            ccb_tipopromocion.Font = new Font("Segoe UI", 9.5F);
+            ccb_tipopromocion.ForeColor = Color.FromArgb(230, 230, 230);
+            ccb_tipopromocion.FormattingEnabled = true;
+            ccb_tipopromocion.HoverColor = Color.Crimson;
+            ccb_tipopromocion.HoverFontColor = Color.White;
+            ccb_tipopromocion.ItemHeight = 24;
+            ccb_tipopromocion.Location = new Point(304, 100);
+            ccb_tipopromocion.Margin = new Padding(5, 0, 5, 10);
+            ccb_tipopromocion.MinimumSize = new Size(190, 0);
+            ccb_tipopromocion.Name = "ccb_tipopromocion";
+            ccb_tipopromocion.Size = new Size(290, 30);
+            ccb_tipopromocion.TabIndex = 83;
             // 
             // customLabel3
             // 
@@ -351,7 +357,7 @@
             Tbvalorpromocion.MaximumSize = new Size(0, 30);
             Tbvalorpromocion.MinimumSize = new Size(190, 30);
             Tbvalorpromocion.Name = "Tbvalorpromocion";
-            Tbvalorpromocion.PlaceholderText = "1";
+            Tbvalorpromocion.PlaceholderText = "100";
             Tbvalorpromocion.Size = new Size(291, 30);
             Tbvalorpromocion.TabIndex = 66;
             // 
@@ -389,7 +395,7 @@
             ctb_nombre.MaximumSize = new Size(0, 30);
             ctb_nombre.MinimumSize = new Size(190, 30);
             ctb_nombre.Name = "ctb_nombre";
-            ctb_nombre.PlaceholderText = "1";
+            ctb_nombre.PlaceholderText = "2x1";
             ctb_nombre.Size = new Size(290, 30);
             ctb_nombre.TabIndex = 75;
             // 
@@ -433,7 +439,7 @@
             ctb_descripcion.MaximumSize = new Size(0, 30);
             ctb_descripcion.MinimumSize = new Size(190, 30);
             ctb_descripcion.Name = "ctb_descripcion";
-            ctb_descripcion.PlaceholderText = "1";
+            ctb_descripcion.PlaceholderText = "...";
             ctb_descripcion.Size = new Size(289, 30);
             ctb_descripcion.TabIndex = 76;
             // 
@@ -458,6 +464,28 @@
             CbPelicula.Name = "CbPelicula";
             CbPelicula.Size = new Size(290, 30);
             CbPelicula.TabIndex = 63;
+            // 
+            // customTextBoxestado
+            // 
+            customTextBoxestado.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            customTextBoxestado.BackColor = Color.FromArgb(55, 60, 72);
+            customTextBoxestado.BaseColor = Color.FromArgb(40, 40, 40);
+            customTextBoxestado.BGColor = Color.FromArgb(55, 60, 72);
+            customTextBoxestado.DrawMode = DrawMode.OwnerDrawFixed;
+            customTextBoxestado.DropDownStyle = ComboBoxStyle.DropDownList;
+            customTextBoxestado.FlatStyle = FlatStyle.Flat;
+            customTextBoxestado.Font = new Font("Segoe UI", 9.5F);
+            customTextBoxestado.ForeColor = Color.FromArgb(230, 230, 230);
+            customTextBoxestado.FormattingEnabled = true;
+            customTextBoxestado.HoverColor = Color.Crimson;
+            customTextBoxestado.HoverFontColor = Color.White;
+            customTextBoxestado.ItemHeight = 24;
+            customTextBoxestado.Location = new Point(5, 185);
+            customTextBoxestado.Margin = new Padding(5);
+            customTextBoxestado.MinimumSize = new Size(190, 0);
+            customTextBoxestado.Name = "customTextBoxestado";
+            customTextBoxestado.Size = new Size(289, 30);
+            customTextBoxestado.TabIndex = 84;
             // 
             // TlpButtons
             // 
@@ -714,35 +742,35 @@
             DgvFunciones.AllowUserToAddRows = false;
             DgvFunciones.AllowUserToResizeColumns = false;
             DgvFunciones.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(42, 44, 49);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(178, 44, 48);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            DgvFunciones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(42, 44, 49);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(178, 44, 48);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            DgvFunciones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             DgvFunciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvFunciones.BackgroundColor = Color.FromArgb(37, 38, 43);
             DgvFunciones.BorderStyle = BorderStyle.None;
             DgvFunciones.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             DgvFunciones.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 47, 52);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.Padding = new Padding(8, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(45, 47, 52);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            DgvFunciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(45, 47, 52);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.Padding = new Padding(8, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(45, 47, 52);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            DgvFunciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             DgvFunciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(37, 38, 43);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.5F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(230, 230, 230);
-            dataGridViewCellStyle3.Padding = new Padding(8, 0, 5, 0);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(178, 44, 48);
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            DgvFunciones.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(37, 38, 43);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9.5F);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(230, 230, 230);
+            dataGridViewCellStyle6.Padding = new Padding(8, 0, 5, 0);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(178, 44, 48);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            DgvFunciones.DefaultCellStyle = dataGridViewCellStyle6;
             DgvFunciones.Dock = DockStyle.Fill;
             DgvFunciones.EnableHeadersVisualStyles = false;
             DgvFunciones.Font = new Font("Segoe UI", 9.5F);
@@ -758,28 +786,6 @@
             DgvFunciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DgvFunciones.Size = new Size(1050, 250);
             DgvFunciones.TabIndex = 2;
-            // 
-            // ccb_tipopromocion
-            // 
-            ccb_tipopromocion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            ccb_tipopromocion.BackColor = Color.FromArgb(55, 60, 72);
-            ccb_tipopromocion.BaseColor = Color.FromArgb(40, 40, 40);
-            ccb_tipopromocion.BGColor = Color.FromArgb(55, 60, 72);
-            ccb_tipopromocion.DrawMode = DrawMode.OwnerDrawFixed;
-            ccb_tipopromocion.DropDownStyle = ComboBoxStyle.DropDownList;
-            ccb_tipopromocion.FlatStyle = FlatStyle.Flat;
-            ccb_tipopromocion.Font = new Font("Segoe UI", 9.5F);
-            ccb_tipopromocion.ForeColor = Color.FromArgb(230, 230, 230);
-            ccb_tipopromocion.FormattingEnabled = true;
-            ccb_tipopromocion.HoverColor = Color.Crimson;
-            ccb_tipopromocion.HoverFontColor = Color.White;
-            ccb_tipopromocion.ItemHeight = 24;
-            ccb_tipopromocion.Location = new Point(304, 100);
-            ccb_tipopromocion.Margin = new Padding(5, 0, 5, 10);
-            ccb_tipopromocion.MinimumSize = new Size(190, 0);
-            ccb_tipopromocion.Name = "ccb_tipopromocion";
-            ccb_tipopromocion.Size = new Size(290, 30);
-            ccb_tipopromocion.TabIndex = 83;
             // 
             // FrUcPromociones
             // 
@@ -841,7 +847,7 @@
         private Componentes.CustomDatePicker cpfinal;
         private Componentes.CustomLabel customLabel2;
         private Componentes.CustomLabel customLabel3;
-        private Componentes.CustomTextBox customTextBoxestado;
         private Componentes.CustomComboBox ccb_tipopromocion;
+        private Componentes.CustomComboBox customTextBoxestado;
     }
 }

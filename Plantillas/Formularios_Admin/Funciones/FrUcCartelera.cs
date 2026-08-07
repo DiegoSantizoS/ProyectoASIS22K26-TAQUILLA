@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Con_Admin;
+using Validaciones;
 using CartelerasImg = Plantillas.Carteleras.Carteleras;
 
 namespace Forms_Admin.Funciones
@@ -20,10 +21,17 @@ namespace Forms_Admin.Funciones
         {
             InitializeComponent();
             WireEvents();
-            CargarFiltro();
-            CargarGrilla();
-            LimpiarFormulario();
-            if(DgvPeliculas.Rows[0]!=null) CargarDesdeFila(DgvPeliculas.Rows[0]);
+
+            // Init que toca la BD: protegido para que un fallo de conexión
+            // muestre un mensaje amigable en vez de tumbar el control al cargar.
+            GestorErrores.EjecutarSeguro(() =>
+            {
+                CargarFiltro();
+                CargarGrilla();
+                LimpiarFormulario();
+                if (DgvPeliculas.Rows.Count > 0 && DgvPeliculas.Rows[0] != null)
+                    CargarDesdeFila(DgvPeliculas.Rows[0]);
+            }, "Cartelera.Inicializar");
         }
 
         private void WireEvents()
@@ -119,18 +127,21 @@ namespace Forms_Admin.Funciones
         private void DgvPeliculas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-            CargarDesdeFila(DgvPeliculas.Rows[e.RowIndex]);
+            GestorErrores.EjecutarSeguro(
+                () => CargarDesdeFila(DgvPeliculas.Rows[e.RowIndex]),
+                "Cartelera.SeleccionarFila");
         }
 
         private void BtnCopiar_Click(object sender, EventArgs e)
         {
             if (DgvPeliculas.CurrentRow == null)
             {
-                MessageBox.Show("Selecciona una película de la tabla primero.", "Cartelera",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GestorErrores.MostrarAdvertencia("Selecciona una película de la tabla primero.");
                 return;
             }
-            CargarDesdeFila(DgvPeliculas.CurrentRow);
+            GestorErrores.EjecutarSeguro(
+                () => CargarDesdeFila(DgvPeliculas.CurrentRow),
+                "Cartelera.Copiar");
         }
 
         private void CargarDesdeFila(DataGridViewRow fila)
@@ -153,8 +164,7 @@ namespace Forms_Admin.Funciones
         {
             if (!TryLeerId(out _))
             {
-                MessageBox.Show("Selecciona primero una película de la tabla.", "Cartelera",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GestorErrores.MostrarAdvertencia("Selecciona primero una película de la tabla.");
                 return;
             }
 
@@ -168,14 +178,16 @@ namespace Forms_Admin.Funciones
                 string ext = Path.GetExtension(ofd.FileName).ToLowerInvariant();
                 if (ext != ".jpg" && ext != ".jpeg" && ext != ".png")
                 {
-                    MessageBox.Show("Solo se permiten imágenes .jpg o .png.", "Cartelera",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    GestorErrores.MostrarAdvertencia("Solo se permiten imágenes .jpg o .png.");
                     return;
                 }
 
-                rutaImagenSeleccionada = ofd.FileName;
-                FilePicker.Text = Path.GetFileName(ofd.FileName);
-                MostrarImagen(ofd.FileName);
+                GestorErrores.EjecutarSeguro(() =>
+                {
+                    rutaImagenSeleccionada = ofd.FileName;
+                    FilePicker.Text = Path.GetFileName(ofd.FileName);
+                    MostrarImagen(ofd.FileName);
+                }, "Cartelera.SeleccionarImagen");
             }
         }
 
@@ -201,53 +213,44 @@ namespace Forms_Admin.Funciones
         {
             if (!TryLeerId(out int id))
             {
-                MessageBox.Show("Selecciona una película de la tabla.", "Cartelera",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GestorErrores.MostrarAdvertencia("Selecciona una película de la tabla.");
                 return;
             }
             if (string.IsNullOrEmpty(rutaImagenSeleccionada) || !File.Exists(rutaImagenSeleccionada))
             {
-                MessageBox.Show("Selecciona una imagen con el botón \"Seleccione una imagen\".",
-                    "Cartelera", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GestorErrores.MostrarAdvertencia(
+                    "Selecciona una imagen con el botón \"Seleccione una imagen\".");
                 return;
             }
 
-            try
+            GestorErrores.EjecutarSeguro(() =>
             {
                 string destino = new CartelerasImg(id).Guardar(rutaImagenSeleccionada);
                 MostrarImagen(destino);
-                MessageBox.Show("Imagen guardada como " + Path.GetFileName(destino) + ".",
-                    "Cartelera", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo guardar la imagen.\n\n" + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                GestorErrores.MostrarInformacion(
+                    "Imagen guardada como " + Path.GetFileName(destino) + ".");
+            }, "Cartelera.GuardarImagen");
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             if (!TryLeerId(out int id))
             {
-                MessageBox.Show("Selecciona una película de la tabla.", "Cartelera",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GestorErrores.MostrarAdvertencia("Selecciona una película de la tabla.");
                 return;
             }
 
             var cartelera = new CartelerasImg(id);
             if (!cartelera.TieneImagen())
             {
-                MessageBox.Show("Esta película no tiene imagen guardada.", "Cartelera",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GestorErrores.MostrarAdvertencia("Esta película no tiene imagen guardada.");
                 return;
             }
 
-            var confirmar = MessageBox.Show("¿Eliminar la imagen de esta película?",
-                "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (confirmar != DialogResult.Yes) return;
+            if (!GestorErrores.Confirmar("¿Eliminar la imagen de esta película?"))
+                return;
 
-            try
+            GestorErrores.EjecutarSeguro(() =>
             {
                 LiberarImagen();
                 cartelera.Eliminar();
@@ -255,21 +258,18 @@ namespace Forms_Admin.Funciones
                 string ruta = new CartelerasImg(id).obtenerUrl();
                 if (File.Exists(ruta)) MostrarImagen(ruta);
 
-                MessageBox.Show("Imagen eliminada.", "Cartelera",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo eliminar la imagen.\n\n" + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                GestorErrores.MostrarInformacion("Imagen eliminada.");
+            }, "Cartelera.EliminarImagen");
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             TbFiltro.Clear();
-            CargarGrilla();
-            LimpiarFormulario();
+            GestorErrores.EjecutarSeguro(() =>
+            {
+                CargarGrilla();
+                LimpiarFormulario();
+            }, "Cartelera.Limpiar");
         }
 
         private void LimpiarFormulario()

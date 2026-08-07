@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using Con_Admin;
+using Validaciones;
 
 namespace Forms_Admin.Ventas
 {
@@ -16,9 +17,16 @@ namespace Forms_Admin.Ventas
         {
             InitializeComponent();
             WireEvents();
-            CargarFiltro();
-            CargarGrilla();
-            ModoAgregar();
+            ConfigurarRestricciones();
+
+            // Init que toca la BD: protegido para que un fallo de conexión
+            // muestre un mensaje amigable en vez de tumbar el control al cargar.
+            GestorErrores.EjecutarSeguro(() =>
+            {
+                CargarFiltro();
+                CargarGrilla();
+                ModoAgregar();
+            }, "Clientes.Inicializar");
         }
 
         private void WireEvents()
@@ -29,6 +37,15 @@ namespace Forms_Admin.Ventas
             BtnLimpiar.Click += BtnLimpiar_Click;
             BtnCopiar.Click += BtnCopiar_Click;
             BtnBuscar.Click += BtnBuscar_Click;
+        }
+
+        private void ConfigurarRestricciones()
+        {
+            RestrictorCampos.SoloLetras(TbNombre, 60);
+            RestrictorCampos.SoloLetras(customTextBox2, 60);   
+            RestrictorCampos.SoloNumeros(TbIdentificacion, 20);
+            RestrictorCampos.LongitudMaxima(customTextBox3, 100);
+            RestrictorCampos.RecortarEspacios(TbNombre, customTextBox2, TbIdentificacion, customTextBox3);
         }
 
         private void CargarFiltro()
@@ -88,112 +105,92 @@ namespace Forms_Admin.Ventas
         {
             TbID.Clear();
             TbNombre.Clear();
-            customTextBox2.Clear();   // Apellidos
+            customTextBox2.Clear();   
             TbIdentificacion.Clear();
-            customTextBox3.Clear();   // Correo
+            customTextBox3.Clear();  
         }
 
         private string LeerNombre() => TbNombre.Text.Trim();
-        private string LeerApellido() => customTextBox2.Text.Trim();   // Apellidos
+        private string LeerApellido() => customTextBox2.Text.Trim();  
         private string LeerIdentificacion() => TbIdentificacion.Text.Trim();
-        private string LeerCorreo() => customTextBox3.Text.Trim();   // Correo
+        private string LeerCorreo() => customTextBox3.Text.Trim();   
 
         private bool Validar()
         {
-            if (string.IsNullOrWhiteSpace(LeerNombre()))
-            {
-                MessageBox.Show("El nombre es obligatorio.", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TbNombre.Focus();
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(LeerApellido()))
-            {
-                MessageBox.Show("El apellido es obligatorio.", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                customTextBox2.Focus();
-                return false;
-            }
-            return true;
+            string correo = LeerCorreo();
+
+            var r = new ResultadoValidacion()
+                .AgregarSiFalla(Validador.EsSoloLetras(LeerNombre()),
+                    Mensajes.NombreInvalido)
+                .AgregarSiFalla(Validador.EsSoloLetras(LeerApellido()),
+                    Mensajes.ApellidoInvalido)
+                .AgregarSiFalla(correo.Length == 0 || Validador.EsCorreoValido(correo),
+                    Mensajes.CorreoInvalido);
+
+            return GestorErrores.MostrarValidacion(r);
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             if (!Validar()) return;
 
-            try
+            GestorErrores.EjecutarSeguro(() =>
             {
                 int nuevo = api.Insertar(LeerNombre(), LeerApellido(), LeerIdentificacion(), LeerCorreo());
-                MessageBox.Show("Cliente agregado correctamente. ID: " + nuevo, "Éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GestorErrores.MostrarInformacion("Cliente agregado correctamente. ID: " + nuevo);
                 CargarGrilla();
                 ModoAgregar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo agregar el cliente.\n\n" + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }, "Clientes.Agregar");
         }
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(TbID.Text, out int id) || id <= 0)
             {
-                MessageBox.Show("Selecciona un cliente de la tabla para actualizar.", "Actualizar",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GestorErrores.MostrarAdvertencia("Selecciona un cliente de la tabla para actualizar.");
                 return;
             }
             if (!Validar()) return;
 
-            try
+            GestorErrores.EjecutarSeguro(() =>
             {
                 bool ok = api.Actualizar(id, LeerNombre(), LeerApellido(), LeerIdentificacion(), LeerCorreo());
-                MessageBox.Show(ok ? "Cliente actualizado correctamente." : "No se encontró el cliente.",
-                    "Actualizar", MessageBoxButtons.OK,
-                    ok ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+                if (ok) GestorErrores.MostrarInformacion("Cliente actualizado correctamente.");
+                else GestorErrores.MostrarAdvertencia("No se encontró el cliente.");
                 CargarGrilla();
                 ModoAgregar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo actualizar el cliente.\n\n" + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }, "Clientes.Actualizar");
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(TbID.Text, out int id) || id <= 0)
             {
-                MessageBox.Show("Selecciona un cliente de la tabla para eliminar.", "Eliminar",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GestorErrores.MostrarAdvertencia("Selecciona un cliente de la tabla para eliminar.");
                 return;
             }
 
-            var confirmar = MessageBox.Show(
-                "¿Seguro que deseas eliminar al cliente \"" + LeerNombre() + " " + LeerApellido() + "\"?",
-                "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (confirmar != DialogResult.Yes) return;
+            if (!GestorErrores.Confirmar(
+                    "¿Seguro que deseas eliminar al cliente \"" + LeerNombre() + " " + LeerApellido() + "\"?"))
+                return;
 
             try
             {
                 bool ok = api.Eliminar(id);
-                MessageBox.Show(ok ? "Cliente eliminado." : "No se encontró el cliente.",
-                    "Eliminar", MessageBoxButtons.OK,
-                    ok ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+                if (ok) GestorErrores.MostrarInformacion("Cliente eliminado.");
+                else GestorErrores.MostrarAdvertencia("No se encontró el cliente.");
                 CargarGrilla();
                 ModoAgregar();
             }
             catch (MySql.Data.MySqlClient.MySqlException ex) when (ex.Number == 1451)
             {
-                MessageBox.Show("No se puede eliminar: el cliente tiene ventas registradas.",
-                    "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // Clave foránea: el cliente tiene ventas asociadas. Mensaje específico + log.
+                Bitacora.RegistrarError(ex, "Clientes.Eliminar");
+                GestorErrores.MostrarAdvertencia("No se puede eliminar: el cliente tiene ventas registradas.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo eliminar el cliente.\n\n" + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                GestorErrores.Manejar(ex, "Clientes.Eliminar");
             }
         }
 
@@ -201,13 +198,15 @@ namespace Forms_Admin.Ventas
         {
             if (DgvClientes.CurrentRow == null)
             {
-                MessageBox.Show("Selecciona un cliente de la tabla primero.", "Copiar",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GestorErrores.MostrarAdvertencia("Selecciona un cliente de la tabla primero.");
                 return;
             }
 
-            CargarDesdeFila(DgvClientes.CurrentRow);
-            ModoEdicion();
+            GestorErrores.EjecutarSeguro(() =>
+            {
+                CargarDesdeFila(DgvClientes.CurrentRow);
+                ModoEdicion();
+            }, "Clientes.Copiar");
         }
 
         private void CargarDesdeFila(DataGridViewRow fila)
@@ -260,8 +259,11 @@ namespace Forms_Admin.Ventas
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             TbFiltro.Clear();
-            CargarGrilla();
-            ModoAgregar();
+            GestorErrores.EjecutarSeguro(() =>
+            {
+                CargarGrilla();
+                ModoAgregar();
+            }, "Clientes.Limpiar");
         }
     }
 }

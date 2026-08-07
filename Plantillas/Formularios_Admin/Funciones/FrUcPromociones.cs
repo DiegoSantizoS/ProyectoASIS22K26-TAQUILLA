@@ -1,4 +1,5 @@
 ﻿using Con_Admin;
+using Validaciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,18 +13,34 @@ using System.Windows.Forms;
 namespace Forms_Admin.Funciones
 {
     public partial class FrUcPromociones : UserControl
-
     {
         private readonly If_Promociones api = new If_Promociones();
         private DataTable tablaPromociones;
+
         public FrUcPromociones()
         {
             InitializeComponent();
             WireEvents();
-            CargarCombos();
-            CargarFiltro();
-            CargarGrilla();
-            ModoAgregar();
+            ConfigurarRestricciones();
+
+            // Init que toca la BD: protegido para que un fallo de conexión
+            // muestre un mensaje amigable en vez de tumbar el control al cargar.
+            GestorErrores.EjecutarSeguro(() =>
+            {
+                CargarCombos();
+                CargarFiltro();
+                CargarEstado();
+                CargarGrilla();
+                ModoAgregar();
+            }, "Promociones.Inicializar");
+        }
+
+        private void CargarEstado()
+        {
+            customTextBoxestado.Items.Clear();
+            customTextBoxestado.Items.Add("Activa");
+            customTextBoxestado.Items.Add("Inactiva");
+            customTextBoxestado.SelectedIndex = 0;   
         }
 
         private void WireEvents()
@@ -34,6 +51,20 @@ namespace Forms_Admin.Funciones
             BtnLimpiar.Click += BtnLimpiar_Click;
             BtnCopiar.Click += BtnCopiar_Click;
             BtnBuscar.Click += BtnBuscar_Click;
+        }
+
+        private void ConfigurarRestricciones()
+        {
+            // El valor puede ser porcentaje o monto: solo dígitos y un punto decimal.
+            RestrictorCampos.SoloDecimal(Tbvalorpromocion, 10);
+
+            RestrictorCampos.LongitudMaxima(ctb_nombre, 100);
+            RestrictorCampos.LongitudMaxima(ctb_descripcion, 255);
+            RestrictorCampos.RecortarEspacios(ctb_nombre, ctb_descripcion);
+
+            // Combos como lista cerrada (no se puede escribir texto libre).
+            RestrictorCampos.ListaCerrada(CbPelicula);
+            RestrictorCampos.ListaCerrada(ccb_tipopromocion);
         }
 
         private void CargarCombos()
@@ -123,6 +154,7 @@ namespace Forms_Admin.Funciones
             ccb_tipopromocion.SelectedIndex = -1;
             DpFechaincio.Value = DateTime.Today;
             cpfinal.Value = DateTime.Today;
+            customTextBoxestado.SelectedItem = "Activa";
         }
 
         private string LeerNombre()
@@ -182,127 +214,91 @@ namespace Forms_Admin.Funciones
 
         private bool Validar()
         {
-            if (string.IsNullOrWhiteSpace(LeerNombre()))
-            {
-                MessageBox.Show("El nombre de la promoción es obligatorio.", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                ctb_nombre.Focus();
-                return false;
-            }
-            if (LeerTipo() == null)
-            {
-                MessageBox.Show("Debes seleccionar un tipo de promoción.", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                ccb_tipopromocion.Focus();
-                return false;
-            }
-            if (LeerValor() <= 0)
-            {
-                MessageBox.Show("El valor debe ser un número mayor que cero.", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Tbvalorpromocion.Focus();
-                return false;
-            }
-            if (LeerFechaFin() < LeerFechaInicio())
-            {
-                MessageBox.Show("La fecha fin no puede ser anterior a la fecha de inicio.", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cpfinal.Focus();
-                return false;
-            }
-            return true;
+            var r = new ResultadoValidacion()
+                .AgregarSiFalla(Validador.EsRequerido(LeerNombre()),
+                    "El nombre de la promoción es obligatorio.")
+                .AgregarSiFalla(LeerTipo() != null,
+                    Mensajes.SeleccioneOpcion)
+                .AgregarSiFalla(Validador.EsDecimalPositivo(Tbvalorpromocion.Text),
+                    Mensajes.CostoInvalido)
+                .AgregarSiFalla(Validador.EsRangoFechasValido(LeerFechaInicio(), LeerFechaFin()),
+                    Mensajes.RangoFechasInvalido);
+
+            return GestorErrores.MostrarValidacion(r);
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             if (!Validar()) return;
 
-            try
+            GestorErrores.EjecutarSeguro(() =>
             {
                 int nuevo = api.Insertar(LeerNombre(), LeerDescripcion(), LeerTipo().Value, LeerValor(),
                     LeerFechaInicio(), LeerFechaFin(), LeerActiva(), LeerPeliculas());
 
-                MessageBox.Show("Promoción agregada correctamente. ID: " + nuevo, "Éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GestorErrores.MostrarInformacion("Promoción agregada correctamente. ID: " + nuevo);
                 CargarGrilla();
                 ModoAgregar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo agregar la promoción.\n\n" + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }, "Promociones.Agregar");
         }
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(TbID.Text, out int id) || id <= 0)
             {
-                MessageBox.Show("Selecciona una promoción de la tabla para actualizar.", "Actualizar",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GestorErrores.MostrarAdvertencia("Selecciona una promoción de la tabla para actualizar.");
                 return;
             }
             if (!Validar()) return;
 
-            try
+            GestorErrores.EjecutarSeguro(() =>
             {
                 bool ok = api.Actualizar(id, LeerNombre(), LeerDescripcion(), LeerTipo().Value, LeerValor(),
                     LeerFechaInicio(), LeerFechaFin(), LeerActiva(), LeerPeliculas());
 
-                MessageBox.Show(ok ? "Promoción actualizada correctamente." : "No se encontró la promoción.",
-                    "Actualizar", MessageBoxButtons.OK,
-                    ok ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+                if (ok) GestorErrores.MostrarInformacion("Promoción actualizada correctamente.");
+                else GestorErrores.MostrarAdvertencia("No se encontró la promoción.");
+
                 CargarGrilla();
                 ModoAgregar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo actualizar la promoción.\n\n" + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }, "Promociones.Actualizar");
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(TbID.Text, out int id) || id <= 0)
             {
-                MessageBox.Show("Selecciona una promoción de la tabla para eliminar.", "Eliminar",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GestorErrores.MostrarAdvertencia("Selecciona una promoción de la tabla para eliminar.");
                 return;
             }
 
-            var confirmar = MessageBox.Show(
-                "¿Seguro que deseas eliminar la promoción \"" + ctb_nombre.Text.Trim() + "\"?",
-                "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (confirmar != DialogResult.Yes) return;
+            if (!GestorErrores.Confirmar(
+                    "¿Seguro que deseas eliminar la promoción \"" + ctb_nombre.Text.Trim() + "\"?"))
+                return;
 
-            try
+            GestorErrores.EjecutarSeguro(() =>
             {
                 bool ok = api.Eliminar(id);
-                MessageBox.Show(ok ? "Promoción eliminada." : "No se encontró la promoción.",
-                    "Eliminar", MessageBoxButtons.OK,
-                    ok ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+                if (ok) GestorErrores.MostrarInformacion("Promoción eliminada.");
+                else GestorErrores.MostrarAdvertencia("No se encontró la promoción.");
                 CargarGrilla();
                 ModoAgregar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo eliminar la promoción.\n\n" + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }, "Promociones.Eliminar");
         }
 
         private void BtnCopiar_Click(object sender, EventArgs e)
         {
             if (DgvFunciones.CurrentRow == null)
             {
-                MessageBox.Show("Selecciona una promoción de la tabla primero.", "Copiar",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GestorErrores.MostrarAdvertencia("Selecciona una promoción de la tabla primero.");
                 return;
             }
 
-            CargarDesdeFila(DgvFunciones.CurrentRow);
-            ModoEdicion();
+            GestorErrores.EjecutarSeguro(() =>
+            {
+                CargarDesdeFila(DgvFunciones.CurrentRow);
+                ModoEdicion();
+            }, "Promociones.Copiar");
         }
 
         private void CargarDesdeFila(DataGridViewRow fila)
@@ -328,7 +324,7 @@ namespace Forms_Admin.Funciones
                 : Convert.ToDateTime(row["fecha_fin_promocion"]);
 
             bool activa = row["activa_promocion"] != DBNull.Value && Convert.ToBoolean(row["activa_promocion"]);
-            PonerTexto(customTextBoxestado, activa ? "Activa" : "Inactiva");
+            customTextBoxestado.SelectedItem = activa ? "Activa" : "Inactiva";
 
             var peliculas = api.ListarPeliculasDePromocion(id);
             CbPelicula.SelectedValue = peliculas.Rows.Count > 0 ? peliculas.Rows[0]["id_pelicula"] : -1;
@@ -373,9 +369,6 @@ namespace Forms_Admin.Funciones
             ModoAgregar();
         }
 
-
-
-
         private void LbSala_Click(object sender, EventArgs e)
         {
 
@@ -400,7 +393,5 @@ namespace Forms_Admin.Funciones
         {
 
         }
-
-       
     }
 }
