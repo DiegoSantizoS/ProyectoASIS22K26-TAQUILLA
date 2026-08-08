@@ -83,6 +83,7 @@
             TlpTitleLabel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpTitleLabel.Size = new Size(1050, 75);
             TlpTitleLabel.TabIndex = 0;
+            TlpTitleLabel.Paint += TlpTitleLabel_Paint;
             // 
             // LbTitulo
             // 

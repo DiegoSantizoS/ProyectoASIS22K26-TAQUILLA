@@ -1,4 +1,5 @@
-﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la  
+
+/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la  
  * fecha de: 05/08/2026 */
 using System;
 using System.Collections.Generic;
@@ -298,5 +299,5 @@ namespace Formularios_Admin
         }
     }
 }
-/* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la  
- * fecha de: 05/08/2026 */
+/* Depuracion de codigo Mishel loeiza con carnet: 9959-23-3457 en la  
+ * fecha de: 06/08/2026 */
