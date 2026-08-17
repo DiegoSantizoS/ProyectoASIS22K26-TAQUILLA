@@ -1,9 +1,5 @@
 <Solution>
-<<<<<<< HEAD
-  <Project Path="Carteleras/Carteleras.csproj" Id="878c84ba-14c6-4c63-9b32-29eb1b94ddb4" />
-=======
   <Project Path="Carteleras/Carteleras.csproj" />
->>>>>>> main
   <Project Path="clase_conexion/clase_conexion.csproj" Id="12514361-5c1b-41e3-9301-061e7765bddb" />
   <Project Path="Componentes/Componentes.csproj" Id="a6eac5e7-0078-4108-adaa-23d04659e8bc" />
   <Project Path="Con_Admin/Con_Admin.csproj" Id="ce880a73-500a-4123-ba39-97c24bc4a462" />
