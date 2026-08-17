@@ -250,6 +250,8 @@ namespace Plantilla_Cliente.Clases
                 : string.Empty;
         }
         /*Fin del código de Carlos Andres Arriaza Lara 0901-23-13862 el 3/08/2026*/
+<<<<<<< HEAD
+=======
 
         /*Inicio del código 0901-23-4868 Pedro José Gómez Villalobos el 5/08/2026*/
 
@@ -313,5 +315,6 @@ namespace Plantilla_Cliente.Clases
         }
         /*Fin del código 0901-23-4868 Pedro José Gómez Villalobos el 5/08/2026*/
 
+>>>>>>> main
     }
 }

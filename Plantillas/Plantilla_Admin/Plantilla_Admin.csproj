@@ -30,6 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
+    <ProjectReference Include="..\Carteleras\Carteleras.csproj" />
+=======
     <Content Include="logo.ico" />
   </ItemGroup>
 
@@ -40,6 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
+>>>>>>> main
     <ProjectReference Include="..\clase_conexion\clase_conexion.csproj" />
     <ProjectReference Include="..\Componentes\Componentes.csproj" />
     <ProjectReference Include="..\Formularios_Admin\Forms_Admin.csproj" />

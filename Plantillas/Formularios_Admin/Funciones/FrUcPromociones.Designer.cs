@@ -36,6 +36,22 @@
             TlpAux2 = new TableLayoutPanel();
             TlpFormWithButtons = new TableLayoutPanel();
             TlpForm = new TableLayoutPanel();
+<<<<<<< HEAD
+            TbID = new Componentes.CustomIDTextBox();
+            LbID = new Componentes.CustomLabel();
+            LbPelicula = new Componentes.CustomLabel();
+            CbPelicula = new Componentes.CustomComboBox();
+            LbFecha = new Componentes.CustomLabel();
+            CbSala = new Componentes.CustomComboBox();
+            LbSala = new Componentes.CustomLabel();
+            LbTipoDeFuncion = new Componentes.CustomLabel();
+            CbTipoDeFuncion = new Componentes.CustomComboBox();
+            LbHora = new Componentes.CustomLabel();
+            LbPrecioDeFuncion = new Componentes.CustomLabel();
+            TbPrecioFuncion = new Componentes.CustomTextBox();
+            DatePickerFecha = new Componentes.CustomDatePicker();
+            TimePickerHora = new Componentes.CustomTimePicker();
+=======
             ccb_tipopromocion = new Componentes.CustomComboBox();
             customLabel3 = new Componentes.CustomLabel();
             customLabel2 = new Componentes.CustomLabel();
@@ -54,6 +70,7 @@
             ctb_descripcion = new Componentes.CustomTextBox();
             CbPelicula = new Componentes.CustomComboBox();
             customTextBoxestado = new Componentes.CustomComboBox();
+>>>>>>> main
             TlpButtons = new TableLayoutPanel();
             BtnEliminar = new Componentes.CustomButton();
             BtnActualizar = new Componentes.CustomButton();
@@ -153,6 +170,22 @@
             TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
             TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             TlpForm.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+<<<<<<< HEAD
+            TlpForm.Controls.Add(TbID, 0, 1);
+            TlpForm.Controls.Add(LbID, 0, 0);
+            TlpForm.Controls.Add(LbPelicula, 1, 0);
+            TlpForm.Controls.Add(CbPelicula, 1, 1);
+            TlpForm.Controls.Add(LbFecha, 2, 0);
+            TlpForm.Controls.Add(CbSala, 1, 3);
+            TlpForm.Controls.Add(LbSala, 1, 2);
+            TlpForm.Controls.Add(LbTipoDeFuncion, 1, 4);
+            TlpForm.Controls.Add(CbTipoDeFuncion, 1, 5);
+            TlpForm.Controls.Add(LbHora, 2, 2);
+            TlpForm.Controls.Add(LbPrecioDeFuncion, 2, 4);
+            TlpForm.Controls.Add(TbPrecioFuncion, 2, 5);
+            TlpForm.Controls.Add(DatePickerFecha, 2, 1);
+            TlpForm.Controls.Add(TimePickerHora, 2, 3);
+=======
             TlpForm.Controls.Add(ccb_tipopromocion, 1, 3);
             TlpForm.Controls.Add(customLabel3, 2, 2);
             TlpForm.Controls.Add(customLabel2, 0, 4);
@@ -171,6 +204,7 @@
             TlpForm.Controls.Add(ctb_descripcion, 0, 3);
             TlpForm.Controls.Add(CbPelicula, 1, 5);
             TlpForm.Controls.Add(customTextBoxestado, 0, 5);
+>>>>>>> main
             TlpForm.Dock = DockStyle.Fill;
             TlpForm.Location = new Point(0, 0);
             TlpForm.Margin = new Padding(0);
@@ -187,6 +221,8 @@
             TlpForm.Size = new Size(900, 225);
             TlpForm.TabIndex = 0;
             // 
+<<<<<<< HEAD
+=======
             // ccb_tipopromocion
             // 
             ccb_tipopromocion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -274,6 +310,7 @@
             customLabel1.TextAlign = ContentAlignment.MiddleRight;
             customLabel1.Click += customLabel1_Click;
             // 
+>>>>>>> main
             // TbID
             // 
             TbID.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -305,6 +342,8 @@
             LbID.Text = "ID Promocion";
             LbID.TextAlign = ContentAlignment.MiddleRight;
             // 
+<<<<<<< HEAD
+=======
             // LbFecha
             // 
             LbFecha.AutoSize = true;
@@ -413,11 +452,23 @@
             Lbnombre.TextAlign = ContentAlignment.MiddleRight;
             Lbnombre.Click += LbSala_Click;
             // 
+>>>>>>> main
             // LbPelicula
             // 
             LbPelicula.AutoSize = true;
             LbPelicula.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbPelicula.ForeColor = Color.FromArgb(220, 220, 220);
+<<<<<<< HEAD
+            LbPelicula.Location = new Point(302, 0);
+            LbPelicula.Margin = new Padding(3, 0, 0, 0);
+            LbPelicula.Name = "LbPelicula";
+            LbPelicula.Padding = new Padding(0, 0, 2, 0);
+            LbPelicula.Size = new Size(72, 23);
+            LbPelicula.TabIndex = 12;
+            LbPelicula.Text = "Película";
+            LbPelicula.TextAlign = ContentAlignment.MiddleRight;
+            // 
+=======
             LbPelicula.Location = new Point(3, 75);
             LbPelicula.Margin = new Padding(3, 0, 0, 0);
             LbPelicula.Name = "LbPelicula";
@@ -443,6 +494,7 @@
             ctb_descripcion.Size = new Size(289, 30);
             ctb_descripcion.TabIndex = 76;
             // 
+>>>>>>> main
             // CbPelicula
             // 
             CbPelicula.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -458,13 +510,182 @@
             CbPelicula.HoverColor = Color.Crimson;
             CbPelicula.HoverFontColor = Color.White;
             CbPelicula.ItemHeight = 24;
+<<<<<<< HEAD
+            CbPelicula.Location = new Point(304, 25);
+=======
             CbPelicula.Location = new Point(304, 175);
+>>>>>>> main
             CbPelicula.Margin = new Padding(5, 0, 5, 10);
             CbPelicula.MinimumSize = new Size(190, 0);
             CbPelicula.Name = "CbPelicula";
             CbPelicula.Size = new Size(290, 30);
             CbPelicula.TabIndex = 63;
             // 
+<<<<<<< HEAD
+            // LbFecha
+            // 
+            LbFecha.AutoSize = true;
+            LbFecha.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbFecha.ForeColor = Color.FromArgb(220, 220, 220);
+            LbFecha.Location = new Point(602, 0);
+            LbFecha.Name = "LbFecha";
+            LbFecha.Padding = new Padding(0, 0, 2, 0);
+            LbFecha.Size = new Size(57, 23);
+            LbFecha.TabIndex = 61;
+            LbFecha.Text = "Fecha";
+            LbFecha.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // CbSala
+            // 
+            CbSala.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            CbSala.BackColor = Color.FromArgb(55, 60, 72);
+            CbSala.BaseColor = Color.FromArgb(40, 40, 40);
+            CbSala.BGColor = Color.FromArgb(55, 60, 72);
+            CbSala.DrawMode = DrawMode.OwnerDrawFixed;
+            CbSala.DropDownStyle = ComboBoxStyle.DropDownList;
+            CbSala.FlatStyle = FlatStyle.Flat;
+            CbSala.Font = new Font("Segoe UI", 9.5F);
+            CbSala.ForeColor = Color.FromArgb(230, 230, 230);
+            CbSala.FormattingEnabled = true;
+            CbSala.HoverColor = Color.Crimson;
+            CbSala.HoverFontColor = Color.White;
+            CbSala.ItemHeight = 24;
+            CbSala.Location = new Point(304, 100);
+            CbSala.Margin = new Padding(5, 0, 5, 10);
+            CbSala.MinimumSize = new Size(190, 0);
+            CbSala.Name = "CbSala";
+            CbSala.Size = new Size(290, 30);
+            CbSala.TabIndex = 64;
+            // 
+            // LbSala
+            // 
+            LbSala.AutoSize = true;
+            LbSala.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbSala.ForeColor = Color.FromArgb(220, 220, 220);
+            LbSala.Location = new Point(302, 75);
+            LbSala.Name = "LbSala";
+            LbSala.Padding = new Padding(0, 0, 2, 0);
+            LbSala.Size = new Size(45, 23);
+            LbSala.TabIndex = 67;
+            LbSala.Text = "Sala";
+            LbSala.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // LbTipoDeFuncion
+            // 
+            LbTipoDeFuncion.AutoSize = true;
+            LbTipoDeFuncion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbTipoDeFuncion.ForeColor = Color.FromArgb(220, 220, 220);
+            LbTipoDeFuncion.Location = new Point(302, 150);
+            LbTipoDeFuncion.Name = "LbTipoDeFuncion";
+            LbTipoDeFuncion.Padding = new Padding(0, 0, 2, 0);
+            LbTipoDeFuncion.Size = new Size(159, 23);
+            LbTipoDeFuncion.TabIndex = 68;
+            LbTipoDeFuncion.Text = "Capacidad de Sala";
+            LbTipoDeFuncion.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // CbTipoDeFuncion
+            // 
+            CbTipoDeFuncion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            CbTipoDeFuncion.BackColor = Color.FromArgb(55, 60, 72);
+            CbTipoDeFuncion.BaseColor = Color.FromArgb(40, 40, 40);
+            CbTipoDeFuncion.BGColor = Color.FromArgb(55, 60, 72);
+            CbTipoDeFuncion.DrawMode = DrawMode.OwnerDrawFixed;
+            CbTipoDeFuncion.DropDownStyle = ComboBoxStyle.DropDownList;
+            CbTipoDeFuncion.FlatStyle = FlatStyle.Flat;
+            CbTipoDeFuncion.Font = new Font("Segoe UI", 9.5F);
+            CbTipoDeFuncion.ForeColor = Color.FromArgb(230, 230, 230);
+            CbTipoDeFuncion.FormattingEnabled = true;
+            CbTipoDeFuncion.HoverColor = Color.Crimson;
+            CbTipoDeFuncion.HoverFontColor = Color.White;
+            CbTipoDeFuncion.ItemHeight = 24;
+            CbTipoDeFuncion.Location = new Point(304, 175);
+            CbTipoDeFuncion.Margin = new Padding(5, 0, 5, 10);
+            CbTipoDeFuncion.MinimumSize = new Size(190, 0);
+            CbTipoDeFuncion.Name = "CbTipoDeFuncion";
+            CbTipoDeFuncion.Size = new Size(290, 30);
+            CbTipoDeFuncion.TabIndex = 69;
+            // 
+            // LbHora
+            // 
+            LbHora.AutoSize = true;
+            LbHora.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbHora.ForeColor = Color.FromArgb(220, 220, 220);
+            LbHora.Location = new Point(602, 75);
+            LbHora.Name = "LbHora";
+            LbHora.Padding = new Padding(0, 0, 2, 0);
+            LbHora.Size = new Size(51, 23);
+            LbHora.TabIndex = 71;
+            LbHora.Text = "Hora";
+            LbHora.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // LbPrecioDeFuncion
+            // 
+            LbPrecioDeFuncion.AutoSize = true;
+            LbPrecioDeFuncion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbPrecioDeFuncion.ForeColor = Color.FromArgb(220, 220, 220);
+            LbPrecioDeFuncion.Location = new Point(602, 150);
+            LbPrecioDeFuncion.Name = "LbPrecioDeFuncion";
+            LbPrecioDeFuncion.Padding = new Padding(0, 0, 2, 0);
+            LbPrecioDeFuncion.Size = new Size(153, 23);
+            LbPrecioDeFuncion.TabIndex = 72;
+            LbPrecioDeFuncion.Text = "Precio de Función";
+            LbPrecioDeFuncion.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // TbPrecioFuncion
+            // 
+            TbPrecioFuncion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TbPrecioFuncion.BackColor = Color.FromArgb(55, 60, 72);
+            TbPrecioFuncion.BorderStyle = BorderStyle.FixedSingle;
+            TbPrecioFuncion.Font = new Font("Segoe UI", 10F);
+            TbPrecioFuncion.ForeColor = Color.FromArgb(160, 165, 175);
+            TbPrecioFuncion.Location = new Point(604, 175);
+            TbPrecioFuncion.Margin = new Padding(5, 0, 5, 10);
+            TbPrecioFuncion.MaximumSize = new Size(0, 30);
+            TbPrecioFuncion.MinimumSize = new Size(190, 30);
+            TbPrecioFuncion.Name = "TbPrecioFuncion";
+            TbPrecioFuncion.PlaceholderText = "1";
+            TbPrecioFuncion.Size = new Size(291, 30);
+            TbPrecioFuncion.TabIndex = 66;
+            // 
+            // DatePickerFecha
+            // 
+            DatePickerFecha.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            DatePickerFecha.CustomFormat = "dd/MM/yyyy";
+            DatePickerFecha.Format = DateTimePickerFormat.Custom;
+            DatePickerFecha.Location = new Point(604, 25);
+            DatePickerFecha.Margin = new Padding(5, 0, 5, 10);
+            DatePickerFecha.MaximumSize = new Size(0, 30);
+            DatePickerFecha.MinimumSize = new Size(190, 30);
+            DatePickerFecha.Name = "DatePickerFecha";
+            DatePickerFecha.PaletteMode = Krypton.Toolkit.PaletteMode.Microsoft365BlackDarkModeAlternate;
+            DatePickerFecha.Size = new Size(291, 30);
+            DatePickerFecha.StateActive.Back.Color1 = Color.FromArgb(55, 60, 72);
+            DatePickerFecha.StateActive.Border.Color1 = Color.FromArgb(40, 40, 40);
+            DatePickerFecha.StateActive.Border.Color2 = Color.FromArgb(40, 40, 40);
+            DatePickerFecha.StateActive.Content.Color1 = Color.FromArgb(230, 230, 230);
+            DatePickerFecha.StateCommon.Back.Color1 = Color.FromArgb(55, 60, 72);
+            DatePickerFecha.StateCommon.Border.Color1 = Color.FromArgb(40, 40, 40);
+            DatePickerFecha.StateCommon.Border.Color2 = Color.FromArgb(40, 40, 40);
+            DatePickerFecha.StateCommon.Content.Color1 = Color.FromArgb(230, 230, 230);
+            DatePickerFecha.TabIndex = 73;
+            // 
+            // TimePickerHora
+            // 
+            TimePickerHora.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TimePickerHora.BackColor = Color.FromArgb(55, 60, 72);
+            TimePickerHora.BorderStyle = BorderStyle.FixedSingle;
+            TimePickerHora.Font = new Font("Segoe UI", 11F);
+            TimePickerHora.ForeColor = Color.FromArgb(230, 230, 230);
+            TimePickerHora.Location = new Point(604, 100);
+            TimePickerHora.Margin = new Padding(5, 0, 5, 10);
+            TimePickerHora.Mask = "00:00";
+            TimePickerHora.MaximumSize = new Size(0, 30);
+            TimePickerHora.MinimumSize = new Size(190, 30);
+            TimePickerHora.Name = "TimePickerHora";
+            TimePickerHora.Size = new Size(291, 30);
+            TimePickerHora.TabIndex = 74;
+            TimePickerHora.Text = "1200";
+=======
             // customTextBoxestado
             // 
             customTextBoxestado.Anchor = AnchorStyles.Left | AnchorStyles.Right;
@@ -486,6 +707,7 @@
             customTextBoxestado.Name = "customTextBoxestado";
             customTextBoxestado.Size = new Size(289, 30);
             customTextBoxestado.TabIndex = 84;
+>>>>>>> main
             // 
             // TlpButtons
             // 
@@ -822,11 +1044,23 @@
         private Componentes.CustomLabel LbPelicula;
         private Componentes.CustomComboBox CbPelicula;
         private Componentes.CustomLabel LbFecha;
+<<<<<<< HEAD
+        private Componentes.CustomComboBox CbSala;
+        private Componentes.CustomLabel LbSala;
+        private Componentes.CustomLabel LbTipoDeFuncion;
+        private Componentes.CustomComboBox CbTipoDeFuncion;
+        private Componentes.CustomLabel LbHora;
+        private Componentes.CustomLabel LbPrecioDeFuncion;
+        private Componentes.CustomTextBox TbPrecioFuncion;
+        private Componentes.CustomDatePicker DatePickerFecha;
+        private Componentes.CustomTimePicker TimePickerHora;
+=======
         private Componentes.CustomLabel Lbnombre;
         private Componentes.CustomLabel LbTipelicula;
         private Componentes.CustomLabel c;
         private Componentes.CustomTextBox Tbvalorpromocion;
         private Componentes.CustomDatePicker DpFechaincio;
+>>>>>>> main
         private TableLayoutPanel TlpButtons;
         private Componentes.CustomButton BtnEliminar;
         private Componentes.CustomButton BtnActualizar;
@@ -841,6 +1075,8 @@
         private Componentes.CustomTextBox TbFiltro;
         private Componentes.CustomComboBox CbFiltro;
         private Componentes.CustomDataGridView DgvFunciones;
+<<<<<<< HEAD
+=======
         private Componentes.CustomTextBox ctb_nombre;
         private Componentes.CustomTextBox ctb_descripcion;
         private Componentes.CustomLabel customLabel1;
@@ -849,5 +1085,6 @@
         private Componentes.CustomLabel customLabel3;
         private Componentes.CustomComboBox ccb_tipopromocion;
         private Componentes.CustomComboBox customTextBoxestado;
+>>>>>>> main
     }
 }

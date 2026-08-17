@@ -30,7 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reservas));
             TlpReservas = new TableLayoutPanel();
+<<<<<<< HEAD
+=======
             PicPelicula = new PictureBox();
+>>>>>>> main
             TlpInfo = new TableLayoutPanel();
             PicTrailer = new PictureBox();
             TxDirectorHead = new Label();
@@ -39,6 +42,10 @@
             TxDirector = new Label();
             TxDuracion = new Label();
             TxRestriccion = new Label();
+<<<<<<< HEAD
+            PicPelicula = new PictureBox();
+=======
+>>>>>>> main
             TlpEleccionFunciones = new TableLayoutPanel();
             FlpHorarios = new FlowLayoutPanel();
             button1 = new Button();
@@ -57,9 +64,15 @@
             BtnContinuar = new Button();
             Btn_Cartelera = new Button();
             TlpReservas.SuspendLayout();
+<<<<<<< HEAD
+            TlpInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PicTrailer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PicPelicula).BeginInit();
+=======
             ((System.ComponentModel.ISupportInitialize)PicPelicula).BeginInit();
             TlpInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PicTrailer).BeginInit();
+>>>>>>> main
             TlpEleccionFunciones.SuspendLayout();
             FlpHorarios.SuspendLayout();
             FlpFunciones.SuspendLayout();
@@ -72,8 +85,13 @@
             TlpReservas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.638916F));
             TlpReservas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 0.09478423F));
             TlpReservas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 83.2663F));
+<<<<<<< HEAD
+            TlpReservas.Controls.Add(TlpInfo, 2, 0);
+            TlpReservas.Controls.Add(PicPelicula, 0, 0);
+=======
             TlpReservas.Controls.Add(PicPelicula, 0, 0);
             TlpReservas.Controls.Add(TlpInfo, 2, 0);
+>>>>>>> main
             TlpReservas.Controls.Add(TlpEleccionFunciones, 2, 1);
             TlpReservas.Controls.Add(BtnContinuar, 2, 2);
             TlpReservas.Controls.Add(Btn_Cartelera, 0, 1);
@@ -90,6 +108,146 @@
             TlpReservas.TabIndex = 0;
             TlpReservas.Paint += TlP_Reservas_Paint;
             // 
+<<<<<<< HEAD
+            // TlpInfo
+            // 
+            TlpInfo.ColumnCount = 3;
+            TlpInfo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.9861593F));
+            TlpInfo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 55.6228371F));
+            TlpInfo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            TlpInfo.Controls.Add(PicTrailer, 2, 0);
+            TlpInfo.Controls.Add(TxDirectorHead, 0, 0);
+            TlpInfo.Controls.Add(TxDuracionHead, 0, 1);
+            TlpInfo.Controls.Add(TxRestriccionHead, 0, 2);
+            TlpInfo.Controls.Add(TxDirector, 1, 0);
+            TlpInfo.Controls.Add(TxDuracion, 1, 1);
+            TlpInfo.Controls.Add(TxRestriccion, 1, 2);
+            TlpInfo.Dock = DockStyle.Fill;
+            TlpInfo.Location = new Point(235, 3);
+            TlpInfo.Name = "TlpInfo";
+            TlpInfo.RowCount = 3;
+            TlpInfo.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            TlpInfo.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            TlpInfo.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            TlpInfo.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            TlpInfo.Size = new Size(1156, 291);
+            TlpInfo.TabIndex = 4;
+            // 
+            // PicTrailer
+            // 
+            PicTrailer.Cursor = Cursors.Hand;
+            PicTrailer.Dock = DockStyle.Fill;
+            PicTrailer.Image = (Image)resources.GetObject("PicTrailer.Image");
+            PicTrailer.Location = new Point(773, 3);
+            PicTrailer.Name = "PicTrailer";
+            TlpInfo.SetRowSpan(PicTrailer, 3);
+            PicTrailer.Size = new Size(380, 285);
+            PicTrailer.SizeMode = PictureBoxSizeMode.StretchImage;
+            PicTrailer.TabIndex = 16;
+            PicTrailer.TabStop = false;
+            PicTrailer.Click += PicTrailer_Click_1;
+            // 
+            // TxDirectorHead
+            // 
+            TxDirectorHead.AutoSize = true;
+            TxDirectorHead.BackColor = Color.FromArgb(74, 18, 26);
+            TxDirectorHead.Dock = DockStyle.Fill;
+            TxDirectorHead.Font = new Font("Segoe UI", 10F);
+            TxDirectorHead.ForeColor = Color.FromArgb(250, 248, 245);
+            TxDirectorHead.Location = new Point(3, 0);
+            TxDirectorHead.Name = "TxDirectorHead";
+            TxDirectorHead.Size = new Size(121, 97);
+            TxDirectorHead.TabIndex = 0;
+            TxDirectorHead.Text = "Director";
+            TxDirectorHead.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // TxDuracionHead
+            // 
+            TxDuracionHead.AutoSize = true;
+            TxDuracionHead.BackColor = Color.FromArgb(74, 18, 26);
+            TxDuracionHead.Dock = DockStyle.Fill;
+            TxDuracionHead.Font = new Font("Segoe UI", 10F);
+            TxDuracionHead.ForeColor = Color.FromArgb(250, 248, 245);
+            TxDuracionHead.Location = new Point(3, 97);
+            TxDuracionHead.Name = "TxDuracionHead";
+            TxDuracionHead.Size = new Size(121, 97);
+            TxDuracionHead.TabIndex = 1;
+            TxDuracionHead.Text = "Duración";
+            TxDuracionHead.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // TxRestriccionHead
+            // 
+            TxRestriccionHead.AutoSize = true;
+            TxRestriccionHead.BackColor = Color.FromArgb(74, 18, 26);
+            TxRestriccionHead.Dock = DockStyle.Fill;
+            TxRestriccionHead.Font = new Font("Segoe UI", 10F);
+            TxRestriccionHead.ForeColor = Color.FromArgb(250, 248, 245);
+            TxRestriccionHead.Location = new Point(3, 194);
+            TxRestriccionHead.Name = "TxRestriccionHead";
+            TxRestriccionHead.Size = new Size(121, 97);
+            TxRestriccionHead.TabIndex = 2;
+            TxRestriccionHead.Text = "Restricción";
+            TxRestriccionHead.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // TxDirector
+            // 
+            TxDirector.AutoSize = true;
+            TxDirector.BackColor = Color.FromArgb(18, 18, 18);
+            TxDirector.Dock = DockStyle.Fill;
+            TxDirector.FlatStyle = FlatStyle.Flat;
+            TxDirector.Font = new Font("Segoe UI", 10F);
+            TxDirector.ForeColor = Color.FromArgb(250, 248, 245);
+            TxDirector.Location = new Point(130, 0);
+            TxDirector.Name = "TxDirector";
+            TxDirector.Size = new Size(637, 97);
+            TxDirector.TabIndex = 3;
+            TxDirector.Text = "XXX";
+            TxDirector.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // TxDuracion
+            // 
+            TxDuracion.AutoSize = true;
+            TxDuracion.BackColor = Color.FromArgb(18, 18, 18);
+            TxDuracion.Dock = DockStyle.Fill;
+            TxDuracion.FlatStyle = FlatStyle.Flat;
+            TxDuracion.Font = new Font("Segoe UI", 10F);
+            TxDuracion.ForeColor = Color.FromArgb(250, 248, 245);
+            TxDuracion.Location = new Point(130, 97);
+            TxDuracion.Name = "TxDuracion";
+            TxDuracion.Size = new Size(637, 97);
+            TxDuracion.TabIndex = 4;
+            TxDuracion.Text = "XXX";
+            TxDuracion.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // TxRestriccion
+            // 
+            TxRestriccion.AutoSize = true;
+            TxRestriccion.BackColor = Color.FromArgb(18, 18, 18);
+            TxRestriccion.Dock = DockStyle.Fill;
+            TxRestriccion.FlatStyle = FlatStyle.Flat;
+            TxRestriccion.Font = new Font("Segoe UI", 10F);
+            TxRestriccion.ForeColor = Color.FromArgb(250, 248, 245);
+            TxRestriccion.Location = new Point(130, 194);
+            TxRestriccion.Name = "TxRestriccion";
+            TxRestriccion.Size = new Size(637, 97);
+            TxRestriccion.TabIndex = 5;
+            TxRestriccion.Text = "XXX";
+            TxRestriccion.TextAlign = ContentAlignment.MiddleLeft;
+            TxRestriccion.Click += TxRestriccion_Click;
+            // 
+            // PicPelicula
+            // 
+            PicPelicula.BackColor = Color.White;
+            TlpReservas.SetColumnSpan(PicPelicula, 2);
+            PicPelicula.Dock = DockStyle.Fill;
+            PicPelicula.Image = (Image)resources.GetObject("PicPelicula.Image");
+            PicPelicula.Location = new Point(3, 3);
+            PicPelicula.Name = "PicPelicula";
+            PicPelicula.Size = new Size(226, 291);
+            PicPelicula.SizeMode = PictureBoxSizeMode.CenterImage;
+            PicPelicula.TabIndex = 0;
+            PicPelicula.TabStop = false;
+=======
             // PicPelicula
             // 
             PicPelicula.BackColor = Color.White;
@@ -228,6 +386,7 @@
             TxRestriccion.Text = "XXX";
             TxRestriccion.TextAlign = ContentAlignment.MiddleLeft;
             TxRestriccion.Click += TxRestriccion_Click;
+>>>>>>> main
             // 
             // TlpEleccionFunciones
             // 
@@ -455,10 +614,17 @@
             Name = "Reservas";
             Size = new Size(1394, 700);
             TlpReservas.ResumeLayout(false);
+<<<<<<< HEAD
+            TlpInfo.ResumeLayout(false);
+            TlpInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)PicTrailer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PicPelicula).EndInit();
+=======
             ((System.ComponentModel.ISupportInitialize)PicPelicula).EndInit();
             TlpInfo.ResumeLayout(false);
             TlpInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PicTrailer).EndInit();
+>>>>>>> main
             TlpEleccionFunciones.ResumeLayout(false);
             TlpEleccionFunciones.PerformLayout();
             FlpHorarios.ResumeLayout(false);

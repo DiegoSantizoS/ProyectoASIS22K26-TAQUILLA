@@ -7,7 +7,14 @@ using System.Data;
 using System.Diagnostics;
 using System.Runtime.InteropServices.Marshalling;
 using System.Windows.Forms;
+<<<<<<< HEAD
+using clase_conexion;
+using Plantilla_Cliente.Clases;
+using System.Diagnostics;
+using Plantillas.Carteleras;
+=======
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+>>>>>>> main
 
 
 

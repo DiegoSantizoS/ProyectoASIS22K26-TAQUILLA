@@ -37,6 +37,7 @@ namespace Plantillas.Carteleras
                 {
                     url = Path.Combine(Raiz, "Recursos", "Carteleras", "default.jpeg");
                 }
+
             }
             return url;
         }

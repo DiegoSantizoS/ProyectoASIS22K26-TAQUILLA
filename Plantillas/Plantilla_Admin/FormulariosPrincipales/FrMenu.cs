@@ -1,9 +1,13 @@
+<<<<<<< HEAD
+﻿using Plantilla_Admin.Tabs;
+=======
 ﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
  * fecha de: 22/07/2026 */
 
 using Plantilla_Admin.Tabs;
 using Plantilla_Admin.FormulariosPrincipales;
 using Plantilla_Cliente;
+>>>>>>> main
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -19,6 +23,14 @@ namespace Plantilla_Admin.FormulariosPrincipales
         {
             InitializeComponent();
             WireNavButtons();
+<<<<<<< HEAD
+        }
+
+
+        private void funcargarpagina(UserControl pagina)
+        {
+            foreach (Control c in PnlTop.Controls) c.Dispose();
+=======
             funcargarpagina(new FrUcMainDashboard());
             LbUsuarioDescripcion.Text = Sesion.Descripcion();
         }
@@ -26,6 +38,7 @@ namespace Plantilla_Admin.FormulariosPrincipales
         private void funcargarpagina(UserControl pagina)
         {
             foreach (Control c in PnlMain.Controls) c.Dispose();
+>>>>>>> main
             PnlMain.Controls.Clear();
             pagina.Dock = DockStyle.Fill;
             PnlMain.Controls.Add(pagina);
@@ -61,6 +74,12 @@ namespace Plantilla_Admin.FormulariosPrincipales
 
         private void InactiveBtn(Button btn)
         {
+<<<<<<< HEAD
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.BackColor = Color.FromArgb(74, 21, 26);
+            btn.ForeColor = Color.FromArgb(220, 210, 210);
+=======
             if (btn != null)
             {
                 btn.FlatStyle = FlatStyle.Flat;
@@ -68,6 +87,7 @@ namespace Plantilla_Admin.FormulariosPrincipales
                 btn.BackColor = Color.FromArgb(74, 21, 26);
                 btn.ForeColor = Color.FromArgb(220, 210, 210);
             }
+>>>>>>> main
         }
 
         private void SetActive(Button btn)
@@ -99,8 +119,13 @@ namespace Plantilla_Admin.FormulariosPrincipales
 
         private void NavButton_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            if (sender is Button btn)
+                SetActive(btn);
+=======
            if (sender is Button btn && success)
              SetActive(btn);
+>>>>>>> main
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -108,7 +133,10 @@ namespace Plantilla_Admin.FormulariosPrincipales
 
         [DllImportAttribute("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+<<<<<<< HEAD
+=======
         
+>>>>>>> main
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
         private void PnlTop_MouseMove(object sender, MouseEventArgs e)
@@ -120,6 +148,10 @@ namespace Plantilla_Admin.FormulariosPrincipales
             }
         }
 
+<<<<<<< HEAD
+        private void BtnFunciones_Click(object sender, EventArgs e)
+        {
+=======
         private bool success = false;
         private void BtnFunciones_Click(object sender, EventArgs e)
         {
@@ -135,17 +167,28 @@ namespace Plantilla_Admin.FormulariosPrincipales
                 return;
             }
             success = true;
+>>>>>>> main
             funcargarpagina(new FrUcMainFunciones());
         }
 
         private void BtnVentas_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
             success = true;
+>>>>>>> main
             funcargarpagina(new FrUcMainVentas());
         }
 
         private void BtnUsuarios_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            funcargarpagina(new FrUcMainUsuarios());
+        }   
+
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+=======
             success = true;
             funcargarpagina(new FrUcMainUsuarios());
         }
@@ -153,17 +196,27 @@ namespace Plantilla_Admin.FormulariosPrincipales
         private void BtnReportes_Click(object sender, EventArgs e)
         {
             success = true;
+>>>>>>> main
             funcargarpagina(new FrUcMainReportes());
         }
 
         private void BtnAyuda_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
             success = true;
+>>>>>>> main
             funcargarpagina(new FrUcMainAyuda());
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            
+        }
+    }
+}
+=======
             FrLogin menu = new FrLogin();
             menu.FormClosed += (s, args) => this.Close();
             this.Hide();
@@ -189,3 +242,4 @@ namespace Plantilla_Admin.FormulariosPrincipales
 
 /* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
  * fecha de: 05/08/2026 */
+>>>>>>> main

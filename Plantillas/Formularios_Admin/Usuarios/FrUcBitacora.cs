@@ -1,9 +1,20 @@
+<<<<<<< HEAD
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+=======
 //mishel loeiza
 using clase_conexion;
 using Con_Admin;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+>>>>>>> main
 using System.Windows.Forms;
 
 namespace Forms_Admin.Usuarios
@@ -13,6 +24,11 @@ namespace Forms_Admin.Usuarios
         public FrUcBitacora()
         {
             InitializeComponent();
+<<<<<<< HEAD
+        }
+    }
+}
+=======
             CargarBitacora();
         }
 
@@ -64,3 +80,4 @@ namespace Forms_Admin.Usuarios
         }
     }
 }
+>>>>>>> main

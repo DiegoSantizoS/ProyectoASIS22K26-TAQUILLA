@@ -35,7 +35,10 @@
             BtnFunciones = new Button();
             BtnPeliculas = new Button();
             PnlMain = new Panel();
+<<<<<<< HEAD
+=======
             BtnCartelera = new Button();
+>>>>>>> main
             PnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CbCatalog).BeginInit();
             SuspendLayout();
@@ -44,7 +47,10 @@
             // 
             PnlTop.BackColor = Color.Black;
             PnlTop.BorderStyle = BorderStyle.FixedSingle;
+<<<<<<< HEAD
+=======
             PnlTop.Controls.Add(BtnCartelera);
+>>>>>>> main
             PnlTop.Controls.Add(CbCatalog);
             PnlTop.Controls.Add(BtnSalas);
             PnlTop.Controls.Add(BtnPromocion);
@@ -153,6 +159,8 @@
             PnlMain.Size = new Size(1050, 665);
             PnlMain.TabIndex = 3;
             // 
+<<<<<<< HEAD
+=======
             // BtnCartelera
             // 
             BtnCartelera.BackColor = Color.Black;
@@ -171,6 +179,7 @@
             BtnCartelera.UseVisualStyleBackColor = false;
             BtnCartelera.Click += BtnCartelera_Click;
             // 
+>>>>>>> main
             // FrUcMainFunciones
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -194,6 +203,9 @@
         private Button BtnFunciones;
         private Button BtnPeliculas;
         private Panel PnlMain;
+<<<<<<< HEAD
+=======
         private Button BtnCartelera;
+>>>>>>> main
     }
 }

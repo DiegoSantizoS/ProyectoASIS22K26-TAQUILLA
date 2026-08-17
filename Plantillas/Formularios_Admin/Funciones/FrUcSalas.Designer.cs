@@ -379,7 +379,10 @@
             BtnEliminar.TabIndex = 4;
             BtnEliminar.Text = "Eliminar";
             BtnEliminar.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+=======
             BtnEliminar.Click += BtnEliminar_Click;
+>>>>>>> main
             // 
             // BtnActualizar
             // 
@@ -401,7 +404,10 @@
             BtnActualizar.TabIndex = 2;
             BtnActualizar.Text = "Actualizar";
             BtnActualizar.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+=======
             BtnActualizar.Click += BtnActualizar_Click;
+>>>>>>> main
             // 
             // BtnCopiar
             // 
@@ -423,7 +429,10 @@
             BtnCopiar.TabIndex = 3;
             BtnCopiar.Text = "Copiar";
             BtnCopiar.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+=======
             BtnCopiar.Click += BtnCopiar_Click;
+>>>>>>> main
             // 
             // BtnAgregar
             // 
@@ -444,7 +453,10 @@
             BtnAgregar.TabIndex = 1;
             BtnAgregar.Text = "Agregar";
             BtnAgregar.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+=======
             BtnAgregar.Click += BtnAgregar_Click;
+>>>>>>> main
             // 
             // BtnLimpiar
             // 
@@ -466,7 +478,10 @@
             BtnLimpiar.TabIndex = 2;
             BtnLimpiar.Text = "Limpiar";
             BtnLimpiar.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+=======
             BtnLimpiar.Click += BtnLimpiar_Click;
+>>>>>>> main
             // 
             // TlpTitleLabel
             // 
@@ -552,7 +567,10 @@
             BtnBuscar.TabIndex = 5;
             BtnBuscar.Text = "Buscar";
             BtnBuscar.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+=======
             BtnBuscar.Click += BtnBuscar_Click;
+>>>>>>> main
             // 
             // TbFiltro
             // 

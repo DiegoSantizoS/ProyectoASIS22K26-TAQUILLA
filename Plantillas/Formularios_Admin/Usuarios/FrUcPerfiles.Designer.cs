@@ -221,7 +221,11 @@
             TbDirector.MaximumSize = new Size(0, 30);
             TbDirector.MinimumSize = new Size(190, 30);
             TbDirector.Name = "TbDirector";
+<<<<<<< HEAD
+            TbDirector.PlaceholderText = "Diego Santizo";
+=======
             TbDirector.PlaceholderText = "taquillero";
+>>>>>>> main
             TbDirector.Size = new Size(215, 30);
             TbDirector.TabIndex = 57;
             // 

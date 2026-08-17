@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+﻿using System;
+=======
 ﻿using Con_Admin;
 using Validaciones;
 using System;
+>>>>>>> main
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +18,14 @@ namespace Forms_Admin.Funciones
 {
     public partial class FrUcPromociones : UserControl
     {
+<<<<<<< HEAD
+        public FrUcPromociones()
+        {
+            InitializeComponent();
+        }
+    }
+}
+=======
         private readonly If_Promociones api = new If_Promociones();
         private DataTable tablaPromociones;
 
@@ -395,3 +407,4 @@ namespace Forms_Admin.Funciones
         }
     }
 }
+>>>>>>> main

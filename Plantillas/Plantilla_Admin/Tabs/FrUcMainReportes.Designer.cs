@@ -21,9 +21,14 @@ namespace Plantilla_Admin
 
         private void InitializeComponent()
         {
+<<<<<<< HEAD
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+=======
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+>>>>>>> main
             PnlBarra = new Panel();
             TlpBarra = new TableLayoutPanel();
             LbReporte = new Componentes.CustomLabel();
@@ -35,6 +40,24 @@ namespace Plantilla_Admin
             BtnImprimir = new Componentes.CustomButton();
             BtnExportar = new Componentes.CustomButton();
             btnGenerar = new Componentes.CustomButton();
+<<<<<<< HEAD
+            PnlContenedor = new Panel();
+            PnlHoja = new Panel();
+            DgvReporte = new DataGridView();
+            PnlTotales = new Panel();
+            LbTotales = new Label();
+            PnlEncabezado = new Panel();
+            LbFecha = new Label();
+            LbSubtitulo = new Label();
+            LbTitulo = new Label();
+            PnlBarra.SuspendLayout();
+            TlpBarra.SuspendLayout();
+            PnlContenedor.SuspendLayout();
+            PnlHoja.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DgvReporte).BeginInit();
+            PnlTotales.SuspendLayout();
+            PnlEncabezado.SuspendLayout();
+=======
             TlpReporte = new TableLayoutPanel();
             TlpEncabezado = new TableLayoutPanel();
             LbTitulo = new Componentes.CustomLabel();
@@ -47,11 +70,16 @@ namespace Plantilla_Admin
             TlpReporte.SuspendLayout();
             TlpEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvReporte).BeginInit();
+>>>>>>> main
             SuspendLayout();
             // 
             // PnlBarra
             // 
+<<<<<<< HEAD
+            PnlBarra.BackColor = Color.Black;
+=======
             PnlBarra.BackColor = Color.FromArgb(40, 44, 54);
+>>>>>>> main
             PnlBarra.Controls.Add(TlpBarra);
             PnlBarra.Dock = DockStyle.Top;
             PnlBarra.Location = new Point(0, 0);
@@ -93,7 +121,11 @@ namespace Plantilla_Admin
             // 
             LbReporte.AutoSize = true;
             LbReporte.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+<<<<<<< HEAD
+            LbReporte.ForeColor = Color.FromArgb(220, 220, 220);
+=======
             LbReporte.ForeColor = Color.FromArgb(228, 231, 237);
+>>>>>>> main
             LbReporte.Location = new Point(3, 0);
             LbReporte.Name = "LbReporte";
             LbReporte.Padding = new Padding(0, 0, 2, 0);
@@ -106,6 +138,15 @@ namespace Plantilla_Admin
             // 
             LbSemanaMes.AutoSize = true;
             LbSemanaMes.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+<<<<<<< HEAD
+            LbSemanaMes.ForeColor = Color.FromArgb(220, 220, 220);
+            LbSemanaMes.Location = new Point(416, 0);
+            LbSemanaMes.Name = "LbSemanaMes";
+            LbSemanaMes.Padding = new Padding(0, 0, 2, 0);
+            LbSemanaMes.Size = new Size(92, 25);
+            LbSemanaMes.TabIndex = 19;
+            LbSemanaMes.Text = "Semana/Mes (0=Todos)";
+=======
             LbSemanaMes.ForeColor = Color.FromArgb(228, 231, 237);
             LbSemanaMes.Location = new Point(416, 0);
             LbSemanaMes.Name = "LbSemanaMes";
@@ -113,13 +154,18 @@ namespace Plantilla_Admin
             LbSemanaMes.Size = new Size(43, 23);
             LbSemanaMes.TabIndex = 19;
             LbSemanaMes.Text = "Aux";
+>>>>>>> main
             LbSemanaMes.TextAlign = ContentAlignment.MiddleRight;
             // 
             // CbReporte
             // 
             CbReporte.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             CbReporte.BackColor = Color.FromArgb(55, 60, 72);
+<<<<<<< HEAD
+            CbReporte.BaseColor = Color.FromArgb(40, 40, 40);
+=======
             CbReporte.BaseColor = Color.FromArgb(45, 49, 59);
+>>>>>>> main
             CbReporte.BGColor = Color.FromArgb(55, 60, 72);
             CbReporte.DrawMode = DrawMode.OwnerDrawFixed;
             CbReporte.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -127,7 +173,11 @@ namespace Plantilla_Admin
             CbReporte.Font = new Font("Segoe UI", 9.5F);
             CbReporte.ForeColor = Color.FromArgb(230, 230, 230);
             CbReporte.FormattingEnabled = true;
+<<<<<<< HEAD
+            CbReporte.HoverColor = Color.Crimson;
+=======
             CbReporte.HoverColor = Color.FromArgb(94, 129, 172);
+>>>>>>> main
             CbReporte.HoverFontColor = Color.White;
             CbReporte.ItemHeight = 24;
             CbReporte.Location = new Point(5, 30);
@@ -141,7 +191,11 @@ namespace Plantilla_Admin
             // 
             LbAnio.AutoSize = true;
             LbAnio.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+<<<<<<< HEAD
+            LbAnio.ForeColor = Color.FromArgb(220, 220, 220);
+=======
             LbAnio.ForeColor = Color.FromArgb(228, 231, 237);
+>>>>>>> main
             LbAnio.Location = new Point(313, 0);
             LbAnio.Name = "LbAnio";
             LbAnio.Padding = new Padding(0, 0, 2, 0);
@@ -180,10 +234,17 @@ namespace Plantilla_Admin
             // 
             BtnImprimir.Action = Componentes.ButtonAction.Copiar;
             BtnImprimir.Anchor = AnchorStyles.None;
+<<<<<<< HEAD
+            BtnImprimir.BackColor = Color.FromArgb(26, 156, 156);
+            BtnImprimir.FlatAppearance.BorderSize = 0;
+            BtnImprimir.FlatAppearance.MouseDownBackColor = Color.FromArgb(16, 95, 95);
+            BtnImprimir.FlatAppearance.MouseOverBackColor = Color.FromArgb(29, 169, 169);
+=======
             BtnImprimir.BackColor = Color.FromArgb(66, 138, 142);
             BtnImprimir.FlatAppearance.BorderSize = 0;
             BtnImprimir.FlatAppearance.MouseDownBackColor = Color.FromArgb(48, 106, 110);
             BtnImprimir.FlatAppearance.MouseOverBackColor = Color.FromArgb(78, 156, 160);
+>>>>>>> main
             BtnImprimir.FlatStyle = FlatStyle.Flat;
             BtnImprimir.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BtnImprimir.ForeColor = Color.White;
@@ -202,10 +263,17 @@ namespace Plantilla_Admin
             // 
             BtnExportar.Action = Componentes.ButtonAction.Copiar;
             BtnExportar.Anchor = AnchorStyles.None;
+<<<<<<< HEAD
+            BtnExportar.BackColor = Color.FromArgb(26, 156, 156);
+            BtnExportar.FlatAppearance.BorderSize = 0;
+            BtnExportar.FlatAppearance.MouseDownBackColor = Color.FromArgb(16, 95, 95);
+            BtnExportar.FlatAppearance.MouseOverBackColor = Color.FromArgb(29, 169, 169);
+=======
             BtnExportar.BackColor = Color.FromArgb(66, 138, 142);
             BtnExportar.FlatAppearance.BorderSize = 0;
             BtnExportar.FlatAppearance.MouseDownBackColor = Color.FromArgb(48, 106, 110);
             BtnExportar.FlatAppearance.MouseOverBackColor = Color.FromArgb(78, 156, 160);
+>>>>>>> main
             BtnExportar.FlatStyle = FlatStyle.Flat;
             BtnExportar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BtnExportar.ForeColor = Color.White;
@@ -223,10 +291,17 @@ namespace Plantilla_Admin
             // btnGenerar
             // 
             btnGenerar.Anchor = AnchorStyles.None;
+<<<<<<< HEAD
+            btnGenerar.BackColor = Color.FromArgb(41, 128, 185);
+            btnGenerar.FlatAppearance.BorderSize = 0;
+            btnGenerar.FlatAppearance.MouseDownBackColor = Color.FromArgb(24, 75, 109);
+            btnGenerar.FlatAppearance.MouseOverBackColor = Color.FromArgb(44, 134, 194);
+=======
             btnGenerar.BackColor = Color.FromArgb(94, 129, 172);
             btnGenerar.FlatAppearance.BorderSize = 0;
             btnGenerar.FlatAppearance.MouseDownBackColor = Color.FromArgb(74, 105, 145);
             btnGenerar.FlatAppearance.MouseOverBackColor = Color.FromArgb(110, 146, 189);
+>>>>>>> main
             btnGenerar.FlatStyle = FlatStyle.Flat;
             btnGenerar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnGenerar.ForeColor = Color.White;
@@ -241,6 +316,32 @@ namespace Plantilla_Admin
             btnGenerar.Text = "Generar";
             btnGenerar.UseVisualStyleBackColor = false;
             // 
+<<<<<<< HEAD
+            // PnlContenedor
+            // 
+            PnlContenedor.BackColor = Color.Gray;
+            PnlContenedor.Controls.Add(PnlHoja);
+            PnlContenedor.Dock = DockStyle.Fill;
+            PnlContenedor.Location = new Point(0, 92);
+            PnlContenedor.Name = "PnlContenedor";
+            PnlContenedor.Padding = new Padding(20);
+            PnlContenedor.Size = new Size(980, 568);
+            PnlContenedor.TabIndex = 0;
+            // 
+            // PnlHoja
+            // 
+            PnlHoja.BackColor = Color.DarkGray;
+            PnlHoja.BorderStyle = BorderStyle.FixedSingle;
+            PnlHoja.Controls.Add(DgvReporte);
+            PnlHoja.Controls.Add(PnlTotales);
+            PnlHoja.Controls.Add(PnlEncabezado);
+            PnlHoja.Dock = DockStyle.Fill;
+            PnlHoja.Location = new Point(20, 20);
+            PnlHoja.Name = "PnlHoja";
+            PnlHoja.Padding = new Padding(28, 22, 28, 16);
+            PnlHoja.Size = new Size(940, 528);
+            PnlHoja.TabIndex = 0;
+=======
             // TlpReporte
             // 
             TlpReporte.BackColor = Color.FromArgb(25, 30, 42);
@@ -333,10 +434,35 @@ namespace Plantilla_Admin
             LbTotales.TabIndex = 1;
             LbTotales.Text = "Label";
             LbTotales.TextAlign = ContentAlignment.MiddleLeft;
+>>>>>>> main
             // 
             // DgvReporte
             // 
             DgvReporte.AllowUserToAddRows = false;
+<<<<<<< HEAD
+            DgvReporte.AllowUserToDeleteRows = false;
+            DgvReporte.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(246, 248, 250);
+            DgvReporte.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DgvReporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvReporte.BackgroundColor = Color.DimGray;
+            DgvReporte.BorderStyle = BorderStyle.None;
+            DgvReporte.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(38, 50, 66);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DgvReporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DgvReporte.ColumnHeadersHeight = 34;
+            DgvReporte.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            DgvReporte.Dock = DockStyle.Fill;
+            DgvReporte.EnableHeadersVisualStyles = false;
+            DgvReporte.GridColor = Color.FromArgb(224, 228, 232);
+            DgvReporte.Location = new Point(28, 100);
+=======
             DgvReporte.AllowUserToResizeColumns = false;
             DgvReporte.AllowUserToResizeRows = false;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(42, 44, 49);
@@ -375,19 +501,94 @@ namespace Plantilla_Admin
             DgvReporte.Location = new Point(20, 130);
             DgvReporte.Margin = new Padding(0);
             DgvReporte.MultiSelect = false;
+>>>>>>> main
             DgvReporte.Name = "DgvReporte";
             DgvReporte.ReadOnly = true;
             DgvReporte.RowHeadersVisible = false;
             DgvReporte.RowHeadersWidth = 51;
+<<<<<<< HEAD
+            DgvReporte.RowTemplate.Height = 28;
+            DgvReporte.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DgvReporte.Size = new Size(882, 374);
+            DgvReporte.TabIndex = 0;
+            // 
+            // PnlTotales
+            // 
+            PnlTotales.BackColor = Color.DimGray;
+            PnlTotales.Controls.Add(LbTotales);
+            PnlTotales.Dock = DockStyle.Bottom;
+            PnlTotales.Location = new Point(28, 474);
+            PnlTotales.Name = "PnlTotales";
+            PnlTotales.Size = new Size(882, 36);
+            PnlTotales.TabIndex = 1;
+            // 
+            // LbTotales
+            // 
+            LbTotales.Dock = DockStyle.Fill;
+            LbTotales.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbTotales.ForeColor = Color.FromArgb(30, 41, 55);
+            LbTotales.Location = new Point(0, 0);
+            LbTotales.Name = "LbTotales";
+            LbTotales.Size = new Size(882, 36);
+            LbTotales.TabIndex = 0;
+            LbTotales.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // PnlEncabezado
+            // 
+            PnlEncabezado.BackColor = Color.LightGray;
+            PnlEncabezado.Controls.Add(LbFecha);
+            PnlEncabezado.Controls.Add(LbSubtitulo);
+            PnlEncabezado.Controls.Add(LbTitulo);
+            PnlEncabezado.Dock = DockStyle.Top;
+            PnlEncabezado.Location = new Point(28, 22);
+            PnlEncabezado.Name = "PnlEncabezado";
+            PnlEncabezado.Size = new Size(882, 78);
+            PnlEncabezado.TabIndex = 2;
+            // 
+            // LbFecha
+            // 
+            LbFecha.Dock = DockStyle.Top;
+            LbFecha.Font = new Font("Segoe UI", 8.5F);
+            LbFecha.ForeColor = Color.FromArgb(140, 148, 158);
+            LbFecha.Location = new Point(0, 56);
+            LbFecha.Name = "LbFecha";
+            LbFecha.Size = new Size(882, 20);
+            LbFecha.TabIndex = 0;
+            // 
+            // LbSubtitulo
+            // 
+            LbSubtitulo.Dock = DockStyle.Top;
+            LbSubtitulo.Font = new Font("Segoe UI", 10F);
+            LbSubtitulo.ForeColor = Color.FromArgb(90, 100, 112);
+            LbSubtitulo.Location = new Point(0, 34);
+            LbSubtitulo.Name = "LbSubtitulo";
+            LbSubtitulo.Size = new Size(882, 22);
+            LbSubtitulo.TabIndex = 1;
+            // 
+            // LbTitulo
+            // 
+            LbTitulo.Dock = DockStyle.Top;
+            LbTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            LbTitulo.ForeColor = Color.FromArgb(30, 41, 55);
+            LbTitulo.Location = new Point(0, 0);
+            LbTitulo.Name = "LbTitulo";
+            LbTitulo.Size = new Size(882, 34);
+            LbTitulo.TabIndex = 2;
+=======
             DgvReporte.RowTemplate.Height = 36;
             DgvReporte.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DgvReporte.Size = new Size(940, 368);
             DgvReporte.TabIndex = 2;
+>>>>>>> main
             // 
             // FrUcMainReportes
             // 
             BackColor = Color.FromArgb(232, 235, 239);
+<<<<<<< HEAD
+            Controls.Add(PnlContenedor);
+=======
             Controls.Add(TlpReporte);
+>>>>>>> main
             Controls.Add(PnlBarra);
             Font = new Font("Segoe UI", 9F);
             Name = "FrUcMainReportes";
@@ -395,11 +596,19 @@ namespace Plantilla_Admin
             PnlBarra.ResumeLayout(false);
             TlpBarra.ResumeLayout(false);
             TlpBarra.PerformLayout();
+<<<<<<< HEAD
+            PnlContenedor.ResumeLayout(false);
+            PnlHoja.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)DgvReporte).EndInit();
+            PnlTotales.ResumeLayout(false);
+            PnlEncabezado.ResumeLayout(false);
+=======
             TlpReporte.ResumeLayout(false);
             TlpReporte.PerformLayout();
             TlpEncabezado.ResumeLayout(false);
             TlpEncabezado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DgvReporte).EndInit();
+>>>>>>> main
             ResumeLayout(false);
         }
 
@@ -412,6 +621,18 @@ namespace Plantilla_Admin
         private Button btnImprimir;
         private Componentes.CustomButton BtnExportar;
         private Componentes.CustomButton BtnImprimir;
+<<<<<<< HEAD
+        private Panel PnlContenedor;
+        private Panel PnlHoja;
+        private Panel PnlEncabezado;
+        private Label LbTitulo;
+        private Label LbSubtitulo;
+        private Label LbFecha;
+        private Panel PnlTotales;
+        private Label LbTotales;
+        private DataGridView DgvReporte;
+=======
+>>>>>>> main
         private Componentes.CustomComboBox customComboBox1;
         private Componentes.CustomButton customButton3;
         private Componentes.CustomButton customButton2;
@@ -425,6 +646,10 @@ namespace Plantilla_Admin
         private Componentes.CustomComboBox CbReporte;
         private Componentes.CustomButton btnGenerar;
         private TableLayoutPanel TlpBarra;
+<<<<<<< HEAD
+    }
+}
+=======
         private TableLayoutPanel TlpReporte;
         private TableLayoutPanel TlpEncabezado;
         private Componentes.CustomLabel LbTitulo;
@@ -434,3 +659,4 @@ namespace Plantilla_Admin
         private Componentes.CustomDataGridView DgvReporte;
     }
 }
+>>>>>>> main

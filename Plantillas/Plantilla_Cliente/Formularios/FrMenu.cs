@@ -38,6 +38,10 @@ namespace Plantilla_Cliente
         {
             Reservas reservas = new Reservas(idPelicula, idCiudad);
             reservas.CambiarCartelera += CargarPanelCartelera;
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
             CargarPanel(reservas);
         }
         private void CargarPanelCartelera()

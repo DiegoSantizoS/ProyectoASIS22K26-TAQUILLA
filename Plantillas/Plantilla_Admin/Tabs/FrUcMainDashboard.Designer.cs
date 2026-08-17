@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
+            SuspendLayout();
+            // 
+=======
             TlpArquitectura = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             LbMensajeDeUsuario = new Componentes.CustomTitleLabel();
@@ -234,11 +238,16 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+>>>>>>> main
             // FrUcMainDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
+<<<<<<< HEAD
+            Name = "FrUcMainDashboard";
+            Size = new Size(1050, 700);
+=======
             Controls.Add(TlpArquitectura);
             Name = "FrUcMainDashboard";
             Size = new Size(1050, 700);
@@ -251,10 +260,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+>>>>>>> main
             ResumeLayout(false);
         }
 
         #endregion
+<<<<<<< HEAD
+=======
 
         private TableLayoutPanel TlpArquitectura;
         private TableLayoutPanel tableLayoutPanel2;
@@ -269,5 +281,6 @@
         private PictureBox pictureBox1;
         private Componentes.CustomTitleLabel LbMensajeDeUsuario;
         private Componentes.CustomRichTextBox RcbDetalles;
+>>>>>>> main
     }
 }

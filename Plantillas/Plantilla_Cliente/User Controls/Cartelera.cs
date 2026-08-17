@@ -10,7 +10,10 @@ using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
 using Plantilla_Cliente.Clases;
+<<<<<<< HEAD
+=======
 using Plantillas.Carteleras;
+>>>>>>> main
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Plantilla_Cliente

@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+=======
 ﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la  
  * fecha de: 05/08/2026 */
 using System;
@@ -5,11 +16,20 @@ using System.Data;
 using System.Windows.Forms;
 using Con_Admin;
 using Validaciones;
+>>>>>>> main
 
 namespace Forms_Admin.Ventas
 {
     public partial class FrUcClientes : UserControl
     {
+<<<<<<< HEAD
+        public FrUcClientes()
+        {
+            InitializeComponent();
+        }
+    }
+}
+=======
         private readonly If_Clientes api = new If_Clientes();
         private DataTable tablaClientes;
 
@@ -269,3 +289,4 @@ namespace Forms_Admin.Ventas
 }
 /* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la  
  * fecha de: 05/08/2026 */
+>>>>>>> main

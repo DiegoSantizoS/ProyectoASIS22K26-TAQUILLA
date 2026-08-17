@@ -30,6 +30,18 @@
         {
             TreeNode treeNode1 = new TreeNode("Nodo0adsad");
             TreeNode treeNode2 = new TreeNode("Nodo1asdads");
+<<<<<<< HEAD
+            treeView1 = new TreeView();
+            customRichTextBox1 = new Componentes.CustomRichTextBox();
+            SuspendLayout();
+            // 
+            // treeView1
+            // 
+            treeView1.BackColor = Color.Black;
+            treeView1.ForeColor = Color.White;
+            treeView1.Location = new Point(0, 0);
+            treeView1.Name = "treeView1";
+=======
             TvRamasDeAyuda = new TreeView();
             RtbTextoAyuda = new Componentes.CustomRichTextBox();
             TlpAyuda = new TableLayoutPanel();
@@ -48,10 +60,30 @@
             TvRamasDeAyuda.Location = new Point(0, 75);
             TvRamasDeAyuda.Margin = new Padding(0);
             TvRamasDeAyuda.Name = "TvRamasDeAyuda";
+>>>>>>> main
             treeNode1.Name = "Nodo0";
             treeNode1.Text = "Nodo0adsad";
             treeNode2.Name = "Nodo1";
             treeNode2.Text = "Nodo1asdads";
+<<<<<<< HEAD
+            treeView1.Nodes.AddRange(new TreeNode[] { treeNode1, treeNode2 });
+            treeView1.Size = new Size(488, 700);
+            treeView1.TabIndex = 0;
+            // 
+            // customRichTextBox1
+            // 
+            customRichTextBox1.BackColor = Color.FromArgb(55, 60, 72);
+            customRichTextBox1.BorderStyle = BorderStyle.None;
+            customRichTextBox1.Font = new Font("Segoe UI", 10F);
+            customRichTextBox1.ForeColor = Color.FromArgb(230, 230, 230);
+            customRichTextBox1.Location = new Point(496, 0);
+            customRichTextBox1.Margin = new Padding(5, 10, 5, 10);
+            customRichTextBox1.MinimumSize = new Size(190, 60);
+            customRichTextBox1.Name = "customRichTextBox1";
+            customRichTextBox1.Size = new Size(554, 700);
+            customRichTextBox1.TabIndex = 1;
+            customRichTextBox1.Text = "";
+=======
             TvRamasDeAyuda.Nodes.AddRange(new TreeNode[] { treeNode1, treeNode2 });
             TvRamasDeAyuda.Scrollable = false;
             TvRamasDeAyuda.Size = new Size(525, 625);
@@ -148,28 +180,42 @@
             BtnManualDeUsuario.Text = "Descargar Manual de Usuario";
             BtnManualDeUsuario.TextAlignment = StringAlignment.Center;
             BtnManualDeUsuario.Click += button1_Click;
+>>>>>>> main
             // 
             // FrUcMainAyuda
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
+<<<<<<< HEAD
+            Controls.Add(customRichTextBox1);
+            Controls.Add(treeView1);
+            Margin = new Padding(0);
+            Name = "FrUcMainAyuda";
+            Size = new Size(1050, 700);
+=======
             Controls.Add(TlpAyuda);
             Margin = new Padding(0);
             Name = "FrUcMainAyuda";
             Size = new Size(1050, 700);
             TlpAyuda.ResumeLayout(false);
             TlpBotones.ResumeLayout(false);
+>>>>>>> main
             ResumeLayout(false);
         }
 
         #endregion
 
+<<<<<<< HEAD
+        private TreeView treeView1;
+        private Componentes.CustomRichTextBox customRichTextBox1;
+=======
         private TreeView TvRamasDeAyuda;
         private Componentes.CustomRichTextBox RtbTextoAyuda;
         private TableLayoutPanel TlpAyuda;
         private TableLayoutPanel TlpBotones;
         private ReaLTaiizor.Controls.Button BtnManualDeUsuario;
         private ReaLTaiizor.Controls.Button BtnManualTecnico;
+>>>>>>> main
     }
 }

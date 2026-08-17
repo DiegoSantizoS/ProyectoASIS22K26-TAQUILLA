@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+<<<<<<<< HEAD:Plantillas/Formularios_Admin/Ventas/FrUcBoletos.cs
+=======
 ﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la  
  * fecha de: 05/08/2026 */
 using System;
@@ -5,10 +18,26 @@ using System.Data;
 using System.Windows.Forms;
 using Con_Admin;
 
+>>>>>>> main
 namespace Forms_Admin.Ventas
 {
     public partial class FrUcBoletos : UserControl
     {
+<<<<<<< HEAD
+        public FrUcBoletos()
+========
+namespace Forms_Admin.Funciones.Catalogs
+{
+    public partial class FrUcTiposDeSala : UserControl
+    {
+        public FrUcTiposDeSala()
+>>>>>>>> main:Plantillas/Formularios_Admin/Funciones/Catalogs/FrUcTiposDeSala.cs
+        {
+            InitializeComponent();
+        }
+    }
+}
+=======
         private readonly If_Boletos api = new If_Boletos();
         private DataTable tablaBoletos;
 
@@ -412,3 +441,4 @@ namespace Forms_Admin.Ventas
 }
 /* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la  
  * fecha de: 05/08/2026 */
+>>>>>>> main
