@@ -13,7 +13,7 @@ namespace Componentes
         private bool _showingPlaceholder = false;
 
         private readonly Color _textColor = Color.FromArgb(230, 230, 230);
-        private readonly Color _placeholderColor = Color.FromArgb(160, 165, 175);
+        private readonly Color _placeholderColor = Color.FromArgb(100, 105, 115);
 
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]

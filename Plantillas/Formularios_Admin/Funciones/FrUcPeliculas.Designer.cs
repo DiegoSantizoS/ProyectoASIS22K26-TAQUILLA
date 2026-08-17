@@ -475,7 +475,11 @@
             TlpForm.Controls.Add(LbDuracion, 0, 6);
             TlpForm.Controls.Add(TbDuracion, 0, 7);
             TlpForm.Controls.Add(ListBoxGeneros, 3, 1);
+<<<<<<< HEAD
             TlpForm.Controls.Add(PictureBoxTrailer, 1, 8);
+=======
+            TlpForm.Controls.Add(PictureBoxTrailer, 1, 6);
+>>>>>>> main
             TlpForm.Controls.Add(ListBoxFormatos, 2, 1);
             TlpForm.Controls.Add(TbDescripcion, 1, 3);
             TlpForm.Controls.Add(LbGeneros, 3, 0);
@@ -487,8 +491,13 @@
             TlpForm.Controls.Add(CbClasificacion, 2, 9);
             TlpForm.Controls.Add(LbEstado, 0, 8);
             TlpForm.Controls.Add(CbEstado, 0, 9);
+<<<<<<< HEAD
             TlpForm.Controls.Add(LbTrailer, 1, 6);
             TlpForm.Controls.Add(TbTrailer, 1, 7);
+=======
+            TlpForm.Controls.Add(LbTrailer, 1, 4);
+            TlpForm.Controls.Add(TbTrailer, 1, 5);
+>>>>>>> main
             TlpForm.Dock = DockStyle.Fill;
             TlpForm.Location = new Point(0, 0);
             TlpForm.Margin = new Padding(0);
@@ -645,6 +654,10 @@
             ListBoxGeneros.Margin = new Padding(5, 0, 5, 20);
             ListBoxGeneros.Name = "ListBoxGeneros";
             TlpForm.SetRowSpan(ListBoxGeneros, 9);
+<<<<<<< HEAD
+=======
+            ListBoxGeneros.SelectionMode = SelectionMode.MultiSimple;
+>>>>>>> main
             ListBoxGeneros.Size = new Size(240, 330);
             ListBoxGeneros.StateCheckedNormal.Item.Back.Color1 = Color.Crimson;
             ListBoxGeneros.StateCheckedNormal.Item.Content.LongText.Color1 = Color.FromArgb(230, 230, 230);
@@ -667,6 +680,7 @@
             // 
             PictureBoxTrailer.BackColor = Color.FromArgb(35, 40, 52);
             PictureBoxTrailer.Dock = DockStyle.Fill;
+<<<<<<< HEAD
             PictureBoxTrailer.Location = new Point(253, 300);
             PictureBoxTrailer.Margin = new Padding(3, 0, 3, 20);
             PictureBoxTrailer.Name = "PictureBoxTrailer";
@@ -674,6 +688,17 @@
             PictureBoxTrailer.Size = new Size(244, 55);
             PictureBoxTrailer.TabIndex = 77;
             PictureBoxTrailer.TabStop = false;
+=======
+            PictureBoxTrailer.Location = new Point(253, 225);
+            PictureBoxTrailer.Margin = new Padding(3, 0, 3, 20);
+            PictureBoxTrailer.Name = "PictureBoxTrailer";
+            TlpForm.SetRowSpan(PictureBoxTrailer, 4);
+            PictureBoxTrailer.Size = new Size(244, 130);
+            PictureBoxTrailer.SizeMode = PictureBoxSizeMode.StretchImage;
+            PictureBoxTrailer.TabIndex = 77;
+            PictureBoxTrailer.TabStop = false;
+            PictureBoxTrailer.DragLeave += PictureBoxTrailer_DragLeave;
+>>>>>>> main
             // 
             // ListBoxFormatos
             // 
@@ -682,6 +707,10 @@
             ListBoxFormatos.Margin = new Padding(5, 0, 5, 20);
             ListBoxFormatos.Name = "ListBoxFormatos";
             TlpForm.SetRowSpan(ListBoxFormatos, 7);
+<<<<<<< HEAD
+=======
+            ListBoxFormatos.SelectionMode = SelectionMode.MultiSimple;
+>>>>>>> main
             ListBoxFormatos.Size = new Size(240, 255);
             ListBoxFormatos.StateCheckedNormal.Item.Back.Color1 = Color.Crimson;
             ListBoxFormatos.StateCheckedNormal.Item.Content.LongText.Color1 = Color.FromArgb(230, 230, 230);
@@ -699,6 +728,10 @@
             ListBoxFormatos.StateTracking.Item.Content.LongText.Color1 = Color.FromArgb(230, 230, 230);
             ListBoxFormatos.StateTracking.Item.Content.ShortText.Color1 = Color.FromArgb(230, 230, 230);
             ListBoxFormatos.TabIndex = 75;
+<<<<<<< HEAD
+=======
+            ListBoxFormatos.SelectedIndexChanged += ListBoxFormatos_SelectedIndexChanged;
+>>>>>>> main
             // 
             // TbDescripcion
             // 
@@ -709,10 +742,16 @@
             TbDescripcion.ForeColor = Color.FromArgb(230, 230, 230);
             TbDescripcion.Location = new Point(255, 100);
             TbDescripcion.Margin = new Padding(5, 0, 5, 20);
+<<<<<<< HEAD
             TbDescripcion.MinimumSize = new Size(190, 60);
             TbDescripcion.Name = "TbDescripcion";
             TlpForm.SetRowSpan(TbDescripcion, 3);
             TbDescripcion.Size = new Size(240, 105);
+=======
+            TbDescripcion.MinimumSize = new Size(190, 30);
+            TbDescripcion.Name = "TbDescripcion";
+            TbDescripcion.Size = new Size(240, 30);
+>>>>>>> main
             TbDescripcion.TabIndex = 78;
             TbDescripcion.Text = "";
             // 
@@ -865,7 +904,11 @@
             LbTrailer.AutoSize = true;
             LbTrailer.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             LbTrailer.ForeColor = Color.FromArgb(220, 220, 220);
+<<<<<<< HEAD
             LbTrailer.Location = new Point(253, 225);
+=======
+            LbTrailer.Location = new Point(253, 150);
+>>>>>>> main
             LbTrailer.Margin = new Padding(3, 0, 0, 0);
             LbTrailer.Name = "LbTrailer";
             LbTrailer.Padding = new Padding(0, 0, 2, 0);
@@ -881,7 +924,11 @@
             TbTrailer.BorderStyle = BorderStyle.FixedSingle;
             TbTrailer.Font = new Font("Segoe UI", 10F);
             TbTrailer.ForeColor = Color.FromArgb(160, 165, 175);
+<<<<<<< HEAD
             TbTrailer.Location = new Point(255, 250);
+=======
+            TbTrailer.Location = new Point(255, 175);
+>>>>>>> main
             TbTrailer.Margin = new Padding(5, 0, 5, 10);
             TbTrailer.MaximumSize = new Size(0, 30);
             TbTrailer.MinimumSize = new Size(190, 30);
@@ -889,6 +936,11 @@
             TbTrailer.PlaceholderText = "https://www.youtube.com/watch?v=YH4Oo7HW9TM";
             TbTrailer.Size = new Size(240, 30);
             TbTrailer.TabIndex = 59;
+<<<<<<< HEAD
+=======
+            TbTrailer.TextChanged += TbTrailer_TextChanged;
+            TbTrailer.Leave += TbTrailer_Leave;
+>>>>>>> main
             // 
             // TlpButtons
             // 
@@ -996,6 +1048,10 @@
             BtnAgregar.TabIndex = 1;
             BtnAgregar.Text = "Agregar";
             BtnAgregar.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+=======
+            BtnAgregar.Click += BtnAgregar_Click_1;
+>>>>>>> main
             // 
             // BtnLimpiar
             // 
@@ -1017,6 +1073,10 @@
             BtnLimpiar.TabIndex = 5;
             BtnLimpiar.Text = "Limpiar";
             BtnLimpiar.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+=======
+            BtnLimpiar.Click += BtnLimpiar_Click_1;
+>>>>>>> main
             // 
             // TlpTitleLabel
             // 

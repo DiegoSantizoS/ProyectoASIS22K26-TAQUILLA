@@ -5,12 +5,13 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using MySql.Data.MySqlClient;
+using clase_conexion;
 
 namespace Con_Admin
 {
     public class If_Permisos
     {
-        private readonly Conexion conexion = new Conexion();
+        private readonly conexion conexion = new conexion();
 
         private static readonly string[] Columnas =
         {

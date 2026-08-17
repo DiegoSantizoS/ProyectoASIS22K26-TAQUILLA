@@ -15,7 +15,7 @@ namespace Plantilla_Cliente.Clases
         private String server = "localhost";
         private String datebase = "taquillas_cine";
         private String user = "root";
-        private String password = "Root";
+        private String password = "root";
         private String pconexion;
         public Con_Cliente()
         {
@@ -250,5 +250,71 @@ namespace Plantilla_Cliente.Clases
                 : string.Empty;
         }
         /*Fin del código de Carlos Andres Arriaza Lara 0901-23-13862 el 3/08/2026*/
+<<<<<<< HEAD
+=======
+
+        /*Inicio del código 0901-23-4868 Pedro José Gómez Villalobos el 5/08/2026*/
+
+        public DataTable ObtenerMetodosPago()
+        {
+            MySqlConnection con = GetConnection();
+            string query = "SELECT id_metodo_pago, UPPER(nombre_metodo_pago) as nombre_metodo_pago FROM tbl_metodo_pago";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        // Método para registrar la Venta en tbl_venta
+        public int RegistrarVenta(int idMetodoPago, int cantidadBoletos, decimal totalVenta)
+        {
+            try
+            {
+                MySqlConnection con = GetConnection();
+                string query = @"INSERT INTO tbl_venta (id_metodo_pago, cantidad_boletos_venta, total_venta, id_usuario) 
+                         VALUES (@metodoPago, @cantidad, @total, 1);
+                         SELECT LAST_INSERT_ID();";
+
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@metodoPago", idMetodoPago);
+                cmd.Parameters.AddWithValue("@cantidad", cantidadBoletos);
+                cmd.Parameters.AddWithValue("@total", totalVenta);
+
+                int idVentaGenerado = Convert.ToInt32(cmd.ExecuteScalar());
+                return idVentaGenerado;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar la venta: " + ex.Message);
+                return 0;
+            }
+        }
+
+        public bool RegistrarBoleto(int idFuncion, int idVenta, int numeroBoleto)
+        {
+            try
+            {
+                MySqlConnection con = GetConnection();
+                string query = @"INSERT INTO tbl_boleto (id_funcion, id_venta, id_estado_boleto, numero_boleto) 
+                         VALUES (@idFuncion, @idVenta, 1, @numeroBoleto);";
+
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@idFuncion", idFuncion);
+                cmd.Parameters.AddWithValue("@idVenta", idVenta);
+                cmd.Parameters.AddWithValue("@numeroBoleto", numeroBoleto);
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar el boleto: " + ex.Message);
+                return false;
+            }
+        }
+        /*Fin del código 0901-23-4868 Pedro José Gómez Villalobos el 5/08/2026*/
+
+>>>>>>> main
     }
 }

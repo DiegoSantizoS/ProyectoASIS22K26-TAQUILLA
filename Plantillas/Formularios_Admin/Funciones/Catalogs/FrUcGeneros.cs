@@ -10,9 +10,15 @@ using System.Windows.Forms;
 
 namespace Forms_Admin.Funciones.Catalogs
 {
+<<<<<<<< HEAD:Plantillas/Plantilla_Admin/Tabs/FrUcMainAyuda.cs
+    public partial class FrUcMainAyuda : UserControl
+    {
+        public FrUcMainAyuda()
+========
     public partial class FrUcGeneros : UserControl
     {
         public FrUcGeneros()
+>>>>>>>> main:Plantillas/Formularios_Admin/Funciones/Catalogs/FrUcGeneros.cs
         {
             InitializeComponent();
         }

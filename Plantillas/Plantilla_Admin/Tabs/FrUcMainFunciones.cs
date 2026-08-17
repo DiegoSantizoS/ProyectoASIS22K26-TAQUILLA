@@ -30,7 +30,11 @@ namespace Plantilla_Admin
 
         private void WireNavButtons()
         {
+<<<<<<< HEAD
             Button[] navButtons = { BtnPeliculas, BtnFunciones, BtnPromocion, BtnSalas };
+=======
+            Button[] navButtons = { BtnPeliculas, BtnFunciones, BtnPromocion, BtnSalas, BtnCartelera};
+>>>>>>> main
 
             foreach (Button b in navButtons)
             {
@@ -48,6 +52,10 @@ namespace Plantilla_Admin
             BtnFunciones.Click += (s, e) => Navegar(BtnFunciones, new FrUcFunciones());
             BtnPromocion.Click += (s, e) => Navegar(BtnPromocion, new FrUcPromociones());
             BtnSalas.Click += (s, e) => Navegar(BtnSalas, new FrUcSalas());
+<<<<<<< HEAD
+=======
+            BtnCartelera.Click += (s, e) => Navegar(BtnCartelera, new FrUcCartelera());
+>>>>>>> main
 
             CbCatalog.SelectedIndexChanged += CbCatalog_SelectedIndexChanged;
         }
@@ -152,6 +160,14 @@ namespace Plantilla_Admin
             pagina.Dock = DockStyle.Fill;
             PnlMain.Controls.Add(pagina);
         }
+<<<<<<< HEAD
+=======
+
+        private void BtnCartelera_Click(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> main
     }
 }
 /* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la

@@ -3,12 +3,13 @@
 using System;
 using System.Data;
 using MySql.Data.MySqlClient;
+using clase_conexion;
 
 namespace Con_Admin
 {
     public class If_Peliculas
     {
-        private readonly Conexion conexion = new Conexion();
+        private readonly conexion conexion = new conexion();
 
         public int ObtenerSiguienteId()
         {
@@ -50,7 +51,7 @@ namespace Con_Admin
                 FROM tbl_pelicula p
                 LEFT JOIN tbl_clasificacion    c ON c.id_clasificacion   = p.id_clasificacion
                 LEFT JOIN tbl_estado_pelicula  e ON e.id_estado_pelicula = p.id_estado_pelicula
-                ORDER BY p.titulo_pelicula;";
+                ORDER BY p.id_pelicula;";
 
             return Consultar(sql);
         }

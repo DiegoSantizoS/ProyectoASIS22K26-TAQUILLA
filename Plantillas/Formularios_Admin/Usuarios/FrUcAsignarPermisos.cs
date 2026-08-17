@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 ﻿/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la  
  * fecha de: 30/07/2026 */
+=======
+/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 05/08/2026 */
+
+>>>>>>> main
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,6 +16,7 @@ namespace Formularios_Admin
 {
     public partial class FrUcAsignarPermisos : UserControl
     {
+<<<<<<< HEAD
         private readonly If_Permisos api = new If_Permisos();
         private DataTable tablaUsuarios;
 
@@ -27,10 +34,17 @@ namespace Formularios_Admin
                 return Nombre;
             }
         }
+=======
+        private readonly If_AsignarPermisos api =
+            new If_AsignarPermisos();
+
+        private bool cargando;
+>>>>>>> main
 
         public FrUcAsignarPermisos()
         {
             InitializeComponent();
+<<<<<<< HEAD
             PrepararInterfaz();
             WireEvents();
             CargarFiltro();
@@ -56,10 +70,16 @@ namespace Formularios_Admin
             ListBoxAplicacion.Items.Add(new OpcionPermiso("APL111", "APL111 — Ventas"));
             ListBoxAplicacion.Items.Add(new OpcionPermiso("APL112", "APL112 — Promociones"));
             ListBoxAplicacion.ClearSelected();
+=======
+            WireEvents();
+            CargarPerfiles();
+            LimpiarListas();
+>>>>>>> main
         }
 
         private void WireEvents()
         {
+<<<<<<< HEAD
             BtnLimpiar.Click += BtnLimpiar_Click;
             BtnBuscar.Click += BtnBuscar_Click;
         }
@@ -130,10 +150,137 @@ namespace Formularios_Admin
                     Convert.ToInt32(permisos[op.Columna]) == 1)
                 {
                     lista.SetSelected(i, true);
+=======
+            CbPerfil.SelectedIndexChanged +=
+                CbPerfil_SelectedIndexChanged;
+
+            BtnActualizar.Click +=
+                BtnActualizar_Click;
+        }
+
+        private void CargarPerfiles()
+        {
+            cargando = true;
+
+            CbPerfil.DataSource =
+                api.ListarPerfiles();
+
+            CbPerfil.DisplayMember =
+                "Nombre";
+
+            CbPerfil.ValueMember =
+                "Id";
+
+            CbPerfil.SelectedIndex = -1;
+
+            cargando = false;
+        }
+
+        private void CbPerfil_SelectedIndexChanged(
+            object sender,
+            EventArgs e)
+        {
+            if (cargando)
+                return;
+
+            int? idPerfil =
+                IdDe(CbPerfil.SelectedValue);
+
+            if (idPerfil == null)
+            {
+                LimpiarListas();
+                return;
+            }
+
+            CargarPermisos(idPerfil.Value);
+        }
+
+        private void CargarPermisos(
+            int idPerfil)
+        {
+            try
+            {
+                cargando = true;
+
+                DataTable tabla =
+                    api.ListarPermisosPerfil(
+                        idPerfil
+                    );
+
+                CargarLista(
+                    ListBoxMant,
+                    tabla.Copy(),
+                    "Mantenimiento"
+                );
+
+                CargarLista(
+                    ListBoxRegistrar,
+                    tabla.Copy(),
+                    "Registrar"
+                );
+
+                CargarLista(
+                    ListBoxEliminar,
+                    tabla.Copy(),
+                    "Eliminar"
+                );
+
+                CargarLista(
+                    ListBoxActualizar,
+                    tabla.Copy(),
+                    "Modificar"
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "No se pudieron cargar los permisos.\n\n"
+                    + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+            finally
+            {
+                cargando = false;
+            }
+        }
+
+        private void CargarLista(
+            Componentes.CustomListBox lista,
+            DataTable tabla,
+            string columnaPermiso)
+        {
+            lista.DataSource = null;
+
+            lista.DisplayMember = "Nombre";
+            lista.ValueMember = "Id";
+            lista.DataSource = tabla;
+
+            lista.ClearSelected();
+
+            for (int i = 0;
+                 i < tabla.Rows.Count;
+                 i++)
+            {
+                bool seleccionado =
+                    Convert.ToBoolean(
+                        tabla.Rows[i][columnaPermiso]
+                    );
+
+                if (seleccionado)
+                {
+                    lista.SetSelected(
+                        i,
+                        true
+                    );
+>>>>>>> main
                 }
             }
         }
 
+<<<<<<< HEAD
         private void AgregarSeleccion(Krypton.Toolkit.KryptonListBox lista, HashSet<string> activas)
         {
             foreach (var item in lista.SelectedItems)
@@ -198,3 +345,156 @@ namespace Formularios_Admin
 }
 /* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la  
  * fecha de: 30/07/2026 */
+=======
+        private void BtnActualizar_Click(
+            object sender,
+            EventArgs e)
+        {
+            int? idPerfil =
+                IdDe(CbPerfil.SelectedValue);
+
+            if (idPerfil == null)
+            {
+                MessageBox.Show(
+                    "Selecciona un perfil.",
+                    "Asignar permisos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+
+                return;
+            }
+
+            DialogResult confirmar =
+                MessageBox.Show(
+                    "¿Deseas actualizar los permisos del perfil seleccionado?",
+                    "Actualizar permisos",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+            if (confirmar != DialogResult.Yes)
+                return;
+
+            try
+            {
+                int[] mantenimiento =
+                    LeerSeleccionados(
+                        ListBoxMant
+                    );
+
+                int[] registrar =
+                    LeerSeleccionados(
+                        ListBoxRegistrar
+                    );
+
+                int[] eliminar =
+                    LeerSeleccionados(
+                        ListBoxEliminar
+                    );
+
+                int[] modificar =
+                    LeerSeleccionados(
+                        ListBoxActualizar
+                    );
+
+                api.ActualizarPermisosPerfil(
+                    idPerfil.Value,
+                    mantenimiento,
+                    registrar,
+                    eliminar,
+                    modificar
+                );
+
+                MessageBox.Show(
+                    "Permisos actualizados correctamente.",
+                    "Asignar permisos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                CargarPermisos(
+                    idPerfil.Value
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "No se pudieron actualizar los permisos.\n\n"
+                    + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+        }
+
+        private int[] LeerSeleccionados(
+            Componentes.CustomListBox lista)
+        {
+            var ids = new List<int>();
+
+            foreach (object item
+                     in lista.SelectedItems)
+            {
+                if (item is DataRowView fila &&
+                    fila["Id"] != DBNull.Value)
+                {
+                    ids.Add(
+                        Convert.ToInt32(
+                            fila["Id"]
+                        )
+                    );
+                }
+            }
+
+            return ids.ToArray();
+        }
+
+        private void LimpiarListas()
+        {
+            ListBoxMant.DataSource = null;
+            ListBoxRegistrar.DataSource = null;
+            ListBoxEliminar.DataSource = null;
+            ListBoxActualizar.DataSource = null;
+        }
+
+        private static int? IdDe(
+            object valor)
+        {
+            if (valor == null ||
+                valor is DBNull)
+            {
+                return null;
+            }
+
+            if (valor is int entero)
+                return entero;
+
+            if (int.TryParse(
+                valor.ToString(),
+                out int resultado))
+            {
+                return resultado;
+            }
+
+            return null;
+        }
+
+        private void TlpForm_Paint(
+            object sender,
+            PaintEventArgs e)
+        {
+        }
+
+        private void TlpAux2_Paint(
+            object sender,
+            PaintEventArgs e)
+        {
+        }
+    }
+}
+
+/* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 16/08/2026 */
+>>>>>>> main

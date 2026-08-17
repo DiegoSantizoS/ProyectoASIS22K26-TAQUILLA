@@ -2,6 +2,7 @@
 {
     partial class FrUcBitacora
     {
+<<<<<<< HEAD
         /// <summary> 
         /// Variable del diseñador necesaria.
         /// </summary>
@@ -11,6 +12,10 @@
         /// Limpiar los recursos que se estén usando.
         /// </summary>
         /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+=======
+        private System.ComponentModel.IContainer components = null;
+
+>>>>>>> main
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +27,13 @@
 
         #region Código generado por el Diseñador de componentes
 
+<<<<<<< HEAD
         /// <summary> 
         /// Método necesario para admitir el Diseñador. No se puede modificar
         /// el contenido de este método con el editor de código.
         /// </summary>
+=======
+>>>>>>> main
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
@@ -33,6 +41,7 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             TlpDivFormAndDgv = new TableLayoutPanel();
             TlpAux1 = new TableLayoutPanel();
+<<<<<<< HEAD
             TlpAux2 = new TableLayoutPanel();
             TlpFormWithButtons = new TableLayoutPanel();
             TlpForm = new TableLayoutPanel();
@@ -65,6 +74,17 @@
             TlpForm.SuspendLayout();
             TlpButtons.SuspendLayout();
             TlpTitleLabel.SuspendLayout();
+=======
+            TlpTitleLabel = new TableLayoutPanel();
+            LbTitulo = new Componentes.CustomTitleLabel();
+            TlpButtons = new TableLayoutPanel();
+            BtnActualizar = new Componentes.CustomButton();
+            DgvBitacora = new Componentes.CustomDataGridView();
+            TlpDivFormAndDgv.SuspendLayout();
+            TlpAux1.SuspendLayout();
+            TlpTitleLabel.SuspendLayout();
+            TlpButtons.SuspendLayout();
+>>>>>>> main
             ((System.ComponentModel.ISupportInitialize)DgvBitacora).BeginInit();
             SuspendLayout();
             // 
@@ -80,7 +100,11 @@
             TlpDivFormAndDgv.Margin = new Padding(0);
             TlpDivFormAndDgv.Name = "TlpDivFormAndDgv";
             TlpDivFormAndDgv.RowCount = 2;
+<<<<<<< HEAD
             TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Absolute, 500F));
+=======
+            TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
+>>>>>>> main
             TlpDivFormAndDgv.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpDivFormAndDgv.Size = new Size(1050, 700);
             TlpDivFormAndDgv.TabIndex = 9;
@@ -89,14 +113,20 @@
             // 
             TlpAux1.ColumnCount = 1;
             TlpAux1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+<<<<<<< HEAD
             TlpAux1.Controls.Add(TlpAux2, 0, 1);
             TlpAux1.Controls.Add(TlpTitleLabel, 0, 0);
+=======
+            TlpAux1.Controls.Add(TlpTitleLabel, 0, 0);
+            TlpAux1.Controls.Add(TlpButtons, 0, 1);
+>>>>>>> main
             TlpAux1.Dock = DockStyle.Fill;
             TlpAux1.Location = new Point(0, 0);
             TlpAux1.Margin = new Padding(0);
             TlpAux1.Name = "TlpAux1";
             TlpAux1.RowCount = 2;
             TlpAux1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
+<<<<<<< HEAD
             TlpAux1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpAux1.Size = new Size(1050, 500);
             TlpAux1.TabIndex = 1;
@@ -511,6 +541,12 @@
             BtnLimpiar.Text = "Limpiar";
             BtnLimpiar.UseVisualStyleBackColor = false;
             // 
+=======
+            TlpAux1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
+            TlpAux1.Size = new Size(1050, 150);
+            TlpAux1.TabIndex = 1;
+            // 
+>>>>>>> main
             // TlpTitleLabel
             // 
             TlpTitleLabel.BackColor = Color.Black;
@@ -526,7 +562,12 @@
             TlpTitleLabel.RowCount = 1;
             TlpTitleLabel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpTitleLabel.Size = new Size(1050, 75);
+<<<<<<< HEAD
             TlpTitleLabel.TabIndex = 1;
+=======
+            TlpTitleLabel.TabIndex = 0;
+            TlpTitleLabel.Paint += TlpTitleLabel_Paint;
+>>>>>>> main
             // 
             // LbTitulo
             // 
@@ -541,6 +582,47 @@
             LbTitulo.Text = "BITÁCORA";
             LbTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
+<<<<<<< HEAD
+=======
+            // TlpButtons
+            // 
+            TlpButtons.ColumnCount = 3;
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 130F));
+            TlpButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            TlpButtons.Controls.Add(BtnActualizar, 1, 0);
+            TlpButtons.Dock = DockStyle.Fill;
+            TlpButtons.Location = new Point(0, 75);
+            TlpButtons.Margin = new Padding(0);
+            TlpButtons.Name = "TlpButtons";
+            TlpButtons.RowCount = 1;
+            TlpButtons.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            TlpButtons.Size = new Size(1050, 75);
+            TlpButtons.TabIndex = 1;
+            // 
+            // BtnActualizar
+            // 
+            BtnActualizar.Action = Componentes.ButtonAction.Actualizar;
+            BtnActualizar.Anchor = AnchorStyles.None;
+            BtnActualizar.BackColor = Color.FromArgb(214, 157, 15);
+            BtnActualizar.FlatAppearance.BorderSize = 0;
+            BtnActualizar.FlatAppearance.MouseDownBackColor = Color.FromArgb(130, 97, 9);
+            BtnActualizar.FlatAppearance.MouseOverBackColor = Color.FromArgb(226, 169, 16);
+            BtnActualizar.FlatStyle = FlatStyle.Flat;
+            BtnActualizar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            BtnActualizar.ForeColor = Color.White;
+            BtnActualizar.Location = new Point(470, 17);
+            BtnActualizar.Margin = new Padding(0);
+            BtnActualizar.MaximumSize = new Size(110, 40);
+            BtnActualizar.MinimumSize = new Size(110, 40);
+            BtnActualizar.Name = "BtnActualizar";
+            BtnActualizar.Size = new Size(110, 40);
+            BtnActualizar.TabIndex = 0;
+            BtnActualizar.Text = "Actualizar";
+            BtnActualizar.UseVisualStyleBackColor = false;
+            BtnActualizar.Click += BtnActualizar_Click;
+            // 
+>>>>>>> main
             // DgvBitacora
             // 
             DgvBitacora.AllowUserToAddRows = false;
@@ -579,7 +661,11 @@
             DgvBitacora.EnableHeadersVisualStyles = false;
             DgvBitacora.Font = new Font("Segoe UI", 9.5F);
             DgvBitacora.GridColor = Color.FromArgb(58, 60, 66);
+<<<<<<< HEAD
             DgvBitacora.Location = new Point(0, 500);
+=======
+            DgvBitacora.Location = new Point(0, 150);
+>>>>>>> main
             DgvBitacora.Margin = new Padding(0);
             DgvBitacora.MultiSelect = false;
             DgvBitacora.Name = "DgvBitacora";
@@ -588,7 +674,11 @@
             DgvBitacora.RowHeadersWidth = 51;
             DgvBitacora.RowTemplate.Height = 36;
             DgvBitacora.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+<<<<<<< HEAD
             DgvBitacora.Size = new Size(1050, 200);
+=======
+            DgvBitacora.Size = new Size(1050, 550);
+>>>>>>> main
             DgvBitacora.TabIndex = 2;
             // 
             // FrUcBitacora
@@ -600,6 +690,7 @@
             Size = new Size(1050, 700);
             TlpDivFormAndDgv.ResumeLayout(false);
             TlpAux1.ResumeLayout(false);
+<<<<<<< HEAD
             TlpAux2.ResumeLayout(false);
             TlpFormWithButtons.ResumeLayout(false);
             TlpForm.ResumeLayout(false);
@@ -607,6 +698,11 @@
             TlpButtons.ResumeLayout(false);
             TlpTitleLabel.ResumeLayout(false);
             TlpTitleLabel.PerformLayout();
+=======
+            TlpTitleLabel.ResumeLayout(false);
+            TlpTitleLabel.PerformLayout();
+            TlpButtons.ResumeLayout(false);
+>>>>>>> main
             ((System.ComponentModel.ISupportInitialize)DgvBitacora).EndInit();
             ResumeLayout(false);
         }
@@ -617,6 +713,7 @@
         private TableLayoutPanel TlpAux1;
         private TableLayoutPanel TlpTitleLabel;
         private Componentes.CustomTitleLabel LbTitulo;
+<<<<<<< HEAD
         private Componentes.CustomDataGridView DgvBitacora;
         private TableLayoutPanel TlpAux2;
         private TableLayoutPanel TlpFormWithButtons;
@@ -650,5 +747,10 @@
         private Componentes.CustomTextBox customTextBox1;
         private Componentes.CustomButton BtnBuscarUsuario;
         private Componentes.CustomButton BtnBuscar;
+=======
+        private TableLayoutPanel TlpButtons;
+        private Componentes.CustomButton BtnActualizar;
+        private Componentes.CustomDataGridView DgvBitacora;
+>>>>>>> main
     }
 }
