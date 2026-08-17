@@ -4,12 +4,13 @@
 using System;
 using System.Data;
 using MySql.Data.MySqlClient;
+using clase_conexion;
 
 namespace Con_Admin
 {
     public class If_Bitacora
     {
-        private readonly Conexion conexion = new Conexion();
+        private readonly conexion conexion = new conexion();
 
         public DataTable Listar()
         {

@@ -16,7 +16,7 @@ using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-
+using clase_conexion;
 
 
 namespace Plantilla_Cliente
@@ -188,11 +188,11 @@ namespace Plantilla_Cliente
                 // Le avisamos a Con_Admin.Conexion quién es el usuario activo,
                 // para que cualquier conexión que abra cualquier formulario
                 // lleve esta info y los triggers de bitácora puedan usarla
-                Con_Admin.Conexion.SesionIdUsuario = idUsuario;
-                Con_Admin.Conexion.SesionIdNombrePc = idNombrePc;
-                Con_Admin.Conexion.SesionIp = ip;
+                clase_conexion.conexion.SesionIdUsuario = idUsuario;
+                clase_conexion.conexion.SesionIdNombrePc = idNombrePc;
+                clase_conexion.conexion.SesionIp = ip;
 
-                var conexion = new Conexion();
+                var conexion = new conexion();
                 MySqlConnection cn = conexion.GetConnection();
 
                 string sql = @"INSERT INTO tbl_bitacora (id_usuario, id_permiso, id_nombre_pc, ip_bitacora)
@@ -215,7 +215,7 @@ namespace Plantilla_Cliente
 
         private static int? ObtenerOCrearNombrePc(string nombrePc)
         {
-            var conexion = new Conexion();
+            var conexion = new conexion();
             MySqlConnection cn = conexion.GetConnection();
 
             string sqlBuscar = "SELECT id_nombre_pc FROM tbl_nombre_pc WHERE nombre_pc = @nombre";

@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-
+using clase_conexion;
 
 
 namespace Con_Admin
 {
     public class If_Salas
     {
-        private readonly Conexion conexion = new Conexion();
+        private readonly conexion conexion = new conexion();
 
         public int ObtenerSiguienteId()
         {
