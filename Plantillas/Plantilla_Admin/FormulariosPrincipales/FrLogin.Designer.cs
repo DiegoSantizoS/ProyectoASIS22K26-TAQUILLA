@@ -31,10 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrLogin));
             Tlp_main = new TableLayoutPanel();
             Tlp_formulario = new TableLayoutPanel();
+            LbUsuario = new Componentes.CustomLabel();
+            LbContra = new Componentes.CustomLabel();
+            TbContra = new Componentes.CustomTextBox();
+            TbUsuario = new Componentes.CustomTextBox();
+            BtnIngresar = new Componentes.CustomButton();
             PicLogo = new Krypton.Toolkit.KryptonPictureBox();
             panel1 = new Panel();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             Tlp_main.SuspendLayout();
+            Tlp_formulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PicLogo).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -63,6 +69,11 @@
             Tlp_formulario.ColumnCount = 1;
             Tlp_main.SetColumnSpan(Tlp_formulario, 2);
             Tlp_formulario.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Tlp_formulario.Controls.Add(LbUsuario, 0, 0);
+            Tlp_formulario.Controls.Add(LbContra, 0, 2);
+            Tlp_formulario.Controls.Add(TbContra, 0, 3);
+            Tlp_formulario.Controls.Add(TbUsuario, 0, 1);
+            Tlp_formulario.Controls.Add(BtnIngresar, 0, 4);
             Tlp_formulario.Dock = DockStyle.Fill;
             Tlp_formulario.Location = new Point(17, 283);
             Tlp_formulario.Margin = new Padding(17, 27, 17, 7);
@@ -75,6 +86,89 @@
             Tlp_formulario.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             Tlp_formulario.Size = new Size(266, 210);
             Tlp_formulario.TabIndex = 8;
+            // 
+            // LbUsuario
+            // 
+            LbUsuario.AutoSize = true;
+            LbUsuario.Dock = DockStyle.Fill;
+            LbUsuario.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbUsuario.ForeColor = Color.FromArgb(220, 220, 220);
+            LbUsuario.Location = new Point(3, 0);
+            LbUsuario.Name = "LbUsuario";
+            LbUsuario.Padding = new Padding(0, 0, 2, 0);
+            LbUsuario.Size = new Size(260, 25);
+            LbUsuario.TabIndex = 0;
+            LbUsuario.Text = "Usuario";
+            LbUsuario.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // LbContra
+            // 
+            LbContra.AutoSize = true;
+            LbContra.Dock = DockStyle.Fill;
+            LbContra.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LbContra.ForeColor = Color.FromArgb(220, 220, 220);
+            LbContra.Location = new Point(3, 75);
+            LbContra.Name = "LbContra";
+            LbContra.Padding = new Padding(0, 0, 2, 0);
+            LbContra.Size = new Size(260, 25);
+            LbContra.TabIndex = 1;
+            LbContra.Text = "Contraseña";
+            LbContra.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // TbContra
+            // 
+            TbContra.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TbContra.BackColor = Color.FromArgb(55, 60, 72);
+            TbContra.BorderStyle = BorderStyle.FixedSingle;
+            TbContra.Font = new Font("Segoe UI", 10F);
+            TbContra.ForeColor = Color.FromArgb(230, 230, 230);
+            TbContra.Location = new Point(5, 105);
+            TbContra.Margin = new Padding(5);
+            TbContra.MaximumSize = new Size(0, 30);
+            TbContra.MinimumSize = new Size(190, 30);
+            TbContra.Name = "TbContra";
+            TbContra.PasswordChar = '*';
+            TbContra.Size = new Size(256, 30);
+            TbContra.TabIndex = 2;
+            // 
+            // TbUsuario
+            // 
+            TbUsuario.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TbUsuario.BackColor = Color.FromArgb(55, 60, 72);
+            TbUsuario.BorderStyle = BorderStyle.FixedSingle;
+            TbUsuario.Font = new Font("Segoe UI", 10F);
+            TbUsuario.ForeColor = Color.FromArgb(230, 230, 230);
+            TbUsuario.Location = new Point(5, 30);
+            TbUsuario.Margin = new Padding(5);
+            TbUsuario.MaximumSize = new Size(0, 30);
+            TbUsuario.MinimumSize = new Size(190, 30);
+            TbUsuario.Name = "TbUsuario";
+            TbUsuario.Size = new Size(256, 30);
+            TbUsuario.TabIndex = 1;
+            // 
+            // BtnIngresar
+            // 
+            BtnIngresar.Action = Componentes.ButtonAction.Eliminar;
+            BtnIngresar.Anchor = AnchorStyles.None;
+            BtnIngresar.BackColor = Color.FromArgb(192, 57, 43);
+            BtnIngresar.Cursor = Cursors.Hand;
+            BtnIngresar.FlatAppearance.BorderSize = 0;
+            BtnIngresar.FlatAppearance.MouseDownBackColor = Color.FromArgb(116, 35, 27);
+            BtnIngresar.FlatAppearance.MouseOverBackColor = Color.FromArgb(203, 62, 46);
+            BtnIngresar.FlatStyle = FlatStyle.Flat;
+            BtnIngresar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            BtnIngresar.ForeColor = Color.White;
+            BtnIngresar.Location = new Point(78, 160);
+            BtnIngresar.Margin = new Padding(0);
+            BtnIngresar.MaximumSize = new Size(110, 40);
+            BtnIngresar.MinimumSize = new Size(110, 40);
+            BtnIngresar.Name = "BtnIngresar";
+            BtnIngresar.Size = new Size(110, 40);
+            BtnIngresar.TabIndex = 3;
+            BtnIngresar.TabStop = false;
+            BtnIngresar.Text = "INGRESAR";
+            BtnIngresar.UseVisualStyleBackColor = false;
+            BtnIngresar.Click += BtnIngresar_Click;
             // 
             // PicLogo
             // 
@@ -141,6 +235,8 @@
             Name = "FrLogin";
             Text = "Login";
             Tlp_main.ResumeLayout(false);
+            Tlp_formulario.ResumeLayout(false);
+            Tlp_formulario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PicLogo).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
