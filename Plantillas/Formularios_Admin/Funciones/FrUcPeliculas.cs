@@ -26,36 +26,48 @@ namespace Formularios_Admin
             ModoAgregar();  
         }
 
+        private readonly PermisosAux permisoAgregar =
+            PermisosAux.DeSesion(
+                AplicacionPermiso.Peliculas,
+                AccionPermiso.Registrar
+            );
+
+        private readonly PermisosAux permisoActualizar =
+            PermisosAux.DeSesion(
+                AplicacionPermiso.Peliculas,
+                AccionPermiso.Modificar
+            );
+
+        private readonly PermisosAux permisoEliminar =
+            PermisosAux.DeSesion(
+                AplicacionPermiso.Peliculas,
+                AccionPermiso.Eliminar
+            );
+
         private void WireEvents()
         {
-            var permisos = PermisosAux.DeSesion("Películas");
-
-            if (!permisos.Permitido("Buscar"))
-            {
-                MessageBox.Show("No tienes permiso para esta sección.");
-                return;
-            }
             BtnBuscar.Click += BtnBuscar_Click;
             BtnLimpiar.Click += BtnLimpiar_Click;
             BtnCopiar.Click += BtnCopiar_Click;
 
-            if (permisos.Permitido("Agregar"))
+            if (permisoAgregar.Permitido())
                 BtnAgregar.Click += BtnAgregar_Click;
             else
-                BtnAgregar.Click += (s, e) => MessageBox.Show("No tienes permiso para agregar.");
+                BtnAgregar.Click += (s, e) =>
+                    MessageBox.Show("No tienes permiso para agregar.");
 
-            if (permisos.Permitido("Actualizar"))
+            if (permisoActualizar.Permitido())
                 BtnActualizar.Click += BtnActualizar_Click;
             else
-                BtnActualizar.Click += (s, e) => MessageBox.Show("No tienes permiso para actualizar.");
+                BtnActualizar.Click += (s, e) =>
+                    MessageBox.Show("No tienes permiso para actualizar.");
 
-            if (permisos.Permitido("Eliminar"))
+            if (permisoEliminar.Permitido())
                 BtnEliminar.Click += BtnEliminar_Click;
             else
-                BtnEliminar.Click += (s, e) => MessageBox.Show("No tienes permiso para eliminar.");
+                BtnEliminar.Click += (s, e) =>
+                    MessageBox.Show("No tienes permiso para eliminar.");
         }
-
-        private readonly PermisosAux permisos = PermisosAux.DeSesion("Películas");
 
         private void CargarCombos()
         {

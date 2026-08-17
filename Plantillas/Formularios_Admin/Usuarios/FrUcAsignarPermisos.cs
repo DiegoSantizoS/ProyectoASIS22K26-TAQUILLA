@@ -1,6 +1,6 @@
-
-/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la  
+/* Inicio de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
  * fecha de: 05/08/2026 */
+
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,293 +11,297 @@ namespace Formularios_Admin
 {
     public partial class FrUcAsignarPermisos : UserControl
     {
-        private readonly If_AsignarPermisos api = new If_AsignarPermisos();
-        private DataTable tabla;
+        private readonly If_AsignarPermisos api =
+            new If_AsignarPermisos();
+
+        private bool cargando;
 
         public FrUcAsignarPermisos()
         {
             InitializeComponent();
             WireEvents();
-            CargarCombos();
-            CargarFiltro();
-            CargarGrilla();
+            CargarPerfiles();
+            LimpiarListas();
         }
 
         private void WireEvents()
         {
-            BtnAgregar.Click += BtnAgregar_Click;
-            BtnEliminar.Click += BtnEliminar_Click;
-            BtnLimpiar.Click += BtnLimpiar_Click;
-            BtnCopiar.Click += BtnCopiar_Click;
-            customButton1.Click += BtnBuscar_Click;
+            CbPerfil.SelectedIndexChanged +=
+                CbPerfil_SelectedIndexChanged;
+
+            BtnActualizar.Click +=
+                BtnActualizar_Click;
         }
 
-        private void CargarCombos()
+        private void CargarPerfiles()
         {
-            CbPerfil.DataSource = api.ListarPerfiles();
-            CbPerfil.DisplayMember = "Nombre";
-            CbPerfil.ValueMember = "Id";
+            cargando = true;
+
+            CbPerfil.DataSource =
+                api.ListarPerfiles();
+
+            CbPerfil.DisplayMember =
+                "Nombre";
+
+            CbPerfil.ValueMember =
+                "Id";
+
             CbPerfil.SelectedIndex = -1;
 
-            CbPermiso.DataSource = api.ListarAcciones();
-            CbPermiso.DisplayMember = "Nombre";
-            CbPermiso.ValueMember = "Id";
-            CbPermiso.SelectedIndex = -1;
-
-            ListBoxAplicacion.DataSource = api.ListarAplicaciones();
-            ListBoxAplicacion.DisplayMember = "Nombre";
-            ListBoxAplicacion.ValueMember = "Id";
+            cargando = false;
         }
 
-        private void CargarFiltro()
+        private void CbPerfil_SelectedIndexChanged(
+            object sender,
+            EventArgs e)
         {
-            CbFiltro.Items.Clear();
-            CbFiltro.Items.Add("Perfil");
-            CbFiltro.Items.Add("Permiso");
-            CbFiltro.Items.Add("Aplicación");
-            CbFiltro.Items.Add("Código");
-            CbFiltro.SelectedIndex = 0;
-        }
+            if (cargando)
+                return;
 
-        private void CargarGrilla()
-        {
-            tabla = api.Listar();
-            DgvAsignarPermisos.DataSource = tabla;
-            DgvAsignarPermisos.MultiSelect = true;
-            FormatearGrilla();
-        }
-
-        private void FormatearGrilla()
-        {
-            if (DgvAsignarPermisos.Columns.Count == 0) return;
-
-            Ocultar("id_perfil");
-            Ocultar("id_permiso");
-            Ocultar("id_accion_permiso");
-            Ocultar("id_aplicacion");
-
-            Encabezado("nombre_perfil", "Perfil");
-            Encabezado("nombre_accion_permiso", "Permiso");
-            Encabezado("codigo_aplicacion", "Código");
-            Encabezado("nombre_aplicacion", "Aplicación");
-        }
-
-        private void Ocultar(string columna)
-        {
-            if (DgvAsignarPermisos.Columns.Contains(columna))
-                DgvAsignarPermisos.Columns[columna].Visible = false;
-        }
-
-        private void Encabezado(string columna, string texto)
-        {
-            if (DgvAsignarPermisos.Columns.Contains(columna))
-                DgvAsignarPermisos.Columns[columna].HeaderText = texto;
-        }
-
-        private void BtnAgregar_Click(object sender, EventArgs e)
-        {
-            int? idPerfil = IdDe(CbPerfil.SelectedValue);
-            int? idAccion = IdDe(CbPermiso.SelectedValue);
+            int? idPerfil =
+                IdDe(CbPerfil.SelectedValue);
 
             if (idPerfil == null)
             {
-                MessageBox.Show("Selecciona un perfil.", "Asignar permisos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (idAccion == null)
-            {
-                MessageBox.Show("Selecciona un permiso.", "Asignar permisos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                LimpiarListas();
                 return;
             }
 
-            int[] apps = LeerAplicacionesMarcadas();
-            if (apps.Length == 0)
-            {
-                MessageBox.Show("Marca al menos una aplicación.", "Asignar permisos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            CargarPermisos(idPerfil.Value);
+        }
 
+        private void CargarPermisos(
+            int idPerfil)
+        {
             try
             {
-                int nuevos = 0, existentes = 0;
-                foreach (int idApp in apps)
-                {
-                    if (api.Asignar(idPerfil.Value, idAccion.Value, idApp)) nuevos++;
-                    else existentes++;
-                }
+                cargando = true;
 
-                string msg = "Permisos asignados: " + nuevos +
-                             (existentes > 0 ? ("\nYa existían: " + existentes) : "");
-                MessageBox.Show(msg, "Asignar permisos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DataTable tabla =
+                    api.ListarPermisosPerfil(
+                        idPerfil
+                    );
 
-                CargarGrilla();
-                LimpiarFormulario();
+                CargarLista(
+                    ListBoxMant,
+                    tabla.Copy(),
+                    "Mantenimiento"
+                );
+
+                CargarLista(
+                    ListBoxRegistrar,
+                    tabla.Copy(),
+                    "Registrar"
+                );
+
+                CargarLista(
+                    ListBoxEliminar,
+                    tabla.Copy(),
+                    "Eliminar"
+                );
+
+                CargarLista(
+                    ListBoxActualizar,
+                    tabla.Copy(),
+                    "Modificar"
+                );
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudieron asignar los permisos.\n\n" + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "No se pudieron cargar los permisos.\n\n"
+                    + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+            finally
+            {
+                cargando = false;
             }
         }
 
-        private void BtnEliminar_Click(object sender, EventArgs e)
+        private void CargarLista(
+            Componentes.CustomListBox lista,
+            DataTable tabla,
+            string columnaPermiso)
         {
-            int? idPerfil = IdDe(CbPerfil.SelectedValue);
-            int? idAccion = IdDe(CbPermiso.SelectedValue);
+            lista.DataSource = null;
+
+            lista.DisplayMember = "Nombre";
+            lista.ValueMember = "Id";
+            lista.DataSource = tabla;
+
+            lista.ClearSelected();
+
+            for (int i = 0;
+                 i < tabla.Rows.Count;
+                 i++)
+            {
+                bool seleccionado =
+                    Convert.ToBoolean(
+                        tabla.Rows[i][columnaPermiso]
+                    );
+
+                if (seleccionado)
+                {
+                    lista.SetSelected(
+                        i,
+                        true
+                    );
+                }
+            }
+        }
+
+        private void BtnActualizar_Click(
+            object sender,
+            EventArgs e)
+        {
+            int? idPerfil =
+                IdDe(CbPerfil.SelectedValue);
 
             if (idPerfil == null)
             {
-                MessageBox.Show("Selecciona un perfil.", "Asignar permisos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (idAccion == null)
-            {
-                MessageBox.Show("Selecciona un permiso.", "Asignar permisos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Selecciona un perfil.",
+                    "Asignar permisos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+
                 return;
             }
 
-            int[] apps = LeerAplicacionesMarcadas();
-            if (apps.Length == 0)
-            {
-                MessageBox.Show("Marca al menos una aplicación.", "Asignar permisos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            DialogResult confirmar =
+                MessageBox.Show(
+                    "¿Deseas actualizar los permisos del perfil seleccionado?",
+                    "Actualizar permisos",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
 
-            var confirmar = MessageBox.Show(
-                apps.Length == 1
-                    ? "¿Quitar la asignación seleccionada?"
-                    : "¿Quitar las " + apps.Length + " asignaciones seleccionadas?",
-                "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (confirmar != DialogResult.Yes) return;
+            if (confirmar != DialogResult.Yes)
+                return;
 
             try
             {
-                int eliminadas = 0, noExistian = 0;
-                foreach (int idApp in apps)
-                {
-                    if (api.Eliminar(idPerfil.Value, idAccion.Value, idApp)) eliminadas++;
-                    else noExistian++;
-                }
+                int[] mantenimiento =
+                    LeerSeleccionados(
+                        ListBoxMant
+                    );
 
-                string msg = "Asignaciones eliminadas: " + eliminadas +
-                             (noExistian > 0 ? ("\nNo estaban asignadas: " + noExistian) : "");
-                MessageBox.Show(msg, "Asignar permisos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int[] registrar =
+                    LeerSeleccionados(
+                        ListBoxRegistrar
+                    );
 
-                CargarGrilla();
-                LimpiarFormulario();
+                int[] eliminar =
+                    LeerSeleccionados(
+                        ListBoxEliminar
+                    );
+
+                int[] modificar =
+                    LeerSeleccionados(
+                        ListBoxActualizar
+                    );
+
+                api.ActualizarPermisosPerfil(
+                    idPerfil.Value,
+                    mantenimiento,
+                    registrar,
+                    eliminar,
+                    modificar
+                );
+
+                MessageBox.Show(
+                    "Permisos actualizados correctamente.",
+                    "Asignar permisos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                CargarPermisos(
+                    idPerfil.Value
+                );
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudieron eliminar las asignaciones.\n\n" + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "No se pudieron actualizar los permisos.\n\n"
+                    + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
 
-        private void BtnCopiar_Click(object sender, EventArgs e)
-        {
-            var drv = DgvAsignarPermisos.CurrentRow?.DataBoundItem as DataRowView;
-            if (drv == null)
-            {
-                MessageBox.Show("Selecciona una asignación de la tabla.", "Asignar permisos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            CbPerfil.SelectedValue = drv["id_perfil"];
-            CbPermiso.SelectedValue = drv["id_accion_permiso"];
-            MarcarSoloAplicacion(Convert.ToInt32(drv["id_aplicacion"]));
-        }
-
-        private void BtnBuscar_Click(object sender, EventArgs e)
-        {
-            if (tabla == null) return;
-
-            string texto = customTextBox1.Text.Trim().Replace("'", "''");
-            if (texto.Length == 0)
-            {
-                tabla.DefaultView.RowFilter = string.Empty;
-                return;
-            }
-
-            tabla.DefaultView.RowFilter = ColumnaFiltro() + " LIKE '%" + texto + "%'";
-        }
-
-        private string ColumnaFiltro()
-        {
-            string sel = CbFiltro.SelectedItem == null ? "Perfil" : CbFiltro.SelectedItem.ToString();
-            switch (sel)
-            {
-                case "Permiso": return "nombre_accion_permiso";
-                case "Aplicación": return "nombre_aplicacion";
-                case "Código": return "codigo_aplicacion";
-                default: return "nombre_perfil";
-            }
-        }
-
-        private void BtnLimpiar_Click(object sender, EventArgs e)
-        {
-            customTextBox1.Clear();
-            CargarGrilla();
-            LimpiarFormulario();
-        }
-
-        private void LimpiarFormulario()
-        {
-            CbPerfil.SelectedIndex = -1;
-            CbPermiso.SelectedIndex = -1;
-            DesmarcarAplicaciones();
-        }
-
-        private int[] LeerAplicacionesMarcadas()
+        private int[] LeerSeleccionados(
+            Componentes.CustomListBox lista)
         {
             var ids = new List<int>();
-            foreach (var item in ListBoxAplicacion.SelectedItems)
+
+            foreach (object item
+                     in lista.SelectedItems)
             {
-                if (item is DataRowView drv && drv["Id"] != DBNull.Value)
-                    ids.Add(Convert.ToInt32(drv["Id"]));
+                if (item is DataRowView fila &&
+                    fila["Id"] != DBNull.Value)
+                {
+                    ids.Add(
+                        Convert.ToInt32(
+                            fila["Id"]
+                        )
+                    );
+                }
             }
+
             return ids.ToArray();
         }
 
-        private void MarcarSoloAplicacion(int idAplicacion)
+        private void LimpiarListas()
         {
-            ListBoxAplicacion.ClearSelected();
-            for (int i = 0; i < ListBoxAplicacion.Items.Count; i++)
+            ListBoxMant.DataSource = null;
+            ListBoxRegistrar.DataSource = null;
+            ListBoxEliminar.DataSource = null;
+            ListBoxActualizar.DataSource = null;
+        }
+
+        private static int? IdDe(
+            object valor)
+        {
+            if (valor == null ||
+                valor is DBNull)
             {
-                if (ListBoxAplicacion.Items[i] is DataRowView drv &&
-                    drv["Id"] != DBNull.Value &&
-                    Convert.ToInt32(drv["Id"]) == idAplicacion)
-                {
-                    ListBoxAplicacion.SetSelected(i, true);
-                    break;
-                }
+                return null;
             }
+
+            if (valor is int entero)
+                return entero;
+
+            if (int.TryParse(
+                valor.ToString(),
+                out int resultado))
+            {
+                return resultado;
+            }
+
+            return null;
         }
 
-        private void DesmarcarAplicaciones()
+        private void TlpForm_Paint(
+            object sender,
+            PaintEventArgs e)
         {
-            ListBoxAplicacion.ClearSelected();
         }
 
-        private static int? IdDe(object valor)
-        {
-            if (valor == null || valor is DBNull) return null;
-            if (valor is int i) return i;
-            return int.TryParse(valor.ToString(), out int r) ? (int?)r : (int?)null;
-        }
-
-        private void TlpForm_Paint(object sender, PaintEventArgs e)
+        private void TlpAux2_Paint(
+            object sender,
+            PaintEventArgs e)
         {
         }
     }
 }
-/* Depuracion de codigo Mishel loeiza con carnet: 9959-23-3457 en la  
- * fecha de: 06/08/2026 */
+
+/* Fin de Codigo de Diego Fernando Santizo Samayoa con carnet: 0901-22-15950 en la
+ * fecha de: 16/08/2026 */

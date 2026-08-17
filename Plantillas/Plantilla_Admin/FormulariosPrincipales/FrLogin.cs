@@ -38,56 +38,6 @@ namespace Plantilla_Cliente
             };
         }
 
-        private void BtnIngresar_Click_1(object sender, EventArgs e)
-        {
-            string usuario = TbUsuario.Text.Trim();
-            string contrasena = TbContra.Text;
-
-            if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrEmpty(contrasena))
-            {
-                MessageBox.Show("Ingresa usuario y contraseña.", "Login",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                If_Login api = new If_Login();
-                DataTable dt = api.ObtenerUsuario(usuario, contrasena);
-
-                if (dt.Rows.Count == 0)
-                {
-                    MessageBox.Show("Usuario o contraseña incorrectos.", "Login",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                string perfil = dt.Rows[0]["nombre_perfil"] == DBNull.Value
-                    ? "" : dt.Rows[0]["nombre_perfil"].ToString();
-
-                if (!perfil.Equals("admin", StringComparison.OrdinalIgnoreCase))
-                {
-                    MessageBox.Show("Acceso permitido solo a administradores.", "Login",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                int idUsuario = Convert.ToInt32(dt.Rows[0]["id_usuario"]);
-                string nombre = dt.Rows[0]["nombre_usuario"].ToString();
-                Sesion.Iniciar(nombre, perfil);
-                RegistrarBitacora(idUsuario);
-
-                FrMenuAdmin menu = new FrMenuAdmin();
-                menu.FormClosed += (s, args) => this.Close();
-                this.Hide();
-                menu.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo iniciar sesión.\n\n" + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 

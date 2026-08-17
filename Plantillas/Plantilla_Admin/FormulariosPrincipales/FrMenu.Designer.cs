@@ -35,7 +35,7 @@
             TlpDescripcionUsuario = new TableLayoutPanel();
             LbUsuarioDescripcion = new Componentes.CustomLabel();
             PnlMain = new Panel();
-            tableLayoutPanel2 = new TableLayoutPanel();
+            TlpTabs = new TableLayoutPanel();
             BtnLogo = new Button();
             BtnSalir = new Button();
             BtnFunciones = new Button();
@@ -46,7 +46,7 @@
             TlpEstructura.SuspendLayout();
             PnlTop.SuspendLayout();
             TlpDescripcionUsuario.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
+            TlpTabs.SuspendLayout();
             SuspendLayout();
             // 
             // TlpEstructura
@@ -58,7 +58,7 @@
             TlpEstructura.Controls.Add(nightControlBox1, 2, 0);
             TlpEstructura.Controls.Add(PnlTop, 1, 0);
             TlpEstructura.Controls.Add(PnlMain, 1, 1);
-            TlpEstructura.Controls.Add(tableLayoutPanel2, 0, 0);
+            TlpEstructura.Controls.Add(TlpTabs, 0, 0);
             TlpEstructura.Dock = DockStyle.Fill;
             TlpEstructura.Location = new Point(0, 0);
             TlpEstructura.Margin = new Padding(0);
@@ -67,7 +67,7 @@
             TlpEstructura.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
             TlpEstructura.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             TlpEstructura.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TlpEstructura.Size = new Size(1200, 700);
+            TlpEstructura.Size = new Size(1200, 800);
             TlpEstructura.TabIndex = 0;
             // 
             // nightControlBox1
@@ -141,36 +141,36 @@
             PnlMain.Location = new Point(200, 35);
             PnlMain.Margin = new Padding(0);
             PnlMain.Name = "PnlMain";
-            PnlMain.Size = new Size(1000, 665);
+            PnlMain.Size = new Size(1000, 765);
             PnlMain.TabIndex = 6;
             // 
-            // tableLayoutPanel2
+            // TlpTabs
             // 
-            tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Controls.Add(BtnLogo, 0, 0);
-            tableLayoutPanel2.Controls.Add(BtnSalir, 0, 6);
-            tableLayoutPanel2.Controls.Add(BtnFunciones, 0, 1);
-            tableLayoutPanel2.Controls.Add(BtnAyuda, 0, 5);
-            tableLayoutPanel2.Controls.Add(BtnVentas, 0, 2);
-            tableLayoutPanel2.Controls.Add(BtnReportes, 0, 4);
-            tableLayoutPanel2.Controls.Add(BtnUsuarios, 0, 3);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(0, 0);
-            tableLayoutPanel2.Margin = new Padding(0);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 7;
-            TlpEstructura.SetRowSpan(tableLayoutPanel2, 2);
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 200F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel2.Size = new Size(200, 700);
-            tableLayoutPanel2.TabIndex = 7;
+            TlpTabs.ColumnCount = 1;
+            TlpTabs.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            TlpTabs.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            TlpTabs.Controls.Add(BtnLogo, 0, 0);
+            TlpTabs.Controls.Add(BtnSalir, 0, 6);
+            TlpTabs.Controls.Add(BtnFunciones, 0, 1);
+            TlpTabs.Controls.Add(BtnAyuda, 0, 5);
+            TlpTabs.Controls.Add(BtnVentas, 0, 2);
+            TlpTabs.Controls.Add(BtnReportes, 0, 4);
+            TlpTabs.Controls.Add(BtnUsuarios, 0, 3);
+            TlpTabs.Dock = DockStyle.Fill;
+            TlpTabs.Location = new Point(0, 0);
+            TlpTabs.Margin = new Padding(0);
+            TlpTabs.Name = "TlpTabs";
+            TlpTabs.RowCount = 7;
+            TlpEstructura.SetRowSpan(TlpTabs, 2);
+            TlpTabs.RowStyles.Add(new RowStyle(SizeType.Absolute, 200F));
+            TlpTabs.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            TlpTabs.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            TlpTabs.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            TlpTabs.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            TlpTabs.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            TlpTabs.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            TlpTabs.Size = new Size(200, 800);
+            TlpTabs.TabIndex = 7;
             // 
             // BtnLogo
             // 
@@ -197,10 +197,10 @@
             BtnSalir.FlatStyle = FlatStyle.Flat;
             BtnSalir.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BtnSalir.ForeColor = Color.FromArgb(220, 210, 210);
-            BtnSalir.Location = new Point(0, 618);
+            BtnSalir.Location = new Point(0, 703);
             BtnSalir.Margin = new Padding(0, 3, 0, 0);
             BtnSalir.Name = "BtnSalir";
-            BtnSalir.Size = new Size(200, 82);
+            BtnSalir.Size = new Size(200, 97);
             BtnSalir.TabIndex = 8;
             BtnSalir.Text = "Salir";
             BtnSalir.UseVisualStyleBackColor = false;
@@ -218,7 +218,7 @@
             BtnFunciones.Location = new Point(0, 202);
             BtnFunciones.Margin = new Padding(0, 2, 0, 0);
             BtnFunciones.Name = "BtnFunciones";
-            BtnFunciones.Size = new Size(200, 81);
+            BtnFunciones.Size = new Size(200, 98);
             BtnFunciones.TabIndex = 3;
             BtnFunciones.Text = "Funciones";
             BtnFunciones.UseVisualStyleBackColor = false;
@@ -233,10 +233,10 @@
             BtnAyuda.FlatStyle = FlatStyle.Flat;
             BtnAyuda.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BtnAyuda.ForeColor = Color.FromArgb(220, 210, 210);
-            BtnAyuda.Location = new Point(0, 535);
+            BtnAyuda.Location = new Point(0, 603);
             BtnAyuda.Margin = new Padding(0, 3, 0, 0);
             BtnAyuda.Name = "BtnAyuda";
-            BtnAyuda.Size = new Size(200, 80);
+            BtnAyuda.Size = new Size(200, 97);
             BtnAyuda.TabIndex = 7;
             BtnAyuda.Text = "Ayuda";
             BtnAyuda.UseVisualStyleBackColor = false;
@@ -251,10 +251,10 @@
             BtnVentas.FlatStyle = FlatStyle.Flat;
             BtnVentas.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BtnVentas.ForeColor = Color.FromArgb(220, 210, 210);
-            BtnVentas.Location = new Point(0, 286);
+            BtnVentas.Location = new Point(0, 303);
             BtnVentas.Margin = new Padding(0, 3, 0, 0);
             BtnVentas.Name = "BtnVentas";
-            BtnVentas.Size = new Size(200, 80);
+            BtnVentas.Size = new Size(200, 97);
             BtnVentas.TabIndex = 4;
             BtnVentas.Text = "Ventas";
             BtnVentas.UseVisualStyleBackColor = false;
@@ -269,10 +269,10 @@
             BtnReportes.FlatStyle = FlatStyle.Flat;
             BtnReportes.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BtnReportes.ForeColor = Color.FromArgb(220, 210, 210);
-            BtnReportes.Location = new Point(0, 452);
+            BtnReportes.Location = new Point(0, 503);
             BtnReportes.Margin = new Padding(0, 3, 0, 0);
             BtnReportes.Name = "BtnReportes";
-            BtnReportes.Size = new Size(200, 80);
+            BtnReportes.Size = new Size(200, 97);
             BtnReportes.TabIndex = 6;
             BtnReportes.Text = "Reportes";
             BtnReportes.UseVisualStyleBackColor = false;
@@ -287,10 +287,10 @@
             BtnUsuarios.FlatStyle = FlatStyle.Flat;
             BtnUsuarios.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BtnUsuarios.ForeColor = Color.FromArgb(220, 210, 210);
-            BtnUsuarios.Location = new Point(0, 369);
+            BtnUsuarios.Location = new Point(0, 403);
             BtnUsuarios.Margin = new Padding(0, 3, 0, 0);
             BtnUsuarios.Name = "BtnUsuarios";
-            BtnUsuarios.Size = new Size(200, 80);
+            BtnUsuarios.Size = new Size(200, 97);
             BtnUsuarios.TabIndex = 5;
             BtnUsuarios.Text = "Usuarios";
             BtnUsuarios.UseVisualStyleBackColor = false;
@@ -301,17 +301,17 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1200, 700);
+            ClientSize = new Size(1200, 800);
             Controls.Add(TlpEstructura);
             FormBorderStyle = FormBorderStyle.None;
-            MinimumSize = new Size(1200, 700);
+            MinimumSize = new Size(1200, 800);
             Name = "FrMenu";
             Text = "FrMenu";
             TlpEstructura.ResumeLayout(false);
             PnlTop.ResumeLayout(false);
             TlpDescripcionUsuario.ResumeLayout(false);
             TlpDescripcionUsuario.PerformLayout();
-            tableLayoutPanel2.ResumeLayout(false);
+            TlpTabs.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -328,7 +328,7 @@
         private Button BtnAyuda;
         private Button BtnSalir;
         private Panel PnlMain;
-        private TableLayoutPanel tableLayoutPanel2;
+        private TableLayoutPanel TlpTabs;
         private TableLayoutPanel TlpDescripcionUsuario;
         private Componentes.CustomLabel LbUsuarioDescripcion;
     }

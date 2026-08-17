@@ -99,8 +99,8 @@ namespace Plantilla_Admin.FormulariosPrincipales
 
         private void NavButton_Click(object sender, EventArgs e)
         {
-            if (sender is Button btn)
-                SetActive(btn);
+           if (sender is Button btn && success)
+             SetActive(btn);
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -108,6 +108,7 @@ namespace Plantilla_Admin.FormulariosPrincipales
 
         [DllImportAttribute("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
         private void PnlTop_MouseMove(object sender, MouseEventArgs e)
@@ -119,28 +120,45 @@ namespace Plantilla_Admin.FormulariosPrincipales
             }
         }
 
+        private bool success = false;
         private void BtnFunciones_Click(object sender, EventArgs e)
         {
+            var permisos = PermisosAux.DeSesion(
+                AplicacionPermiso.Funciones,
+                AccionPermiso.Mantenimiento
+            );
+
+            if (!permisos.Permitido())
+            {
+                success = false;
+                MessageBox.Show("No tienes permiso para esta sección.");
+                return;
+            }
+            success = true;
             funcargarpagina(new FrUcMainFunciones());
         }
 
         private void BtnVentas_Click(object sender, EventArgs e)
         {
+            success = true;
             funcargarpagina(new FrUcMainVentas());
         }
 
         private void BtnUsuarios_Click(object sender, EventArgs e)
         {
+            success = true;
             funcargarpagina(new FrUcMainUsuarios());
         }
 
         private void BtnReportes_Click(object sender, EventArgs e)
         {
+            success = true;
             funcargarpagina(new FrUcMainReportes());
         }
 
         private void BtnAyuda_Click(object sender, EventArgs e)
         {
+            success = true;
             funcargarpagina(new FrUcMainAyuda());
         }
 

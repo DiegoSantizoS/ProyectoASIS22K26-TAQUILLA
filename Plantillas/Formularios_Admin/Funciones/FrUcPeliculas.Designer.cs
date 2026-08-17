@@ -645,6 +645,7 @@
             ListBoxGeneros.Margin = new Padding(5, 0, 5, 20);
             ListBoxGeneros.Name = "ListBoxGeneros";
             TlpForm.SetRowSpan(ListBoxGeneros, 9);
+            ListBoxGeneros.SelectionMode = SelectionMode.MultiSimple;
             ListBoxGeneros.Size = new Size(240, 330);
             ListBoxGeneros.StateCheckedNormal.Item.Back.Color1 = Color.Crimson;
             ListBoxGeneros.StateCheckedNormal.Item.Content.LongText.Color1 = Color.FromArgb(230, 230, 230);
