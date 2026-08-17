@@ -3,11 +3,9 @@ using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-/* Inicio de Codigo de Miguel David Contreras Jacinto con carnet: 0901-21-3878 en la
- * fecha de: 26/07/2026 */
+using System.IO;
+using System.Diagnostics;
+
 namespace clase_conexion
 {
     public class conexion
