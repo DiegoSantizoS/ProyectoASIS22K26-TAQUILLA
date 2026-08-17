@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,9 +30,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Carteleras\Carteleras.csproj" />
+    <Content Include="logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Krypton.Toolkit" Version="105.26.7.201" />
+    <PackageReference Include="ReaLTaiizor" Version="3.8.2.1" />
+    <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.33" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\clase_conexion\clase_conexion.csproj" />
     <ProjectReference Include="..\Componentes\Componentes.csproj" />
+    <ProjectReference Include="..\Formularios_Admin\Forms_Admin.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,7 +52,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Tabs\Funciones\FrUcMainFunciones.cs">
+    <Compile Update="Tabs\FrUcMainFunciones.cs">
       <CopyToOutputDirectory>r</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>

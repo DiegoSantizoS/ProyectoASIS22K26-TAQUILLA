@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using Con_Admin;
+using System.Diagnostics;
+using Plantilla_Admin;
 
 namespace Formularios_Admin
 {
@@ -12,7 +14,8 @@ namespace Formularios_Admin
     {
         private readonly If_Peliculas api = new If_Peliculas();
         private DataTable tablaPeliculas;
-
+        private string urlYoutube = "";
+        
         public FrUcPeliculas()
         {
             InitializeComponent();
@@ -20,17 +23,50 @@ namespace Formularios_Admin
             CargarCombos();
             CargarFiltro();
             CargarGrilla();
-            ModoAgregar();
+            ModoAgregar();  
         }
+
+        private readonly PermisosAux permisoAgregar =
+            PermisosAux.DeSesion(
+                AplicacionPermiso.Peliculas,
+                AccionPermiso.Registrar
+            );
+
+        private readonly PermisosAux permisoActualizar =
+            PermisosAux.DeSesion(
+                AplicacionPermiso.Peliculas,
+                AccionPermiso.Modificar
+            );
+
+        private readonly PermisosAux permisoEliminar =
+            PermisosAux.DeSesion(
+                AplicacionPermiso.Peliculas,
+                AccionPermiso.Eliminar
+            );
 
         private void WireEvents()
         {
-            BtnAgregar.Click += BtnAgregar_Click;
-            BtnActualizar.Click += BtnActualizar_Click;
-            BtnEliminar.Click += BtnEliminar_Click;
+            BtnBuscar.Click += BtnBuscar_Click;
             BtnLimpiar.Click += BtnLimpiar_Click;
             BtnCopiar.Click += BtnCopiar_Click;
-            BtnBuscar.Click += BtnBuscar_Click;
+
+            if (permisoAgregar.Permitido())
+                BtnAgregar.Click += BtnAgregar_Click;
+            else
+                BtnAgregar.Click += (s, e) =>
+                    MessageBox.Show("No tienes permiso para agregar.");
+
+            if (permisoActualizar.Permitido())
+                BtnActualizar.Click += BtnActualizar_Click;
+            else
+                BtnActualizar.Click += (s, e) =>
+                    MessageBox.Show("No tienes permiso para actualizar.");
+
+            if (permisoEliminar.Permitido())
+                BtnEliminar.Click += BtnEliminar_Click;
+            else
+                BtnEliminar.Click += (s, e) =>
+                    MessageBox.Show("No tienes permiso para eliminar.");
         }
 
         private void CargarCombos()
@@ -397,9 +433,86 @@ namespace Formularios_Admin
             CargarGrilla();
             ModoAgregar();
         }
+        private string ObtenerVideoID(string url)
+        {
+            if (url.Contains("watch?v="))
+            {
+                string[] partes = url.Split(new string[] { "watch?v=" },
+                                            StringSplitOptions.None);
+
+                return partes[1].Split('&')[0];
+            }
+
+            if (url.Contains("youtu.be/"))
+            {
+                return url.Substring(url.LastIndexOf("/") + 1);
+            }
+
+            return "";
+        }
+        private void CargarMiniatura()
+        {
+            string id = ObtenerVideoID(TbTrailer.Text);
+
+            if (id == "")
+            {
+                MessageBox.Show("El enlace no es válido.");
+                return;
+            }
+
+            urlYoutube = TbTrailer.Text;
+
+            string imagen =
+                "https://img.youtube.com/vi/" + id + "/hqdefault.jpg";
+
+            PictureBoxTrailer.Load(imagen);
+        }
+
+
 
         private void kryptonListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void ListBoxFormatos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnLimpiar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAgregar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbTrailer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBoxTrailer_DragLeave(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = TbTrailer.Text.Trim(),
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TbTrailer_Leave(object sender, EventArgs e)
+        {
+            CargarMiniatura();
         }
     }
 }

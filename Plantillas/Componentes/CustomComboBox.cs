@@ -12,13 +12,6 @@ namespace Componentes
     {
         public CustomComboBox()
         {
-            FlatStyle = FlatStyle.Flat;
-            DropDownStyle = ComboBoxStyle.DropDownList;
-            Font = new Font("Segoe UI", 9f);
-            ForeColor = Color.FromArgb(230, 230, 230);
-            BackColor = Color.FromArgb(55, 60, 72);
-            Margin = new Padding(5);
-            Padding = new Padding(0);
             Anchor = AnchorStyles.Left | AnchorStyles.Right;
             Cursor = Cursors.Hand;
             DrawMode = DrawMode.OwnerDrawFixed;

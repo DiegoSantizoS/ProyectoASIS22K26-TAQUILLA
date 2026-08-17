@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reservas));
             TlpReservas = new TableLayoutPanel();
+            PicPelicula = new PictureBox();
             TlpInfo = new TableLayoutPanel();
             PicTrailer = new PictureBox();
             TxDirectorHead = new Label();
@@ -38,7 +39,6 @@
             TxDirector = new Label();
             TxDuracion = new Label();
             TxRestriccion = new Label();
-            PicPelicula = new PictureBox();
             TlpEleccionFunciones = new TableLayoutPanel();
             FlpHorarios = new FlowLayoutPanel();
             button1 = new Button();
@@ -57,9 +57,9 @@
             BtnContinuar = new Button();
             Btn_Cartelera = new Button();
             TlpReservas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PicPelicula).BeginInit();
             TlpInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PicTrailer).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PicPelicula).BeginInit();
             TlpEleccionFunciones.SuspendLayout();
             FlpHorarios.SuspendLayout();
             FlpFunciones.SuspendLayout();
@@ -72,8 +72,8 @@
             TlpReservas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.638916F));
             TlpReservas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 0.09478423F));
             TlpReservas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 83.2663F));
-            TlpReservas.Controls.Add(TlpInfo, 2, 0);
             TlpReservas.Controls.Add(PicPelicula, 0, 0);
+            TlpReservas.Controls.Add(TlpInfo, 2, 0);
             TlpReservas.Controls.Add(TlpEleccionFunciones, 2, 1);
             TlpReservas.Controls.Add(BtnContinuar, 2, 2);
             TlpReservas.Controls.Add(Btn_Cartelera, 0, 1);
@@ -89,6 +89,19 @@
             TlpReservas.Size = new Size(1394, 700);
             TlpReservas.TabIndex = 0;
             TlpReservas.Paint += TlP_Reservas_Paint;
+            // 
+            // PicPelicula
+            // 
+            PicPelicula.BackColor = Color.White;
+            TlpReservas.SetColumnSpan(PicPelicula, 2);
+            PicPelicula.Dock = DockStyle.Fill;
+            PicPelicula.Image = (Image)resources.GetObject("PicPelicula.Image");
+            PicPelicula.Location = new Point(3, 3);
+            PicPelicula.Name = "PicPelicula";
+            PicPelicula.Size = new Size(226, 291);
+            PicPelicula.SizeMode = PictureBoxSizeMode.CenterImage;
+            PicPelicula.TabIndex = 0;
+            PicPelicula.TabStop = false;
             // 
             // TlpInfo
             // 
@@ -215,19 +228,6 @@
             TxRestriccion.Text = "XXX";
             TxRestriccion.TextAlign = ContentAlignment.MiddleLeft;
             TxRestriccion.Click += TxRestriccion_Click;
-            // 
-            // PicPelicula
-            // 
-            PicPelicula.BackColor = Color.White;
-            TlpReservas.SetColumnSpan(PicPelicula, 2);
-            PicPelicula.Dock = DockStyle.Fill;
-            PicPelicula.Image = (Image)resources.GetObject("PicPelicula.Image");
-            PicPelicula.Location = new Point(3, 3);
-            PicPelicula.Name = "PicPelicula";
-            PicPelicula.Size = new Size(226, 291);
-            PicPelicula.SizeMode = PictureBoxSizeMode.CenterImage;
-            PicPelicula.TabIndex = 0;
-            PicPelicula.TabStop = false;
             // 
             // TlpEleccionFunciones
             // 
@@ -455,10 +455,10 @@
             Name = "Reservas";
             Size = new Size(1394, 700);
             TlpReservas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)PicPelicula).EndInit();
             TlpInfo.ResumeLayout(false);
             TlpInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PicTrailer).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PicPelicula).EndInit();
             TlpEleccionFunciones.ResumeLayout(false);
             TlpEleccionFunciones.PerformLayout();
             FlpHorarios.ResumeLayout(false);
